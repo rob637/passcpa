@@ -1,0 +1,75 @@
+=== CPA 9,000 Question Generator ===
+
+
+Generating 17 questions for FAR...
+  Batch: generating 5 (0/17 done)
+  Got 5 valid questions
+  Batch: generating 5 (5/17 done)
+  Got 5 valid questions
+  Batch: generating 5 (10/17 done)
+  Got 5 valid questions
+  Batch: generating 2 (15/17 done)
+  Got 2 valid questions
+  Saved 17 questions to FAR
+
+Generating 17 questions for AUD...
+  Batch: generating 5 (0/17 done)
+  No questions generated, retrying...
+  Batch: generating 5 (0/17 done)
+  Got 5 valid questions
+  Batch: generating 5 (5/17 done)
+  Got 5 valid questions
+  Batch: generating 5 (10/17 done)
+  Got 5 valid questions
+  Batch: generating 2 (15/17 done)
+  Got 2 valid questions
+  Saved 17 questions to AUD
+
+Generating 17 questions for REG...
+  Batch: generating 5 (0/17 done)
+  Got 5 valid questions
+  Batch: generating 5 (5/17 done)
+  Got 5 valid questions
+  Batch: generating 5 (10/17 done)
+  Got 5 valid questions
+  Batch: generating 2 (15/17 done)
+  Got 2 valid questions
+  Saved 17 questions to REG
+
+Generating 17 questions for TCP...
+  Batch: generating 5 (0/17 done)
+  Got 5 valid questions
+  Batch: generating 5 (5/17 done)
+  Got 5 valid questions
+  Batch: generating 5 (10/17 done)
+  Got 5 valid questions
+  Batch: generating 2 (15/17 done)
+  Got 2 valid questions
+  Saved 17 questions to TCP
+
+Generating 16 questions for ISC...
+  Batch: generating 5 (0/16 done)
+  Got 5 valid questions
+  Batch: generating 5 (5/16 done)
+  Got 5 valid questions
+  Batch: generating 5 (10/16 done)
+  Got 5 valid questions
+  Batch: generating 1 (15/16 done)
+  No questions generated, retrying...
+  Batch: generating 1 (15/16 done)
+  Got 1 valid questions
+  Saved 16 questions to ISC
+
+Generating 16 questions for BAR...
+  Batch: generating 5 (0/16 done)
+  Got 5 valid questions
+  Batch: generating 5 (5/16 done)
+  Got 5 valid questions
+  Batch: generating 5 (10/16 done)
+  Got 5 valid questions
+  Batch: generating 1 (15/16 done)
+  Got 1 valid questions
+  Saved 16 questions to BAR
+
+=== Complete ===
+Total generated: 100

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
-export type ThemeMode = 'light' | 'dark' | 'system';
+export type ThemeMode = 'light' | 'dark' | 'system' | 'auto';
 
 interface ThemeContextType {
   darkMode: boolean;
@@ -13,15 +13,25 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 /**
- * Theme Provider - Manages dark/light mode with system preference support
- * Persists preference to localStorage and respects system preference
+ * Check if current time is nighttime (dark mode hours)
+ * Daytime: 7 AM - 7 PM (light mode)
+ * Nighttime: 7 PM - 7 AM (dark mode)
+ */
+function isNighttime(): boolean {
+  const hour = new Date().getHours();
+  return hour < 7 || hour >= 19; // Before 7 AM or 7 PM or later
+}
+
+/**
+ * Theme Provider - Manages dark/light mode with system preference and time-based support
+ * Persists preference to localStorage and respects system/time preference
  */
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Theme mode: 'light', 'dark', or 'system'
+  // Theme mode: 'light', 'dark', 'system', or 'auto' (time-based)
   const [themeMode, setThemeModeState] = useState<ThemeMode>(() => {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem('voraprep-theme-mode');
-      if (stored === 'light' || stored === 'dark' || stored === 'system') {
+      if (stored === 'light' || stored === 'dark' || stored === 'system' || stored === 'auto') {
         return stored;
       }
       // Check old dark-mode key for migration
@@ -29,10 +39,11 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       if (oldStored === 'true') return 'dark';
       if (oldStored === 'false') return 'light';
     }
-    return 'system';
+    // Default to 'auto' (time-based) for new users
+    return 'auto';
   });
 
-  // Computed dark mode based on themeMode and system preference
+  // System prefers dark (for 'system' mode)
   const [systemPrefersDark, setSystemPrefersDark] = useState(() => {
     if (typeof window !== 'undefined') {
       return window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -40,7 +51,14 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     return false;
   });
 
-  const darkMode = themeMode === 'dark' || (themeMode === 'system' && systemPrefersDark);
+  // Time-based dark mode (for 'auto' mode)
+  const [timeBasedDark, setTimeBasedDark] = useState(isNighttime);
+
+  // Computed dark mode based on themeMode, system preference, or time
+  const darkMode = 
+    themeMode === 'dark' || 
+    (themeMode === 'system' && systemPrefersDark) ||
+    (themeMode === 'auto' && timeBasedDark);
 
   // Apply dark class to document
   useEffect(() => {
@@ -51,6 +69,21 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       root.classList.remove('dark');
     }
   }, [darkMode]);
+
+  // Check time periodically for auto mode (every minute)
+  useEffect(() => {
+    if (themeMode !== 'auto') return;
+    
+    const checkTime = () => {
+      setTimeBasedDark(isNighttime());
+    };
+    
+    // Check immediately and then every minute
+    checkTime();
+    const interval = setInterval(checkTime, 60000);
+    
+    return () => clearInterval(interval);
+  }, [themeMode]);
 
   // Persist theme mode
   useEffect(() => {

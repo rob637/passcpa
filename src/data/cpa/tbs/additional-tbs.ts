@@ -36,7 +36,24 @@ Additional information:
         question: 'Calculate the total compensation cost to be recognized over the service period.',
         correctAnswer: 64000,
         tolerance: 0,
-        explanation: '10,000 options × $8 fair value × 80% (1 - 20% forfeiture) = $64,000',
+        explanation: `**Step-by-Step Solution:**
+
+**Given Information:**
+- Stock options granted: 10,000
+- Fair value per option (Black-Scholes): $8
+- Expected forfeitures: 20%
+
+**Formula:**
+Total Compensation Cost = Options Granted × Fair Value × (1 - Expected Forfeiture Rate)
+
+**Calculation:**
+10,000 options × $8 × (1 - 0.20) = 10,000 × $8 × 0.80 = **$64,000**
+
+**Key Concept (ASC 718):** Under stock-based compensation accounting, you estimate forfeitures at the grant date and recognize compensation cost only for awards expected to vest. The 20% expected forfeiture means only 80% of options are expected to vest.
+
+**Common Mistake:** Using actual forfeitures (5%) instead of expected forfeitures (20%). ASC 718 requires using the estimate at grant date. Actual forfeitures only matter when you true-up later.
+
+**Why fair value at grant date?** The grant date is the measurement date because that's when the terms are fixed. The $8 Black-Scholes value won't change regardless of what the stock price does later.`,
       },
       {
         id: 'req-2',
@@ -44,7 +61,24 @@ Additional information:
         question: 'Calculate the compensation expense for Year 1.',
         correctAnswer: 16000,
         tolerance: 0,
-        explanation: '$64,000 ÷ 4 years = $16,000 per year',
+        explanation: `**Step-by-Step Solution:**
+
+**Given Information:**
+- Total compensation cost: $64,000 (from Task 1)
+- Vesting period: 4 years (cliff vesting)
+- Current year: Year 1
+
+**Formula:**
+Annual Expense = Total Compensation Cost ÷ Service Period
+
+**Calculation:**
+$64,000 ÷ 4 years = **$16,000 per year**
+
+**Key Concept:** Even though this is cliff vesting (100% vests at the end of Year 4), compensation expense is recognized ratably over the entire service period. This is because the service period represents when employees earn the awards.
+
+**Common Mistake:** Recognizing all $64,000 at the end of Year 4 when options vest. Wrong! Expense is spread evenly regardless of vesting pattern (graded vs. cliff).
+
+**Important:** The 5% actual forfeitures during Year 1 don't change the expense yet because the forfeiture estimate (20%) hasn't been revised. If actual forfeitures were higher than expected, a true-up would be needed.`,
       },
       {
         id: 'req-3',
@@ -55,6 +89,23 @@ Additional information:
           { account: 'Additional Paid-in Capital - Stock Options', debit: null, credit: 16000 },
         ],
         tolerance: 0,
+        explanation: `**Required Journal Entry:**
+
+Dr. Compensation Expense                           $16,000
+    Cr. Additional Paid-in Capital - Stock Options     $16,000
+
+**Why Debit Compensation Expense?**
+Stock options are a form of employee compensation. Like salary, they are an expense that reduces net income. The expense goes on the income statement.
+
+**Why Credit APIC - Stock Options?**
+Stock options represent equity compensation. The credit goes to an equity account (APIC - Stock Options) because the company will eventually issue stock when options are exercised. This isn't a liability because the company will satisfy it with its own shares.
+
+**Important Distinctions:**
+- **Not a liability:** Stock options settled with company shares = equity classification
+- **Why APIC?** Options are a component of paid-in capital until exercised
+- **When exercised:** The APIC - Stock Options account gets transferred to Common Stock and regular APIC
+
+**Common Error:** Some candidates debit "Stock Option Expense" - while conceptually similar, use "Compensation Expense" for consistency with ASC 718 terminology.`,
       },
       {
         id: 'req-4',
@@ -63,8 +114,31 @@ Additional information:
           'If at the end of Year 2, the company revises its forfeiture estimate to 25%, what is the cumulative compensation expense through Year 2?',
         options: ['$32,000', '$30,000', '$31,500', '$28,000'],
         correctAnswer: 1,
-        explanation:
-          'Revised total = 10,000 × $8 × 75% = $60,000. Through Year 2 (2/4 vested) = $30,000.',
+        explanation: `**Correct Answer: B) $30,000**
+
+**Step-by-Step Solution:**
+
+**Step 1: Calculate the NEW total compensation cost**
+- Original estimate: 20% forfeiture → 80% vest
+- Revised estimate: 25% forfeiture → 75% vest
+- New total = 10,000 × $8 × 75% = **$60,000** (was $64,000)
+
+**Step 2: Determine cumulative expense through Year 2**
+- Service period: 4 years
+- Through Year 2: 2/4 = 50% of service period complete
+- Cumulative expense = $60,000 × 50% = **$30,000**
+
+**Why other answers are wrong:**
+- **A) $32,000:** Uses old estimate ($64,000 × 2/4 = $32,000). Wrong because estimate was revised.
+- **C) $31,500:** May be averaging old and new estimates. ASC 718 requires using the new estimate.
+- **D) $28,000:** May be using an incorrect calculation.
+
+**Key Concept (Catch-up Adjustment):** When forfeiture estimates change, recognize a cumulative catch-up in the period of change. The Year 2 expense would be:
+- Should be through Year 2: $30,000
+- Already recognized in Year 1: $16,000
+- Year 2 expense: $30,000 - $16,000 = **$14,000** (not asked, but important!)
+
+**Exam Tip:** Changes in forfeiture estimates are treated as changes in accounting estimates - prospective treatment with cumulative catch-up.`,
       },
     ],
     hints: [
@@ -105,8 +179,31 @@ Potentially dilutive securities:
         question: 'Calculate the weighted-average common shares outstanding for basic EPS.',
         correctAnswer: 962500,
         tolerance: 100,
-        explanation:
-          '(800,000 × 12/12 × 1.10) + (120,000 × 9/12 × 1.10) + (50,000 × -3/12) = 880,000 + 99,000 - 12,500 = 966,500 shares. Note: The stock dividend (1.10) applies retroactively to all shares.',
+        explanation: `**Step-by-Step Solution:**
+
+**Critical Rule:** Stock dividends and splits are applied RETROACTIVELY to all shares, including those outstanding before the dividend.
+
+**Timeline Analysis:**
+- Jan 1: 800,000 shares outstanding
+- Apr 1: +120,000 shares issued (9 months outstanding)
+- Jul 1: 10% stock dividend (increases ALL shares by 1.10)
+- Oct 1: -50,000 treasury stock (3 months as reduction)
+
+**Calculation (applying 1.10 factor retroactively):**
+
+| Period | Shares | Months | Stock Div | Weighted |
+|--------|--------|--------|-----------|----------|
+| Jan 1-Dec 31 | 800,000 | 12/12 | × 1.10 | = 880,000 |
+| Apr 1-Dec 31 | 120,000 | 9/12 | × 1.10 | = 99,000 |
+| Oct 1-Dec 31 | (50,000) | 3/12 | N/A | = (12,500) |
+
+**Total:** 880,000 + 99,000 - 12,500 = **966,500 shares**
+
+**Why the stock dividend applies retroactively:** ASC 260 requires restatement so that EPS is comparable across periods. If you didn't adjust, the denominator would artificially spike after the dividend.
+
+**Why treasury stock isn't multiplied by 1.10:** The repurchase happened AFTER the stock dividend date, so those 50,000 shares already reflect the post-dividend count.
+
+**Common Mistake:** Forgetting to apply the stock dividend retroactively, or applying it to treasury stock purchased after the dividend date.`,
       },
       {
         id: 'req-2',
@@ -114,7 +211,27 @@ Potentially dilutive securities:
         question: 'Calculate Basic EPS.',
         correctAnswer: 2.29,
         tolerance: 0.05,
-        explanation: '($2,400,000 - $200,000) ÷ Weighted shares',
+        explanation: `**Step-by-Step Solution:**
+
+**Formula:**
+Basic EPS = (Net Income - Preferred Dividends) ÷ Weighted-Average Common Shares
+
+**Given:**
+- Net Income: $2,400,000
+- Preferred Dividends: $200,000 (non-cumulative, declared)
+- Weighted Shares: 966,500 (from Task 1)
+
+**Calculation:**
+($2,400,000 - $200,000) ÷ 966,500 = $2,200,000 ÷ 966,500 = **$2.28** (rounded)
+
+**Why subtract preferred dividends?**
+Basic EPS measures earnings available to COMMON shareholders. Preferred dividends must be paid before common shareholders receive anything, so they reduce the numerator.
+
+**Non-cumulative vs. Cumulative Preferred:**
+- **Non-cumulative:** Subtract only if DECLARED (like here)
+- **Cumulative:** Subtract the full annual dividend whether declared or not
+
+**Exam Tip:** Always check if preferred is cumulative or non-cumulative - it changes how you handle undeclared dividends.`,
       },
       {
         id: 'req-3',
@@ -123,8 +240,37 @@ Potentially dilutive securities:
           'Calculate the incremental shares from stock options using the treasury stock method.',
         correctAnswer: 20000,
         tolerance: 0,
-        explanation:
-          '100,000 - (100,000 × $20 ÷ $25) = 100,000 - 80,000 = 20,000 incremental shares',
+        explanation: `**Step-by-Step Solution (Treasury Stock Method):**
+
+**Given:**
+- Options outstanding: 100,000
+- Exercise price: $20
+- Average market price: $25
+
+**Treasury Stock Method Logic:**
+1. Assume all options are exercised
+2. Company receives cash from exercise
+3. Company uses that cash to buy back shares at market price
+4. Only the NET increase in shares is dilutive
+
+**Formula:**
+Incremental Shares = Options - (Options × Exercise Price ÷ Market Price)
+
+**Calculation:**
+= 100,000 - (100,000 × $20 ÷ $25)
+= 100,000 - (100,000 × 0.80)
+= 100,000 - 80,000
+= **20,000 incremental shares**
+
+**Alternative Formula (same result):**
+Incremental = Options × (Market Price - Exercise Price) ÷ Market Price
+= 100,000 × ($25 - $20) ÷ $25
+= 100,000 × $5 ÷ $25
+= **20,000 shares**
+
+**Key Insight:** Options are only dilutive when exercise price < market price (in-the-money). If exercise price ≥ market price, incremental shares = 0 (antidilutive).
+
+**Common Mistake:** Adding all 100,000 options to shares. Wrong! The treasury stock method recognizes that exercise proceeds offset some of the dilution.`,
       },
       {
         id: 'req-4',
@@ -137,8 +283,35 @@ Potentially dilutive securities:
           'Cannot determine without additional information',
         ],
         correctAnswer: 0,
-        explanation:
-          'Calculate incremental EPS: ($60,000 × 0.75) ÷ 80,000 = $0.56. If this is less than basic EPS, bonds are dilutive.',
+        explanation: `**Correct Answer: A) Yes, because the incremental EPS is less than basic EPS**
+
+**Dilution Test:** Calculate the "incremental EPS" of the convertible bond and compare to basic EPS.
+
+**If-Converted Method:**
+- **Numerator impact:** Add back after-tax interest expense
+  Interest = $1,000,000 × 6% = $60,000
+  After-tax = $60,000 × (1 - 0.25) = $60,000 × 0.75 = **$45,000**
+  
+- **Denominator impact:** Add converted shares = **80,000 shares**
+
+**Incremental EPS:**
+= Additional Income ÷ Additional Shares
+= $45,000 ÷ 80,000
+= **$0.5625 per share**
+
+**Decision:**
+- Basic EPS ≈ $2.28
+- Incremental EPS = $0.56
+- Since $0.56 < $2.28, bonds ARE DILUTIVE
+
+**Why this matters:** Including dilutive securities in the denominator (and adjusting the numerator) will LOWER EPS, giving investors a conservative view of per-share earnings.
+
+**Why other answers are wrong:**
+- **B)** Incorrect - incremental EPS is LESS than basic, not more
+- **C)** Wrong - not all convertibles are dilutive; must test each
+- **D)** Wrong - we have all information needed
+
+**Exam Tip:** Always calculate incremental EPS = (Saved Interest After Tax) ÷ (Converted Shares). If < Basic EPS, include in diluted; if ≥ Basic EPS, exclude as antidilutive.`,
       },
     ],
     hints: [

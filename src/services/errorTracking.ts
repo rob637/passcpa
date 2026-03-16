@@ -152,12 +152,39 @@ const categorizeError = (error: Error | unknown): ErrorCategory => {
 };
 
 /**
+ * Known errors to suppress (not actionable, just noise)
+ */
+const SUPPRESSED_ERRORS = [
+  'messaging/unsupported-browser', // iOS Safari doesn't support FCM web push
+  'messaging/permission-blocked',  // User declined notification permission
+  'ResizeObserver loop',           // Benign browser quirk
+];
+
+/**
+ * Check if error should be suppressed
+ */
+const shouldSuppressError = (message: string): boolean => {
+  const lowerMessage = message.toLowerCase();
+  return SUPPRESSED_ERRORS.some(pattern => lowerMessage.includes(pattern.toLowerCase()));
+};
+
+/**
  * Capture and track an error
  */
-export const captureError = (error: Error | unknown, context: ErrorContext = {}): ErrorData => {
+export const captureError = (error: Error | unknown, context: ErrorContext = {}): ErrorData | null => {
+  const message = error instanceof Error ? error.message : String(error);
+  
+  // Suppress known non-actionable errors
+  if (shouldSuppressError(message)) {
+    if (import.meta.env.DEV) {
+      logger.info('[ErrorTracking] Suppressed known error:', message.substring(0, 80));
+    }
+    return null;
+  }
+  
   const errorData: ErrorData = {
     timestamp: new Date().toISOString(),
-    message: error instanceof Error ? error.message : String(error),
+    message,
     stack: error instanceof Error ? error.stack : undefined,
     category: context.category || categorizeError(error),
     severity: context.severity || ErrorSeverity.MEDIUM,

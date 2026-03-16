@@ -100,7 +100,30 @@ export type ContentType =
   | 'case-study';         // "How I Passed All 4 CPA Sections"
 
 /** Content status in the pipeline */
-export type ContentStatus = 'brief' | 'draft' | 'review' | 'published' | 'archived' | 'updating';
+export type ContentStatus = 'brief' | 'draft' | 'review' | 'approved' | 'published' | 'archived' | 'updating';
+
+/** Distribution channel status */
+export type DistributionStatus = 'pending' | 'posted' | 'skipped' | 'failed' | 'included';
+
+/** Distribution tracking for a single channel */
+export interface ChannelDistribution {
+  status: DistributionStatus;
+  publishedAt?: Date;
+  postedAt?: Date;
+  addedAt?: Date;
+  url?: string;
+  postId?: string;
+  postUrl?: string;
+  feedUrl?: string;
+  reason?: string;
+}
+
+/** Distribution tracking across all channels */
+export interface ArticleDistribution {
+  blog?: ChannelDistribution;
+  rss?: ChannelDistribution;
+  linkedin?: ChannelDistribution;
+}
 
 /** Content brief — the plan for an article before generation */
 export interface ContentBrief {
@@ -129,6 +152,9 @@ export interface ContentBrief {
   metaTitle?: string;
   metaDescription?: string;
   ogImage?: string;
+  distribution?: ArticleDistribution;  // Track where article has been sent
+  linkedInUrl?: string;           // LinkedIn post URL (legacy)
+  syndicatedAt?: Date;            // When syndicated (legacy)
 }
 
 /** Section within a content outline */
@@ -203,7 +229,9 @@ export type AdGroupTheme =
   | 'temporal'            // "cpa exam 2026"
   | 'price-sensitive'     // "affordable cpa review"
   | 'career'              // "cpa salary", "become a cpa"
-  | 'long-tail';          // "how to pass aud section cpa"
+  | 'long-tail'           // "how to pass aud section cpa"
+  | 'question-quality'    // "cpa questions with explanations"
+  | 'custom';             // AI-generated custom campaign
 
 /** SEM Campaign structure */
 export interface SEMCampaign {

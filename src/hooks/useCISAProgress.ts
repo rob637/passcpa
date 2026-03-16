@@ -6,6 +6,7 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
+import logger from '../utils/logger';
 import { useAuth } from './useAuth';
 import { CISASectionId } from '../courses/cisa/config';
 import { getPerformanceSummary, getWeakDomains, getAdaptiveState } from '../services/cisaAdaptiveEngine';
@@ -74,7 +75,7 @@ function loadStudyStreak(): StudyStreak {
     const stored = localStorage.getItem(STUDY_STREAK_KEY);
     if (stored) return JSON.parse(stored);
   } catch (e) {
-    console.error('Failed to load study streak:', e);
+    logger.error('Failed to load study streak:', e);
   }
   return { currentStreak: 0, lastStudyDate: null, longestStreak: 0 };
 }
@@ -87,7 +88,7 @@ function loadStudyLog(): StudyLog[] {
     const stored = localStorage.getItem(STUDY_LOG_KEY);
     if (stored) return JSON.parse(stored);
   } catch (e) {
-    console.error('Failed to load study log:', e);
+    logger.error('Failed to load study log:', e);
   }
   return [];
 }
@@ -100,7 +101,7 @@ function loadExamDate(): Date | null {
     const stored = localStorage.getItem(EXAM_DATE_KEY);
     if (stored) return new Date(stored);
   } catch (e) {
-    console.error('Failed to load exam date:', e);
+    logger.error('Failed to load exam date:', e);
   }
   return null;
 }
@@ -205,7 +206,7 @@ export function useCISAProgress() {
       setProgress(data);
       setError(null);
     } catch (err) {
-      console.error('Failed to load CISA progress:', err);
+      logger.error('Failed to load CISA progress:', err);
       setError(err instanceof Error ? err : new Error('Unknown error'));
     } finally {
       setLoading(false);

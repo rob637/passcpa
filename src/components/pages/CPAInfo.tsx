@@ -10,8 +10,15 @@ import {
   Clock,
   Award
 } from 'lucide-react';
+import { useSEO } from '../../hooks/useSEO';
 
 const CPAInfo = () => {
+  useSEO({
+    title: 'CPA Exam Guide 2026 | Format, Sections & Requirements',
+    description: 'Complete guide to the CPA exam: FAR, AUD, REG + discipline sections (BAR, ISC, TCP). Learn about exam format, passing scores, study time, and how to prepare.',
+    canonicalUrl: 'https://voraprep.com/cpa-exam-info',
+  });
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Header */}

@@ -138,14 +138,15 @@ function generateExam(
 // Component
 // ============================================
 
-const config: ExamSimulatorConfig<CIASectionId> = {
+import { useAuth } from '../../hooks/useAuth';
+
+const baseConfig: Omit<ExamSimulatorConfig<CIASectionId>, 'defaultSection'> = {
   courseId: 'cia',
   courseName: 'CIA',
   courseDescription: 'Practice with realistic exam conditions for the IIA Certified Internal Auditor exam',
   backPath: '/cia/dashboard',
   testingProvider: 'pearsonvue',
   sections: CIA_SECTIONS,
-  defaultSection: 'CIA1',
   modes: CIA_EXAM_MODES,
   defaultModeIndex: 2, // Quick Practice
   getModes: getExamModes, // Dynamic modes per part (Part 1: 125Q, Parts 2&3: 100Q)
@@ -155,5 +156,19 @@ const config: ExamSimulatorConfig<CIASectionId> = {
 };
 
 export default function CIAExamSimulatorNew() {
+  const { userProfile } = useAuth();
+  
+  // Use user's selected section, default to CIA1 if not set or invalid
+  const userSection = userProfile?.examSection;
+  const isValidSection = userSection === 'CIA1' || userSection === 'CIA2' || userSection === 'CIA3';
+  const defaultSection: CIASectionId = isValidSection ? userSection : 'CIA1';
+  
+  const config: ExamSimulatorConfig<CIASectionId> = {
+    ...baseConfig,
+    defaultSection,
+    // Always hide - user picks their part on dashboard, not in simulator (matches CPA behavior)
+    hideSectionSelector: true,
+  };
+  
   return <ExamSimulatorTemplate<CIASectionId> config={config} />;
 }

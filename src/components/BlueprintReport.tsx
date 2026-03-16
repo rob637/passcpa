@@ -9,6 +9,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import logger from '../utils/logger';
 import {
   X,
   Target,
@@ -129,7 +130,7 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
         
         setAreaPerformance(performance);
       } catch (error) {
-        console.error('Error loading blueprint data:', error);
+        logger.error('Error loading blueprint data:', error);
       }
       setLoading(false);
     };

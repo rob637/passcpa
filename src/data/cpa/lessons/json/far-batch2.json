@@ -1,0 +1,394 @@
+[
+  {
+    "id": "FAR-I-122",
+    "courseId": "cpa",
+    "section": "FAR",
+    "title": "FASB Conceptual Framework: Framework components",
+    "description": "This lesson explores the fundamental components of the FASB's Conceptual Framework, providing a foundation for understanding accounting standards and their application. It covers objectives, qualitative characteristics, and elements of financial statements.",
+    "order": 101,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "FASB Conceptual Framework",
+      "Framework components"
+    ],
+    "blueprintArea": "FAR-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The Conceptual Framework underpins all U.S. GAAP. While you won't be directly tested on reciting definitions, understanding its principles is crucial for applying accounting standards correctly and answering conceptual questions on the FAR exam. It provides a logical structure for resolving accounting issues, especially when specific guidance is lacking."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "The FASB Conceptual Framework is a coherent system of objectives and fundamentals that can lead to consistent standards and that prescribes the nature, function, and limits of financial accounting and reporting. It's not GAAP itself but serves as a guide for the FASB in setting standards and for practitioners in the absence of specific guidance.\n\nKey components include:\n*   **Objectives of Financial Reporting:** To provide financial information about the reporting entity that is useful to present and potential equity investors, lenders, and other creditors in making decisions about providing resources to the entity (ASC Topic 100).\n*   **Qualitative Characteristics of Useful Financial Information:** These are the attributes that make information useful to users. The two fundamental qualitative characteristics are:\n    *   **Relevance:** Information is relevant if it is capable of making a difference in the decisions made by users. It includes predictive value, confirmatory value (or both), and materiality. \n    *   **Faithful Representation:** Information must be complete, neutral, and free from error (to the extent possible). This ensures that the information accurately reflects the economic phenomena it purports to represent.\n*   **Enhancing Qualitative Characteristics:** These enhance the usefulness of information that is relevant and faithfully represented. They include comparability, verifiability, timeliness, and understandability.\n*   **Elements of Financial Statements:** These are the building blocks with which financial statements are constructed. They include assets, liabilities, equity, investments by owners, distributions to owners, comprehensive income, revenues, expenses, gains, and losses."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Let's dive deeper into some critical aspects.  **Materiality** is an entity-specific aspect of relevance. Information is material if omitting it or misstating it could influence decisions that users make on the basis of the reported financial information.  Think of it this way: a $100 error might be immaterial for a multi-billion dollar corporation but highly material for a small business.  **Comparability** enables users to identify similarities in and differences between two sets of economic phenomena. **Verifiability** means that independent measurers using the same methods would obtain similar results.  Direct verification, like counting cash, is preferable, but often indirect verification, such as verifying inventory using a costing method, is necessary. **Timeliness** means having information available to decision-makers in time to be capable of influencing their decisions. **Understandability** is enhanced when information is classified, characterized, and presented clearly and concisely. Users are assumed to have a reasonable knowledge of business and economic activities and a willingness to study the information with reasonable diligence.\n\nThe **elements of financial statements** define what is reported.  Assets are probable future economic benefits obtained or controlled by a particular entity as a result of past transactions or events. Liabilities are probable future sacrifices of economic benefits arising from present obligations of a particular entity to transfer assets or provide services to other entities in the future as a result of past transactions or events.  Comprehensive income includes all changes in equity during a period except those resulting from investments by owners and distributions to owners."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The exam frequently tests your understanding of the qualitative characteristics. Be prepared to identify which characteristic is being violated or supported in a given scenario. For example, a question might describe a company that delays reporting a significant loss to avoid impacting its stock price. This violates **neutrality** and **timeliness**.\n\nAnother common question type presents a scenario and asks you to identify the most appropriate element of financial statements being described (e.g., distinguishing between an asset and an expense). Pay close attention to the definitions, focusing on concepts like probable future economic benefit or sacrifice."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "Consider a company that uses an aggressive revenue recognition policy to inflate its reported earnings. This might involve recognizing revenue before it's fully earned or based on uncertain future events. Although the reported earnings might be 'relevant' in the short term (by influencing investor perception), they lack **faithful representation** because they aren't complete or free from error. This highlights the trade-off between relevance and faithful representation and the importance of ethical accounting practices."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• The Conceptual Framework guides standard-setting and practice.\n• Relevance and faithful representation are the fundamental qualitative characteristics.\n• Understand the enhancing qualitative characteristics: Comparability, Verifiability, Timeliness, Understandability\n• Know the definitions of the elements of financial statements (Assets, Liabilities, Equity, etc.)."
+        }
+      ]
+    }
+  },
+  {
+    "id": "FAR-I-123",
+    "courseId": "cpa",
+    "section": "FAR",
+    "title": "Fair value measurement: ASC 820 hierarchy",
+    "description": "This lesson explains the fair value measurement framework outlined in ASC 820, focusing on the fair value hierarchy, which prioritizes the inputs used to determine fair value. A strong grasp of this hierarchy is essential for various accounting applications.",
+    "order": 102,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Fair value measurement",
+      "ASC 820 hierarchy"
+    ],
+    "blueprintArea": "FAR-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Fair value is used extensively throughout GAAP, from valuing investments and derivatives to assessing impairment. Understanding the fair value hierarchy from ASC 820 is essential for determining and justifying fair value measurements. Expect to see questions about the appropriate level of the hierarchy to use in different scenarios."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "**Fair Value** is defined as the price that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date (ASC 820-10-20).\n\nThe core of ASC 820 is the **fair value hierarchy**, which prioritizes the inputs used to measure fair value. The hierarchy is divided into three levels:\n\n*   **Level 1:** Quoted prices (unadjusted) in active markets for identical assets or liabilities that the reporting entity can access at the measurement date. This is the most reliable evidence of fair value.\n*   **Level 2:** Inputs other than quoted prices included within Level 1 that are observable for the asset or liability, either directly or indirectly. Examples include quoted prices for similar assets or liabilities in active markets, quoted prices for identical or similar assets or liabilities in markets that are not active, or inputs derived principally from or corroborated by observable market data through correlation or other means.\n*   **Level 3:** Unobservable inputs for the asset or liability. Unobservable inputs are used to measure fair value to the extent that observable inputs are not available, thereby allowing for situations in which there is little, if any, market activity for the asset or liability at the measurement date. These inputs reflect the entity's own assumptions about what market participants would use in pricing the asset or liability based on the best information available in the circumstances.\n\nThe goal is to maximize the use of observable inputs (Levels 1 and 2) and minimize the use of unobservable inputs (Level 3)."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Let's break down each level with examples.\n\n**Level 1 Example:** Suppose a company holds publicly traded shares of Apple (AAPL). The closing price of AAPL on the New York Stock Exchange on the measurement date is readily available and represents a Level 1 input. No adjustments are needed if the company can access the exchange.\n\n**Level 2 Example:** A company holds a bond that isn't actively traded, but similar bonds issued by companies with comparable credit ratings are actively traded. The quoted prices of these similar bonds, adjusted for differences in credit risk, maturity, or other factors, would be considered Level 2 inputs. Another Level 2 input could be matrix pricing, which uses observable yield curves and other market data to estimate the fair value of a debt security.\n\n**Level 3 Example:** A company owns a private equity investment for which there is no active market and no similar investments traded in active markets. The company would have to develop its own assumptions about future cash flows, discount rates, and other factors that market participants would use to price the investment. These unobservable inputs might include management's projections, industry benchmarks, or internally developed models. Valuation techniques might include discounted cash flow analysis or option pricing models. Level 3 measurements require significant judgment and disclosure.\n\nIt is critical to note that the *hierarchy refers to the inputs,* not the valuation technique itself. For instance, even if you use a discounted cash flow model (a valuation technique), the input data will determine if it's Level 1, 2, or 3. If all the inputs are based on management's internal data, it is Level 3."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The FAR exam will test your ability to classify inputs into the correct level of the hierarchy. Questions often provide a scenario and ask you to identify the level of input being described or to determine which level is most appropriate given the available information. \n\nCommon exam question patterns include:\n*   Identifying the appropriate level when given information about market activity (active vs. inactive markets).\n*   Distinguishing between observable and unobservable inputs.\n*   Understanding that the availability of Level 1 inputs should always be prioritized.\n*   Knowing that Level 3 requires more disclosure and justification."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "A company needs to determine the fair value of its investment property. There are no direct comparable sales in the area. However, the company is able to obtain recent sales data for similar properties in nearby cities, adjusting for location and property-specific characteristics. In addition, they use expert opinions on potential rental income and operating expenses. The sales data from nearby cities (adjusted) is Level 2, and the internal analysis of operating expenses and rental income is Level 3. The overall valuation, therefore, is likely also considered Level 3 because of the usage of unobservable inputs that are significant to the measurement."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• Fair value is the price to sell an asset or transfer a liability in an orderly transaction.\n• The fair value hierarchy prioritizes inputs: Level 1 (quoted prices), Level 2 (observable inputs), Level 3 (unobservable inputs).\n• Maximize the use of observable inputs (Levels 1 & 2) whenever possible.\n• Level 3 measurements require significant judgment and must be thoroughly documented."
+        }
+      ]
+    }
+  },
+  {
+    "id": "FAR-I-124",
+    "courseId": "cpa",
+    "section": "FAR",
+    "title": "Standard-setting process: FASB and GASB role",
+    "description": "This lesson covers the structures and processes employed by the FASB and GASB in establishing accounting standards. Understanding these processes is critical for interpreting and applying accounting guidance and doing well on the FAR exam.",
+    "order": 103,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Standard-setting process",
+      "FASB and GASB role"
+    ],
+    "blueprintArea": "FAR-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The FASB and GASB dictate how we prepare financial statements. Understanding their roles and processes is crucial for compliance and for answering conceptual and application-based questions on the FAR exam. You'll need to know which entity sets standards for which organizations."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "The **Financial Accounting Standards Board (FASB)** is responsible for establishing and improving accounting standards for *U.S. GAAP*, primarily used by public and private companies and not-for-profit organizations. The **Governmental Accounting Standards Board (GASB)** sets accounting and financial reporting standards for *state and local governments* in the United States. Both boards operate under the oversight of the **Financial Accounting Foundation (FAF)**.  \n\nKey differences between the two include:\n*   **Jurisdiction:** FASB – private sector and NFP. GASB – state and local governments.\n*   **Focus:** FASB standards often emphasize decision-usefulness for investors. GASB standards consider the unique needs of governmental stakeholders, including taxpayers and legislators.\n*   **Conceptual Framework:** While both have conceptual frameworks, GASB's emphasizes accountability and interperiod equity (fairness across generations of taxpayers).\n*   **Funding:** While both are supported by the FAF, GASB also receives significant funding from governmental sources."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "The **FASB standard-setting process** typically involves the following steps:\n\n1.  **Identification of an Accounting Issue:** This can arise from various sources, including regulatory requests, industry practices, or recommendations from constituents.\n2.  **Decision to Add Project to Agenda:** The FASB decides whether to address the issue based on its significance and the likelihood of developing a feasible solution.\n3.  **Preliminary Research:** The FASB staff conducts thorough research to understand the issue and potential solutions.\n4.  **Issuance of a Discussion Paper (Optional):** This paper presents various views on the issue and solicits feedback from constituents. It is not always required.\n5.  **Issuance of an Exposure Draft:** This is a proposed standard that outlines the FASB's tentative decisions and requests public comment. This is mandatory.\n6.  **Public Hearings (Optional):** The FASB may hold public hearings to gather additional input from stakeholders.\n7.  **Analysis of Comment Letters and Other Input:** The FASB analyzes all feedback received and considers it in finalizing the standard.\n8.  **Issuance of an Accounting Standards Update (ASU):** This document contains the final standard and specifies its effective date. An ASU amends the Accounting Standards Codification.\n\nThe **GASB standard-setting process** mirrors the FASB's in many ways, but with adaptations for the governmental context. It also involves identifying issues, conducting research, issuing exposure drafts, and analyzing feedback. However, GASB's process places a greater emphasis on consulting with governmental stakeholders. For instance, GASB will consider unique aspects of budgeting and legislative oversight relevant in the government sector."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The FAR exam often tests your understanding of:\n\n*   **Which entity sets standards for specific organizations:** Be able to differentiate between FASB's and GASB's jurisdictions. For example, a question might ask which board sets standards for a state university (GASB).\n*   **The stages of the standard-setting process:** Know the general order of the steps (issue identification, research, exposure draft, final standard). Questions may present a scenario and ask which step is next.\n*   **The influence of the FAF:** Recognize the FAF's oversight role of both FASB and GASB.\n*   **Conceptual framework differences:** Grasp the distinctions in underlying principles, like GASB's focus on accountability."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "Imagine a new type of cryptocurrency emerges, and companies begin holding it as an investment. The FASB identifies this as a potential issue because current accounting standards don't specifically address cryptocurrency. The FASB staff conducts research, including how companies are accounting for crypto currently. They issue an Exposure Draft proposing guidance on valuing and reporting cryptocurrency holdings. Public companies and accounting firms submit comment letters raising concerns about the proposed measurement method. The FASB reviews the comments and issues an ASU that clarifies the accounting treatment of crypto assets. This ASU is then incorporated into the Accounting Standards Codification."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "•   FASB sets standards for private companies, NFP, and certain smaller governmental entities.\n•   GASB sets standards for state and local governments.\n•   The FAF oversees both FASB and GASB.\n•   Know the general steps in the standard-setting process for both boards.\n•   Understand the conceptual framework differences."
+        }
+      ]
+    }
+  },
+  {
+    "id": "FAR-I-125",
+    "courseId": "cpa",
+    "section": "FAR",
+    "title": "Financial statement presentation: SEC reporting requirements",
+    "description": "This lesson examines the SEC's role in regulating financial reporting, focusing on the forms required and the specific presentation rules for financial statements. Understanding SEC reporting is vital for candidates pursuing careers in public accounting and for correctly answering related FAR questions.",
+    "order": 104,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Financial statement presentation",
+      "SEC reporting requirements"
+    ],
+    "blueprintArea": "FAR-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "If you plan to work in public accounting, you'll likely deal with SEC reporting requirements. Understanding these rules is critical for audits of public companies. The FAR exam assesses your knowledge of required forms and specific presentation rules."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "The **Securities and Exchange Commission (SEC)** is a U.S. government agency responsible for protecting investors, maintaining fair, orderly, and efficient markets, and facilitating capital formation. Public companies in the U.S. are required to file various reports with the SEC, including:\n\n*   **Form 10-K:** Annual report that provides a comprehensive overview of the company's business and financial performance.\n*   **Form 10-Q:** Quarterly report that updates the information provided in the 10-K.\n*   **Form 8-K:** Current report used to disclose significant events that could be of interest to investors, such as mergers, acquisitions, bankruptcies, or changes in management.\n*   **Proxy Statement (Form DEF 14A):** Used to solicit shareholder votes on various matters, such as the election of directors or approval of executive compensation.\n\nThese reports must be prepared in accordance with *U.S. GAAP* and *SEC regulations*. The SEC has the authority to enforce these regulations and can impose penalties for non-compliance."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Let's delve into the key SEC forms:\n\n*   **Form 10-K:** This annual report provides a detailed picture of a company's financial health. Beyond the basic financial statements (balance sheet, income statement, statement of cash flows, and statement of changes in equity), it includes Management's Discussion and Analysis of Financial Condition and Results of Operations (MD&A). The MD&A provides management's perspective on the company's performance, risks, and future prospects. The 10-K must be audited by an independent registered public accounting firm.\n*   **Form 10-Q:** Filed quarterly, the 10-Q offers a more frequent update on a company's performance. It includes unaudited financial statements and MD&A, though with less detail than the 10-K. Selected footnote disclosures are also included. Because it is unaudited, it is subject to review (but not audit) by an independent registered public accounting firm.\n*   **Form 8-K:** This \"current report\" is used to disclose material events promptly. Triggering events include changes in control of the company, acquisition or disposition of assets, bankruptcy or receivership, changes in the company's certifying accountant, and resignations of directors. The form must be filed within four business days of the event.\n*   **Proxy Statement (Form DEF 14A):** This document is distributed to shareholders before annual or special meetings. It contains information about matters to be voted on, including director elections and executive compensation. It allows shareholders to make informed decisions when exercising their voting rights.\n\nThe **Regulation S-X** contains the SEC's rules for the form and content of financial statements filed with the SEC. It prescribes specific requirements for disclosures, such as segment reporting, related party transactions, and earnings per share. **Regulation S-K** provides instructions for filing reports and registration statements."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "Expect the FAR exam to test your understanding of:\n\n*   **The purpose and content of different SEC forms (10-K, 10-Q, 8-K, DEF 14A):** You should be able to match a form to its purpose and the type of information it contains. For instance, knowing that the 8-K is used for disclosing significant events.\n*   **The timing of SEC filings:** You should know the filing deadlines for the 10-K and 10-Q. You also should be aware of the 8-K's accelerated timeline for disclosing material events.\n*   **The role of the SEC in enforcing accounting standards:** The SEC can bring enforcement actions against companies that violate accounting rules.\n*   **The requirements of Regulations S-X and S-K**: You should understand that the SEC requires that financial statements of public companies be prepared in accordance with GAAP and regulations S-X and S-K."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "A publicly traded company, Acme Corp, discovers a material weakness in its internal controls over financial reporting. This is a significant event that could affect investors. Acme Corp is required to file a Form 8-K within four business days to disclose the material weakness. The 8-K must describe the nature of the material weakness and management's plan to remediate it. Later, when Acme files its Form 10-K, the MD&A section will further elaborate on the material weakness and its impact on the company's financial results. Shareholders will also receive a proxy statement prior to the annual meeting detailing the compensation of the executives and providing notice of director elections."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "•   The SEC regulates financial reporting for public companies.\n•   Key SEC forms include 10-K, 10-Q, 8-K, and DEF 14A.\n•   Form 10-K is the annual report, and Form 10-Q is the quarterly report.\n•   Form 8-K discloses significant events.\n•   Regulation S-X dictates the form and content of financial statements, and Regulation S-K provides instructions for filings."
+        }
+      ]
+    }
+  },
+  {
+    "id": "FAR-IV-126",
+    "courseId": "cpa",
+    "section": "FAR",
+    "title": "Government-wide financial statements: GASB 34 requirements",
+    "description": "This lesson explores the government-wide financial statements required by GASB 34, focusing on their purpose, content, and how they differ from fund financial statements. Understanding these statements is critical for assessing a government's overall financial health.",
+    "order": 105,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Government-wide financial statements",
+      "GASB 34 requirements"
+    ],
+    "blueprintArea": "FAR-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Government-wide financial statements provide a broad overview of a government's finances, much like a consolidated income statement and balance sheet for a corporation. These statements are heavily tested on the FAR exam because they provide key insights into a government's long-term financial health and sustainability. Understanding how these statements are prepared is crucial."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "GASB 34, *Basic Financial Statements—and Management’s Discussion and Analysis—for State and Local Governments*, revolutionized governmental financial reporting.  The core objective of government-wide financial statements is to provide a **long-term view** of the government as a whole, focusing on its **economic resources measurement focus** and **accrual basis of accounting**. This is a key departure from the fund-level statements. \n\nHere's a breakdown:\n\n*   **Economic Resources Measurement Focus:** This means all economic resources (assets) and obligations (liabilities) are measured and reported, including capital assets and long-term debt.\n*   **Accrual Basis of Accounting:**  Revenues are recognized when earned, and expenses are recognized when incurred, regardless of when cash changes hands.  This contrasts with the modified accrual basis used for governmental funds.\n*   **Two Primary Statements:** The government-wide financial statements consist of:\n    *   **Statement of Net Position:** Similar to a balance sheet, it reports all assets, liabilities, and net position (assets minus liabilities).\n    *   **Statement of Activities:** Similar to an income statement, it reports revenues and expenses, resulting in a change in net position.\n\nUnlike fund financial statements, the government-wide financial statements consolidate all governmental activities, focusing on the overall financial position and results of operations of the government entity."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Let's delve deeper into the two statements:\n\n*   **Statement of Net Position:**  Net position is reported in three categories:\n    *   **Net Investment in Capital Assets:**  This includes capital assets (e.g., land, buildings, equipment) less accumulated depreciation and any related debt used to acquire those assets. For example, if a city hall is valued at $10 million and there's $2 million in outstanding debt used to build it, the net investment in capital assets is $8 million.\n    *   **Restricted:** This represents resources that are restricted for a specific purpose, either externally (e.g., by grantors or creditors) or internally (e.g., by law or enabling legislation).  For example, a grant received specifically for road repairs would be classified as restricted.\n    *   **Unrestricted:** This is the remaining net position that is not restricted or invested in capital assets.\n\n*   **Statement of Activities:** This statement uses a **program approach** to report revenues and expenses. It shows the direct expenses of each function or program of the government (e.g., public safety, education, health) and the program revenues directly associated with those functions. Direct expenses are those specifically associated with a service, program, or department and are reduced by program revenues.  Program revenues include:\n    *   **Charges for Services:** Fees charged to customers for services provided (e.g., water bills, park entrance fees).\n    *   **Operating Grants and Contributions:** Grants and contributions restricted for operating purposes.\n    *   **Capital Grants and Contributions:** Grants and contributions restricted for capital purposes. Capital grants and contributions will not be reported in government-wide financial statements until they are spent on capital assets, at which point the revenue is realized.\n\nGeneral revenues (e.g., property taxes, sales taxes) are not directly linked to specific functions and are reported separately \"below the line\" after the total program revenues and expenses. The change in net position is the difference between total revenues (program and general) and total expenses."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The FAR exam often tests your understanding of the differences between government-wide and fund financial statements. Be prepared to:\n\n*   **Identify the measurement focus and basis of accounting used in each type of statement.** Government-wide uses economic resources and accrual. Governmental funds use current financial resources and modified accrual.\n*   **Classify items as either program revenues or general revenues.**  Remember, program revenues are directly linked to a specific function.\n*   **Calculate net position categories (net investment in capital assets, restricted, unrestricted).**\n*   **Prepare journal entries related to government-wide activities** (e.g., recognizing depreciation expense).\n\nCommon question patterns include:\n\n*   Multiple-choice questions asking you to identify which statement (government-wide or fund) a specific item would appear on.\n*   Simulations requiring you to prepare or analyze a Statement of Net Position or Statement of Activities."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "The City of Anytown has the following information for the year ended December 31, 2024:\n\n*   General fund total revenues using modified accrual: $5,000,000.\n*   Depreciation Expense: $500,000.\n*   Capital outlay: $2,000,000.\n*   Salaries earned but unpaid at YE: $50,000.\n\nIn preparing the Government-Wide Statements, what adjustments need to be made?\n\n*   Depreciation Expense must be recorded, which would reduce total net position.\n*   Capital Outlay needs to be capitalized. The capital asset should be recorded on the Statement of Net Position at historical cost. The related depreciation will be expensed over the asset's useful life. At the fund level, the capital outlay is an expenditure. At the government-wide level, the capital outlay increases assets (i.e. capital assets) and decreases cash.\n*   The salaries earned but unpaid would be expensed as a liability. At the fund level, the salaries may not be expensed if they are not paid within 60 days. At the government-wide level, they are expensed when incurred."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• Government-wide financial statements provide a long-term view of the government as a whole.\n• They use the economic resources measurement focus and accrual basis of accounting.\n• The two primary statements are the Statement of Net Position and the Statement of Activities.\n• Net position is classified into net investment in capital assets, restricted, and unrestricted.\n• The Statement of Activities uses a program approach to report revenues and expenses."
+        }
+      ]
+    }
+  },
+  {
+    "id": "FAR-IV-127",
+    "courseId": "cpa",
+    "section": "FAR",
+    "title": "Fund accounting: Fund types and basis",
+    "description": "This lesson covers the fundamentals of fund accounting, including the different fund types used by state and local governments and the basis of accounting applied to each. A solid understanding of fund accounting is essential for navigating the FAR exam.",
+    "order": 106,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Fund accounting",
+      "Fund types and basis"
+    ],
+    "blueprintArea": "FAR-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Fund accounting is a unique system used by governmental and nonprofit entities to track resources restricted for specific purposes.  The FAR exam tests this heavily, as it's fundamentally different from corporate accounting. Mastering the different fund types and their accounting rules is critical for success."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "**Fund accounting** is a system used by governmental and nonprofit organizations to track and segregate resources that have specific restrictions or designations.  A **fund** is a self-balancing set of accounts used to record financial resources and related liabilities and residual equity. The main reason for fund accounting is to ensure that resources are used only for their intended purpose, enhancing accountability and transparency. GASB standards provide guidance on the specific fund types and how they should be used.\n\nGovernmental accounting uses three broad fund categories:\n\n*   **Governmental Funds:** Account for the basic governmental services. They use the **current financial resources measurement focus** and the **modified accrual basis of accounting**.\n*   **Proprietary Funds:** Account for business-like activities. They use the **economic resources measurement focus** and the **accrual basis of accounting**.\n*   **Fiduciary Funds:** Account for assets held by the government in a trustee or agency capacity for others.  They use the **economic resources measurement focus** and the **accrual basis of accounting**. It is crucial to remember that these are *not* included in government-wide statements."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Let's break down each fund category in more detail:\n\n*   **Governmental Funds:** These funds focus on short-term financial resources.  The modified accrual basis of accounting is used, which means revenues are recognized when measurable and available (generally collectible within 60 days of year-end), and expenditures are recognized when the liability is incurred, except for debt service and certain compensated absences, which are recognized when due.\n\n    *   **General Fund:** Accounts for all financial resources not accounted for in other funds. It is the primary operating fund of the government (e.g. day-to-day operations, police, fire). Every government has one general fund.\n    *   **Special Revenue Funds:** Account for the proceeds of specific revenue sources that are legally restricted or committed to expenditure for specific purposes (other than debt service or capital projects). For example, a motor fuel tax dedicated to road maintenance.\n    *   **Debt Service Funds:** Account for the accumulation of resources for, and the payment of, general long-term debt principal and interest.\n    *   **Capital Projects Funds:** Account for financial resources used for the acquisition or construction of major capital facilities (other than those financed by proprietary or fiduciary funds).\n    *   **Permanent Funds:** Account for resources that are legally restricted to the extent that only earnings, and not principal, may be used for purposes that support the government's programs.\n\n*   **Proprietary Funds:** These funds operate like private-sector businesses.\n\n    *   **Enterprise Funds:** Account for activities that provide goods or services to external parties for a fee (e.g., water utility, public transportation).  If a government has the *power* to charge fees that are sufficient to recover its costs, it must use an enterprise fund. If this condition is not met, they may choose to use an enterprise fund, or account for such activities within the General Fund.\n    *   **Internal Service Funds:** Account for activities that provide goods or services to other departments or agencies within the government on a cost-reimbursement basis (e.g., a central motor pool, printing services).\n\n*   **Fiduciary Funds:** These funds hold assets in a trust or agency capacity for others.\n\n    *   **Pension (and Other Employee Benefit) Trust Funds:** Account for resources held in trust for the benefit of employees as part of a pension or other employee benefit plan.\n    *   **Investment Trust Funds:** Account for external investment pools.\n    *   **Private-Purpose Trust Funds:** Account for all other trust arrangements where the principal and income benefit individuals, private organizations, or other governments.\n    *   **Custodial Funds:** Account for resources held by the government as a custodian for individuals, private organizations, or other governments (e.g., taxes collected for another government entity)."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The FAR exam frequently tests your knowledge of fund types and their appropriate uses. Be ready to:\n\n*   **Identify the correct fund type for a given scenario.**  Understand the purpose of each fund and the criteria for its use.\n*   **Apply the modified accrual basis of accounting to governmental funds.**  Know when revenues and expenditures are recognized.\n*   **Differentiate between governmental, proprietary, and fiduciary funds.**\n*   **Understand the measurement focus and basis of accounting for each fund type.**\n\nTypical question patterns include:\n\n*   Multiple-choice questions presenting a scenario and asking you to select the appropriate fund type to use.\n*   Journal entry simulations requiring you to record transactions in governmental funds using the modified accrual basis."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "A city collects property taxes of $1,000,000. $900,000 is expected to be collected within 60 days of the fiscal year-end, and the remaining $100,000 is expected to be collected later than 60 days after the fiscal year-end. How would this be recorded in the General Fund?\n\nUnder the modified accrual basis, revenue is recognized when it is both measurable and available. 'Available' generally means collectible within 60 days of the year-end. Therefore, only $900,000 would be recognized as revenue in the General Fund. The $100,000 not expected to be collected within 60 days would be deferred and recognized as revenue in a subsequent period when it becomes available."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• Fund accounting is used to track resources with specific restrictions.\n• Three categories of funds: governmental, proprietary, and fiduciary.\n• Governmental funds use the current financial resources measurement focus and modified accrual basis.\n• Proprietary and fiduciary funds use the economic resources measurement focus and accrual basis.\n• Understand the specific purpose of each fund type within each category."
+        }
+      ]
+    }
+  },
+  {
+    "id": "FAR-V-128",
+    "courseId": "cpa",
+    "section": "FAR",
+    "title": "NFP financial reporting: Statement of Financial Position",
+    "description": "This lesson covers the presentation requirements of the Statement of Financial Position (Balance Sheet) for Not-for-Profit (NFP) organizations, focusing on the classification of net assets and required disclosures under ASC 958.",
+    "order": 107,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "NFP financial reporting",
+      "Statement of Financial Position"
+    ],
+    "blueprintArea": "FAR-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Understanding the NFP Statement of Financial Position is critical because it is a core financial statement frequently tested on the FAR exam. Knowing how to classify net assets and understand the key disclosures will help you answer conceptual and computational questions accurately."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "The Statement of Financial Position for NFPs presents the organization's assets, liabilities, and net assets. Unlike for-profit entities, NFPs do not present equity; instead, they classify resources into **net assets**.  ASC 958 defines two classes of net assets:\n\n*   **Net Assets Without Donor Restrictions:** These are resources available for the general use of the organization. The governing board controls the use of these assets. They may be designated by the board for specific purposes (e.g., a building fund) but are *not* subject to external donor restrictions.\n*   **Net Assets With Donor Restrictions:** These net assets are subject to donor-imposed restrictions that limit the organization's ability to use them. These restrictions can be:\n    *   **Time Restrictions:**  Funds available for use after a specified date or event.\n    *   **Purpose Restrictions:** Funds that can only be used for a specific program or activity.\n    *   **Permanent Restrictions:** Funds that must be maintained in perpetuity (e.g., endowments), but the income earned may be used for a specific purpose or general support. It is important to understand the differences between these restrictions because of their impact on the financial statements."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "The distinction between net assets with and without donor restrictions is crucial. Consider these examples:\n\n*   **Example 1: Unrestricted Donation:** A donor gives $10,000 to a local soup kitchen without specifying how it should be used. This is classified as net assets *without* donor restrictions.\n*   **Example 2: Time-Restricted Donation:** A donor pledges $50,000 to a university, stipulating that the funds are to be used to establish a scholarship program starting in five years. This pledge is initially recorded as net assets *with* donor restrictions (time restriction).\n*   **Example 3: Purpose-Restricted Donation:** A donor gives $100,000 to a hospital, stating that the funds must be used for cancer research. This is classified as net assets *with* donor restrictions (purpose restriction).\n*   **Example 4: Endowment:** A donor contributes $1,000,000 to an endowment fund. The principal must be maintained indefinitely, but the investment income can be used for educational programs. This is classified as net assets *with* donor restrictions (permanent restriction). The investment income is reported either as with or without restrictions, depending on donor stipulation, or absence thereof. \n\nWhen a donor restriction is satisfied (e.g., the time restriction lapses, the purpose restriction is met), the resources are released from restriction and reclassified from net assets with donor restrictions to net assets without donor restrictions. This release is reported on the Statement of Activities.\n\nThe statement should also provide information regarding liquidity, which may be presented on the face of the statement of financial position (e.g., classifying assets as current and non-current) or in the notes to the financial statements.  Disclosures related to the nature and amounts of different types of restrictions on net assets are also required."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The FAR exam commonly tests your understanding of:\n\n*   **Distinguishing between net assets with and without donor restrictions.** Expect multiple-choice questions asking you to classify donations or pledges based on the nature of the restrictions.\n*   **Understanding the impact of donor restrictions on the Statement of Financial Position.**  You might be asked how a specific donation affects the balances of the different net asset classifications.\n*   **Identifying the proper presentation of various assets and liabilities.** The exam may require you to determine if an asset should be classified as current or non-current or how to treat certain types of liabilities.\n*   **Knowing when a restriction is considered satisfied.** Expect questions related to release from restriction and reclassification from net assets with donor restrictions to net assets without donor restrictions.  Pay close attention to trigger events like the passage of time or completion of a specific project."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "A local charity receives the following:\n\n*   $20,000 unrestricted cash donation.\n*   $50,000 pledge to build a new playground, payable in 2 years.\n*   $100,000 donation to establish an endowment fund, with income to be used for scholarships.\n\nOn the Statement of Financial Position, the charity would report:\n\n*   **Net Assets Without Donor Restrictions:** Increase of $20,000 (cash donation).\n*   **Net Assets With Donor Restrictions:** Increase of $50,000 (pledge, purpose and time restricted) + $100,000 (endowment, permanently restricted).\n\nThe cash would be classified as a current asset, and the pledge would likely be classified as a long-term asset (net of an appropriate discount to reflect the present value of the future cash flows). In the notes to the financial statements, the charity would disclose the nature and amounts of the restrictions on net assets."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "•\tNFP Statement of Financial Position presents assets, liabilities, and net assets.\n•\tNet assets are classified as with or without donor restrictions.\n•\tDonor restrictions can be time, purpose, or permanently restricted.\n•\tRestrictions are released when the stipulated conditions are met.\n•\tUnderstand the disclosures required related to donor restrictions and liquidity."
+        }
+      ]
+    }
+  },
+  {
+    "id": "FAR-V-129",
+    "courseId": "cpa",
+    "section": "FAR",
+    "title": "Contributions and pledges: Recognition and measurement",
+    "description": "This lesson focuses on the accounting for contributions and pledges received by Not-for-Profit (NFP) organizations, including the criteria for recognition and the measurement of these items under ASC 958.",
+    "order": 108,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Contributions and pledges",
+      "Recognition and measurement"
+    ],
+    "blueprintArea": "FAR-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Contributions and pledges are often a primary source of revenue for NFPs. Accurately accounting for these items is crucial for proper financial reporting. The FAR exam frequently tests your understanding of contribution revenue recognition, differentiating conditional versus unconditional promises, and understanding when in-kind contributions should be recognized."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "ASC 958 provides guidance on accounting for contributions received by NFPs. A **contribution** is defined as an unconditional transfer of cash or other assets to an entity in a voluntary nonreciprocal transfer.  Key considerations include:\n\n*   **Unconditional vs. Conditional Promises to Give:** A promise to give (pledge) can be either conditional or unconditional. An **unconditional promise** is recognized as revenue when the promise is received. A **conditional promise** depends on the occurrence of a future and uncertain event to bind the promisor. Conditional promises are *not* recognized as revenue until the condition is substantially met.\n*   **Distinguishing Contributions from Exchange Transactions:** Contributions are nonreciprocal transactions, while exchange transactions involve a direct benefit to the donor (e.g., membership dues that provide tangible benefits).\n*   **Fair Value Measurement:** Contributions of assets other than cash are generally measured at fair value at the date of the contribution. \n*   **In-Kind Contributions:** These are noncash contributions such as services or tangible assets.  They are recognized as revenue and expense (or asset) if they:\n    *   Create or enhance nonfinancial assets, OR\n    *   Require specialized skills, are provided by individuals possessing those skills, and would typically need to be purchased if not provided by donation. This is commonly referred to as SOME (Specialized skills, Otherwise needed, Measurable, Easily at fair value)."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Let's analyze different scenarios to understand the recognition and measurement of contributions and pledges:\n\n*   **Example 1: Unconditional Pledge:** A donor pledges $5,000 to a museum, payable in one year. This is an unconditional pledge and is recognized as contribution revenue immediately. The museum would also record a receivable for $5,000 and classify it as net assets with donor restrictions (time restriction).\n*   **Example 2: Conditional Pledge:** A donor promises $10,000 to a university if the university raises an additional $50,000 from other donors by the end of the year. This is a conditional promise and is *not* recognized as revenue until the matching requirement is met.\n*   **Example 3: In-Kind Contribution of Services:** A lawyer donates 20 hours of their time to provide free legal services to a charity. If these services require specialized skills and would have been purchased if not donated, they are recognized as revenue and expense at their fair value (the lawyer's normal hourly rate).\n*   **Example 4: In-Kind Contribution of Artwork:** An artist donates a painting to a museum. The museum would recognize the donation at the fair value of the painting at the date of the contribution, which would be an asset and an increase to revenue.\n*   **Example 5: Discounting Pledges:** If a pledge is expected to be collected over several years, the present value of future cash flows is typically recorded, using an appropriate discount rate. The difference between the pledge amount and the present value is recorded as a discount, which is amortized over the collection period. \n\nDistinguishing exchange transactions from contributions is also important. For instance, if an NFP provides a tangible benefit (e.g., membership to a museum) in exchange for membership dues, the transaction is considered an exchange transaction, and revenue is recognized when the benefit is provided, not when the cash is received."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The FAR exam frequently tests your ability to:\n\n*   **Differentiate between conditional and unconditional promises.** Expect scenarios where you need to determine if a pledge should be recognized immediately or only when a condition is met.\n*   **Account for in-kind contributions.** Be prepared to assess whether donated services meet the criteria for recognition. Remember the SOME acronym – Specialized Skills, Otherwise Needed, Measurable, Easily Measured at Fair Value.\n*   **Calculate the fair value of contributions and pledges.** You may need to apply present value techniques to determine the fair value of long-term pledges.\n*   **Distinguish between contributions and exchange transactions.** Look for situations where the donor receives a direct benefit in return for their contribution.\n*   **Understand the impact of donor restrictions on revenue recognition.** The timing of revenue recognition can be affected by donor-imposed restrictions (time, purpose) even for unconditional promises. The exam may focus on scenarios where revenue is initially classified as net assets *with* donor restrictions and later reclassified as net assets *without* donor restrictions when the restriction is met."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "A local NFP receives the following:\n\n*   $15,000 unconditional pledge, payable in one year.\n*   $25,000 promise from a foundation, contingent upon the NFP securing matching funds of $25,000 from other donors.\n*   Volunteer accountant donates 40 hours of services at $75/hour. The accountant's skills are specialized and the NFP would have had to hire an accountant otherwise.\n\nThe NFP would record:\n\n*   Contribution revenue of $15,000 for the unconditional pledge.\n*   No revenue for the conditional promise until the matching funds are secured.\n*   Contribution revenue and expense of $3,000 (40 hours * $75/hour) for the in-kind services provided by the accountant."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "•\tContributions are unconditional transfers to an NFP.\n•\tUnconditional promises are recognized immediately; conditional promises are recognized when the condition is met.\n•\tContributions are measured at fair value.\n•\tIn-kind contributions of services are recognized if they create/enhance assets or require specialized skills, are otherwise needed, are measurable, and easily measured at fair value (SOME).\n•\tDistinguish contributions from exchange transactions."
+        }
+      ]
+    }
+  }
+]

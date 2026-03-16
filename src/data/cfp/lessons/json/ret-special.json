@@ -1,0 +1,933 @@
+[
+  {
+    "id": "CFP-RET-L017",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Inherited IRAs and SECURE Act Rules",
+    "description": "Apply the 10-year rule for inherited IRAs",
+    "order": 17,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Apply the 10-year rule for inherited IRAs",
+      "Identify eligible designated beneficiaries",
+      "Calculate RMDs for inherited accounts",
+      "Compare pre-SECURE and post-SECURE inheritance rules"
+    ],
+    "blueprintArea": "RET-5",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "The SECURE Act (2019) dramatically changed inherited IRA rules, eliminating the \"stretch IRA\" for most beneficiaries."
+        },
+        {
+          "title": "Pre-SECURE: Stretch IRA",
+          "type": "text",
+          "content": "Before SECURE Act, any designated beneficiary could take RMDs over their own life expectancy, stretching distributions over decades. Example: 30-year-old inheriting IRA could stretch over 53+ years\u2014tremendous tax-deferred growth."
+        },
+        {
+          "title": "SECURE Act: The 10-Year Rule",
+          "type": "callout",
+          "content": "Most non-spouse beneficiaries must now completely distribute the inherited IRA within 10 years. No more \"stretch\" over life expectancy."
+        },
+        {
+          "title": "Three Types of Beneficiaries",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Who",
+            "Rule"
+          ],
+          "rows": [
+            [
+              "Eligible Designated Beneficiary (EDB)",
+              "5 categories (see below)",
+              "Stretch (life expectancy) OR 10-year"
+            ],
+            [
+              "Designated Beneficiary",
+              "Any other individual",
+              "10-year rule"
+            ],
+            [
+              "Non-Designated Beneficiary",
+              "Estate, charity, certain trusts",
+              "5-year rule"
+            ]
+          ]
+        },
+        {
+          "title": "Five Eligible Designated Beneficiaries",
+          "type": "list",
+          "items": [
+            "1. Surviving spouse - can treat as own",
+            "2. Minor child of deceased - stretch until majority, then 10-year (owner's child only, not grandchild)",
+            "3. Disabled individual - IRS definition",
+            "4. Chronically ill individual - requires certification",
+            "5. Not more than 10 years younger - siblings, elderly parents"
+          ]
+        },
+        {
+          "title": "10-Year Rule Details",
+          "type": "table",
+          "headers": [
+            "If Owner Died",
+            "Rule"
+          ],
+          "rows": [
+            [
+              "Before RMD age",
+              "Distribute by end of year 10 (any timing)"
+            ],
+            [
+              "After RMD age",
+              "Annual RMDs required + distribute by year 10"
+            ]
+          ]
+        },
+        {
+          "title": "Exam Tip",
+          "type": "warning",
+          "content": "IRS clarified: If owner died AFTER RMD age, beneficiary must take annual RMDs AND deplete by year 10. If owner died BEFORE RMD age, no annual RMDs required\u2014just empty by year 10."
+        },
+        {
+          "title": "Surviving Spouse Options",
+          "type": "table",
+          "headers": [
+            "Option",
+            "How It Works",
+            "Best When"
+          ],
+          "rows": [
+            [
+              "Treat as own IRA",
+              "Roll to own or elect as own",
+              "Under 59\u00bd and won't need funds"
+            ],
+            [
+              "Remain beneficiary",
+              "Keep as inherited IRA",
+              "Need funds before 59\u00bd (no 10% penalty)"
+            ],
+            [
+              "10-year rule",
+              "Deplete within 10 years",
+              "Want rapid distribution"
+            ]
+          ]
+        },
+        {
+          "title": "Inherited Roth IRAs",
+          "type": "text",
+          "content": "Same 10-year rule applies. Key difference: Distributions are tax-free (if original 5-year rule met), no annual RMDs required during 10 years. Best strategy: Wait until year 10 to maximize tax-free growth."
+        },
+        {
+          "title": "Trusts as Beneficiaries",
+          "type": "text",
+          "content": "See-Through Trust requirements: Valid under state law, irrevocable (or becomes so at death), beneficiaries identifiable, documentation provided. Two types: Conduit trust (must distribute all RMDs) and Accumulation trust (can accumulate, often 10-year rule)."
+        },
+        {
+          "title": "Planning Strategies",
+          "type": "table",
+          "headers": [
+            "For Account Owners",
+            "For Beneficiaries"
+          ],
+          "rows": [
+            [
+              "Roth conversions (tax-free inheritance)",
+              "Split accounts quickly (preserve treatment)"
+            ],
+            [
+              "Name EDBs (preserve stretch)",
+              "Time distributions (manage income)"
+            ],
+            [
+              "Consider charities (tax-free)",
+              "Consider state taxes"
+            ],
+            [
+              "Life insurance (replace tax burden)",
+              "Maximize tax-free Roth growth"
+            ]
+          ]
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "SECURE Act: 10-year rule for most non-spouse beneficiaries",
+            "5 EDBs can stretch: spouse, minor child, disabled, chronically ill, \u226410 years younger",
+            "If owner died after RMD age: Annual RMDs + deplete by year 10",
+            "Spouse can: treat as own, remain beneficiary, or elect 10-year",
+            "Inherited Roth: 10-year rule but tax-free distributions"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "SECURE Act Impact on Inherited IRAs",
+          "knowledgeCheck": {
+            "question": "Under the SECURE Act, which of the following beneficiaries would be ELIGIBLE to utilize the 'stretch' provision for an inherited IRA, assuming all requirements are met?",
+            "options": [
+              "A 45-year-old sibling of the deceased IRA owner.",
+              "A 35-year-old child of the deceased IRA owner.",
+              "A chronically ill adult child of the deceased IRA owner.",
+              "A trust established for the benefit of the deceased IRA owner's grandchildren."
+            ],
+            "correctIndex": 2,
+            "explanation": "The SECURE Act generally eliminated the stretch provision for most beneficiaries, requiring full distribution within 10 years. However, it created exceptions for 'eligible designated beneficiaries', including the surviving spouse, a minor child of the deceased (until they reach the age of majority), a disabled individual, a chronically ill individual, or any individual who is not more than 10 years younger than the deceased.",
+            "hint": "Think about the exceptions to the 10-year rule created by the SECURE Act. Who qualifies as an 'eligible designated beneficiary'?"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the 10-Year Rule",
+          "reveal": {
+            "question": "Describe the distribution requirements for a non-eligible designated beneficiary inheriting an IRA after the SECURE Act.",
+            "answer": "The entire inherited IRA must be distributed within 10 years of the IRA owner's death. While there are no required minimum distributions (RMDs) in years 1-9, the entire balance must be withdrawn by December 31st of the 10th year following the year of death."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Pre-SECURE vs. Post-SECURE IRA Inheritance",
+          "comparison": {
+            "headers": [
+              "Pre-SECURE Act (Stretch IRA)",
+              "Post-SECURE Act (Non-Eligible Beneficiary)"
+            ],
+            "rows": [
+              {
+                "label": "Distribution Period",
+                "values": [
+                  "Beneficiary's life expectancy",
+                  "10 years"
+                ]
+              },
+              {
+                "label": "RMDs Required?",
+                "values": [
+                  "Yes, annually based on beneficiary's life expectancy",
+                  "No, but entire amount must be distributed by the end of the 10th year"
+                ]
+              },
+              {
+                "label": "Beneficiary Eligibility",
+                "values": [
+                  "Any designated beneficiary",
+                  "Limited to eligible designated beneficiaries (spouses, minor children, disabled or chronically ill individuals, or those not more than 10 years younger) for stretch; others subject to 10-year rule"
+                ]
+              },
+              {
+                "label": "Tax Deferral Potential",
+                "values": [
+                  "Significant; distributions stretched over many years",
+                  "Limited; entire account must be distributed within 10 years"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L018",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Net Unrealized Appreciation (NUA)",
+    "description": "Explain the NUA tax strategy",
+    "order": 18,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Explain the NUA tax strategy",
+      "Calculate tax savings from NUA treatment",
+      "Identify when NUA is advantageous",
+      "Apply NUA distribution requirements"
+    ],
+    "blueprintArea": "RET-5",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "NUA is a tax strategy that can convert ordinary income into long-term capital gains when distributing employer stock from a qualified plan."
+        },
+        {
+          "title": "What Is NUA?",
+          "type": "text",
+          "content": "Net Unrealized Appreciation = Current FMV - Cost Basis. The increase in value of employer stock while held inside a qualified plan. Normal 401(k) distributions: Taxed as ordinary income (up to 37%). NUA strategy: NUA portion taxed as long-term capital gains (up to 20%)."
+        },
+        {
+          "title": "NUA vs. Rollover Example",
+          "type": "table",
+          "headers": [
+            "Item",
+            "Without NUA (Rollover)",
+            "With NUA Strategy"
+          ],
+          "rows": [
+            [
+              "Stock FMV",
+              "$500,000",
+              "$500,000"
+            ],
+            [
+              "Cost basis",
+              "$100,000",
+              "$100,000"
+            ],
+            [
+              "NUA",
+              "N/A",
+              "$400,000"
+            ],
+            [
+              "Tax at distribution (35% OI)",
+              "N/A",
+              "$35,000 on basis"
+            ],
+            [
+              "Tax at sale (15% LTCG)",
+              "N/A",
+              "$60,000 on NUA"
+            ],
+            [
+              "Total tax later (35% OI)",
+              "$175,000",
+              "N/A"
+            ],
+            [
+              "Total Tax",
+              "$175,000",
+              "$95,000"
+            ],
+            [
+              "Tax Savings",
+              "-",
+              "$80,000"
+            ]
+          ]
+        },
+        {
+          "title": "NUA Requirements",
+          "type": "list",
+          "items": [
+            "Must be from qualified plan (401(k), profit-sharing, ESOP) - NOT from IRA",
+            "Must be lump-sum distribution (entire balance in one tax year)",
+            "Triggering events: Separation from service, death, disability, after age 59\u00bd",
+            "Must distribute in-kind (stock goes to taxable account as stock)"
+          ]
+        },
+        {
+          "title": "When NUA Makes Sense",
+          "type": "table",
+          "headers": [
+            "Good Candidates",
+            "Poor Candidates"
+          ],
+          "rows": [
+            [
+              "Large NUA (appreciation)",
+              "Small NUA"
+            ],
+            [
+              "Low cost basis",
+              "High cost basis"
+            ],
+            [
+              "High ordinary rate",
+              "Low ordinary rate"
+            ],
+            [
+              "Need liquidity soon",
+              "Won't sell for decades"
+            ],
+            [
+              "N/A",
+              "Want diversification (concentrated risk)"
+            ]
+          ]
+        },
+        {
+          "title": "10% Penalty Treatment",
+          "type": "callout",
+          "content": "If under 59\u00bd: 10% penalty applies to cost basis only (distributed from plan). 10% penalty does NOT apply to NUA (taxed as LTCG at sale, no penalty)."
+        },
+        {
+          "title": "Partial NUA Strategy",
+          "type": "text",
+          "content": "Can split: Take some employer stock as NUA (to taxable account), roll the rest to IRA. Benefits: Some liquidity, manage current-year tax, diversify some while preserving NUA."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "NUA = employer stock appreciation in plan; taxed at LTCG rate",
+            "Must be lump-sum distribution from qualified plan (not IRA)",
+            "Pay ordinary income on cost basis at distribution; LTCG on NUA at sale",
+            "No 10% penalty on NUA portion (even if under 59\u00bd)",
+            "Best when: Large NUA, low basis, high marginal rate, need access"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "NUA Advantage Assessment",
+          "knowledgeCheck": {
+            "question": "Which of the following scenarios would MOST likely make the Net Unrealized Appreciation (NUA) strategy advantageous for a client?",
+            "options": [
+              "The client's marginal tax rate is 12% and they anticipate it remaining at that level in retirement; the stock has appreciated significantly while in the plan.",
+              "The client's marginal tax rate is 37% currently, they anticipate it dropping to 24% in retirement, and the stock has experienced minimal appreciation while in the plan.",
+              "The client's marginal tax rate is 24% currently, they anticipate it rising to 32% in retirement, and the stock has appreciated significantly while in the plan.",
+              "The client's marginal tax rate is 37% currently, they anticipate it dropping to 24% in retirement, and the stock has appreciated significantly while in the plan."
+            ],
+            "correctIndex": 3,
+            "explanation": "The NUA strategy is most advantageous when the client's current ordinary income tax rate is significantly higher than the long-term capital gains rate they will pay on the NUA portion, and the stock has appreciated substantially. This allows them to convert a portion of their retirement savings from ordinary income to long-term capital gains rates. Option D provides both of these conditions.",
+            "hint": "Consider the tax rate implications and the amount of appreciation."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "NUA Formula Recall",
+          "reveal": {
+            "question": "What is the formula for calculating Net Unrealized Appreciation (NUA)?",
+            "answer": "NUA = Current Fair Market Value (FMV) of Employer Stock - Cost Basis of Employer Stock."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "NUA vs. Traditional 401(k) Distribution",
+          "comparison": {
+            "headers": [
+              "NUA Distribution",
+              "Traditional 401(k) Distribution"
+            ],
+            "rows": [
+              {
+                "label": "Tax Rate on Appreciation",
+                "values": [
+                  "Long-Term Capital Gains Rate (up to 20% + 3.8% NIIT if applicable)",
+                  "Ordinary Income Tax Rate (up to 37%)"
+                ]
+              },
+              {
+                "label": "Tax Rate on Cost Basis",
+                "values": [
+                  "Ordinary Income Tax Rate (up to 37%)",
+                  "Ordinary Income Tax Rate (up to 37%)"
+                ]
+              },
+              {
+                "label": "Stock Location",
+                "values": [
+                  "Employer Stock Distributed In-Kind to Taxable Account",
+                  "Assets Remain Inside the Qualified Plan/IRA"
+                ]
+              },
+              {
+                "label": "Lump-Sum Required",
+                "values": [
+                  "Generally Requires a Lump-Sum Distribution",
+                  "Distributions Can Be Taken Over Time"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L019",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Retirement Plans and Divorce (QDROs)",
+    "description": "Explain QDRO requirements and process",
+    "order": 19,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Explain QDRO requirements and process",
+      "Compare division of different retirement account types",
+      "Apply special tax rules for divorce-related transfers",
+      "Identify common QDRO mistakes to avoid"
+    ],
+    "blueprintArea": "RET-5",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Retirement accounts are often the largest marital asset after a home. Proper division requires understanding QDROs and special tax rules."
+        },
+        {
+          "title": "What Is a QDRO?",
+          "type": "text",
+          "content": "Qualified Domestic Relations Order: A court order that divides a qualified retirement plan in a divorce or separation. Needed because ERISA-covered plans are protected from assignment. QDRO allows division to an alternate payee (spouse, former spouse, child, dependent)."
+        },
+        {
+          "title": "Plans That Need QDROs vs. Not",
+          "type": "table",
+          "headers": [
+            "Needs QDRO",
+            "Doesn't Need QDRO"
+          ],
+          "rows": [
+            [
+              "401(k)",
+              "IRA"
+            ],
+            [
+              "403(b)",
+              "SEP-IRA"
+            ],
+            [
+              "Defined benefit pension",
+              "SIMPLE IRA"
+            ],
+            [
+              "Profit-sharing plan",
+              "Roth IRA"
+            ],
+            [
+              "457(b) governmental",
+              ""
+            ]
+          ]
+        },
+        {
+          "title": "IRAs: Transfer Incident to Divorce",
+          "type": "callout",
+          "content": "IRAs don't need QDROs. Divided by \"transfer incident to divorce\" under IRC 408(d)(6). Just need divorce decree or separation agreement. Tax-free transfer between spouses."
+        },
+        {
+          "title": "QDRO Requirements",
+          "type": "list",
+          "items": [
+            "Must Include: Names/addresses, plan name, dollar amount or percentage, payment timing",
+            "Cannot Require: Benefits not otherwise available, increased benefits, benefits allocated to another payee"
+          ]
+        },
+        {
+          "title": "Division Methods",
+          "type": "table",
+          "headers": [
+            "Plan Type",
+            "Separate Interest",
+            "Shared Payment"
+          ],
+          "rows": [
+            [
+              "DC Plans (401k)",
+              "Alternate payee gets own account (preferred)",
+              "Split each distribution"
+            ],
+            [
+              "DB Pensions",
+              "Independent benefit stream",
+              "Split participant's benefit"
+            ]
+          ]
+        },
+        {
+          "title": "Special Tax Rule: QDRO Exception",
+          "type": "warning",
+          "content": "Distributions from QDRO to alternate payee: NO 10% early withdrawal penalty if taken directly from the plan. BUT if alternate payee rolls to IRA first, then withdraws, 10% penalty applies if under 59\u00bd."
+        },
+        {
+          "title": "Planning Tip",
+          "type": "text",
+          "content": "If alternate payee needs funds, take from plan BEFORE rolling to IRA. This preserves the penalty-free access. Once in IRA, penalty-free access is lost."
+        },
+        {
+          "title": "Valuing Retirement Accounts",
+          "type": "text",
+          "content": "Defined Contribution: Simple - account balance at division date. Defined Benefit: Complex - requires actuarial present value calculation or coverture fraction. Coverture Fraction = Years Married During Employment / Total Years of Employment."
+        },
+        {
+          "title": "Coverture Example",
+          "type": "text",
+          "content": "25 years total employment, 15 years married. Pension = $3,000/month. Coverture = 15/25 = 60%. Marital portion = $1,800/month. If split 50/50: Alternate payee = $900/month."
+        },
+        {
+          "title": "Common QDRO Mistakes",
+          "type": "table",
+          "headers": [
+            "Mistake",
+            "Consequence"
+          ],
+          "rows": [
+            [
+              "Rolling to IRA before taking needed funds",
+              "Lose penalty-free access"
+            ],
+            [
+              "Not checking vesting",
+              "May not receive expected funds"
+            ],
+            [
+              "Delaying QDRO submission",
+              "Plan changes, participant retires"
+            ],
+            [
+              "Using generic QDRO language",
+              "May not work for specific plan"
+            ]
+          ]
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "QDRO required for qualified plans (401(k), 403(b), pension); not for IRAs",
+            "IRAs: Transfer incident to divorce = tax-free, no QDRO needed",
+            "QDRO distribution exception: No 10% penalty from plan (even under 59\u00bd)",
+            "Rolling to IRA first loses penalty-free access",
+            "Coverture fraction = marital years / total employment years"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "QDRO Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following statements concerning Qualified Domestic Relations Orders (QDROs) is CORRECT?",
+            "options": [
+              "A QDRO can be used to divide any type of retirement account, including IRAs and non-qualified deferred compensation plans.",
+              "A QDRO is required to divide a qualified retirement plan incident to a divorce, allowing the transfer to an alternate payee without triggering a taxable event or early withdrawal penalty.",
+              "The alternate payee in a QDRO is always the former spouse.",
+              "A QDRO is executed after the divorce decree is finalized, based on the division of assets outlined in the agreement."
+            ],
+            "correctIndex": 1,
+            "explanation": "A QDRO is specifically designed for qualified retirement plans covered by ERISA. It avoids tax consequences and penalties when dividing these assets during a divorce. IRAs require a transfer incident to divorce under IRC Section 408(d)(6), not a QDRO. The alternate payee can be a spouse, former spouse, child, or other dependent. The QDRO process should ideally begin during the divorce proceedings to ensure timely execution.",
+            "hint": "Consider which plans are governed by ERISA and the specific purpose of a QDRO."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "QDRO Key Concept Recall",
+          "reveal": {
+            "question": "What is the PRIMARY reason a QDRO is necessary for dividing qualified retirement plans in a divorce?",
+            "answer": "ERISA (Employee Retirement Income Security Act) provides protection against assignment or alienation of benefits in qualified retirement plans. A QDRO is a statutory exception to this rule, allowing for the division of these assets pursuant to a domestic relations order without violating ERISA's anti-alienation provisions."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "QDRO vs. IRA Transfer Incident to Divorce",
+          "comparison": {
+            "headers": [
+              "QDRO (Qualified Plan)",
+              "Transfer Incident to Divorce (IRA)"
+            ],
+            "rows": [
+              {
+                "label": "Governing Law",
+                "values": [
+                  "ERISA, IRC Section 414(p)",
+                  "IRC Section 408(d)(6)"
+                ]
+              },
+              {
+                "label": "Plan Type",
+                "values": [
+                  "Qualified Retirement Plans (e.g., 401(k), Pension)",
+                  "IRAs (Traditional, Roth, SEP, SIMPLE)"
+                ]
+              },
+              {
+                "label": "Court Order Required",
+                "values": [
+                  "QDRO (Qualified Domestic Relations Order)",
+                  "Divorce decree or separation agreement"
+                ]
+              },
+              {
+                "label": "Taxable Event Trigger",
+                "values": [
+                  "No taxable event at the time of transfer to alternate payee",
+                  "No taxable event at the time of transfer to former spouse"
+                ]
+              },
+              {
+                "label": "Alternate Payee Options",
+                "values": [
+                  "Spouse, Former Spouse, Child, Dependent",
+                  "Typically the former spouse"
+                ]
+              },
+              {
+                "label": "Direct Transfer Needed",
+                "values": [
+                  "Yes, plan administrator must approve and execute",
+                  "Yes, from one IRA trustee/custodian directly to another (or a new IRA)"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L020",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Retirement Plan Selection and Integration",
+    "description": "Recommend appropriate plan types for different situations",
+    "order": 20,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Recommend appropriate plan types for different situations",
+      "Integrate retirement plans with overall financial plan",
+      "Apply SECURE 2.0 provisions to planning",
+      "Coordinate multiple retirement income sources"
+    ],
+    "blueprintArea": "RET-5",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Selecting the right retirement plan\u2014and integrating it with other planning areas\u2014is critical to maximizing benefits."
+        },
+        {
+          "title": "Plan Selection Decision Tree",
+          "type": "table",
+          "headers": [
+            "Question",
+            "If Yes \u2192 Consider"
+          ],
+          "rows": [
+            [
+              "Self-employed, no employees?",
+              "Solo 401(k), SEP-IRA"
+            ],
+            [
+              "Small employer, want simplicity?",
+              "SIMPLE IRA, SEP-IRA"
+            ],
+            [
+              "Want employee contributions?",
+              "401(k), SIMPLE"
+            ],
+            [
+              "Need high owner contributions?",
+              "DB plan, cash balance"
+            ],
+            [
+              "Employees should participate?",
+              "401(k), SIMPLE"
+            ]
+          ]
+        },
+        {
+          "title": "SECURE 2.0 Highlights",
+          "type": "table",
+          "headers": [
+            "Provision",
+            "Details"
+          ],
+          "rows": [
+            [
+              "RMD age",
+              "73 now; 75 for born 1960+"
+            ],
+            [
+              "Roth 401(k)",
+              "No RMD during owner's lifetime"
+            ],
+            [
+              "Super catch-up (60-63)",
+              "$11,250 (150% of regular)"
+            ],
+            [
+              "529-to-Roth",
+              "$35,000 lifetime, 15 year wait"
+            ],
+            [
+              "Student loan match",
+              "Employer can match loan payments"
+            ],
+            [
+              "Starter 401(k)",
+              "Simplified for small employers"
+            ]
+          ]
+        },
+        {
+          "title": "Integrating with Tax Planning",
+          "type": "table",
+          "headers": [
+            "Strategy",
+            "Retirement Component"
+          ],
+          "rows": [
+            [
+              "Current deductions",
+              "Traditional contributions reduce AGI"
+            ],
+            [
+              "Tax diversification",
+              "Balance Traditional, Roth, taxable"
+            ],
+            [
+              "Managing brackets",
+              "Time Roth conversions strategically"
+            ],
+            [
+              "AMT planning",
+              "ISO exercise, deduction timing"
+            ]
+          ]
+        },
+        {
+          "title": "Integrating with Estate Planning",
+          "type": "table",
+          "headers": [
+            "Goal",
+            "Retirement Strategy"
+          ],
+          "rows": [
+            [
+              "Maximize to heirs",
+              "Roth conversions (tax-free inheritance)"
+            ],
+            [
+              "Charitable giving",
+              "QCDs, charity as beneficiary"
+            ],
+            [
+              "EDB protection",
+              "Name eligible beneficiaries strategically"
+            ],
+            [
+              "Trust planning",
+              "See-through trusts for flexibility"
+            ]
+          ]
+        },
+        {
+          "title": "Coordinating Multiple Income Sources",
+          "type": "table",
+          "headers": [
+            "Income Source",
+            "Characteristics"
+          ],
+          "rows": [
+            [
+              "Social Security",
+              "Inflation-adjusted, may be taxable"
+            ],
+            [
+              "Pension",
+              "Fixed or COLA, may have survivor benefit"
+            ],
+            [
+              "Traditional IRA/401(k)",
+              "Taxable, RMDs required"
+            ],
+            [
+              "Roth IRA",
+              "Tax-free, no RMDs"
+            ],
+            [
+              "Taxable accounts",
+              "Favorable cap gains rates"
+            ],
+            [
+              "Annuities",
+              "Guaranteed income, various tax treatment"
+            ]
+          ]
+        },
+        {
+          "title": "Social Security Integration",
+          "type": "callout",
+          "content": "Large Traditional accounts: Delay SS, do Roth conversions. Mostly Roth: May claim SS earlier. Have pension: May claim SS earlier. Married: Coordinate spousal strategies. Delaying SS from 62 to 70 = 77% increase in monthly benefit."
+        },
+        {
+          "title": "Case Study: Comprehensive Integration",
+          "type": "text",
+          "content": "Client: Both 60, $1.5M Traditional IRAs, $200K Roth, $300K taxable, $70K combined SS at 70, $100K spending. Strategy: Ages 60-63: Distributions from Traditional + Roth conversions (fill 22% bracket). Ages 64-69: Continue conversions, use taxable for living expenses. Age 70+: Start SS, take RMDs, use Roth for spikes. Result: Without strategy ~28% effective rate, with strategy ~18% effective rate."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Match plan type to business structure, owner age, and contribution goals",
+            "SECURE 2.0: Super catch-up at 60-63, RMD age 75, Roth 401(k) no RMD",
+            "Integrate retirement with tax planning, estate planning, risk management",
+            "Strategic withdrawal sequencing can significantly reduce lifetime taxes",
+            "Delay Social Security usually optimal; creates Roth conversion window"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Retirement Plan Suitability",
+          "knowledgeCheck": {
+            "question": "Which of the following retirement plans would be MOST suitable for a self-employed individual with no employees and a high income who wants to maximize tax-deferred savings?",
+            "options": [
+              "SIMPLE IRA",
+              "SEP IRA",
+              "Roth IRA",
+              "Solo 401(k)"
+            ],
+            "correctIndex": 3,
+            "explanation": "A Solo 401(k) allows both employee and employer contributions, enabling a self-employed individual to contribute significantly more than a SEP IRA or SIMPLE IRA. While a Roth IRA offers tax-free growth, it has contribution limits that are much lower than a Solo 401(k).",
+            "hint": "Consider the contribution limits and the individual's role as both employee and employer."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "SECURE 2.0 RMD Changes",
+          "reveal": {
+            "question": "What is the new age for Required Minimum Distributions (RMDs) under SECURE 2.0 for individuals who turn 72 after December 31, 2022, and turn 73 before January 1, 2033?",
+            "answer": "RMDs are delayed until age 73. For those turning 74 after December 31, 2032, RMDs are further delayed to age 75."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Defined Benefit vs. Defined Contribution",
+          "comparison": {
+            "headers": [
+              "Defined Benefit Plan",
+              "Defined Contribution Plan"
+            ],
+            "rows": [
+              {
+                "label": "Investment Risk",
+                "values": [
+                  "Employer bears the risk",
+                  "Employee bears the risk"
+                ]
+              },
+              {
+                "label": "Benefit Amount",
+                "values": [
+                  "Predetermined based on formula (e.g., salary, years of service)",
+                  "Depends on contributions and investment performance"
+                ]
+              },
+              {
+                "label": "Contribution Limits",
+                "values": [
+                  "Actuarially determined, can be complex",
+                  "Defined by IRS regulations (e.g., dollar limits, percentage of salary)"
+                ]
+              },
+              {
+                "label": "Portability",
+                "values": [
+                  "Generally less portable; benefit may be frozen upon leaving employment",
+                  "Generally more portable; account balance can be rolled over"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

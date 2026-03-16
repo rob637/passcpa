@@ -1,0 +1,1035 @@
+[
+  {
+    "id": "CISA4-017",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Security Incident Management",
+    "description": "Master the incident response lifecycle and auditing of incident management processes",
+    "order": 17,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Incident Response",
+      "NIST Framework",
+      "Incident Categories",
+      "Forensics"
+    ],
+    "blueprintArea": "CISA4-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Security incidents are inevitable. The effectiveness of detection and response determines whether a minor incident becomes a major breach. This is a heavily tested CISA topic."
+        },
+        {
+          "title": "Incident Response Lifecycle (NIST SP 800-61)",
+          "type": "text",
+          "content": "**Phase 1: Preparation**\n\u2022 Develop incident response plan\n\u2022 Train incident response team\n\u2022 Acquire necessary tools and resources\n\u2022 Establish communication procedures\n\u2022 Conduct tabletop exercises\n\n**Phase 2: Detection and Analysis**\n\u2022 Monitor for indicators of compromise\n\u2022 Analyze alerts and logs\n\u2022 Categorize and prioritize incidents\n\u2022 Document findings\n\u2022 Notify appropriate stakeholders\n\n**Phase 3: Containment, Eradication, Remediation**\n\u2022 Contain to prevent spread\n\u2022 Eradicate malware/vulnerabilities\n\u2022 Recover systems and data\n\u2022 Verify successful remediation\n\n**Phase 4: Post-Incident Activity**\n\u2022 Conduct lessons learned\n\u2022 Update response procedures\n\u2022 Improve controls\n\u2022 Prepare incident report"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: PCAR",
+          "type": "callout",
+          "content": "**Incident Response Phases: PCAR**\n\n\u2022 **P**reparation - Get ready before incidents occur\n\u2022 **C**atch (Detection) - Find and analyze the incident\n\u2022 **A**ct (Containment/Eradication) - Stop and remove the threat\n\u2022 **R**eview (Post-Incident) - Learn and improve\n\nThink: \"Police CAR\" responds to incidents!"
+        },
+        {
+          "title": "Incident Severity Classification",
+          "type": "table",
+          "headers": [
+            "Severity",
+            "Definition",
+            "Response Time",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Critical (P1)",
+              "Business-critical impact, data breach, safety",
+              "Immediate (minutes)",
+              "Ransomware spreading, major data exfiltration"
+            ],
+            [
+              "High (P2)",
+              "Significant business impact, multiple users",
+              "1-4 hours",
+              "Critical server compromised, widespread malware"
+            ],
+            [
+              "Medium (P3)",
+              "Moderate impact, limited scope",
+              "4-24 hours",
+              "Phishing compromise, malware on single workstation"
+            ],
+            [
+              "Low (P4)",
+              "Minimal impact, informational",
+              "24-72 hours",
+              "Policy violation, minor malware blocked"
+            ]
+          ]
+        },
+        {
+          "title": "Key Incident Response Roles",
+          "type": "text",
+          "content": "**Incident Commander**\n\u2022 Overall authority during incident\n\u2022 Makes escalation decisions\n\u2022 Coordinates resources\n\u2022 Communicates with executives\n\n**Technical Lead**\n\u2022 Directs technical analysis\n\u2022 Coordinates containment actions\n\u2022 Oversees eradication and recovery\n\n**Communications Lead**\n\u2022 Internal stakeholder updates\n\u2022 External communications (if needed)\n\u2022 Regulatory notifications\n\u2022 Media relations\n\n**Legal/Compliance**\n\u2022 Advise on notification requirements\n\u2022 Evidence preservation\n\u2022 Regulatory interface\n\n**Forensic Analyst**\n\u2022 Preserve evidence\n\u2022 Conduct technical analysis\n\u2022 Timeline reconstruction\n\u2022 Report findings"
+        },
+        {
+          "title": "Evidence Preservation and Chain of Custody",
+          "type": "text",
+          "content": "**Digital Evidence Principles:**\n\n**Acquisition Order (Volatility):**\n1. Register, cache memory\n2. Routing table, process table, RAM\n3. Temporary file systems\n4. Disk/persistent storage\n5. Remote logs and monitoring data\n6. Physical configuration, network topology\n7. Archival media (backup tapes)\n\n**Chain of Custody:**\n\u2022 Document who collected evidence\n\u2022 Record date, time, location\n\u2022 Track all transfers\n\u2022 Secure storage\n\u2022 Maintain integrity hashes\n\u2022 Document any analysis performed\n\n**Best Practices:**\n\u2022 Create forensic images (don't work on originals)\n\u2022 Use write blockers\n\u2022 Document everything\n\u2022 Have witnesses when possible"
+        },
+        {
+          "title": "Auditing Incident Response",
+          "type": "text",
+          "content": "**Audit Areas:**\n\n**Preparation:**\n\u2022 Is there a documented IR plan?\n\u2022 Is the IR team trained and capable?\n\u2022 Are roles and responsibilities clear?\n\u2022 Are communication procedures established?\n\n**Detection:**\n\u2022 Are monitoring tools adequate?\n\u2022 Are alerts reviewed timely?\n\u2022 Is severity classification appropriate?\n\n**Response:**\n\u2022 Are containment procedures effective?\n\u2022 Is evidence properly preserved?\n\u2022 Are incidents resolved effectively?\n\n**Recovery:**\n\u2022 Are systems restored securely?\n\u2022 Is normal operation verified?\n\u2022 Are root causes addressed?\n\n**Improvement:**\n\u2022 Are lessons learned conducted?\n\u2022 Are procedures updated?\n\u2022 Are metrics tracked?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Incident response has 4 phases: Preparation, Detection/Analysis, Containment/Eradication/Recovery, Post-Incident",
+            "Incidents should be classified by severity to prioritize response",
+            "Evidence must be preserved in order of volatility (most volatile first)",
+            "Chain of custody documentation is critical for potential legal proceedings",
+            "Auditors should evaluate all phases of the incident response capability"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Incident Response Roles: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "During a security incident, which of the following roles is MOST responsible for making escalation decisions and coordinating resources across different teams?",
+            "options": [
+              "Technical Lead",
+              "Communications Lead",
+              "Incident Commander",
+              "Security Analyst"
+            ],
+            "correctIndex": 2,
+            "explanation": "The Incident Commander has overall authority during an incident and is responsible for making key decisions, including escalation, and coordinating resources to effectively manage the incident.",
+            "hint": "Think about who has overall authority during a crisis."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Incident Response Plan Preparation",
+          "reveal": {
+            "question": "List at least three key activities that should be completed during the Preparation phase of the Incident Response Lifecycle (NIST SP 800-61).",
+            "answer": "1. Develop an incident response plan.\n2. Train the incident response team.\n3. Acquire necessary tools and resources.\n4. Establish communication procedures.\n5. Conduct tabletop exercises."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Technical Lead vs. Communications Lead",
+          "comparison": {
+            "headers": [
+              "Technical Lead",
+              "Communications Lead"
+            ],
+            "rows": [
+              {
+                "label": "Primary Focus",
+                "values": [
+                  "Directs technical analysis, containment, eradication, and recovery efforts.",
+                  "Manages internal and external communications related to the incident."
+                ]
+              },
+              {
+                "label": "Key Responsibilities",
+                "values": [
+                  "Analyzing compromised systems, implementing containment strategies, overseeing data recovery.",
+                  "Crafting incident communications, informing stakeholders, managing media inquiries (if applicable)."
+                ]
+              },
+              {
+                "label": "Typical Skills",
+                "values": [
+                  "Deep understanding of IT infrastructure, security tools, forensics techniques.",
+                  "Excellent writing and communication skills, stakeholder management abilities."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Detection and Analysis Phase",
+          "knowledgeCheck": {
+            "question": "Which of the following activities is MOST critical during the Detection and Analysis phase of the incident response lifecycle?",
+            "options": [
+              "Developing communication plans for stakeholders",
+              "Implementing long-term security improvements",
+              "Monitoring for indicators of compromise and analyzing alerts.",
+              "Acquiring new forensic tools"
+            ],
+            "correctIndex": 2,
+            "explanation": "The Detection and Analysis phase focuses on identifying potential security incidents by actively monitoring for indicators of compromise and thoroughly analyzing alerts and logs to determine the scope and impact of an incident.",
+            "hint": "Think about the primary goal of the 'Detection' phase."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-018",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Business Continuity Planning",
+    "description": "Understand how to audit BCP programs for adequate coverage and testing",
+    "order": 18,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "BCP",
+      "Business Impact Analysis",
+      "Recovery Strategies",
+      "Plan Testing"
+    ],
+    "blueprintArea": "CISA4-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Business continuity ensures organizations survive disruptions. IS auditors must evaluate whether BCP is comprehensive, tested, and maintained."
+        },
+        {
+          "title": "BCP vs. DRP",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Business Continuity (BCP)",
+            "Disaster Recovery (DRP)"
+          ],
+          "rows": [
+            [
+              "Focus",
+              "Entire business operations",
+              "IT systems and infrastructure"
+            ],
+            [
+              "Scope",
+              "People, processes, facilities, technology",
+              "Technology recovery"
+            ],
+            [
+              "Goal",
+              "Maintain critical business functions",
+              "Restore IT services"
+            ],
+            [
+              "Timeframe",
+              "Immediate through long-term",
+              "Technical recovery timeline"
+            ],
+            [
+              "Ownership",
+              "Business management",
+              "IT management"
+            ],
+            [
+              "Relationship",
+              "Umbrella framework",
+              "Subset of BCP"
+            ]
+          ]
+        },
+        {
+          "title": "Business Impact Analysis (BIA)",
+          "type": "text",
+          "content": "**Purpose:**\nIdentify critical business functions and the impact of their disruption.\n\n**Key BIA Outputs:**\n\n**Recovery Time Objective (RTO)**\n\u2022 Maximum time a function can be unavailable\n\u2022 After RTO, impact becomes unacceptable\n\u2022 Drives recovery strategy selection\n\n**Recovery Point Objective (RPO)**\n\u2022 Maximum acceptable data loss\n\u2022 Measured in time (hours, days)\n\u2022 Drives backup frequency\n\n**Maximum Tolerable Downtime (MTD)**\n\u2022 Absolute limit before business fails\n\u2022 Must be greater than or equal to RTO\n\u2022 Also called Maximum Tolerable Period of Disruption (MTPD)\n\n**Process Dependencies:**\n\u2022 Upstream and downstream processes\n\u2022 Critical vendors\n\u2022 Technology dependencies"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: RTO vs RPO",
+          "type": "callout",
+          "content": "**RTO = Time to Recover (how long to get back up)**\n**RPO = Point of Return (how far back for data)**\n\nExample:\n\u2022 RTO = 4 hours: Must recover systems within 4 hours\n\u2022 RPO = 1 hour: Can lose up to 1 hour of data\n\nIf you backup every hour and disaster strikes, you lose at most 1 hour of data (RPO met)."
+        },
+        {
+          "title": "Recovery Strategies",
+          "type": "table",
+          "headers": [
+            "Strategy",
+            "Description",
+            "RTO",
+            "Cost"
+          ],
+          "rows": [
+            [
+              "Hot Site",
+              "Fully equipped, data synced, ready to go",
+              "Minutes-Hours",
+              "Very High"
+            ],
+            [
+              "Warm Site",
+              "Equipped facility, may need data restore",
+              "Hours-Days",
+              "Moderate"
+            ],
+            [
+              "Cold Site",
+              "Empty facility, requires equipment setup",
+              "Days-Weeks",
+              "Low"
+            ],
+            [
+              "Mobile Site",
+              "Portable recovery unit",
+              "Days",
+              "Moderate"
+            ],
+            [
+              "Reciprocal Agreement",
+              "Partner provides space in emergency",
+              "Days",
+              "Low"
+            ],
+            [
+              "Cloud-Based",
+              "On-demand recovery in cloud",
+              "Minutes-Hours",
+              "Variable"
+            ]
+          ]
+        },
+        {
+          "title": "BCP Testing Types",
+          "type": "text",
+          "content": "**1. Checklist Review (Paper Test)**\n\u2022 Participants review plan documents\n\u2022 No actual testing action\n\u2022 Validates plan completeness\n\u2022 Least disruptive, least effective\n\n**2. Tabletop Exercise/Walkthrough**\n\u2022 Participants discuss scenario\n\u2022 Walk through procedures verbally\n\u2022 Identify gaps in procedures\n\u2022 Low risk, moderate effectiveness\n\n**3. Simulation Test**\n\u2022 Scenario-based role playing\n\u2022 Teams respond as if real\n\u2022 Tests decision-making\n\u2022 Moderate effort and effectiveness\n\n**4. Parallel Test**\n\u2022 Activate alternate site\n\u2022 Recover systems without disrupting production\n\u2022 Validates technical capabilities\n\u2022 High effort, high value\n\n**5. Full Interruption Test**\n\u2022 Actually fail over operations\n\u2022 Production moves to alternate site\n\u2022 Highest risk but most thorough\n\u2022 Rarely performed"
+        },
+        {
+          "title": "BCP Audit Considerations",
+          "type": "text",
+          "content": "**Governance:**\n\u2022 Is there senior management commitment?\n\u2022 Are roles and responsibilities defined?\n\u2022 Is there a BCP policy?\n\u2022 Is budget adequate?\n\n**Risk Assessment:**\n\u2022 Were threats and vulnerabilities identified?\n\u2022 Is the BIA current and comprehensive?\n\u2022 Are critical processes identified?\n\u2022 Are RTOs and RPOs defined?\n\n**Strategies:**\n\u2022 Are recovery strategies aligned with RTOs?\n\u2022 Are alternate sites appropriate?\n\u2022 Are vendor dependencies addressed?\n\u2022 Are manual workarounds defined?\n\n**Plan Documentation:**\n\u2022 Is the plan complete and current?\n\u2022 Are contact lists maintained?\n\u2022 Are procedures actionable?\n\u2022 Is the plan accessible during disaster?\n\n**Testing:**\n\u2022 Is testing frequency adequate?\n\u2022 Are tests realistic?\n\u2022 Are lessons learned documented?\n\u2022 Is the plan updated based on tests?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "BCP covers entire business; DRP focuses on IT recovery",
+            "BIA identifies critical functions and defines RTO, RPO, MTD",
+            "RTO = time to recover; RPO = acceptable data loss; RTO \u2264 MTD",
+            "Hot site = fastest recovery, highest cost; Cold site = slowest, lowest cost",
+            "Testing ranges from checklist review (least effective) to full interruption (most thorough)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "BIA and Recovery Objectives",
+          "knowledgeCheck": {
+            "question": "During a Business Impact Analysis (BIA), which of the following BEST determines the resources and activities needed to restore critical business functions?",
+            "options": [
+              "Recovery Time Objective (RTO).",
+              "Recovery Point Objective (RPO).",
+              "Maximum Tolerable Downtime (MTD).",
+              "Business Process Reengineering (BPR)."
+            ],
+            "correctIndex": 0,
+            "explanation": "The RTO defines the maximum acceptable time a function can be unavailable, thus driving the resource and activity planning for restoration. RPO defines the acceptable data loss. MTD is the total time a business function can be disrupted before causing irreversible harm. BPR is not directly related to resource restoration during BIA.",
+            "hint": "Think about what drives the urgency of the recovery process."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recovery Point Objective (RPO) Recall",
+          "reveal": {
+            "question": "Define Recovery Point Objective (RPO) in the context of Business Continuity Planning.",
+            "answer": "Recovery Point Objective (RPO) defines the maximum acceptable data loss in case of a disruption. It represents the point in time to which data must be restored after an outage."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "RTO vs. RPO",
+          "comparison": {
+            "headers": [
+              "Recovery Time Objective (RTO)",
+              "Recovery Point Objective (RPO)"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Maximum acceptable downtime for a business function.",
+                  "Maximum acceptable data loss for a business function."
+                ]
+              },
+              {
+                "label": "Metric",
+                "values": [
+                  "Time (e.g., hours, days)",
+                  "Time (e.g., hours, days, or point in time)"
+                ]
+              },
+              {
+                "label": "Impact of Exceeding",
+                "values": [
+                  "Unacceptable business disruption and financial losses.",
+                  "Unacceptable data loss and potential legal/regulatory issues."
+                ]
+              },
+              {
+                "label": "Drive",
+                "values": [
+                  "Recovery Strategy Selection",
+                  "Backup and Recovery Strategy Selection"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-019",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Data Backup and Recovery",
+    "description": "Learn data protection strategies and audit considerations for backup systems",
+    "order": 19,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Backup Strategies",
+      "Backup Types",
+      "Restoration",
+      "Offsite Storage"
+    ],
+    "blueprintArea": "CISA4-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Backups are the last line of defense against data loss. Understanding backup strategies helps auditors evaluate whether data can actually be recovered when needed."
+        },
+        {
+          "title": "Backup Types",
+          "type": "table",
+          "headers": [
+            "Type",
+            "What It Backs Up",
+            "Pros",
+            "Cons"
+          ],
+          "rows": [
+            [
+              "Full",
+              "All selected data",
+              "Complete, simple restore",
+              "Time-consuming, storage-intensive"
+            ],
+            [
+              "Incremental",
+              "Changed since last backup (any)",
+              "Fastest backup, least storage",
+              "Slow restore (need all incrementals)"
+            ],
+            [
+              "Differential",
+              "Changed since last FULL backup",
+              "Faster restore than incremental",
+              "Growing backup size until next full"
+            ],
+            [
+              "Synthetic Full",
+              "Combines full + incrementals",
+              "No full backup window needed",
+              "Complex, requires processing"
+            ]
+          ]
+        },
+        {
+          "title": "Backup Strategy: The 3-2-1 Rule",
+          "type": "text",
+          "content": "**The 3-2-1 Backup Rule:**\n\n\u2022 **3** copies of data (production + 2 backups)\n\u2022 **2** different storage media types\n\u2022 **1** copy offsite or in the cloud\n\n**Enhanced: 3-2-1-1-0:**\n\u2022 3 copies\n\u2022 2 different media\n\u2022 1 offsite\n\u2022 1 offline (air-gapped, immutable)\n\u2022 0 errors (verified backups)\n\n**Why Air-Gapped/Immutable Matters:**\n\u2022 Ransomware can encrypt connected backups\n\u2022 Offline or immutable backups can't be attacked\n\u2022 Critical for recovery from ransomware"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Incremental vs Differential",
+          "type": "callout",
+          "content": "**INCREMENTAL = \"Since LAST backup\" (any type)**\nSmall backups, but need FULL + ALL incrementals to restore\n\n**DIFFERENTIAL = \"Since last FULL backup\"**\nGrowing backups, but only need FULL + LAST differential to restore\n\nDifferential = Depends only on the Full\nIncremental = Includes all the In-betweens"
+        },
+        {
+          "title": "Backup Retention and Rotation",
+          "type": "text",
+          "content": "**Common Rotation Schemes:**\n\n**Grandfather-Father-Son (GFS):**\n\u2022 Daily backups (Sons) - rotate weekly\n\u2022 Weekly backups (Fathers) - retain 4 weeks\n\u2022 Monthly backups (Grandfathers) - retain 12 months\n\u2022 Annual backups - retain per policy (often 7 years)\n\n**Tower of Hanoi:**\n\u2022 Mathematical rotation pattern\n\u2022 Maximizes coverage with limited media\n\u2022 More complex to manage\n\n**Retention Considerations:**\n\u2022 Legal and regulatory requirements\n\u2022 Business requirements\n\u2022 Storage costs\n\u2022 Data sensitivity\n\u2022 Recovery scenarios"
+        },
+        {
+          "title": "Backup Testing and Validation",
+          "type": "text",
+          "content": "**Verification Methods:**\n\n**Automated Verification:**\n\u2022 Backup software validates completion\n\u2022 Checksum verification\n\u2022 Logs success/failure\n\n**Manual Verification:**\n\u2022 Restore test to separate location\n\u2022 Verify file integrity\n\u2022 Open and validate applications\n\u2022 Test database consistency\n\n**Testing Frequency:**\n\u2022 Critical systems: Monthly at minimum\n\u2022 Important systems: Quarterly\n\u2022 All systems: Annually\n\u2022 Document test results\n\n**What to Test:**\n\u2022 Can the backup media be read?\n\u2022 Are all expected files present?\n\u2022 Is data intact and usable?\n\u2022 How long does restore actually take?"
+        },
+        {
+          "title": "Offsite Storage Considerations",
+          "type": "text",
+          "content": "**Physical Offsite:**\n\u2022 Minimum distance from primary site\n\u2022 Consider natural disaster zones\n\u2022 Secure transportation\n\u2022 Controlled facility access\n\u2022 Environmental controls\n\n**Cloud Backup:**\n\u2022 Encryption in transit and at rest\n\u2022 Provider security controls (SOC 2)\n\u2022 Data residency requirements\n\u2022 Bandwidth for recovery\n\u2022 Costs for egress\n\n**Key Audit Questions:**\n\u2022 Where are backups stored?\n\u2022 How are they protected?\n\u2022 Can they be accessed during a disaster?\n\u2022 Are they far enough from primary site?\n\u2022 Is there a documented retrieval process?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Full = all data; Incremental = since last backup; Differential = since last full",
+            "3-2-1 rule: 3 copies, 2 media types, 1 offsite",
+            "Air-gapped/immutable backups protect against ransomware",
+            "GFS rotation provides daily, weekly, monthly, and annual retention",
+            "Backup testing is essential - an untested backup is not a backup"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "3-2-1-1-0 Rule Knowledge Check",
+          "knowledgeCheck": {
+            "question": "An organization implements the 3-2-1-1-0 backup strategy. Which of the following BEST describes the '1' in '3-2-1-1-0'?",
+            "options": [
+              "One backup copy stored on a Network Attached Storage (NAS) device.",
+              "One backup copy stored offsite or in the cloud.",
+              "One backup copy that is air-gapped and immutable.",
+              "One backup copy that is tested for successful restoration."
+            ],
+            "correctIndex": 2,
+            "explanation": "The '1' in 3-2-1-1-0 refers to one backup copy stored offline, often air-gapped and immutable. This protects against online threats and accidental modifications. The other options represent different aspects of a comprehensive backup strategy but don't directly correspond to this specific '1'.",
+            "hint": "Think about the purpose of air-gapping a backup."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "GFS Rotation Scheme",
+          "reveal": {
+            "question": "In a Grandfather-Father-Son (GFS) backup rotation scheme, how often are 'Father' backups typically retained?",
+            "answer": "Weekly backups (Fathers) in a GFS scheme are typically retained for 4 weeks. This provides a rolling monthly backup capability."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Backup Strategy Comparison",
+          "comparison": {
+            "headers": [
+              "3-2-1 Rule",
+              "3-2-1-1-0 Rule"
+            ],
+            "rows": [
+              {
+                "label": "Offsite Copy",
+                "values": [
+                  "Includes one copy offsite or in the cloud.",
+                  "Includes one copy offsite or in the cloud."
+                ]
+              },
+              {
+                "label": "Offline Copy",
+                "values": [
+                  "Does not explicitly require an offline/air-gapped copy.",
+                  "Explicitly requires one offline (air-gapped, immutable) copy."
+                ]
+              },
+              {
+                "label": "Backup Verification",
+                "values": [
+                  "Implies backups should be verified, but not explicitly stated.",
+                  "Explicitly requires zero errors, implying verified backups."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-020",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "IT Service Management",
+    "description": "Understand ITSM frameworks and auditing IT service delivery",
+    "order": 20,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "ITSM",
+      "ITIL",
+      "Service Desk",
+      "Problem Management",
+      "Change Management"
+    ],
+    "blueprintArea": "CISA4-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IT Service Management provides structured processes for delivering quality IT services. Understanding ITSM helps auditors evaluate operational effectiveness."
+        },
+        {
+          "title": "ITIL Framework Overview",
+          "type": "text",
+          "content": "**ITIL = IT Infrastructure Library**\n\nBest practice framework for IT service management.\n\n**ITIL 4 Service Value System:**\n\n**Guiding Principles:**\n\u2022 Focus on value\n\u2022 Start where you are\n\u2022 Progress iteratively with feedback\n\u2022 Collaborate and promote visibility\n\u2022 Think and work holistically\n\u2022 Keep it simple and practical\n\u2022 Optimize and automate\n\n**Core Components:**\n\u2022 Service Value Chain\n\u2022 Practices (34 management practices)\n\u2022 Continual Improvement"
+        },
+        {
+          "title": "Key ITSM Processes",
+          "type": "table",
+          "headers": [
+            "Process",
+            "Purpose",
+            "Key Metrics"
+          ],
+          "rows": [
+            [
+              "Incident Management",
+              "Restore normal service quickly",
+              "Mean time to restore (MTTR), First call resolution"
+            ],
+            [
+              "Problem Management",
+              "Eliminate root causes",
+              "Known errors, Repeat incidents"
+            ],
+            [
+              "Change Management",
+              "Minimize risk from changes",
+              "Failed change rate, Emergency changes"
+            ],
+            [
+              "Service Request",
+              "Fulfill standard requests",
+              "Request fulfillment time, User satisfaction"
+            ],
+            [
+              "Configuration Management",
+              "Maintain accurate CMDB",
+              "CI accuracy, Unauthorized changes"
+            ],
+            [
+              "Service Level Management",
+              "Ensure SLAs are met",
+              "SLA compliance, Service availability"
+            ]
+          ]
+        },
+        {
+          "title": "Incident vs. Problem Management",
+          "type": "text",
+          "content": "**Incident Management:**\n\u2022 Goal: Restore service ASAP\n\u2022 Focus: Symptom resolution\n\u2022 Question: \"How do we get this working again?\"\n\u2022 Metric: Speed of restoration\n\n**Problem Management:**\n\u2022 Goal: Prevent future incidents\n\u2022 Focus: Root cause elimination\n\u2022 Question: \"Why did this happen?\"\n\u2022 Metric: Reduction in incidents\n\n**The Relationship:**\n1. Multiple incidents may be symptoms of one problem\n2. Incident management identifies patterns\n3. Problem management investigates root cause\n4. Known errors document workarounds\n5. Permanent fix eliminates the problem"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Incident vs Problem",
+          "type": "callout",
+          "content": "**INCIDENT = \"Put out the fire\"** (restore service now!)\n**PROBLEM = \"Install smoke detectors\"** (prevent future fires)\n\nIncident: User can't print \u2192 Get them printing\nProblem: Why do print jobs keep failing? \u2192 Fix the driver conflict"
+        },
+        {
+          "title": "Service Level Management",
+          "type": "text",
+          "content": "**Service Level Agreement (SLA):**\n\u2022 Agreement between IT and business\n\u2022 Defines service expectations\n\u2022 Measurable targets\n\u2022 Remedies for non-performance\n\n**Operational Level Agreement (OLA):**\n\u2022 Agreement between IT groups\n\u2022 Internal support commitments\n\u2022 Enables SLA delivery\n\n**Underpinning Contract (UC):**\n\u2022 Agreement with external vendor\n\u2022 Supports SLA commitments\n\u2022 Includes penalties for non-performance\n\n**Key SLA Metrics:**\n\u2022 Availability (e.g., 99.9% uptime)\n\u2022 Response time (e.g., 4-hour response)\n\u2022 Resolution time (e.g., 24-hour resolution)\n\u2022 Performance (e.g., transaction time)"
+        },
+        {
+          "title": "Auditing ITSM Processes",
+          "type": "text",
+          "content": "**Incident Management:**\n\u2022 Are incidents logged and categorized?\n\u2022 Are response times meeting SLAs?\n\u2022 Is there appropriate escalation?\n\u2022 Are users notified of status?\n\n**Problem Management:**\n\u2022 Are recurring incidents identified?\n\u2022 Is root cause analysis performed?\n\u2022 Are known errors documented?\n\u2022 Are problems closed properly?\n\n**Change Management:**\n\u2022 Are all changes authorized?\n\u2022 Is impact assessment performed?\n\u2022 Is testing adequate?\n\u2022 Are failed changes analyzed?\n\n**Configuration Management:**\n\u2022 Is the CMDB accurate and current?\n\u2022 Are relationships documented?\n\u2022 Is the CMDB used for impact analysis?\n\u2022 Are CIs reconciled periodically?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ITIL provides best practices for IT service management",
+            "Incident management restores service; problem management prevents recurrence",
+            "SLAs document agreements with business; OLAs are internal IT agreements",
+            "Change management controls modifications to minimize risk",
+            "CMDB (Configuration Management Database) tracks IT assets and relationships"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Incident vs. Problem Management",
+          "knowledgeCheck": {
+            "question": "During an audit of the IT department, you observe that the incident management team consistently resolves service disruptions quickly, but the same issues recur frequently. Which of the following is the MOST appropriate recommendation to improve IT service management?",
+            "options": [
+              "Implement a more robust incident escalation process to involve senior IT staff earlier.",
+              "Increase the budget for incident management training to improve technical skills.",
+              "Strengthen the problem management process to identify and address the root causes of recurring incidents.",
+              "Reduce the service level agreements (SLAs) for incident resolution to manage user expectations."
+            ],
+            "correctIndex": 2,
+            "explanation": "Strengthening the problem management process is the most appropriate recommendation because it focuses on preventing future incidents by identifying and addressing the root causes of recurring issues. Incident management focuses on restoring service quickly, but it does not address the underlying problems.",
+            "hint": "Think about the primary goal of each process: incident management vs. problem management."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "ITIL 4 Guiding Principles",
+          "reveal": {
+            "question": "What is the ITIL 4 guiding principle that emphasizes understanding the current state before making changes?",
+            "answer": "Start where you are. This principle encourages organizations to assess their current capabilities, resources, and challenges before implementing new processes or technologies."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Incident vs. Problem Management",
+          "comparison": {
+            "headers": [
+              "Incident Management",
+              "Problem Management"
+            ],
+            "rows": [
+              {
+                "label": "Goal",
+                "values": [
+                  "Restore service ASAP",
+                  "Prevent future incidents"
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Symptom resolution",
+                  "Root cause elimination"
+                ]
+              },
+              {
+                "label": "Key Question",
+                "values": [
+                  "How do we get this working again?",
+                  "Why did this happen?"
+                ]
+              },
+              {
+                "label": "Primary Metric",
+                "values": [
+                  "Speed of restoration",
+                  "Reduction in incident recurrence"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-021",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Capacity and Performance Management",
+    "description": "Learn to evaluate IT capacity planning and performance monitoring",
+    "order": 21,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Capacity Planning",
+      "Performance Monitoring",
+      "Tuning",
+      "Resource Optimization"
+    ],
+    "blueprintArea": "CISA4-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Adequate capacity ensures systems can meet business demands. Poor capacity planning leads to performance issues, outages, and failed business processes."
+        },
+        {
+          "title": "Capacity Management Process",
+          "type": "text",
+          "content": "**Key Activities:**\n\n**Demand Management:**\n\u2022 Forecast future requirements\n\u2022 Understand business growth plans\n\u2022 Identify seasonal patterns\n\u2022 Model what-if scenarios\n\n**Capacity Planning:**\n\u2022 Translate demand into resource needs\n\u2022 Plan infrastructure expansion\n\u2022 Budget for growth\n\u2022 Lead time for procurement\n\n**Performance Monitoring:**\n\u2022 Track resource utilization\n\u2022 Identify bottlenecks\n\u2022 Trend analysis\n\u2022 Alert on thresholds\n\n**Tuning and Optimization:**\n\u2022 Adjust configurations\n\u2022 Reallocate resources\n\u2022 Eliminate waste\n\u2022 Improve efficiency"
+        },
+        {
+          "title": "Key Performance Metrics",
+          "type": "table",
+          "headers": [
+            "Resource",
+            "Metrics",
+            "Warning Signs"
+          ],
+          "rows": [
+            [
+              "CPU",
+              "Utilization %, queue depth",
+              "Sustained > 80%, high queue"
+            ],
+            [
+              "Memory",
+              "Utilization %, page faults",
+              "Sustained > 85%, excessive paging"
+            ],
+            [
+              "Disk",
+              "IOPS, latency, free space",
+              "Latency spikes, < 20% free"
+            ],
+            [
+              "Network",
+              "Bandwidth utilization, latency",
+              "> 70% sustained, high packet loss"
+            ],
+            [
+              "Application",
+              "Response time, throughput",
+              "Degraded response, transaction timeouts"
+            ],
+            [
+              "Database",
+              "Query time, connection pool",
+              "Slow queries, pool exhaustion"
+            ]
+          ]
+        },
+        {
+          "title": "Capacity Planning Approaches",
+          "type": "text",
+          "content": "**Trend Analysis:**\n\u2022 Examine historical growth patterns\n\u2022 Extrapolate into future\n\u2022 Simple but may miss changes\n\n**Workload Modeling:**\n\u2022 Model transaction volumes\n\u2022 Estimate resource per transaction\n\u2022 Scale based on business forecasts\n\n**Simulation:**\n\u2022 Create synthetic workloads\n\u2022 Test system under load\n\u2022 Identify breaking points\n\n**Lead vs. Lag Capacity:**\n\n**Lead Strategy:**\n\u2022 Add capacity before it's needed\n\u2022 Higher cost, lower risk\n\u2022 Appropriate for critical systems\n\n**Lag Strategy:**\n\u2022 Add capacity after demand increases\n\u2022 Lower cost, higher risk\n\u2022 Appropriate for non-critical systems"
+        },
+        {
+          "title": "Cloud Capacity Considerations",
+          "type": "text",
+          "content": "**Auto-Scaling:**\n\u2022 Automatically add/remove resources\n\u2022 Based on defined triggers\n\u2022 Right-sizing in real-time\n\n**Reserved vs. On-Demand:**\n\u2022 Reserved: Lower cost, committed usage\n\u2022 On-Demand: Higher cost, flexibility\n\u2022 Spot/Preemptible: Lowest cost, may be interrupted\n\n**Audit Considerations:**\n\u2022 Are scaling policies appropriate?\n\u2022 Is cost monitoring in place?\n\u2022 Are spending alerts configured?\n\u2022 Is right-sizing analyzed regularly?\n\u2022 Are unused resources identified?"
+        },
+        {
+          "title": "Auditing Capacity Management",
+          "type": "text",
+          "content": "**Governance:**\n\u2022 Is there a capacity management process?\n\u2022 Are roles and responsibilities defined?\n\u2022 Is capacity reported to management?\n\n**Planning:**\n\u2022 Are capacity plans documented?\n\u2022 Are business growth plans incorporated?\n\u2022 Is lead time for procurement adequate?\n\n**Monitoring:**\n\u2022 Are key metrics tracked?\n\u2022 Are thresholds and alerts defined?\n\u2022 Is trend analysis performed?\n\u2022 Are reports reviewed?\n\n**Performance:**\n\u2022 Are SLAs being met?\n\u2022 Are bottlenecks identified and addressed?\n\u2022 Is tuning performed regularly?\n\u2022 Are capacity issues preventing business success?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Capacity management forecasts demand and plans resources accordingly",
+            "Key metrics: CPU, memory, disk, network utilization and response times",
+            "Lead capacity adds before needed (safer); lag adds after (cheaper)",
+            "Cloud auto-scaling provides dynamic capacity adjustment",
+            "Auditors should verify capacity planning aligns with business growth"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Demand Management Scenario",
+          "knowledgeCheck": {
+            "question": "An organization is experiencing rapid growth and needs to plan for future IT infrastructure capacity. Which of the following is the MOST critical first step in the capacity management process to ensure alignment with business needs?",
+            "options": [
+              "Implementing auto-scaling in the cloud environment.",
+              "Conducting a trend analysis of historical resource utilization.",
+              "Forecasting future requirements based on business growth plans.",
+              "Optimizing existing database server configurations.",
+              "E) Negotiating reserved instances with the cloud provider."
+            ],
+            "correctIndex": 2,
+            "explanation": "The MOST critical first step is forecasting future requirements based on business growth plans. This aligns IT capacity with anticipated business demand. Trend analysis (B) is useful but reactive. Auto-scaling (A) and reserved instances (E) are implementation details that come later. Optimizing existing configurations (D) addresses current performance but not future capacity.",
+            "hint": "Consider the overall goal of capacity management: aligning IT resources with business needs."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Cloud Capacity Options",
+          "reveal": {
+            "question": "Describe the key trade-offs between Reserved Instances and On-Demand cloud resources from a cost and flexibility perspective.",
+            "answer": "Reserved Instances offer lower costs in exchange for committed usage, providing cost savings for predictable workloads. On-Demand resources offer higher cost but greater flexibility, allowing for scaling up or down as needed without a long-term commitment. Spot/Preemptible instances offer the lowest cost, but can be interrupted."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Capacity Planning Approaches",
+          "comparison": {
+            "headers": [
+              "Trend Analysis",
+              "Workload Modeling",
+              "Simulation"
+            ],
+            "rows": [
+              {
+                "label": "Data Source",
+                "values": [
+                  "Historical resource utilization data",
+                  "Transaction volumes and resource requirements",
+                  "Synthetic workloads"
+                ]
+              },
+              {
+                "label": "Complexity",
+                "values": [
+                  "Simple",
+                  "Moderate",
+                  "High"
+                ]
+              },
+              {
+                "label": "Use Case",
+                "values": [
+                  "Predicting overall growth based on past patterns",
+                  "Estimating resource needs based on business forecasts and transaction characteristics",
+                  "Testing system behavior under various load conditions"
+                ]
+              },
+              {
+                "label": "Limitations",
+                "values": [
+                  "May not account for sudden changes or new business initiatives",
+                  "Requires accurate estimates of resource consumption per transaction",
+                  "Requires careful design and validation of synthetic workloads"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-022",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "System Resilience and High Availability",
+    "description": "Understand fault tolerance, redundancy, and high availability architectures",
+    "order": 22,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "High Availability",
+      "Fault Tolerance",
+      "Clustering",
+      "Load Balancing"
+    ],
+    "blueprintArea": "CISA4-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "High availability architectures prevent outages that disrupt business operations. Understanding resilience helps auditors evaluate whether technical controls match business requirements."
+        },
+        {
+          "title": "Availability Concepts",
+          "type": "text",
+          "content": "**Availability = MTBF / (MTBF + MTTR)**\n\n**Key Terms:**\n\n**MTBF (Mean Time Between Failures)**\n\u2022 Average time system operates before failing\n\u2022 Longer = more reliable\n\n**MTTR (Mean Time to Repair)**\n\u2022 Average time to restore after failure\n\u2022 Shorter = faster recovery\n\n**MTTF (Mean Time to Failure)**\n\u2022 For non-repairable components\n\u2022 Time from start to failure\n\n**Availability Levels:**\n\u2022 99% = 3.65 days downtime/year\n\u2022 99.9% (\"three nines\") = 8.76 hours/year\n\u2022 99.99% (\"four nines\") = 52.6 minutes/year\n\u2022 99.999% (\"five nines\") = 5.26 minutes/year"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: MTBF vs MTTR",
+          "type": "callout",
+          "content": "**MTBF = Between Failures** (how long until it breaks)\n**MTTR = To Repair** (how long to fix it)\n\nTo improve availability:\n\u2022 Increase MTBF: Better components, preventive maintenance\n\u2022 Decrease MTTR: Redundancy, spare parts, skilled staff"
+        },
+        {
+          "title": "Redundancy Strategies",
+          "type": "table",
+          "headers": [
+            "Strategy",
+            "Description",
+            "Failover Time",
+            "Cost"
+          ],
+          "rows": [
+            [
+              "Active-Active",
+              "Multiple active components share load",
+              "Immediate (no failover)",
+              "High (full duplication)"
+            ],
+            [
+              "Active-Passive",
+              "Standby takes over on failure",
+              "Seconds to minutes",
+              "Moderate"
+            ],
+            [
+              "N+1",
+              "One spare for N systems",
+              "Minutes",
+              "Efficient"
+            ],
+            [
+              "N+N",
+              "Full duplication",
+              "Seconds to minutes",
+              "High"
+            ],
+            [
+              "Geographic",
+              "Multiple locations",
+              "Depends on architecture",
+              "Very High"
+            ]
+          ]
+        },
+        {
+          "title": "High Availability Technologies",
+          "type": "text",
+          "content": "**Clustering:**\n\u2022 Multiple servers working as one\n\u2022 Shared workload or failover capability\n\u2022 Shared storage or replicated data\n\u2022 Cluster manager monitors health\n\n**Load Balancing:**\n\u2022 Distributes traffic across servers\n\u2022 Health checks detect failures\n\u2022 Automatic removal of failed servers\n\u2022 Algorithms: Round-robin, least connections, IP hash\n\n**RAID (Redundant Array of Independent Disks):**\n\u2022 RAID 0: Striping (performance, no redundancy)\n\u2022 RAID 1: Mirroring (full duplication)\n\u2022 RAID 5: Striping with parity (survive 1 disk failure)\n\u2022 RAID 6: Double parity (survive 2 disk failures)\n\u2022 RAID 10: Mirrored stripes (performance + redundancy)"
+        },
+        {
+          "title": "Database High Availability",
+          "type": "text",
+          "content": "**Replication Types:**\n\n**Synchronous Replication:**\n\u2022 Writes confirmed on primary AND replica\n\u2022 No data loss on failover (RPO = 0)\n\u2022 Higher latency (must wait for replica)\n\u2022 Used for critical databases\n\n**Asynchronous Replication:**\n\u2022 Writes confirmed on primary only\n\u2022 Small data loss possible on failover\n\u2022 Lower latency (don't wait)\n\u2022 Used when some data loss is tolerable\n\n**Failover Options:**\n\u2022 Manual failover: Administrator intervention\n\u2022 Automatic failover: System detects and switches\n\u2022 Planned failover: Graceful transition"
+        },
+        {
+          "title": "Single Points of Failure (SPOF)",
+          "type": "text",
+          "content": "**Definition:** A component whose failure would cause the entire system to fail.\n\n**Common SPOFs:**\n\u2022 Single network path\n\u2022 Single power supply\n\u2022 Single database server\n\u2022 Single application server\n\u2022 Single administrator password\n\u2022 Single vendor dependency\n\n**Audit Questions:**\n\u2022 Have SPOFs been identified?\n\u2022 Are critical components redundant?\n\u2022 Is there a single network path?\n\u2022 Is there geographic diversity?\n\u2022 Are key staff cross-trained?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Availability = MTBF / (MTBF + MTTR); higher MTBF and lower MTTR improve it",
+            "Active-Active provides immediate failover; Active-Passive requires switchover time",
+            "RAID provides disk redundancy; RAID 1 mirrors, RAID 5/6 uses parity",
+            "Synchronous replication = no data loss; Asynchronous = potential small loss",
+            "Single Points of Failure must be identified and eliminated for critical systems"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Availability Calculation",
+          "knowledgeCheck": {
+            "question": "An organization's critical system has a Mean Time Between Failures (MTBF) of 900 hours and a Mean Time To Repair (MTTR) of 100 hours. What is the availability of this system?",
+            "options": [
+              "90%",
+              "9%",
+              "10%",
+              "900%"
+            ],
+            "correctIndex": 0,
+            "explanation": "Availability is calculated as MTBF / (MTBF + MTTR). In this case, 900 / (900 + 100) = 900 / 1000 = 0.9 or 90%.",
+            "hint": "Remember the formula: Availability = MTBF / (MTBF + MTTR)"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: Key Terms",
+          "reveal": {
+            "question": "What does MTTR stand for, and what does it measure?",
+            "answer": "MTTR stands for Mean Time To Repair. It measures the average time required to restore a system or component to a fully operational state after a failure."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Clustering vs. Load Balancing",
+          "comparison": {
+            "headers": [
+              "Clustering",
+              "Load Balancing"
+            ],
+            "rows": [
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "High availability through redundancy; often failover or shared workload.",
+                  "Distribute workload evenly across multiple servers to optimize performance and prevent overload."
+                ]
+              },
+              {
+                "label": "Failure Handling",
+                "values": [
+                  "One server takes over the workload of a failed server (failover) or shares the workload actively.",
+                  "Traffic is automatically redirected away from failed servers to healthy servers."
+                ]
+              },
+              {
+                "label": "Data Storage",
+                "values": [
+                  "Often requires shared storage or data replication across nodes.",
+                  "Servers typically have their own storage, but data consistency is crucial."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

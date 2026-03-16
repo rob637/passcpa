@@ -9,7 +9,7 @@ import { UserProfile, CourseIdType } from '../types';
 
 // All courses now store dates by course ID (uppercase) for simplicity
 // This provides one exam date per course instead of per-section
-const ALL_COURSE_IDS = ['cpa', 'ea', 'cma', 'cfp', 'cisa'];
+const ALL_COURSE_IDS = ['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'];
 
 // Legacy section-specific keys that may have been used to store exam dates
 // Maps course -> array of possible legacy keys to check (for migration)
@@ -17,6 +17,7 @@ const LEGACY_SECTION_KEYS: Record<string, string[]> = {
   cpa: ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP', 'BEC'],
   ea: ['SEE1', 'SEE2', 'SEE3'],
   cma: ['CMA1', 'CMA2'],
+  cia: ['CIA1', 'CIA2', 'CIA3'],
   cisa: ['Audit', 'Gov', 'Dev', 'Ops', 'Sec', 'CISA1', 'CISA2', 'CISA3', 'CISA4', 'CISA5'],
   cfp: ['Ethics', 'Gen', 'Risk', 'Inv', 'Tax', 'Ret', 'Est', 'Psy', 'CFP-PCR', 'CFP-GEN', 'CFP-RISK', 'CFP-INV', 'CFP-TAX', 'CFP-RET', 'CFP-EST', 'CFP-PSY'],
 };
@@ -248,8 +249,8 @@ export function getCurrentSection(
     ea: /^SEE[123]$/,
     cma: /^CMA[12]$/,
     cia: /^(part[123]|CIA[123])$/,
-    cisa: /^(domain[1-5]|CISA[1-5]|CISA)$/,   // Accept 'CISA' for single-exam course
-    cfp: /^(CFP-.+|CFP)$/,  // CFP-PCR, CFP-GEN, etc. or 'CFP' for single-exam course
+    cisa: /^(domain[1-5]|CISA[1-5]|CISA|ALL)$/,   // Accept 'CISA' or 'ALL' for single-exam course
+    cfp: /^(CFP-.+|CFP|ALL)$/,  // CFP-PCR, CFP-GEN, etc. or 'CFP' or 'ALL' for single-exam course
   };
   
   const coursePattern = sectionCourseMapping[courseId];

@@ -119,8 +119,15 @@ export function getCurrentSectionForCourse(
 
 /**
  * Get the first/default section for a course
+ * Single-exam courses (CISA, CFP) return 'ALL' to cover all domains
  */
 export function getDefaultSection(courseId: string = 'cpa'): string {
+  // Single-exam courses use 'ALL' to represent the full exam
+  const SINGLE_EXAM_COURSES = ['cisa', 'cfp'];
+  if (SINGLE_EXAM_COURSES.includes(courseId)) {
+    return 'ALL';
+  }
+  
   const course = COURSES[courseId as keyof typeof COURSES];
   if (!course || course.sections.length === 0) return 'FAR'; // Fallback
   return course.sections[0].id;

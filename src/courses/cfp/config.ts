@@ -90,6 +90,28 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
           'Bankruptcy considerations',
         ] 
       },
+      { 
+        id: 'GEN-4', 
+        name: 'Education Savings', 
+        weight: 'Medium', 
+        topics: [
+          '529 college savings plans',
+          'Prepaid tuition plans',
+          'Super-funding strategies',
+          'SECURE 2.0 act provisions',
+        ] 
+      },
+      { 
+        id: 'GEN-5', 
+        name: 'Economic Concepts', 
+        weight: 'Medium', 
+        topics: [
+          'Business cycles',
+          'Economic indicators',
+          'Monetary and fiscal policy',
+          'Interest rates and inflation',
+        ] 
+      },
     ]
   },
   {
@@ -312,6 +334,30 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
           'Retirement income sustainability (4% rule, guardrails)',
         ] 
       },
+      { 
+        id: 'RET-4', 
+        name: 'Executive Compensation', 
+        weight: 'Medium', 
+        topics: [
+          'Non-qualified deferred compensation (NQDC)',
+          'Stock options and restricted stock',
+          '457(b) and 457(f) plans',
+          'Golden parachutes',
+          'Executive bonus plans',
+        ] 
+      },
+      { 
+        id: 'RET-5', 
+        name: 'Special Situations', 
+        weight: 'Medium', 
+        topics: [
+          'Early retirement planning',
+          'Pension maximization',
+          'Healthcare in retirement',
+          'Long-term care considerations',
+          'SECURE 2.0 provisions',
+        ] 
+      },
     ]
   },
   {
@@ -397,6 +443,16 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
           'Overconfidence and hindsight bias',
           'Framing effects',
           'Heuristics in decision-making',
+        ] 
+      },
+      { 
+        id: 'PSY-3', 
+        name: 'Client Decision Making', 
+        weight: 'Medium', 
+        topics: [
+          'Client autonomy and decision support',
+          'Ethical considerations in advising',
+          'Managing emotional responses',
         ] 
       },
     ]

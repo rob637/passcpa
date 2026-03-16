@@ -179,8 +179,10 @@ export const CMA_COURSE: Course = {
   features: {
     hasTBS: false,
     hasWrittenCommunication: false,
-    hasEssay: false, // Essays retired Sept 2026, replaced by CBQs
-    hasCBQ: true, // Case-Based Questions mandatory from Sept 2026
+    // Essays available until Aug 2026, CBQs mandatory from Sept 2026
+    // During transition (May-Aug 2026), both are available
+    hasEssay: true,  // Essays still primary format until Sept 2026
+    hasCBQ: true,    // CBQs available for practice starting May 2026
     hasDataInsights: false,
   },
   

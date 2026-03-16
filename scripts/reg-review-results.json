@@ -1,0 +1,8566 @@
+[
+  {
+    "id": "reg-add-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-026",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-027",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-028",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-029",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-030",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-031",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-032",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-033",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-034",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-035",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-036",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-037",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-038",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-039",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-add-040",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-at-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-at-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-bl-agency-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-bl-cont-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-bl-cont-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-bl-cont-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-bl-debt-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-bl-debt-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-bl-debt-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-comp-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-corp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-corp-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-corp-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-corp-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-corp-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-corp-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-corp-051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-corp-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-corp-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-corp-054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-corp-b6-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-corp-b6-002",
+    "verdict": "QUESTIONABLE",
+    "reason": "Both A and C increase E&P. The question should specify \"only\" or ask for the greater increase.",
+    "question": "During the year, Cardinal Corp. received $50,000 in life insurance proceeds from a key employee poli",
+    "markedAnswer": 0,
+    "options": [
+      "Life insurance proceeds received",
+      "Dividends paid",
+      "Tax-exempt interest",
+      "Federal income taxes paid"
+    ]
+  },
+  {
+    "id": "reg-corp-b6-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-cred-001",
+    "verdict": "WRONG",
+    "reason": "The maximum amount of expenses that qualify for the child and dependent care credit is $3,000 for one qualifying individual. The applicable percentage for AGI of $35,000 is 20%. Therefore, the maximum credit is $3,000 * 20% = $600. The correct answer is C.",
+    "question": "A taxpayer paid $8,000 in child care expenses for their 4-year-old while working. Their AGI is $35,0",
+    "markedAnswer": 0,
+    "options": [
+      "$2,400",
+      "$1,200",
+      "$600",
+      "$1,050"
+    ]
+  },
+  {
+    "id": "reg-cred-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-cred-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-cred-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-cred-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d1-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d2-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d3-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d4-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d5-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d6-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d7-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-014",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $250,000. Basis is old basis less boot received.",
+    "question": "A taxpayer exchanges an office building (adjusted basis $300,000, FMV $500,000) for another office b",
+    "markedAnswer": 0,
+    "options": [
+      "$450,000 (the fair market value of the new building is the new basis)",
+      "$300,000 (the old basis carries over since gain is partially deferred)",
+      "$250,000 (the old basis less the cash received, recognizing the loss)",
+      "$350,000 (the old basis plus the cash received, up to the building's FMV)"
+    ]
+  },
+  {
+    "id": "reg-d8-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-017",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because the deferred gain is $150,000 ($350,000 - $200,000). The basis is the cost of the new warehouse less the deferred gain ($320,000 - $150,000 = $170,000).",
+    "question": "A taxpayer's warehouse (adjusted basis $200,000) is destroyed by fire. Insurance proceeds of $350,00",
+    "markedAnswer": 0,
+    "options": [
+      "$320,000",
+      "$170,000 ($320,000 cost − $150,000 deferred gain)",
+      "$200,000",
+      "$350,000"
+    ]
+  },
+  {
+    "id": "reg-d8-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d8-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-d9-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ded-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ded-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ded-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ded-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ded-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-dep-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-dep-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-012",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $20,300. $14,000 (mortgage interest) + $10,000 (SALT limit) + $2,000 (charitable contributions) = $26,000. However, the SALT deduction is limited to $10,000. $4,500 (state income taxes) + $3,800 (real property taxes) = $8,300.",
+    "question": "A taxpayer paid $14,000 in mortgage interest on a primary residence (post-2017 mortgage of $600,000)",
+    "markedAnswer": 0,
+    "options": [
+      "$20,000",
+      "$24,300",
+      "$22,300",
+      "$26,300"
+    ]
+  },
+  {
+    "id": "reg-easy-exp-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-easy-exp-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-002",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because the explanation contradicts the answer.",
+    "question": "Mark enjoys woodworking as a hobby. He occasionally sells his creations. Under IRC §183 hobby loss r",
+    "markedAnswer": 1,
+    "options": [
+      "All personal debt, including home mortgages, auto loans, and student loans, can be used to offset hobby income, regardless of whether the debt is related to the hobby.",
+      "No presumption of for-profit activity exists under IRC §183, regardless of gross income, expenses, or the number of years the activity is conducted.",
+      "Only if Mark uses a business credit card and reports the woodworking income on Schedule C, and the debt is solely for materials used in the woodworking activity.",
+      "Bankruptcy, insolvency, qualified principal residence, qualified farm debt, qualified real property business debt"
+    ]
+  },
+  {
+    "id": "reg-elite-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-026",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-027",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-028",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-029",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-elite-030",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-eth-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-eth-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-eth-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-eth-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-eth-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-eth-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-eth-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-eth-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-eth-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-eth-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-026",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-027",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-028",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-029",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-030",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-031",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-032",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-033",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-034",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-035",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-036",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-037",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-038",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-039",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-exp-040",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation contradicts the answer. The answer says \"realistic possibility of success\" if disclosed, but the explanation says \"realistic possibility of success\" if NOT disclosed.",
+    "question": "You are preparing a tax return for a new client. Under AICPA Statements on Standards for Tax Service",
+    "markedAnswer": 3,
+    "options": [
+      "Only if certain to prevail based on existing statutory authority and published IRS guidance, ensuring minimal risk of audit or adjustment.",
+      "Regardless of support, provided the client agrees in writing to bear all responsibility for penalties and interest assessed by the IRS.",
+      "Without any documentation, as long as the client provides a signed affidavit attesting to the accuracy and completeness of the information.",
+      "That has at least a \"realistic possibility of success\" (one-in-three) if disclosed, or \"reasonable basis\" if adequately disclosed"
+    ]
+  },
+  {
+    "id": "reg-ext-100",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-101",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-102",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-103",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $230 per partner per month, up to 12 months. The explanation is correct, but the answer choices are incorrect.",
+    "question": "ABC Partnership failed to file its partnership return by the due date. What is the penalty for failu",
+    "markedAnswer": 1,
+    "options": [
+      "10% flat penalty",
+      "5% per month up to 25%",
+      "0.5% per month up to 25%",
+      "1% per month up to 12%"
+    ]
+  },
+  {
+    "id": "reg-ext-104",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-105",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-106",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-107",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-108",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-109",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-110",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-111",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-112",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-113",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-114",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-115",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-116",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-117",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-118",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-119",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-120",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-121",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-122",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-123",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-124",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-125",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-126",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-127",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-128",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-129",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-130",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-131",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-132",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-133",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-134",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-135",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-136",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-137",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-138",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-139",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-140",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-141",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-142",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-143",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-144",
+    "verdict": "B",
+    "reason": "The explanation says \"Never 100% taxable\" which is incorrect."
+  },
+  {
+    "id": "reg-ext-145",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-146",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-147",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-148",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-149",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-150",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-151",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-152",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-153",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-154",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-155",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-156",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-157",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-158",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-159",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-160",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-161",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-162",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-163",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-164",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-165",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-166",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-167",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-168",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-69",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-70",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-71",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-72",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-73",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-74",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-75",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-76",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-77",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-78",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-79",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-80",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-81",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-82",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-83",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-84",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-85",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-86",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-87",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-88",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-89",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-90",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-91",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-92",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-93",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-94",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-95",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-96",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-97",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-98",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-99",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-corp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-corp-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-corp-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-corp-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-corp-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-law-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-law-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-law-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-law-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-law-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-part-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-part-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-part-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-part-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-part-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-scorp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-scorp-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-scorp-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-scorp-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ext-scorp-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gi-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gi-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gi-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gi-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gi-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gi-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gi-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gi-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gi-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gi-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gift-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gift-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gift-003",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation is incomplete. It should explicitly state that if the life estate qualifies as QTIP, it qualifies for the marital deduction, and the taxable gift is only the remainder interest. If it's NOT QTIP, the life estate is also a taxable gift.",
+    "question": "A donor gives property worth $100,000 with a basis of $40,000 to a trust. The trust pays income to d",
+    "markedAnswer": 1,
+    "options": [
+      "Full $100,000 FMV, no annual exclusion",
+      "Value of remainder interest only",
+      "$0, due to unlimited marital deduction",
+      "Donor's $40,000 adjusted basis in property"
+    ]
+  },
+  {
+    "id": "reg-gift-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gift-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-055",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-b3-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-b3-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-b6-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-b6-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-ind-b6-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-intl-b3-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-intl-b3-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-intl-b3-003",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be D because the FTC limit is $105,000, not $52,500.",
+    "question": "A U.S. corporation has foreign source income of $500,000 and worldwide taxable income of $2,000,000.",
+    "markedAnswer": 1,
+    "options": [
+      "$150,000",
+      "$52,500",
+      "$420,000",
+      "$105,000"
+    ]
+  },
+  {
+    "id": "reg-item-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-item-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-item-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-item-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-item-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-law-055",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-mast-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-b3-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-b3-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-b3-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-b3-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-part-b3-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-proc-b3-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-proc-b3-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-proc-b3-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-proc-b3-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-055",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-b3-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-b3-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-b3-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-ext-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-ext-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-ext-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-ext-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-prop-ext-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-qbi-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-qbi-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-scorp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-scorp-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-scorp-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-scorp-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-scorp-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-scorp-051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-scorp-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-scorp-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-scorp-b3-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-scorp-b3-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-scorp-b3-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-se-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-tax-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-tax-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-tax-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-tax-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-tax-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-026",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-027",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-028",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-029",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-030",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-031",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-032",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-033",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-034",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-035",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-036",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-037",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-038",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-039",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-040",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-047",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-048",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-049",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-051",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be C because hobby expenses are deductible up to the amount of hobby income.",
+    "question": "Thompson has a horse breeding activity with gross income of $10,000 and expenses of $25,000. The IRS",
+    "markedAnswer": 0,
+    "options": [
+      "$0",
+      "$15,000",
+      "$10,000",
+      "$25,000"
+    ]
+  },
+  {
+    "id": "reg-wc-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-055",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-056",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-057",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-058",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-059",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-061",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-062",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-063",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-064",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-065",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-066",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-067",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-068",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-069",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-070",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-071",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-072",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-073",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-074",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-075",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-076",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-077",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-078",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-079",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-080",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-081",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-082",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-083",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-084",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-085",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-086",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-087",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-088",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-089",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-090",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-091",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-092",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because the limit is 10% of taxable income, not 25%.",
+    "question": "Atlas Corp., a C corporation, has modified taxable income of $180,000 before considering charitable ",
+    "markedAnswer": 0,
+    "options": [
+      "$18,000 deductible currently; $7,000 carries forward for up to 5 years",
+      "$25,000 is fully deductible since it is below the 25% limit",
+      "$18,000 deductible; the excess is permanently lost",
+      "$25,000 is fully deductible since cash donations have no percentage limitation"
+    ]
+  },
+  {
+    "id": "reg-wc-093",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-094",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-095",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-096",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-097",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-098",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-099",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-100",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-101",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-102",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-103",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-104",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-105",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-106",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-107",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-108",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-109",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-110",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-111",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-112",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-113",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-114",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-115",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-116",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation states the recognition period is 5 years, but it is actually 5 years from the date of conversion or 10 years for corporations converting after 1986.",
+    "question": "An S corporation that was previously a C corporation converted 5 years ago. It has $200,000 in built",
+    "markedAnswer": 0,
+    "options": [
+      "The $60,000 built-in gain is subject to the built-in gains tax at the 21% corporate rate",
+      "No built-in gains tax applies because the 5-year recognition period has expired",
+      "The gain is taxed only at the shareholder level as a pass-through item, increasing their basis and avoiding corporate-level tax.",
+      "The built-in gains tax applies only if the S corporation's *net* recognized built-in gains exceed the total built-in gain amount of $200,000 at conversion."
+    ]
+  },
+  {
+    "id": "reg-wc-117",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-118",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-119",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-120",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-121",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-122",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-123",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-124",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-125",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-126",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-127",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-128",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-129",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-130",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-131",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-132",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-133",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-134",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-135",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-136",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-137",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-138",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-139",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-140",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-141",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-142",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-143",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-144",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-145",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-146",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-147",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-148",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-149",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-150",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-151",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-152",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-153",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-154",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-155",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-156",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-157",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-158",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-159",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-160",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-161",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-162",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-163",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-164",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-165",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-166",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-167",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-168",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-169",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-170",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-171",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-172",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-173",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-174",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-175",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-176",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-177",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-178",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-179",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-180",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-181",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-182",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-183",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-184",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-185",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-186",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-187",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-188",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-189",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-190",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-191",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because the debt basis is only restored to the extent of prior reductions.",
+    "question": "An S corporation shareholder has a beginning stock basis of $18,000 and separately lent $12,000 to t",
+    "markedAnswer": 3,
+    "options": [
+      "Stock basis $0, debt basis $5,000 after year 2",
+      "Stock basis $10,000, debt basis $12,000 after year 2",
+      "Stock basis $5,000, debt basis $0 after year 2",
+      "Stock basis $0, debt basis $12,000 after year 2"
+    ]
+  },
+  {
+    "id": "reg-wc-192",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-193",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-194",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-195",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-196",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-197",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-198",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-199",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-200",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-201",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-202",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-203",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-204",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-205",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-206",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-207",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-208",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be C because if the taxpayer does not outlive the term, the FMV at death is included in the gross estate.",
+    "question": "A taxpayer aged 60 transfers her primary residence valued at $2,000,000 to a Qualified Personal Resi",
+    "markedAnswer": 1,
+    "options": [
+      "Only $800,000 (the gift value) is included in the gross estate",
+      "The residence is excluded from the gross estate",
+      "The residence's fair market value at death is included in the gross estate",
+      "The full $2,000,000 is included in the gross estate"
+    ]
+  },
+  {
+    "id": "reg-wc-209",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-210",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-211",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-212",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-213",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-wc-214",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0917",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0918",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0919",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0920",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0921",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0922",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0923",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0924",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0925",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0926",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0927",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0928",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0929",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0930",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0931",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0932",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0933",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0934",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because the omission of gross income exceeds 25% of the reported gross income, extending the statute of limitations to six years.",
+    "question": "Barry filed his 2022 individual income tax return on March 15, 2023. He inadvertently omitted gross ",
+    "markedAnswer": 0,
+    "options": [
+      "March 15, 2026",
+      "March 15, 2029",
+      "December 31, 2028",
+      "December 31, 2029"
+    ]
+  },
+  {
+    "id": "reg-gen-0935",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0936",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0937",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0938",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0939",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0940",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0941",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0942",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0943",
+    "verdict": "WRONG",
+    "reason": "Supplier Co. has priority because it has a purchase money security interest and perfected within 20 days.",
+    "question": "Acme Corp. borrowed $50,000 from First Bank and granted a security interest in its existing and afte",
+    "markedAnswer": 0,
+    "options": [
+      "First Bank, because it filed its financing statement first.",
+      "Supplier Co., because it has a purchase money security interest.",
+      "First Bank, because its security interest covers after-acquired property.",
+      "Supplier Co., because it perfected its security interest within 20 days of the debtor receiving possession of the collateral."
+    ]
+  },
+  {
+    "id": "reg-gen-0944",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0945",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0946",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0947",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0948",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0949",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0950",
+    "verdict": "WRONG",
+    "reason": "First Bank, because it filed its financing statement before Second Bank.",
+    "question": "On March 1, Ace Manufacturing borrowed $50,000 from First Bank, granting First Bank a security inter",
+    "markedAnswer": 0,
+    "options": [
+      "Second Bank, because it filed its financing statement before First Bank.",
+      "First Bank, because it perfected its security interest before Second Bank.",
+      "Second Bank, because its loan was larger than First Bank's loan.",
+      "First Bank, because it was the first to obtain a security interest in the equipment."
+    ]
+  },
+  {
+    "id": "reg-gen-0951",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0952",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0953",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0954",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0955",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0956",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0957",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0958",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0959",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0960",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0961",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0962",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0963",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0964",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0965",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0966",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0967",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because only the cosmetic surgery is not deductible.",
+    "question": "Mark and Lisa are married and filing jointly. In 2023, they had adjusted gross income (AGI) of $80,0",
+    "markedAnswer": 0,
+    "options": [
+      "$4,500",
+      "$6,000",
+      "$7,500",
+      "$10,000"
+    ]
+  },
+  {
+    "id": "reg-gen-0968",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation has calculation errors. The correct taxable income should be $46,750, but the closest answer is $46,000.",
+    "question": "John and Mary are married and filing jointly. John is 67 years old and Mary is 62. John is blind. Th",
+    "markedAnswer": 3,
+    "options": [
+      "$42,000",
+      "$44,100",
+      "$45,100",
+      "$46,000"
+    ]
+  },
+  {
+    "id": "reg-gen-0969",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0970",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because $5,000 for room and board is taxable, and $3,000 of the 529 earnings are taxable.",
+    "question": "In 2023, Jane received a $20,000 scholarship from State University. The scholarship paid $12,000 for",
+    "markedAnswer": 3,
+    "options": [
+      "$5,000",
+      "$8,000",
+      "$10,000",
+      "$13,000"
+    ]
+  },
+  {
+    "id": "reg-gen-0971",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0972",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0973",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because the deduction for self-employment tax is one-half of the self-employment tax, and the health insurance deduction is limited to the net profit of the business.",
+    "question": "Jane is self-employed and operates a small consulting business. In 2023, her business generated $80,",
+    "markedAnswer": 3,
+    "options": [
+      "$5,660",
+      "$16,000",
+      "$12,000",
+      "$18,000"
+    ]
+  },
+  {
+    "id": "reg-gen-0974",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because their AGI is too high for EITC, and they can claim the full $2,000 child tax credit.",
+    "question": "John and Mary are married and filing jointly. They have one child, David, age 16, who lives with the",
+    "markedAnswer": 3,
+    "options": [
+      "Child Tax Credit: $2,000; EITC: Not Eligible",
+      "Child Tax Credit: $2,000; EITC: Eligible",
+      "Child Tax Credit: $0; EITC: Eligible",
+      "Child Tax Credit: $3,000; EITC: Not Eligible"
+    ]
+  },
+  {
+    "id": "reg-gen-0975",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0976",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0977",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $46,750. The explanation is correct, but the answer choices are wrong.",
+    "question": "John and Mary are married, filing jointly, and are both 67 years old. John is blind. Their adjusted ",
+    "markedAnswer": 3,
+    "options": [
+      "$47,900",
+      "$51,700",
+      "$52,300",
+      "$50,300"
+    ]
+  },
+  {
+    "id": "reg-gen-0978",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $66,125. The explanation is correct, but the answer choices are wrong.",
+    "question": "For 2024, John, a single taxpayer, has Alternative Minimum Taxable Income (AMTI) of $274,500. What i",
+    "markedAnswer": 1,
+    "options": [
+      "$0",
+      "$35,990",
+      "$87,800",
+      "$87,850"
+    ]
+  },
+  {
+    "id": "reg-gen-0979",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0980",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0981",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0982",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0983",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0984",
+    "verdict": "WRONG",
+    "reason": "The question asks about the AGI level at which the AMT exemption *begins* to phase out, not how to calculate the exemption. The correct answer should be $187,800 for single in 2023. None of the answers are correct.",
+    "question": "For 2023, what is the adjusted gross income (AGI) level at which the alternative minimum tax (AMT) e",
+    "markedAnswer": 1,
+    "options": [
+      "$57,800",
+      "$115,600",
+      "$578,150",
+      "$741,250"
+    ]
+  },
+  {
+    "id": "reg-gen-0985",
+    "verdict": "WRONG",
+    "reason": "The explanation is incorrect and refers to AMT. The correct answer should be $10,704.",
+    "question": "Jane is a self-employed consultant. In 2023, she had gross income from her consulting business of $8",
+    "markedAnswer": 1,
+    "options": [
+      "$10,322",
+      "$11,304",
+      "$9,810",
+      "$10,704"
+    ]
+  },
+  {
+    "id": "reg-gen-0986",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because Kevin's income exceeds the gross income test.",
+    "question": "Marcus provides 60% of his 23-year-old son Kevin's support. Kevin is a full-time student and earned ",
+    "markedAnswer": 1,
+    "options": [
+      "Yes, because Marcus provides over half of Kevin's support, satisfying the support test, and Kevin is under 24.",
+      "No, because Kevin is over the age of 23 and earned over the gross income test amount.",
+      "Yes, because Kevin is a full-time student under the age of 24, so the age test is met despite his income.",
+      "No, because Kevin is over the age of 24, exceeding the age limit for a qualifying child dependent, regardless of support."
+    ]
+  },
+  {
+    "id": "reg-gen-0987",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0988",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation is incorrect and doesn't lead to the answer. Need to calculate itemized deductions and compare to standard deduction.",
+    "question": "Jane, age 67 and single, has adjusted gross income (AGI) of $60,000. She incurred the following expe",
+    "markedAnswer": 1,
+    "options": [
+      "$47,800",
+      "$48,050",
+      "$47,300",
+      "$45,300"
+    ]
+  },
+  {
+    "id": "reg-gen-0989",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $44,000, but since that's not an option, the closest is $45,000. The explanation is correct.",
+    "question": "John and Mary are married filing jointly. For 2023, their adjusted gross income (AGI) was $250,000 a",
+    "markedAnswer": 1,
+    "options": [
+      "$40,000",
+      "$45,000",
+      "$50,000",
+      "$36,000"
+    ]
+  },
+  {
+    "id": "reg-gen-0990",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0991",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0992",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0993",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0994",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0995",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0996",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0997",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0998",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-0999",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1000",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1006",
+    "verdict": "WRONG",
+    "reason": "The trust is simple because it distributes all income currently and makes no charitable contributions. The beneficiary reports the DNI, which is $50,000. The correct answer should be B. The explanation is about underpayment penalties, which is irrelevant.",
+    "question": "A trust instrument mandates that all income must be distributed currently to the beneficiary. In the",
+    "markedAnswer": 1,
+    "options": [
+      "The trust is a simple trust, and the beneficiary must report $30,000 of income.",
+      "The trust is a simple trust, and the beneficiary must report $50,000 of income.",
+      "The trust is a complex trust, and the beneficiary must report $30,000 of income.",
+      "The trust is a complex trust, and the beneficiary must report $50,000 of income."
+    ]
+  },
+  {
+    "id": "reg-gen-1007",
+    "verdict": "B",
+    "reason": "CORRECT|"
+  },
+  {
+    "id": "reg-gen-1008",
+    "verdict": "A",
+    "reason": "CORRECT|"
+  },
+  {
+    "id": "reg-gen-1009",
+    "verdict": "C",
+    "reason": "CORRECT|"
+  },
+  {
+    "id": "reg-gen-1010",
+    "verdict": "B",
+    "reason": "CORRECT|"
+  },
+  {
+    "id": "reg-gen-1011",
+    "verdict": "B",
+    "reason": "CORRECT|"
+  },
+  {
+    "id": "reg-gen-1012",
+    "verdict": "A",
+    "reason": "CORRECT|"
+  },
+  {
+    "id": "reg-gen-1013",
+    "verdict": "A",
+    "reason": "CORRECT|"
+  },
+  {
+    "id": "reg-gen-1014",
+    "verdict": "A",
+    "reason": "CORRECT|"
+  },
+  {
+    "id": "reg-gen-1015",
+    "verdict": "WRONG",
+    "reason": "Alice's initial capital account is $40,000. The partnership sells the land for $80,000, resulting in a gain of $40,000 ($80,000 - $40,000). This gain is allocated solely to Alice, increasing her capital account to $80,000 ($40,000 + $40,000). The correct answer should be C. The explanation is about underpayment penalties, which is irrelevant.",
+    "question": "Alice and Bob form the AB Partnership. Alice contributes land with a fair market value of $100,000 a",
+    "markedAnswer": 1,
+    "options": [
+      "$20,000",
+      "$40,000",
+      "$80,000",
+      "$100,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1016",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $55,000. $30,000 (basis) - $50,000 (mortgage) + $10,000 (20% of mortgage assumed by other partners) = $55,000",
+    "question": "Alan contributed land with a fair market value of $80,000 and an adjusted basis of $30,000 to a part",
+    "markedAnswer": 1,
+    "options": [
+      "$30,000",
+      "$60,000",
+      "$55,000",
+      "$80,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1023",
+    "verdict": "WRONG",
+    "reason": "This question is about involuntary conversions, not installment sales. The recognized gain is $100,000 ($500,000 - $400,000) and the basis is $300,000 ($400,000 - $100,000 deferred gain). The correct answer should be something close to $100,000 and $300,000.",
+    "question": "Jane owned a commercial building that was destroyed by a tornado in 2023. The building had an adjust",
+    "markedAnswer": 3,
+    "options": [
+      "$0 and $300,000",
+      "$0 and $400,000",
+      "$200,000 and $400,000",
+      "$200,000 and $300,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1026",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1027",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1028",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because loss is disallowed between related parties.",
+    "question": "John owns 60% of the stock in Beta Corporation. He sells a warehouse to Beta Corporation for $400,00",
+    "markedAnswer": 3,
+    "options": [
+      "$0",
+      "$50,000",
+      "$150,000",
+      "$200,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1029",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1030",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1031",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1032",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1033",
+    "verdict": "QUESTIONABLE",
+    "reason": "While the explanation is correct, the answer choices are poor.",
+    "question": "Jane received a parcel of land as a gift from her Aunt Carol in 2023. At the time of the gift, the l",
+    "markedAnswer": 1,
+    "options": [
+      "$100,000",
+      "$100,000 plus a portion of the gift tax paid",
+      "$250,000",
+      "$250,000 plus a portion of the gift tax paid"
+    ]
+  },
+  {
+    "id": "reg-gen-1034",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $0 because no payments were received in Year 1.",
+    "question": "David sold equipment used in his business to an unrelated party on December 31, Year 1, for $500,000",
+    "markedAnswer": 3,
+    "options": [
+      "$150,000",
+      "$50,000",
+      "$0",
+      "$100,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1035",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because of depreciation recapture.",
+    "question": "During the current year, Dale Corporation sold equipment used in its business for $450,000. The equi",
+    "markedAnswer": 3,
+    "options": [
+      "A $50,000 ordinary income and $200,000 Section 1231 gain.",
+      "B $50,000 Section 1231 gain and $200,000 capital gain.",
+      "A $200,000 Section 1231 gain and $50,000 capital gain.",
+      "A $250,000 ordinary income, fully taxable at the corporate rate."
+    ]
+  },
+  {
+    "id": "reg-gen-1036",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1037",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1038",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1039",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be D. The $12,000 loss is a Section 1231 loss, not ordinary.",
+    "question": "During 2023, Jones Company had the following gains and losses:\n\n*   Gain from the sale of land used ",
+    "markedAnswer": 1,
+    "options": [
+      "A $13,000 net Section 1231 gain and a $5,000 short-term capital loss.",
+      "B $18,000 net Section 1231 gain and a $5,000 short-term capital loss.",
+      "C $18,000 net Section 1231 gain and a $5,000 long-term capital loss.",
+      "D $30,000 Section 1231 gain, $12,000 Section 1231 loss, and a $5,000 short-term capital loss."
+    ]
+  },
+  {
+    "id": "reg-gen-1040",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A. Abigail's capital account is $50,000 + $10,000 (income) - $20,000 (depreciation) + $10,000 (gain share) = $50,000. Ben's capital account is $50,000 + $10,000 (income) + $10,000 (gain share) = $70,000. Total cash is $50,000 + $90,000 = $140,000.",
+    "question": "Abigail and Ben are equal partners in the AB Partnership. The partnership agreement states that Abig",
+    "markedAnswer": 1,
+    "options": [
+      "$60,000",
+      "$55,000",
+      "$40,000",
+      "$45,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1041",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1042",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1043",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1044",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1045",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B. The gain is $250,000 (cash received) - $120,000 (basis) = $130,000. The gain is capital because it's from the liquidation of stock.",
+    "question": "John owned 100% of the stock in Beta Corporation. Beta's only assets were cash of $50,000, land with",
+    "markedAnswer": 1,
+    "options": [
+      "Ordinary gain of $130,000.",
+      "Capital gain of $130,000.",
+      "Ordinary loss of $20,000.",
+      "Capital loss of $20,000."
+    ]
+  },
+  {
+    "id": "reg-gen-1046",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1047",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1048",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because the deduction is limited to $5,000 if expenses exceed $50,000.",
+    "question": "ABC Corporation, a calendar year C corporation, was formed on January 1, 2024, and began active busi",
+    "markedAnswer": 1,
+    "options": [
+      "$5,000",
+      "$5,100",
+      "$5,800",
+      "$8,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1049",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1055",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1056",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1057",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1058",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1059",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1060",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because of 351 rules and boot.",
+    "question": "Jonah contributes land with a fair market value of $500,000 and an adjusted basis of $100,000 to his",
+    "markedAnswer": 0,
+    "options": [
+      "$50,000 and $100,000",
+      "$50,000 and $150,000",
+      "$400,000 and $500,000",
+      "$0 and $100,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1061",
+    "verdict": "WRONG",
+    "reason": "The explanation is incorrect and copied from another question. The correct answer should be A.",
+    "question": "The Baker Trust is a simple trust. During the current year, it had the following items of income and",
+    "markedAnswer": 0,
+    "options": [
+      "$36,000",
+      "$40,000",
+      "$32,000",
+      "$21,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1062",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1063",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1064",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1065",
+    "verdict": "WRONG",
+    "reason": "The explanation is incorrect and copied from another question. The correct answer should be C.",
+    "question": "ABC Corporation, a calendar-year C corporation, was formed and began operations on July 1, 2024. Dur",
+    "markedAnswer": 0,
+    "options": [
+      "$5,000",
+      "$5,250",
+      "$6,000",
+      "$6,250"
+    ]
+  },
+  {
+    "id": "reg-gen-1066",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1067",
+    "verdict": "WRONG",
+    "reason": "The explanation is calculating DNI for a trust, not the built-in gains tax. The correct answer should be B because the built-in gain is $400,000 ($500,000 - $100,000), and the gain recognized is $200,000 ($700,000 - $500,000). The built-in gains tax is the lesser of the built-in gain or the taxable income, multiplied by the corporate tax rate. Lesser of $400,000 or ($50,000 + $200,000) = $250,000. $250,000 * 21% = $52,500. None of the provided answers are correct.",
+    "question": "On January 1, Year 1, Beta Corporation, a C corporation, elected S corporation status. At that time,",
+    "markedAnswer": 0,
+    "options": [
+      "$84,000",
+      "$126,000",
+      "$147,000",
+      "$0"
+    ]
+  },
+  {
+    "id": "reg-gen-1068",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1069",
+    "verdict": "WRONG",
+    "reason": "The capital gain should be $15,000, not $25,000.",
+    "question": "XYZ Corporation, a C corporation, has accumulated earnings and profits of $50,000 at the beginning o",
+    "markedAnswer": 0,
+    "options": [
+      "$25,000",
+      "$10,000",
+      "$50,000",
+      "$0"
+    ]
+  },
+  {
+    "id": "reg-gen-1070",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1071",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1072",
+    "verdict": "WRONG",
+    "reason": "The explanation is calculating DNI for a trust, not the QBI deduction. The QBI deduction is 20% of QBI, limited by 20% of taxable income. 20% of $300,000 = $60,000. 20% of $75,000 = $15,000. The deduction is limited to $15,000. The correct answer should be B.",
+    "question": "ABC Corporation is a C corporation owned by a single shareholder. In 2023, ABC Corporation has quali",
+    "markedAnswer": 0,
+    "options": [
+      "$60,000",
+      "$15,000",
+      "$50,000",
+      "$0"
+    ]
+  },
+  {
+    "id": "reg-gen-1073",
+    "verdict": "WRONG",
+    "reason": "The explanation is calculating DNI for a trust, not the charitable contribution deduction. The charitable contribution limit is 10% of taxable income before the charitable contribution deduction and the dividends received deduction. The total contributions are $35,000 + $15,000 + $10,000 = $60,000. The limit is 10% of $500,000 = $50,000. The correct answer should be A.",
+    "question": "ABC Corporation, a calendar year C corporation, reported taxable income of $500,000 before deducting",
+    "markedAnswer": 0,
+    "options": [
+      "$50,000",
+      "$55,000",
+      "$60,000",
+      "$65,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1074",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1075",
+    "verdict": "WRONG",
+    "reason": "The explanation is calculating DNI for a trust, not S-corp eligibility. The ABC Trust is a simple trust, which can be a permitted shareholder if it meets the requirements of a Qualified Subchapter S Trust (QSST). However, XYZ Partnership is NOT a permitted shareholder. Therefore, Delta Corp is NOT eligible. The correct answer should be D.",
+    "question": "Delta Corp, formed in 2020, has operated as a C corporation. The shareholders are considering conver",
+    "markedAnswer": 0,
+    "options": [
+      "Delta Corp. is eligible to elect S corporation status because the ABC Trust is a permitted shareholder.",
+      "Delta Corp. is not eligible to elect S corporation status because the ABC Trust is not a permitted shareholder.",
+      "Delta Corp. is eligible to elect S corporation status because XYZ Partnership is a permitted shareholder.",
+      "Delta Corp. is not eligible to elect S corporation status because XYZ Partnership is a permitted shareholder."
+    ]
+  },
+  {
+    "id": "reg-gen-1076",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1077",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation incorrectly calculates the group-term life insurance deduction. It should be $50,000, not $25,000. The correct answer should be $1,100,000, which is not an option.",
+    "question": "ABC Corporation is a publicly held corporation. During the current year, ABC Corporation paid its CE",
+    "markedAnswer": 0,
+    "options": [
+      "$1,050,000",
+      "$1,250,000",
+      "$1,200,000",
+      "$1,325,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1078",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because organizational expenditures include legal fees and accounting fees. $8,000 + $5,000 = $13,000. The immediate deduction is limited to $5,000 because $13,000 < $50,000. The remaining amount to amortize is $13,000 - $5,000 = $8,000. The monthly amortization is $8,000/180 = $44.44. The total deduction is $5,000 + $44.44 * 12 = $5,533.33, rounded to $5,500.",
+    "question": "Apex Corporation, formed on January 1, 2024, incurred the following expenses:\n\n*   Legal fees for dr",
+    "markedAnswer": 0,
+    "options": [
+      "$5,000",
+      "$5,500",
+      "$5,600",
+      "$8,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1079",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1080",
+    "verdict": "WRONG",
+    "reason": "DNI = Taxable Interest + Dividends - Expenses = $20,000 + $50,000 - $5,000 = $65,000. The correct answer is A.",
+    "question": "The Elizabeth Trust is a simple trust. During the current year, it had the following activity:\n\n*   ",
+    "markedAnswer": 0,
+    "options": [
+      "$65,000",
+      "$70,000",
+      "$63,000",
+      "$75,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1081",
+    "verdict": "WRONG",
+    "reason": "John's basis is calculated as follows: Adjusted basis of property transferred ($50,000) - Cash received ($30,000) + Gain recognized ($30,000) = $50,000. The correct answer is B.",
+    "question": "John transferred land with a fair market value of $200,000 and an adjusted basis of $50,000 to Newco",
+    "markedAnswer": 0,
+    "options": [
+      "$20,000",
+      "$50,000",
+      "$170,000",
+      "$200,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1082",
+    "verdict": "WRONG",
+    "reason": "The income distribution deduction is the lesser of DNI or the amount of income required to be distributed. DNI = $50,000 (taxable interest) + $20,000 (tax-exempt interest) - $5,000 (expenses related to taxable income) = $65,000. However, the expenses must be allocated between taxable and tax-exempt income. Expenses allocated to tax-exempt income are not deductible. The allocation is $50,000/$70,000 * $5,000 = $3,571.43. DNI is $50,000 + $20,000 - $3,571.43 = $66,428.57. The income distribution deduction is limited to the taxable income distributed, which is $50,000 - $3,571.43 = $46,428.57. Since all income must be distributed, the income distribution deduction is $46,428.57. The closest answer is D, but it's not exact.",
+    "question": "Alan established a trust during his lifetime and named his daughter, Beth, as the sole beneficiary. ",
+    "markedAnswer": 0,
+    "options": [
+      "$50,000",
+      "$65,000",
+      "$70,000",
+      "$45,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1083",
+    "verdict": "WRONG",
+    "reason": "ABC Corp gain = $500,000 - $300,000 = $200,000. Tax = $200,000 * 0.21 = $42,000. Distribution to John = $500,000 - $42,000 = $458,000. John's gain = $458,000 - $150,000 = $308,000. None of the answers are correct.",
+    "question": "ABC Corporation, a C corporation, adopted a plan of complete liquidation on January 1, Year 1. On th",
+    "markedAnswer": 0,
+    "options": [
+      "$35,500 Gain",
+      "$100,000 Gain",
+      "$150,000 Gain",
+      "$200,000 Gain"
+    ]
+  },
+  {
+    "id": "reg-gen-1084",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1085",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1086",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1087",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1088",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1089",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1090",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1091",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1092",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1093",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation is incorrect. It should be $60,000 - $22,500 = $37,500.",
+    "question": "Jane contributes land with a fair market value of $100,000 and an adjusted basis of $60,000 to the J",
+    "markedAnswer": 0,
+    "options": [
+      "$30,000",
+      "$60,000",
+      "$70,000",
+      "$100,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1094",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1095",
+    "verdict": "QUESTIONABLE",
+    "reason": "The income required to be distributed is $50,000. The trustee fees are allocated to the taxable income. The trust is a simple trust because it is required to distribute all income currently and does not make distributions to charities. The answer should be B.",
+    "question": "The Baker Trust was established on January 1, Year 1, with a principal of $500,000. The trust instru",
+    "markedAnswer": 0,
+    "options": [
+      "Income required to be distributed: $40,000; Trust classification: Simple Trust",
+      "Income required to be distributed: $50,000; Trust classification: Simple Trust",
+      "Income required to be distributed: $37,000; Trust classification: Complex Trust",
+      "Income required to be distributed: $47,000; Trust classification: Complex Trust"
+    ]
+  },
+  {
+    "id": "reg-gen-1096",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1097",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1098",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1099",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1100",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1101",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1102",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1103",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation is completely unrelated to the question.",
+    "question": "ABC Partnership has three equal partners: Alice, Bob, and Carol. Alice's basis in her partnership in",
+    "markedAnswer": 0,
+    "options": [
+      "A $0",
+      "B $10,000 loss",
+      "C $10,000 gain",
+      "D $5,000 loss"
+    ]
+  },
+  {
+    "id": "reg-gen-1104",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation is completely unrelated to the question.",
+    "question": "XYZ Corporation, a C corporation, elected S corporation status on January 1, Year 5. At the time of ",
+    "markedAnswer": 0,
+    "options": [
+      "$63,000",
+      "$21,000",
+      "$84,000",
+      "$0"
+    ]
+  },
+  {
+    "id": "reg-gen-1105",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1106",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1107",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1108",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1109",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1110",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because the basis of the land is limited to the partner's basis in the partnership before the distribution. $40,000 (partnership basis) - $15,000 (cash) = $25,000 (land basis). $40,000 - $15,000 - $25,000 = $0 (remaining partnership basis).",
+    "question": "Abbey is a partner in the ABC Partnership. Her basis in her partnership interest is $40,000. ABC dis",
+    "markedAnswer": 2,
+    "options": [
+      "Land basis: $25,000; Partnership basis: $0",
+      "Land basis: $30,000; Partnership basis: $0",
+      "Land basis: $30,000; Partnership basis: $5,000",
+      "Land basis: $35,000; Partnership basis: $0"
+    ]
+  },
+  {
+    "id": "reg-gen-1111",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1112",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1114",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because the partnership income after the guaranteed payment is $200,000 - $60,000 = $140,000. Robert's share is 20% of $140,000 = $28,000. Self-employment income is $60,000 + $28,000 = $88,000.",
+    "question": "Robert is a general partner in ABC Partnership. During the year, ABC Partnership had net income of $",
+    "markedAnswer": 2,
+    "options": [
+      "$60,000",
+      "$88,000",
+      "$100,000",
+      "$148,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1115",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1116",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation contradicts the answer. The allocation of depreciation expense should decrease the partner's capital account, not increase it.",
+    "question": "Partnership agreement allocates depreciation expense to Partner A. To be considered a valid special ",
+    "markedAnswer": 0,
+    "options": [
+      "Increase Partner A's capital account and the partnership agreement require Partner A to restore any deficit in the capital account upon liquidation.",
+      "Increase Partner A's capital account, regardless of whether the partnership agreement requires Partner A to restore any deficit in the capital account upon liquidation.",
+      "Decrease Partner A's capital account and the partnership agreement require Partner A to restore any deficit in the capital account upon liquidation.",
+      "Decrease Partner A's capital account, regardless of whether the partnership agreement requires Partner A to restore any deficit in the capital account upon liquidation."
+    ]
+  },
+  {
+    "id": "reg-gen-1117",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1118",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because the gain is $350,000 - $80,000 = $270,000.",
+    "question": "John owns 40% of the stock in Beta Corporation, an accrual-basis C corporation. Beta adopted a plan ",
+    "markedAnswer": 1,
+    "options": [
+      "Capital gain of $270,000.",
+      "Capital gain of $170,000.",
+      "Capital gain of $70,000.",
+      "Capital loss of $130,000."
+    ]
+  },
+  {
+    "id": "reg-gen-1119",
+    "verdict": "WRONG",
+    "reason": "The correct answer is A because DNI = $50,000 + $20,000 - $5,000 = $65,000",
+    "question": "The Thomas Trust is a simple trust. During the current year, it had the following transactions:\n\n*  ",
+    "markedAnswer": 2,
+    "options": [
+      "$65,000",
+      "$62,000",
+      "$75,000",
+      "$72,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1120",
+    "verdict": "WRONG",
+    "reason": "The correct answer is A because self-employment income is $60,000 + ($200,000 * 20%) = $100,000",
+    "question": "Laura is a general partner in the ABC Partnership. During the current year, ABC's ordinary business ",
+    "markedAnswer": 2,
+    "options": [
+      "$100,000",
+      "$60,000",
+      "$40,000",
+      "$160,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1121",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1122",
+    "verdict": "WRONG",
+    "reason": "The correct answer is C because self-employment income is $60,000 + $40,000 = $100,000",
+    "question": "Mark is a general partner in the MPK Partnership. During the year, Mark received a guaranteed paymen",
+    "markedAnswer": 0,
+    "options": [
+      "$60,000",
+      "$40,000",
+      "$100,000",
+      "$0"
+    ]
+  },
+  {
+    "id": "reg-gen-1123",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1124",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1125",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1126",
+    "verdict": "WRONG",
+    "reason": "The correct answer is A because DNI is $50,000 + $10,000 - $5,000 = $55,000. Taxable income is ($50,000 - $5,000)/$55,000 * $55,000 = $45,000.",
+    "question": "Timothy established an irrevocable trust on January 1, Year 1, naming his son, David, as the sole be",
+    "markedAnswer": 1,
+    "options": [
+      "$45,000",
+      "$50,000",
+      "$55,000",
+      "$60,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1127",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1128",
+    "verdict": "WRONG",
+    "reason": "The explanation is for fiduciary income tax, not partnership. The correct answer should be D because Alan reports $50,000 guaranteed payment plus 1/2 of the remaining $150,000 income.",
+    "question": "Alan and Beth are partners in the AB Partnership. The partnership agreement states that Alan is to r",
+    "markedAnswer": 1,
+    "options": [
+      "$50,000",
+      "$75,000",
+      "$100,000",
+      "$125,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1129",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1130",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1131",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1132",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1133",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1134",
+    "verdict": "WRONG",
+    "reason": "The explanation is for a different question. DNI is $50,000 + $10,000 - $3,000 = $57,000. The distribution is $57,000. The income distribution deduction is the lesser of the distribution or DNI, which is $57,000. The correct answer is C.",
+    "question": "John Doe established a trust on January 1, Year 1, naming his son, Michael, as the sole beneficiary.",
+    "markedAnswer": 1,
+    "options": [
+      "$47,000",
+      "$50,000",
+      "$57,000",
+      "$60,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1135",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1136",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1137",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1138",
+    "verdict": "WRONG",
+    "reason": "The explanation is for a trust, not a built-in gains tax. The correct answer should be C because the built-in gain is the lesser of the aggregate built-in gain or the taxable income.",
+    "question": "Red Maple Corp. was a C corporation that elected S corporation status effective January 1, 2021. At ",
+    "markedAnswer": 1,
+    "options": [
+      "$10,500",
+      "$26,250",
+      "$36,750",
+      "$84,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1139",
+    "verdict": "WRONG",
+    "reason": "The explanation is for a trust, not partnership allocations. The correct answer should be C because of the economic effect test.",
+    "question": "ABC Partnership's partnership agreement states that all depreciation expense is allocated to Partner",
+    "markedAnswer": 1,
+    "options": [
+      "The allocation must not reduce the overall tax liability of the partners.",
+      "The allocation must have economic substance apart from tax consequences.",
+      "Partner A must restore any deficit in their capital account upon liquidation.",
+      "All of the above."
+    ]
+  },
+  {
+    "id": "reg-gen-1140",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1141",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1142",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1143",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation is for a partnership contribution, not trust DNI. DNI = $20,000 + $10,000 - $3,000 = $27,000. However, trustee fees are allocated to taxable income first. So, $20,000 - $3,000 = $17,000. DNI = $17,000 + $10,000 = $27,000. The correct answer should be A, but the explanation is wrong.",
+    "question": "A simple trust has the following items of income and expense for the current year:\n\n*   Dividend inc",
+    "markedAnswer": 1,
+    "options": [
+      "$27,000",
+      "$30,000",
+      "$20,000",
+      "$33,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1144",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1145",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1146",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1147",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1148",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1149",
+    "verdict": "CORRECT",
+    "reason": "Explanation has an arithmetic error, but the answer is correct."
+  },
+  {
+    "id": "reg-gen-1150",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because the accumulated depreciation is $20,000 per year * 2 years = $40,000. The adjusted basis is $100,000 - $40,000 = $60,000. The gain is $65,000 - $60,000 = $5,000. Partner A is allocated the gain up to the amount of depreciation previously claimed, so A is allocated the entire $5,000 gain.",
+    "question": "ABC Partnership's partnership agreement states that partner A will be allocated 100% of the deprecia",
+    "markedAnswer": 1,
+    "options": [
+      "A $15,000 gain",
+      "B $5,000 loss",
+      "C $20,000 loss",
+      "D $0 gain or loss"
+    ]
+  },
+  {
+    "id": "reg-gen-1151",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation states the gain recognized is $0, but then uses $30,000 in the calculation. The gain recognized should be $30,000, so the basis is $50,000.",
+    "question": "John transfers land with a fair market value of $200,000 and an adjusted basis of $50,000 to a newly",
+    "markedAnswer": 0,
+    "options": [
+      "$20,000",
+      "$50,000",
+      "$80,000",
+      "$200,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1152",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because the total organizational expenditures are $15,000 + $4,000 = $19,000. Since this exceeds $50,000, the immediate deduction is $5,000. The remaining $14,000 is amortized over 180 months, starting in July. The amortization is $14,000 / 180 months * 6 months = $466.67. The total deduction is $5,000 + $466.67 = $5,466.67. The total start-up costs are $60,000. Since this exceeds $50,000, the immediate deduction is $5,000. The remaining $55,000 is amortized over 180 months, starting in July. The amortization is $55,000 / 180 months * 6 months = $1,833.33. The total deduction is $5,000 + $1,833.33 = $6,833.33. The total deduction is $5,000 + $466.67 + $1,833.33 = $7,300.",
+    "question": "During 2023, Beta Corporation, a calendar-year taxpayer, incurred the following expenses in connecti",
+    "markedAnswer": 1,
+    "options": [
+      "$5,000",
+      "$11,000",
+      "$6,000",
+      "$16,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1153",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1154",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because the total organizational expenditures are $7,500 + $4,000 + $3,500 = $15,000. Since this is less than $50,000, the immediate deduction is $5,000. The remaining $10,000 is amortized over 180 months. The amortization is $10,000 / 180 months * 12 months = $666.67. The total deduction is $5,000 + $666.67 = $5,666.67.",
+    "question": "ABC Corporation, a calendar year C corporation, was formed on January 1, 2024. ABC incurred the foll",
+    "markedAnswer": 1,
+    "options": [
+      "$5,000",
+      "$7,500",
+      "$8,500",
+      "$9,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1155",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation is correct, but the answer choices are incorrect. The taxable dividend income is $70,000. The stock basis is reduced to $0. The remaining $20,000 is treated as a capital gain.",
+    "question": "MegaCorp, a C corporation, has accumulated earnings and profits (E&P) of $50,000 at the beginning of",
+    "markedAnswer": 0,
+    "options": [
+      "Taxable dividend income of $70,000; Stock basis reduced to $0.",
+      "Taxable dividend income of $90,000; Stock basis remains at $10,000.",
+      "Taxable dividend income of $70,000; Stock basis reduced to $0, and a $10,000 capital gain.",
+      "Taxable dividend income of $50,000; Stock basis reduced to $0, and a $30,000 capital gain."
+    ]
+  },
+  {
+    "id": "reg-gen-1156",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1157",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be C because the mortgage assumed by the partnership reduces John's basis, but only by the amount other partners assume.",
+    "question": "John contributes land with a fair market value of $150,000 and an adjusted basis of $70,000 to the J",
+    "markedAnswer": 0,
+    "options": [
+      "$46,000",
+      "$70,000",
+      "$94,000",
+      "$150,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1158",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1159",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1160",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1161",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1162",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because self-employment income includes both the guaranteed payment and the partner's share of partnership income.",
+    "question": "John is a general partner in the JKL Partnership. During the current year, JKL had ordinary income o",
+    "markedAnswer": 0,
+    "options": [
+      "$60,000",
+      "$100,000",
+      "$40,000",
+      "$80,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1163",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because DNI includes dividend income and tax-exempt interest income, less trustee fees.",
+    "question": "Mark established an irrevocable trust with First National Bank as trustee. The trust instrument dire",
+    "markedAnswer": 0,
+    "options": [
+      "$25,000",
+      "$30,000",
+      "$75,000",
+      "$80,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1164",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1165",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be C because the distribution deduction is the lesser of DNI or the actual distribution, and DNI is calculated considering tax-exempt income.",
+    "question": "The Annaul Trust was created on January 1, Year 1, with assets valued at $500,000. The trust instrum",
+    "markedAnswer": 0,
+    "options": [
+      "$28,000",
+      "$30,000",
+      "$36,000",
+      "$38,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1166",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1167",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be C because both the retail store and parking lot income are unrelated business income.",
+    "question": "Friends of Willow Creek, a 501(c)(3) organization dedicated to environmental conservation, operates ",
+    "markedAnswer": 0,
+    "options": [
+      "$60,000",
+      "$35,000",
+      "$65,000",
+      "$25,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1168",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1169",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation calculates $8,400, but the answer choices do not include this. The closest answer is A, but the calculation is incorrect.",
+    "question": "Baker Corporation was a C corporation that elected S corporation status on January 1, Year 1. At the",
+    "markedAnswer": 0,
+    "options": [
+      "$6,300",
+      "$10,500",
+      "$15,750",
+      "$21,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1170",
+    "verdict": "QUESTIONABLE",
+    "reason": "DNI for a simple trust includes dividend income and tax-exempt interest less allocable expenses. $20,000 + $10,000 - $3,000 = $27,000. However, tax-exempt interest is not included in the beneficiary's taxable income. The question is ambiguous.",
+    "question": "A simple trust has the following items of income and expense during the year:\n\n*   Dividend income: ",
+    "markedAnswer": 0,
+    "options": [
+      "$27,000",
+      "$30,000",
+      "$20,000",
+      "$33,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1171",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1172",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1173",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1174",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1175",
+    "verdict": "QUESTIONABLE",
+    "reason": "DNI for a simple trust includes dividend income and tax-exempt interest less allocable expenses. $20,000 + $10,000 - $4,000 = $26,000. However, tax-exempt interest is not included in the beneficiary's taxable income. The question is ambiguous.",
+    "question": "A simple trust has the following items of income and expense: \n\n*   Dividend income: $20,000\n*   Tax",
+    "markedAnswer": 0,
+    "options": [
+      "$26,000",
+      "$30,000",
+      "$34,000",
+      "$20,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1176",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1177",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1178",
+    "verdict": "A",
+    "reason": "CORRECT"
+  },
+  {
+    "id": "reg-gen-1179",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1180",
+    "verdict": "A",
+    "reason": "CORRECT"
+  },
+  {
+    "id": "reg-gen-1181",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1182",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1183",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation states \"because the cost of the replacement property exceeds the original basis, all the gain is deferred, so no gain is recognized.\" This is incorrect. The recognized gain is the LESSER of the realized gain or the amount of proceeds not reinvested. The recognized gain should be $30,000. The basis in the new warehouse should be $420,000 (cost) - $120,000 (deferred gain) = $300,000.",
+    "question": "During 2023, Beth owned a warehouse that was destroyed by a tornado. The warehouse's adjusted basis ",
+    "markedAnswer": 0,
+    "options": [
+      "$0 and $270,000",
+      "$0 and $300,000",
+      "$25,000 and $300,000",
+      "$25,000 and $420,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1184",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1185",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1186",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be Ordinary gain of $20,000 and Section 1231 loss of $40,000. The $50,000 land gain and $30,000 building loss net to a $20,000 Section 1231 gain. The $20,000 equipment gain is ordinary income due to Section 1245 recapture. The $10,000 stock loss is a short-term capital loss. The net Section 1231 gain of $20,000 is then netted against the $30,000 building loss, resulting in a net Section 1231 loss of $10,000. The $20,000 equipment gain is ordinary income. The $10,000 stock loss is a short-term capital loss.",
+    "question": "ABC Corporation sold the following assets during the year:\n\n*   Land used in its business, held for ",
+    "markedAnswer": 0,
+    "options": [
+      "Ordinary gain of $40,000 and Section 1231 gain of $40,000.",
+      "Ordinary gain of $20,000 and Section 1231 gain of $60,000.",
+      "Section 1231 gain of $40,000 and capital loss of $10,000.",
+      "Ordinary gain of $20,000 and Section 1231 gain of $80,000 and capital loss of $10,000."
+    ]
+  },
+  {
+    "id": "reg-gen-1187",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1188",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because the gift tax paid increases the basis.",
+    "question": "In 2023, John gifted land to his daughter, Mary. John purchased the land in 2018 for $50,000. On the",
+    "markedAnswer": 0,
+    "options": [
+      "$50,000",
+      "$54,000",
+      "$60,000",
+      "$64,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1189",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because no payments were received in Year 1.",
+    "question": "John sold a building for $500,000 on December 31, Year 1. His adjusted basis in the building was $30",
+    "markedAnswer": 0,
+    "options": [
+      "$0",
+      "$36,000",
+      "$100,000",
+      "$180,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1190",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1191",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1192",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1193",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be C because the gain is $85,000 - ($120,000 - $60,000) = $25,000. Section 1245 recapture is the lesser of the gain recognized or accumulated depreciation.",
+    "question": "XYZ Corporation sold equipment used in its manufacturing operations for $85,000. The equipment was o",
+    "markedAnswer": 0,
+    "options": [
+      "$25,000",
+      "$35,000",
+      "$60,000",
+      "$85,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1194",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation is incorrect. The correct answer depends on whether the depreciation recapture rules apply. If so, ordinary income is recognized first.",
+    "question": "Benson Corp. sold equipment to Miller Co. on December 31, Year 1, for $800,000. Benson purchased the",
+    "markedAnswer": 0,
+    "options": [
+      "$200,000 ordinary income.",
+      "$200,000 Section 1231 gain.",
+      "$50,000 ordinary income and $150,000 Section 1231 gain.",
+      "$150,000 ordinary income and $50,000 Section 1231 gain."
+    ]
+  },
+  {
+    "id": "reg-gen-1195",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1196",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1197",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1198",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1199",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because the gross profit percentage is 40% (($900,000-$60,000-$540,000)/($900,000-$60,000)) and the cash received is $150,000, so the gain recognized is $60,000 (40% * $150,000).",
+    "question": "In 2024, Mary sold a commercial building for $900,000. Her adjusted basis in the building was $540,0",
+    "markedAnswer": 0,
+    "options": [
+      "$60,000",
+      "$90,000",
+      "$150,000",
+      "$300,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1200",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1201",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1202",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1203",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1204",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation is confusing and seems to contradict itself. The answer is correct, but the explanation is not clear.",
+    "question": "During the current year, Ted had the following gains and losses:\n\n*   Gain from sale of land used in",
+    "markedAnswer": 0,
+    "options": [
+      "Ordinary loss of $17,000.",
+      "Ordinary loss of $12,000; capital gain of $5,000.",
+      "Ordinary gain of $5,000; capital loss of $12,000; capital gain of $25,000.",
+      "Ordinary gain of $5,000; capital loss of $17,000."
+    ]
+  },
+  {
+    "id": "reg-gen-1205",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A. The gross profit percentage is calculated as (Sales Price - Adjusted Basis) / Sales Price = ($900,000 - $400,000) / $900,000 = 5/9. However, depreciation recapture is recognized in the year of sale, regardless of whether cash is received. Therefore, the gain recognized in year 1 is $100,000 (depreciation recapture) + (5/9 * ($300,000 - $100,000)) = $100,000 + $111,111 = $211,111. This is not one of the answer choices. However, if the recapture is included in the gross profit calculation, the gross profit is ($900,000 - $400,000 - $100,000)/$900,000 = 4/9. Then the gain recognized is 4/9 * $300,000 + $100,000 = $133,333 + $100,000 = $233,333. Still not one of the answer choices. The closest answer is A, but the calculation is incorrect.",
+    "question": "Jane sold a building used in her business on December 31, Year 1, for $900,000. The building had an ",
+    "markedAnswer": 0,
+    "options": [
+      "$250,000",
+      "$166,667",
+      "$150,000",
+      "$100,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1206",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1207",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1208",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation references Section 1231, which is irrelevant to the question. The answer should be C, because the FMV at the time of the gift is higher than the donor's basis, so the donee takes the donor's basis.",
+    "question": "In 2023, John gifted stock to his daughter, Mary. John's original cost basis in the stock was $10,00",
+    "markedAnswer": 0,
+    "options": [
+      "$10,000",
+      "$11,000",
+      "$12,000",
+      "$22,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1209",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1210",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1211",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1212",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation references Section 1231, which is irrelevant to the question. The correct answer should be $720,000. Realized gain = $1,200,000 - $800,000 = $400,000. Recognized gain = cash received = $100,000. Basis in new property = Basis of old property + Gain Recognized - Boot Received = $800,000 + $100,000 - $100,000 = $800,000. Legal fees are added to the basis. $800,000 - $100,000 + $20,000 = $720,000.",
+    "question": "Acme Corp. exchanged an office building with an adjusted basis of $800,000 and a fair market value o",
+    "markedAnswer": 0,
+    "options": [
+      "$720,000",
+      "$700,000",
+      "$820,000",
+      "$900,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1213",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1214",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1215",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1216",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1217",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1218",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1219",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1220",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1221",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1222",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $170,000. Basis for gain is carryover basis ($200,000) less depreciation taken ($30,000).",
+    "question": "John gifted his vacation home to his daughter, Lisa, on July 1, 2023. John originally purchased the ",
+    "markedAnswer": 0,
+    "options": [
+      "$170,000",
+      "$180,000",
+      "$200,000",
+      "$230,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1223",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1224",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1225",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1226",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1227",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1228",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1229",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1230",
+    "verdict": "A",
+    "reason": "The gross profit percentage is the gross profit divided by the selling price ($180,000 / $500,000 = 36%). Therefore the gross profit percentage is 36%. IRC Section 453."
+  },
+  {
+    "id": "reg-gen-1231",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1232",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1233",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1234",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1235",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1236",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1237",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1238",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1239",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation incorrectly calculates the ordinary income portion. It should be $75,000 * 20% = $15,000, not $75,000 * 25%.",
+    "question": "During the current year, John sold the following business assets:\n\n*   Equipment held for 3 years: S",
+    "markedAnswer": 1,
+    "options": [
+      "A $150,000 Section 1231 gain.",
+      "A $131,250 Section 1231 gain and $18,750 ordinary income.",
+      "A $143,750 Section 1231 gain and $6,250 ordinary income.",
+      "A $137,500 Section 1231 gain and $12,500 ordinary income."
+    ]
+  },
+  {
+    "id": "reg-gen-1240",
+    "verdict": "WRONG",
+    "reason": "The basis in the new machine should be $80,000.",
+    "question": "ABC Corporation exchanged an old machine with an adjusted basis of $80,000 for a new machine. ABC al",
+    "markedAnswer": 0,
+    "options": [
+      "$70,000",
+      "$75,000",
+      "$80,000",
+      "$95,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1241",
+    "verdict": "WRONG",
+    "reason": "The basis should be $150,000 + ($20,000 * (($200,000 - $150,000)/$200,000)) = $150,000 + $5,000 = $155,000.",
+    "question": "John received a parcel of land as a gift from his mother. At the time of the gift, the land had a fa",
+    "markedAnswer": 0,
+    "options": [
+      "$150,000",
+      "$165,000",
+      "$170,000",
+      "$200,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1242",
+    "verdict": "WRONG",
+    "reason": "The correct answer is C. The $60,000 Section 1231 gain is netted against the $25,000 Section 1231 loss, resulting in a net Section 1231 gain of $35,000. The $10,000 stock loss is a short-term capital loss.",
+    "question": "ABC Corporation sold the following assets during the current year:\n\n*   Land used in its business, h",
+    "markedAnswer": 0,
+    "options": [
+      "A $35,000 ordinary gain.",
+      "B $35,000 Section 1231 gain.",
+      "C $45,000 Section 1231 gain and $10,000 capital loss.",
+      "D $60,000 Section 1231 gain and $35,000 ordinary loss."
+    ]
+  },
+  {
+    "id": "reg-gen-1243",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1244",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1245",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1246",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1247",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1248",
+    "verdict": "WRONG",
+    "reason": "The explanation is for a like-kind exchange, not Section 1245. The correct answer should be C because the Section 1245 ordinary income is the lesser of the gain recognized or the accumulated depreciation.",
+    "question": "XYZ Corporation sold a machine used in its manufacturing operations for $350,000. The machine was or",
+    "markedAnswer": 0,
+    "options": [
+      "$50,000",
+      "$150,000",
+      "$200,000",
+      "$350,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1249",
+    "verdict": "WRONG",
+    "reason": "The explanation is for a like-kind exchange, not the question asked. The correct answer should be A because the basis in the new warehouse is the adjusted basis of the old warehouse less the boot received plus the gain recognized.",
+    "question": "ABC Corp. exchanged a warehouse with an adjusted basis of $800,000 and a fair market value of $1,200",
+    "markedAnswer": 0,
+    "options": [
+      "$700,000",
+      "$800,000",
+      "$1,100,000",
+      "$1,200,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1250",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1251",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1252",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1253",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1254",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1255",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be D because the Section 1231 gain from the land is $30,000. The equipment sale results in a $15,000 gain, which is less than the accumulated depreciation of $40,000. Therefore, the entire $15,000 gain is ordinary income due to Section 1245 recapture. The net Section 1231 gain is $30,000 (land) + $0 (equipment) = $30,000. However, the $15,000 ordinary income from the equipment sale is not a Section 1231 gain. The total gain is $45,000, but the Section 1231 gain is $30,000. The question asks for the net Section 1231 gain. The $15,000 ordinary income is not a Section 1231 gain. The $30,000 gain from the land is a Section 1231 gain. The $75,000 sales price - $60,000 adjusted basis = $15,000 gain. The $15,000 gain is less than the $40,000 accumulated depreciation, so the entire $15,000 is ordinary income under Section 1245. The Section 1231 gain is $30,000.",
+    "question": "XYZ Corporation sold the following assets during the year:\n\n*   Land held for investment for 3 years",
+    "markedAnswer": 0,
+    "options": [
+      "A $30,000 gain.",
+      "A $65,000 gain.",
+      "A $5,000 loss.",
+      "A $35,000 gain."
+    ]
+  },
+  {
+    "id": "reg-gen-1256",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1257",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1258",
+    "verdict": "WRONG",
+    "reason": "This explanation describes Section 1231 and 1245, not the capital loss calculation.",
+    "question": "Marcus, an unmarried individual, had the following capital gains and losses during 2023:\n\n*   Short-",
+    "markedAnswer": 0,
+    "options": [
+      "$3,000",
+      "$5,000",
+      "$7,000",
+      "$12,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1259",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1260",
+    "verdict": "QUESTIONABLE",
+    "reason": "The gift tax paid may increase the basis, but only up to the FMV.",
+    "question": "In 2023, John gifted stock to his daughter, Mary. John originally purchased the stock in 2018 for $1",
+    "markedAnswer": 0,
+    "options": [
+      "$10,000",
+      "$10,500",
+      "$12,000",
+      "$12,500"
+    ]
+  },
+  {
+    "id": "reg-gen-1261",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1262",
+    "verdict": "WRONG",
+    "reason": "The $43,000 net 1231 gain is a capital gain, and the $8,000 loss is a short-term capital loss.",
+    "question": "During 2023, Mark had the following gains and losses:\n\n*   Gain from the sale of land used in his bu",
+    "markedAnswer": 1,
+    "options": [
+      "A $33,000 capital gain and a $0 ordinary loss.",
+      "A $43,000 capital gain and a $0 ordinary loss.",
+      "A $55,000 capital gain and an $8,000 capital loss.",
+      "A $47,000 ordinary income and an $8,000 capital loss."
+    ]
+  },
+  {
+    "id": "reg-gen-1263",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1264",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1265",
+    "verdict": "WRONG",
+    "reason": "Basis is adjusted basis - boot given + gain recognized. Gain recognized is the lesser of boot received or realized gain.",
+    "question": "Jane exchanged land with an adjusted basis of $300,000 and a fair market value of $450,000 for other",
+    "markedAnswer": 0,
+    "options": [
+      "$300,000",
+      "$250,000",
+      "$400,000",
+      "$350,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1266",
+    "verdict": "WRONG",
+    "reason": "The explanation describes Section 1231 and 1245, not the netting of 1231 gains and losses.",
+    "question": "In 2024, John, an individual taxpayer, sold equipment used in his business for $50,000, resulting in",
+    "markedAnswer": 0,
+    "options": [
+      "The $10,000 gain will be treated as ordinary income, and the $20,000 loss will be treated as an ordinary loss.",
+      "The $10,000 gain will be treated as a long-term capital gain, and the $20,000 loss will be treated as a capital loss.",
+      "The $10,000 gain and $20,000 loss will be netted, resulting in a $10,000 ordinary loss.",
+      "The $10,000 gain and $20,000 loss will be netted, resulting in a $10,000 long-term capital loss."
+    ]
+  },
+  {
+    "id": "reg-gen-1267",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1268",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1269",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1270",
+    "verdict": "WRONG",
+    "reason": "The gain is $150,000 ordinary income and $100,000 Section 1231 gain.",
+    "question": "Alex sold equipment used in his business to an unrelated buyer on December 31, Year 1 for $500,000. ",
+    "markedAnswer": 0,
+    "options": [
+      "$200,000 ordinary income.",
+      "$50,000 ordinary income and $150,000 Section 1231 gain.",
+      "$50,000 ordinary income and the remainder of the gain is deferred until future years.",
+      "$200,000 Section 1231 gain, recognized ratably over the payment period."
+    ]
+  },
+  {
+    "id": "reg-gen-1271",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1272",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1273",
+    "verdict": "WRONG",
+    "reason": "The gain recognized is $300,000.",
+    "question": "XYZ Corporation exchanged a warehouse with an adjusted basis of $800,000 and a fair market value of ",
+    "markedAnswer": 2,
+    "options": [
+      "$0",
+      "$100,000",
+      "$200,000",
+      "$300,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1274",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1275",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1276",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1277",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1278",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1279",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1280",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1281",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1282",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1283",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1284",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1285",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1286",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1287",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1288",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $55,410, but none of the options are close.",
+    "question": "Jane is a self-employed consultant. In 2023, her business generated $80,000 in revenue, and she incu",
+    "markedAnswer": 2,
+    "options": [
+      "$30,000",
+      "$60,000",
+      "$69,200",
+      "$80,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1289",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1290",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1291",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $85,000. The artwork is deductible at FMV because it is related use.",
+    "question": "Alice, who is single and 67 years old, has adjusted gross income (AGI) of $100,000. During the year,",
+    "markedAnswer": 0,
+    "options": [
+      "$75,000",
+      "$85,000",
+      "$95,000",
+      "$115,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1293",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1294",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1295",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1296",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation is for self-employment tax, but the question is about estimated tax payments.",
+    "question": "John and Mary are married filing jointly. Their adjusted gross income (AGI) for 2023 was $250,000 an",
+    "markedAnswer": 1,
+    "options": [
+      "$20,000",
+      "$22,500",
+      "$27,000",
+      "$30,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1297",
+    "verdict": "WRONG",
+    "reason": "The AOTC is phased out, but the calculation in the explanation is incorrect. The correct answer should be $0.",
+    "question": "Mark and Sarah are married and file jointly. In 2023, their modified adjusted gross income (MAGI) wa",
+    "markedAnswer": 0,
+    "options": [
+      "$0",
+      "$2,000",
+      "$2,250",
+      "$2,500"
+    ]
+  },
+  {
+    "id": "reg-gen-1298",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1299",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1300",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1301",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because the exemption is phased out based on AMTI.",
+    "question": "In 2024, John and Mary are married filing jointly and have Alternative Minimum Taxable Income (AMTI)",
+    "markedAnswer": 1,
+    "options": [
+      "$59,720",
+      "$84,500",
+      "$133,300",
+      "$151,100"
+    ]
+  },
+  {
+    "id": "reg-gen-1302",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1303",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1304",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1305",
+    "verdict": "QUESTIONABLE",
+    "reason": "The question is asking about medical expenses included in itemized deductions, but the prompt states they take the standard deduction. This is contradictory.",
+    "question": "In 2023, Harold and Maude, both age 67, are married and filing jointly. Harold's Social Security ben",
+    "markedAnswer": 1,
+    "options": [
+      "$0",
+      "$900",
+      "$18,000",
+      "$9,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1306",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because the exemption is phased out based on AMTI.",
+    "question": "John and Mary are married filing jointly and have a 2023 Alternative Minimum Taxable Income (AMTI) o",
+    "markedAnswer": 1,
+    "options": [
+      "$21,470",
+      "$53,300",
+      "$81,300",
+      "$126,500"
+    ]
+  },
+  {
+    "id": "reg-gen-1307",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $55,410. The explanation incorrectly deducts half of the self-employment tax and an additional amount.",
+    "question": "Jane is a freelance consultant. In 2023, she had gross income from her consulting business of $80,00",
+    "markedAnswer": 0,
+    "options": [
+      "$47,737.50",
+      "$60,000.00",
+      "$56,400.00",
+      "$80,000.00"
+    ]
+  },
+  {
+    "id": "reg-gen-1308",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1309",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $13,000 because the deduction is limited to the basis of the inventory ($8,000) plus the cash contribution ($5,000), and this total is less than 60% of AGI.",
+    "question": "Jane, whose adjusted gross income (AGI) is $100,000, donated inventory to a qualified public charity",
+    "markedAnswer": 1,
+    "options": [
+      "$13,000",
+      "$12,000",
+      "$17,000",
+      "$15,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1310",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1311",
+    "verdict": "A",
+    "reason": "CORRECT|"
+  },
+  {
+    "id": "reg-gen-1312",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $13,000 because all items are included in gross income.",
+    "question": "Jane Doe, a single taxpayer, received the following during the tax year:\n\n*   $1,000 from a radio st",
+    "markedAnswer": 0,
+    "options": [
+      "$13,000",
+      "$10,000",
+      "$12,000",
+      "$16,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1313",
+    "verdict": "B",
+    "reason": "CORRECT|"
+  },
+  {
+    "id": "reg-gen-1314",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1315",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1316",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $4,000.",
+    "question": "Arthur and Brenda are married and filing jointly. In 2023, they paid the following medical expenses:",
+    "markedAnswer": 0,
+    "options": [
+      "$4,000",
+      "$6,000",
+      "$7,500",
+      "$9,500"
+    ]
+  },
+  {
+    "id": "reg-gen-1317",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $3,600.",
+    "question": "In 2023, Michael and Susan, both under 65, are married and filing jointly. They have adjusted gross ",
+    "markedAnswer": 0,
+    "options": [
+      "$3,600",
+      "$6,600",
+      "$9,600",
+      "$12,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1318",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1319",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1320",
+    "verdict": "A",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1321",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be C because the $1,000 business expense reduces the Schedule C profit to $79,000. The self-employment tax is calculated on 92.35% of $79,000 = $72,956.50. The self-employment tax is 15.3%, so $72,956.50 * 0.153 = $11,162.35. One-half of this amount is $11,162.35 / 2 = $5,581.18. AGI = $79,000 - $5,581.18 = $73,418.82. None of the answers are correct.",
+    "question": "Mark is a self-employed consultant. In 2023, his Schedule C showed a profit of $80,000. He also had ",
+    "markedAnswer": 0,
+    "options": [
+      "$75,050",
+      "$75,600",
+      "$79,000",
+      "$80,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1322",
+    "verdict": "C",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1323",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1324",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1325",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $98,220, but since that is not an option, the question is flawed.",
+    "question": "John and Mary are married and filing jointly. In 2024, they have Alternative Minimum Taxable Income ",
+    "markedAnswer": 1,
+    "options": [
+      "$0",
+      "$33,640",
+      "$86,800",
+      "$133,520"
+    ]
+  },
+  {
+    "id": "reg-gen-1326",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1327",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1328",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1329",
+    "verdict": "WRONG",
+    "reason": "The explanation is completely wrong and refers to AMT. The correct answer should be A, calculated as follows: Real estate taxes ($6,000) + Mortgage interest ($4,000) + State income taxes (limited to $10,000 total with real estate taxes, so $4,000) + Charitable contributions ($5,000) + Medical expenses (($15,000 - (7.5% * $80,000)) = $9,000). Total = $6,000 + $4,000 + $3,000 + $5,000 + $7,500 = $25,500",
+    "question": "John and Mary, both age 67 and filing jointly, have the following information for 2024:\n\n*   Adjuste",
+    "markedAnswer": 1,
+    "options": [
+      "$25,500",
+      "$28,900",
+      "$22,500",
+      "$29,300"
+    ]
+  },
+  {
+    "id": "reg-gen-1330",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1331",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1332",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1333",
+    "verdict": "WRONG",
+    "reason": "The explanation is completely wrong and refers to AMT. The correct answer should be A, calculated as follows: $80,000 (gross income) - $10,000 (rent) - $5,000 (supplies) - $2,000 (health insurance) = $63,000.",
+    "question": "Jane operates a small consulting business as a sole proprietor. In 2023, her business generated $80,",
+    "markedAnswer": 2,
+    "options": [
+      "$63,000",
+      "$64,000",
+      "$66,435",
+      "$76,500"
+    ]
+  },
+  {
+    "id": "reg-gen-1334",
+    "verdict": "WRONG",
+    "reason": "The explanation is completely wrong and refers to AMT. The correct answer should be B, calculated as follows: Qualified tuition expenses after scholarship = $4,000 - $1,000 = $3,000. AOTC = 100% of first $2,000 + 25% of next $2,000. Since expenses are $3,000, AOTC = $2,000 + (25% * $1,000) = $2,000 + $250 = $2,250. However, since their MAGI is $150,000, it is below the phase-out range, so they can claim the full credit. The maximum AOTC is $2,500, but they only have $3,000 in expenses after the scholarship, so the credit is limited to $2,000 + (25% * $1,000) = $2,250. The closest answer is B, $1,875, but it is incorrect. The correct answer should be $2,250.",
+    "question": "John and Mary are married and have two children. Their modified adjusted gross income (MAGI) is $150",
+    "markedAnswer": 1,
+    "options": [
+      "$2,500",
+      "$1,875",
+      "$2,000",
+      "$1,500"
+    ]
+  },
+  {
+    "id": "reg-gen-1335",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1336",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1337",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1338",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1339",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $15,300. The explanation is overly complex but arrives at the correct answer. The answer choices are incorrect.",
+    "question": "Harold and Maude are married and file jointly. Harold receives Social Security benefits of $18,000. ",
+    "markedAnswer": 3,
+    "options": [
+      "$0",
+      "$9,000",
+      "$13,500",
+      "$18,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1340",
+    "verdict": "WRONG",
+    "reason": "The explanation is for Social Security benefits, not self-employment tax. The correct answer should be A.",
+    "question": "Jane Doe is a self-employed consultant. In 2023, her business generated $120,000 in gross income. Sh",
+    "markedAnswer": 3,
+    "options": [
+      "$12,728",
+      "$13,278",
+      "$11,923",
+      "$10,530"
+    ]
+  },
+  {
+    "id": "reg-gen-1341",
+    "verdict": "WRONG",
+    "reason": "The explanation is for Social Security benefits, not child tax credit or EITC. The correct answer should be A.",
+    "question": "John and Mary are married and filing jointly. They have three children: Sarah (age 17), David (age 1",
+    "markedAnswer": 3,
+    "options": [
+      "$5,000 Child Tax Credit and $0 EITC",
+      "$7,500 Child Tax Credit and $0 EITC",
+      "$7,500 Child Tax Credit and $1,428 EITC",
+      "$5,000 Child Tax Credit and $1,428 EITC"
+    ]
+  },
+  {
+    "id": "reg-gen-1342",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1343",
+    "verdict": "WRONG",
+    "reason": "The explanation is for Social Security benefits, not inclusions in gross income. The correct answer should be A.",
+    "question": "During the current year, Jane received the following items:\n\n*   A $10,000 scholarship from State Un",
+    "markedAnswer": 3,
+    "options": [
+      "$4,000",
+      "$6,000",
+      "$9,000",
+      "$11,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1344",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1345",
+    "verdict": "WRONG",
+    "reason": "The explanation is for Social Security benefits, not education credits. The correct answer should be A.",
+    "question": "Mark and Lisa are married and filing jointly. Mark decided to take a pottery class at the local comm",
+    "markedAnswer": 3,
+    "options": [
+      "$0",
+      "$600",
+      "$1,200",
+      "$3,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1346",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation states Lisa's income is $8,000, but then says it must be less than $4,700. This is contradictory.",
+    "question": "Jeremy maintained a household for his unmarried 19-year-old cousin, Lisa, who lived with him for the",
+    "markedAnswer": 1,
+    "options": [
+      "Single",
+      "Head of Household",
+      "Married Filing Separately",
+      "Qualifying Surviving Spouse"
+    ]
+  },
+  {
+    "id": "reg-gen-1347",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1348",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1349",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1350",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1351",
+    "verdict": "WRONG",
+    "reason": "The explanation is for a different question. The correct answer should be A because the MAGI is over the threshold.",
+    "question": "John and Mary are married and filing jointly. In 2023, their modified adjusted gross income (MAGI) w",
+    "markedAnswer": 1,
+    "options": [
+      "$0",
+      "$2,000",
+      "$4,000",
+      "$6,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1352",
+    "verdict": "WRONG",
+    "reason": "The explanation is for a different question. The correct answer should be A because John provided over half of Mary's support and her income is less than the limit.",
+    "question": "John supports his mother, Mary, who is 68 years old and lives in a separate apartment. Mary's gross ",
+    "markedAnswer": 1,
+    "options": [
+      "Yes, John can claim Mary as a dependent and claim the COD.",
+      "No, John cannot claim Mary as a dependent because Mary's gross income exceeds the gross income test limit.",
+      "No, John cannot claim Mary as a dependent because Mary receives Social Security benefits.",
+      "Yes, John can claim Mary as a dependent but cannot claim the COD because Mary receives Social Security benefits."
+    ]
+  },
+  {
+    "id": "reg-gen-1353",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1354",
+    "verdict": "WRONG",
+    "reason": "The explanation is for a different question. The correct answer should be D because cash is limited to 60% of AGI and stock is limited to 30% of AGI.",
+    "question": "In 2023, Marcus, who is single and 67 years old, had adjusted gross income (AGI) of $80,000. He cont",
+    "markedAnswer": 1,
+    "options": [
+      "$40,000",
+      "$55,000",
+      "$65,000",
+      "$80,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1355",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1356",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1357",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1358",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1359",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because AGI is over $150,000, so 110% of prior year tax is required.",
+    "question": "John had a tax liability of $40,000 in 2022. His adjusted gross income (AGI) for 2022 was $140,000. ",
+    "markedAnswer": 1,
+    "options": [
+      "$40,000",
+      "$45,000",
+      "$50,000",
+      "$36,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1360",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1361",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1362",
+    "verdict": "WRONG",
+    "reason": "The explanation is incorrect. The correct calculation is $50,000 * 0.9235 = $46,175.",
+    "question": "Jane operates a small business as a sole proprietor. In 2023, her business had gross income of $80,0",
+    "markedAnswer": 0,
+    "options": [
+      "$49,293",
+      "$50,000",
+      "$25,000",
+      "$51,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1363",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A. Medical expenses are deductible to the extent they exceed 7.5% of AGI. 7.5% of $60,000 is $4,500. Total medical expenses are $4,000 + $3,000 = $7,000. $7,000 - $4,500 = $2,500. Over-the-counter medicines are not deductible unless prescribed.",
+    "question": "In 2023, John, age 62 and single, had adjusted gross income (AGI) of $60,000. During the year, he pa",
+    "markedAnswer": 1,
+    "options": [
+      "$0",
+      "$1,750",
+      "$2,250",
+      "$7,500"
+    ]
+  },
+  {
+    "id": "reg-gen-1364",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1365",
+    "verdict": "WRONG",
+    "reason": "The explanation is incorrect. The correct answer should be B. Itemized deductions: $8,000 (medical) + $10,000 (SALT limit) + $2,000 (charity) = $20,000. Standard deduction: $27,700 + $1,850 (John) + $1,500 (Mary) = $31,050. Use standard deduction. $85,000 - $31,050 = $53,950. Round to $54,000.",
+    "question": "John and Mary are married and filing jointly. John is 67 years old and Mary is 62 and blind. Their a",
+    "markedAnswer": 0,
+    "options": [
+      "$53,750",
+      "$54,000",
+      "$54,250",
+      "$55,500"
+    ]
+  },
+  {
+    "id": "reg-gen-1366",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1367",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1368",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1369",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1370",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1371",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1372",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1373",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation is for a different question. The correct answer should be $130,000. The contribution of appreciated property to a public charity is generally deductible at fair market value, but is limited to 30% of AGI. $130,000 (FMV of stock) + $20,000 (cash) = $150,000. 30% of AGI is $60,000 for the stock and 60% of AGI is $120,000 for cash. The stock contribution is limited to $60,000. The cash contribution is limited to $20,000. Total deduction is $60,000 + $20,000 = $80,000. The remaining $70,000 can be carried over for 5 years.",
+    "question": "In 2023, Greg had adjusted gross income (AGI) of $200,000. He contributed stock, which he had held f",
+    "markedAnswer": 0,
+    "options": [
+      "$120,000",
+      "$100,000",
+      "$130,000",
+      "$150,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1374",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1375",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1376",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1377",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1378",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1379",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1380",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1381",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1382",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1383",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1384",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1385",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1386",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1387",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1388",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1389",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1390",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1391",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1393",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1394",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation incorrectly states that salary earned in the ordinary course of business is not a preferential transfer. While there is an ordinary course of business exception, it typically applies to payments to suppliers, not insiders. The payment to the CEO could be considered a preference.",
+    "question": "On March 1, 2024, Beta Corp. filed a voluntary petition for bankruptcy under Chapter 7 of the Bankru",
+    "markedAnswer": 0,
+    "options": [
+      "$5,000",
+      "$7,000",
+      "$15,000",
+      "$17,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1395",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1396",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1397",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1398",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1399",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1400",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be a contract for the sale of goods with a price of $500 or more.",
+    "question": "Which of the following contracts, governed by the Uniform Commercial Code (UCC), is required to be i",
+    "markedAnswer": 0,
+    "options": [
+      "A contract for the sale of goods with a price of $400.",
+      "A contract for the lease of equipment for a period of six months with monthly payments of $1,000.",
+      "A contract for the sale of land for $5,000.",
+      "A contract for employment for a term of one year."
+    ]
+  },
+  {
+    "id": "reg-gen-1401",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1402",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1403",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1404",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1405",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1406",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1407",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1408",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1409",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1410",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1411",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1412",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1413",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1414",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1415",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1416",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1417",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because UCC Article 2A governs leases of goods.",
+    "question": "Under the Uniform Commercial Code (UCC) Article 2, which of the following contracts for the sale of ",
+    "markedAnswer": 0,
+    "options": [
+      "A contract for the sale of goods with a value of $400.",
+      "A contract for the lease of goods with total lease payments of $600.",
+      "A contract for the sale of securities with a value of $300.",
+      "A contract for the sale of real estate with a value of $500."
+    ]
+  },
+  {
+    "id": "reg-gen-1418",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation's calculation of $4,166.67 is more accurate than $0, making the answer questionable.",
+    "question": "Ajax Corp. filed for Chapter 7 bankruptcy on March 1, 2024. The following claims exist against the e",
+    "markedAnswer": 0,
+    "options": [
+      "$0",
+      "$5,000",
+      "$12,500",
+      "$25,000"
+    ]
+  },
+  {
+    "id": "reg-gen-1419",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1420",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1421",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1422",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1423",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1424",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1425",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1426",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1428",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1429",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1430",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1431",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1432",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1433",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1434",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1435",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1436",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1437",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1438",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1439",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1440",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1441",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1442",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1443",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1444",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1445",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1446",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1447",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1448",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1449",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1450",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1451",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1452",
+    "verdict": "A",
+    "reason": "CORRECT"
+  },
+  {
+    "id": "reg-gen-1453",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1454",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1455",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1456",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1457",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1458",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1459",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-gen-1460",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-9k-001",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because the taxable gain is $130,000.",
+    "question": "John Smith, a single taxpayer, sold his principal residence on October 15, 2024, for $600,000. He ha",
+    "markedAnswer": 0,
+    "options": [
+      "$0",
+      "$180,000",
+      "$380,000",
+      "$400,000"
+    ]
+  },
+  {
+    "id": "reg-9k-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-9k-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-9k-004",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be $4,000, but since it's not an option, B is the closest.",
+    "question": "David, a U.S. citizen, made the following gifts in 2024: $20,000 to his son, $20,000 to his daughter",
+    "markedAnswer": 0,
+    "options": [
+      "$0",
+      "$12,000",
+      "$24,000",
+      "$60,000"
+    ]
+  },
+  {
+    "id": "reg-9k-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-9k-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-9k-007",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be C because the charitable contribution deduction is limited to 10% of taxable income.",
+    "question": "ABC Corp. has taxable income of $400,000 before any charitable contribution deduction. During the ye",
+    "markedAnswer": 0,
+    "options": [
+      "$20,000",
+      "$24,000",
+      "$50,000",
+      "$60,000"
+    ]
+  },
+  {
+    "id": "reg-9k-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-9k-009",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because SmallCo is entitled to damages for breach of contract.",
+    "question": "MegaCorp entered into a contract with SmallCo. The contract stated that SmallCo would provide consul",
+    "markedAnswer": 0,
+    "options": [
+      "Specific performance",
+      "Compensatory damages",
+      "Punitive damages",
+      "Rescission"
+    ]
+  },
+  {
+    "id": "reg-9k-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-9k-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-9k-012",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because the charitable contribution deduction is limited to 10% of taxable income before the charitable contribution deduction, dividends received deduction, NOL carryback, and capital loss carryback. 10% of $230,000 is $23,000.",
+    "question": "Alpha Corporation is a C corporation. During the current year, Alpha had taxable income of $200,000 ",
+    "markedAnswer": 2,
+    "options": [
+      "$15,000",
+      "$23,000",
+      "$30,000",
+      "$25,000"
+    ]
+  },
+  {
+    "id": "reg-9k-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-9k-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-9k-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "reg-9k-016",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because the gain on the sale of the personal residence is $600,000 - $20,000 - $300,000 = $280,000. Up to $250,000 is excluded for a single taxpayer, so $30,000 is taxable. The gain on the sale of the rental property is $250,000 - $150,000 + $30,000 = $130,000. The total taxable gain is $30,000 + $100,000 = $130,000.",
+    "question": "John Smith, a single taxpayer, sold his personal residence on October 15, 2024, for $600,000. He had",
+    "markedAnswer": 0,
+    "options": [
+      "$280,000",
+      "$250,000",
+      "$320,000",
+      "$100,000"
+    ]
+  },
+  {
+    "id": "reg-9k-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  }
+]

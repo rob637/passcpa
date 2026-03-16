@@ -5,14 +5,14 @@
  * Falls back to 404 if the article doesn't exist or isn't published.
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useSEO } from '../../../hooks/useSEO';
-import { useBreadcrumbs } from '../../../hooks/useStructuredData';
+import { useBreadcrumbs, useArticleSchema, useFAQSchema, extractFAQsFromMarkdown } from '../../../hooks/useStructuredData';
 import { Calendar, Clock, ArrowLeft, BookOpen, ArrowRight } from 'lucide-react';
 import logger from '../../../utils/logger';
 
@@ -91,17 +91,36 @@ const DynamicArticle = () => {
     ...(article ? [{ name: article.title, url: `https://voraprep.com/blog/${slug}` }] : []),
   ]);
 
-  // Estimate read time from content
-  const readTime = article?.generatedContent
-    ? `${Math.max(1, Math.ceil(article.generatedContent.split(/\s+/).length / 200))} min read`
-    : '';
-
-  // Format date
+  // Format date for schema
   const publishDate = article?.publishedAt?.seconds
     ? new Date(article.publishedAt.seconds * 1000)
     : article?.generatedAt?.seconds
       ? new Date(article.generatedAt.seconds * 1000)
       : null;
+  
+  const dateString = publishDate?.toISOString() || new Date().toISOString();
+
+  // Article structured data for Google
+  useArticleSchema({
+    headline: article?.title || '',
+    description: article?.metaDescription || `Read about ${article?.title || 'exam preparation'} on VoraPrep.`,
+    author: 'VoraPrep Team',
+    datePublished: dateString,
+    url: `https://voraprep.com/blog/${slug}`,
+  });
+
+  // Extract FAQs from content for FAQ schema (enables featured snippets)
+  const faqs = useMemo(() => {
+    if (!article?.generatedContent) return [];
+    return extractFAQsFromMarkdown(article.generatedContent);
+  }, [article?.generatedContent]);
+
+  useFAQSchema(faqs);
+
+  // Estimate read time from content
+  const readTime = article?.generatedContent
+    ? `${Math.max(1, Math.ceil(article.generatedContent.split(/\s+/).length / 200))} min read`
+    : '';
 
   // ---- Loading State ----
   if (loading) {
@@ -115,7 +134,7 @@ const DynamicArticle = () => {
     );
   }
 
-  // ---- Not Found ----
+  // ---- Not Found: Show 404 page ----
   if (notFound || !article) {
     return (
       <div className="min-h-screen bg-white dark:bg-slate-950 flex items-center justify-center px-4">
@@ -138,7 +157,9 @@ const DynamicArticle = () => {
     );
   }
 
-  // ---- Extract meta description from content (first paragraph or explicit) ----
+  // ---- Extract title from H1 in content (allows AI to edit it), fallback to title field ----
+  const contentTitle = extractTitleFromContent(article.generatedContent);
+  const displayTitle = contentTitle || article.title;
   const contentToRender = cleanMarkdownContent(article.generatedContent);
 
   return (
@@ -173,7 +194,7 @@ const DynamicArticle = () => {
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-            {article.title}
+            {displayTitle}
           </h1>
         </div>
       </section>
@@ -234,7 +255,7 @@ const DynamicArticle = () => {
  * Clean up Gemini-generated markdown:
  * - Remove leading meta description line if present
  * - Strip any "Meta Description:" prefix lines
- * - Normalize heading levels
+ * - Strip the H1 title (it's rendered separately in the header)
  */
 function cleanMarkdownContent(raw: string): string {
   let content = raw;
@@ -245,10 +266,23 @@ function cleanMarkdownContent(raw: string): string {
   // Remove leading "---" divider sometimes added by Gemini
   content = content.replace(/^---\n+/, '');
   
-  // If the content starts with an H1 that matches the title, remove it (we show title in header)
+  // Remove the H1 title line (we display it separately in the header)
   content = content.replace(/^#\s+.+\n+/, '');
 
   return content.trim();
+}
+
+/**
+ * Extract the H1 title from markdown content.
+ * Returns the title text or null if no H1 found.
+ */
+function extractTitleFromContent(raw: string): string | null {
+  // Skip meta description line first
+  let content = raw.replace(/^(?:\*\*)?Meta\s*Description:?\*?\*?\s*.+\n+/im, '');
+  content = content.replace(/^---\n+/, '');
+  
+  const h1Match = content.match(/^#\s+(.+?)(?:\n|$)/);
+  return h1Match ? h1Match[1].trim() : null;
 }
 
 export default DynamicArticle;

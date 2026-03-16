@@ -61,7 +61,10 @@ const STATIC_ROUTES = [
 
   // Auth Pages (useful for branded search)
   { loc: '/login', priority: '0.5', changefreq: 'monthly' },
-  { loc: '/signup', priority: '0.6', changefreq: 'monthly' },
+  { loc: '/register', priority: '0.6', changefreq: 'monthly' },
+  
+  // Demo/Lead Magnet Pages
+  { loc: '/demo-practice', priority: '0.7', changefreq: 'monthly' },
 ];
 
 // ============================================================================
@@ -184,7 +187,8 @@ Allow: /pass-guarantee
 Allow: /blog
 Allow: /blog/*
 Allow: /login
-Allow: /signup
+Allow: /register
+Allow: /demo-practice
 Allow: /terms
 Allow: /privacy
 Allow: /help

@@ -1,0 +1,75 @@
+{
+  "lessonId": "FAR-I-001",
+  "section": "FAR",
+  "generatedAt": "2026-02-28T19:17:38.121462",
+  "interactiveSections": [
+    {
+      "type": "knowledge-check",
+      "title": "Check Your Understanding",
+      "knowledgeCheck": {
+        "question": "According to the FASB Conceptual Framework, which of the following is a fundamental qualitative characteristic of accounting information?",
+        "options": [
+          "Comparability",
+          "Verifiability",
+          "Relevance",
+          "Timeliness"
+        ],
+        "correctIndex": 2,
+        "explanation": "Relevance and Faithful Representation are the two fundamental qualitative characteristics. Comparability, verifiability, timeliness, and understandability are enhancing characteristics.",
+        "hint": "Think about the base requirements for information to be useful."
+      }
+    },
+    {
+      "type": "reveal",
+      "title": "Test Yourself",
+      "reveal": {
+        "question": "List the four enhancing qualitative characteristics of accounting information.",
+        "answer": "Comparability, Verifiability, Timeliness, and Understandability",
+        "hint": "Remember the memory aid CVTU"
+      }
+    },
+    {
+      "type": "comparison",
+      "title": "Compare and Contrast",
+      "comparison": {
+        "title": "Revenue vs. Gain",
+        "items": [
+          {
+            "label": "Revenue",
+            "points": [
+              "Arises from the entity's ongoing major or central operations.",
+              "Examples: Sales, service fees, rent",
+              "Increases in assets or decreases in liabilities"
+            ],
+            "color": "blue"
+          },
+          {
+            "label": "Gain",
+            "points": [
+              "Arises from peripheral or incidental transactions.",
+              "Examples: Sale of equipment, investment gains",
+              "Increases in equity"
+            ],
+            "color": "green"
+          }
+        ]
+      }
+    },
+    {
+      "type": "knowledge-check",
+      "title": "Check Your Understanding",
+      "knowledgeCheck": {
+        "question": "Which measurement basis is most commonly used in GAAP?",
+        "options": [
+          "Current cost",
+          "Fair Value",
+          "Historical cost",
+          "Net realizable value"
+        ],
+        "correctIndex": 2,
+        "explanation": "Historical cost is the most common measurement basis under GAAP, although fair value is increasingly used, especially for financial instruments.",
+        "hint": "Think about the most verifiable and objective measure."
+      }
+    }
+  ]
+}

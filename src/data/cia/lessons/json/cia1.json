@@ -1,0 +1,1931 @@
+[
+  {
+    "id": "CIA1-I-001",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Mission and Definition of Internal Auditing",
+    "description": "Understand the core purpose and definition of internal auditing as defined by the IIA",
+    "order": 1,
+    "duration": 40,
+    "difficulty": "beginner",
+    "topics": [
+      "Mission",
+      "Definition",
+      "Purpose",
+      "Value proposition"
+    ],
+    "blueprintArea": "CIA1-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The IIA's Mission and Definition are the BEDROCK of the profession. Every exam question about internal audit's purpose traces back to these concepts. Memorize them word-for-word - they're heavily tested!"
+        },
+        {
+          "title": "The Mission of Internal Audit",
+          "type": "text",
+          "content": "**Official IIA Mission Statement:**\n\n\"To enhance and protect organizational value by providing risk-based and objective assurance, advice, and insight.\"\n\n**Key elements:**\n\u2022 **Enhance** - Add value, improve operations\n\u2022 **Protect** - Safeguard assets, prevent fraud\n\u2022 **Risk-based** - Focus on what matters most\n\u2022 **Objective** - Independent, unbiased perspective\n\u2022 **Assurance** - Confirm controls work\n\u2022 **Advice** - Consulting services\n\u2022 **Insight** - Forward-looking perspective"
+        },
+        {
+          "title": "Definition of Internal Auditing",
+          "type": "text",
+          "content": "**Official IIA Definition:**\n\n\"Internal auditing is an independent, objective assurance and consulting activity designed to add value and improve an organization's operations. It helps an organization accomplish its objectives by bringing a systematic, disciplined approach to evaluate and improve the effectiveness of risk management, control, and governance processes.\"\n\n**Critical phrases to remember:**\n\u2022 Independent and objective\n\u2022 Assurance AND consulting\n\u2022 Add value\n\u2022 Systematic, disciplined approach\n\u2022 Risk management, control, governance"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Definition Keywords",
+          "type": "callout",
+          "content": "**\"I-O-A-C-A-V-S-D-R-C-G\"**\n\n**I**ndependent\n**O**bjective\n**A**ssurance & **C**onsulting\n**A**dd **V**alue\n**S**ystematic, **D**isciplined\n**R**isk, **C**ontrol, **G**overnance\n\n*Or remember: \"Internal Audit Creates Value Systematically\"*"
+        },
+        {
+          "title": "Assurance vs. Consulting Services",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Assurance Services",
+            "Consulting Services"
+          ],
+          "rows": [
+            [
+              "Parties",
+              "3 parties (auditee, auditor, user)",
+              "2 parties (customer, auditor)"
+            ],
+            [
+              "Nature",
+              "Objective examination of evidence",
+              "Advisory activities"
+            ],
+            [
+              "Who requests",
+              "Audit plan/management request",
+              "Specific customer request"
+            ],
+            [
+              "Scope determined by",
+              "Auditor based on risk",
+              "Customer/client needs"
+            ],
+            [
+              "Examples",
+              "Financial audits, compliance audits",
+              "Training, process design, facilitation"
+            ]
+          ]
+        },
+        {
+          "title": "Value Proposition of Internal Audit",
+          "type": "text",
+          "content": "**Internal Audit adds value by:**\n\n**1. Objective Assurance**\n\u2022 Independent verification of controls\n\u2022 Unbiased risk assessment\n\u2022 Validation of compliance\n\n**2. Risk-Based Focus**\n\u2022 Prioritizes high-risk areas\n\u2022 Aligns with strategic objectives\n\u2022 Efficient use of audit resources\n\n**3. Insight and Foresight**\n\u2022 Catalyst for change\n\u2022 Best practice identification\n\u2022 Emerging risk identification\n\n**4. Governance Support**\n\u2022 Board and audit committee support\n\u2022 Ethics and compliance culture\n\u2022 Accountability framework"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Mission: Enhance and protect organizational value",
+            "Definition emphasizes independence, objectivity, and adding value",
+            "Assurance has 3 parties; Consulting has 2 parties",
+            "Systematic, disciplined approach to risk, control, governance",
+            "Both assurance and consulting services add value"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Mission Statement Deep Dive",
+          "knowledgeCheck": {
+            "question": "Which of the following best describes the primary focus of the internal audit mission, according to the IIA?",
+            "options": [
+              "To ensure compliance with all applicable laws and regulations.",
+              "To enhance and protect organizational value by providing risk-based and objective assurance, advice, and insight.",
+              "To detect and prevent fraud within the organization.",
+              "To improve the efficiency of operational processes."
+            ],
+            "correctIndex": 1,
+            "explanation": "The IIA's mission statement explicitly states the focus is on enhancing and protecting organizational value through risk-based assurance, advice, and insight. While compliance, fraud prevention, and efficiency improvements are important aspects of internal auditing, they fall under the broader goal of enhancing and protecting value.",
+            "hint": "Consider the keywords in the IIA's official mission statement."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Definition Recall",
+          "reveal": {
+            "question": "Complete the IIA's definition of internal auditing: 'Internal auditing is an independent, objective assurance and consulting activity designed to...",
+            "answer": "...add value and improve an organization's operations. It helps an organization accomplish its objectives by bringing a systematic, disciplined approach to evaluate and improve the effectiveness of risk management, control, and governance processes.'"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Assurance vs. Consulting",
+          "comparison": {
+            "headers": [
+              "Assurance Services",
+              "Consulting Services"
+            ],
+            "rows": [
+              {
+                "label": "Primary Objective",
+                "values": [
+                  "Provide independent assessment",
+                  "Provide advisory services"
+                ]
+              },
+              {
+                "label": "Nature of Work",
+                "values": [
+                  "Objective examination of evidence",
+                  "Collaborative and advisory"
+                ]
+              },
+              {
+                "label": "Independence",
+                "values": [
+                  "High level of independence required",
+                  "Independence may be impaired depending on the nature of the consulting engagement"
+                ]
+              },
+              {
+                "label": "Example Activities",
+                "values": [
+                  "Reviewing financial statements",
+                  "Advising on the implementation of a new IT system"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-I-002",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Core Principles for Internal Auditing",
+    "description": "Master the 10 Core Principles that articulate internal audit effectiveness",
+    "order": 2,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Core Principles",
+      "Effectiveness",
+      "Professional standards"
+    ],
+    "blueprintArea": "CIA1-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The Core Principles define what EFFECTIVE internal auditing looks like. If all 10 principles are operating effectively, internal audit is effective. Exam questions frequently test whether an action aligns with or violates these principles."
+        },
+        {
+          "title": "The 10 Core Principles",
+          "type": "text",
+          "content": "**Taken together, the Core Principles articulate internal audit effectiveness:**\n\n1. Demonstrates integrity\n2. Demonstrates competence and due professional care\n3. Is objective and free from undue influence (independent)\n4. Aligns with the strategies, objectives, and risks of the organization\n5. Is appropriately positioned and adequately resourced\n6. Demonstrates quality and continuous improvement\n7. Communicates effectively\n8. Provides risk-based assurance\n9. Is insightful, proactive, and future-focused\n10. Promotes organizational improvement"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Core Principles",
+          "type": "callout",
+          "content": "**\"I-C-O-A-P-Q-C-R-I-P\"** (memorize in order!)\n\nOr group by theme:\n\n**Character:** Integrity, Competence, Objectivity\n**Alignment:** Aligned, Positioned, Quality\n**Delivery:** Communicates, Risk-based, Insightful, Promotes improvement\n\n*\"ICO-APQ-CRIP\" - sounds like \"I co-APQ-crisp\"*"
+        },
+        {
+          "title": "Principle Deep Dive",
+          "type": "table",
+          "headers": [
+            "Principle",
+            "Key Concept",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Integrity",
+              "Honesty, ethical behavior",
+              "Reporting all findings, not just favorable ones"
+            ],
+            [
+              "Competence",
+              "Knowledge, skills, experience",
+              "CBOK training, technical certifications"
+            ],
+            [
+              "Objectivity",
+              "Unbiased, no conflicts",
+              "Declining audit of area where auditor worked"
+            ],
+            [
+              "Aligned",
+              "Matches org objectives",
+              "Audit plan addresses strategic risks"
+            ],
+            [
+              "Positioned",
+              "CAE reports to board",
+              "Functional reporting to audit committee"
+            ],
+            [
+              "Quality",
+              "QAIP, continuous improvement",
+              "External quality assessment every 5 years"
+            ],
+            [
+              "Communicates",
+              "Clear, timely, accurate",
+              "Reports within agreed timeframes"
+            ],
+            [
+              "Risk-based",
+              "Focus on high-risk areas",
+              "Annual risk assessment drives audit plan"
+            ],
+            [
+              "Insightful",
+              "Forward-looking",
+              "Emerging risk identification"
+            ],
+            [
+              "Promotes improvement",
+              "Catalyst for change",
+              "Recommendations that enhance operations"
+            ]
+          ]
+        },
+        {
+          "title": "Using Core Principles",
+          "type": "text",
+          "content": "**For effectiveness assessment:**\n\u2022 All 10 must be operating effectively\n\u2022 Partial achievement = Not fully effective\n\u2022 Used for internal self-assessment\n\n**For exam questions:**\n\u2022 Identify which principle applies\n\u2022 Assess if action supports or violates principle\n\u2022 Core principles inform Standards interpretation"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "10 Core Principles define internal audit effectiveness",
+            "ALL principles must be met for effectiveness",
+            "ICO-APQ-CRIP mnemonic for memorization",
+            "Principles guide behavior and quality assessment",
+            "Used in conjunction with Standards and Code of Ethics"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Understanding Core Principles",
+          "knowledgeCheck": {
+            "question": "An internal audit activity discovers that a department manager is overriding internal controls to meet short-term production goals, potentially impacting the accuracy of financial reporting. The internal audit activity does not report this finding to senior management due to fear of upsetting the department manager. Which core principle is MOST directly violated?",
+            "options": [
+              "Demonstrates integrity.",
+              "Demonstrates competence and due professional care.",
+              "Is objective and free from undue influence (independent).",
+              "Aligns with the strategies, objectives, and risks of the organization."
+            ],
+            "correctIndex": 2,
+            "explanation": "The correct answer is 'Is objective and free from undue influence (independent).' The internal audit activity's failure to report the finding due to fear directly compromises their objectivity and independence. The other principles might be indirectly affected, but independence is the most immediate and direct violation.",
+            "hint": "Consider which principle is most directly compromised by the auditor's inaction."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Rule",
+          "reveal": {
+            "question": "What is the impact on overall internal audit effectiveness if only 9 out of the 10 Core Principles are operating effectively?",
+            "answer": "The internal audit activity is NOT fully effective. All 10 Core Principles must be operating effectively for the internal audit activity to be considered fully effective."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Applying Core Principles to Effectiveness",
+          "knowledgeCheck": {
+            "question": "An organization's internal audit function is conducting a self-assessment of its effectiveness. Which of the following is the MOST appropriate use of the Core Principles during this assessment?",
+            "options": [
+              "To provide a general framework for evaluating the internal audit activity's overall performance.",
+              "To identify specific areas where the internal audit activity can improve its efficiency.",
+              "To determine whether the internal audit activity is in compliance with all applicable laws and regulations.",
+              "To evaluate whether each of the 10 Core Principles are operating effectively."
+            ],
+            "correctIndex": 3,
+            "explanation": "The correct answer is 'To evaluate whether each of the 10 Core Principles are operating effectively.' The Core Principles are designed to articulate internal audit effectiveness and are specifically intended to be used in effectiveness assessments to check if all 10 principles are operating effectively. The other options are valid uses of an assessment but not the MOST appropriate use of the Core Principles themselves.",
+            "hint": "Think about the explicit purpose of the Core Principles as stated in the lesson."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-I-003",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "IIA Code of Ethics",
+    "description": "Master the four principles and rules of conduct in the IIA Code of Ethics",
+    "order": 3,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Code of Ethics",
+      "Integrity",
+      "Objectivity",
+      "Confidentiality",
+      "Competency"
+    ],
+    "blueprintArea": "CIA1-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The Code of Ethics is MANDATORY for all IIA members and CIA holders. Ethics questions appear on EVERY CIA exam. Know the 4 principles, their rules of conduct, and how to apply them to scenarios!"
+        },
+        {
+          "title": "Purpose of the Code of Ethics",
+          "type": "text",
+          "content": "**The Code promotes an ethical culture** in the internal auditing profession.\n\n**Applicability:**\n\u2022 All IIA members\n\u2022 All CIA, QIAL, CGAP, CFSA, and CCSA holders\n\u2022 All individuals providing internal audit services\n\n**Components:**\n1. **Principles** - Fundamental expectations\n2. **Rules of Conduct** - Behavioral norms"
+        },
+        {
+          "title": "The Four Principles",
+          "type": "text",
+          "content": "**1. INTEGRITY**\nIntegrity establishes trust and provides the basis for reliance on judgment.\n\n**2. OBJECTIVITY**\nExhibit highest level of professional objectivity in gathering, evaluating, and communicating information.\n\n**3. CONFIDENTIALITY**\nRespect the value and ownership of information received; do not disclose without authority.\n\n**4. COMPETENCY**\nApply knowledge, skills, and experience needed services.\n\n**Memorize: I-O-C-C**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: IOCC",
+          "type": "callout",
+          "content": "**\"I-O-C-C\"** = **I** **O**nly **C**ertify **C**ompetently\n\nOr: **I**ntegrity, **O**bjectivity, **C**onfidentiality, **C**ompetency\n\n*In order of importance: Trust \u2192 Fairness \u2192 Discretion \u2192 Ability*"
+        },
+        {
+          "title": "Rules of Conduct: Integrity",
+          "type": "text",
+          "content": "Internal auditors shall:\n\n\u2022 Perform work with **honesty, diligence, and responsibility**\n\u2022 Observe the **law** and make disclosures expected by law/profession\n\u2022 **Not knowingly** be party to illegal activity or acts discrediting profession\n\u2022 **Respect and contribute** to legitimate and ethical objectives"
+        },
+        {
+          "title": "Rules of Conduct: Objectivity",
+          "type": "text",
+          "content": "Internal auditors shall:\n\n\u2022 **Not participate** in activities that would impair judgment\n\u2022 **Not accept** anything that would impair judgment\n\u2022 **Disclose all material facts** known (otherwise distort reporting)\n\u2022 **Disclose relationships** that could create conflict of interest"
+        },
+        {
+          "title": "Rules of Conduct: Confidentiality",
+          "type": "text",
+          "content": "Internal auditors shall:\n\n\u2022 Be **prudent** in use and protection of information\n\u2022 **Not use information** for personal gain or in any manner contrary to law or detrimental to organization"
+        },
+        {
+          "title": "Rules of Conduct: Competency",
+          "type": "text",
+          "content": "Internal auditors shall:\n\n\u2022 **Engage only in services** for which they have necessary knowledge, skills, and experience\n\u2022 Perform services in accordance with **International Standards**\n\u2022 **Continually improve** proficiency, effectiveness, and quality of services"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Ethics Scenarios",
+          "type": "warning",
+          "content": "**Common exam scenarios:**\n\n\u274c Auditor uses confidential info for stock trading \u2192 Violates CONFIDENTIALITY\n\u274c Auditor doesn't disclose family works in audited area \u2192 Violates OBJECTIVITY\n\u274c Auditor conducts IT audit without IT knowledge \u2192 Violates COMPETENCY\n\u274c Auditor ignores evidence of fraud \u2192 Violates INTEGRITY\n\n**When in doubt:** If it \"feels wrong,\" it probably violates the Code!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four principles: Integrity, Objectivity, Confidentiality, Competency (IOCC)",
+            "Mandatory for IIA members and certification holders",
+            "Rules of Conduct provide specific behavioral guidance",
+            "Objectivity: Must disclose ALL material facts",
+            "Confidentiality: Prudent use, no personal gain",
+            "Competency: Only perform work you're qualified for"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Understanding the Scope of the IIA Code of Ethics",
+          "knowledgeCheck": {
+            "question": "Which of the following individuals is NOT explicitly bound by the IIA's Code of Ethics?",
+            "options": [
+              "A staff accountant in a publicly traded company who is not an IIA member but regularly interacts with the internal audit department.",
+              "An IIA member working as a consultant providing risk management services.",
+              "A Certified Internal Auditor (CIA) working as an internal audit manager.",
+              "An individual providing internal audit services but who is not an IIA member."
+            ],
+            "correctIndex": 0,
+            "explanation": "The IIA's Code of Ethics applies to IIA members, those holding IIA certifications (CIA, QIAL, CGAP, CFSA, CCSA), and individuals providing internal audit services. A staff accountant not providing internal audit services or holding an IIA certification is not bound by the Code.",
+            "hint": "Consider the specific roles and affiliations mentioned in the question and how they relate to the applicability of the Code of Ethics."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Memorization Check: The Four Principles",
+          "reveal": {
+            "question": "List the four fundamental principles outlined in the IIA Code of Ethics.",
+            "answer": "The four principles are: Integrity, Objectivity, Confidentiality, and Competency."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Applying the Principle of Objectivity",
+          "knowledgeCheck": {
+            "question": "An internal auditor is assigned to audit a department managed by their close friend. To adhere to the principle of Objectivity, the internal auditor should:",
+            "options": [
+              "Accept the assignment and conduct the audit as planned, ensuring they remain impartial.",
+              "Decline the assignment and request that another auditor be assigned.",
+              "Accept the assignment but disclose the relationship to the audit committee and management and implement additional review procedures.",
+              "Accept the assignment and only audit areas unrelated to their friend's responsibilities."
+            ],
+            "correctIndex": 2,
+            "explanation": "Objectivity requires auditors to avoid conflicts of interest. Disclosing the relationship and implementing additional review procedures allows for transparency and helps mitigate the risk of bias.",
+            "hint": "Think about the best way to avoid even the appearance of a conflict of interest."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-I-004",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "International Professional Practices Framework (IPPF)",
+    "description": "Understand the structure and components of the IIA's authoritative guidance",
+    "order": 4,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "IPPF",
+      "Standards",
+      "Mandatory guidance",
+      "Recommended guidance"
+    ],
+    "blueprintArea": "CIA1-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The IPPF is the authoritative framework for internal auditing worldwide. Understanding what's MANDATORY vs. RECOMMENDED is critical - exam questions test this distinction constantly!"
+        },
+        {
+          "title": "What is the IPPF?",
+          "type": "text",
+          "content": "**International Professional Practices Framework (IPPF)**\n\nThe conceptual framework organizing authoritative guidance from the IIA.\n\n**Two categories:**\n1. **Mandatory Guidance** - MUST follow\n2. **Recommended Guidance** - SHOULD consider\n\n**Purpose:**\n\u2022 Provides consistent, global standards\n\u2022 Establishes professional expectations\n\u2022 Supports quality and credibility"
+        },
+        {
+          "title": "Mandatory Guidance",
+          "type": "text",
+          "content": "**These are REQUIRED for professional practice:**\n\n**1. Core Principles** (10 principles)\n\u2022 Define effective internal auditing\n\u2022 Must all be present for effectiveness\n\n**2. Definition of Internal Auditing**\n\u2022 States fundamental purpose and nature\n\n**3. Code of Ethics**\n\u2022 Four principles: IOCC\n\u2022 Rules of Conduct\n\n**4. International Standards**\n\u2022 Attribute Standards (1000s)\n\u2022 Performance Standards (2000s)"
+        },
+        {
+          "title": "Recommended Guidance",
+          "type": "text",
+          "content": "**These SHOULD be considered but are not required:**\n\n**1. Implementation Guidance**\n\u2022 How to apply the Standards\n\u2022 Approved by IIA\n\u2022 Addresses approach, methodology, consideration\n\n**2. Supplemental Guidance**\n\u2022 Detailed guidance for specific areas\n\u2022 Industry-specific guidance\n\u2022 GTAG (Global Technology Audit Guides)\n\u2022 Practice Guides"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: IPPF Structure",
+          "type": "callout",
+          "content": "**Mandatory = \"Must Do\"**\n\u2022 Core Principles\n\u2022 Definition\n\u2022 Code of Ethics\n\u2022 Standards\n\n**Recommended = \"Should Consider\"**\n\u2022 Implementation Guidance\n\u2022 Supplemental Guidance\n\n*Think: \"Principles, Definition, Ethics, Standards\" = PDES = \"Please Do Everything Standardly\"*"
+        },
+        {
+          "title": "International Standards Categories",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Number Series",
+            "Focus"
+          ],
+          "rows": [
+            [
+              "Attribute Standards",
+              "1000-1999",
+              "Characteristics of organizations and individuals"
+            ],
+            [
+              "Performance Standards",
+              "2000-2999",
+              "Nature of internal auditing activities"
+            ],
+            [
+              "Implementation Standards",
+              "Suffix A or C",
+              "Specific to Assurance (A) or Consulting (C)"
+            ]
+          ]
+        },
+        {
+          "title": "Attribute Standards Overview",
+          "type": "text",
+          "content": "**1000 - Purpose, Authority, and Responsibility**\n\u2022 Internal audit charter\n\n**1100 - Independence and Objectivity**\n\u2022 Organizational/individual\n\n**1200 - Proficiency and Due Professional Care**\n\u2022 Knowledge, skills, competencies\n\n**1300 - Quality Assurance and Improvement Program**\n\u2022 Internal and external assessments"
+        },
+        {
+          "title": "Performance Standards Overview",
+          "type": "text",
+          "content": "**2000 - Managing the Internal Audit Activity**\n**2100 - Nature of Work**\n**2200 - Engagement Planning**\n**2300 - Performing the Engagement**\n**2400 - Communicating Results**\n**2500 - Monitoring Progress**\n**2600 - Communicating Acceptance of Risks**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IPPF = Mandatory + Recommended Guidance",
+            "Mandatory: Core Principles, Definition, Ethics, Standards",
+            "Recommended: Implementation and Supplemental Guidance",
+            "Attribute Standards (1000s): WHO - characteristics",
+            "Performance Standards (2000s): WHAT - activities",
+            "Implementation Standards have A (Assurance) or C (Consulting) suffix"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "IPPF Classification Challenge",
+          "knowledgeCheck": {
+            "question": "Which of the following elements of the International Professional Practices Framework (IPPF) is considered MANDATORY guidance?",
+            "options": [
+              "Implementation Guidance",
+              "Supplemental Guidance",
+              "The Definition of Internal Auditing",
+              "Global Technology Audit Guides (GTAGs)"
+            ],
+            "correctIndex": 2,
+            "explanation": "The Definition of Internal Auditing is a core component of the mandatory guidance within the IPPF. Implementation and Supplemental Guidance, as well as GTAGs, are recommended but not required.",
+            "hint": "Think about what forms the foundation of internal auditing practice."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the IOCC Principles",
+          "reveal": {
+            "question": "The IIA's Code of Ethics includes four principles. What are they, represented by the acronym IOCC?",
+            "answer": "Integrity, Objectivity, Confidentiality, Competency"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Mandatory vs. Recommended Guidance",
+          "comparison": {
+            "headers": [
+              "Mandatory Guidance",
+              "Recommended Guidance"
+            ],
+            "rows": [
+              {
+                "label": "Requirement",
+                "values": [
+                  "Required for professional practice",
+                  "Should be considered, but not required"
+                ]
+              },
+              {
+                "label": "Examples",
+                "values": [
+                  "Core Principles, Definition of Internal Auditing, Code of Ethics",
+                  "Implementation Guidance, Supplemental Guidance"
+                ]
+              },
+              {
+                "label": "Consequence of Non-Compliance",
+                "values": [
+                  "Potential violation of professional standards",
+                  "No violation of professional standards, but may indicate suboptimal practice"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Applying the Core Principles",
+          "knowledgeCheck": {
+            "question": "An internal audit function adheres to 9 of the 10 Core Principles of Internal Auditing. According to the IPPF, can this function be considered effective?",
+            "options": [
+              "Yes, as long as they are the most important 9 principles.",
+              "No, all 10 Core Principles must be present for effectiveness.",
+              "Yes, as long as the audit committee approves the deviation.",
+              "It depends on the size and complexity of the organization."
+            ],
+            "correctIndex": 1,
+            "explanation": "The IPPF states that all 10 Core Principles must be present and operating effectively for an internal audit function to be considered effective. Lacking even one principle compromises the overall effectiveness.",
+            "hint": "Focus on the 'all or nothing' nature of the Core Principles."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-I-005",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "The Internal Audit Charter",
+    "description": "Understand the purpose, elements, and approval of the internal audit charter",
+    "order": 5,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Charter",
+      "Standard 1000",
+      "Purpose",
+      "Authority",
+      "Responsibility"
+    ],
+    "blueprintArea": "CIA1-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The charter is the FOUNDATION DOCUMENT that establishes internal audit's authority and role. Standard 1000 requires it. Know what must be in it, who approves it, and when to update it!"
+        },
+        {
+          "title": "What is the Internal Audit Charter?",
+          "type": "text",
+          "content": "**Definition (Standard 1000):**\n\nA formal document that defines:\n\u2022 Purpose\n\u2022 Authority\n\u2022 Responsibility\n\nof the internal audit activity.\n\n**Key characteristics:**\n\u2022 Written document\n\u2022 Approved by the Board\n\u2022 Periodically reviewed\n\u2022 Establishes IA position within organization"
+        },
+        {
+          "title": "Required Charter Elements",
+          "type": "text",
+          "content": "**Must include:**\n\n**1. Purpose**\n\u2022 Mission of internal audit\n\u2022 Definition of internal auditing\n\u2022 Core Principles reference\n\n**2. Authority**\n\u2022 Right to access people, records, property\n\u2022 Scope of internal audit activities\n\u2022 Unrestricted access\n\n**3. Responsibility**\n\u2022 Nature of assurance services\n\u2022 Nature of consulting services\n\u2022 Relationship to other assurance providers"
+        },
+        {
+          "title": "Charter Must Also Address",
+          "type": "text",
+          "content": "**Per Standards, the charter must:**\n\n\u2022 Recognize mandatory nature of Core Principles, Definition, Code of Ethics, and Standards\n\u2022 Define scope of internal audit activities\n\u2022 Establish CAE's functional reporting relationship to the Board\n\u2022 Authorize access to records, personnel, and physical properties\n\u2022 Define nature of consulting services"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Charter Elements",
+          "type": "callout",
+          "content": "**\"PAR\"** = **P**urpose, **A**uthority, **R**esponsibility\n\n**Plus remember:**\n\u2022 **Access** - unrestricted access to everything\n\u2022 **Reporting** - functional reporting to Board\n\u2022 **Standards** - recognize mandatory guidance\n\u2022 **Scope** - define what IA covers"
+        },
+        {
+          "title": "Charter Approval and Review",
+          "type": "table",
+          "headers": [
+            "Activity",
+            "Who",
+            "When"
+          ],
+          "rows": [
+            [
+              "Initial approval",
+              "Board/Audit Committee",
+              "When charter created"
+            ],
+            [
+              "Periodic review",
+              "CAE with management",
+              "Annually (best practice)"
+            ],
+            [
+              "Changes approval",
+              "Board/Audit Committee",
+              "When updates needed"
+            ],
+            [
+              "Presentation",
+              "CAE presents to Board",
+              "Regular communication"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Board Approval",
+          "type": "warning",
+          "content": "**The BOARD (or Audit Committee) must approve:**\n\u2022 Initial charter\n\u2022 All charter changes\n\u2022 Functional reporting relationship\n\n**Senior management does NOT approve the charter!**\n\nThis is a key element of organizational independence."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Charter defines Purpose, Authority, Responsibility (PAR)",
+            "Must be approved by the Board/Audit Committee",
+            "Establishes unrestricted access to records, personnel, property",
+            "Recognizes mandatory IPPF guidance",
+            "Should be reviewed periodically (at least annually)",
+            "Changes require Board approval"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Charter Essentials: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is NOT a mandatory element that MUST be included in an internal audit charter, according to the IIA Standards?",
+            "options": [
+              "A definition of the scope of internal audit activities.",
+              "Authorization for access to records, personnel, and physical properties relevant to the performance of engagements.",
+              "A detailed budget for the internal audit activity for the upcoming fiscal year.",
+              "The functional reporting relationship of the Chief Audit Executive (CAE) to the Board."
+            ],
+            "correctIndex": 2,
+            "explanation": "While a budget is important for the operation of the internal audit activity, it is not explicitly required within the internal audit charter per the IIA Standards. The charter focuses on defining the purpose, authority, and responsibility of the function, including access, scope, and reporting lines.",
+            "hint": "Think about the core elements that define the existence and operational framework of the internal audit function."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: The Three Pillars of the Charter",
+          "reveal": {
+            "question": "What are the three fundamental elements that MUST be defined in an Internal Audit Charter?",
+            "answer": "The three fundamental elements are: 1. Purpose, 2. Authority, and 3. Responsibility. These define the 'what', 'how', and 'why' of the internal audit activity."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Authority vs. Responsibility",
+          "comparison": {
+            "headers": [
+              "Authority",
+              "Responsibility"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "The *right* to access information, personnel, and assets to perform audits.",
+                  "The *obligation* to perform specific duties and tasks related to assurance and consulting activities."
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Enables the internal audit activity to function effectively.",
+                  "Defines the nature and scope of the work performed."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Unrestricted access to financial records.",
+                  "Developing and executing an annual audit plan."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-II-001",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Organizational Independence",
+    "description": "Understand how internal audit achieves and maintains organizational independence",
+    "order": 6,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Organizational independence",
+      "Reporting relationships",
+      "CAE position",
+      "Standard 1110"
+    ],
+    "blueprintArea": "CIA1-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Organizational independence is what gives internal audit CREDIBILITY. Without it, stakeholders can't trust audit findings. The dual reporting relationship (functional to Board, administrative to management) is heavily tested!"
+        },
+        {
+          "title": "What is Organizational Independence?",
+          "type": "text",
+          "content": "**Standard 1110:**\n\nThe chief audit executive must report to a level within the organization that allows the internal audit activity to fulfill its responsibilities.\n\n**Key concept:**\nInternal audit is positioned to perform work without interference from the areas being audited.\n\n**Why it matters:**\n\u2022 Ensures objective assessments\n\u2022 Prevents retaliation for adverse findings\n\u2022 Enables access to all levels including Board"
+        },
+        {
+          "title": "Dual Reporting Relationship",
+          "type": "text",
+          "content": "**Two types of reporting:**\n\n**1. FUNCTIONAL Reporting to the Board**\n\u2022 Approving charter, audit plan, budget\n\u2022 CAE appointment, removal, compensation\n\u2022 Receiving audit results\n\u2022 Following up on management response\n\n**2. ADMINISTRATIVE Reporting to Senior Management**\n\u2022 Day-to-day operations\n\u2022 Internal policies compliance\n\u2022 HR administration\n\u2022 Resource allocation decisions"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Functional vs. Administrative",
+          "type": "callout",
+          "content": "**FUNCTIONAL to BOARD** = The BIG stuff\n\u2022 Charter approval\n\u2022 Audit plan approval\n\u2022 CAE hiring/firing\n\u2022 Results communication\n\n**ADMINISTRATIVE to CEO** = The daily stuff\n\u2022 Expense reports\n\u2022 Office supplies\n\u2022 Vacation requests\n\u2022 Staff management\n\n*Think: \"BOARD approves, CEO administers\"*"
+        },
+        {
+          "title": "Board Interaction Requirements",
+          "type": "text",
+          "content": "**The CAE must have direct access to the Board:**\n\n\u2022 Attend Board/Audit Committee meetings\n\u2022 Meet privately with the Board (without management)\n\u2022 Communicate directly without management filter\n\n**Board responsibilities for IA:**\n\u2022 Approve charter, plan, budget\n\u2022 Make CAE employment decisions\n\u2022 Inquire about scope limitations\n\u2022 Approve external quality assessment provider"
+        },
+        {
+          "title": "Threats to Organizational Independence",
+          "type": "table",
+          "headers": [
+            "Threat",
+            "Example",
+            "Safeguard"
+          ],
+          "rows": [
+            [
+              "Improper reporting line",
+              "CAE reports to CFO only",
+              "Functional reporting to Board"
+            ],
+            [
+              "Budget control by management",
+              "Management cuts IA budget",
+              "Board approves budget"
+            ],
+            [
+              "CAE removal by management",
+              "CEO fires CAE for bad news",
+              "Board approves CAE changes"
+            ],
+            [
+              "Scope restrictions",
+              "CEO says \"don't audit X\"",
+              "Board receives scope limitation reports"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Scope Limitations",
+          "type": "warning",
+          "content": "**If scope limitations exist:**\n\n1. CAE must discuss with Board\n2. Determine if IA can still operate independently\n3. May need to disclose in audit reports\n4. Assess impact on overall audit opinion\n\n**Scope limitation \u2260 Automatic independence impairment**\nBut significant limitations should be escalated!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "CAE reports FUNCTIONALLY to Board, ADMINISTRATIVELY to senior management",
+            "Board approves: charter, plan, budget, CAE appointment/removal",
+            "CAE must have direct access to Board without management filtering",
+            "Organizational independence enables objective work",
+            "Scope limitations must be communicated to the Board"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Organizational Independence Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following best describes the functional reporting relationship of the Chief Audit Executive (CAE)?",
+            "options": [
+              "Reporting to senior management for day-to-day operations and budget approval.",
+              "Reporting to the Board for approval of the internal audit charter, audit plan, and CAE compensation.",
+              "Reporting to the CFO for all financial matters related to the internal audit activity.",
+              "Reporting to the legal department for all legal and compliance related audits."
+            ],
+            "correctIndex": 1,
+            "explanation": "The CAE's functional reporting relationship is to the Board (or Audit Committee) and involves approving the charter, audit plan, budget, CAE appointment/removal/compensation, receiving audit results, and following up on management responses. This ensures independence from management influence.",
+            "hint": "Think about which reporting line provides the most independence for the CAE."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: CAE Board Interaction Requirements",
+          "reveal": {
+            "question": "List three requirements for CAE interaction with the Board.",
+            "answer": "1. Attend Board/Audit Committee meetings.\n2. Meet privately with the Board (without management).\n3. Communicate directly without management filter."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Functional vs. Administrative Reporting",
+          "comparison": {
+            "headers": [
+              "Functional Reporting",
+              "Administrative Reporting"
+            ],
+            "rows": [
+              {
+                "label": "Primary Recipient",
+                "values": [
+                  "Board (or Audit Committee)",
+                  "Senior Management"
+                ]
+              },
+              {
+                "label": "Key Responsibilities",
+                "values": [
+                  "Charter Approval, Audit Plan Approval, CAE Performance Reviews",
+                  "Day-to-day Operations, Budget Management"
+                ]
+              },
+              {
+                "label": "Purpose",
+                "values": [
+                  "Ensuring Independence and Objectivity",
+                  "Facilitating Efficient Operations"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-II-002",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Individual Objectivity",
+    "description": "Understand how auditors maintain personal objectivity and manage conflicts",
+    "order": 7,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Individual objectivity",
+      "Impairments",
+      "Conflicts of interest",
+      "Standard 1120"
+    ],
+    "blueprintArea": "CIA1-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Even with perfect organizational independence, individual auditors can have biases and conflicts. Objectivity is a PERSONAL responsibility - every auditor must identify and manage their own impairments."
+        },
+        {
+          "title": "What is Individual Objectivity?",
+          "type": "text",
+          "content": "**Standard 1120:**\n\nInternal auditors must have an impartial, unbiased attitude and avoid any conflict of interest.\n\n**Key concept:**\nObjectivity is a mental attitude - approaching work without bias.\n\n**Elements:**\n\u2022 Impartial attitude\n\u2022 No conflicts of interest\n\u2022 Intellectual honesty\n\u2022 Unbiased judgment"
+        },
+        {
+          "title": "Threats to Objectivity",
+          "type": "table",
+          "headers": [
+            "Threat Type",
+            "Description",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Self-interest",
+              "Personal stake in outcome",
+              "Auditing department where auditor might transfer"
+            ],
+            [
+              "Self-review",
+              "Reviewing own prior work",
+              "Auditing system you helped implement"
+            ],
+            [
+              "Familiarity",
+              "Too close to auditee",
+              "Best friend manages audited area"
+            ],
+            [
+              "Undue influence",
+              "Pressure from others",
+              "VP pressures auditor to change finding"
+            ],
+            [
+              "Advocacy",
+              "Promoting position",
+              "Championing a particular solution"
+            ]
+          ]
+        },
+        {
+          "title": "Impairment to Objectivity",
+          "type": "text",
+          "content": "**Standard 1130:**\n\nIf independence or objectivity is impaired in fact or appearance, details must be disclosed.\n\n**Impairment triggers:**\n\u2022 Personal relationships with auditee\n\u2022 Financial interest in area\n\u2022 Prior operational responsibility\n\u2022 Cognitive biases affecting judgment\n\n**Required action:**\n\u2022 Disclose to appropriate parties\n\u2022 Consider removal from engagement\n\u2022 Document in workpapers"
+        },
+        {
+          "title": "Managing Conflicts of Interest",
+          "type": "text",
+          "content": "**When conflict exists:**\n\n**1. Disclosure**\n\u2022 Notify CAE immediately\n\u2022 Be transparent about nature of conflict\n\n**2. Removal/Reassignment**\n\u2022 CAE assigns different auditor\n\u2022 Conflicted auditor doesn't participate\n\n**3. Documentation**\n\u2022 Record the conflict\n\u2022 Document safeguards applied\n\n**4. Supervision**\n\u2022 Enhanced review of work\n\u2022 Independent verification"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Objectivity Threats - \"S-S-F-U-A\"",
+          "type": "callout",
+          "content": "**S**elf-interest - Personal benefit\n**S**elf-review - Own prior work\n**F**amiliarity - Close relationships\n**U**ndue influence - External pressure\n**A**dvocacy - Promoting positions\n\n*\"Some Say Friendship Undermines Auditing\"*"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Prior Responsibilities",
+          "type": "warning",
+          "content": "**Standard 1130.A1:**\n\nInternal auditors shall refrain from assessing specific operations for which they were previously responsible.\n\n**Waiting period:** Generally 1 year minimum before auditing former area\n\n**Exception:** Assurance engagements must be supervised by someone NOT previously responsible for that area.\n\n**Consulting:** Former responsibility generally OK for consulting with proper disclosure."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Objectivity = impartial, unbiased mental attitude",
+            "5 threats: Self-interest, Self-review, Familiarity, Undue influence, Advocacy",
+            "Impairments must be disclosed to appropriate parties",
+            "Cannot audit areas of prior operational responsibility",
+            "Conflicts require disclosure, reassignment, or enhanced supervision"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Individual Objectivity",
+          "knowledgeCheck": {
+            "question": "Which of the following actions BEST demonstrates an internal auditor's commitment to individual objectivity, as defined by Standard 1120?",
+            "options": [
+              "Accepting a gift of nominal value from an auditee after the audit is complete to foster a positive relationship.",
+              "Disclosing to the CAE a long-standing personal friendship with the auditee before commencing an audit of the auditee's department.",
+              "Postponing an audit of a department where the auditor previously worked to avoid potential conflicts of interest.",
+              "Relying solely on the auditee's explanations and documentation to expedite the audit process."
+            ],
+            "correctIndex": 1,
+            "explanation": "Disclosing the personal friendship demonstrates transparency and allows the CAE to assess potential impairment to objectivity. This proactive step aligns with the requirement to avoid conflicts of interest, even in appearance. The other options involve actions that could compromise objectivity.",
+            "hint": "Think about the initial actions an auditor should take when there is a potential conflict of interest. Which action best promotes transparency and allows for appropriate management of the situation?"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: Impairment Disclosure",
+          "reveal": {
+            "question": "According to Standard 1130, what specific information MUST be disclosed if independence or objectivity is impaired?",
+            "answer": "Standard 1130 requires the details of the impairment to be disclosed. This means a clear and thorough explanation of the nature of the impairment, the individuals or entities involved, and the potential impact on the audit engagement."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Objectivity vs. Independence",
+          "comparison": {
+            "headers": [
+              "Objectivity",
+              "Independence"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "An impartial, unbiased mental attitude; approaching work without bias.",
+                  "Freedom from conditions that threaten the ability of the internal audit activity to carry out internal audit responsibilities in an unbiased manner."
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Individual auditor's mindset and judgment.",
+                  "Organizational placement and reporting lines of the internal audit activity."
+                ]
+              },
+              {
+                "label": "Impairment Examples",
+                "values": [
+                  "Personal relationships, financial interests, cognitive biases.",
+                  "Restrictions on scope, budget, or access to information; undue influence from management."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-III-001",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Proficiency and Professional Competence",
+    "description": "Understand the knowledge, skills, and competencies required of internal auditors",
+    "order": 8,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Proficiency",
+      "Competence",
+      "Knowledge areas",
+      "Standard 1200"
+    ],
+    "blueprintArea": "CIA1-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "You can only audit what you're competent to audit! Standard 1210 requires proficiency, and the Code of Ethics prohibits work beyond your competence. Know the difference between individual and collective proficiency."
+        },
+        {
+          "title": "Proficiency Requirements",
+          "type": "text",
+          "content": "**Standard 1210:**\n\nInternal auditors must possess the knowledge, skills, and other competencies needed to perform their individual responsibilities.\n\n**Key concept:**\nEvery auditor must be competent for their SPECIFIC assignment.\n\n**CAE responsibility:**\nEnsure the internal audit activity COLLECTIVELY has the skills for the audit plan."
+        },
+        {
+          "title": "Individual vs. Collective Proficiency",
+          "type": "table",
+          "headers": [
+            "Individual Proficiency",
+            "Collective Proficiency"
+          ],
+          "rows": [
+            [
+              "Each auditor's personal competence",
+              "Team's combined competence"
+            ],
+            [
+              "Must match assigned work",
+              "Must cover entire audit plan"
+            ],
+            [
+              "Gained through education, training",
+              "Includes specialists, outsourcing"
+            ],
+            [
+              "CIA certification demonstrates",
+              "Staffing and resource planning"
+            ]
+          ]
+        },
+        {
+          "title": "Core Knowledge Areas (CBOK)",
+          "type": "text",
+          "content": "**Internal auditors should have knowledge of:**\n\n**1. Internal Audit Fundamentals**\n\u2022 Standards, Ethics, Principles\n\u2022 Audit methodology\n\n**2. Risk and Control**\n\u2022 ERM frameworks\n\u2022 Control frameworks (COSO, etc.)\n\n**3. Business Knowledge**\n\u2022 Organizational operations\n\u2022 Industry-specific knowledge\n\n**4. Technical Skills**\n\u2022 Data analytics\n\u2022 IT concepts\n\u2022 Fraud awareness"
+        },
+        {
+          "title": "When to Use External Expertise",
+          "type": "text",
+          "content": "**Standard 1210.A1:**\n\nThe CAE must obtain competent advice if internal auditors lack expertise.\n\n**Situations requiring external expertise:**\n\u2022 Specialized IT audits\n\u2022 Fraud investigations\n\u2022 Complex actuarial work\n\u2022 Legal/regulatory expertise\n\u2022 Forensic accounting\n\n**External sources:**\n\u2022 Co-sourcing arrangements\n\u2022 Subject matter experts\n\u2022 Consulting firms"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Proficiency Components",
+          "type": "callout",
+          "content": "**\"K-S-C\"** = Knowledge, Skills, Competencies\n\n**Knowledge** = What you KNOW (education, training)\n**Skills** = What you can DO (application, technique)\n**Competencies** = How you PERFORM (judgment, communication)\n\n*Think: \"Know it, Do it, Apply it well\"*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Individual auditors must be proficient for assigned work",
+            "CAE ensures collective proficiency for entire audit plan",
+            "External expertise required when internal skills insufficient",
+            "Proficiency = Knowledge + Skills + Competencies",
+            "CPE maintains and develops proficiency"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Proficiency and Competence: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "According to Standard 1210, which of the following is the MOST accurate statement regarding the proficiency requirements for internal auditors?",
+            "options": [
+              "Internal auditors must possess expert-level knowledge in all areas of internal auditing.",
+              "Internal auditors must possess the knowledge, skills, and other competencies needed to perform their individual responsibilities.",
+              "The CAE is solely responsible for ensuring that all internal auditors possess the same level of proficiency.",
+              "Internal auditors are not required to possess industry-specific knowledge if external expertise is readily available."
+            ],
+            "correctIndex": 1,
+            "explanation": "Standard 1210 explicitly states that internal auditors must have the knowledge, skills, and competencies needed for their *specific* responsibilities. While expertise in all areas isn't required, competence for assigned tasks is crucial. The CAE has responsibility, but the individual auditor also has the responsibility to assess their own proficiency.",
+            "hint": "Focus on the wording of Standard 1210."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: CAE Responsibility",
+          "reveal": {
+            "question": "What is the CAE's responsibility regarding the internal audit activity's overall competence?",
+            "answer": "The CAE must ensure the internal audit activity COLLECTIVELY possesses or obtains the knowledge, skills, and other competencies needed to perform its duties."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "External Expertise: Application",
+          "knowledgeCheck": {
+            "question": "An internal audit team is tasked with assessing the organization's compliance with a new, highly complex environmental regulation. The team lacks specific expertise in environmental law. According to Standard 1210.A1, what is the CAE's MOST appropriate course of action?",
+            "options": [
+              "Reassign the audit to a team with existing environmental law expertise.",
+              "Proceed with the audit, relying on readily available online resources and general legal knowledge.",
+              "Obtain competent advice from an external source with expertise in environmental law.",
+              "Postpone the audit indefinitely until internal expertise can be developed."
+            ],
+            "correctIndex": 2,
+            "explanation": "Standard 1210.A1 mandates that the CAE must obtain competent advice if internal auditors lack expertise. This ensures the audit is conducted effectively and accurately, even in specialized areas.",
+            "hint": "Consider the implications of lacking expertise and the CAE's responsibility to address it."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Internal vs. External Expertise",
+          "comparison": {
+            "headers": [
+              "Internal Expertise",
+              "External Expertise"
+            ],
+            "rows": [
+              {
+                "label": "Cost",
+                "values": [
+                  "Generally lower direct cost (assuming expertise already exists within the organization)",
+                  "Potentially higher direct cost (fees, contracts)"
+                ]
+              },
+              {
+                "label": "Availability",
+                "values": [
+                  "May be limited or unavailable if internal resources are stretched or lack specific skills",
+                  "Generally more readily available for specialized skills"
+                ]
+              },
+              {
+                "label": "Organizational Knowledge",
+                "values": [
+                  "Strong understanding of organizational culture, processes, and systems",
+                  "Requires time to acquire organizational knowledge; may have a steeper learning curve"
+                ]
+              },
+              {
+                "label": "Objectivity",
+                "values": [
+                  "Potentially lower objectivity due to internal biases or relationships",
+                  "Potentially higher objectivity as an independent third party"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-III-002",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Due Professional Care",
+    "description": "Understand the application of care, skill, and diligence in internal audit work",
+    "order": 9,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Due professional care",
+      "Professional skepticism",
+      "Standard 1220"
+    ],
+    "blueprintArea": "CIA1-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Due professional care is about HOW you do the work, not just having skills. It's the care and diligence a reasonably prudent auditor would apply. Not absolute assurance, but reasonable care!"
+        },
+        {
+          "title": "What is Due Professional Care?",
+          "type": "text",
+          "content": "**Standard 1220:**\n\nInternal auditors must apply the care and skill expected of a reasonably prudent and competent internal auditor.\n\n**Key concept:**\nDue professional care does NOT imply infallibility or extraordinary performance.\n\n**Standard:**\nReasonable internal auditor in similar circumstances."
+        },
+        {
+          "title": "Elements of Due Professional Care",
+          "type": "text",
+          "content": "**Standard 1220.A1 - Auditors must consider:**\n\n\u2022 **Extent of work** needed to achieve objectives\n\u2022 **Relative complexity**, materiality, or significance\n\u2022 **Adequacy and effectiveness** of governance, risk, and control\n\u2022 **Probability** of significant errors, fraud, or noncompliance\n\u2022 **Cost of assurance** relative to potential benefits"
+        },
+        {
+          "title": "Due Professional Care in Assurance vs. Consulting",
+          "type": "table",
+          "headers": [
+            "Assurance (1220.A1)",
+            "Consulting (1220.C1)"
+          ],
+          "rows": [
+            [
+              "Consider: Extent of work needed",
+              "Consider: Client needs and expectations"
+            ],
+            [
+              "Consider: Complexity, materiality",
+              "Consider: Relative complexity and extent"
+            ],
+            [
+              "Focus: Errors, fraud, noncompliance",
+              "Focus: Potential value added vs. effort"
+            ],
+            [
+              "Risk-based approach",
+              "Client-focused approach"
+            ]
+          ]
+        },
+        {
+          "title": "Professional Skepticism",
+          "type": "text",
+          "content": "**A critical component of due professional care:**\n\n**Definition:**\nQuestioning mindset, critical assessment of audit evidence.\n\n**Elements:**\n\u2022 Don't assume management is honest OR dishonest\n\u2022 Corroborate information from multiple sources\n\u2022 Be alert to contradictory evidence\n\u2022 Question unusual patterns or anomalies\n\n**Related to fraud:**\nStandard 1220.A1 - Consider probability of significant fraud"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: What DPC Does NOT Mean",
+          "type": "warning",
+          "content": "**Due professional care does NOT mean:**\n\n\u274c Guarantee of detecting all fraud\n\u274c Infallible judgment\n\u274c Absolute assurance\n\u274c Extraordinary performance\n\n**It DOES mean:**\n\n\u2705 Reasonable care under circumstances\n\u2705 Applying professional standards\n\u2705 Professional skepticism\n\u2705 Cost-benefit consideration"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Due professional care = reasonably prudent auditor standard",
+            "Does NOT guarantee detection of all fraud or errors",
+            "Consider: extent, complexity, materiality, risk, cost-benefit",
+            "Professional skepticism is a key element",
+            "Apply to both assurance and consulting engagements"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Due Professional Care Scenario",
+          "knowledgeCheck": {
+            "question": "An internal auditor discovers a potential fraud during an audit. Applying due professional care, what is the auditor's MOST appropriate course of action?",
+            "options": [
+              "Immediately report the suspected fraud to the authorities to ensure proper investigation.",
+              "Expand the audit scope to determine the full extent of the fraud and quantify the financial impact.",
+              "Confront the suspected perpetrator directly to obtain a confession and gather evidence.",
+              "Inform management and recommend further investigation, while maintaining professional skepticism and objectivity."
+            ],
+            "correctIndex": 3,
+            "explanation": "While the auditor must investigate potential fraud, jumping to conclusions or immediately involving external parties is premature. The auditor should inform management and recommend a proper investigation while maintaining skepticism and objectivity. Expanding the audit scope may be necessary, but only after informing management.",
+            "hint": "Think about the auditor's responsibility to the organization and the importance of a thorough and objective investigation."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Professional Skepticism Definition",
+          "reveal": {
+            "question": "What is professional skepticism in the context of internal auditing?",
+            "answer": "A questioning mindset and a critical assessment of audit evidence. It involves not assuming management is either honest or dishonest and corroborating information from multiple sources."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Due Professional Care vs. Infallibility",
+          "comparison": {
+            "headers": [
+              "Due Professional Care",
+              "Infallibility"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Applying the care and skill expected of a reasonably prudent and competent internal auditor.",
+                  "The state of being incapable of making mistakes or being wrong."
+                ]
+              },
+              {
+                "label": "Expectation",
+                "values": [
+                  "Reasonable effort to identify and assess risks and controls.",
+                  "Perfect and error-free performance."
+                ]
+              },
+              {
+                "label": "Standard",
+                "values": [
+                  "Standard 1220",
+                  "Not a realistic or achievable standard for internal auditors."
+                ]
+              },
+              {
+                "label": "Outcome",
+                "values": [
+                  "May still result in undetected errors or fraud despite diligent work.",
+                  "Guarantees the prevention or detection of all errors and fraud."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-IV-001",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Quality Assurance and Improvement Program (QAIP)",
+    "description": "Understand the requirements and components of a QAIP",
+    "order": 10,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "QAIP",
+      "Quality assessment",
+      "Internal assessment",
+      "External assessment",
+      "Standard 1300"
+    ],
+    "blueprintArea": "CIA1-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "QAIP ensures the internal audit activity operates effectively and conforms to Standards. The 5-year external assessment requirement is heavily tested. Know the difference between internal ongoing, internal periodic, and external assessments!"
+        },
+        {
+          "title": "QAIP Requirements",
+          "type": "text",
+          "content": "**Standard 1300:**\n\nThe CAE must develop and maintain a quality assurance and improvement program that covers all aspects of the internal audit activity.\n\n**Purpose:**\n\u2022 Evaluate conformance with Standards\n\u2022 Evaluate conformance with Code of Ethics\n\u2022 Assess efficiency and effectiveness\n\u2022 Identify improvement opportunities"
+        },
+        {
+          "title": "QAIP Components",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Frequency",
+            "Performed By"
+          ],
+          "rows": [
+            [
+              "Ongoing Internal Assessment",
+              "Continuous",
+              "Internal audit staff"
+            ],
+            [
+              "Periodic Internal Assessment",
+              "Periodically (e.g., annual)",
+              "Internal audit or others with knowledge"
+            ],
+            [
+              "External Assessment",
+              "At least every 5 years",
+              "Qualified external assessor"
+            ]
+          ]
+        },
+        {
+          "title": "Internal Assessments",
+          "type": "text",
+          "content": "**Standard 1311:**\n\n**Ongoing Assessments:**\n\u2022 Routine supervision and review\n\u2022 Checklists and procedures\n\u2022 Feedback from clients\n\u2022 Automated workpaper review\n\u2022 Metrics and KPIs\n\n**Periodic Assessments:**\n\u2022 Self-assessment by IA team\n\u2022 Peer review within organization\n\u2022 Performed by others with knowledge of IA practices\n\u2022 Gap analysis against Standards"
+        },
+        {
+          "title": "External Assessments",
+          "type": "text",
+          "content": "**Standard 1312:**\n\n**Requirement:** At least once every 5 years\n\n**Performed by:**\n\u2022 Qualified, independent assessor\n\u2022 From outside the organization\n\u2022 No conflict of interest\n\n**Two forms:**\n1. **Full external assessment** - External team\n2. **Self-assessment with independent validation** - IA self-assesses, external validates\n\n**CAE discusses with Board:**\n\u2022 Form of assessment\n\u2022 Qualifications of assessor\n\u2022 Results of assessment"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: QAIP Types",
+          "type": "callout",
+          "content": "**\"O-P-E\"**\n\n**O**ngoing (internal) - Day-to-day, continuous\n**P**eriodic (internal) - Scheduled self-reviews\n**E**xternal - Every 5 years minimum\n\n*OPE = \"Operating Performance Excellence\"*"
+        },
+        {
+          "title": "Conformance Statement",
+          "type": "text",
+          "content": "**Standard 1321:**\n\nThe CAE may state that the internal audit activity **\"conforms with the International Standards\"** only if:\n\n\u2022 QAIP results support the statement\n\u2022 Both internal and external assessments confirm conformance\n\n**If nonconformance:**\n\u2022 Must disclose in engagement communications\n\u2022 Disclose nature and impact\n\u2022 Consider actions to improve conformance"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: External Assessment Timing",
+          "type": "warning",
+          "content": "**Key rules:**\n\n\u2705 External assessment at least every 5 years\n\u2705 First assessment can be full OR self-assessment with validation\n\u2705 CAE discusses form and qualifications with Board\n\n**Common exam question:**\n\"Internal audit was established 3 years ago. Is external assessment required?\"\n\n**Answer:** Not yet - but must occur within 5 years of IA establishment."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "QAIP has 3 components: Ongoing, Periodic, External",
+            "External assessment required every 5 years minimum",
+            "External assessor must be qualified and independent",
+            "Can use full external or self-assessment with independent validation",
+            "Conformance statement requires QAIP support",
+            "CAE discusses assessment approach with Board"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "QAIP Knowledge Check",
+          "knowledgeCheck": {
+            "question": "According to Standard 1312, which of the following is a requirement for external assessments of the internal audit activity?",
+            "options": [
+              "External assessments must be performed at least once every three years.",
+              "The external assessor must be from outside the organization and have no conflict of interest.",
+              "External assessments can only be performed by a full external team.",
+              "External assessments primarily focus on the efficiency of the internal audit activity."
+            ],
+            "correctIndex": 1,
+            "explanation": "Standard 1312 mandates that external assessments are performed at least once every five years by a qualified, independent assessor from outside the organization who has no conflict of interest. While a full external assessment is one option, a self-assessment with independent validation is also acceptable. The assessment covers all aspects of the internal audit activity, including effectiveness.",
+            "hint": "Consider the requirements of Standard 1312 regarding the frequency, performer, and scope of external assessments."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall QAIP Components",
+          "reveal": {
+            "question": "What are the two types of internal assessments as defined by Standard 1311?",
+            "answer": "The two types of internal assessments are ongoing assessments and periodic assessments. Ongoing assessments include routine supervision, checklists, client feedback, automated workpaper review, and KPIs. Periodic assessments include self-assessments by the IA team and peer reviews within the organization."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Internal vs. External Assessments",
+          "comparison": {
+            "headers": [
+              "Internal Assessment",
+              "External Assessment"
+            ],
+            "rows": [
+              {
+                "label": "Frequency",
+                "values": [
+                  "Ongoing and Periodic",
+                  "At least once every 5 years"
+                ]
+              },
+              {
+                "label": "Performed By",
+                "values": [
+                  "Internal Audit Team or Others within the organization",
+                  "Qualified, Independent Assessor from outside the organization"
+                ]
+              },
+              {
+                "label": "Purpose",
+                "values": [
+                  "Monitor and improve the internal audit activity on a continuous basis",
+                  "Provide an objective evaluation of the internal audit activity's conformance with the Standards and Code of Ethics"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-V-001",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Corporate Governance Concepts",
+    "description": "Understand governance principles and internal audit's role in governance",
+    "order": 11,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Governance",
+      "Board of directors",
+      "Audit committee",
+      "Standard 2110"
+    ],
+    "blueprintArea": "CIA1-V",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Internal audit is a CORNERSTONE of corporate governance. Understanding the roles of the board, management, and internal audit in the governance structure is essential. Expect questions on audit committee responsibilities!"
+        },
+        {
+          "title": "What is Corporate Governance?",
+          "type": "text",
+          "content": "**Definition:**\nThe combination of processes and structures implemented by the board to inform, direct, manage, and monitor the organization's activities toward achieving its objectives.\n\n**Key elements:**\n\u2022 Tone at the top\n\u2022 Transparency and accountability\n\u2022 Ethical culture\n\u2022 Risk oversight\n\u2022 Stakeholder interests"
+        },
+        {
+          "title": "Governance Roles",
+          "type": "table",
+          "headers": [
+            "Role",
+            "Governance Responsibility",
+            "Key Activities"
+          ],
+          "rows": [
+            [
+              "Board of Directors",
+              "Oversight and direction",
+              "Approve strategy, monitor performance, set tone"
+            ],
+            [
+              "Audit Committee",
+              "Financial oversight",
+              "Oversee IA, external audit, financial reporting"
+            ],
+            [
+              "Management",
+              "Execute and manage",
+              "Implement controls, manage risks, run operations"
+            ],
+            [
+              "Internal Audit",
+              "Independent assurance",
+              "Evaluate governance, risk, control effectiveness"
+            ]
+          ]
+        },
+        {
+          "title": "Internal Audit's Governance Role",
+          "type": "text",
+          "content": "**Standard 2110:**\n\nThe internal audit activity must assess and make appropriate recommendations to improve the organization's governance processes.\n\n**Assess governance for:**\n\u2022 Promoting appropriate ethics and values\n\u2022 Ensuring effective organizational performance management\n\u2022 Communicating risk and control information\n\u2022 Coordinating activities of Board, external/internal auditors, management"
+        },
+        {
+          "title": "Three Lines Model",
+          "type": "text",
+          "content": "**Updated from \"Three Lines of Defense\":**\n\n**First Line: Management**\n\u2022 Owns and manages risk\n\u2022 Implements controls\n\u2022 Front-line accountability\n\n**Second Line: Risk and Compliance Functions**\n\u2022 Expertise, support, monitoring\n\u2022 Risk management, compliance\n\u2022 Oversight of first line\n\n**Third Line: Internal Audit**\n\u2022 Independent assurance\n\u2022 Reports to Board\n\u2022 Evaluates first and second lines"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Three Lines",
+          "type": "callout",
+          "content": "**Line 1:** OPERATE (Management does the work)\n**Line 2:** OVERSEE (Risk/Compliance monitors)\n**Line 3:** ASSURE (Internal Audit evaluates)\n\n*Think: \"1-2-3 = Do-Check-Verify\"*"
+        },
+        {
+          "title": "Audit Committee Best Practices",
+          "type": "text",
+          "content": "**Key responsibilities:**\n\u2022 Oversee financial reporting process\n\u2022 Oversee internal control\n\u2022 Oversee internal audit (approve charter, plan, CAE)\n\u2022 Oversee external audit relationship\n\u2022 Oversee risk management\n\u2022 Private sessions with CAE and external auditors\n\n**Independence:**\n\u2022 Members should be independent\n\u2022 At least one financial expert\n\u2022 Regular meetings without management"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Governance = processes and structures for oversight and direction",
+            "Three Lines: (1) Management, (2) Risk/Compliance, (3) Internal Audit",
+            "IA assesses and makes recommendations to improve governance",
+            "Audit committee oversees IA, external audit, financial reporting",
+            "IA reports functionally to Board/Audit Committee"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Corporate Governance Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important responsibility of the board of directors in relation to corporate governance?",
+            "options": [
+              "Ensuring the organization complies with all applicable laws and regulations.",
+              "Overseeing the organization's day-to-day operations to maximize profitability.",
+              "Establishing and monitoring the ethical tone at the top and risk oversight.",
+              "Preparing the organization's financial statements in accordance with GAAP."
+            ],
+            "correctIndex": 2,
+            "explanation": "The board's primary role in corporate governance is to provide oversight and direction, including setting the ethical tone and overseeing risk management. While compliance is important, it's a result of good governance, not the core responsibility. Operations are the responsibility of management, and financial statement preparation is a function of the accounting department.",
+            "hint": "Consider the highest-level responsibilities of a board versus management."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Standard 2110",
+          "reveal": {
+            "question": "What does Standard 2110 require of the internal audit activity?",
+            "answer": "Standard 2110 requires the internal audit activity to assess and make appropriate recommendations to improve the organization's governance processes."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Three Lines Model: Roles and Responsibilities",
+          "comparison": {
+            "headers": [
+              "First Line (Management)",
+              "Second Line (Risk & Compliance)",
+              "Third Line (Internal Audit)"
+            ],
+            "rows": [
+              {
+                "label": "Primary Focus",
+                "values": [
+                  "Managing and owning risk",
+                  "Monitoring and supporting risk management",
+                  "Providing independent assurance on risk management and governance"
+                ]
+              },
+              {
+                "label": "Activities",
+                "values": [
+                  "Implementing controls, day-to-day operations",
+                  "Developing risk frameworks, ensuring compliance",
+                  "Conducting audits, reporting findings to the audit committee"
+                ]
+              },
+              {
+                "label": "Accountability",
+                "values": [
+                  "Front-line accountability for risk",
+                  "Oversight of the first line's risk management",
+                  "Objective assessment of the effectiveness of risk management and governance"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-V-002",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Enterprise Risk Management (ERM)",
+    "description": "Understand ERM frameworks and internal audit's role in risk management",
+    "order": 12,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Enterprise risk management",
+      "COSO ERM",
+      "Risk assessment",
+      "Standard 2120"
+    ],
+    "blueprintArea": "CIA1-V",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Internal audit provides risk-based assurance - so understanding ERM is CORE to the profession. Know the COSO ERM framework components and what IA should (and should NOT) do in ERM!"
+        },
+        {
+          "title": "What is Enterprise Risk Management?",
+          "type": "text",
+          "content": "**COSO ERM Definition:**\n\nEnterprise risk management is a process, effected by an entity's board of directors, management, and other personnel, applied in strategy setting and across the enterprise, designed to identify potential events that may affect the entity, and manage risk to be within its risk appetite, to provide reasonable assurance regarding the achievement of entity objectives.\n\n**Key concept:**\nERM is enterprise-wide, not siloed by department."
+        },
+        {
+          "title": "COSO ERM Framework Components",
+          "type": "text",
+          "content": "**Five interrelated components:**\n\n**1. Governance and Culture**\n\u2022 Oversight responsibility\n\u2022 Tone at the top\n\u2022 Desired culture and values\n\n**2. Strategy and Objective-Setting**\n\u2022 Analyzes business context\n\u2022 Defines risk appetite\n\u2022 Evaluates strategy alternatives\n\n**3. Performance**\n\u2022 Identifies and assesses risk\n\u2022 Prioritizes risk\n\u2022 Implements risk responses\n\n**4. Review and Revision**\n\u2022 Assesses substantial change\n\u2022 Reviews risk and performance\n\u2022 Pursues improvement\n\n**5. Information, Communication, and Reporting**\n\u2022 Leverages information systems\n\u2022 Communicates risk information\n\u2022 Reports on risk, culture, performance"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: COSO ERM - \"GSPRI\"",
+          "type": "callout",
+          "content": "**G**overnance and Culture\n**S**trategy and Objective-Setting\n**P**erformance\n**R**eview and Revision\n**I**nformation, Communication, and Reporting\n\n*\"Good Strategy Performs, Reviewed with Info\"*"
+        },
+        {
+          "title": "Internal Audit's Role in ERM",
+          "type": "text",
+          "content": "**Standard 2120:**\n\nThe internal audit activity must evaluate the effectiveness and contribute to the improvement of risk management processes.\n\n**IA evaluates:**\n\u2022 Organizational objectives support mission\n\u2022 Significant risks are identified and assessed\n\u2022 Risk responses are appropriate\n\u2022 Risk information is captured and communicated\n\n**Risk-based audit planning:**\n\u2022 Align audit plan with risk assessment\n\u2022 Focus on high-risk areas\n\u2022 Consider emerging risks"
+        },
+        {
+          "title": "What IA Should and Should NOT Do",
+          "type": "table",
+          "headers": [
+            "IA SHOULD Do",
+            "IA Should NOT Do (without safeguards)"
+          ],
+          "rows": [
+            [
+              "Provide assurance on ERM processes",
+              "Set risk appetite"
+            ],
+            [
+              "Evaluate risk management effectiveness",
+              "Make risk response decisions"
+            ],
+            [
+              "Make recommendations for improvement",
+              "Own and manage organizational risks"
+            ],
+            [
+              "Facilitate risk identification",
+              "Be accountable for risk management"
+            ],
+            [
+              "Coach management on risk concepts",
+              "Implement risk management on behalf of management"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: IA Independence in ERM",
+          "type": "warning",
+          "content": "**When IA takes on ERM-related roles:**\n\n**Acceptable with safeguards:**\n\u2022 Facilitating risk workshops\n\u2022 Coaching on risk concepts\n\u2022 Coordinating risk reporting\n\n**Must ensure:**\n\u2022 Management retains ownership of risk\n\u2022 IA maintains objectivity for assurance\n\u2022 Board approves any expanded role\n\u2022 Disclosed in charter\n\n**Red line:** IA cannot OWN risks and then audit those risks!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ERM is enterprise-wide risk management aligned with strategy",
+            "COSO ERM: Governance, Strategy, Performance, Review, Information",
+            "IA evaluates ERM effectiveness and makes recommendations",
+            "IA does NOT set risk appetite or own risks",
+            "Risk-based audit planning aligns with organizational risk assessment",
+            "IA can facilitate ERM with proper safeguards"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "COSO ERM Framework Application",
+          "knowledgeCheck": {
+            "question": "Which component of the COSO ERM framework directly addresses the establishment of ethical values and desired behaviors within an organization?",
+            "options": [
+              "Strategy and Objective-Setting",
+              "Performance",
+              "Governance and Culture",
+              "Risk Response"
+            ],
+            "correctIndex": 2,
+            "explanation": "The 'Governance and Culture' component focuses on establishing the organizational structure, reporting lines, authorities, and responsibilities necessary to achieve strategic objectives. It also encompasses the desired culture, ethical values, and commitment to integrity, setting the 'tone at the top'.",
+            "hint": "Think about which component sets the 'tone at the top'."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Standard 2120 Recall",
+          "reveal": {
+            "question": "According to Standard 2120, what are the four key areas the internal audit activity must evaluate regarding risk management processes?",
+            "answer": "1. Organizational objectives support the organization's mission. 2. Significant risks are identified and assessed. 3. Risk responses are appropriate. 4. Risk information is communicated effectively."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Internal Audit's Role in ERM",
+          "knowledgeCheck": {
+            "question": "An internal audit activity identifies that a significant operational risk is not being adequately addressed by management. According to Standard 2120, what is the MOST appropriate course of action for the internal auditor?",
+            "options": [
+              "Ignore the risk, as risk management is the responsibility of management, not internal audit.",
+              "Develop and implement a risk response plan without management involvement.",
+              "Communicate the risk to senior management and the board, and recommend potential risk responses.",
+              "Accept the risk, as management has the authority to determine the level of risk the organization is willing to accept."
+            ],
+            "correctIndex": 3,
+            "explanation": "Internal audit's role is to evaluate and contribute to the improvement of risk management processes, which includes communicating significant risks to senior management and the board and recommending potential risk responses. Internal audit should not implement risk responses (management's responsibility) or ignore identified risks.",
+            "hint": "Consider internal audit's role as an evaluator and advisor."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-V-003",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Internal Control Frameworks",
+    "description": "Understand COSO Internal Control and internal audit's evaluation role",
+    "order": 13,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Internal control",
+      "COSO framework",
+      "Control components",
+      "Standard 2130"
+    ],
+    "blueprintArea": "CIA1-V",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "COSO Internal Control-Integrated Framework is THE standard for internal control worldwide. The 5 components and 17 principles are heavily tested. You MUST know this framework cold!"
+        },
+        {
+          "title": "What is Internal Control?",
+          "type": "text",
+          "content": "**COSO Definition:**\n\nInternal control is a process, effected by an entity's board of directors, management, and other personnel, designed to provide reasonable assurance regarding the achievement of objectives relating to:\n\n\u2022 **Operations** - Effectiveness and efficiency\n\u2022 **Reporting** - Reliability of reporting\n\u2022 **Compliance** - Adherence to laws and regulations"
+        },
+        {
+          "title": "COSO Framework: Five Components",
+          "type": "text",
+          "content": "**1. Control Environment**\n\u2022 Foundation for all other components\n\u2022 Tone at the top, integrity, ethics\n\u2022 Organizational structure and accountability\n\n**2. Risk Assessment**\n\u2022 Identify and analyze risks\n\u2022 Assess likelihood and impact\n\u2022 Consider fraud risk\n\n**3. Control Activities**\n\u2022 Policies and procedures\n\u2022 Segregation of duties\n\u2022 IT general controls\n\n**4. Information and Communication**\n\u2022 Quality information\n\u2022 Internal and external communication\n\u2022 Reporting channels\n\n**5. Monitoring Activities**\n\u2022 Ongoing and separate evaluations\n\u2022 Deficiency identification and remediation"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: COSO Components - \"CRCIM\"",
+          "type": "callout",
+          "content": "**\"CRCIM\"** - Remember the COSO Components:\n\n\u2022 **C**ontrol Environment (foundation)\n\u2022 **R**isk Assessment\n\u2022 **C**ontrol Activities\n\u2022 **I**nformation & Communication\n\u2022 **M**onitoring (top)\n\n*Think of the COSO cube visualization - Control Environment is the base, Monitoring is at the top*"
+        },
+        {
+          "title": "The 17 COSO Principles",
+          "type": "text",
+          "content": "**Control Environment (5 principles):**\n1. Commitment to integrity and ethics\n2. Board oversight\n3. Organizational structure and authority\n4. Commitment to competence\n5. Accountability\n\n**Risk Assessment (4 principles):**\n6. Specify clear objectives\n7. Identify and analyze risks\n8. Assess fraud risk\n9. Identify and assess significant changes\n\n**Control Activities (3 principles):**\n10. Select and develop control activities\n11. Select and develop technology controls\n12. Deploy through policies and procedures\n\n**Info & Communication (3 principles):**\n13. Use quality information\n14. Communicate internally\n15. Communicate externally\n\n**Monitoring (2 principles):**\n16. Conduct ongoing/separate evaluations\n17. Evaluate and communicate deficiencies"
+        },
+        {
+          "title": "Internal Audit's Control Role",
+          "type": "text",
+          "content": "**Standard 2130:**\n\nThe internal audit activity must assist the organization in maintaining effective controls by evaluating their effectiveness and efficiency and by promoting continuous improvement.\n\n**IA evaluates:**\n\u2022 Design of controls (will they work?)\n\u2022 Operating effectiveness (are they working?)\n\u2022 Reliability of financial and operational information\n\u2022 Compliance with laws and regulations\n\u2022 Safeguarding of assets"
+        },
+        {
+          "title": "Control Deficiencies",
+          "type": "table",
+          "headers": [
+            "Term",
+            "Definition",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Control Deficiency",
+              "Design or operation flaw",
+              "Control exists but is not performed"
+            ],
+            [
+              "Significant Deficiency",
+              "Important enough to merit attention",
+              "Missing approval on large transactions"
+            ],
+            [
+              "Material Weakness",
+              "Reasonable possibility of material misstatement",
+              "No segregation of duties in cash handling"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "COSO: 5 components, 17 principles",
+            "Components: Control Environment, Risk Assessment, Control Activities, Info/Comm, Monitoring",
+            "Three objective categories: Operations, Reporting, Compliance",
+            "Control Environment is the foundation",
+            "IA evaluates design AND operating effectiveness of controls",
+            "All 17 principles must be present and functioning for effective internal control"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "COSO Framework Application",
+          "knowledgeCheck": {
+            "question": "Which of the following scenarios BEST exemplifies a failure in the 'Control Environment' component of the COSO framework?",
+            "options": [
+              "A company's internal audit department discovers a significant material weakness in financial reporting due to inadequate segregation of duties.",
+              "Senior management consistently overrides internal controls to meet aggressive sales targets, creating a culture where ethical behavior is not prioritized.",
+              "An organization's risk assessment process fails to identify a newly emerging cybersecurity threat that exploits a vulnerability in their network.",
+              "A company implements a robust whistle-blower hotline but fails to investigate reported concerns promptly, leading to a perception that management does not take ethics seriously."
+            ],
+            "correctIndex": 1,
+            "explanation": "The Control Environment is the foundation of the internal control system. Overriding controls and creating a culture where ethical behavior is not prioritized directly undermines this foundation. The other options relate to Control Activities, Risk Assessment, and a specific control activity (whistle-blower hotline), respectively, rather than the overall Control Environment.",
+            "hint": "Think about the 'Tone at the Top' and its impact on the organization's culture."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the COSO Principles",
+          "reveal": {
+            "question": "Name the five principles associated with the 'Control Environment' component of the COSO framework.",
+            "answer": "1. Commitment to integrity and ethics\n2. Board oversight\n3. Organizational structure and authority\n4. Commitment to competence\n5. Accountability"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Understanding Risk Assessment",
+          "knowledgeCheck": {
+            "question": "According to the COSO framework, what is the PRIMARY purpose of the Risk Assessment component?",
+            "options": [
+              "To implement specific control activities to mitigate identified risks.",
+              "To establish the organization's code of ethics and conduct.",
+              "To identify and analyze relevant risks to the achievement of the entity's objectives.",
+              "To monitor the effectiveness of existing internal controls."
+            ],
+            "correctIndex": 3,
+            "explanation": "The Risk Assessment component focuses on identifying and analyzing risks that could prevent the organization from achieving its objectives. While the other options are important elements of internal control, they fall under different components (Control Activities, Control Environment, and Monitoring Activities, respectively).",
+            "hint": "Risk Assessment is about identifying potential obstacles to success."
+          }
+        }
+      ]
+    }
+  }
+]

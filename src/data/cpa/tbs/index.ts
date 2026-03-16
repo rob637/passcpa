@@ -204,6 +204,26 @@ Additional information:
             adjustedBalance: 47130,
           },
         },
+        explanation: `**Bank Reconciliation Solution:**
+
+**Bank Side Adjustments:**
+Start with the bank balance ($45,780) and adjust for items the bank doesn't know about:
+• + Deposit in transit ($8,500): Money deposited but not yet recorded by bank
+• - Outstanding checks: Checks written but not yet cleared (#1542: $3,200, #1545: $2,100, #1548: $1,850 = $7,150 total)
+
+Bank adjusted balance: $45,780 + $8,500 - $7,150 = **$47,130**
+
+**Book Side Adjustments:**
+Start with book balance ($43,030) and adjust for items from bank statement we didn't know about:
+• + Note collected by bank ($5,000 + $250 interest = $5,250): Bank collected on our behalf
+• + Error correction ($90): Check #1540 was for $450, not $540 - overstated expense by $90
+• + Interest earned ($35): Bank credited interest
+• - Bank service charge ($75): Bank fee
+• - NSF check ($1,200): J. Smith's check bounced - removes the receivable credit
+
+Book adjusted balance: $43,030 + $5,250 + $90 + $35 - $75 - $1,200 = **$47,130**
+
+Both adjusted balances equal $47,130, confirming the reconciliation is correct.`,
       },
       {
         id: 'req-2',
@@ -232,6 +252,37 @@ Additional information:
           { account: 'Interest Revenue', debit: null, credit: 35 },
         ],
         multipleEntriesAllowed: true,
+        explanation: `**Journal Entries Required:**
+
+Only book-side adjustments need journal entries. Bank-side items (deposit in transit, outstanding checks) do NOT require entries.
+
+**Entry 1 - Note Collection:**
+Dr. Cash                    $5,250
+    Cr. Notes Receivable        $5,000
+    Cr. Interest Revenue          $250
+(Bank collected note plus interest on our behalf)
+
+**Entry 2 - Bank Service Charge:**
+Dr. Bank Service Charges      $75
+    Cr. Cash                      $75
+(Record the bank fee)
+
+**Entry 3 - NSF Check:**
+Dr. Accounts Receivable - J. Smith  $1,200
+    Cr. Cash                            $1,200
+(Reverse the original collection; amount is still owed)
+
+**Entry 4 - Error Correction:**
+Dr. Cash                      $90
+    Cr. Supplies                  $90
+(Check was for $450, not $540; reduces supplies expense)
+
+**Entry 5 - Interest Earned:**
+Dr. Cash                      $35
+    Cr. Interest Revenue          $35
+(Record interest credited by bank)
+
+**Net effect on Cash:** +$5,250 - $75 - $1,200 + $90 + $35 = +$4,100`,
       },
     ],
     hints: [
@@ -1599,7 +1650,8 @@ export const BAR_TBS_ALL: TBS[] = [...BAR_TBS, ...BAR_GAP_FILL, ...BAR_APPLICATI
 export const ISC_TBS_ALL: TBS[] = [...ISC_TBS, ...ISC_GAP_FILL, ...ISC_TBS_WORLD_CLASS, ...ISC_TBS_BATCH2, ...ISC_TBS_BATCH3]; // Information Systems & Controls  
 export const TCP_TBS_ALL: TBS[] = [...TCP_TBS, ...TCP_GAP_FILL, ...TCP_APPLICATION, ...ADDITIONAL_TAX_FORM_TBS.filter(t => t.section === 'TCP'), ...TCP_TBS_WORLD_CLASS, ...TCP_TBS_BATCH2, ...TCP_TBS_BATCH3]; // Tax Compliance & Planning
 
-export const ALL_TBS: TBS[] = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL, ...BEC_TBS_ALL, ...BAR_TBS_ALL, ...ISC_TBS_ALL, ...TCP_TBS_ALL];
+// BEC retired December 2023 — BEC_TBS_ALL kept for reference but excluded from active content
+export const ALL_TBS: TBS[] = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL, ...BAR_TBS_ALL, ...ISC_TBS_ALL, ...TCP_TBS_ALL];
 
 // Helper functions
 export const getTBSBySection = (section: ExamSection) => {
@@ -1610,8 +1662,6 @@ export const getTBSBySection = (section: ExamSection) => {
       return REG_TBS_ALL;
     case 'AUD':
       return AUD_TBS_ALL;
-    case 'BEC':
-      return BEC_TBS_ALL;
     case 'BAR':
       return BAR_TBS_ALL;
     case 'ISC':
@@ -1631,9 +1681,11 @@ export const getTBSStats = () => ({
   total: ALL_TBS.length,
   bySection: {
     FAR: FAR_TBS_ALL.length,
-    REG: REG_TBS_ALL.length,
     AUD: AUD_TBS_ALL.length,
-    BEC: BEC_TBS_ALL.length,
+    REG: REG_TBS_ALL.length,
+    BAR: BAR_TBS_ALL.length,
+    ISC: ISC_TBS_ALL.length,
+    TCP: TCP_TBS_ALL.length,
   },
   byType: Object.values(TBS_TYPES).reduce((acc: Record<string, number>, type) => {
     acc[type] = ALL_TBS.filter((tbs) => tbs.type === type).length;

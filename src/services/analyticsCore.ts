@@ -8,6 +8,8 @@
  * computation to these utilities. This eliminates ~2,700 lines of duplication.
  */
 
+import logger from '../utils/logger';
+
 // ============================================================================
 // Shared Types
 // ============================================================================
@@ -627,7 +629,7 @@ export function loadFromStorage<T>(
 
     return parsed;
   } catch (e) {
-    console.error(`Failed to load ${key} analytics:`, e);
+    logger.error(`Failed to load ${key} analytics:`, e);
     return null;
   }
 }
@@ -639,7 +641,7 @@ export function saveToStorage<T>(key: string, data: T): void {
   try {
     localStorage.setItem(key, JSON.stringify(data));
   } catch (e) {
-    console.error(`Failed to save ${key} analytics:`, e);
+    logger.error(`Failed to save ${key} analytics:`, e);
   }
 }
 

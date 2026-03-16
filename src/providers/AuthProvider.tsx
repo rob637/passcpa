@@ -80,32 +80,77 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     try {
       const userDoc = await getDoc(doc(db, 'users', uid));
       if (userDoc.exists()) {
-        const profile = { id: uid, ...userDoc.data() } as UserProfile;
+        const data = userDoc.data();
         
-        // Auto-sync isAdmin flag: if the user's email is in the admin whitelist
-        // but their Firestore doc doesn't have isAdmin: true, set it now.
-        // This ensures Firestore security rules (which check isAdmin on the doc)
-        // stay in sync with the client-side ADMIN_EMAILS list.
-        if (isAdminEmail(email) && !profile.isAdmin) {
-          try {
-            await updateDoc(doc(db, 'users', uid), { isAdmin: true });
-            profile.isAdmin = true;
-            logger.info(`[Auth] Auto-synced isAdmin flag for ${email}`);
-          } catch (syncErr) {
-            logger.warn('[Auth] Could not auto-sync isAdmin flag:', syncErr);
+        // Check for "ghost" documents - subcollections exist but no actual fields
+        // This happens when Firestore write failed but user created activity
+        const hasActualFields = data && (data.email || data.displayName || data.createdAt);
+        
+        if (hasActualFields) {
+          const profile = { id: uid, ...data } as UserProfile;
+          
+          // Auto-sync isAdmin flag: if the user's email is in the admin whitelist
+          // but their Firestore doc doesn't have isAdmin: true, set it now.
+          // This ensures Firestore security rules (which check isAdmin on the doc)
+          // stay in sync with the client-side ADMIN_EMAILS list.
+          if (isAdminEmail(email) && !profile.isAdmin) {
+            try {
+              await updateDoc(doc(db, 'users', uid), { isAdmin: true });
+              profile.isAdmin = true;
+              logger.info(`[Auth] Auto-synced isAdmin flag for ${email}`);
+            } catch (syncErr) {
+              logger.warn('[Auth] Could not auto-sync isAdmin flag:', syncErr);
+            }
           }
+          
+          setUserProfile(profile);
+          
+          // Sync Firestore activeCourse to localStorage so CourseProvider detects it correctly.
+          // This is critical for cross-device login — without it, user lands on CPA instead of their course.
+          if (profile.activeCourse) {
+            saveCoursePreference(profile.activeCourse);
+          }
+          return;
         }
-        
-        setUserProfile(profile);
-        
-        // Sync Firestore activeCourse to localStorage so CourseProvider detects it correctly.
-        // This is critical for cross-device login — without it, user lands on CPA instead of their course.
-        if (profile.activeCourse) {
-          saveCoursePreference(profile.activeCourse);
-        }
-      } else {
-        setUserProfile(null);
       }
+      
+      // Document doesn't exist or is a ghost doc - this is an orphaned user
+      // Auto-repair by creating their profile from Firebase Auth data
+      if (email) {
+        logger.warn(`[Auth] Repairing orphaned user: ${uid} (${email})`);
+        const currentUser = auth.currentUser;
+        const repairProfile: Omit<UserProfile, 'id'> = {
+          email: email,
+          displayName: currentUser?.displayName || email.split('@')[0] || 'User',
+          createdAt: serverTimestamp(),
+          activeCourse: (localStorage.getItem('voraprep_active_course') as CourseId) || 'cpa',
+          onboardingComplete: false,
+          dailyGoal: 50,
+          settings: {
+            notifications: true,
+            darkMode: false,
+            soundEffects: true,
+          },
+        };
+        
+        // Add repair metadata (not in UserProfile type, stored for debugging)
+        const repairMetadata = {
+          ...repairProfile,
+          _repairedAt: serverTimestamp(),
+          _repairReason: 'orphaned_auth_user_auto_fix',
+        };
+        
+        try {
+          await setDoc(doc(db, 'users', uid), repairMetadata, { merge: true });
+          setUserProfile({ id: uid, ...repairProfile } as UserProfile);
+          logger.info(`[Auth] Successfully repaired orphaned user: ${email}`);
+          return;
+        } catch (repairErr) {
+          logger.error('[Auth] Failed to repair orphaned user:', repairErr);
+        }
+      }
+      
+      setUserProfile(null);
     } catch (err) {
       logger.error('Error fetching user profile:', err);
       setUserProfile(null);
@@ -124,10 +169,13 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         logger.warn('Auth timeout - Firebase may be unreachable');
         setLoading(false);
       }
-    }, 10000); // 10 second timeout
+    }, 5000); // 5 second timeout
 
     // Handle redirect result (for Google sign-in on mobile)
-    getRedirectResult(auth).then(async (result) => {
+    // IMPORTANT: We must await this BEFORE onAuthStateChanged processes the user,
+    // otherwise onAuthStateChanged fires before the profile doc is created.
+    let redirectHandled = false;
+    const redirectPromise = getRedirectResult(auth).then(async (result) => {
       if (result?.user) {
         // User signed in via redirect, handle profile creation
         const user = result.user;
@@ -147,7 +195,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             activeCourse: pendingCourse as CourseId,
             examSection: null,
             examDate: null,
-            dailyGoal: 25,
+            dailyGoal: 50,
             studyPlanId: null,
             settings: {
               notifications: true,
@@ -159,6 +207,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         } else {
           await updateDoc(userRef, { lastLogin: serverTimestamp() });
         }
+        redirectHandled = true;
       }
     }).catch((err) => {
       logger.error('Redirect result error:', err);
@@ -168,6 +217,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       authResolved = true;
       clearTimeout(timeout);
       if (firebaseUser) {
+        // Wait for redirect profile creation to finish before fetching profile
+        // This prevents the race where onAuthStateChanged fires before setDoc completes
+        if (!redirectHandled) {
+          await redirectPromise;
+        }
         // If user appears unverified, reload from server to get latest status.
         // Firebase caches auth state locally — if the user verified their email
         // in another tab/session and then closed the app, the cached state is stale.
@@ -208,7 +262,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       // Update last login timestamp
       await updateDoc(doc(db, 'users', result.user.uid), {
         lastLogin: serverTimestamp(),
-      }).catch(() => {}); // Silent fail if user doc doesn't exist yet
+      }).catch((e) => { logger.warn('Failed to update lastLogin:', e); });
       return result.user;
     } catch (err) {
       const error = err as FirebaseError;
@@ -259,6 +313,18 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       saveCoursePreference(pendingCourse as CourseId);
 
       // Create user document in Firestore
+      // Capture signup source for analytics (UTM params, gclid, timezone for country hint)
+      const urlParams = new URLSearchParams(window.location.search);
+      const signupSource = {
+        utm_source: urlParams.get('utm_source') || localStorage.getItem('utm_source') || undefined,
+        utm_medium: urlParams.get('utm_medium') || localStorage.getItem('utm_medium') || undefined,
+        utm_campaign: urlParams.get('utm_campaign') || localStorage.getItem('utm_campaign') || undefined,
+        gclid: urlParams.get('gclid') || localStorage.getItem('gclid') || undefined,
+        referrer: document.referrer || undefined,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || undefined,
+        language: navigator.language || undefined,
+      };
+      
       const newUserProfile: Omit<UserProfile, 'id'> = {
         email,
         displayName,
@@ -270,6 +336,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         examDate: null,
         dailyGoal: 50,
         studyPlanId: null,
+        signupSource, // Track where user came from
         settings: {
           notifications: true,
           darkMode: false,
@@ -277,7 +344,26 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         },
       };
 
-      await setDoc(doc(db, 'users', result.user.uid), newUserProfile);
+      // Create user document with retry logic to prevent orphaned auth users
+      let firestoreSuccess = false;
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        try {
+          await setDoc(doc(db, 'users', result.user.uid), newUserProfile);
+          firestoreSuccess = true;
+          break;
+        } catch (firestoreErr) {
+          logger.warn(`Firestore setDoc attempt ${attempt}/3 failed:`, firestoreErr);
+          if (attempt < 3) {
+            await new Promise(resolve => setTimeout(resolve, 1000 * attempt)); // Exponential backoff
+          }
+        }
+      }
+      
+      if (!firestoreSuccess) {
+        // Log error but don't block signup - user can still use the app
+        // The repair mechanism in fetchUserProfile will fix this on next login
+        logger.error('Failed to create Firestore user doc after 3 attempts. User may have orphaned auth account:', result.user.uid);
+      }
 
       // Re-fetch the profile so it's immediately available in React state.
       // Without this, onAuthStateChanged already fired (before setDoc) and found no doc,
@@ -315,9 +401,15 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       // Clear user-specific cached data to prevent data leakage between accounts
       const keysToRemove = Object.keys(localStorage).filter(key => 
         key.startsWith('daily_plan_') || 
-        key.startsWith('dailyplan_completed_')
+        key.startsWith('dailyplan_completed_') ||
+        key.startsWith('voraprep_')  // Includes voraprep_active_course, voraprep_welcome_dismissed, etc.
       );
       keysToRemove.forEach(key => localStorage.removeItem(key));
+      
+      // Also clear specific checkout/session keys
+      localStorage.removeItem('pendingCheckout');
+      localStorage.removeItem('voraprep-practice-session');
+      sessionStorage.clear(); // Clear all session storage on logout
     } catch (err) {
       const error = err as FirebaseError;
       setError(error.message);
@@ -425,7 +517,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
               error.code === 'auth/cancelled-popup-request') {
             logger.log('Popup blocked/closed, falling back to redirect');
             await signInWithRedirect(auth, provider);
-            return null as unknown as User;
+            // Redirect will reload the page — getRedirectResult handles profile creation on return.
+            // Throw a special error so callers know auth is in progress, not failed.
+            throw new Error('AUTH_REDIRECT_IN_PROGRESS');
           }
           throw popupErr;
         }
@@ -436,6 +530,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       const userDoc = await getDoc(userRef);
       
       if (!userDoc.exists()) {
+        // Get pending course from registration flow (saved in localStorage by Register.tsx or Login.tsx)
+        const pendingCourse = localStorage.getItem('pendingCourse') || 'cpa';
+        
         // Create new profile for Google user
         const newProfile: Omit<UserProfile, 'id'> = {
           email: user.email || '',
@@ -443,9 +540,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
           photoURL: user.photoURL,
           createdAt: serverTimestamp(),
           onboardingComplete: false,
+          activeCourse: pendingCourse as CourseId,
           examSection: null,
           examDate: null,
-          dailyGoal: 25,
+          dailyGoal: 50,
           studyPlanId: null,
           settings: {
             notifications: true,
@@ -458,6 +556,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
           ...newProfile,
           id: user.uid, 
         } as UserProfile);
+
+        // Track Google signup conversion for Google Ads SEM optimization
+        analytics.trackSignupConversion(user.uid, 'google');
+        analytics.trackTrialStartConversion(user.uid, 'pending');
       } else {
         // Update last login for existing user
         await updateDoc(userRef, { lastLogin: serverTimestamp() });

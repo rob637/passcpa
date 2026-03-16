@@ -12,6 +12,7 @@
  */
 
 import { CMASectionId } from './cmaAdaptiveEngine';
+import logger from '../utils/logger';
 
 // Types
 export interface CramTopic {
@@ -634,7 +635,7 @@ export function loadCramState(): CramState | null {
       return cramState;
     }
   } catch (e) {
-    console.error('Error loading CMA cram state:', e);
+    logger.error('Error loading CMA cram state:', e);
   }
   return null;
 }
@@ -646,7 +647,7 @@ function saveCramState(): void {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(cramState));
   } catch (e) {
-    console.error('Error saving CMA cram state:', e);
+    logger.error('Error saving CMA cram state:', e);
   }
 }
 

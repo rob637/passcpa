@@ -1,19 +1,19 @@
 /**
  * Flashcard Service
  *
- * Multi-course flashcard service. Uses the generic courseDataLoader —
- * no per-course switch/case statements needed. Adding a new course requires
- * only a COURSE_DATA export with a flashcards array.
+ * Multi-course flashcard service that loads flashcards from JSON files.
+ * Flashcards are stored in content/{course}/flashcards.json
  */
 
 import { CourseId } from '../types/course';
+import logger from '../utils/logger';
 import { DEFAULT_COURSE_ID } from '../types/course';
 import { COURSES } from '../courses';
-import { loadCourseData } from './courseDataLoader';
 
 // Common flashcard interface that all course flashcards must conform to
 export interface Flashcard {
   id: string;
+  courseId?: string;
   section: string;
   type: string;
   topic: string;
@@ -28,36 +28,27 @@ export interface Flashcard {
   comparison?: unknown; // Different exams have different comparison shapes
   tags?: string[];
   reference?: string;
+  skillLevel?: string;
+}
+
+interface FlashcardFile {
+  $schema?: string;
+  courseId: string;
+  exportedAt?: string;
+  flashcards: Flashcard[];
 }
 
 // Cache for loaded flashcards
 const flashcardCache: Record<string, Flashcard[]> = {};
 
-// Helper to normalize flashcards to common interface
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function normalizeFlashcards(flashcards: any[]): Flashcard[] {
-  return flashcards.map(card => ({
-    id: card.id || `card-${Math.random().toString(36).slice(2)}`,
-    section: card.section || card.domain || '',
-    type: card.type || 'concept',
-    topic: card.topic || card.blueprintArea || card.domain || '',
-    subtopic: card.subtopic,
-    blueprintArea: card.blueprintArea || card.domain,
-    front: card.front || card.question || '',
-    back: card.back || card.answer || '',
-    difficulty: card.difficulty || 'medium',
-    example: card.example,
-    formula: card.formula,
-    mnemonic: card.mnemonic,
-    comparison: card.comparison,
-    tags: card.tags,
-    reference: card.reference,
-  }));
-}
+// Dynamic import for JSON files
+const flashcardModules = import.meta.glob<FlashcardFile>(
+  '/content/*/flashcards.json',
+  { eager: false }
+);
 
 /**
- * Load all flashcards for a course (with caching + normalization).
- * Uses COURSE_DATA — no per-course switch/case needed.
+ * Load all flashcards for a course from JSON (with caching).
  */
 export async function getFlashcardsByCourse(courseId: CourseId): Promise<Flashcard[]> {
   const cacheKey = `${courseId}-all`;
@@ -67,13 +58,21 @@ export async function getFlashcardsByCourse(courseId: CourseId): Promise<Flashca
   }
 
   try {
-    const courseData = await loadCourseData(courseId);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const flashcards = normalizeFlashcards((courseData.flashcards || []) as any[]);
+    const key = `/content/${courseId}/flashcards.json`;
+    const loader = flashcardModules[key];
+    
+    if (!loader) {
+      logger.warn(`No flashcard file found for course ${courseId}`);
+      return [];
+    }
+    
+    const data = await loader();
+    const flashcards = data.flashcards || [];
+    
     flashcardCache[cacheKey] = flashcards;
     return flashcards;
   } catch (error) {
-    console.error(`Failed to load flashcards for course ${courseId}:`, error);
+    logger.error(`Failed to load flashcards for course ${courseId}:`, error);
     return [];
   }
 }
@@ -81,6 +80,7 @@ export async function getFlashcardsByCourse(courseId: CourseId): Promise<Flashca
 /**
  * Load flashcards for a specific section.
  * Loads all course flashcards then filters by section.
+ * Use 'ALL' to get all flashcards for the course (single-exam courses like CISA, CFP).
  */
 export async function getFlashcardsBySection(section: string, courseId?: CourseId): Promise<Flashcard[]> {
   const effectiveCourse = courseId || getCourseFromSection(section);
@@ -93,20 +93,43 @@ export async function getFlashcardsBySection(section: string, courseId?: CourseI
   try {
     const all = await getFlashcardsByCourse(effectiveCourse);
 
-    // Normalize section matching: CFP-GEN → GEN, etc.
-    const domain = section.replace(/^CFP-/, '');
+    // 'ALL' returns all flashcards for the course (used by single-exam courses)
+    if (section.toUpperCase() === 'ALL') {
+      flashcardCache[cacheKey] = all;
+      return all;
+    }
 
-    const flashcards = all.filter(f =>
-      f.section === section ||
-      f.section === domain ||
-      f.blueprintArea === section ||
-      f.blueprintArea === domain
-    );
+    // Single-exam courses: if section matches the course name (e.g., 'CISA' for cisa course),
+    // return all flashcards since the individual flashcards use domain sections like 'CISA1', 'CISA2'
+    const sectionUpper = section.toUpperCase();
+    const courseUpper = effectiveCourse.toUpperCase();
+    if (sectionUpper === courseUpper) {
+      flashcardCache[cacheKey] = all;
+      return all;
+    }
+
+    // Normalize section matching: CFP-GEN → GEN, CISA-1 → 1, etc.
+    const domain = section.replace(/^(CFP|CISA|CMA|CIA|EA)-?/i, '');
+
+    const flashcards = all.filter(f => {
+      const fSection = f.section?.toUpperCase();
+      const fBlueprint = f.blueprintArea?.toUpperCase();
+      const sectionCheck = section.toUpperCase();
+      const domainUpper = domain.toUpperCase();
+      
+      return fSection === sectionCheck ||
+        fSection === domainUpper ||
+        fBlueprint === sectionCheck ||
+        fBlueprint === domainUpper ||
+        // Also match if section starts with the domain (e.g., 'CISA1' starts with 'CISA1')
+        fSection?.startsWith(sectionCheck) ||
+        sectionCheck.startsWith(fSection || '');
+    });
 
     flashcardCache[cacheKey] = flashcards;
     return flashcards;
   } catch (error) {
-    console.error(`Failed to load flashcards for section ${section}:`, error);
+    logger.error(`Failed to load flashcards for section ${section}:`, error);
     return [];
   }
 }

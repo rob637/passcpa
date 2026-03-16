@@ -83,9 +83,14 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
   
   // Load recent searches from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem('voraprep_recent_searches');
-    if (saved) {
-      setRecentSearches(JSON.parse(saved));
+    try {
+      const saved = localStorage.getItem('voraprep_recent_searches');
+      if (saved) {
+        setRecentSearches(JSON.parse(saved));
+      }
+    } catch {
+      // Corrupted data — clear it
+      localStorage.removeItem('voraprep_recent_searches');
     }
   }, []);
   

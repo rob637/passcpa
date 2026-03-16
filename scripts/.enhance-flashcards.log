@@ -1,0 +1,235 @@
+nohup: ignoring input
+
+LLM Content Enhancement Pipeline
+Started: 2026-03-09 15:07:17
+======================================================================
+
+🃏 Enhancing Flashcards...
+  cia: 991 flashcards to enhance...
+    CIA3 [15/991] +15 enhanced
+    CIA3 [30/991] +15 enhanced
+    CIA3 [45/991] +15 enhanced
+    CIA3 [60/991] +15 enhanced
+    CIA3 [75/991] +15 enhanced
+    CIA3 [90/991] +15 enhanced
+    CIA3 [105/991] +15 enhanced
+    CIA3 [120/991] +15 enhanced
+    CIA3 [135/991] +15 enhanced
+    CIA3 [150/991] +15 enhanced
+    CIA3 [165/991] +15 enhanced
+    CIA3 [180/991] +15 enhanced
+    CIA3 [195/991] +15 enhanced
+    CIA3 [210/991] +15 enhanced
+    CIA3 [225/991] +15 enhanced
+    CIA3 [240/991] +15 enhanced
+    CIA3 [255/991] +15 enhanced
+    CIA3 [270/991] +15 enhanced
+    CIA3 [285/991] +15 enhanced
+    CIA3 [300/991] +15 enhanced
+    CIA3 [308/991] +8 enhanced
+    CIA1 [323/991] +15 enhanced
+    CIA1 [338/991] +15 enhanced
+    CIA1 [353/991] +15 enhanced
+    CIA1 [368/991] +15 enhanced
+    CIA1 [383/991] +15 enhanced
+    CIA1 [398/991] +15 enhanced
+    CIA1 [413/991] +15 enhanced
+    CIA1 [428/991] +15 enhanced
+    CIA1 [443/991] +15 enhanced
+    CIA1 [458/991] +15 enhanced
+    CIA1 [473/991] +15 enhanced
+    CIA1 [488/991] +15 enhanced
+    CIA1 [503/991] +15 enhanced
+    CIA1 [518/991] +15 enhanced
+    CIA1 [533/991] +15 enhanced
+    CIA1 [548/991] +15 enhanced
+    CIA1 [563/991] +15 enhanced
+    CIA1 [578/991] +15 enhanced
+    CIA1 [593/991] +15 enhanced
+    CIA1 [608/991] +15 enhanced
+    CIA1 [623/991] +15 enhanced
+    CIA1 [638/991] +15 enhanced
+    CIA1 [650/991] +12 enhanced
+    CIA2 [665/991] +15 enhanced
+    CIA2 [680/991] +15 enhanced
+    CIA2 [695/991] +15 enhanced
+    CIA2 [710/991] +15 enhanced
+    CIA2 [725/991] +15 enhanced
+    CIA2 [740/991] +15 enhanced
+    CIA2 [755/991] +15 enhanced
+    CIA2 [770/991] +15 enhanced
+    CIA2 [785/991] +15 enhanced
+    CIA2 [800/991] +15 enhanced
+    CIA2 [815/991] +15 enhanced
+    CIA2 [830/991] +15 enhanced
+    CIA2 [845/991] +15 enhanced
+    CIA2 [860/991] +15 enhanced
+    CIA2 [875/991] +15 enhanced
+    CIA2 [890/991] +15 enhanced
+    CIA2 [905/991] +15 enhanced
+    CIA2 [920/991] +15 enhanced
+    CIA2 [935/991] +15 enhanced
+    CIA2 [950/991] +15 enhanced
+    CIA2 [965/991] +15 enhanced
+    CIA2 [980/991] +15 enhanced
+    CIA2 [991/991] +11 enhanced
+  cia: 991/991 flashcards enhanced ✓
+  cisa: 315 flashcards to enhance...
+    CISA1 [15/315] +15 enhanced
+    CISA1 [30/315] +15 enhanced
+    CISA1 [45/315] +15 enhanced
+    CISA1 [60/315] +15 enhanced
+    CISA1 [67/315] +7 enhanced
+    CISA5 [82/315] +15 enhanced
+    CISA5 [97/315] +15 enhanced
+    CISA5 [112/315] +15 enhanced
+    CISA5 [127/315] +15 enhanced
+    CISA5 [142/315] +15 enhanced
+    CISA5 [145/315] +3 enhanced
+    CISA4 [160/315] +15 enhanced
+    CISA4 [175/315] +15 enhanced
+    CISA4 [190/315] +15 enhanced
+    CISA4 [205/315] +15 enhanced
+    CISA2 [220/315] +15 enhanced
+    CISA2 [235/315] +15 enhanced
+    CISA2 [250/315] +15 enhanced
+    CISA2 [255/315] +5 enhanced
+    CISA3 [270/315] +15 enhanced
+    CISA3 [285/315] +15 enhanced
+    CISA3 [300/315] +15 enhanced
+    CISA3 [315/315] +15 enhanced
+  cisa: 315/315 flashcards enhanced ✓
+  cfp: 704 flashcards to enhance...
+    CFP-GEN [15/704] +15 enhanced
+    CFP-GEN [30/704] +15 enhanced
+    CFP-GEN [45/704] +15 enhanced
+    CFP-GEN [60/704] +15 enhanced
+    CFP-GEN [75/704] +15 enhanced
+    CFP-GEN [90/704] +15 enhanced
+    CFP-GEN [104/704] +14 enhanced
+    CFP-INV [119/704] +15 enhanced
+    CFP-INV [134/704] +15 enhanced
+    CFP-INV [149/704] +15 enhanced
+    CFP-INV [164/704] +15 enhanced
+    CFP-INV [179/704] +15 enhanced
+    CFP-INV [194/704] +15 enhanced
+    CFP-INV [209/704] +15 enhanced
+    CFP-INV [224/704] +15 enhanced
+    CFP-RET [239/704] +15 enhanced
+    CFP-RET [254/704] +15 enhanced
+    CFP-RET [269/704] +15 enhanced
+    CFP-RET [284/704] +15 enhanced
+    CFP-RET [299/704] +15 enhanced
+    CFP-RET [314/704] +15 enhanced
+    CFP-RET [329/704] +15 enhanced
+    CFP-RET [344/704] +15 enhanced
+    CFP-RET [352/704] +8 enhanced
+    CFP-RISK [367/704] +15 enhanced
+    CFP-RISK [382/704] +15 enhanced
+    CFP-RISK [397/704] +15 enhanced
+    CFP-RISK [412/704] +15 enhanced
+    CFP-RISK [427/704] +15 enhanced
+    CFP-RISK [430/704] +3 enhanced
+    CFP-PCR [445/704] +15 enhanced
+    CFP-PCR [460/704] +15 enhanced
+    CFP-PCR [475/704] +15 enhanced
+    CFP-PCR [485/704] +10 enhanced
+    CFP-TAX [500/704] +15 enhanced
+    CFP-TAX [515/704] +15 enhanced
+    CFP-TAX [530/704] +15 enhanced
+    CFP-TAX [545/704] +15 enhanced
+    CFP-TAX [560/704] +15 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    CFP-TAX [575/704] +15 enhanced
+    CFP-TAX [584/704] +9 enhanced
+    JSON parse error (attempt 1), retrying...
+    CFP-PSY [599/704] +15 enhanced
+    CFP-PSY [614/704] +15 enhanced
+    JSON parse error (attempt 1), retrying...
+    CFP-PSY [629/704] +15 enhanced
+    CFP-PSY [632/704] +3 enhanced
+    CFP-EST [647/704] +15 enhanced
+    JSON parse error (attempt 1), retrying...
+    CFP-EST [662/704] +15 enhanced
+    JSON parse error (attempt 1), retrying...
+    CFP-EST [677/704] +15 enhanced
+    CFP-EST [692/704] +15 enhanced
+    CFP-EST [704/704] +12 enhanced
+  cfp: 704/704 flashcards enhanced ✓
+  cpa: 64 flashcards to enhance...
+    FAR [15/64] +15 enhanced
+    FAR [30/64] +15 enhanced
+    FAR [45/64] +15 enhanced
+    FAR [60/64] +15 enhanced
+    FAR [64/64] +4 enhanced
+  cpa: 64/64 flashcards enhanced ✓
+  ea: 36 flashcards to enhance...
+    SEE1 [15/36] +15 enhanced
+    SEE1 [30/36] +15 enhanced
+    SEE1 [36/36] +6 enhanced
+  ea: 36/36 flashcards enhanced ✓
+
+======================================================================
+COMPLETE: 2110 items enhanced in 0h 22m
+======================================================================
+
+
+======================================================================
+ENHANCEMENT PROGRESS
+======================================================================
+
+MCQs:
+  CIA1      : ✓
+  CIA2      : ✓
+  CIA3      : ✓
+  CISA1     : ✓
+  CISA2     : ✓
+  CISA3     : ✓
+  CISA4     : ✓
+  CISA5     : ✓
+  FAR       : ✓
+  SEE1      : ✓
+  CFP-PCR   : ✓
+  CFP-GEN   : ✓
+  CFP-RISK  : ✓
+  CFP-INV   : ✓
+  CFP-TAX   : ✓
+  CFP-RET   : ✓
+  CFP-EST   : ✓
+  CFP-PSY   : ✓
+  TOTAL     : 4849/4849
+
+Lessons:
+  CIA1      : ✓
+  CIA2      : ✓
+  CIA3      : ✓
+  CISA1     : ✓
+  CISA2     : ✓
+  CISA3     : ✓
+  CISA4     : ✓
+  CISA5     : ✓
+  FAR       : ✓
+  SEE1      : ✓
+  CFP-PCR   : ✓
+  CFP-GEN   : ✓
+  CFP-RISK  : ✓
+  CFP-INV   : ✓
+  CFP-TAX   : ✓
+  CFP-RET   : ✓
+  CFP-EST   : ✓
+  CFP-PSY   : ✓
+  TOTAL     : 272/272
+
+Flashcards:
+  cia       : ✓
+  cisa      : ✓
+  cfp       : ✓
+  cpa       : ✓
+  ea        : ✓
+  TOTAL     : 2110/2110
+
+======================================================================
+GRAND TOTAL: 7231/7231 (100.0%)
+======================================================================
+

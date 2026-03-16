@@ -1,0 +1,636 @@
+[
+  {
+    "id": "CFP-PRO-L001",
+    "courseId": "cfp",
+    "section": "CFP-PCR",
+    "blueprintArea": "PCR-1",
+    "title": "CFP Board Code of Ethics and Standards of Conduct",
+    "description": "Understand the Code of Ethics and its principles",
+    "order": 1,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Code of Ethics principles",
+      "Fiduciary Duty application",
+      "Financial Advice vs. Financial Planning",
+      "Standards of Conduct"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "The Code of Ethics",
+          "type": "text",
+          "content": "Every CFP\u00ae professional must adhere to four core principles that guide ethical conduct in financial planning practice."
+        },
+        {
+          "title": "Four Principles of the Code",
+          "type": "table",
+          "headers": [
+            "Principle",
+            "Key Requirements"
+          ],
+          "rows": [
+            [
+              "1. Act with Honesty, Integrity, Competence, and Diligence",
+              "Be truthful in all representations; maintain competency; perform work with appropriate care"
+            ],
+            [
+              "2. Act in the Client's Best Interests",
+              "The foundational principle; client interests override practitioner's interests; applies at ALL times"
+            ],
+            [
+              "3. Exercise Due Care",
+              "Skill, prudence, and diligence; apply sound professional judgment; appropriate documentation"
+            ],
+            [
+              "4. Maintain the Standards of the Profession",
+              "Uphold integrity of profession; report violations by CFP\u00ae professionals; cooperate with CFP Board"
+            ]
+          ]
+        },
+        {
+          "title": "Exam Alert: Fiduciary Duty At All Times",
+          "type": "warning",
+          "content": "Since 2019, CFP\u00ae professionals owe fiduciary duty \"at all times\" when providing Financial Advice\u2014not limited to financial planning engagements. This applies to ALL Financial Advice, even one-off recommendations."
+        },
+        {
+          "title": "Fiduciary Standard Components",
+          "type": "list",
+          "items": [
+            "Duty of Loyalty: Place client's interests ahead of your own; avoid or manage conflicts of interest; disclose conflicts that cannot be avoided",
+            "Duty of Care: Act with skill, prudence, and diligence; make recommendations in client's best interest; consider factors relevant to the client"
+          ]
+        },
+        {
+          "title": "Financial Advice vs. Financial Planning",
+          "type": "text",
+          "content": "Financial Advice is communication applying financial planning considerations to a client's situation. It triggers fiduciary duty and applies to one-time advice without requiring a financial plan. Financial Planning is a collaborative process with the 7-step process: (1) Understanding client's situation, (2) Identifying and selecting goals, (3) Analyzing current course and alternatives, (4) Developing recommendations, (5) Presenting recommendations, (6) Implementing recommendations, (7) Monitoring progress and updating."
+        },
+        {
+          "title": "Distinction Between Activities",
+          "type": "table",
+          "headers": [
+            "Activity",
+            "Fiduciary Duty?",
+            "7-Step Process?"
+          ],
+          "rows": [
+            [
+              "Financial Advice",
+              "Yes",
+              "No"
+            ],
+            [
+              "Financial Planning",
+              "Yes",
+              "Yes"
+            ],
+            [
+              "Sales without advice",
+              "See rules",
+              "No"
+            ]
+          ]
+        },
+        {
+          "title": "Standards of Conduct Overview",
+          "type": "text",
+          "content": "The Standards of Conduct are organized into categories: (A) Duties When Providing Financial Advice\u2014fiduciary duty, integrity, competence, diligence, conflict disclosure, sound judgment, professionalism, legal compliance. (B) Duties When Providing Financial Planning\u2014all \"A\" duties plus agreement requirements, understanding client information, appropriate scope. (C) Duties to Prospective Clients\u2014honesty, accurate representation. (D) Duties to Clients and Prospective Clients\u2014privacy, confidentiality, complete disclosures. (E) Duties to Firms and Subordinates\u2014reasonable supervision, compliance systems. (F) Duties to CFP Board\u2014cooperation, disclosure, compliance."
+        },
+        {
+          "title": "Memory Aid: HIDS",
+          "type": "callout",
+          "content": "Code Principles: Honesty, (client) Interest, Due care, Standards"
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Fiduciary duty applies AT ALL TIMES when providing Financial Advice",
+            "Four Code principles: Honesty/Integrity, Client's Best Interest, Due Care, Standards",
+            "Financial Planning requires the 7-step process; Financial Advice does not",
+            "Both Financial Advice and Financial Planning trigger fiduciary duty",
+            "Duty of Loyalty requires placing client interests first"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Testing Your Understanding of Fiduciary Duty",
+          "knowledgeCheck": {
+            "question": "Sarah, a CFP\u00ae professional, provides a one-time recommendation to a client regarding the allocation of funds within their existing 401(k) plan. This recommendation is based on the client's stated risk tolerance and investment goals. According to the CFP Board's Standards of Conduct, which of the following statements is MOST accurate?",
+            "options": [
+              "Sarah is acting as a fiduciary because she is providing financial advice.",
+              "Sarah is not acting as a fiduciary because she is only providing a one-time recommendation.",
+              "Sarah is only acting as a fiduciary if she explicitly states that she is acting in that capacity.",
+              "Sarah is only acting as a fiduciary if she is managing the client's 401(k) account on an ongoing basis."
+            ],
+            "correctIndex": 0,
+            "explanation": "The correct answer is that Sarah is acting as a fiduciary because providing financial advice triggers fiduciary duty under the CFP Board's Standards of Conduct, regardless of whether it is a one-time recommendation or part of an ongoing financial planning engagement. The nature of the advice, not the frequency, determines the fiduciary obligation.",
+            "hint": "Consider what triggers fiduciary duty based on the lesson materials."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Four Core Principles",
+          "reveal": {
+            "question": "List the four core principles of the CFP Board's Code of Ethics.",
+            "answer": "The four core principles are: 1. Act with honesty, integrity, competence, and diligence. 2. Act in the client's best interests. 3. Exercise due care. 4. Avoid or disclose and manage conflicts of interest."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Financial Advice vs. Financial Planning",
+          "comparison": {
+            "headers": [
+              "Financial Advice",
+              "Financial Planning"
+            ],
+            "rows": [
+              {
+                "label": "Scope",
+                "values": [
+                  "May be limited to a specific topic or recommendation.",
+                  "Comprehensive, covering multiple aspects of a client's financial life."
+                ]
+              },
+              {
+                "label": "Engagement",
+                "values": [
+                  "Often a one-time or short-term engagement.",
+                  "Typically an ongoing, collaborative process."
+                ]
+              },
+              {
+                "label": "Fiduciary Duty",
+                "values": [
+                  "Fiduciary duty applies.",
+                  "Fiduciary duty applies."
+                ]
+              },
+              {
+                "label": "Process",
+                "values": [
+                  "May not require all 7 steps of the financial planning process.",
+                  "Involves all 7 steps of the financial planning process."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-PRO-L002",
+    "courseId": "cfp",
+    "section": "CFP-PCR",
+    "blueprintArea": "PCR-1",
+    "title": "Conflicts of Interest and Duty of Loyalty",
+    "description": "Identify common conflicts of interest",
+    "order": 2,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Common conflicts of interest",
+      "Conflict management framework",
+      "Compensation-related conflicts",
+      "Material vs. non-material conflicts"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Understanding Conflicts of Interest",
+          "type": "text",
+          "content": "A conflict of interest is a circumstance where a CFP\u00ae professional's interests or duties to third parties conflict (or appear to conflict) with duties to the client. Conflicts fall into three categories: Personal Conflicts (personal financial interest, relationships with providers, personal use of client information), Business Conflicts (proprietary products, revenue sharing, compensation incentives), and Third-Party Conflicts (duties to employer, duties to other clients, referral arrangements)."
+        },
+        {
+          "title": "Conflict Management Framework: ADM",
+          "type": "callout",
+          "content": "Remember ADM: Avoid, Disclose, Manage. First, try to avoid the conflict entirely by declining to provide advice, referring to another provider, or restructuring arrangement. If you cannot avoid it, disclose BEFORE advice/services with a material conflict description and how the conflict affects advice. Finally, take appropriate steps to manage and mitigate the impact through additional safeguards, independent review, or enhanced documentation."
+        },
+        {
+          "title": "Critical Disclosure Requirements",
+          "type": "warning",
+          "content": "Material conflicts MUST be: (1) Disclosed in writing, (2) Disclosed in a clear and detailed manner, (3) Disclosed before or at time of engagement. Failure to properly disclose material conflicts is a serious violation."
+        },
+        {
+          "title": "Compensation-Related Conflicts",
+          "type": "table",
+          "headers": [
+            "Compensation Type",
+            "Conflicts",
+            "Management Strategy"
+          ],
+          "rows": [
+            [
+              "Commission-Based",
+              "Incentive to sell products; bias toward higher commissions",
+              "Full disclosure; compare lower-cost alternatives; document rationale"
+            ],
+            [
+              "Fee-Based (AUM)",
+              "Incentive against distributions",
+              "Transparency about fee structure; regular fee reviews"
+            ],
+            [
+              "Hourly",
+              "Incentive to prolong engagement",
+              "Transparency; documentation"
+            ],
+            [
+              "Flat Fee",
+              "Incentive to minimize work",
+              "Documentation; regular reviews"
+            ],
+            [
+              "Third-Party (Revenue sharing, referral fees)",
+              "Bias toward referring parties",
+              "Disclose source, amount, and impact on objectivity"
+            ]
+          ]
+        },
+        {
+          "title": "Common Conflict Scenarios",
+          "type": "list",
+          "items": [
+            "Proprietary Products: Disclose compensation differential; compare to non-proprietary alternatives; document why proprietary is appropriate",
+            "Custody of Client Assets: Use independent custodian; provide regular account statements; segregate duties",
+            "Outside Business Activities: Disclose to clients and firm; evaluate impact on recommendations",
+            "Gifts and Entertainment: Follow firm policies on limits; disclose when material; decline excessive gifts"
+          ]
+        },
+        {
+          "title": "Duty of Loyalty in Practice",
+          "type": "text",
+          "content": "When making recommendations under the \"Best Interests\" analysis, consider: client's objectives and needs, tax implications, costs and fees, liquidity needs, suitability of product/strategy, and client's overall situation. You CANNOT consider: revenue to the CFP\u00ae professional, benefits to the firm, or personal relationships with providers."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Conflicts must be avoided, or disclosed AND managed",
+            "Material conflicts require written disclosure before engagement",
+            "Compensation from any source creates potential conflicts",
+            "Duty of Loyalty requires placing client interests first",
+            "Document conflict identification, disclosure, and management"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Identifying Conflicts of Interest",
+          "knowledgeCheck": {
+            "question": "Which of the following scenarios BEST describes a conflict of interest that MUST be disclosed to a client according to the CFP Board's Code of Ethics and Standards of Conduct?",
+            "options": [
+              "A CFP\u00ae professional recommends a variable annuity to a client, disclosing that they receive a commission from the sale, and the product is suitable for the client's risk tolerance and time horizon.",
+              "A CFP\u00ae professional's spouse owns a small number of shares in a publicly traded company that is recommended in the client's portfolio, but the shares represent less than 0.01% of the spouse's total investment portfolio.",
+              "A CFP\u00ae professional occasionally attends industry conferences sponsored by various investment companies, where meals and educational materials are provided at no cost.",
+              "A CFP\u00ae professional recommends a specific insurance product to a client because the CFP\u00ae professional believes it is the most suitable option, and the CFP\u00ae professional receives a referral fee from the insurance company, which is fully disclosed to the client."
+            ],
+            "correctIndex": 3,
+            "explanation": "While all options involve potential conflicts, the scenario where a referral fee is received and disclosed is the BEST example of a conflict that MUST be disclosed. The Code of Ethics requires full disclosure of all material conflicts of interest, allowing the client to make an informed decision. Receiving a referral fee is a direct financial incentive that could influence the CFP\u00ae professional's recommendation.",
+            "hint": "Consider which scenario presents the MOST direct and potentially influential financial incentive for the CFP\u00ae professional."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: Material vs. Non-Material Conflicts",
+          "reveal": {
+            "question": "Define a 'material conflict of interest' and explain why it requires specific disclosure.",
+            "answer": "A material conflict of interest is a conflict that a reasonable client would want to know because it could impair the CFP\u00ae professional's objectivity, impartiality, or ability to provide competent advice. Specific disclosure is required because it allows the client to make an informed decision about whether to proceed with the advice, understanding the potential influence of the conflict on the CFP\u00ae professional's recommendations."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Comparison: Personal vs. Compensation-Related Conflicts",
+          "comparison": {
+            "headers": [
+              "Personal Conflicts",
+              "Compensation-Related Conflicts"
+            ],
+            "rows": [
+              {
+                "label": "Source",
+                "values": [
+                  "CFP\u00ae professional's own financial interests or relationships",
+                  "How the CFP\u00ae professional is paid"
+                ]
+              },
+              {
+                "label": "Examples",
+                "values": [
+                  "Ownership in a recommended company, family relationships with service providers",
+                  "Commissions, referral fees, bonuses based on product sales"
+                ]
+              },
+              {
+                "label": "Primary Concern",
+                "values": [
+                  "Influence on advice based on personal gain or favoritism",
+                  "Influence on advice to maximize CFP\u00ae professional's income"
+                ]
+              },
+              {
+                "label": "Mitigation Strategies",
+                "values": [
+                  "Disclosure, recusal from decision-making, objective third-party review",
+                  "Fee-only compensation structure, disclosure of compensation methods, offering a variety of products"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-PRO-L003",
+    "courseId": "cfp",
+    "section": "CFP-PCR",
+    "blueprintArea": "PCR-1",
+    "title": "The Financial Planning Process",
+    "description": "Apply the 7-step financial planning process",
+    "order": 3,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "7-step financial planning process",
+      "Client engagement requirements",
+      "Scope of engagement considerations",
+      "Planning documentation"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "The Seven Steps of Financial Planning",
+          "type": "text",
+          "content": "The financial planning process consists of seven interconnected steps that guide the CFP\u00ae professional through a comprehensive engagement with the client."
+        },
+        {
+          "title": "Memory Aid: UIAA DPM",
+          "type": "callout",
+          "content": "7 Steps: Understand, Identify goals, Analyze, develop recc(A)mmendations, Develop, Present, iMplement, Monitor"
+        },
+        {
+          "title": "Step 1: Understanding Personal and Financial Circumstances",
+          "type": "text",
+          "content": "Obtain relevant information including family situation, financial position, current planning, values/attitudes/expectations, and risk tolerance. Gather both quantitative data (assets, liabilities, cash flow) and qualitative data (goals, concerns, preferences)."
+        },
+        {
+          "title": "Step 2: Identifying and Selecting Goals",
+          "type": "text",
+          "content": "Work with the client to clarify goals, prioritize them, quantify them (amount, timing), and distinguish needs vs. wants. Documentation should include written goal statement, measurable objectives, and timeline for achievement."
+        },
+        {
+          "title": "Step 3: Analyzing Current and Alternative Courses of Action",
+          "type": "text",
+          "content": "For current course analysis: Will current strategies achieve goals? Identify gaps and shortfalls. Evaluate existing products/strategies. For alternative analysis: Develop potential strategies, compare alternatives, consider tax implications, and evaluate risks."
+        },
+        {
+          "title": "Step 4: Developing Recommendations",
+          "type": "text",
+          "content": "Recommendations must address identified goals, be based on complete analysis, consider all relevant factors, and be suitable for the client. Present alternatives when appropriate with trade-offs explained and rationale documented."
+        },
+        {
+          "title": "Step 5: Presenting Recommendations",
+          "type": "text",
+          "content": "Ensure clear communication, explain rationale, address questions, and confirm understanding. Documentation should include written recommendations, assumptions explained, risks disclosed, and client acknowledgment."
+        },
+        {
+          "title": "Step 6: Implementing Recommendations",
+          "type": "text",
+          "content": "If CFP\u00ae implements: execute recommendations, coordinate with other professionals, document implementation. If client implements: provide clear instructions, referrals if needed, follow-up timeline. Best interest standard applies."
+        },
+        {
+          "title": "Step 7: Monitoring Progress and Updating",
+          "type": "text",
+          "content": "Ongoing responsibilities include periodic reviews, updating for life changes, assessing goal progress, and revising as needed. The scope of monitoring should be defined in the engagement agreement."
+        },
+        {
+          "title": "Written Engagement Agreement Required",
+          "type": "warning",
+          "content": "Financial Planning engagements MUST have a written agreement covering: scope of engagement, client/planner responsibilities, compensation and conflicts, and duration and termination provisions."
+        },
+        {
+          "title": "Scope Considerations",
+          "type": "list",
+          "items": [
+            "Limited scope is acceptable when: client requests specific focus, client understands limitations, and CFP\u00ae documents scope",
+            "Limited scope is NOT acceptable when: avoiding material issues, client unaware of gaps, or against client's interest",
+            "If not competent in an area: decline the engagement, refer to appropriate professional, or collaborate with competent professional"
+          ]
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Financial Planning requires all 7 steps; Financial Advice does not",
+            "Written engagement agreement required for Financial Planning",
+            "Scope can be limited if client understands and agrees",
+            "Monitoring obligations depend on engagement scope",
+            "Must be competent in areas where providing advice"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Goal Identification Knowledge Check",
+          "knowledgeCheck": {
+            "question": "During the goal identification and selection step, which of the following actions is MOST important for the CFP\u00ae professional to take?",
+            "options": [
+              "Immediately begin recommending financial products that align with the client's stated desires.",
+              "Focus solely on quantitative data to ensure objective decision-making.",
+              "Help the client prioritize goals based on their values and available resources.",
+              "Assume the client's stated wants are equivalent to their needs without further inquiry."
+            ],
+            "correctIndex": 2,
+            "explanation": "Prioritizing goals based on values and resources is crucial. A CFP\u00ae professional must help clients understand the trade-offs and make informed decisions that align with their overall financial situation and values. Recommending products without proper goal clarification is premature, focusing solely on quantitative data ignores the important qualitative aspects, and assuming wants are needs can lead to poor planning.",
+            "hint": "Think about the core principles of client-centered financial planning."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "7 Steps of Financial Planning",
+          "reveal": {
+            "question": "List the first two steps of the financial planning process in order.",
+            "answer": "1. Understanding Personal and Financial Circumstances\n2. Identifying and Selecting Goals"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Needs vs. Wants",
+          "comparison": {
+            "headers": [
+              "Needs",
+              "Wants"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Essential for survival and well-being",
+                  "Desired but not essential"
+                ]
+              },
+              {
+                "label": "Examples",
+                "values": [
+                  "Housing, food, healthcare",
+                  "Luxury car, designer clothing, exotic vacations"
+                ]
+              },
+              {
+                "label": "Impact on Financial Plan",
+                "values": [
+                  "Must be addressed in the financial plan",
+                  "Should be considered after needs are met"
+                ]
+              },
+              {
+                "label": "Flexibility",
+                "values": [
+                  "Less flexible, often non-negotiable",
+                  "More flexible, can be postponed or eliminated"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-PRO-L004",
+    "courseId": "cfp",
+    "section": "CFP-PCR",
+    "blueprintArea": "PCR-1",
+    "title": "Practice Standards and Professional Responsibility",
+    "description": "Apply confidentiality requirements",
+    "order": 4,
+    "duration": 25,
+    "difficulty": "intermediate",
+    "topics": [
+      "Confidentiality requirements",
+      "Supervision obligations",
+      "Termination and records",
+      "CFP Board inquiries"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Confidentiality",
+          "type": "text",
+          "content": "Client information is confidential and cannot be disclosed without consent. This applies during and after the relationship."
+        },
+        {
+          "title": "Memory Aid: CLCD - Confidentiality Exceptions",
+          "type": "callout",
+          "content": "Consent, Legal requirement, CFP Board, Defense of charges"
+        },
+        {
+          "title": "Exceptions to Confidentiality",
+          "type": "list",
+          "items": [
+            "Client consents (written preferred)",
+            "Legal requirement (subpoena, court order)",
+            "Defense of charges against CFP\u00ae",
+            "CFP Board request during investigation",
+            "Disclosure to related parties (accountants, attorneys) working with client"
+          ]
+        },
+        {
+          "title": "Information Security",
+          "type": "text",
+          "content": "Reasonable safeguards are required to protect against unauthorized access. CFP\u00ae professionals must have a response plan for breaches."
+        },
+        {
+          "title": "Supervision Obligations",
+          "type": "table",
+          "headers": [
+            "Role",
+            "Responsibilities"
+          ],
+          "rows": [
+            [
+              "Supervisory CFP\u00ae",
+              "Establish reasonable supervision systems; ensure compliance with Standards; cannot condone violations, pressure subordinates, or create incentives for violations"
+            ],
+            [
+              "Supervised CFP\u00ae",
+              "Remains individually responsible for personal compliance; cannot blame supervisor for violations; must report supervisor misconduct"
+            ]
+          ]
+        },
+        {
+          "title": "Termination of Services",
+          "type": "text",
+          "content": "Clients may terminate at any time. CFP\u00ae may terminate when: client fails to provide information, client fails to follow recommendations, relationship becomes untenable, or for business considerations. Proper termination requires reasonable notice, transfer assistance if requested, and return of client property/records."
+        },
+        {
+          "title": "Duties to CFP Board",
+          "type": "list",
+          "items": [
+            "Must cooperate with investigations, proceedings, and information requests",
+            "Must disclose: criminal convictions, civil proceedings, regulatory actions, bankruptcy, professional designations revoked",
+            "Disclosure timing: at initial certification, when changes occur (30 days), biennial renewal",
+            "Should report conduct of others that raises concerns (only when in good faith)"
+          ]
+        },
+        {
+          "title": "Prohibited Conduct",
+          "type": "warning",
+          "content": "Examples of prohibited conduct: misleading advertising, guaranteeing results, misappropriating funds, forgery, false statements to CFP Board, obstruction of investigations. Consequences include: private censure, public letter of admonition, suspension, or revocation of certification."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Client information is confidential\u2014exceptions limited",
+            "CFP\u00ae supervisors must establish reasonable compliance systems",
+            "Each CFP\u00ae is individually responsible regardless of supervision",
+            "Must cooperate with CFP Board investigations and disclose conduct",
+            "Termination requires reasonable notice and record transfer"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Confidentiality and Information Security",
+          "knowledgeCheck": {
+            "question": "A CFP\u00ae professional is contacted by a client's adult child who is concerned about their parent's financial decisions. The adult child requests information about their parent's accounts and financial plan. According to CFP Board's Practice Standards, which of the following is the MOST appropriate course of action for the CFP\u00ae professional?",
+            "options": [
+              "Provide the adult child with the requested information, as they are acting in the client's best interest.",
+              "Disclose only the information that the CFP\u00ae professional deems relevant to the adult child's concerns.",
+              "Refuse to provide any information to the adult child without the client's explicit written consent.",
+              "Inform the adult child that they must obtain a court order to access the client's financial information."
+            ],
+            "correctIndex": 2,
+            "explanation": "The CFP Board's Practice Standards place a strong emphasis on client confidentiality. Information cannot be disclosed to third parties, even family members, without the client's explicit written consent. Option C is the only answer that adheres to this standard. While a court order (Option D) could compel disclosure, obtaining client consent is the primary and preferred method.",
+            "hint": "Think about the cornerstone of the client-planner relationship."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Information Security Breach Response",
+          "reveal": {
+            "question": "List three essential components of a CFP\u00ae professional's response plan following a data breach that compromises client information.",
+            "answer": "1. **Assess the Scope:** Immediately determine the extent of the breach, including the type of information compromised and the number of clients affected.\n2. **Notify Affected Parties:** Promptly inform clients whose information was compromised. This notification should include details about the breach, the type of information involved, and steps clients can take to protect themselves (e.g., changing passwords, monitoring accounts).\n3. **Implement Corrective Actions:** Take steps to prevent future breaches, such as strengthening security protocols, enhancing employee training, and reviewing existing security measures."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Termination and Record Retention",
+          "knowledgeCheck": {
+            "question": "A CFP\u00ae professional terminates a client engagement. According to the CFP Board's Practice Standards, what is the CFP\u00ae professional's responsibility regarding client records?",
+            "options": [
+              "The CFP\u00ae professional is required to retain all client records indefinitely.",
+              "The CFP\u00ae professional must return all original client documents to the client but is not required to retain copies.",
+              "The CFP\u00ae professional must retain copies of client records as required by law or regulation, and in the absence of specific legal or regulatory requirements, for a reasonable period considering the nature of the information.",
+              "The CFP\u00ae professional is only required to retain records that are directly related to the advice provided and can discard other client documents."
+            ],
+            "correctIndex": 2,
+            "explanation": "CFP Board requires maintaining records as required by law and regulation. If no such laws exist, maintain records for a reasonable period, considering the type of information. Indefinite retention (Option A) is not always required, and discarding all records except those directly related to advice (Option D) could be problematic. Returning all originals without retaining copies (Option B) is insufficient for professional responsibility and potential legal defense.",
+            "hint": "Consider the purpose of record retention from a legal and ethical perspective."
+          }
+        }
+      ]
+    }
+  }
+]

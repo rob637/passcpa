@@ -1,0 +1,57 @@
+{
+  "enhanced": [
+    "cma2-sim-001:t1",
+    "cma2-sim-001:t2",
+    "cma2-sim-001:t3",
+    "cma2-sim-001:t4",
+    "cma2-sim-001:t5",
+    "cma2-sim-002:t1",
+    "cma2-sim-002:t2",
+    "cma2-sim-002:t3",
+    "cma2-sim-003:t1",
+    "cma2-sim-003:t2",
+    "cma2-sim-003:t3",
+    "cma2-sim-003:t4",
+    "cma2-sim-004:t1",
+    "cma2-sim-004:t2",
+    "cma2-sim-004:t3",
+    "cma2-sim-004:t4",
+    "cma2-sim-005:t1",
+    "cma2-sim-005:t2",
+    "cma2-sim-005:t3",
+    "cma2-sim-005:t4",
+    "cma2-sim-006:t1",
+    "cma2-sim-006:t2",
+    "cma2-sim-006:t3",
+    "cma2-sim-006:t4",
+    "cma2-sim-006:t5",
+    "cma2-sim-007:t1",
+    "cma2-sim-007:t2",
+    "cma2-sim-007:t3",
+    "cma2-sim-007:t4",
+    "cma2-sim-007:t5",
+    "cma2-sim-008:t2",
+    "cma2-sim-008:t3",
+    "cma2-sim-009:t1",
+    "cma2-sim-009:t2",
+    "cma2-sim-009:t3",
+    "cma2-sim-010:t1",
+    "cma2-sim-010:t2",
+    "cma2-sim-010:t3",
+    "cma2-sim-008:t1"
+  ],
+  "errors": [
+    {
+      "key": "cma2-sim-008:t1",
+      "error": "No JSON found in response",
+      "time": "2026-03-01T12:45:15.037Z"
+    }
+  ],
+  "stats": {
+    "totalItems": 10,
+    "totalQuestions": 40,
+    "enhanced": 39,
+    "errors": 1
+  },
+  "lastRun": "2026-03-01T12:47:09.712Z"
+}

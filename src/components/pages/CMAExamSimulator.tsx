@@ -121,14 +121,15 @@ function generateExam(
 // Component
 // ============================================
 
-const config: ExamSimulatorConfig<CMASection> = {
+import { useAuth } from '../../hooks/useAuth';
+
+const baseConfig: Omit<ExamSimulatorConfig<CMASection>, 'defaultSection'> = {
   courseId: 'cma',
   courseName: 'CMA',
   courseDescription: 'Practice with realistic exam conditions for the IMA Certified Management Accountant exam',
   backPath: '/cma/dashboard',
   testingProvider: 'prometric',
   sections: CMA_SECTIONS,
-  defaultSection: 'CMA1',
   modes: CMA_EXAM_MODES,
   defaultModeIndex: 1,
   getQuestionPool,
@@ -137,5 +138,19 @@ const config: ExamSimulatorConfig<CMASection> = {
 };
 
 export default function CMAExamSimulatorNew() {
+  const { userProfile } = useAuth();
+  
+  // Use user's selected section, default to CMA1 if not set or invalid
+  const userSection = userProfile?.examSection;
+  const isValidSection = userSection === 'CMA1' || userSection === 'CMA2';
+  const defaultSection: CMASection = isValidSection ? userSection : 'CMA1';
+  
+  const config: ExamSimulatorConfig<CMASection> = {
+    ...baseConfig,
+    defaultSection,
+    // Always hide - user picks their part on dashboard, not in simulator (matches CPA behavior)
+    hideSectionSelector: true,
+  };
+  
   return <ExamSimulatorTemplate<CMASection> config={config} />;
 }

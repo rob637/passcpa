@@ -11,6 +11,7 @@
  */
 
 import type { CourseId } from '../../types/course';
+import { COURSE_DISPLAY_STATS } from '../../config/contentStats';
 import type {
   ContentBrief,
   ContentTemplate,
@@ -42,7 +43,7 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
   {
     id: 'study-guide-section',
     contentType: 'study-guide',
-    titleTemplate: 'How to Pass {exam} {section} in {year}: Complete Study Guide',
+    titleTemplate: 'Complete {exam} {sectionName} Study Guide ({year})',
     slugTemplate: 'how-to-pass-{course}-{section}-{year}',
     wordCountTarget: 2500,
     ctaType: 'free-trial',
@@ -51,14 +52,14 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
     seasonal: true,
     priority: 1,
     outlineTemplate: [
-      { heading: 'What Is {exam} {section}?', level: 2, keyPoints: ['Overview of the section', 'What it tests', 'Weight on the exam'], wordCount: 300 },
-      { heading: '{section} Exam Format and Structure', level: 2, keyPoints: ['Question types', 'Time allowed', 'Passing score'], wordCount: 250 },
-      { heading: 'Key Topics on {section}', level: 2, keyPoints: ['Blueprint areas', 'High-weight topics', 'Common tested concepts'], wordCount: 400 },
-      { heading: 'How to Study for {section} Effectively', level: 2, keyPoints: ['Study plan', 'Spaced repetition', 'Practice questions'], wordCount: 400 },
+      { heading: 'What Is {exam} {sectionName}?', level: 2, keyPoints: ['Overview of the section', 'What it tests', 'Weight on the exam'], wordCount: 300 },
+      { heading: '{sectionName} Exam Format and Structure', level: 2, keyPoints: ['Question types', 'Time allowed', 'Passing score'], wordCount: 250 },
+      { heading: 'Key Topics in {sectionName}', level: 2, keyPoints: ['Blueprint areas', 'High-weight topics', 'Common tested concepts'], wordCount: 400 },
+      { heading: 'How to Study for {sectionName} Effectively', level: 2, keyPoints: ['Study plan', 'Spaced repetition', 'Practice questions'], wordCount: 400 },
       { heading: 'Common Mistakes to Avoid', level: 2, keyPoints: ['Time management', 'Skipping hard topics', 'Not doing enough MCQ'], wordCount: 300 },
-      { heading: '{section} Pass Rates and What They Mean', level: 2, keyPoints: ['Historical pass rates', 'Difficulty perception', 'What a 75 means'], wordCount: 250 },
-      { heading: 'Best {section} Study Resources in {year}', level: 2, keyPoints: ['VoraPrep features', 'Comparison with alternatives', 'Free vs paid'], wordCount: 300 },
-      { heading: 'FAQs About {exam} {section}', level: 2, keyPoints: ['5-8 common questions', 'Direct answers'], wordCount: 300 },
+      { heading: '{sectionName} Pass Rates and What They Mean', level: 2, keyPoints: ['Historical pass rates', 'Difficulty perception', 'What a 75 means'], wordCount: 250 },
+      { heading: 'Best {sectionName} Study Resources in {year}', level: 2, keyPoints: ['VoraPrep features', 'Comparison with alternatives', 'Free vs paid'], wordCount: 300 },
+      { heading: 'FAQs About {exam} {sectionName}', level: 2, keyPoints: ['5-8 common questions', 'Direct answers'], wordCount: 300 },
     ],
   },
 
@@ -178,7 +179,7 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
   {
     id: 'free-practice',
     contentType: 'practice-questions',
-    titleTemplate: 'Free {exam} {section} Practice Questions ({year}): Test Your Knowledge',
+    titleTemplate: 'Free {exam} {sectionName} Practice Questions ({year})',
     slugTemplate: 'free-{course}-{section}-practice-questions-{year}',
     wordCountTarget: 3000,
     ctaType: 'free-trial',
@@ -187,8 +188,8 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
     seasonal: true,
     priority: 1,
     outlineTemplate: [
-      { heading: 'About These Free {section} Questions', level: 2, keyPoints: ['Number of questions', 'Difficulty mix', 'Blueprint alignment'], wordCount: 200 },
-      { heading: '{section} Practice Questions', level: 2, keyPoints: ['10-15 sample questions with explanations', 'Varying difficulty'], wordCount: 1500 },
+      { heading: 'About These Free {sectionName} Questions', level: 2, keyPoints: ['Number of questions', 'Difficulty mix', 'Blueprint alignment'], wordCount: 200 },
+      { heading: '{sectionName} Practice Questions', level: 2, keyPoints: ['10-15 sample questions with explanations', 'Varying difficulty'], wordCount: 1500 },
       { heading: 'How Did You Score?', level: 2, keyPoints: ['Score interpretation', 'What your results mean', 'Next steps'], wordCount: 300 },
       { heading: 'Get More {exam} Practice on VoraPrep', level: 2, keyPoints: ['Full question bank', 'Adaptive engine', 'AI tutor'], wordCount: 300 },
     ],
@@ -198,7 +199,7 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
   {
     id: 'topic-explainer',
     contentType: 'topic-explainer',
-    titleTemplate: '{topic} Explained: {exam} {section} Study Guide',
+    titleTemplate: '{topic} Explained: {exam} {sectionName} Study Guide',
     slugTemplate: '{course}-{section}-{topicSlug}-explained',
     wordCountTarget: 2000,
     ctaType: 'free-trial',
@@ -290,7 +291,7 @@ export const EXAM_CONTENT_META: Record<CourseId, ExamContentMeta> = {
     course: 'cpa',
     price: '$19',
     annualPrice: '$99',
-    questionCount: '5,000+',
+    questionCount: COURSE_DISPLAY_STATS.cpa.questions,
     sections: [
       { id: 'FAR', name: 'Financial Accounting and Reporting', topics: ['Governmental Accounting', 'NFP Accounting', 'Financial Statements', 'Revenue Recognition', 'Leases', 'Bonds', 'Inventory', 'Fixed Assets', 'Equity', 'Business Combinations'] },
       { id: 'AUD', name: 'Auditing and Attestation', topics: ['Audit Planning', 'Internal Controls', 'Audit Evidence', 'Audit Reports', 'Ethics', 'Sampling', 'Review Engagements', 'SSARS', 'SOC Reports'] },
@@ -307,7 +308,7 @@ export const EXAM_CONTENT_META: Record<CourseId, ExamContentMeta> = {
     course: 'ea',
     price: '$14',
     annualPrice: '$69',
-    questionCount: '3,000+',
+    questionCount: COURSE_DISPLAY_STATS.ea.questions,
     sections: [
       { id: 'SEE1', name: 'Individual Taxation', topics: ['Filing Status', 'Income', 'Deductions', 'Credits', 'AMT', 'Capital Gains', 'Retirement Plans', 'Education Credits'] },
       { id: 'SEE2', name: 'Business Taxation', topics: ['Business Income', 'Business Deductions', 'Corporations', 'Partnerships', 'S Corporations', 'Depreciation', 'Payroll Tax'] },
@@ -321,7 +322,7 @@ export const EXAM_CONTENT_META: Record<CourseId, ExamContentMeta> = {
     course: 'cma',
     price: '$14',
     annualPrice: '$69',
-    questionCount: '3,000+',
+    questionCount: COURSE_DISPLAY_STATS.cma.questions,
     sections: [
       { id: 'CMA1', name: 'Financial Planning, Performance & Analytics', topics: ['Budgeting', 'Forecasting', 'Cost Management', 'Internal Controls', 'Technology', 'Performance Measures'] },
       { id: 'CMA2', name: 'Strategic Financial Management', topics: ['Financial Statement Analysis', 'Corporate Finance', 'Decision Analysis', 'Risk Management', 'Investment Decisions', 'Ethics'] },
@@ -334,7 +335,7 @@ export const EXAM_CONTENT_META: Record<CourseId, ExamContentMeta> = {
     course: 'cia',
     price: '$14',
     annualPrice: '$69',
-    questionCount: '2,500+',
+    questionCount: COURSE_DISPLAY_STATS.cia.questions,
     sections: [
       { id: 'CIA1', name: 'Essentials of Internal Auditing', topics: ['IIA Standards', 'Independence', 'Audit Planning', 'Engagement Procedures', 'Governance', 'Risk Management'] },
       { id: 'CIA2', name: 'Practice of Internal Auditing', topics: ['Engagement Planning', 'Data Analytics', 'Audit Testing', 'Communicating Results', 'Monitoring', 'Quality Assurance'] },
@@ -348,7 +349,7 @@ export const EXAM_CONTENT_META: Record<CourseId, ExamContentMeta> = {
     course: 'cfp',
     price: '$14',
     annualPrice: '$69',
-    questionCount: '2,500+',
+    questionCount: COURSE_DISPLAY_STATS.cfp.questions,
     sections: [
       { id: 'CFP1', name: 'Professional Conduct & Regulation', topics: ['CFP Board Standards', 'Fiduciary Duty', 'Practice Standards'] },
       { id: 'CFP2', name: 'General Principles of Financial Planning', topics: ['Financial Planning Process', 'Time Value of Money', 'Economic Concepts'] },
@@ -367,7 +368,7 @@ export const EXAM_CONTENT_META: Record<CourseId, ExamContentMeta> = {
     course: 'cisa',
     price: '$14',
     annualPrice: '$69',
-    questionCount: '2,500+',
+    questionCount: COURSE_DISPLAY_STATS.cisa.questions,
     sections: [
       { id: 'CISA1', name: 'Information Systems Auditing Process', topics: ['IS Audit Standards', 'Risk-Based Audit Planning', 'Audit Execution', 'Control Self-Assessment'] },
       { id: 'CISA2', name: 'Governance and Management of IT', topics: ['IT Governance', 'IT Strategy', 'IT Resource Management', 'IT Risk Management', 'Compliance'] },

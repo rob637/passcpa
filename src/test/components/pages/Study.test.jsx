@@ -59,7 +59,8 @@ describe('Study Page', () => {
     it('should display study modes', () => {
       renderStudy();
       expect(screen.getByText(/continue learning/i)).toBeInTheDocument();
-      expect(screen.getByText(/practice questions/i)).toBeInTheDocument();
+      // Multiple "Practice Questions" may appear (Study card + DailyPlanCard fallback)
+      expect(screen.getAllByText(/practice questions/i).length).toBeGreaterThan(0);
     });
 
     it('should show task-based simulations option', () => {

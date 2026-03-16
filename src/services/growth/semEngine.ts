@@ -149,6 +149,26 @@ export function generateCampaignForExam(courseId: CourseId, budgetOverride?: num
       landingPage: `/${meta.course}`,
       maxCpc: getDefaultCPC(courseId, 'temporal'),
     }),
+
+    // Question Quality (detailed explanations, why wrong, deep learning)
+    generateAdGroup({
+      campaignId: `campaign-${courseId}`,
+      name: `${meta.exam} - Question Quality`,
+      theme: 'question-quality',
+      courseId,
+      keywords: [
+        { kw: `${meta.exam.toLowerCase()} practice questions with explanations`, match: 'phrase' },
+        { kw: `best ${meta.exam.toLowerCase()} question bank`, match: 'phrase' },
+        { kw: `${meta.exam.toLowerCase()} questions with detailed answers`, match: 'phrase' },
+        { kw: `${meta.exam.toLowerCase()} practice exam explanations`, match: 'phrase' },
+        { kw: `${meta.exam.toLowerCase()} study questions with solutions`, match: 'broad' },
+        { kw: `${meta.exam.toLowerCase()} test bank with explanations`, match: 'phrase' },
+        { kw: `learn ${meta.exam.toLowerCase()} from practice questions`, match: 'broad' },
+        { kw: `pass ${meta.exam.toLowerCase()} with practice only`, match: 'broad' },
+      ],
+      landingPage: `/${meta.course}`,
+      maxCpc: getDefaultCPC(courseId, 'question-quality'),
+    }),
   ];
 
   return {
@@ -358,6 +378,20 @@ function generateHeadlines(meta: typeof EXAM_CONTENT_META[CourseId], theme: AdGr
       `Learn at Your Pace`,
       `Mobile ${meta.exam} Study`,
     ],
+    'question-quality': [
+      `Deep Explanations`,
+      `Learn Why Wrong = Learn`,
+      `Expert ${meta.exam} Questions`,
+      `Pass by Understanding`,
+      `Know WHY Answers Work`,
+    ],
+    custom: [
+      `${meta.exam} AI-Powered Prep`,
+      `Smart ${meta.exam} Learning`,
+      `Custom ${meta.exam} Study`,
+      `VoraPrep ${meta.exam}`,
+      `Adaptive ${meta.exam} Prep`,
+    ],
   };
 
   return [...base, ...(themeSpecific[theme] || [])].filter(h => h.length <= 30);
@@ -388,6 +422,10 @@ function generateDescriptions(meta: typeof EXAM_CONTENT_META[CourseId], theme: A
     'price-sensitive': [
       `${meta.exam} prep from ${meta.price}/mo or ${meta.annualPrice}/yr. Full access, no limits.`, // ~70 chars
       `Affordable ${meta.exam} review with AI tutor & adaptive engine. Try free today.`, // ~70 chars
+    ],
+    'question-quality': [
+      `Every question has a detailed explanation + why wrong breakdown. Master concepts.`, // ~75 chars
+      `${meta.questionCount} ${meta.exam} questions with expert explanations. Know why.`, // ~70 chars
     ],
   };
 
@@ -649,6 +687,8 @@ function getDefaultNegativeKeywords(theme: AdGroupTheme): string[] {
     temporal: [],
     career: [],
     'long-tail': [],
+    'question-quality': [],
+    custom: [],
   };
 
   // Don't exclude salary/career for career-themed ad groups
@@ -782,6 +822,8 @@ function getDefaultCPC(courseId: CourseId, theme: AdGroupTheme): number {
     'price-sensitive': 0.90,     // Our sweet spot — budget-conscious buyers
     career: 0.65,                // Top-of-funnel, lower intent
     'long-tail': 0.55,           // Cheapest clicks, decent intent
+    'question-quality': 1.15,    // HIGH intent — people want deep learning
+    custom: 1.0,                 // Default for AI-generated campaigns
   };
 
   return Math.round(baseCPC[courseId] * (themeMultiplier[theme] || 1.0) * 100) / 100;
@@ -863,3 +905,125 @@ export function getCampaignSummary(campaigns: SEMCampaign[]): {
     avgTargetCPA: campaigns.length > 0 ? Math.round(totalTargetCPA / campaigns.length) : 0,
   };
 }
+
+// ============================================================================
+// AI Campaign Builder
+// ============================================================================
+
+/**
+ * Input for AI-generated custom ad groups.
+ */
+export interface CustomAdGroupInput {
+  name: string;
+  concept: string;              // User's description of what they want
+  courseId: CourseId;
+  headlines: string[];          // AI-generated or user-edited (max 30 chars each)
+  descriptions: string[];       // AI-generated or user-edited (max 90 chars each)
+  keywords: { kw: string; match: 'broad' | 'phrase' | 'exact' }[];
+  landingPage: string;
+  maxCpc: number;
+}
+
+/**
+ * Create a custom ad group from AI-generated or user-provided content.
+ * Used by the AI Campaign Builder in the Growth Dashboard.
+ */
+export function createCustomAdGroup(
+  campaignId: string,
+  input: CustomAdGroupInput,
+): SEMAdGroup {
+  return {
+    id: `ag-custom-${input.courseId}-${Date.now()}`,
+    campaignId,
+    name: input.name,
+    theme: 'custom',
+    status: 'draft',
+    keywords: input.keywords.map(k => ({
+      keyword: k.kw,
+      matchType: k.match,
+      maxCpc: input.maxCpc,
+      qualityScore: 0,
+      impressions: 0,
+      clicks: 0,
+      conversions: 0,
+      ctr: 0,
+      avgCpc: 0,
+      avgPosition: 0,
+      status: 'active' as const,
+    })),
+    negativeKeywords: getDefaultNegativeKeywords('custom'),
+    ads: [{
+      id: `ad-custom-${input.courseId}-${Date.now()}`,
+      headlines: input.headlines.filter(h => h.length <= 30).slice(0, 15),
+      descriptions: input.descriptions.filter(d => d.length <= 90).slice(0, 4),
+      finalUrl: `https://voraprep.com${input.landingPage}`,
+      displayPath: ['VoraPrep', input.courseId.toUpperCase()],
+      sitelinkExtensions: generateSitelinks(input.courseId),
+      status: 'active',
+      impressions: 0,
+      clicks: 0,
+      conversions: 0,
+    }],
+    landingPage: input.landingPage,
+    maxCpc: input.maxCpc,
+    qualityScore: 0,
+    impressions: 0,
+    clicks: 0,
+    conversions: 0,
+    ctr: 0,
+    avgCpc: 0,
+    conversionRate: 0,
+  };
+}
+
+/**
+ * Prompt template for generating ad group content via AI.
+ * Returns: { headlines: string[], descriptions: string[], keywords: string[] }
+ */
+export function getAICampaignPrompt(concept: string, courseId: CourseId): string {
+  const meta = EXAM_CONTENT_META[courseId];
+  
+  return `You are an expert Google Ads copywriter for VoraPrep, an AI-powered ${meta.exam} exam prep platform.
+
+CAMPAIGN CONCEPT:
+${concept}
+
+PRODUCT INFO:
+- Exam: ${meta.examFull} (${meta.exam})
+- Questions: ${meta.questionCount} practice questions with detailed explanations
+- Price: ${meta.price}/month or ${meta.annualPrice}/year
+- Features: AI tutor (Vory), adaptive learning, score predictor, "why wrong" explanations for every answer
+- Unique value: Deep explanations that teach concepts, not just right/wrong
+
+YOUR TASK:
+Generate Google Ads content based on the campaign concept above.
+
+CRITICAL CHARACTER LIMITS (Google Ads enforces these):
+1. Headlines: 15 headlines, MAXIMUM 30 characters each (including spaces)
+2. Descriptions: 4 descriptions, MAXIMUM 90 characters each (including spaces)
+3. Keywords: 10 keywords with match type
+
+IMPORTANT: Count characters carefully! Headlines over 30 chars or descriptions over 90 chars will be rejected.
+
+EXAMPLE GOOD HEADLINES (under 30 chars):
+- "Pass CPA With Deep Learning" (25 chars)
+- "9000+ Expert Questions" (21 chars)
+- "Know WHY Answers Work" (20 chars)
+
+EXAMPLE GOOD DESCRIPTIONS (under 90 chars):
+- "Every question has detailed explanations. Understand why answers are right or wrong." (84 chars)
+- "9,100+ CPA questions with expert breakdowns. Master concepts, not just memorize." (79 chars)
+
+RESPONSE FORMAT (JSON only, no explanation):
+{
+  "headlines": ["Headline 1", "Headline 2", ...],
+  "descriptions": ["Description 1", ...],
+  "keywords": [
+    {"kw": "keyword phrase", "match": "phrase"},
+    ...
+  ]
+}
+
+Focus on the specific angle in the campaign concept. Be persuasive but accurate. No trademark terms.`;
+}
+

@@ -1,19 +1,31 @@
-/**
- * EA Lessons Index
- * Aggregates all EA lesson content across SEE1, SEE2, SEE3.
- */
+// EA Lessons Index - JSON-based
+// Migrated to JSON format: 2026-02-28
 
 import type { Lesson } from '../../../types';
-import { eaPart1Lessons, getSEE1Lessons, getSEE1LessonById, getSEE1LessonCount } from './see1';
-import { eaPart2Lessons, getSEE2Lessons, getSEE2LessonById, getSEE2LessonCount } from './see2';
-import { eaPart3Lessons, getSEE3Lessons, getSEE3LessonById, getSEE3LessonCount } from './see3';
 
-// Part-specific re-exports
-export {
-  eaPart1Lessons, getSEE1Lessons, getSEE1LessonById, getSEE1LessonCount,
-  eaPart2Lessons, getSEE2Lessons, getSEE2LessonById, getSEE2LessonCount,
-  eaPart3Lessons, getSEE3Lessons, getSEE3LessonById, getSEE3LessonCount,
-};
+// Import lesson data from JSON files
+import see1Data from './json/see1.json';
+import see1Batch2Data from './json/see1-batch2.json';
+import see2Data from './json/see2.json';
+import see3Data from './json/see3.json';
+
+// Type assertion
+export const eaPart1Lessons: Lesson[] = [...(see1Data as Lesson[]), ...(see1Batch2Data as Lesson[])];
+export const eaPart2Lessons: Lesson[] = see2Data as Lesson[];
+export const eaPart3Lessons: Lesson[] = see3Data as Lesson[];
+
+// Aliases for backward compatibility
+export const getSEE1Lessons = () => eaPart1Lessons;
+export const getSEE2Lessons = () => eaPart2Lessons;
+export const getSEE3Lessons = () => eaPart3Lessons;
+
+export const getSEE1LessonById = (id: string) => eaPart1Lessons.find(l => l.id === id);
+export const getSEE2LessonById = (id: string) => eaPart2Lessons.find(l => l.id === id);
+export const getSEE3LessonById = (id: string) => eaPart3Lessons.find(l => l.id === id);
+
+export const getSEE1LessonCount = () => eaPart1Lessons.length;
+export const getSEE2LessonCount = () => eaPart2Lessons.length;
+export const getSEE3LessonCount = () => eaPart3Lessons.length;
 
 /** All EA lessons combined */
 export const allEALessons: Lesson[] = [

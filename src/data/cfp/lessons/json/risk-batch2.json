@@ -1,0 +1,492 @@
+[
+  {
+    "id": "CFP-RISK-L014",
+    "courseId": "cfp",
+    "section": "CFP-RISK",
+    "title": "Life Insurance Analysis: Term vs. Permanent",
+    "description": "This lesson explores the nuances of life insurance, differentiating between term and permanent policies and highlighting factors affecting suitability.",
+    "order": 14,
+    "duration": 35,
+    "difficulty": "advanced",
+    "topics": [
+      "Life insurance analysis",
+      "Term vs permanent"
+    ],
+    "blueprintArea": "RISK-1",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Selecting the right life insurance product is crucial for financial security. The CFP® exam tests your ability to analyze client needs and recommend appropriate solutions, making a strong understanding of term vs. permanent life insurance essential for success."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "**Term life insurance** provides coverage for a specific period (e.g., 10, 20, or 30 years). If the insured dies within the term, the beneficiary receives the death benefit. If the term expires and the policy is not renewed, there is no payout. **Permanent life insurance**, on the other hand, provides coverage for the insured's entire life, as long as premiums are paid. Popular types include **whole life**, **universal life**, and **variable life**. A key difference is that permanent policies accumulate cash value, which grows tax-deferred. The cash value can be accessed through policy loans or withdrawals (though withdrawals may have tax consequences). \n\nImportant features to consider include: \n\n*   **Premium Costs:** Term life typically has lower premiums initially than permanent life, especially at younger ages. \n*   **Cash Value Accumulation:** Only permanent policies offer cash value accumulation. \n*   **Policy Loans/Withdrawals:** Permanent policies allow for policy loans/withdrawals against the cash value.\n*   **Renewability/Convertibility:** Some term policies are renewable (often at higher premiums) or convertible to permanent insurance without evidence of insurability. \n*   **Investment Risk:** Variable life insurance allows the policyholder to allocate the cash value among various investment options, introducing investment risk."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "The choice between term and permanent life insurance depends heavily on the client's individual circumstances, financial goals, and risk tolerance. **Term insurance** is often suitable for covering specific needs, such as replacing income during child-rearing years or covering a mortgage. For example, a 35-year-old with young children might choose a 20-year term policy to ensure the family is financially protected if the insured were to die before the children are financially independent. The primary benefit is affordability during the years when the coverage is most critical. \n\n**Permanent insurance** can be appropriate for estate planning, providing a source of retirement income (through loans or withdrawals), or leaving a legacy to heirs. Consider whole life, which offers a guaranteed death benefit and a guaranteed rate of return on the cash value. Universal life offers more flexibility in premium payments and death benefit options, but the cash value growth is typically tied to current interest rates. Variable life provides the potential for higher returns but also involves investment risk. Indexed universal life (IUL) is tied to a market index, offering potential upside with some downside protection. \n\nWhen comparing policies, consider the following:\n\n*   **Cost:** Look at the initial premiums, as well as the long-term cost, including potential increases in term premiums or fees in permanent policies.\n*   **Coverage Amount:** Ensure the death benefit is sufficient to meet the client's needs. Human Life Value and Needs Analysis are key methodologies to calculate this amount.\n*   **Policy Features:** Evaluate the policy's features, such as renewability, convertibility, riders (e.g., accelerated death benefit riders), and any limitations or exclusions.\n*   **Financial Strength of the Insurer:** Choose an insurer with a high financial strength rating from agencies such as A.M. Best, Standard & Poor's, or Moody's. This helps ensure the insurer's ability to pay claims.\n*   **Tax Implications:** Understand the tax treatment of premiums, death benefits, and cash value accumulation and withdrawals."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The CFP® exam frequently tests your ability to: \n\n*   **Evaluate scenarios:** Determine whether term or permanent life insurance is more suitable based on client needs and financial goals.\n*   **Compare policy features:** Analyze the costs, benefits, and risks of different types of term and permanent life insurance policies. You might be given scenarios with different riders, and need to know the rider purpose.\n*   **Calculate insurance needs:** Use methods like human life value or needs analysis to determine the appropriate death benefit amount.\n*   **Understand tax implications:** Know the tax rules related to life insurance premiums, death benefits, and cash value. Common question patterns include asking about the tax treatment of policy loans, withdrawals, or death benefit payouts."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "John, age 40, has a wife and two young children. He wants to ensure his family is financially protected if he dies prematurely. He also wants to save for retirement. After analysis, it is determined that John needs $1,000,000 in life insurance coverage for the next 20 years to cover mortgage, child care, and future college costs. He also has $200,000 in retirement savings, contributing $1,000 per month. \n\n**Scenario 1:** Recommend John purchase a 20-year term life insurance policy for $1,000,000. This provides the necessary coverage at an affordable premium. He continues contributing to tax advantaged retirement accounts for retirement savings. \n\n**Scenario 2:** Alternatively, John could purchase a $1,000,000 whole life insurance policy. The premiums will be higher, but the policy will provide lifelong coverage and build cash value that he can access later in life. However, the premiums may reduce his retirement savings rate and overall savings.\n\nThe BEST recommendation depends on John's budget and priorities. Term insurance is cheaper to address the short-term income needs. Permanent insurance can cover estate taxes and long-term needs, but comes with a much higher premium cost."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• Term life insurance provides coverage for a specified period, while permanent life insurance covers the entire life.\n• Permanent life insurance policies accumulate cash value, which grows tax-deferred.\n• Term life insurance is generally more affordable initially, but permanent life insurance offers lifelong coverage and potential cash value accumulation.\n• The choice between term and permanent life insurance depends on individual needs, financial goals, and risk tolerance.\n• Understand renewability, convertibility, and riders, and evaluate the insurer's financial strength."
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RISK-L015",
+    "courseId": "cfp",
+    "section": "CFP-RISK",
+    "title": "Needs Analysis: Human Life Value and Capital Retention",
+    "description": "This lesson explores two primary methods for calculating life insurance needs: the human life value approach and the capital retention approach. It details their applications and limitations.",
+    "order": 15,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Needs analysis",
+      "Human life value, capital retention"
+    ],
+    "blueprintArea": "RISK-1",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Accurately determining life insurance needs is crucial for ensuring financial security for a client's family in the event of premature death. Mastering human life value and capital retention is vital for the CFP® exam and practical financial planning."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "**Needs Analysis** aims to determine the appropriate amount of life insurance coverage to meet a family's financial needs if the insured were to die. It focuses on identifying specific financial obligations, such as income replacement, debt repayment, education funding, and final expenses. \n\nTwo common approaches are:\n\n*   **Human Life Value (HLV):** Calculates the present value of the insured's future earnings that would have been available to support their dependents. This method assumes the insured's income is the primary asset being replaced.\n*   **Capital Retention:** Aims to preserve the principal (capital) necessary to generate sufficient income to meet the family's ongoing financial needs. The death benefit is set at a level that, when invested, will produce income equal to what the deceased would have provided, without depleting the principal."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "**Human Life Value (HLV):** To calculate the HLV, you typically estimate the insured's average annual earnings, subtract taxes, insurance premiums, and self-maintenance costs, and then discount the remaining income stream back to present value.  For example, if John earns $100,000 per year, pays 25% in taxes, 5% in insurance premiums, and spends $20,000 on self-maintenance, his net income available for dependents is $100,000 - $25,000 - $5,000 - $20,000 = $50,000. If John plans to work for 20 more years, and the discount rate is 4%, the present value of his future earnings (HLV) is calculated as the present value of an annuity of $50,000 per year for 20 years at 4%.  A present value of annuity factor chart would be needed to perform the exact calculation. \n\n**Capital Retention:** The capital retention approach is based on the principle that the death benefit should be large enough to generate enough income to meet the family's needs without ever touching the principal.  If a family needs $60,000 per year in income, and the assumed investment rate of return is 5%, the required death benefit would be $60,000 / 0.05 = $1,200,000. The death benefit provides the capital to generate income that matches the family's needs. \n\n**Differences and Limitations:**\n\nThe HLV approach is simple, but it does not consider non-economic contributions of the insured (e.g., childcare) or specific financial goals (e.g., college funding). The Capital Retention approach, while more comprehensive, depends heavily on the assumed investment rate of return, which can be difficult to predict. It also assumes the family will be able to generate consistent investment returns without ever touching the principal. Both methods should be adjusted for existing assets, such as savings, investments, and other life insurance policies."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The CFP® exam commonly tests your understanding of:\n\n*   **Calculating HLV:**  Be prepared to calculate the HLV given information about earnings, expenses, work life expectancy, and discount rate. Know what types of earnings and expenses should be included or excluded in the calculation.\n*   **Applying Capital Retention:** Calculate the required death benefit using the capital retention approach, given information about income needs and assumed investment rate of return. Common exam questions will ask you to calculate the required death benefit. \n*   **Identifying the limitations** and assumptions of each method. Know the drawbacks of using solely either approach.\n*   **Choosing the appropriate method** based on a client's circumstances and goals.\n*   **Calculating the insurance need** given a complete fact pattern of the client's liabilities and assets and which method (HLV vs. Capital Retention) to use."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "Maria, age 35, earns $80,000 per year. She has two children and a mortgage. Her annual expenses are $60,000. Her family has $50,000 in existing savings. She plans to work until age 65. Let's analyze her life insurance needs using both methods:\n\n**HLV:** Assume she spends $15,000 on self-maintenance, her tax rate is 20% and the discount rate is 4%. Her income for dependents is $80,000 * (1-0.20) - $15,000 = $49,000. PV annuity factor (30 years, 4%) = 17.292. HLV = $49,000 * 17.292 = $847,308. Subtract existing savings: $847,308 - $50,000 = $797,308 insurance need.\n\n**Capital Retention:** Family needs $60,000 per year. Assume a 5% investment return. Capital needed: $60,000 / 0.05 = $1,200,000. Subtract existing savings: $1,200,000 - $50,000 = $1,150,000 insurance need.\n\nIn reality, Maria's life insurance needs also depend on other factors, such as college costs, mortgage payoff, and debt repayment. A full needs analysis will require further details."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• Needs analysis aims to determine the appropriate amount of life insurance coverage.\n• Human Life Value (HLV) calculates the present value of future earnings.\n• Capital Retention preserves the principal to generate ongoing income.\n• Both methods have limitations and should be adjusted for individual circumstances.\n• Understanding the limitations and assumptions is essential for the CFP® exam."
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RISK-L016",
+    "courseId": "cfp",
+    "section": "CFP-RISK",
+    "title": "Health Insurance Planning: Navigating Plan Types, HSAs, and FSAs",
+    "description": "This lesson dives into the intricacies of health insurance planning, focusing on various plan types like HMOs, PPOs, and EPOs, alongside the tax advantages offered by Health Savings Accounts (HSAs) and Flexible Spending Accounts (FSAs).",
+    "order": 16,
+    "duration": 40,
+    "difficulty": "advanced",
+    "topics": [
+      "Health insurance planning",
+      "Plan types, HSAs/FSAs"
+    ],
+    "blueprintArea": "RISK-2",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Health insurance is a crucial component of a comprehensive financial plan. Understanding different plan structures and savings vehicles is vital for optimizing client healthcare costs and managing potential financial risks associated with medical expenses."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "Navigating the health insurance landscape requires a solid understanding of various plan types. Here's a breakdown:\n\n*   **Health Maintenance Organization (HMO):** Generally offers lower premiums but requires selecting a primary care physician (PCP) who manages care and provides referrals to specialists. Coverage is typically limited to in-network providers.\n*   **Preferred Provider Organization (PPO):** Offers more flexibility than HMOs, allowing members to see specialists without a referral. Members can also access out-of-network providers, but at a higher cost.\n*   **Exclusive Provider Organization (EPO):** Similar to an HMO, EPOs require members to use in-network providers, except in emergencies. No PCP or referrals are needed.\n*   **Point of Service (POS):** A hybrid between HMO and PPO plans, requiring a PCP and referrals for in-network care but allowing out-of-network access at a higher cost.\n\n**Health Savings Accounts (HSAs)** are tax-advantaged savings accounts available to individuals enrolled in a **High-Deductible Health Plan (HDHP)**. Contributions are tax-deductible, earnings grow tax-free, and withdrawals are tax-free if used for qualified medical expenses. An HDHP, as defined by the IRS, must have a minimum deductible ($1,600 for individuals and $3,200 for families in 2024) and a maximum out-of-pocket limit ($8,050 for individuals and $16,100 for families in 2024). HSAs are portable and can be used to pay for current or future medical expenses.\n\n**Flexible Spending Accounts (FSAs)** are employer-sponsored accounts that allow employees to set aside pre-tax dollars for eligible healthcare expenses. Unlike HSAs, FSAs are not tied to HDHPs, and funds must be used within the plan year (with some exceptions for grace periods or limited carryover amounts). There are two main types of FSAs: Healthcare FSAs and Dependent Care FSAs. Healthcare FSAs can be used for medical, dental, and vision expenses. Dependent Care FSAs are used for eligible child or dependent care expenses."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "The choice between an HSA and an FSA depends heavily on an individual's health insurance plan and financial goals. An HSA is generally more advantageous for individuals with an HDHP who want to save for future healthcare expenses, especially in retirement. The triple tax advantage of HSAs makes them a powerful savings tool.\n\nFSAs, on the other hand, are more suitable for individuals who anticipate predictable healthcare expenses within the year and want to reduce their taxable income. However, the use-it-or-lose-it rule can be a disadvantage if expenses are not accurately estimated. The IRS allows for a carryover of up to $610 (for 2023; amount adjusted annually for inflation) or a grace period of up to 2.5 months after the plan year end for spending FSA funds. \n\n**Example:** John, age 35, is enrolled in an HDHP with a $3,500 deductible. He contributes the maximum allowable amount to his HSA ($4,150 in 2024, including the $1,000 catch-up contribution for those age 55+). He uses the funds to pay for qualified medical expenses. Any remaining funds grow tax-free and can be used for future healthcare costs, potentially including long-term care expenses.\n\nSarah, age 40, has a traditional health insurance plan through her employer. She elects to contribute $3,200 (maximum for 2024) to her Healthcare FSA. She uses the funds throughout the year to pay for her family's copays, prescription medications, and dental visits. Because she accurately estimated her expenses, she avoids losing any funds at the end of the plan year.\n\nConsider the impact of the Affordable Care Act (ACA) on health insurance planning. The ACA requires most individuals to have health insurance and provides subsidies to help lower-income individuals afford coverage. It also prohibits insurers from denying coverage based on pre-existing conditions. Understanding the ACA's provisions is essential for providing comprehensive health insurance advice."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The CFP® exam frequently tests the differences between HMOs, PPOs, and EPOs, emphasizing cost structures and provider access. Expect questions about HSA eligibility requirements, contribution limits, and tax advantages. The exam also assesses understanding of FSA rules, particularly the use-it-or-lose-it provision. Common question patterns include:\n\n*   Comparing the total cost of healthcare under different plan types, considering premiums, deductibles, copays, and coinsurance.\n*   Calculating the tax savings associated with contributing to an HSA or FSA.\n*   Determining eligibility for an HSA based on health insurance plan type and other factors.\n*   Identifying qualified medical expenses for HSA and FSA distributions.\n*   Advising clients on the most appropriate health insurance plan and savings vehicle based on their individual circumstances."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "A client, Mary, age 50, is considering switching from a PPO to an HDHP with an HSA. She is generally healthy but has some chronic conditions that require regular doctor visits and prescription medications. Her current PPO has a $500 deductible and relatively low copays. The HDHP has a $3,000 deductible but offers lower premiums and the opportunity to contribute to an HSA. As her advisor, you would need to analyze Mary's medical expenses, risk tolerance, and financial goals to determine whether the switch to the HDHP and HSA is appropriate. You would also need to explain the tax benefits of the HSA and the potential risks of having a higher deductible."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• HMOs, PPOs, and EPOs differ in cost, provider access, and referral requirements.\n• HSAs offer triple tax advantages but require enrollment in an HDHP.\n• FSAs allow pre-tax contributions for healthcare expenses but have a use-it-or-lose-it rule.\n• Understanding the ACA's provisions is crucial for health insurance planning."
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RISK-L017",
+    "courseId": "cfp",
+    "section": "CFP-RISK",
+    "title": "Medicare Planning: Mastering Parts A-D and Medigap Policies",
+    "description": "This lesson provides a detailed overview of Medicare, covering Parts A through D, eligibility requirements, enrollment periods, and the role of Medigap policies in supplementing Medicare coverage.",
+    "order": 17,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Medicare planning",
+      "Parts A-D, Medigap"
+    ],
+    "blueprintArea": "RISK-2",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Medicare is a cornerstone of retirement planning. Advisors must possess a thorough understanding of Medicare's components, eligibility, and enrollment rules to guide clients in making informed decisions about their healthcare coverage and managing their healthcare costs in retirement."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "Medicare is a federal health insurance program primarily for individuals age 65 or older, as well as certain younger people with disabilities or chronic conditions. It consists of four parts:\n\n*   **Part A (Hospital Insurance):** Covers inpatient hospital stays, skilled nursing facility care, hospice care, and some home health care. Most people do not pay a premium for Part A if they or their spouse have worked and paid Medicare taxes for at least 10 years (40 quarters).\n*   **Part B (Medical Insurance):** Covers doctor's services, outpatient care, preventive services, and some medical equipment. Most people pay a monthly premium for Part B, which is income-based.\n*   **Part C (Medicare Advantage):** Offered by private insurance companies approved by Medicare. These plans combine Part A and Part B benefits and often include Part D prescription drug coverage. Medicare Advantage plans may have additional benefits, such as vision, dental, and hearing coverage. Members typically pay copays and coinsurance.\n*   **Part D (Prescription Drug Insurance):** Helps cover the cost of prescription drugs. Offered by private insurance companies. Members pay a monthly premium and cost-sharing (copays or coinsurance). Medicare Part D plans have a coverage gap, also known as the \"donut hole,\" where beneficiaries may pay a higher percentage of their prescription drug costs until they reach a certain spending threshold.\n\n**Medigap (Medicare Supplement Insurance):** Private insurance policies that help pay some of the out-of-pocket costs not covered by Original Medicare (Parts A and B), such as deductibles, copays, and coinsurance. Medigap policies are standardized, meaning that each plan letter (e.g., Plan G, Plan N) offers the same core benefits regardless of the insurance company. Medigap policies do not cover prescription drugs; beneficiaries need a separate Part D plan for drug coverage."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Understanding Medicare eligibility and enrollment periods is crucial for avoiding penalties. The **Initial Enrollment Period (IEP)** is a 7-month period that begins 3 months before the month an individual turns 65, includes the month of their birthday, and ends 3 months after. Individuals who do not enroll in Part B during their IEP may face a late enrollment penalty, which increases the monthly premium by 10% for each 12-month period they could have had Part B but did not enroll.\n\nThe **General Enrollment Period (GEP)** runs from January 1 to March 31 each year. Individuals who did not enroll in Part B during their IEP can enroll during the GEP, with coverage beginning July 1. They may still be subject to a late enrollment penalty.\n\nThe **Special Enrollment Period (SEP)** allows individuals to enroll in Medicare outside of the IEP or GEP if they experience certain life events, such as losing employer-sponsored health insurance coverage. It is crucial to document the qualifying event and enroll promptly to avoid penalties.\n\n**Example:** John retires at age 67 and loses his employer-sponsored health insurance. He is eligible for a Special Enrollment Period to enroll in Medicare. If he enrolls within 8 months of losing his employer coverage, he will not be subject to a late enrollment penalty for Part B.\n\nChoosing between Medicare Advantage and Medigap depends on individual preferences and healthcare needs. Medicare Advantage plans often have lower premiums and may include extra benefits, but they typically have network restrictions and require referrals to specialists. Medigap policies offer more flexibility and cover a larger portion of out-of-pocket costs, but they have higher premiums and do not include prescription drug coverage. Consider the client's risk tolerance, budget, and healthcare utilization patterns when making a recommendation. Also, note the changes in Medigap plans; as of January 1, 2020, Medigap plans sold to new beneficiaries no longer cover the Part B deductible (except for Plan G and Plan F if eligible before 2020)."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The CFP® exam focuses heavily on Medicare eligibility, enrollment periods (IEP, GEP, SEP), and the differences between Medicare Advantage and Medigap. Expect questions about late enrollment penalties, cost-sharing arrangements, and the coverage gap in Part D. Common question patterns include:\n\n*   Determining an individual's Medicare eligibility and enrollment options based on their age, work history, and health insurance coverage.\n*   Calculating late enrollment penalties for Part B and Part D.\n*   Comparing the costs and benefits of Medicare Advantage and Medigap plans.\n*   Identifying the services covered under each part of Medicare (A, B, C, and D).\n*   Advising clients on strategies to minimize their healthcare costs in retirement, considering Medicare coverage and supplemental insurance options."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "A client, Sarah, is turning 65 and plans to retire. She is currently covered by her employer's health insurance plan. As her advisor, you need to help her navigate the Medicare enrollment process. You would explain the different parts of Medicare, the enrollment deadlines, and the potential penalties for late enrollment. You would also help her evaluate her options for supplemental coverage, considering her health needs, budget, and risk tolerance. Should she choose Medicare Advantage or Medigap? What Part D plan is appropriate for her prescription drug needs?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• Medicare consists of four parts: A (hospital), B (medical), C (Advantage), and D (prescription drugs).\n• Understand Initial, General, and Special Enrollment Periods to avoid penalties.\n• Medigap policies supplement Original Medicare but do not include prescription drug coverage.\n• Medicare Advantage plans combine Part A and Part B benefits and may offer additional coverage."
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RISK-L018",
+    "courseId": "cfp",
+    "section": "CFP-RISK",
+    "title": "Homeowners and Auto Insurance",
+    "description": "This lesson covers the fundamentals of homeowners and auto insurance, focusing on coverage types, policy provisions, and key considerations for risk management. We'll examine standard policy forms and how they protect against common perils.",
+    "order": 18,
+    "duration": 35,
+    "difficulty": "beginner",
+    "topics": [
+      "Homeowners and auto insurance",
+      "Coverage types"
+    ],
+    "blueprintArea": "RISK-3",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Homeowners and auto insurance are fundamental aspects of personal risk management. As a CFP®, you need to understand these policies to advise clients on protecting their assets and mitigating potential financial losses from property damage, liability claims, and other covered events. These are commonly tested areas on the exam, requiring both conceptual knowledge and the ability to apply principles to real-world scenarios."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "Homeowners and auto insurance are designed to protect individuals from financial loss due to various perils. Here's a breakdown of the core concepts:\n\n*   **Homeowners Insurance:** Protects the dwelling, other structures, personal property, and provides liability coverage.\n*   **Auto Insurance:** Covers bodily injury and property damage caused by an auto accident, as well as damage to the insured's own vehicle.\n*   **Perils:** Specific events (e.g., fire, theft, windstorm) that cause damage or loss covered by the policy.\n*   **Policy Provisions:** Details about coverage limits, deductibles, exclusions, and conditions.\n*   **Declarations Page:** Summarizes the key policy information, including the insured's name, address, coverage amounts, and policy period.\n\nUnderstanding **named peril** vs. **all-risk** (or open peril) policies is crucial. A named peril policy only covers losses from perils specifically listed in the policy. An all-risk policy covers all perils except those specifically excluded."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Let's delve deeper into the specific coverage types:\n\n*   **Homeowners Insurance (HO-3):** This is the most common type. It provides open peril coverage for the dwelling and other structures, but named peril coverage for personal property. Common coverages include:\n    *   **Dwelling (Coverage A):** Covers the cost to repair or rebuild the home.\n    *   **Other Structures (Coverage B):** Covers structures not attached to the home, such as a detached garage or shed (typically 10% of Coverage A).\n    *   **Personal Property (Coverage C):** Covers belongings inside the home, usually at actual cash value (ACV) or replacement cost value (RCV).\n    *   **Loss of Use (Coverage D):** Covers additional living expenses if the home is uninhabitable due to a covered peril.\n    *   **Liability (Coverage E):** Protects against lawsuits if someone is injured on the property.\n    *   **Medical Payments (Coverage F):** Covers medical expenses for guests injured on the property, regardless of fault.\n\n*   **Auto Insurance:** Common coverages include:\n    *   **Liability Coverage (Bodily Injury & Property Damage):** Pays for damages you cause to others in an accident.\n    *   **Collision Coverage:** Pays for damage to your vehicle resulting from a collision with another object or vehicle, regardless of fault.\n    *   **Comprehensive Coverage:** Pays for damage to your vehicle from events other than collisions, such as theft, vandalism, or natural disasters.\n    *   **Uninsured/Underinsured Motorist Coverage:** Protects you if you're hit by a driver without insurance or with insufficient coverage.\n    *   **Medical Payments/Personal Injury Protection (PIP):** Covers medical expenses for you and your passengers, regardless of fault.\n\n*Understanding the differences between Actual Cash Value (ACV) and Replacement Cost Value (RCV) is important. ACV accounts for depreciation, while RCV covers the cost to replace the item with a new one. Choosing RCV generally results in higher premiums but provides better protection.*"
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The CFP® exam frequently tests your understanding of:\n\n*   **Distinguishing between different homeowners insurance forms (HO-3, HO-5, etc.) and their coverage provisions.** Pay attention to whether coverage is named peril or open peril.\n*   **Calculating insurance needs:** Understanding how much coverage is adequate to protect a client's assets.\n*   **Analyzing the impact of deductibles on premiums and out-of-pocket expenses.** A higher deductible generally means a lower premium, but the client will pay more out-of-pocket in the event of a claim.\n*   **Understanding the liability coverage limits and how they relate to a client's net worth.** Clients with high net worth should consider higher liability limits and/or an umbrella policy.\n*   **The difference between ACV and RCV and when each valuation method is appropriate.**\n\n*Typical Exam Question*: A client's home is destroyed by a fire. They have an HO-3 policy with $300,000 dwelling coverage and a $1,000 deductible. The cost to rebuild the home is $320,000. How much will the insurance company pay, assuming full replacement cost coverage? *Answer: $299,000 ($300,000 - $1,000 deductible)*"
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "John and Mary own a home valued at $400,000. They have an HO-3 policy with $400,000 dwelling coverage, $40,000 other structures coverage, $200,000 personal property coverage (RCV), a $1,000 deductible, and $300,000 liability coverage. A severe hailstorm damages the roof and siding, costing $25,000 to repair. A thief breaks into their home and steals jewelry worth $10,000. \n\n*   **Roof and Siding Damage:** The insurance company will pay $24,000 ($25,000 repair cost - $1,000 deductible).\n*   **Jewelry Theft:** The insurance company will pay $9,000 ($10,000 value - $1,000 deductible), subject to any sublimits on jewelry coverage in their policy. Some policies may limit jewelry coverage to a lower amount, such as $2,500."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• Homeowners insurance protects against property damage and liability claims.\n• Auto insurance covers bodily injury, property damage, and damage to the insured's vehicle.\n• Understand the difference between named peril and all-risk policies.\n• ACV considers depreciation, while RCV covers the cost of replacement.\n• Carefully assess liability coverage limits to protect clients from potential lawsuits."
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RISK-L019",
+    "courseId": "cfp",
+    "section": "CFP-RISK",
+    "title": "Umbrella and Excess Liability",
+    "description": "This lesson explores umbrella and excess liability insurance, which provide additional liability protection beyond the limits of standard homeowners and auto policies. We'll cover the purpose, structure, and benefits of these policies, including real world examples and common pitfalls.",
+    "order": 19,
+    "duration": 35,
+    "difficulty": "advanced",
+    "topics": [
+      "Umbrella and excess liability",
+      "Liability coverage"
+    ],
+    "blueprintArea": "RISK-4",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "High-net-worth clients face a greater risk of lawsuits, and standard liability coverage may not be sufficient to protect their assets. As a CFP®, you need to understand umbrella and excess liability policies to advise clients on mitigating this risk. This is a critical area to protect a client's financial well-being and is a common topic on the CFP® exam."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "*   **Umbrella Liability Insurance:** A policy that provides excess liability coverage above the limits of underlying policies (e.g., homeowners, auto, boat).\n*   **Excess Liability Insurance:** Similar to umbrella coverage, but typically more specialized and may not provide as broad of coverage. Often 'follows form' meaning it mirrors the underlying policy coverage.\n*   **Underlying Limits:** The minimum liability coverage required on underlying policies before an umbrella policy will take effect. The umbrella carrier *may* require specific minimum limits.\n*   **Self-Insured Retention (SIR):** The amount the insured must pay out-of-pocket for a claim that is covered by the umbrella policy but not covered by an underlying policy.\n\nKey differences exist between umbrella and excess policies. **Umbrella policies** typically provide broader coverage, including some coverage not found in the underlying policies (subject to a SIR). **Excess policies** are typically narrower and simply provide higher limits above the underlying policy's coverage."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Umbrella policies provide crucial protection in several ways:\n\n*   **Increased Coverage Limits:** They provide liability coverage significantly higher than standard policies, often in increments of $1 million or more. Example: A client has $500,000 liability coverage on their auto policy and a $2 million umbrella policy. If they cause an accident resulting in $1 million in damages, the auto policy will pay the first $500,000, and the umbrella policy will cover the remaining $500,000.\n*   **Broader Coverage:** Umbrella policies may cover some claims not covered by underlying policies, such as libel, slander, or invasion of privacy (subject to a SIR). If a client is sued for defamation, their homeowners policy may not cover it, but their umbrella policy might.\n*   **Legal Defense Costs:** Umbrella policies typically cover legal defense costs in addition to the policy limits. This can be a significant benefit, as legal fees can quickly add up.\n*   **Worldwide Coverage:** Many umbrella policies provide coverage worldwide, offering protection even when traveling abroad.\n\nHowever, umbrella policies also have limitations:\n\n*   **Exclusions:** Common exclusions include intentional acts, business pursuits (unless specifically endorsed), and war.\n*   **Underlying Policy Requirements:** Insurers require maintaining certain underlying policy limits. Failure to do so could jeopardize coverage.\n*   **Self-Insured Retention (SIR):** If a claim is covered by the umbrella policy but not by any underlying policy, the insured is responsible for paying the SIR before the umbrella policy kicks in.\n\nExcess liability policies often mirror the underlying policy limits. This means you should ensure the underlying policy has sufficient coverage prior to adding an excess policy."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The CFP® exam frequently tests your understanding of:\n\n*   **The purpose of umbrella and excess liability policies and when they are appropriate for clients.** High-net-worth individuals and those with significant liability exposures (e.g., swimming pools, dog ownership) are prime candidates.\n*   **The relationship between umbrella policies and underlying policies.** Understand the concept of underlying limits and the consequences of not maintaining them.\n*   **The difference between umbrella and excess liability.** Pay attention to the breadth of coverage and whether the policy 'follows form.'\n*   **Common exclusions in umbrella policies.** Be aware of what events are not covered.\n*   **The meaning and implications of the Self-Insured Retention (SIR).**\n\n*Typical Exam Question*: A client with a net worth of $2 million has $300,000 liability coverage on their auto policy and $500,000 liability coverage on their homeowners policy. They are concerned about being sued for a large amount. What type of insurance would you recommend? *Answer: An umbrella liability policy to provide excess coverage above their existing liability limits.*"
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "Dr. Smith has a net worth of $5 million. He has $500,000 liability coverage on his auto policy and $1 million liability coverage on his homeowners policy. He also has a $2 million umbrella policy with a $1,000 SIR. While driving, Dr. Smith causes a serious accident, resulting in $1.2 million in damages to the other driver. \n\n*   **Auto Policy:** The auto policy pays $500,000.\n*   **Umbrella Policy:** The umbrella policy pays $700,000 (the remaining $700,000 of the $1.2 million total claim, because the umbrella kicks in after the auto policy limits are exhausted).\n\nIn a separate incident, Dr. Smith is sued for defamation after making false statements about a colleague. The homeowners policy does not cover defamation. The legal defense costs are $50,000, and the settlement is $200,000. Since this claim isn't covered by an underlying policy, the umbrella policy pays $249,000 ($250,000 total minus the $1,000 SIR. Dr. Smith pays the $1,000 SIR)."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• Umbrella and excess liability policies provide additional liability protection above underlying policies.\n• Umbrella policies typically offer broader coverage than excess policies.\n• Maintaining required underlying policy limits is crucial.\n• Understand the implications of the Self-Insured Retention (SIR).\n• Umbrella policies are essential for high-net-worth individuals and those with significant liability exposures."
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RISK-L020",
+    "courseId": "cfp",
+    "section": "CFP-RISK",
+    "title": "Advanced Homeowners and Auto Insurance",
+    "description": "This lesson provides an in-depth review of homeowners and auto insurance coverage types and policy provisions, focusing on the nuances that are frequently tested on the CFP® exam.",
+    "order": 20,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Homeowners and auto insurance",
+      "Coverage types"
+    ],
+    "blueprintArea": "RISK-3",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Homeowners and auto insurance are fundamental components of a comprehensive financial plan. Understanding these policies is crucial for protecting your clients' assets and mitigating financial risks associated with property damage, liability, and accidents. This area is consistently tested on the CFP® exam, requiring not only familiarity with coverage types but also the ability to analyze policy limits, exclusions, and endorsements."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "**Homeowners Insurance Coverage Types:**\n\n*   **Dwelling (Coverage A):** Covers the structure of your home and attached structures, such as a garage. The amount should reflect the replacement cost, not the market value, of the home.\n*   **Other Structures (Coverage B):** Covers structures not attached to the home, like sheds, fences, and detached garages. Typically limited to 10% of Coverage A.\n*   **Personal Property (Coverage C):** Covers belongings inside the home, such as furniture, clothing, and electronics. Often covered at actual cash value (ACV) or replacement cost value (RCV). ACV considers depreciation, while RCV pays for the cost of new items. Specific items like jewelry often have sublimits.\n*   **Loss of Use (Coverage D):** Covers additional living expenses if your home is uninhabitable due to a covered loss (e.g., hotel stays, restaurant meals). Typically a percentage of Coverage A.\n*   **Personal Liability (Coverage E):** Protects you if someone is injured on your property or if you accidentally damage someone else's property. Coverage extends beyond the property line.\n*   **Medical Payments to Others (Coverage F):** Covers medical expenses for guests injured on your property, regardless of fault. It is 'no-fault' coverage. \n\n**Auto Insurance Coverage Types:**\n\n*   **Liability Coverage (Bodily Injury and Property Damage):** Covers damages you cause to others in an accident. Expressed as a split limit (e.g., 100/300/50) or a combined single limit (CSL) (e.g. $300,000). The numbers represent per-person bodily injury, total bodily injury per accident, and property damage, respectively.\n*   **Medical Payments (Med Pay):** Covers medical expenses for you and your passengers, regardless of fault, up to the policy limits.\n*   **Uninsured/Underinsured Motorist (UM/UIM):** Protects you if you're hit by an uninsured or underinsured driver. UM covers bodily injury only, while UIM covers both bodily injury and property damage in some states.\n*   **Collision:** Covers damage to your vehicle, regardless of fault. Subject to a deductible.\n*   **Comprehensive:** Covers damage to your vehicle from events other than collisions, such as theft, vandalism, fire, hail, and hitting an animal. Subject to a deductible."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "**Homeowners Insurance - Policy Forms:** Different policy forms (HO-1, HO-2, HO-3, HO-5, HO-8) offer varying levels of coverage. HO-3 (Special Form) is the most common, covering all risks to the dwelling except those specifically excluded (e.g., flood, earthquake, war, neglect). HO-5 (Comprehensive Form) offers all-risk coverage for both the dwelling and personal property. HO-8 (Modified Coverage Form) is designed for older homes where replacement cost exceeds market value. **Important Exclusion:** Homeowners insurance typically does *not* cover flood damage; a separate flood insurance policy is required. \n\n**Auto Insurance - State Minimums vs. Adequate Coverage:** States mandate minimum liability coverage, often insufficient to cover significant accidents. Encourage clients to purchase higher limits to protect their assets. An umbrella policy provides additional liability coverage above the limits of homeowners and auto insurance.\n\n**Endorsements:** These policy modifications can expand or restrict coverage. Examples include: \n\n*   **Scheduled Personal Property Endorsement:** Provides specific coverage for valuable items (jewelry, art, collectibles) that exceed standard policy limits.\n*   **Inflation Guard Endorsement:** Automatically increases coverage limits each year to keep pace with inflation.\n*   **Home Business Endorsement:** Extends coverage for business-related property and liability if you operate a business from home. This is often *required* when the business impacts the risk profile of the residence.\n\n**Policy Provisions: Coinsurance in Homeowners policies**: Homeowners policies often contain a coinsurance clause. If the homeowner insures the property for less than a specified percentage of its replacement cost (typically 80%), they may not receive full reimbursement for a covered loss. For example, if a home's replacement cost is $500,000, the owner is required to insure at least $400,000 (80% of $500,000). If they only insured for $300,000 and suffered a $100,000 loss, the insurance company will only pay a portion of the loss. The formula is (Amount of insurance carried / Amount of insurance required) x Loss = Amount Paid. In this case, ($300,000/$400,000) x $100,000 = $75,000. The insured would be responsible for the remaining $25,000."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The CFP® exam frequently tests:\n\n*   **Coverage Limits:** Calculating adequate coverage amounts for dwelling, personal property, and liability.\n*   **Replacement Cost vs. Actual Cash Value:** Understanding the difference and its impact on claim payouts.\n*   **Coinsurance Clauses:** Calculating the amount the insurance company will pay based on the coinsurance requirement and the amount of coverage in place.\n*   **Policy Exclusions:** Identifying events not covered by standard policies (e.g., flood, earthquake).\n*   **Endorsements:** Recognizing how endorsements modify coverage.\n*   **Liability Coverage:** Assessing adequate liability limits considering net worth and potential lawsuits.\n*   **UM/UIM Coverage:** Understanding the purpose and importance of uninsured/underinsured motorist coverage.\n*   **Ethical Considerations:** Recommending appropriate coverage levels based on a client's specific needs and circumstances, not solely based on cost."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "Scenario: John and Mary own a home with a replacement cost of $600,000. They have a homeowners policy with Coverage A (Dwelling) of $450,000, Personal Property coverage (Coverage C) of $200,000 (ACV), and liability coverage (Coverage E) of $300,000. They live in an area prone to windstorms. During a recent storm, their roof sustained significant damage, costing $80,000 to repair. Their personal property sustained water damage, with an ACV of $30,000. A neighbor slipped and fell on their icy driveway, resulting in medical bills totaling $25,000. \n\nAnalysis:\n*   **Dwelling Coverage:** The policy has a coinsurance requirement of 80%. They should have carried $480,000 (80% of $600,000) but they only have $450,000. The formula is ($450,000/$480,000) x $80,000 = $75,000. The insurance company will pay $75,000 (minus any applicable deductible) because they did not meet the coinsurance requirement. \n*   **Personal Property:** The payout is based on ACV (Actual Cash Value), meaning depreciation will be deducted. The actual amount paid depends on the age and condition of the items.\n*   **Liability:** The $25,000 medical bills are covered under the liability portion of the policy (Coverage E), as the neighbor was injured on their property. The liability coverage limit of $300,000 is sufficient to cover the claim.\n\nThis example highlights the importance of adequate dwelling coverage to meet coinsurance requirements and understanding the difference between RCV and ACV for personal property."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• Homeowners insurance covers dwelling, other structures, personal property, loss of use, personal liability, and medical payments.\n• Auto insurance includes liability, medical payments, uninsured/underinsured motorist, collision, and comprehensive coverage.\n• Understand the differences between replacement cost and actual cash value.\n• Be aware of common policy exclusions, such as flood and earthquake.\n• Encourage clients to purchase adequate liability coverage and consider an umbrella policy.\n• Coinsurance clauses can significantly impact claims payouts if coverage is inadequate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RISK-L021",
+    "courseId": "cfp",
+    "section": "CFP-RISK",
+    "title": "Advanced Needs Analysis",
+    "description": "This lesson provides a detailed overview of needs analysis techniques, including the human life value and capital retention methods, focusing on their application and limitations in life insurance planning.",
+    "order": 21,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Needs analysis",
+      "Human life value, capital retention"
+    ],
+    "blueprintArea": "RISK-1",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Needs analysis is the cornerstone of life insurance planning. Accurately assessing a client's life insurance needs ensures adequate financial protection for their dependents in the event of premature death. The CFP® exam tests your ability to apply different needs analysis methods and evaluate their suitability based on specific client circumstances. A solid grasp of these concepts is vital for providing sound financial advice."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "**Needs Analysis Overview:** Needs analysis aims to determine the amount of life insurance required to meet a family's financial needs if the breadwinner dies prematurely. It involves estimating future financial obligations and resources available to meet those obligations.\n\n**Human Life Value (HLV) Approach:** This method calculates the present value of the insured's future earnings, net of taxes and personal consumption. It focuses on replacing the financial loss to the family. It's relatively simple to calculate but may overestimate needs, as it doesn't consider the family's existing resources or changing expenses over time.\n\n**Capital Retention (Capital Needs) Approach:** This method determines the lump sum needed to generate sufficient income to meet ongoing expenses. The principal is *not* liquidated, preserving the capital base for future generations. This conservative approach often results in a higher insurance need compared to the HLV method. It assumes a specific rate of return on investments and ongoing expenses.\n\n**Key Expenses to Consider in Needs Analysis:**\n*   **Final Expenses:** Funeral costs, estate administration fees.\n*   **Debt Repayment:** Mortgage, loans, credit card debt.\n*   **Income Replacement:** Maintaining the family's standard of living.\n*   **Education Funding:** College expenses for children.\n*   **Child Care Expenses:** Costs associated with raising children.\n*   **Emergency Fund:** Set aside for unexpected expenses.\n*   **Healthcare Costs:** Health insurance premiums, medical expenses."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "**Human Life Value (HLV) Method - Detailed Calculation:**\n\n1.  **Calculate Annual Gross Income:** Determine the insured's current annual gross income.\n2.  **Estimate Annual Taxes and Personal Consumption:** Deduct taxes and personal consumption expenses to arrive at the income available to the family.\n3.  **Determine the Work Life Expectancy:** Calculate the number of years the insured is expected to work.\n4.  **Select an Appropriate Discount Rate:** Choose a discount rate that reflects the expected rate of return on investments.\n5.  **Calculate the Present Value:** Calculate the present value of the income available to the family over the work life expectancy, using the chosen discount rate.  This can be done using a financial calculator or spreadsheet.\n\n**Example:** John earns $100,000 per year. His taxes and personal consumption total $40,000, leaving $60,000 for his family. He plans to work for 25 more years. Assuming a discount rate of 5%, his HLV is the present value of $60,000 per year for 25 years, which is approximately $854,272.\n\n**Capital Retention (Capital Needs) Method - Detailed Calculation:**\n\n1.  **Identify Ongoing Expenses:** Determine the annual expenses the family will need to cover.\n2.  **Estimate Existing Resources:** Calculate the income generated from existing assets (e.g., investments, Social Security survivor benefits).\n3.  **Calculate the Income Shortfall:** Subtract existing resources from ongoing expenses to determine the income shortfall.\n4.  **Determine the Capital Needs:** Divide the income shortfall by the assumed rate of return to calculate the lump sum needed to generate the required income.\n\n**Example:** The family needs $80,000 per year to maintain their standard of living. Social Security survivor benefits will provide $20,000 per year. The income shortfall is $60,000. Assuming a 4% rate of return, the capital needs are $60,000 / 0.04 = $1,500,000. This is the amount of life insurance required using the capital retention method.\n\n**Comparison of HLV and Capital Retention:** HLV is simpler but may underestimate needs. Capital retention is more conservative but requires more detailed analysis and relies on assumptions about rates of return."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The CFP® exam frequently tests:\n\n*   **Calculating HLV using different assumptions.**\n*   **Calculating capital needs using different assumptions.**\n*   **Identifying the limitations of each method.**\n*   **Determining which method is most appropriate for a given client scenario.** Consider factors like the client's income, expenses, existing assets, and risk tolerance.\n*   **Incorporating Social Security survivor benefits into the needs analysis.**\n*   **Adjusting for inflation when estimating future expenses.** Use an appropriate inflation rate to project future expenses.\n*   **Understanding the impact of different discount rates on the present value calculation.** A higher discount rate will result in a lower present value, and vice versa.\n*   **The importance of reviewing and updating the needs analysis periodically.** Client circumstances change over time, so it's crucial to review the analysis regularly and make adjustments as needed. Consider events like marriage, divorce, birth of a child, or changes in income or expenses."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "Scenario: Maria is a 35-year-old single mother with two children, ages 8 and 10. She earns $75,000 per year. Her annual expenses are $60,000, including mortgage payments, utilities, food, and childcare. She has $50,000 in savings and no other assets. Her projected work life expectancy is 30 years. Social Security survivor benefits are estimated at $15,000 per year. \n\nAnalysis: \n\n*   **HLV Approach:** Assuming taxes and personal consumption of $25,000, her income available to the family is $50,000. Using a 5% discount rate, her HLV is approximately $768,256. \n*   **Capital Retention Approach:** The family needs $60,000 per year. Social Security provides $15,000, leaving an income shortfall of $45,000. Assuming a 4% rate of return, the capital needs are $45,000 / 0.04 = $1,125,000.  Subtract existing savings of $50,000 and you need an additional $1,075,000.\n\nRecommendation: Considering Maria's young children and reliance on her income, the capital retention approach is more appropriate, ensuring sufficient funds to cover ongoing expenses. A life insurance policy of $1,075,000 would provide adequate protection, assuming a 4% rate of return on investments."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• Needs analysis estimates the amount of life insurance required to protect a family financially.\n• The human life value (HLV) approach calculates the present value of future earnings.\n• The capital retention approach determines the lump sum needed to generate sufficient income to meet ongoing expenses without depleting the principal.\n• Understand the strengths and limitations of each method.\n• Consider all relevant factors, including income, expenses, assets, and liabilities.\n• Regularly review and update the needs analysis to reflect changing client circumstances."
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RISK-L022",
+    "courseId": "cfp",
+    "section": "CFP-RISK",
+    "title": "Advanced Health Insurance Planning",
+    "description": "This lesson delves into advanced health insurance strategies, focusing on plan types and the utilization of Health Savings Accounts (HSAs) and Flexible Spending Accounts (FSAs) to optimize healthcare spending and savings.",
+    "order": 22,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Health insurance planning",
+      "Plan types, HSAs/FSAs"
+    ],
+    "blueprintArea": "RISK-2",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Understanding health insurance options and tax-advantaged accounts like HSAs and FSAs is critical for providing comprehensive financial advice. Clients often struggle to navigate the complexities of healthcare costs and plan selection. Mastery of these topics allows you to help clients minimize expenses, maximize savings, and plan effectively for healthcare needs throughout their lives."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "This section covers different health insurance **plan types** and **tax-advantaged accounts**. We'll explore **HSAs**, **FSAs**, **HRAs**, and common plan designs like **HMOs**, **PPOs**, **EPOs**, and **POS plans**. \n\n*   **Health Savings Accounts (HSAs):** These are tax-advantaged savings accounts used in conjunction with a high-deductible health plan (HDHP). Contributions are tax-deductible, earnings grow tax-free, and withdrawals are tax-free if used for qualified medical expenses (IRS Publication 969). \n*   **Flexible Spending Accounts (FSAs):** FSAs are employer-sponsored accounts that allow employees to set aside pre-tax dollars for qualified medical expenses or dependent care expenses. There are two primary types: Healthcare FSAs and Dependent Care FSAs. FSAs typically have a 'use-it-or-lose-it' rule, although some plans offer a grace period or allow a limited carryover.\n*   **Health Reimbursement Arrangements (HRAs):** HRAs are employer-funded, tax-advantaged health benefit plans that reimburse employees for out-of-pocket medical expenses. Unlike HSAs, employees do not contribute to HRAs.\n*   **HMO (Health Maintenance Organization):** Typically requires a primary care physician (PCP) referral to see specialists, lower out-of-pocket costs, and emphasizes preventative care.\n*   **PPO (Preferred Provider Organization):** Offers more flexibility than HMOs, allowing patients to see specialists without referrals but generally has higher premiums and co-pays.\n*   **EPO (Exclusive Provider Organization):** Similar to HMOs but typically doesn't require a PCP referral. Coverage is usually limited to in-network providers, except in emergencies.\n*   **POS (Point of Service):** A hybrid of HMO and PPO plans. Requires a PCP referral for out-of-network care, resulting in higher costs."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Let's examine how these concepts apply practically. Consider a scenario where a client has the option between a PPO plan with a $2,000 deductible and an HSA-eligible HDHP with a $4,000 deductible. The PPO has a $500 annual premium cost compared to the HDHP. To determine the best option, analyze the client's expected healthcare utilization.\n\n**Break-Even Analysis:** Calculate at what point the HDHP becomes more cost-effective. Assume the client expects $3,000 in medical expenses annually. The PPO will cost $500 (premium) + $2,000 (deductible) + any co-insurance = $2,500+. The HDHP costs $4,000 (deductible) - potential HSA contributions/growth. If the client maximizes HSA contributions (e.g., $3,850 in 2023 for individuals), they may save on taxes, the HSA grows tax free, and medical expenses are ultimately paid with pre-tax dollars. The HDHP's benefit increases the more the client contributes to the HSA and the more the HSA earnings grow over time.\n\n**HSA vs. FSA Detailed Comparison:** HSAs are individually owned and portable, meaning the funds remain with the individual even if they change jobs. FSAs are employer-owned and typically require the funds to be used within the plan year (with possible grace period/carryover). HSA contributions are generally tax-deductible, while FSA contributions are made pre-tax through payroll deductions. HSAs can be used as a long-term savings vehicle for future healthcare expenses, whereas FSAs are generally designed for shorter-term needs.\n\n**Special Considerations:** Be aware of the 'last-month rule' and 'testing period rule' related to HSA contributions for those aged 55 and older who make catch-up contributions. Also, be cautious of clients who might be covered by both Medicare and an HSA. Contributing to an HSA while enrolled in Medicare is generally prohibited."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The exam often tests the following:\n\n*   **HSA Eligibility:** Understanding the requirements for contributing to an HSA, including having a qualifying HDHP and not being covered by other non-HDHP insurance.\n*   **HSA vs. FSA:** Differentiating between HSAs and FSAs, including contribution limits, ownership, portability, and tax implications.\n*   **Plan Selection:** Analyzing various health insurance plans (HMO, PPO, EPO, POS) based on client needs, risk tolerance, and financial situation. Expect questions that require you to calculate the total cost of care under different plans.\n*   **Tax Implications:** Calculating the tax benefits associated with HSA and FSA contributions and withdrawals. \n*   **Coordination with Medicare:** Understanding how HSAs and Medicare interact, particularly regarding eligibility and contribution limitations."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "John, age 45, is considering switching to a high-deductible health plan with a $5,000 deductible. His current PPO plan has a $1,000 deductible. John expects to incur approximately $3,000 in medical expenses each year. The PPO premium is $800/month, while the HDHP premium is $400/month. John has the option to contribute to an HSA. \n\n*   **Question:** Should John switch to the HDHP and contribute to an HSA? \n*   **Analysis:** The HDHP would save him $4,800 annually in premiums ($800 - $400 x 12). He can then contribute this amount to the HSA. Even if he only spends $3,000 on medical expenses, he saves on taxes and the balance grows tax-free. If he itemizes, his AGI is reduced, and if he doesn't itemize, it reduces his total tax liability.\n*    **Conclusion:** Based on these assumptions, switching to the HDHP is likely beneficial, especially if John utilizes the HSA effectively. However, factors such as risk tolerance and comfort level with a high deductible should also be considered."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• HSAs offer significant tax advantages and can serve as a long-term savings vehicle for healthcare expenses.\n• FSAs are employer-sponsored and generally require the funds to be used within the plan year.\n• Understanding the differences between HMOs, PPOs, EPOs, and POS plans is crucial for recommending suitable health insurance options.\n• Analyze a client's healthcare utilization and risk tolerance to determine the most cost-effective plan.\n• Be aware of the coordination rules between HSAs and Medicare."
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RISK-L023",
+    "courseId": "cfp",
+    "section": "CFP-RISK",
+    "title": "Advanced Umbrella and Excess Liability",
+    "description": "This lesson provides an in-depth exploration of umbrella and excess liability insurance, emphasizing the importance of adequate liability coverage and the specific coverages offered by these policies.",
+    "order": 23,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Umbrella and excess liability",
+      "Liability coverage"
+    ],
+    "blueprintArea": "RISK-4",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Liability lawsuits can result in devastating financial losses. Umbrella and excess liability policies provide crucial protection by covering damages exceeding the limits of underlying insurance policies. As a CFP, you must be able to assess a client's liability risk, determine appropriate coverage amounts, and explain the nuances of these policies to safeguard their financial well-being."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "Umbrella and excess liability insurance provide **excess coverage** above the limits of primary insurance policies, such as homeowners, auto, and watercraft. They protect against large liability claims that could exceed the limits of those primary policies. \n\n*   **Umbrella Insurance:** A standalone policy that provides broad coverage, often filling gaps in underlying policies. For example, an umbrella policy may cover claims like libel, slander, and false arrest, which may not be covered by standard homeowners insurance.\n*   **Excess Liability Insurance:** Provides additional coverage *on top of* existing underlying liability coverage. It generally does not broaden coverage; it simply increases the limits. It's a less flexible type of coverage than an umbrella policy and typically requires the underlying policies to be in place.\n*   **Retention Limits:** Umbrella policies usually have a self-insured retention (SIR) for claims not covered by an underlying policy. The SIR functions similarly to a deductible. This is the amount the insured must pay out-of-pocket before the umbrella policy kicks in for uncovered risks.\n*   **Underlying Limits:** Most umbrella policies require the insured to maintain specific minimum liability limits on their underlying homeowners and auto insurance policies. This ensures that the umbrella policy is truly providing excess coverage and not acting as a primary policy."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Let's illustrate the difference between umbrella and excess liability policies with a scenario. A client has homeowners insurance with $500,000 liability coverage and auto insurance with $250,000/$500,000 (bodily injury per person/per accident) liability coverage. They are sued for $1.5 million due to a car accident where they were at fault.\n\n*   **With Excess Liability:** If the client has an excess liability policy with a $1 million limit, it would provide an additional $1 million in coverage *above* the $500,000 available from the auto policy. The excess liability policy would pay out $1,000,000. The client would be responsible for any amount over $1,500,000.\n*   **With Umbrella Policy:** An umbrella policy with a $1 million limit would also provide an additional $1 million in coverage. However, if the lawsuit included claims like defamation that were not covered by the auto policy, the umbrella policy might still cover those claims after the client pays the self-insured retention. Suppose the court awards punitive damages which the underlying policy doesn't cover; the umbrella policy will likely protect you, but an excess liability policy may not.\n\n**Factors Influencing Coverage Amounts:** The amount of umbrella or excess liability coverage needed depends on several factors, including net worth, income, occupation, and lifestyle. Higher-net-worth individuals are generally more attractive targets for lawsuits. Professionals with high-risk occupations (e.g., doctors, lawyers) may also require higher coverage limits. Evaluate potential risks, like dog ownership, swimming pools, and hosting frequent gatherings.\n\n**Underlying Policy Requirements:** Ensure that clients maintain the required underlying policy limits. Failure to do so could result in the umbrella policy not providing full coverage, or even being voided. For example, if an umbrella policy requires $300,000 in auto liability coverage but the client only carries $100,000, the umbrella policy may only provide coverage as if the underlying policy had the required $300,000 coverage. This could create a gap in coverage, leaving the client responsible for a portion of the claim."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The exam often focuses on the following aspects of umbrella and excess liability insurance:\n\n*   **Distinguishing between Umbrella and Excess Liability Policies:** Understanding the key differences in coverage scope and flexibility. Focus on whether the coverage broadens (umbrella) or just increases limits (excess).\n*   **Determining Appropriate Coverage Amounts:** Assessing client risk profiles and recommending suitable coverage limits based on net worth, income, and potential liability exposures. Know the factors that increase liability risk.\n*   **Understanding Underlying Policy Requirements:** Recognizing the importance of maintaining the required underlying policy limits to avoid coverage gaps.\n*   **Coverage Gaps:** Identifying scenarios where standard insurance policies might not provide adequate coverage and how umbrella policies can fill those gaps.\n*   **Exclusions:** Being aware of common exclusions in umbrella policies, such as intentional acts or business pursuits."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "Sarah is a successful surgeon with a net worth of $3 million. She has homeowners insurance with $500,000 liability coverage and auto insurance with $250,000/$500,000 liability limits. She also owns a rental property. \n\n*   **Question:** What amount of umbrella coverage should Sarah consider purchasing? \n*   **Analysis:** Given Sarah's high net worth, professional liability risks, and rental property ownership, a $1 million or even $2 million umbrella policy is likely prudent. The rental property adds an additional layer of potential liability exposure. A lawsuit from a tenant or visitor could easily exceed her underlying homeowners insurance limits.\n*   **Considerations:** It's also crucial to review the exclusions in the umbrella policy to ensure it provides adequate coverage for her specific risks."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• Umbrella insurance provides broader coverage and can fill gaps in underlying policies.\n• Excess liability insurance simply increases the limits of existing liability coverage.\n• Determine appropriate coverage amounts based on a client's net worth, income, and lifestyle.\n• Ensure clients maintain the required underlying policy limits to avoid coverage gaps.\n• Understand common exclusions in umbrella policies and tailor coverage accordingly."
+        }
+      ]
+    }
+  }
+]

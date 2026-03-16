@@ -103,6 +103,7 @@ describe('Daily Plan Persistence - Quality Tests', () => {
         activities: [],
         completedActivities: [],
         date: today,
+        version: 6,
       };
       localStorageMock.getItem.mockReturnValueOnce(JSON.stringify(cachedPlan));
       

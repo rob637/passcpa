@@ -19,11 +19,13 @@ import { format } from 'date-fns';
 import logger from '../utils/logger';
 import { recordQuestionAnswer, recordTBSResult } from '../services/questionHistoryService';
 import { recordAnswerToEngine } from '../services/adaptiveEngineAdapter';
+import analytics, { trackEvent } from '../services/analytics';
 import { getStudyPlanId, getCurrentSection } from '../utils/profileHelpers';
 import { getDefaultSection } from '../utils/sectionUtils';
 import { COURSES } from '../courses';
 import { CourseId } from '../types/course';
 import { useCourse } from './CourseProvider';
+import { incrementStudyPlanProgress } from '../services/studyPlanService';
 
 export interface StudyPlan {
   id?: string;
@@ -39,6 +41,7 @@ export interface DailyLog {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   activities: any[];
   questionsAttempted: number;
+  questionsAnswered?: number;  // Alias for questionsAttempted (for consistency with studyPlans)
   questionsCorrect: number;
   lessonsCompleted: number;
   simulationsCompleted: number;
@@ -109,12 +112,15 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
   const [loading, setLoading] = useState(true);
   const [statsVersion, setStatsVersion] = useState(0); // Trigger re-fetch when incremented
 
-  const today = format(new Date(), 'yyyy-MM-dd');
+  // Always compute today fresh to avoid stale date after midnight
+  const getToday = () => format(new Date(), 'yyyy-MM-dd');
+  const today = getToday();
   
-  
-  // Course-specific daily log ID to keep progress separate per course
-  const dailyLogId = `${activeCourse}_${today}`;
+  // Get the current section for this course
   const currentSection = getCurrentSection(userProfile, activeCourse, getDefaultSection);
+  
+  // Course-level daily log ID (keeps all data together for aggregates)
+  const dailyLogId = `${activeCourse}_${today}`;
 
   // Fetch study plan when user changes
   // Uses getStudyPlanId for multi-course support
@@ -166,6 +172,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           earnedPoints: 0,
           activities: [],
           questionsAttempted: 0,
+          questionsAnswered: 0,
           questionsCorrect: 0,
           lessonsCompleted: 0,
           simulationsCompleted: 0,
@@ -184,6 +191,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
 
   // Fetch weekly stats and calculate streak - now section-aware
   useEffect(() => {
+    logger.debug('[STREAK] useEffect triggered, user:', !!user, 'activeCourse:', activeCourse, 'currentSection:', currentSection);
     if (!user) {
       setWeeklyStats({ totalQuestions: 0, accuracy: 0, totalMinutes: 0, questionsTrend: 0, accuracyTrend: 0 });
       setStats(null);
@@ -192,27 +200,30 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     }
 
     const fetchWeeklyData = async () => {
+      logger.debug('[STREAK] fetchWeeklyData starting...');
       try {
         // Get logs for the past 7 days (this week)
-        const thisWeekDates: string[] = [];
+        // Use course-prefixed doc IDs to ensure we only get this course's data
+        const thisWeekIds: string[] = [];
         for (let i = 0; i < 7; i++) {
           const date = new Date();
           date.setDate(date.getDate() - i);
-          thisWeekDates.push(format(date, 'yyyy-MM-dd'));
+          thisWeekIds.push(`${activeCourse}_${format(date, 'yyyy-MM-dd')}`);
         }
 
         // Get logs for the previous 7 days (last week) for comparison
-        const lastWeekDates: string[] = [];
+        const lastWeekIds: string[] = [];
         for (let i = 7; i < 14; i++) {
           const date = new Date();
           date.setDate(date.getDate() - i);
-          lastWeekDates.push(format(date, 'yyyy-MM-dd'));
+          lastWeekIds.push(`${activeCourse}_${format(date, 'yyyy-MM-dd')}`);
         }
 
         const dailyLogCollection = collection(db, 'users', user.uid, 'daily_log');
         
-        // Fetch this week
-        const thisWeekQuery = query(dailyLogCollection, where('date', 'in', thisWeekDates));
+        // Fetch this week — use doc ID query to get only this course's logs
+        // Firestore 'in' queries support up to 10 values, 7 fits perfectly
+        const thisWeekQuery = query(dailyLogCollection, where('__name__', 'in', thisWeekIds));
         const thisWeekSnapshot = await getDocs(thisWeekQuery);
 
         // Get sections that belong to the current course for filtering
@@ -261,7 +272,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         });
 
         // Fetch last week for trend comparison
-        const lastWeekQuery = query(dailyLogCollection, where('date', 'in', lastWeekDates));
+        const lastWeekQuery = query(dailyLogCollection, where('__name__', 'in', lastWeekIds));
         const lastWeekSnapshot = await getDocs(lastWeekQuery);
 
         let lastWeekQuestions = 0;
@@ -270,10 +281,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         lastWeekSnapshot.forEach((docSnap) => {
           const data = docSnap.data();
           
-          // Skip if this log is for a different course
-          if (data.courseId && data.courseId !== activeCourse) return;
-          
-          // Filter last week by course sections too for accurate trends
+          // Filter last week by course sections for accurate trends
           if (data.activities && Array.isArray(data.activities)) {
             data.activities.forEach((activity: { type: string; section?: string; isCorrect?: boolean }) => {
               const activitySection = activity.section || 'unknown';
@@ -304,32 +312,128 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         // Set section-filtered stats
         setStats({ totalQuestions: sectionQuestions, accuracy: sectionAccuracy });
 
-        // Calculate streak (consecutive days with earnedPoints > 0, course-specific)
+        // Calculate streak (consecutive days with activity, per-section for multi-section exams)
+        // For CPA/EA/CMA/CIA: streak is per-section (e.g., studying FAR daily)
+        // For CISA/CFP: streak is per-exam (any activity counts)
         let streak = 0;
-        for (let i = 0; i < 30; i++) { // Check up to 30 days back
+        const streakDates: string[] = [];
+        for (let i = 0; i < 30; i++) {
           const checkDate = new Date();
           checkDate.setDate(checkDate.getDate() - i);
-          const dateStr = format(checkDate, 'yyyy-MM-dd');
-          const courseLogId = `${activeCourse}_${dateStr}`;
+          streakDates.push(format(checkDate, 'yyyy-MM-dd'));
+        }
+        
+        // Determine if this is a single-exam course
+        const SINGLE_EXAM_COURSES_LOCAL: CourseId[] = ['cisa', 'cfp'];
+        const isSingleExamCourse = SINGLE_EXAM_COURSES_LOCAL.includes(activeCourse as CourseId);
+        
+        logger.debug('[STREAK] === Starting streak calculation ===');
+        logger.debug('[STREAK] activeCourse:', activeCourse, 'currentSection:', currentSection, 'isSingleExam:', isSingleExamCourse);
+        logger.debug('[STREAK] User UID:', user.uid);
+        logger.debug('[STREAK] Checking dates:', streakDates.slice(0, 5).join(', '), '...');
+        
+        // Use course-level log IDs (data is stored at course level with activities having section field)
+        const streakLogIds = streakDates.map(d => `${activeCourse}_${d}`);
+        logger.debug('[STREAK] Looking for log IDs:', streakLogIds.slice(0, 3).join(', '), '...');
+        
+        // Batch into chunks of 10 (Firestore 'in' limit)
+        // Store full doc data so we can filter activities by section
+        const streakDocs = new Map<string, { 
+          earnedPoints: number; 
+          questionsAttempted: number; 
+          activities?: Array<{ section?: string; type?: string }>;
+        }>();
+        for (let batch = 0; batch < streakLogIds.length; batch += 10) {
+          const batchIds = streakLogIds.slice(batch, batch + 10);
+          const streakQuery = query(
+            collection(db, 'users', user.uid, 'daily_log'),
+            where('__name__', 'in', batchIds)
+          );
+          const streakSnap = await getDocs(streakQuery);
+          // DEBUG: Log what we found
+          logger.debug('[STREAK] Query batch', batch/10, 'returned', streakSnap.size, 'docs');
+          streakSnap.forEach(docSnap => {
+            const data = docSnap.data();
+            logger.debug('[STREAK] Doc:', docSnap.id, 'earnedPoints:', data.earnedPoints, 'questionsAttempted:', data.questionsAttempted, 'activities:', JSON.stringify(data.activities?.slice(0, 2)));
+            streakDocs.set(docSnap.id, {
+              earnedPoints: data.earnedPoints || 0,
+              questionsAttempted: data.questionsAttempted || 0,
+              activities: data.activities || []
+            });
+          });
+        }
+        
+        // Count consecutive days starting from today
+        // For multi-section courses: only count days with activity in the CURRENT section
+        // For single-exam courses: count any activity
+        logger.debug('[STREAK] Total docs found:', streakDocs.size, 'Map keys:', Array.from(streakDocs.keys()).join(', '));
+        for (let i = 0; i < streakDates.length; i++) {
+          const logId = `${activeCourse}_${streakDates[i]}`;
+          const dayData = streakDocs.get(logId);
           
-          const logRef = doc(db, 'users', user.uid, 'daily_log', courseLogId);
-          const logSnap = await getDoc(logRef);
-          
-          if (logSnap.exists() && (logSnap.data().earnedPoints || 0) > 0) {
-            streak++;
-          } else if (i > 0) {
-            // Don't break on today (i=0) if no activity yet
-            break;
+          // Determine if there was activity
+          let hadActivity = false;
+          if (dayData) {
+            if (isSingleExamCourse) {
+              // For single-exam courses: any activity counts
+              hadActivity = dayData.earnedPoints > 0 || dayData.questionsAttempted > 0;
+            } else {
+              // For multi-section courses: filter activities by current section
+              const sectionActivities = dayData.activities?.filter(
+                a => a.section?.toUpperCase() === currentSection?.toUpperCase()
+              ) || [];
+              hadActivity = sectionActivities.length > 0;
+              logger.debug('[STREAK] Day', i, 'section activities:', sectionActivities.length, 'for section:', currentSection);
+            }
           }
+          // For today (i=0): also check live todayLog state which may have activity
+          // recorded after the Firestore streak query ran
+          if (!hadActivity && i === 0 && todayLog) {
+            if (isSingleExamCourse) {
+              hadActivity = (todayLog.earnedPoints || 0) > 0 || (todayLog.questionsAttempted || 0) > 0;
+            } else {
+              const liveSectionActivities = (todayLog.activities || []).filter(
+                (a: { section?: string }) => a.section?.toUpperCase() === currentSection?.toUpperCase()
+              );
+              hadActivity = liveSectionActivities.length > 0;
+            }
+            if (hadActivity) logger.debug('[STREAK] Day 0 activity found via live todayLog');
+          }
+          
+          if (hadActivity) {
+            streak++;
+            logger.debug('[STREAK] Day', i, streakDates[i], 'HAD activity, streak now:', streak);
+          } else if (i > 0) {
+            // Don't break on today (i=0) if no activity yet - they might study today
+            logger.debug('[STREAK] Day', i, streakDates[i], 'NO activity, breaking');
+            break;
+          } else {
+            logger.debug('[STREAK] Day 0 (today) no activity yet, continuing');
+          }
+        }
+        logger.debug('[STREAK] Final streak:', streak);
+        // GA4 analytics — track streaks
+        if (streak >= 2) {
+          analytics.maintainStreak(streak);
         }
         setCurrentStreak(streak);
       } catch (error) {
+        logger.error('[STREAK] Error in fetchWeeklyData:', error);
         logger.error('Error fetching weekly data:', error);
       }
     };
 
-    fetchWeeklyData();
-  }, [user, todayLog, currentSection, activeCourse, statsVersion]); // Re-run when course/section changes or stats forced refresh
+    // Defer initial fetch to avoid competing with critical data on boot
+    // (auth, daily log, subscription). Subsequent fetches (section change, refresh) run immediately.
+    const isInitialFetch = !weeklyStats.totalQuestions && !stats;
+    const delay = isInitialFetch ? 1500 : 0;
+    const timer = setTimeout(() => {
+      fetchWeeklyData().catch(err => logger.error('[STREAK] fetchWeeklyData promise rejected:', err));
+    }, delay);
+    return () => clearTimeout(timer);
+    // NOTE: todayLog intentionally excluded — it changes on every MCQ answer,
+    // which would trigger 5 Firestore queries per answer. Use refreshStats() instead.
+  }, [user, currentSection, activeCourse, statsVersion]); // Re-run when course/section changes or stats forced refresh
   
   // Function to force refresh stats (called when section changes)
   const refreshStats = async () => {
@@ -347,9 +451,12 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         const logRef = doc(db, 'users', user.uid, 'daily_log', dailyLogId);
         
         // Use setDoc with merge to handle case where doc doesn't exist yet
+        // Note: questionsAttempted is legacy name, questionsAnswered is preferred
+        // Both written for backwards compatibility with existing data reads
         await setDoc(logRef, {
             earnedPoints: increment(points),
             questionsAttempted: increment(1),
+            questionsAnswered: increment(1),  // Alias for consistency with studyPlans
             questionsCorrect: increment(isCorrect ? 1 : 0),
             studyTimeMinutes: increment(timeSpentMinutes),
             activities: arrayUnion({
@@ -358,6 +465,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
               topic,
               section: section || 'unknown',
               isCorrect,
+              points,
               timeSpentSeconds,
               timestamp: new Date().toISOString()
             })
@@ -385,6 +493,20 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
             timeSpentSeconds,
           }
         );
+
+        // GA4 analytics — track every question answered
+        analytics.answerQuestion(isCorrect, section, topic || 'General');
+
+        // If streak is 0 but we just recorded activity, bump to 1
+        if (currentStreak === 0) {
+          setCurrentStreak(1);
+        }
+
+        // Update study plan progress (non-blocking)
+        incrementStudyPlanProgress(user.uid, activeCourse, section || currentSection, {
+          questionsAnswered: 1,
+          accuracy: isCorrect ? 100 : 0,
+        }).catch(err => logger.warn('Failed to update study plan progress from MCQ:', err));
     } catch (e) {
         logger.error("Error recording answer", e);
     }
@@ -395,22 +517,51 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
       try {
         const earnedPoints = Math.round((score / 100) * 50); // Max 50 points per sim
         const logRef = doc(db, 'users', user.uid, 'daily_log', dailyLogId);
-        await updateDoc(logRef, {
+        const activity = {
+          type: 'simulation',
+          id,
+          section: section || 'unknown',
+          score,
+          points: earnedPoints,
+          timeSpent,
+          timestamp: new Date().toISOString()
+        };
+
+        // Check if daily log exists, create if not (updateDoc fails on missing doc)
+        const logSnap = await getDoc(logRef);
+        if (!logSnap.exists()) {
+          await setDoc(logRef, {
+            date: getToday(),
+            goalPoints: userProfile?.dailyGoal || 50,
+            earnedPoints: earnedPoints,
+            questionsAttempted: 0,
+            questionsAnswered: 0,
+            questionsCorrect: 0,
+            lessonsCompleted: 0,
+            simulationsCompleted: 1,
+            studyTimeMinutes: timeSpent,
+            createdAt: serverTimestamp(),
+            activities: [activity]
+          });
+        } else {
+          await updateDoc(logRef, {
             earnedPoints: increment(earnedPoints),
             simulationsCompleted: increment(1),
             studyTimeMinutes: increment(timeSpent),
-            activities: arrayUnion({
-              type: 'simulation',
-              id,
-              section: section || 'unknown',
-              score,
-              timeSpent,
-              timestamp: new Date().toISOString()
-            })
-        });
+            activities: arrayUnion(activity)
+          });
+        }
         
         // Record in TBS history for mastery tracking
         await recordTBSResult(user.uid, id, score, section || 'unknown', timeSpent * 60);
+
+        // GA4 analytics — track simulation/exam completion
+        analytics.completeExam(section || 'unknown', score, score >= 75);
+
+        // Update study plan progress (non-blocking)
+        incrementStudyPlanProgress(user.uid, activeCourse, section || currentSection, {
+          questionsAnswered: 1,
+        }).catch(err => logger.warn('Failed to update study plan progress from simulation:', err));
       } catch (e) {
           logger.error("Error completing simulation", e);
       }
@@ -432,6 +583,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
             goalPoints: userProfile?.dailyGoal || 50,
             earnedPoints: earnedPoints,
             questionsAttempted: 0,
+            questionsAnswered: 0,
             questionsCorrect: 0,
             lessonsCompleted: 1,
             simulationsCompleted: 0,
@@ -442,6 +594,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
               lessonId,
               section,
               courseId: activeCourse,
+              points: earnedPoints,
               timeSpent,
               timestamp: new Date().toISOString()
             }]
@@ -457,6 +610,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
                 lessonId,
                 section,
                 courseId: activeCourse,
+                points: earnedPoints,
                 timeSpent,
                 timestamp: new Date().toISOString()
               })
@@ -472,6 +626,19 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           timeSpent,
         }, { merge: true });
         
+        // Update study plan progress (non-blocking)
+        incrementStudyPlanProgress(user.uid, activeCourse, section, {
+          lessonsCompleted: 1,
+        }).catch(err => logger.warn('Failed to update study plan progress:', err));
+        
+        // GA4 analytics — track lesson completion
+        trackEvent('lesson_complete', {
+          lesson_id: lessonId,
+          exam_section: section,
+          course_id: activeCourse,
+          time_spent_minutes: timeSpent,
+        });
+
         logger.log('Lesson completed:', lessonId);
       } catch (e) {
           logger.error("Error completing lesson", e);
@@ -530,8 +697,14 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     
     try {
       // Aggregate topic performance from daily log activities
+      // Limit to last 90 days to avoid fetching entire history (performance)
+      const cutoffDate = new Date();
+      cutoffDate.setDate(cutoffDate.getDate() - 90);
+      const cutoffDateStr = format(cutoffDate, 'yyyy-MM-dd');
+      
       const dailyLogCollection = collection(db, 'users', user.uid, 'daily_log');
-      const logsSnapshot = await getDocs(dailyLogCollection);
+      const recentLogsQuery = query(dailyLogCollection, where('date', '>=', cutoffDateStr));
+      const logsSnapshot = await getDocs(recentLogsQuery);
       
       const topicStats: Record<string, { correct: number; total: number }> = {};
       
@@ -543,11 +716,19 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         // Also check doc ID prefix for course-specific logs (format: {course}_{date})
         if (doc.id.includes('_') && !doc.id.startsWith(`${activeCourse}_`)) return;
         
+        // Determine if this is a single-exam course (no section filtering needed)
+        const SINGLE_EXAM_COURSES_TOPIC: CourseId[] = ['cisa', 'cfp'];
+        const isSingleExamCourse = SINGLE_EXAM_COURSES_TOPIC.includes(activeCourse as CourseId);
+        
         if (data.activities && Array.isArray(data.activities)) {
           data.activities.forEach((activity: { type: string; topic?: string; isCorrect?: boolean; section?: string }) => {
-            // Filter by section if provided
-            if (section && activity.section && activity.section !== section) {
-              return;
+            // For multi-section courses: strict section filter (activity MUST have matching section)
+            // For single-exam courses: include all activities
+            if (!isSingleExamCourse && section) {
+              // Strict filter: activity must have section field AND it must match
+              if (!activity.section || activity.section.toUpperCase() !== section.toUpperCase()) {
+                return;
+              }
             }
             if (activity.type === 'mcq' && activity.topic) {
               if (!topicStats[activity.topic]) {
@@ -575,9 +756,32 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     }
   }
 
-  // Calculate daily progress percentage
+  // Compute section-filtered earned points from activities
+  // For multi-section courses (CPA, EA, CMA, CIA): show only current section's points
+  // For single-exam courses (CISA, CFP): show course-wide total
+  const SINGLE_EXAM_COURSES_DAILY: CourseId[] = ['cisa', 'cfp'];
+  const isSingleExamForGoal = SINGLE_EXAM_COURSES_DAILY.includes(activeCourse as CourseId);
+
+  const sectionEarnedPoints = (() => {
+    if (!todayLog) return 0;
+    if (isSingleExamForGoal) return todayLog.earnedPoints;
+    if (!todayLog.activities || !Array.isArray(todayLog.activities)) return 0;
+
+    return todayLog.activities.reduce((sum: number, activity: { section?: string; points?: number; type?: string; isCorrect?: boolean; score?: number }) => {
+      if (activity.section?.toUpperCase() !== currentSection?.toUpperCase()) return sum;
+      // Use stored points if available (new format)
+      if (typeof activity.points === 'number') return sum + activity.points;
+      // Estimate points for legacy activities without points field
+      if (activity.type === 'mcq') return sum + (activity.isCorrect ? 2 : 0); // ~medium difficulty
+      if (activity.type === 'lesson') return sum + 10;
+      if (activity.type === 'simulation') return sum + Math.round(((activity.score || 0) / 100) * 50);
+      return sum;
+    }, 0);
+  })();
+
+  // Calculate daily progress percentage (section-filtered for multi-section courses)
   const dailyProgress = todayLog 
-    ? Math.min(100, Math.round((todayLog.earnedPoints / todayLog.goalPoints) * 100)) 
+    ? Math.min(100, Math.round((sectionEarnedPoints / todayLog.goalPoints) * 100)) 
     : 0;
 
   const dailyGoalMet = dailyProgress >= 100;
@@ -589,6 +793,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     loading,
     dailyProgress,
     dailyGoalMet,
+    sectionEarnedPoints,
     weeklyStats,
     stats, // NEW: Section-filtered stats
     setCurrentStreak,

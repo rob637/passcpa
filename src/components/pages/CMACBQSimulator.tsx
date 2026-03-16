@@ -249,7 +249,7 @@ const DragDropInput: React.FC<{
   return (
     <div className="space-y-3">
       <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
-        <GripVertical className="w-4 h-4 inline mr-1" /> Drag to reorder (1 = first/highest)
+        <GripVertical className="w-4 h-4 inline mr-1" /> Use arrows to reorder (1 = first/highest)
       </p>
       <div className="space-y-2">
         {order.map((item, idx) => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Trophy, Lock, Flame, Target, Zap, Clock, Star, Gift, LucideIcon, Share2 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
-import { doc, getDoc, setDoc, onSnapshot } from 'firebase/firestore';
+import { doc, setDoc, onSnapshot, collection, getDocs } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import {
   ACHIEVEMENTS,
@@ -73,19 +73,40 @@ const Achievements: React.FC = () => {
   useEffect(() => {
     if (!user?.uid) return;
 
-    // Subscribe to achievements
-    const achievementsRef = doc(db, 'users', user.uid, 'achievements', 'earned');
+    // Subscribe to achievements (course-specific)
+    const achievementsRef = doc(db, 'users', user.uid, 'achievements', courseId || 'cpa');
     const unsubAchievements = onSnapshot(achievementsRef, (snapshot) => {
       if (snapshot.exists()) {
         setEarnedAchievements(snapshot.data().list || []);
+      } else {
+        setEarnedAchievements([]);
       }
     });
 
-    // Load user stats
+    // Load user stats by aggregating daily_log (filtered by current course)
     const loadStats = async () => {
-      const progressRef = doc(db, 'users', user.uid, 'progress', 'stats');
-      const snap = await getDoc(progressRef);
+      const dailyLogRef = collection(db, 'users', user.uid, 'daily_log');
+      const logSnap = await getDocs(dailyLogRef);
       
+      let totalQuestions = 0;
+      let totalCorrect = 0;
+      const currentCourse = courseId || 'cpa';
+      
+      logSnap.forEach((d) => {
+        // Filter by courseId - daily_log IDs use format: "{courseId}_{date}"
+        // or legacy format without prefix (treat as 'cpa')
+        const docId = d.id;
+        const docCourse = docId.includes('_') ? docId.split('_')[0] : 'cpa';
+        
+        if (docCourse === currentCourse) {
+          const data = d.data();
+          totalQuestions += data.questionsAttempted || 0;
+          totalCorrect += data.questionsCorrect || 0;
+        }
+      });
+      
+      const accuracy = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+
       // Also load referral stats
       let referralCount = 0;
       try {
@@ -95,21 +116,12 @@ const Achievements: React.FC = () => {
         // Referral stats not available
       }
       
-      if (snap.exists()) {
-        setUserStats({ ...snap.data() as UserStats, referralCount });
-      } else {
-        setUserStats({
-          totalQuestions: 0,
-          totalCorrect: 0,
-          accuracy: 0,
-          referralCount,
-        });
-      }
+      setUserStats({ totalQuestions, totalCorrect, accuracy, referralCount });
     };
 
     loadStats();
     return () => unsubAchievements();
-  }, [user?.uid]);
+  }, [user?.uid, courseId]);
 
   // Check for new achievements
   useEffect(() => {
@@ -130,8 +142,8 @@ const Achievements: React.FC = () => {
         feedback.levelUp();
         celebrateAchievement();
 
-        // Save to Firestore
-        const achievementsRef = doc(db, 'users', user.uid, 'achievements', 'earned');
+        // Save to Firestore (course-specific)
+        const achievementsRef = doc(db, 'users', user.uid, 'achievements', courseId || 'cpa');
         await setDoc(
           achievementsRef,
           {
@@ -145,7 +157,7 @@ const Achievements: React.FC = () => {
     };
 
     checkNewAchievements();
-  }, [user?.uid, userStats, currentStreak, todayLog, earnedAchievements]);
+  }, [user?.uid, userStats, currentStreak, todayLog, earnedAchievements, courseId]);
 
   const categories = Object.keys(CATEGORY_INFO);
   const allTabs = ['all', ...categories];

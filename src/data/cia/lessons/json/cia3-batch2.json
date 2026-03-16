@@ -1,0 +1,1574 @@
+[
+  {
+    "id": "CIA3-I-024",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Financial Statement Analysis for Auditors",
+    "description": "Master analytical techniques for examining financial statements",
+    "order": 24,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Ratio analysis",
+      "Trend analysis",
+      "Common-size statements",
+      "Benchmarking"
+    ],
+    "blueprintArea": "CIA3-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why Auditors Analyze Financials",
+          "type": "text",
+          "content": "**Financial statement analysis helps auditors:**\n\n\u2022 Understand business performance\n\u2022 Identify unusual trends or anomalies\n\u2022 Assess going concern risks\n\u2022 Evaluate management representations\n\u2022 Direct audit testing to risk areas\n\n**Key skills for all internal auditors, not just financial auditors.**"
+        },
+        {
+          "title": "Key Financial Ratios",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Ratio",
+            "Formula"
+          ],
+          "rows": [
+            [
+              "Liquidity",
+              "Current Ratio",
+              "Current Assets / Current Liabilities"
+            ],
+            [
+              "Liquidity",
+              "Quick Ratio",
+              "(CA - Inventory) / Current Liabilities"
+            ],
+            [
+              "Profitability",
+              "Gross Margin",
+              "Gross Profit / Revenue"
+            ],
+            [
+              "Profitability",
+              "Net Margin",
+              "Net Income / Revenue"
+            ],
+            [
+              "Leverage",
+              "Debt-to-Equity",
+              "Total Debt / Total Equity"
+            ],
+            [
+              "Activity",
+              "Inventory Turnover",
+              "COGS / Average Inventory"
+            ],
+            [
+              "Activity",
+              "Receivables Turnover",
+              "Revenue / Average A/R"
+            ]
+          ]
+        },
+        {
+          "title": "Analytical Techniques",
+          "type": "text",
+          "content": "**1. Trend Analysis**\nCompare metrics over multiple periods\n\u2022 Revenue growth rate\n\u2022 Expense patterns\n\u2022 Balance sheet changes\n\n**2. Common-Size Analysis**\nExpress line items as percentages\n\u2022 Income statement % of revenue\n\u2022 Balance sheet % of total assets\n\n**3. Benchmarking**\nCompare to industry peers\n\u2022 Performance comparison\n\u2022 Efficiency measures"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Financial analysis identifies risks and anomalies",
+            "Key ratios: liquidity, profitability, leverage, activity",
+            "Use trend, common-size, and benchmark analysis",
+            "Apply professional skepticism to results"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Understanding Audit Objectives",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason for an internal auditor to perform financial statement analysis?",
+            "options": [
+              "To prepare the company's financial statements for external reporting.",
+              "To identify areas of increased risk and focus audit testing accordingly.",
+              "To ensure that the company's stock price increases.",
+              "To replace the work of the external auditors."
+            ],
+            "correctIndex": 1,
+            "explanation": "Identifying areas of increased risk and focusing audit testing is the primary objective of an internal auditor when performing financial statement analysis. This allows the auditor to efficiently allocate resources to areas with the highest potential for misstatement or fraud.",
+            "hint": "Think about the core purpose of internal audit."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Common-Size Income Statement",
+          "reveal": {
+            "question": "In a common-size income statement, what is the base to which all other line items are compared, and how is it expressed?",
+            "answer": "The base is revenue (or net sales), and all line items are expressed as a percentage of revenue. For example, cost of goods sold might be 60% of revenue."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Trend Analysis vs. Benchmarking",
+          "comparison": {
+            "headers": [
+              "Trend Analysis",
+              "Benchmarking"
+            ],
+            "rows": [
+              {
+                "label": "Purpose",
+                "values": [
+                  "To identify changes in a company's performance over time.",
+                  "To compare a company's performance to that of its peers or industry leaders."
+                ]
+              },
+              {
+                "label": "Data Source",
+                "values": [
+                  "Historical financial data of the company.",
+                  "Financial data of comparable companies or industry averages."
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Internal performance changes.",
+                  "External competitive position."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Analyzing the company's revenue growth rate over the past 5 years.",
+                  "Comparing the company's profit margin to the industry average."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Applying Analytical Techniques",
+          "knowledgeCheck": {
+            "question": "An internal auditor notices that a company's accounts receivable turnover ratio has decreased significantly over the past year. Which analytical technique is being used, and what is a potential implication of this finding?",
+            "options": [
+              "Trend analysis; the company may be having difficulty collecting receivables.",
+              "Common-size analysis; the company's sales are declining.",
+              "Benchmarking; the company is performing worse than its competitors.",
+              "Ratio analysis; the company's profitability is increasing."
+            ],
+            "correctIndex": 0,
+            "explanation": "Trend analysis is being used because the auditor is comparing the accounts receivable turnover ratio over time. A decreasing turnover ratio suggests that the company is taking longer to collect its receivables, which could indicate potential problems with credit policies or customer payment habits.",
+            "hint": "Turnover ratios measure how efficiently a company uses its assets."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-I-025",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Business Process Understanding",
+    "description": "Learn to document and analyze business processes effectively",
+    "order": 25,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Process mapping",
+      "Flowcharting",
+      "Value chain",
+      "Process documentation"
+    ],
+    "blueprintArea": "CIA3-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why Process Understanding Matters",
+          "type": "text",
+          "content": "**Auditors need process understanding to:**\n\n\u2022 Identify control points\n\u2022 Determine what can go wrong\n\u2022 Assess process efficiency\n\u2022 Evaluate improvement opportunities\n\u2022 Plan appropriate audit procedures\n\n**Process = series of activities that transforms inputs into outputs**"
+        },
+        {
+          "title": "Process Documentation Methods",
+          "type": "text",
+          "content": "**1. Narrative Descriptions**\n\u2022 Written descriptions of processes\n\u2022 Good for simple processes\n\u2022 May miss details in complex processes\n\n**2. Flowcharts**\n\u2022 Visual representation of process flow\n\u2022 Shows sequence, decisions, inputs/outputs\n\u2022 Often preferred for complex processes\n\n**3. SIPOC Diagrams**\n\u2022 Suppliers, Inputs, Process, Outputs, Customers\n\u2022 High-level process overview\n\n**4. Swim Lane Diagrams**\n\u2022 Shows who performs each activity\n\u2022 Highlights handoffs and responsibilities"
+        },
+        {
+          "title": "Value Chain Analysis",
+          "type": "text",
+          "content": "**Porter's Value Chain includes:**\n\n**Primary Activities:**\n\u2022 Inbound logistics\n\u2022 Operations\n\u2022 Outbound logistics\n\u2022 Marketing and sales\n\u2022 Service\n\n**Support Activities:**\n\u2022 Firm infrastructure\n\u2022 Human resources\n\u2022 Technology development\n\u2022 Procurement\n\n**Use to understand where value is created and where risks exist.**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Process understanding enables effective auditing",
+            "Multiple documentation methods: narratives, flowcharts, SIPOC",
+            "Value chain identifies primary and support activities",
+            "Documentation should identify controls and risks"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Process Documentation",
+          "knowledgeCheck": {
+            "question": "Which of the following process documentation methods is MOST suitable for visualizing a complex, multi-step process with several decision points?",
+            "options": [
+              "Narrative Description",
+              "Flowchart",
+              "SIPOC Diagram",
+              "Procedure Manual"
+            ],
+            "correctIndex": 1,
+            "explanation": "Flowcharts excel at visually representing complex processes, showing the sequence of activities, decision points, inputs, and outputs. Narrative descriptions can become unwieldy for complex processes, and SIPOC diagrams provide a high-level overview rather than detailed process flow.",
+            "hint": "Consider the strengths and weaknesses of each documentation method."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Auditor's Process Understanding",
+          "reveal": {
+            "question": "List three reasons why process understanding is crucial for internal auditors.",
+            "answer": "1. Identify control points. 2. Determine what can go wrong. 3. Assess process efficiency. Other valid answers: Evaluate improvement opportunities, Plan appropriate audit procedures."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Flowcharts vs. Narrative Descriptions",
+          "comparison": {
+            "headers": [
+              "Flowcharts",
+              "Narrative Descriptions"
+            ],
+            "rows": [
+              {
+                "label": "Complexity Suitability",
+                "values": [
+                  "Best for complex processes",
+                  "Best for simple processes"
+                ]
+              },
+              {
+                "label": "Visualization",
+                "values": [
+                  "Visual representation of process flow",
+                  "Written description of process steps"
+                ]
+              },
+              {
+                "label": "Detail",
+                "values": [
+                  "Effective at showing decision points and parallel activities",
+                  "May miss details in complex processes"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Applying Value Chain Analysis",
+          "knowledgeCheck": {
+            "question": "Which of the following activities is considered a PRIMARY activity in Porter's Value Chain?",
+            "options": [
+              "Human Resources",
+              "Technology Development",
+              "Inbound Logistics",
+              "Procurement"
+            ],
+            "correctIndex": 2,
+            "explanation": "Inbound logistics is a primary activity, directly related to creating and delivering the product or service. Human resources, technology development, and procurement are support activities that enable the primary activities.",
+            "hint": "Think about which activities directly contribute to the creation of value for the customer."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-I-026",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Corporate Governance Structures",
+    "description": "Understand governance structures and their implications for internal audit",
+    "order": 26,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Board structure",
+      "Committees",
+      "Stakeholder governance",
+      "Governance models"
+    ],
+    "blueprintArea": "CIA3-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Governance Framework",
+          "type": "text",
+          "content": "**Corporate governance encompasses:**\n\n\u2022 Structures and processes for directing organizations\n\u2022 Relationship between board, management, and stakeholders\n\u2022 Accountability and oversight mechanisms\n\u2022 Strategic decision-making authority\n\n**Why it matters for internal audit:**\nInternal audit provides assurance on governance effectiveness and reports to the board."
+        },
+        {
+          "title": "Board Structures",
+          "type": "text",
+          "content": "**One-Tier Board (Unitary)**\n\u2022 Single board with executive and non-executive directors\n\u2022 Common in US, UK\n\u2022 CEO may also be Chair (though separation is best practice)\n\n**Two-Tier Board**\n\u2022 Supervisory board (oversight) + Management board (operations)\n\u2022 Common in Germany, Netherlands\n\u2022 Clear separation of oversight and management"
+        },
+        {
+          "title": "Key Board Committees",
+          "type": "table",
+          "headers": [
+            "Committee",
+            "Responsibilities"
+          ],
+          "rows": [
+            [
+              "Audit Committee",
+              "Financial reporting, internal/external audit, ethics"
+            ],
+            [
+              "Compensation Committee",
+              "Executive pay, incentives, benefits"
+            ],
+            [
+              "Nominating Committee",
+              "Board composition, director selection"
+            ],
+            [
+              "Risk Committee",
+              "Enterprise risk oversight"
+            ]
+          ]
+        },
+        {
+          "title": "Internal Audit's Governance Role",
+          "type": "callout",
+          "content": "Internal audit should evaluate and contribute to improvement of governance processes, including ethics, accountability, performance management, and communication."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Governance involves structures for direction and oversight",
+            "Board structures vary by jurisdiction",
+            "Audit committee is key governance partner for IA",
+            "IA provides assurance on governance effectiveness"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Corporate Governance Structures: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following statements BEST describes a key difference between a one-tier and a two-tier board structure?",
+            "options": [
+              "A one-tier board has a combined supervisory and management function, while a two-tier board separates these functions into distinct boards.",
+              "A one-tier board is primarily found in Germany and the Netherlands, while a two-tier board is common in the US and UK.",
+              "A one-tier board structure always separates the roles of CEO and Chair, while a two-tier board always combines them.",
+              "A two-tier board is composed only of executive directors, while a one-tier board is composed only of non-executive directors."
+            ],
+            "correctIndex": 0,
+            "explanation": "The correct answer is A. A one-tier (unitary) board combines executive and non-executive directors on a single board responsible for both oversight and management. A two-tier board separates these functions into a supervisory board (oversight) and a management board (operations).",
+            "hint": "Consider the primary function of each board structure: oversight and management."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Memorization Check: Two-Tier Board Structure",
+          "reveal": {
+            "question": "In a two-tier board structure, which board is primarily responsible for the day-to-day operations of the company?",
+            "answer": "The Management Board is responsible for the day-to-day operations of the company in a two-tier board structure. The Supervisory Board provides oversight."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "One-Tier vs. Two-Tier Boards: Key Differences",
+          "comparison": {
+            "headers": [
+              "One-Tier Board (Unitary)",
+              "Two-Tier Board"
+            ],
+            "rows": [
+              {
+                "label": "Structure",
+                "values": [
+                  "Single board with executive and non-executive directors.",
+                  "Separate Supervisory and Management boards."
+                ]
+              },
+              {
+                "label": "Common In",
+                "values": [
+                  "US, UK",
+                  "Germany, Netherlands"
+                ]
+              },
+              {
+                "label": "Function",
+                "values": [
+                  "Combines oversight and management responsibilities.",
+                  "Supervisory board provides oversight; Management board manages operations."
+                ]
+              },
+              {
+                "label": "CEO & Chair Roles",
+                "values": [
+                  "CEO may also be Chair (though separation is best practice).",
+                  "Clear separation of roles between the Supervisory and Management boards."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-II-027",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Cybersecurity Risk Management",
+    "description": "Understand cybersecurity risks and controls relevant to internal auditors",
+    "order": 27,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Cyber threats",
+      "Security controls",
+      "Incident response",
+      "Security frameworks"
+    ],
+    "blueprintArea": "CIA3-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Cyber Threat Landscape",
+          "type": "text",
+          "content": "**Common Cyber Threats:**\n\n\u2022 **Malware** - Viruses, ransomware, spyware\n\u2022 **Phishing** - Social engineering via email\n\u2022 **Insider Threats** - Malicious or negligent employees\n\u2022 **DDoS** - Denial of service attacks\n\u2022 **APT** - Advanced Persistent Threats (targeted attacks)\n\u2022 **Supply Chain** - Third-party compromise\n\n**Threat actors range from script kiddies to nation-states.**"
+        },
+        {
+          "title": "Security Control Framework",
+          "type": "text",
+          "content": "**NIST Cybersecurity Framework Functions:**\n\n1. **Identify** - Asset management, risk assessment\n2. **Protect** - Access control, training, data security\n3. **Detect** - Monitoring, anomaly detection\n4. **Respond** - Incident response, mitigation\n5. **Recover** - Recovery planning, improvements\n\n**These functions provide a structure for evaluating security programs.**"
+        },
+        {
+          "title": "Key Security Controls",
+          "type": "table",
+          "headers": [
+            "Control Category",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Preventive",
+              "Firewalls, access controls, encryption"
+            ],
+            [
+              "Detective",
+              "IDS/IPS, SIEM, log monitoring"
+            ],
+            [
+              "Corrective",
+              "Incident response, patching, restore"
+            ],
+            [
+              "Administrative",
+              "Policies, training, awareness"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Cyber threats are diverse and evolving",
+            "NIST CSF provides evaluation structure",
+            "Controls: preventive, detective, corrective",
+            "Internal auditors should assess cyber risk management"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: NIST Cybersecurity Framework",
+          "knowledgeCheck": {
+            "question": "Which function of the NIST Cybersecurity Framework focuses primarily on implementing safeguards to ensure the delivery of critical infrastructure services?",
+            "options": [
+              "Identify",
+              "Protect",
+              "Detect",
+              "Recover"
+            ],
+            "correctIndex": 1,
+            "explanation": "The 'Protect' function involves implementing safeguards to ensure the delivery of critical infrastructure services. This includes access control, training, and data security.",
+            "hint": "Think about which function is most proactive in preventing incidents."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Common Cyber Threats",
+          "reveal": {
+            "question": "Define Advanced Persistent Threat (APT) and explain why it is considered a significant cybersecurity risk.",
+            "answer": "An Advanced Persistent Threat (APT) is a sophisticated, targeted cyberattack in which an attacker gains unauthorized access to a system and remains undetected for an extended period. It is a significant risk due to its targeted nature, potential for long-term damage, and ability to exfiltrate sensitive data over time."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Compare and Contrast: Malware Types",
+          "comparison": {
+            "headers": [
+              "Ransomware",
+              "Spyware"
+            ],
+            "rows": [
+              {
+                "label": "Primary Objective",
+                "values": [
+                  "Extortion through data encryption",
+                  "Data theft and surveillance"
+                ]
+              },
+              {
+                "label": "User Awareness",
+                "values": [
+                  "Usually immediately apparent to the user",
+                  "Designed to remain hidden from the user"
+                ]
+              },
+              {
+                "label": "Impact on System",
+                "values": [
+                  "Renders system unusable until ransom is paid (or data is recovered)",
+                  "Degrades system performance and compromises privacy"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-II-028",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Data Privacy and Protection",
+    "description": "Understand data privacy regulations and controls",
+    "order": 28,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "GDPR",
+      "Privacy principles",
+      "Data classification",
+      "Privacy controls"
+    ],
+    "blueprintArea": "CIA3-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Data Privacy Fundamentals",
+          "type": "text",
+          "content": "**Key Data Privacy Concepts:**\n\n\u2022 **Personal Data** - Information relating to an identified/identifiable person\n\u2022 **Sensitive Data** - Special categories (health, biometrics, etc.)\n\u2022 **Data Subject** - Individual whose data is processed\n\u2022 **Data Controller** - Determines purposes and means of processing\n\u2022 **Data Processor** - Processes data on behalf of controller"
+        },
+        {
+          "title": "Privacy Principles (GDPR)",
+          "type": "text",
+          "content": "**Key GDPR Principles:**\n\n1. **Lawfulness, Fairness, Transparency** - Legal basis for processing\n2. **Purpose Limitation** - Collect for specified purposes only\n3. **Data Minimization** - Only collect what's necessary\n4. **Accuracy** - Keep data accurate and current\n5. **Storage Limitation** - Retain only as long as needed\n6. **Integrity and Confidentiality** - Appropriate security\n7. **Accountability** - Demonstrate compliance"
+        },
+        {
+          "title": "Data Subject Rights",
+          "type": "table",
+          "headers": [
+            "Right",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Access",
+              "Request copy of their personal data"
+            ],
+            [
+              "Rectification",
+              "Correct inaccurate data"
+            ],
+            [
+              "Erasure",
+              "Delete data (right to be forgotten)"
+            ],
+            [
+              "Portability",
+              "Receive data in common format"
+            ],
+            [
+              "Object",
+              "Object to processing"
+            ],
+            [
+              "Restrict Processing",
+              "Limit how data is used"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Privacy regulations apply to personal data processing",
+            "Seven key GDPR principles guide compliance",
+            "Data subjects have specific rights",
+            "Internal auditors should assess privacy controls"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-II-029",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Cloud Computing Risks and Controls",
+    "description": "Understand cloud service models and associated audit considerations",
+    "order": 29,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cloud models",
+      "Cloud risks",
+      "Cloud controls",
+      "Vendor management"
+    ],
+    "blueprintArea": "CIA3-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Cloud Service Models",
+          "type": "text",
+          "content": "**Three Service Models:**\n\n**IaaS (Infrastructure as a Service)**\n\u2022 Provider manages: hardware, virtualization\n\u2022 Customer manages: OS, applications, data\n\u2022 Example: AWS EC2, Azure VMs\n\n**PaaS (Platform as a Service)**\n\u2022 Provider manages: infrastructure + platform\n\u2022 Customer manages: applications, data\n\u2022 Example: Google App Engine, Heroku\n\n**SaaS (Software as a Service)**\n\u2022 Provider manages: entire stack\n\u2022 Customer manages: data, user access\n\u2022 Example: Salesforce, Office 365"
+        },
+        {
+          "title": "Cloud Deployment Models",
+          "type": "table",
+          "headers": [
+            "Model",
+            "Description",
+            "Control"
+          ],
+          "rows": [
+            [
+              "Public",
+              "Shared infrastructure",
+              "Provider controlled"
+            ],
+            [
+              "Private",
+              "Dedicated infrastructure",
+              "Customer controlled"
+            ],
+            [
+              "Hybrid",
+              "Mix of public and private",
+              "Split responsibility"
+            ],
+            [
+              "Community",
+              "Shared by similar orgs",
+              "Shared governance"
+            ]
+          ]
+        },
+        {
+          "title": "Cloud Risks and Controls",
+          "type": "text",
+          "content": "**Key Cloud Risks:**\n\u2022 Data security and privacy\n\u2022 Vendor lock-in\n\u2022 Availability and reliability\n\u2022 Compliance with regulations\n\u2022 Shared responsibility confusion\n\n**Control Considerations:**\n\u2022 Strong cloud vendor due diligence\n\u2022 Clear contracts and SLAs\n\u2022 Data encryption in transit and at rest\n\u2022 Regular security assessments (SOC reports)\n\u2022 Exit strategy and data portability"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Cloud models: IaaS, PaaS, SaaS",
+            "Responsibility varies by service model",
+            "Key risks: security, compliance, vendor lock-in",
+            "Review SOC reports for cloud vendor assurance"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cloud Service Model Application",
+          "knowledgeCheck": {
+            "question": "An organization wants to quickly deploy and manage custom-developed applications without managing the underlying server infrastructure. Which cloud service model is MOST suitable for this requirement?",
+            "options": [
+              "Infrastructure as a Service (IaaS)",
+              "Platform as a Service (PaaS)",
+              "Software as a Service (SaaS)",
+              "Business Process as a Service (BPaaS)"
+            ],
+            "correctIndex": 1,
+            "explanation": "PaaS provides the necessary platform (hardware, operating system, and software framework) for application development and deployment, allowing the organization to focus on the application itself rather than managing the underlying infrastructure. IaaS requires the customer to manage the OS, while SaaS delivers software over the internet.",
+            "hint": "Think about which model abstracts away the most infrastructure management from the customer."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Vendor Lock-in Definition",
+          "reveal": {
+            "question": "Define 'Vendor Lock-in' in the context of cloud computing.",
+            "answer": "Vendor lock-in refers to a situation where a customer becomes dependent on a specific cloud provider's technology, making it difficult or costly to switch to a different provider. This can be due to proprietary technologies, data formats, or complex integrations."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "IaaS vs. PaaS: Shared Responsibility",
+          "comparison": {
+            "headers": [
+              "IaaS",
+              "PaaS"
+            ],
+            "rows": [
+              {
+                "label": "Infrastructure Management (Servers, Networking)",
+                "values": [
+                  "Provider",
+                  "Provider"
+                ]
+              },
+              {
+                "label": "Operating System Management",
+                "values": [
+                  "Customer",
+                  "Provider"
+                ]
+              },
+              {
+                "label": "Application Development & Management",
+                "values": [
+                  "Customer",
+                  "Customer"
+                ]
+              },
+              {
+                "label": "Data Management",
+                "values": [
+                  "Customer",
+                  "Customer"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Data Security Control",
+          "knowledgeCheck": {
+            "question": "Which of the following controls is MOST effective in mitigating the risk of unauthorized data access in a cloud environment?",
+            "options": [
+              "Implementing a firewall at the perimeter of the cloud provider's network.",
+              "Enforcing multi-factor authentication for all user accounts accessing cloud resources.",
+              "Relying solely on the cloud provider's security certifications.",
+              "Conducting annual penetration testing of the cloud provider's infrastructure."
+            ],
+            "correctIndex": 1,
+            "explanation": "Multi-factor authentication significantly reduces the risk of unauthorized access by requiring users to provide multiple forms of verification. While firewalls, certifications, and penetration testing are important, MFA provides a direct and effective layer of protection for user accounts.",
+            "hint": "Consider which control directly prevents unauthorized individuals from accessing data, even if they have compromised a password."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-III-030",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Application Controls",
+    "description": "Understand application-level controls and their evaluation",
+    "order": 30,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Input controls",
+      "Processing controls",
+      "Output controls",
+      "Application security"
+    ],
+    "blueprintArea": "CIA3-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Application Controls Overview",
+          "type": "text",
+          "content": "**Application controls** are specific to individual applications and ensure complete, accurate, and authorized transaction processing.\n\n**Contrast with IT General Controls:**\n\u2022 ITGCs support multiple applications\n\u2022 Application controls are system-specific\n\u2022 Both are needed for reliable processing"
+        },
+        {
+          "title": "Input Controls",
+          "type": "text",
+          "content": "**Purpose:** Ensure data entering the system is complete, accurate, and authorized.\n\n**Examples:**\n\u2022 Field validation (format, range, reasonableness)\n\u2022 Edit checks (required fields, data types)\n\u2022 Authorization (user permissions, approval workflows)\n\u2022 Batch controls (hash totals, record counts)\n\u2022 Duplicate detection"
+        },
+        {
+          "title": "Processing and Output Controls",
+          "type": "text",
+          "content": "**Processing Controls:**\n\u2022 Calculation verification\n\u2022 Reasonableness checks\n\u2022 Control totals reconciliation\n\u2022 Error handling procedures\n\u2022 Audit trails/logging\n\n**Output Controls:**\n\u2022 Report distribution controls\n\u2022 Output review and approval\n\u2022 Sensitive data masking\n\u2022 Retention and disposal\n\u2022 Access restrictions"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Application controls are specific to individual systems",
+            "Three categories: input, processing, output",
+            "Work with ITGCs for complete control environment",
+            "Test through observation, inquiry, and re-performance"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-III-031",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Business Continuity and Disaster Recovery",
+    "description": "Understand BC/DR planning and internal audit's role",
+    "order": 31,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "BCP",
+      "DRP",
+      "RTO",
+      "RPO",
+      "Testing"
+    ],
+    "blueprintArea": "CIA3-III",
+    "content": {
+      "sections": [
+        {
+          "title": "BC/DR Fundamentals",
+          "type": "text",
+          "content": "**Business Continuity Planning (BCP):**\n\u2022 Focus on maintaining critical business operations\n\u2022 Addresses people, processes, technology\n\u2022 Broader than IT recovery\n\n**Disaster Recovery Planning (DRP):**\n\u2022 Focus on IT systems and data recovery\n\u2022 Subset of business continuity\n\u2022 Technical recovery procedures"
+        },
+        {
+          "title": "Key Recovery Metrics",
+          "type": "table",
+          "headers": [
+            "Metric",
+            "Definition",
+            "Question Answered"
+          ],
+          "rows": [
+            [
+              "RTO",
+              "Recovery Time Objective",
+              "How quickly must we recover?"
+            ],
+            [
+              "RPO",
+              "Recovery Point Objective",
+              "How much data loss is acceptable?"
+            ],
+            [
+              "MTPD",
+              "Maximum Tolerable Downtime",
+              "How long before impact is unacceptable?"
+            ],
+            [
+              "WRT",
+              "Work Recovery Time",
+              "Time to restore work after systems up"
+            ]
+          ]
+        },
+        {
+          "title": "BC/DR Planning Process",
+          "type": "text",
+          "content": "**1. Business Impact Analysis (BIA)**\n\u2022 Identify critical processes\n\u2022 Determine recovery requirements\n\u2022 Assess impact of disruptions\n\n**2. Risk Assessment**\n\u2022 Identify potential threats\n\u2022 Assess likelihood and impact\n\n**3. Strategy Development**\n\u2022 Define recovery strategies\n\u2022 Identify resources needed\n\n**4. Plan Development**\n\u2022 Document procedures\n\u2022 Assign responsibilities\n\n**5. Testing and Maintenance**\n\u2022 Regular testing\n\u2022 Annual plan updates"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "BCP for business operations; DRP for IT recovery",
+            "Key metrics: RTO, RPO",
+            "BIA identifies critical processes and requirements",
+            "Regular testing validates plan effectiveness"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "BCP vs. DRP: Which is Which?",
+          "knowledgeCheck": {
+            "question": "Which of the following BEST describes the primary focus of a Business Continuity Plan (BCP)?",
+            "options": [
+              "Restoring IT systems and data after a cyberattack.",
+              "Maintaining critical business operations during a disruption.",
+              "Implementing security controls to prevent data breaches.",
+              "Ensuring compliance with regulatory requirements related to IT security."
+            ],
+            "correctIndex": 1,
+            "explanation": "The correct answer is B. A BCP focuses on the holistic approach to maintaining essential business functions during a crisis, addressing people, processes, and technology. Options A, C, and D are related to IT security and disaster recovery, but are not the primary focus of a BCP.",
+            "hint": "Think about the 'big picture' versus the technical details."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "RTO Recall",
+          "reveal": {
+            "question": "What does RTO stand for, and what does it represent in the context of BC/DR?",
+            "answer": "RTO stands for Recovery Time Objective. It represents the maximum acceptable downtime for a business process or system after a disruption. It's the targeted time within which the process or system must be restored."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "RTO vs. RPO: Defining the Difference",
+          "comparison": {
+            "headers": [
+              "Recovery Time Objective (RTO)",
+              "Recovery Point Objective (RPO)"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "The maximum acceptable downtime for a system or process.",
+                  "The maximum acceptable data loss, measured in time."
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "How quickly can we get back up and running?",
+                  "How much data are we willing to lose?"
+                ]
+              },
+              {
+                "label": "Measurement",
+                "values": [
+                  "Time (e.g., hours, days)",
+                  "Time (e.g., minutes, hours, days)"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Testing is Key",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST comprehensive method for testing a Disaster Recovery Plan (DRP)?",
+            "options": [
+              "A tabletop exercise with key stakeholders.",
+              "A documentation review to ensure procedures are up-to-date.",
+              "A full interruption test involving a complete shutdown and recovery of systems.",
+              "A simulation test using a virtual environment.",
+              "E. A parallel test running the recovery systems alongside production."
+            ],
+            "correctIndex": 2,
+            "explanation": "The correct answer is C. A full interruption test provides the most realistic assessment of the DRP's effectiveness by simulating a real disaster scenario. While other options have value, they don't fully validate the recovery process under actual disruption conditions. E is also a good answer but less likely to be fully comprehensive.",
+            "hint": "Consider which test most closely mimics a real disaster."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-III-032",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Change Management Controls",
+    "description": "Understand change management processes and related controls",
+    "order": 32,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Change management",
+      "Change controls",
+      "Testing",
+      "Approval process"
+    ],
+    "blueprintArea": "CIA3-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Why Change Management Matters",
+          "type": "text",
+          "content": "**Change management controls ensure:**\n\n\u2022 Changes are authorized\n\u2022 Changes are tested before implementation\n\u2022 Changes are documented\n\u2022 Production environment is protected\n\u2022 Users are prepared for changes\n\n**Poor change management leads to:**\n\u2022 System outages\n\u2022 Data corruption\n\u2022 Security vulnerabilities\n\u2022 Processing errors"
+        },
+        {
+          "title": "Change Management Process",
+          "type": "text",
+          "content": "**Standard Change Management Lifecycle:**\n\n1. **Request** - Change requested and documented\n2. **Assess** - Evaluate impact and risk\n3. **Approve** - Authorization by appropriate level\n4. **Develop** - Build and test in non-production\n5. **Test** - User acceptance testing\n6. **Implement** - Deploy to production\n7. **Review** - Post-implementation review"
+        },
+        {
+          "title": "Key Change Management Controls",
+          "type": "table",
+          "headers": [
+            "Control",
+            "Purpose"
+          ],
+          "rows": [
+            [
+              "Request documentation",
+              "Record of what was requested and why"
+            ],
+            [
+              "Impact assessment",
+              "Understand risk before approving"
+            ],
+            [
+              "Segregation of duties",
+              "Developers cannot migrate to production"
+            ],
+            [
+              "Testing requirements",
+              "Verify changes work correctly"
+            ],
+            [
+              "Approval process",
+              "Appropriate authorization"
+            ],
+            [
+              "Rollback procedures",
+              "Recovery if change fails"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Change management protects production environment",
+            "Process: request, assess, approve, develop, test, implement",
+            "Segregation between development and production",
+            "Emergency changes still require documentation"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Change Management Authorization",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason for requiring authorization of changes in a well-controlled change management process?",
+            "options": [
+              "To ensure that all changes are implemented as quickly as possible.",
+              "To ensure that the changes are aligned with organizational objectives and do not introduce undue risk.",
+              "To provide a clear audit trail of all system modifications.",
+              "To simplify the process of reverting changes if they are unsuccessful."
+            ],
+            "correctIndex": 1,
+            "explanation": "Authorization ensures alignment with organizational objectives and risk mitigation. While the other options are benefits of change management, they are not the primary reason for authorization.",
+            "hint": "Think about the bigger picture - why do organizations need change management in the first place?"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Lifecycle",
+          "reveal": {
+            "question": "What are the six stages of the standard change management lifecycle, in order?",
+            "answer": "1. Request, 2. Assess, 3. Approve, 4. Develop, 5. Test, 6. Implement"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Testing Significance",
+          "knowledgeCheck": {
+            "question": "During the change management process, thorough testing in a non-production environment is PRIMARILY performed to:",
+            "options": [
+              "Reduce the overall cost of the change implementation.",
+              "Ensure the change functions as intended and does not negatively impact existing systems or data.",
+              "Satisfy regulatory compliance requirements related to IT changes.",
+              "Provide end-users with an opportunity to familiarize themselves with the new functionality."
+            ],
+            "correctIndex": 2,
+            "explanation": "While all options have some validity, the primary goal of testing is to ensure proper functionality and prevent negative impacts on production systems. This minimizes disruptions and potential data corruption.",
+            "hint": "Consider the direct consequences of a poorly tested change."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-IV-033",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Capital Budgeting and Investment Analysis",
+    "description": "Understand capital budgeting techniques and decision-making",
+    "order": 33,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "NPV",
+      "IRR",
+      "Payback period",
+      "Capital budgeting"
+    ],
+    "blueprintArea": "CIA3-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Capital Budgeting Process",
+          "type": "text",
+          "content": "**Capital budgeting** is the process of evaluating and selecting long-term investments.\n\n**Process Steps:**\n1. Identify investment opportunities\n2. Estimate cash flows\n3. Evaluate alternatives\n4. Select projects\n5. Implement and monitor\n\n**Auditors should understand whether capital decisions follow sound analysis.**"
+        },
+        {
+          "title": "Evaluation Techniques",
+          "type": "table",
+          "headers": [
+            "Technique",
+            "Description",
+            "Decision Rule"
+          ],
+          "rows": [
+            [
+              "NPV",
+              "Present value of cash flows minus investment",
+              "Accept if NPV > 0"
+            ],
+            [
+              "IRR",
+              "Rate where NPV = 0",
+              "Accept if IRR > hurdle rate"
+            ],
+            [
+              "Payback",
+              "Time to recover initial investment",
+              "Accept if within target period"
+            ],
+            [
+              "Profitability Index",
+              "PV of cash flows / Initial investment",
+              "Accept if > 1.0"
+            ]
+          ]
+        },
+        {
+          "title": "NPV vs. IRR",
+          "type": "text",
+          "content": "**NPV Advantages:**\n\u2022 Dollar amount of value created\n\u2022 Works with mutually exclusive projects\n\u2022 Assumes reinvestment at cost of capital\n\n**IRR Advantages:**\n\u2022 Easy to understand (%)\n\u2022 Doesn't require hurdle rate up front\n\n**NPV is generally preferred for conflicting projects.**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Capital budgeting evaluates long-term investments",
+            "NPV measures dollar value added",
+            "IRR is the rate of return on investment",
+            "NPV preferred for mutually exclusive projects"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "NPV vs. IRR: Which Method Reigns Supreme?",
+          "knowledgeCheck": {
+            "question": "When evaluating mutually exclusive projects with conflicting results, which capital budgeting method is generally preferred for making investment decisions?",
+            "options": [
+              "Internal Rate of Return (IRR)",
+              "Net Present Value (NPV)",
+              "Payback Period",
+              "Profitability Index"
+            ],
+            "correctIndex": 1,
+            "explanation": "NPV is generally preferred for mutually exclusive projects because it directly measures the dollar amount of value created by a project, allowing for a clear comparison of which project adds the most value to the firm. IRR, while easy to understand, can lead to incorrect decisions when projects have different scales or timing of cash flows.",
+            "hint": "Consider which method directly quantifies the increase in shareholder wealth."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Capital Budgeting Process: The First Step",
+          "reveal": {
+            "question": "What is the first step in the capital budgeting process?",
+            "answer": "The first step in the capital budgeting process is to identify potential investment opportunities. This involves actively searching for projects that align with the organization's strategic goals and have the potential to generate positive returns."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "NPV vs. IRR: A Head-to-Head Comparison",
+          "comparison": {
+            "headers": [
+              "Net Present Value (NPV)",
+              "Internal Rate of Return (IRR)"
+            ],
+            "rows": [
+              {
+                "label": "Decision Rule",
+                "values": [
+                  "Accept if NPV > 0",
+                  "Accept if IRR > Cost of Capital"
+                ]
+              },
+              {
+                "label": "Unit of Measurement",
+                "values": [
+                  "Dollar amount",
+                  "Percentage"
+                ]
+              },
+              {
+                "label": "Reinvestment Rate Assumption",
+                "values": [
+                  "Cost of Capital",
+                  "IRR"
+                ]
+              },
+              {
+                "label": "Preference for Mutually Exclusive Projects",
+                "values": [
+                  "Generally preferred",
+                  "Can lead to incorrect decisions in certain scenarios"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-IV-034",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Working Capital Management",
+    "description": "Understand working capital components and management strategies",
+    "order": 34,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Working capital",
+      "Cash management",
+      "Receivables",
+      "Payables",
+      "Inventory"
+    ],
+    "blueprintArea": "CIA3-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Working Capital Basics",
+          "type": "text",
+          "content": "**Working Capital = Current Assets - Current Liabilities**\n\n**Components:**\n\u2022 Cash and cash equivalents\n\u2022 Accounts receivable\n\u2022 Inventory\n\u2022 Accounts payable\n\u2022 Short-term debt\n\n**Goal:** Maintain sufficient liquidity while minimizing excess investment in current assets."
+        },
+        {
+          "title": "Cash Conversion Cycle",
+          "type": "text",
+          "content": "**Cash Conversion Cycle (CCC):**\n\nCCC = Days Inventory + Days Receivables - Days Payables\n\n**Example:**\n\u2022 Inventory turnover: 60 days\n\u2022 Receivables turnover: 45 days\n\u2022 Payables period: 30 days\n\u2022 CCC = 60 + 45 - 30 = 75 days\n\n**Lower CCC is generally better - less cash tied up in operations.**"
+        },
+        {
+          "title": "Management Strategies",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Strategy"
+          ],
+          "rows": [
+            [
+              "Cash",
+              "Maintain minimum needed; invest excess"
+            ],
+            [
+              "Receivables",
+              "Efficient collection; credit policy balance"
+            ],
+            [
+              "Inventory",
+              "Just-in-time; economic order quantity"
+            ],
+            [
+              "Payables",
+              "Pay on terms; capture discounts when beneficial"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Working capital = current assets - current liabilities",
+            "Cash conversion cycle measures cash tied up in operations",
+            "Balance liquidity against profitability",
+            "Each component has specific management strategies"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Working Capital Calculation",
+          "knowledgeCheck": {
+            "question": "A company has current assets of $500,000, including $50,000 in cash and cash equivalents, $150,000 in accounts receivable, and $300,000 in inventory. The company also has current liabilities of $300,000, including $100,000 in accounts payable and $200,000 in short-term debt. What is the company's working capital?",
+            "options": [
+              "$200,000",
+              "$300,000",
+              "$500,000",
+              "$800,000"
+            ],
+            "correctIndex": 0,
+            "explanation": "Working capital is calculated as Current Assets - Current Liabilities. In this case, $500,000 (Current Assets) - $300,000 (Current Liabilities) = $200,000.",
+            "hint": "Remember the formula: Working Capital = Current Assets - Current Liabilities"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Formula",
+          "reveal": {
+            "question": "What is the formula for calculating the Cash Conversion Cycle (CCC)?",
+            "answer": "The Cash Conversion Cycle (CCC) is calculated as: Days Inventory + Days Receivables - Days Payables"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cash Conversion Cycle Analysis",
+          "knowledgeCheck": {
+            "question": "Which of the following actions would generally NOT lead to a decrease in a company's Cash Conversion Cycle (CCC)?",
+            "options": [
+              "Negotiating longer payment terms with suppliers.",
+              "Offering early payment discounts to customers.",
+              "Implementing more efficient inventory management practices.",
+              "Factoring accounts receivable."
+            ],
+            "correctIndex": 1,
+            "explanation": "Offering early payment discounts to customers will likely *shorten* the Days Receivables, thus decreasing the CCC. Negotiating longer payment terms *increases* Days Payable, decreasing the CCC. More efficient inventory management reduces Days Inventory, decreasing CCC. Factoring receivables speeds up cash collection, decreasing Days Receivables, decreasing CCC.",
+            "hint": "Consider how each action impacts Days Inventory, Days Receivables, and Days Payables."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-IV-035",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Organizational Structures and Authority",
+    "description": "Understand organizational design and control implications",
+    "order": 35,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Organizational structure",
+      "Authority",
+      "Delegation",
+      "Span of control"
+    ],
+    "blueprintArea": "CIA3-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Common Organizational Structures",
+          "type": "text",
+          "content": "**Functional Structure**\n\u2022 Organized by function (marketing, finance, etc.)\n\u2022 Clear specialization\n\u2022 May create silos\n\n**Divisional Structure**\n\u2022 Organized by product, geography, or customer\n\u2022 Greater autonomy\n\u2022 May duplicate functions\n\n**Matrix Structure**\n\u2022 Combines functional and divisional\n\u2022 Dual reporting\n\u2022 Complex but flexible"
+        },
+        {
+          "title": "Authority Concepts",
+          "type": "text",
+          "content": "**Line Authority**\n\u2022 Direct supervisory relationship\n\u2022 Manager directs subordinate's work\n\n**Staff Authority**\n\u2022 Advisory role\n\u2022 Supports line functions\n\u2022 Example: HR, Legal, Internal Audit\n\n**Span of Control**\n\u2022 Number of direct reports\n\u2022 Wide span = fewer management layers\n\u2022 Narrow span = more oversight capability"
+        },
+        {
+          "title": "Control Implications",
+          "type": "callout",
+          "content": "Organizational structure affects internal controls. Decentralized structures may have inconsistent controls. Matrix structures may have unclear accountability. Auditors should understand structure when planning engagements."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Structure types: functional, divisional, matrix",
+            "Authority types: line, staff",
+            "Span of control affects oversight capability",
+            "Structure impacts control design and effectiveness"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Organizational Structure Challenge",
+          "knowledgeCheck": {
+            "question": "An organization structured around specific geographic regions is MOST likely utilizing which type of organizational structure?",
+            "options": [
+              "Functional Structure",
+              "Divisional Structure",
+              "Matrix Structure",
+              "Network Structure"
+            ],
+            "correctIndex": 1,
+            "explanation": "A divisional structure is often organized by product, geography, or customer. Organizing by geographic region falls under the divisional structure.",
+            "hint": "Consider how the organization is grouping its activities. Is it based on expertise, output, or something else?"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Staff Authority Recall",
+          "reveal": {
+            "question": "Define Staff Authority and provide an example function that typically holds this type of authority.",
+            "answer": "Staff authority is an advisory role that supports line functions. Examples include HR, Legal, and Internal Audit. They provide guidance and recommendations but do not directly supervise operational activities."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Line vs. Staff Authority",
+          "comparison": {
+            "headers": [
+              "Line Authority",
+              "Staff Authority"
+            ],
+            "rows": [
+              {
+                "label": "Relationship",
+                "values": [
+                  "Direct Supervisory",
+                  "Advisory"
+                ]
+              },
+              {
+                "label": "Function",
+                "values": [
+                  "Directs Subordinate's Work",
+                  "Supports Line Functions"
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Production Manager",
+                  "Legal Counsel"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Span of Control Scenario",
+          "knowledgeCheck": {
+            "question": "A manager with a wide span of control is MOST likely to experience which of the following?",
+            "options": [
+              "Increased layers of management",
+              "Closer supervision of employees",
+              "Fewer opportunities for employee development",
+              "Greater autonomy for employees"
+            ],
+            "correctIndex": 3,
+            "explanation": "A wide span of control means the manager oversees a larger number of direct reports. This often results in fewer management layers and greater autonomy for employees due to less direct supervision.",
+            "hint": "Think about the implications of a manager having many direct reports versus a manager having only a few."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-IV-036",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Contract and Procurement Auditing",
+    "description": "Understand procurement processes and contract audit considerations",
+    "order": 36,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Procurement process",
+      "Contract risks",
+      "Vendor management",
+      "Compliance"
+    ],
+    "blueprintArea": "CIA3-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Procurement Process",
+          "type": "text",
+          "content": "**Standard Procurement Lifecycle:**\n\n1. **Need Identification** - Requisition process\n2. **Sourcing** - Identify potential suppliers\n3. **Solicitation** - RFP/RFQ process\n4. **Selection** - Evaluate and select vendor\n5. **Contract Negotiation** - Terms and conditions\n6. **Contract Management** - Performance monitoring\n7. **Closeout** - Contract completion"
+        },
+        {
+          "title": "Procurement Risks",
+          "type": "table",
+          "headers": [
+            "Risk Category",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Fraud/Collusion",
+              "Bid rigging, kickbacks, ghost vendors"
+            ],
+            [
+              "Compliance",
+              "Policy violations, regulatory issues"
+            ],
+            [
+              "Quality",
+              "Substandard goods or services"
+            ],
+            [
+              "Financial",
+              "Cost overruns, unfavorable terms"
+            ],
+            [
+              "Vendor",
+              "Non-performance, bankruptcy"
+            ]
+          ]
+        },
+        {
+          "title": "Contract Audit Considerations",
+          "type": "text",
+          "content": "**Key areas to audit:**\n\n\u2022 Competitive bidding compliance\n\u2022 Conflicts of interest\n\u2022 Contract terms and conditions\n\u2022 Performance against contract\n\u2022 Invoice accuracy\n\u2022 Change order controls\n\u2022 Contract modifications\n\u2022 Vendor insurance and bonding"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Procurement follows structured lifecycle",
+            "Key risks: fraud, compliance, quality, vendor",
+            "Competitive bidding reduces fraud risk",
+            "Contract monitoring ensures performance"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Procurement Process Knowledge Check",
+          "knowledgeCheck": {
+            "question": "During a contract and procurement audit, an internal auditor discovers that several contracts were awarded to vendors without a formal RFP/RFQ process. Which of the following risks is MOST directly associated with this finding?",
+            "options": [
+              "Increased administrative costs due to poorly defined contract terms.",
+              "Potential for conflicts of interest and lack of competitive pricing.",
+              "Inadequate vendor performance monitoring and control.",
+              "Non-compliance with industry-specific regulations."
+            ],
+            "correctIndex": 1,
+            "explanation": "The absence of a formal RFP/RFQ process significantly increases the risk of conflicts of interest and the potential for paying non-competitive prices. Without a structured bidding process, it's difficult to ensure fairness and transparency in vendor selection. While other options might be indirect consequences, the lack of competition is the most direct risk.",
+            "hint": "Consider the primary purpose of an RFP/RFQ process."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Contract Audit Areas",
+          "reveal": {
+            "question": "List three key areas an internal auditor should examine when conducting a contract audit.",
+            "answer": "1. Competitive bidding compliance\n2. Conflicts of interest\n3. Contract terms and conditions\n4. Performance against contract\n5. Invoice accuracy\n6. Change order controls\n7. Contract modifications\n8. Vendor insurance and bonding (Any three of these are acceptable)"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "RFP vs. RFQ",
+          "comparison": {
+            "headers": [
+              "Request for Proposal (RFP)",
+              "Request for Quotation (RFQ)"
+            ],
+            "rows": [
+              {
+                "label": "Complexity of Requirement",
+                "values": [
+                  "Complex, requiring detailed solutions",
+                  "Simple, well-defined requirements"
+                ]
+              },
+              {
+                "label": "Selection Criteria",
+                "values": [
+                  "Emphasis on technical expertise, innovation, and overall value",
+                  "Primarily based on price"
+                ]
+              },
+              {
+                "label": "Negotiation",
+                "values": [
+                  "Extensive negotiation on scope, terms, and pricing",
+                  "Limited negotiation, primarily on price"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

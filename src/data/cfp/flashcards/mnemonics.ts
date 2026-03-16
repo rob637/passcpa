@@ -18,6 +18,7 @@ export const GEN_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-gen-mn-001',
     section: 'CFP-GEN',
+    blueprintArea: 'CFP-GEN',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -30,6 +31,7 @@ export const GEN_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-gen-mn-002',
     section: 'CFP-GEN',
+    blueprintArea: 'CFP-GEN',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -42,6 +44,7 @@ export const GEN_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-gen-mn-003',
     section: 'CFP-GEN',
+    blueprintArea: 'CFP-GEN',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -60,6 +63,7 @@ export const RET_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-ret-mn-001',
     section: 'CFP-RET',
+    blueprintArea: 'CFP-RET',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -72,6 +76,7 @@ export const RET_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-ret-mn-002',
     section: 'CFP-RET',
+    blueprintArea: 'CFP-RET',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -84,6 +89,7 @@ export const RET_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-ret-mn-003',
     section: 'CFP-RET',
+    blueprintArea: 'CFP-RET',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -96,6 +102,7 @@ export const RET_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-ret-mn-004',
     section: 'CFP-RET',
+    blueprintArea: 'CFP-RET',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -108,6 +115,7 @@ export const RET_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-ret-mn-005',
     section: 'CFP-RET',
+    blueprintArea: 'CFP-RET',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -126,6 +134,7 @@ export const TAX_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-tax-mn-001',
     section: 'CFP-TAX',
+    blueprintArea: 'CFP-TAX',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -138,6 +147,7 @@ export const TAX_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-tax-mn-002',
     section: 'CFP-TAX',
+    blueprintArea: 'CFP-TAX',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -150,6 +160,7 @@ export const TAX_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-tax-mn-003',
     section: 'CFP-TAX',
+    blueprintArea: 'CFP-TAX',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -162,6 +173,7 @@ export const TAX_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-tax-mn-004',
     section: 'CFP-TAX',
+    blueprintArea: 'CFP-TAX',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -180,6 +192,7 @@ export const INV_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-inv-mn-001',
     section: 'CFP-INV',
+    blueprintArea: 'CFP-INV',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -192,6 +205,7 @@ export const INV_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-inv-mn-002',
     section: 'CFP-INV',
+    blueprintArea: 'CFP-INV',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -204,6 +218,7 @@ export const INV_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-inv-mn-003',
     section: 'CFP-INV',
+    blueprintArea: 'CFP-INV',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -216,6 +231,7 @@ export const INV_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-inv-mn-004',
     section: 'CFP-INV',
+    blueprintArea: 'CFP-INV',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -234,6 +250,7 @@ export const RISK_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-risk-mn-001',
     section: 'CFP-RISK',
+    blueprintArea: 'CFP-RISK',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -246,6 +263,7 @@ export const RISK_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-risk-mn-002',
     section: 'CFP-RISK',
+    blueprintArea: 'CFP-RISK',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -258,6 +276,7 @@ export const RISK_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-risk-mn-003',
     section: 'CFP-RISK',
+    blueprintArea: 'CFP-RISK',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -270,6 +289,7 @@ export const RISK_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-risk-mn-004',
     section: 'CFP-RISK',
+    blueprintArea: 'CFP-RISK',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -288,6 +308,7 @@ export const EST_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-est-mn-001',
     section: 'CFP-EST',
+    blueprintArea: 'CFP-EST',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -300,6 +321,7 @@ export const EST_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-est-mn-002',
     section: 'CFP-EST',
+    blueprintArea: 'CFP-EST',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -312,6 +334,7 @@ export const EST_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-est-mn-003',
     section: 'CFP-EST',
+    blueprintArea: 'CFP-EST',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -324,6 +347,7 @@ export const EST_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-est-mn-004',
     section: 'CFP-EST',
+    blueprintArea: 'CFP-EST',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -342,6 +366,7 @@ export const PSY_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-psy-mn-001',
     section: 'CFP-PSY',
+    blueprintArea: 'CFP-PSY',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -354,6 +379,7 @@ export const PSY_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-psy-mn-002',
     section: 'CFP-PSY',
+    blueprintArea: 'CFP-PSY',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -366,6 +392,7 @@ export const PSY_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-psy-mn-003',
     section: 'CFP-PSY',
+    blueprintArea: 'CFP-PSY',
 
     type: 'concept',
     topic: 'mnemonic',

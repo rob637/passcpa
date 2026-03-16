@@ -60,23 +60,42 @@ export async function fetchAllLessons(courseId: CourseId = DEFAULT_COURSE_ID): P
 
 /**
  * Fetch lessons by section
- * @param section - Exam section (e.g., 'FAR', 'AUD', 'CMA1', 'SEE1')
+ * @param section - Exam section (e.g., 'FAR', 'AUD', 'CMA1', 'SEE1') or 'ALL' for all sections
  * @param courseId - Course filter (defaults to 'cpa')
  */
 export async function fetchLessonsBySection(section: string, courseId: CourseId = DEFAULT_COURSE_ID): Promise<Lesson[]> {
   try {
     const lessons = await loadLessonsForCourse(courseId);
+    
+    // 'ALL' returns all lessons for the course (used by single-exam courses like CISA, CFP)
+    if (section.toUpperCase() === 'ALL') {
+      return lessons.sort((a, b) => (a.order || 0) - (b.order || 0));
+    }
+    
     const upperSection = section.toUpperCase();
     
+    // Full-exam courses (CFP, CISA): when querying by course code, return all lessons
+    // These courses have subsections (CFP-GEN, CISA1) but study plans use the course code
+    const isFullExamQuery = (courseId === 'cfp' && upperSection === 'CFP') ||
+                            (courseId === 'cisa' && upperSection === 'CISA');
+    if (isFullExamQuery) {
+      return lessons.sort((a, b) => (a.order || 0) - (b.order || 0));
+    }
+    
     // Filter by section, domain (CFP uses domain instead of section), or blueprintArea prefix
-    return lessons.filter(lesson => {
+    // Also match if lesson's section starts with the requested section (e.g., CFP-GEN starts with CFP)
+    const filtered = lessons.filter(lesson => {
       const l = lesson as Lesson & { domain?: string };
       return (
         l.section?.toUpperCase() === upperSection ||
+        l.section?.toUpperCase().startsWith(upperSection + '-') ||
         l.domain?.toUpperCase() === upperSection ||
         l.blueprintArea?.toUpperCase().startsWith(upperSection)
       );
     });
+    
+    // Sort by order field to ensure consistent display
+    return filtered.sort((a, b) => (a.order || 0) - (b.order || 0));
   } catch (error) {
     logger.error(`Error fetching lessons for section ${section}:`, error);
     return [];

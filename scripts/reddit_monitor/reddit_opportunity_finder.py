@@ -1012,22 +1012,21 @@ CONTEXT:
 PLATFORM TONE: {tone}
 
 TASK:
-Write a helpful, genuine response that:
-1. First, directly addresses their specific question or concern
-2. Provides genuinely useful advice (not just a product pitch)
-3. Naturally mentions VoraPrep as ONE option they might consider
-4. Explains 1-2 specific features relevant to their situation (AI tutor, adaptive learning, score predictor, affordable pricing at $29-59/mo vs Becker's $159/mo)
-5. Mentions there's a free Discord study community with daily quiz questions (https://discord.gg/XBjzDrws)
-6. Is conversational and matches the platform's tone
-7. Is NOT salesy or spammy - prioritize being helpful
+Write a genuine, expert-level response that:
+1. FOCUSES ENTIRELY on answering their specific question with actionable advice.
+2. Uses a "Builder/Observer" voice (e.g., "The data shows...", "We see candidates struggle with...").
+3. Does NOT sound like a sales pitch or an ad.
+4. Avoids marketing buzzwords/hype.
+
+CRITICAL:
+- Do NOT mention VoraPrep in the main body of the text.
+- ONLY mention VoraPrep at the very end as a subtle resource.
+- Example ending: "P.S. If you want to test yourself, we have a free 9,000+ question bank at voraprep.com."
+- Do NOT use phrases like "I highly recommend" or "Check out".
 
 IMPORTANT:
-- Start by empathizing or sharing relevant experience
-- Don't start with "Hey!" or sound like an ad
-- Keep it under {"280 characters" if opportunity.platform == "twitter" else "200 words"}
-- Include "voraprep.com" naturally
-- Mention the free Discord study group (https://discord.gg/XBjzDrws) as a no-strings-attached resource
-- Mention it's newer but has a 14-day free trial if relevant
+- Keep it under {"280 characters" if opportunity.platform == "twitter" else "150 words"}
+- Be helpful first. If they don't click the link, they should still get value from your answer.
 
 Write the response:"""
 

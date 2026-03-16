@@ -87,21 +87,43 @@ function detectBuildTarget() {
   
   if (fs.existsSync(assetsPath)) {
     const jsFiles = fs.readdirSync(assetsPath).filter(f => f.endsWith('.js'));
+    
+    // Count occurrences to determine the PRIMARY environment
+    // Some admin components may have hardcoded prod URLs even in dev builds
+    let devCount = 0, prodCount = 0, stagingCount = 0;
+    
     for (const jsFile of jsFiles) {
       try {
         const content = fs.readFileSync(path.join(assetsPath, jsFile), 'utf8');
         
-        // Check for Firebase config patterns
-        if (content.includes('passcpa-dev.firebaseapp.com') || content.includes('passcpa-dev')) {
-          return { projectId: 'passcpa-dev', envName: 'development' };
+        // Check for Firebase config patterns in the firebase config file specifically
+        // (look for auth domain patterns which are more reliable)
+        if (content.includes('passcpa-dev.firebaseapp.com')) {
+          devCount += 10; // Strong signal
         }
-        if (content.includes('voraprep-prod.firebaseapp.com') || content.includes('voraprep-prod')) {
-          return { projectId: 'voraprep-prod', envName: 'production' };
+        if (content.includes('voraprep-prod.firebaseapp.com')) {
+          prodCount += 10; // Strong signal
         }
-        if (content.includes('voraprep-staging.firebaseapp.com') || content.includes('voraprep-staging')) {
-          return { projectId: 'voraprep-staging', envName: 'staging' };
+        if (content.includes('voraprep-staging.firebaseapp.com')) {
+          stagingCount += 10; // Strong signal
         }
+        
+        // Weak signals (could be hardcoded URLs in UI)
+        if (content.includes('passcpa-dev')) devCount++;
+        if (content.includes('voraprep-prod')) prodCount++;
+        if (content.includes('voraprep-staging')) stagingCount++;
       } catch {}
+    }
+    
+    // Return based on highest count
+    if (devCount >= prodCount && devCount >= stagingCount && devCount > 0) {
+      return { projectId: 'passcpa-dev', envName: 'development' };
+    }
+    if (stagingCount >= prodCount && stagingCount >= devCount && stagingCount > 0) {
+      return { projectId: 'voraprep-staging', envName: 'staging' };
+    }
+    if (prodCount > 0) {
+      return { projectId: 'voraprep-prod', envName: 'production' };
     }
   }
   

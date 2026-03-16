@@ -23,6 +23,7 @@ import {
   Timestamp,
 } from 'firebase/firestore';
 import { CISASectionId, CISA_SECTION_IDS, CISA_SECTION_CONFIG } from '../courses/cisa/config';
+import { getSectionContent } from './contentRegistry';
 import logger from '../utils/logger';
 
 // Re-export for downstream consumers
@@ -90,7 +91,7 @@ function defaultSectionProgress(sectionId: CISASectionId): CISASectionProgress {
     questionsCorrect: 0,
     accuracy: 0,
     lessonsCompleted: 0,
-    totalLessons: 10,
+    totalLessons: getSectionContent(sectionId)?.counts.lessons ?? 10,
     flashcardsReviewed: 0,
     examsTaken: 0,
     lastStudied: null,
@@ -229,8 +230,9 @@ export async function getCISAProgress(userId: string): Promise<CISAOverallProgre
         ? Math.round((section.questionsCorrect / section.questionsAttempted) * 100)
         : 0;
 
-      // Target ~300 questions per domain
-      const targetQuestions = 300;
+      // Target questions from content registry
+      const sectionContent = getSectionContent(sectionId);
+      const targetQuestions = sectionContent?.counts.mcqs ?? 300;
       section.progressPercent = Math.min(100, Math.round((section.questionsAttempted / targetQuestions) * 100));
 
       // Readiness = 60% accuracy + 40% coverage

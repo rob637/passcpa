@@ -25,19 +25,25 @@ const VerifyEmail = () => {
       return;
     }
 
-    // If already verified, redirect to onboarding
+    // If already verified, redirect to dashboard
     if (user.emailVerified) {
       trackEvent('email_verified', {});
-      navigate('/onboarding');
+      navigate('/'); // Go directly to dashboard - contextual prompts handle setup
       return;
     }
 
     // Poll every 3 seconds to check if email is verified
     const interval = setInterval(async () => {
-      await user.reload();
-      if (user.emailVerified) {
-        trackEvent('email_verified', {});
-        navigate('/onboarding');
+      try {
+        if (!user) return; // Guard against user being null during polling
+        await user.reload();
+        if (user.emailVerified) {
+          trackEvent('email_verified', {});
+          navigate('/'); // Go directly to dashboard
+        }
+      } catch (e) {
+        // User may have signed out
+        logger.warn('Failed to reload user during verification polling', e);
       }
     }, 3000);
 
@@ -153,6 +159,17 @@ const VerifyEmail = () => {
           </>
         )}
       </button>
+
+      {/* Skip — go straight to the app (3-day grace period allows access) */}
+      <button
+        onClick={() => navigate('/home')}
+        className="w-full mt-4 py-3 px-4 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-medium transition-colors flex items-center justify-center gap-2"
+      >
+        Continue to VoraPrep →
+      </button>
+      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 text-center">
+        You can verify your email later
+      </p>
 
       {/* Footer */}
       <div className="mt-6 text-center">

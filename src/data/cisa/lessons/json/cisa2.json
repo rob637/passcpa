@@ -1,0 +1,1907 @@
+[
+  {
+    "id": "CISA2-001",
+    "courseId": "cisa",
+    "section": "CISA2",
+    "title": "IT Governance Fundamentals",
+    "description": "Understand the principles and structures of effective IT governance",
+    "order": 1,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Governance Principles",
+      "Board Responsibility",
+      "Governance Structures",
+      "GEIT"
+    ],
+    "blueprintArea": "CISA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IT Governance ensures that IT investments support business objectives and that risks are managed appropriately. As a CISA, you must evaluate whether governance structures enable strategic alignment and value delivery."
+        },
+        {
+          "title": "What is IT Governance?",
+          "type": "text",
+          "content": "**Definition:**\n\nIT Governance is a subset of corporate governance that focuses on IT resources and their performance. It ensures that:\n\n\u2022 IT investments create value\n\u2022 IT risks are managed\n\u2022 IT resources are used responsibly\n\u2022 IT performance is monitored\n\n**ISACA Definition (GEIT):**\n\"Governance of Enterprise IT (GEIT) is a set of responsibilities and practices exercised by the board and executive management to provide strategic direction, ensure objectives are achieved, manage risks appropriately, and verify resources are used responsibly.\""
+        },
+        {
+          "title": "IT Governance vs. IT Management",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "IT Governance",
+            "IT Management"
+          ],
+          "rows": [
+            [
+              "Focus",
+              "Direction and oversight",
+              "Execution and delivery"
+            ],
+            [
+              "Who",
+              "Board and executives",
+              "CIO and IT leadership"
+            ],
+            [
+              "Questions",
+              "What and why?",
+              "How and when?"
+            ],
+            [
+              "Timeframe",
+              "Strategic, long-term",
+              "Operational, day-to-day"
+            ],
+            [
+              "Accountability",
+              "Shareholders, stakeholders",
+              "Executive management"
+            ]
+          ]
+        },
+        {
+          "title": "Five Focus Areas of IT Governance",
+          "type": "text",
+          "content": "**ISACA's IT Governance Focus Areas:**\n\n**1. Strategic Alignment**\n\u2022 IT strategy linked to business strategy\n\u2022 IT investments support business goals\n\u2022 Business and IT communication\n\n**2. Value Delivery**\n\u2022 IT delivers promised benefits\n\u2022 Costs are optimized\n\u2022 Value is measured and demonstrated\n\n**3. Risk Management**\n\u2022 IT risks are identified and managed\n\u2022 Risk appetite is defined\n\u2022 Controls are appropriate\n\n**4. Resource Management**\n\u2022 IT resources are optimized\n\u2022 Knowledge is captured and shared\n\u2022 Sourcing decisions are appropriate\n\n**5. Performance Measurement**\n\u2022 IT performance is tracked\n\u2022 Projects are monitored\n\u2022 Service levels are met"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: SVRP-P",
+          "type": "callout",
+          "content": "**IT Governance Focus Areas:**\n\n**S**trategic Alignment\n**V**alue Delivery\n**R**isk Management\n**R**esource Management\n**P**erformance Measurement\n\n*\"Senior VPs Run Performance\"*"
+        },
+        {
+          "title": "Governance Structures",
+          "type": "text",
+          "content": "**Key Governance Bodies:**\n\n**Board of Directors**\n\u2022 Ultimate accountability for IT governance\n\u2022 Approves IT strategy and major investments\n\u2022 Oversees IT risk management\n\n**IT Strategy Committee (Board Level)**\n\u2022 Strategic guidance for IT\n\u2022 Reviews major IT initiatives\n\u2022 Monitors IT value delivery\n\n**IT Steering Committee**\n\u2022 Prioritizes IT investments\n\u2022 Manages project portfolio\n\u2022 Resolves resource conflicts\n\n**Architecture Review Board**\n\u2022 Ensures technology standards\n\u2022 Reviews major design decisions\n\u2022 Manages technical debt\n\n**Risk/Audit Committee**\n\u2022 Oversees IT risk management\n\u2022 Reviews audit findings\n\u2022 Monitors compliance"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IT Governance is board/executive responsibility; IT Management is CIO responsibility",
+            "Five focus areas: Strategic Alignment, Value Delivery, Risk, Resources, Performance",
+            "Governance asks 'What and Why?'; Management asks 'How and When?'",
+            "Key structures include board committees, steering committees, and review boards",
+            "GEIT ensures IT investments create value and risks are managed"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "IT Governance Definition Check",
+          "knowledgeCheck": {
+            "question": "Which of the following BEST describes the primary focus of IT governance?",
+            "options": [
+              "Ensuring IT resources are used in alignment with business objectives and that IT risks are appropriately managed.",
+              "Implementing the latest technological advancements to gain a competitive edge.",
+              "Developing and maintaining IT infrastructure to support daily operations.",
+              "Enforcing strict IT security policies to prevent data breaches."
+            ],
+            "correctIndex": 0,
+            "explanation": "IT governance is a subset of corporate governance that focuses on aligning IT resources with business objectives, managing IT risks, ensuring responsible use of IT resources, and monitoring IT performance. While the other options are important aspects of IT management, they are not the primary focus of IT governance.",
+            "hint": "Think about the 'big picture' role of IT within the organization."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "GEIT Focus Areas: Recall",
+          "reveal": {
+            "question": "Name ISACA's five focus areas of IT Governance as defined by GEIT.",
+            "answer": "1. Strategic Alignment\n2. Value Delivery\n3. Resource Management\n4. Risk Management\n5. Performance Measurement"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Strategic Alignment vs. Value Delivery",
+          "comparison": {
+            "headers": [
+              "Strategic Alignment",
+              "Value Delivery"
+            ],
+            "rows": [
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "Ensuring IT strategy is linked to business strategy and supports business goals.",
+                  "Ensuring IT delivers promised benefits and optimizes costs."
+                ]
+              },
+              {
+                "label": "Key Activities",
+                "values": [
+                  "Establishing strong communication channels between business and IT stakeholders, aligning IT investments with strategic priorities.",
+                  "Measuring and demonstrating the value of IT investments, optimizing IT costs, and ensuring benefits are realized."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Developing an IT roadmap that directly supports the company's expansion into a new market.",
+                  "Implementing a cost-effective cloud solution that improves efficiency and reduces operational expenses."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA2-002",
+    "courseId": "cisa",
+    "section": "CISA2",
+    "title": "IT Strategy and Planning",
+    "description": "Learn how to evaluate IT strategic planning processes and business alignment",
+    "order": 2,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "IT Strategy",
+      "Strategic Planning",
+      "Business Alignment",
+      "Balanced Scorecard"
+    ],
+    "blueprintArea": "CISA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IT strategy must be aligned with business strategy to deliver value. Misalignment leads to wasted resources, failed projects, and competitive disadvantage."
+        },
+        {
+          "title": "IT Strategic Planning Process",
+          "type": "text",
+          "content": "**Strategic Planning Steps:**\n\n**1. Understand Business Strategy**\n\u2022 Review corporate objectives\n\u2022 Identify business drivers\n\u2022 Understand competitive environment\n\n**2. Assess Current State**\n\u2022 IT capabilities inventory\n\u2022 Technology assessment\n\u2022 Gap analysis\n\n**3. Define IT Vision and Goals**\n\u2022 Align with business direction\n\u2022 Set measurable objectives\n\u2022 Prioritize initiatives\n\n**4. Develop Roadmap**\n\u2022 Multi-year plan\n\u2022 Resource requirements\n\u2022 Dependencies and milestones\n\n**5. Implement and Monitor**\n\u2022 Execute initiatives\n\u2022 Track progress\n\u2022 Adjust as needed"
+        },
+        {
+          "title": "IT Balanced Scorecard",
+          "type": "table",
+          "headers": [
+            "Perspective",
+            "Focus",
+            "Example Metrics"
+          ],
+          "rows": [
+            [
+              "Corporate Contribution",
+              "Business value from IT",
+              "ROI, cost per employee"
+            ],
+            [
+              "User Orientation",
+              "Customer/user satisfaction",
+              "Satisfaction scores, SLA compliance"
+            ],
+            [
+              "Operational Excellence",
+              "IT process efficiency",
+              "Availability, incident resolution time"
+            ],
+            [
+              "Future Orientation",
+              "Innovation and readiness",
+              "Training hours, skill assessments"
+            ]
+          ]
+        },
+        {
+          "title": "Strategic Alignment Maturity",
+          "type": "text",
+          "content": "**Alignment Maturity Levels:**\n\n**Level 1: Initial/Ad Hoc**\n\u2022 No formal alignment process\n\u2022 Reactive IT decisions\n\u2022 Disconnected from business\n\n**Level 2: Committed**\n\u2022 Recognition of need for alignment\n\u2022 Some processes in place\n\u2022 Limited communication\n\n**Level 3: Established**\n\u2022 Formal alignment processes\n\u2022 Regular business-IT communication\n\u2022 Governance structures exist\n\n**Level 4: Managed**\n\u2022 Strategic IT planning integrated\n\u2022 Metrics and measurement\n\u2022 Continuous improvement\n\n**Level 5: Optimized**\n\u2022 IT is strategic partner\n\u2022 Co-creation of strategy\n\u2022 Dynamic adaptation"
+        },
+        {
+          "title": "Auditing IT Strategy",
+          "type": "text",
+          "content": "**Key Audit Questions:**\n\n**Existence and Quality**\n\u2022 Is there a documented IT strategy?\n\u2022 Is it current and regularly updated?\n\u2022 Does it align with business strategy?\n\n**Process**\n\u2022 Who participates in strategic planning?\n\u2022 How is business input obtained?\n\u2022 Is there a formal approval process?\n\n**Communication**\n\u2022 Is the strategy communicated to IT staff?\n\u2022 Do business units understand IT direction?\n\u2022 Are goals cascaded to teams?\n\n**Monitoring**\n\u2022 How is progress tracked?\n\u2022 Are KPIs defined and measured?\n\u2022 Is there a formal review process?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IT strategy must align with and support business strategy",
+            "Strategic planning includes assessment, goal setting, roadmap, and monitoring",
+            "IT Balanced Scorecard measures value across four perspectives",
+            "Alignment maturity ranges from ad hoc (Level 1) to optimized (Level 5)",
+            "Auditors evaluate strategy existence, quality, process, and monitoring"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Strategic Alignment Maturity Knowledge Check",
+          "knowledgeCheck": {
+            "question": "An organization at Level 2 (Committed) of strategic alignment maturity would MOST likely exhibit which of the following characteristics?",
+            "options": [
+              "IT investments are primarily driven by the business strategy and provide a competitive advantage.",
+              "There is a documented IT strategy that is fully integrated with the business strategy.",
+              "The organization recognizes the need for alignment between IT and business, with some processes in place but limited communication.",
+              "IT decisions are made reactively, with little consideration for the overall business strategy."
+            ],
+            "correctIndex": 2,
+            "explanation": "Level 2 (Committed) organizations recognize the need for alignment and have started putting some processes in place. However, communication and integration are still limited at this stage. Option D describes Level 1, and options A and B describe more mature levels of alignment.",
+            "hint": "Consider what 'Committed' implies - a start, but not full implementation."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Strategic Planning Steps",
+          "reveal": {
+            "question": "List the three primary steps in the IT Strategic Planning Process.",
+            "answer": "1. Understand Business Strategy; 2. Assess Current State; 3. Define IT Vision and Goals."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "IT Strategic Planning vs. Business Strategy",
+          "comparison": {
+            "headers": [
+              "IT Strategic Planning",
+              "Business Strategy"
+            ],
+            "rows": [
+              {
+                "label": "Primary Focus",
+                "values": [
+                  "How IT will support business objectives",
+                  "Overall organizational direction and competitive advantage"
+                ]
+              },
+              {
+                "label": "Key Input",
+                "values": [
+                  "Business strategy, technology trends, internal IT capabilities",
+                  "Market analysis, competitive landscape, financial goals"
+                ]
+              },
+              {
+                "label": "Typical Output",
+                "values": [
+                  "IT roadmap, technology architecture, IT budget",
+                  "Mission statement, strategic objectives, financial projections"
+                ]
+              },
+              {
+                "label": "Alignment",
+                "values": [
+                  "Must be aligned with and enable the business strategy",
+                  "Drives the IT strategic planning process"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA2-003",
+    "courseId": "cisa",
+    "section": "CISA2",
+    "title": "IT Policies, Procedures, and Standards",
+    "description": "Understand the hierarchy and role of IT policies in governance",
+    "order": 3,
+    "duration": 40,
+    "difficulty": "beginner",
+    "topics": [
+      "Policies",
+      "Procedures",
+      "Standards",
+      "Guidelines",
+      "Policy Management"
+    ],
+    "blueprintArea": "CISA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Policies are the backbone of IT governance. They translate strategic direction into requirements that guide behavior throughout the organization. Well-crafted policies reduce risk and enable consistent operations."
+        },
+        {
+          "title": "Policy Hierarchy",
+          "type": "text",
+          "content": "**Four Levels of Documentation:**\n\n**1. Policies**\n\u2022 High-level management intent\n\u2022 What must be done (not how)\n\u2022 Approved by senior management\n\u2022 Mandatory compliance\n\n**2. Standards**\n\u2022 Specific technical or process requirements\n\u2022 Measurable and testable\n\u2022 Define minimum requirements\n\u2022 Mandatory compliance\n\n**3. Procedures**\n\u2022 Step-by-step instructions\n\u2022 How to implement policies/standards\n\u2022 Detailed operational guidance\n\u2022 Mandatory for assigned tasks\n\n**4. Guidelines**\n\u2022 Best practices and recommendations\n\u2022 Suggested approaches\n\u2022 Discretionary compliance\n\u2022 Support good decisions"
+        },
+        {
+          "title": "Policy Hierarchy Visualization",
+          "type": "table",
+          "headers": [
+            "Level",
+            "Purpose",
+            "Compliance",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Policy",
+              "Management direction",
+              "Mandatory",
+              "\"All systems must have access controls\""
+            ],
+            [
+              "Standard",
+              "Specific requirements",
+              "Mandatory",
+              "\"Passwords must be 12+ characters\""
+            ],
+            [
+              "Procedure",
+              "Implementation steps",
+              "Mandatory for task",
+              "\"How to reset a password\""
+            ],
+            [
+              "Guideline",
+              "Recommendations",
+              "Discretionary",
+              "\"Consider using password manager\""
+            ]
+          ]
+        },
+        {
+          "title": "Essential IT Policies",
+          "type": "text",
+          "content": "**Core IT Policy Areas:**\n\n**Security Policies**\n\u2022 Information security policy\n\u2022 Access control policy\n\u2022 Acceptable use policy\n\u2022 Data classification policy\n\n**Operational Policies**\n\u2022 Change management policy\n\u2022 Incident management policy\n\u2022 Backup and recovery policy\n\u2022 Business continuity policy\n\n**Risk Policies**\n\u2022 Risk management policy\n\u2022 Third-party management policy\n\u2022 Compliance policy\n\n**Governance Policies**\n\u2022 IT investment policy\n\u2022 Project management policy\n\u2022 Data management policy"
+        },
+        {
+          "title": "Policy Lifecycle Management",
+          "type": "text",
+          "content": "**Policy Management Process:**\n\n**1. Development**\n\u2022 Identify need\n\u2022 Draft policy\n\u2022 Stakeholder review\n\n**2. Approval**\n\u2022 Management review\n\u2022 Legal/compliance review\n\u2022 Formal approval\n\n**3. Communication**\n\u2022 Publish and distribute\n\u2022 Training and awareness\n\u2022 Acknowledgment tracking\n\n**4. Enforcement**\n\u2022 Monitor compliance\n\u2022 Exception management\n\u2022 Violation handling\n\n**5. Maintenance**\n\u2022 Periodic review\n\u2022 Update as needed\n\u2022 Version control"
+        },
+        {
+          "title": "Auditing Policies",
+          "type": "text",
+          "content": "**Key Audit Procedures:**\n\n\u2022 Verify policies exist for key areas\n\u2022 Assess completeness and appropriateness\n\u2022 Check approval and ownership\n\u2022 Verify communication and awareness\n\u2022 Test compliance through sampling\n\u2022 Review exception handling\n\u2022 Verify periodic review process"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Policy hierarchy: Policies \u2192 Standards \u2192 Procedures \u2192 Guidelines",
+            "Policies define 'what'; procedures define 'how'",
+            "Standards are mandatory; guidelines are discretionary",
+            "Essential policies cover security, operations, risk, and governance",
+            "Policy lifecycle includes development, approval, communication, enforcement, maintenance"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Policy Hierarchy Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following BEST describes the relationship between policies and standards in an IT governance framework?",
+            "options": [
+              "Policies define 'how' things should be done, while standards define 'what' should be done.",
+              "Policies are high-level statements of intent, while standards provide specific, measurable requirements to support those policies.",
+              "Standards are approved by senior management, while policies are approved by department heads.",
+              "Standards are mandatory compliance, while policies are recommended best practices."
+            ],
+            "correctIndex": 1,
+            "explanation": "Policies provide the overall goals and direction, while standards offer the specific, measurable requirements and technical specifications needed to achieve those policy objectives. Think of policies as the 'what' and standards as the 'how'.",
+            "hint": "Consider the level of detail provided by each document."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Core IT Policy Areas - Recall",
+          "reveal": {
+            "question": "Name three core IT policy areas discussed in this lesson.",
+            "answer": "The core IT policy areas discussed were Security Policies, Operational Policies, and Resource Management Policies (implied by 'R...'). Examples include: Information Security Policy, Access Control Policy, Change Management Policy, Backup and Recovery Policy."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Policies vs. Procedures: Key Differences",
+          "comparison": {
+            "headers": [
+              "Policies",
+              "Procedures"
+            ],
+            "rows": [
+              {
+                "label": "Purpose",
+                "values": [
+                  "Define WHAT needs to be done.",
+                  "Define HOW to implement policies and standards."
+                ]
+              },
+              {
+                "label": "Audience",
+                "values": [
+                  "Broad; all relevant stakeholders.",
+                  "Specific; those responsible for execution."
+                ]
+              },
+              {
+                "label": "Level of Detail",
+                "values": [
+                  "High-level, general guidance.",
+                  "Detailed, step-by-step instructions."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "'All data must be classified according to its sensitivity.'",
+                  "'To classify data, follow these steps: 1. Determine the data type... 2. Assign a classification level...'"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Policy Lifecycle Enforcement",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important consideration when enforcing IT policies?",
+            "options": [
+              "Ensuring policies are readily available and easily understood by all relevant personnel.",
+              "Implementing automated systems to detect and prevent policy violations.",
+              "Consistently and fairly applying consequences for non-compliance.",
+              "Regularly auditing policy compliance and reporting findings to senior management."
+            ],
+            "correctIndex": 2,
+            "explanation": "While all options are important, consistent and fair application of consequences is crucial for creating a culture of compliance and demonstrating the seriousness of policy adherence. This reinforces the importance of the policy and deters future violations.",
+            "hint": "Think about the impact on employee behavior and the overall security posture."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA2-004",
+    "courseId": "cisa",
+    "section": "CISA2",
+    "title": "IT Organizational Structure and Roles",
+    "description": "Understand IT organizational design and key roles and responsibilities",
+    "order": 4,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "IT Organization",
+      "Roles",
+      "Segregation of Duties",
+      "Reporting Lines"
+    ],
+    "blueprintArea": "CISA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Proper organizational structure ensures clear accountability, appropriate segregation of duties, and effective IT service delivery. IS auditors must understand how IT is organized to assess control effectiveness."
+        },
+        {
+          "title": "Common IT Organizational Models",
+          "type": "text",
+          "content": "**Organizational Approaches:**\n\n**Centralized IT**\n\u2022 Single IT organization\n\u2022 Consistent standards\n\u2022 Economies of scale\n\u2022 May lack business responsiveness\n\n**Decentralized IT**\n\u2022 IT within business units\n\u2022 Close to business needs\n\u2022 Potential duplication\n\u2022 Standards challenges\n\n**Federated/Hybrid**\n\u2022 Central infrastructure/governance\n\u2022 Business unit development\n\u2022 Balance of control and flexibility\n\u2022 Complex coordination"
+        },
+        {
+          "title": "Key IT Roles",
+          "type": "table",
+          "headers": [
+            "Role",
+            "Responsibilities",
+            "Reports To"
+          ],
+          "rows": [
+            [
+              "CIO",
+              "IT strategy, leadership, business alignment",
+              "CEO/Board"
+            ],
+            [
+              "CISO",
+              "Information security program",
+              "CIO or CEO"
+            ],
+            [
+              "IT Director",
+              "IT operations, service delivery",
+              "CIO"
+            ],
+            [
+              "Enterprise Architect",
+              "Technology standards, architecture",
+              "CIO"
+            ],
+            [
+              "Data Officer",
+              "Data management, governance",
+              "CIO or CDO"
+            ],
+            [
+              "Service Manager",
+              "IT service management, SLAs",
+              "IT Director"
+            ]
+          ]
+        },
+        {
+          "title": "Segregation of Duties (SoD)",
+          "type": "text",
+          "content": "**Why SoD Matters:**\n\nSegregation of duties ensures that no single person can initiate, authorize, and complete a transaction or process. This prevents fraud and errors.\n\n**Key IT SoD Principles:**\n\n**Development vs. Operations**\n\u2022 Developers should not have production access\n\u2022 Operations should not modify code\n\n**Security vs. Administration**\n\u2022 Security staff should not administer systems\n\u2022 Administrators should be monitored\n\n**Authorization vs. Execution**\n\u2022 Approvers should not implement changes\n\u2022 Executors need documented approvals\n\n**Logging vs. Administration**\n\u2022 Administrators should not modify audit logs\n\u2022 Logs should be protected from tampering"
+        },
+        {
+          "title": "Compensating Controls for SoD",
+          "type": "text",
+          "content": "**When SoD is Not Practical:**\n\nIn small organizations or specialized areas, full segregation may not be possible.\n\n**Compensating Controls:**\n\n\u2022 **Supervisory Review** - Management oversight of activities\n\u2022 **Audit Trails** - Detailed logging of all actions\n\u2022 **Reconciliations** - Independent verification\n\u2022 **Access Reviews** - Regular recertification\n\u2022 **Monitoring** - Real-time alerts on sensitive activities\n\u2022 **Job Rotation** - Periodic role changes\n\n**\u26a0\ufe0f Note:** Compensating controls must be documented, approved, and monitored for effectiveness."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IT can be organized centrally, decentralized, or hybrid (federated)",
+            "Key roles include CIO, CISO, IT Director, Enterprise Architect",
+            "SoD prevents single-person control over critical processes",
+            "Key separations: development/operations, security/admin, approve/execute",
+            "Compensating controls address SoD gaps in small organizations"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "IT Organizational Structure and Segregation of Duties - Knowledge Check",
+          "knowledgeCheck": {
+            "question": "An organization is implementing a new financial system. Due to a small IT staff, the same individual is responsible for both developing and deploying the system. Which of the following is the MOST appropriate compensating control?",
+            "options": [
+              "Implementing a robust audit trail to monitor all changes made to the system and regular review by an independent party.",
+              "Requiring the individual to obtain approval from the CEO for all system changes.",
+              "Providing the individual with additional training on secure coding practices.",
+              "Allowing the individual to test the system in a production environment before deployment."
+            ],
+            "correctIndex": 0,
+            "explanation": "The correct answer is A. A robust audit trail and independent review provide a detective control to identify any potential fraud or errors resulting from the lack of segregation of duties. B is less effective as the CEO may lack the technical expertise to adequately review changes. C, while beneficial, doesn't directly address the SoD issue. D is a poor practice and increases risk.",
+            "hint": "Consider which option provides the best detective control to mitigate the risk of inadequate segregation of duties."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall Check: IT Organizational Models",
+          "reveal": {
+            "question": "What is a key disadvantage of a Centralized IT organizational structure?",
+            "answer": "Potential lack of responsiveness to specific business unit needs due to standardization and centralized decision-making."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Centralized vs. Decentralized IT: A Comparison",
+          "comparison": {
+            "headers": [
+              "Centralized IT",
+              "Decentralized IT"
+            ],
+            "rows": [
+              {
+                "label": "Decision Making",
+                "values": [
+                  "Centralized",
+                  "Localized to Business Units"
+                ]
+              },
+              {
+                "label": "Standardization",
+                "values": [
+                  "High",
+                  "Low"
+                ]
+              },
+              {
+                "label": "Responsiveness",
+                "values": [
+                  "Potentially Slow",
+                  "Potentially Fast"
+                ]
+              },
+              {
+                "label": "Duplication of Effort",
+                "values": [
+                  "Low",
+                  "High"
+                ]
+              },
+              {
+                "label": "Economies of Scale",
+                "values": [
+                  "High",
+                  "Low"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Segregation of Duties - Practical Application",
+          "knowledgeCheck": {
+            "question": "In a small organization with limited IT staff, which of the following roles should ideally be segregated to maintain effective segregation of duties?",
+            "options": [
+              "Network Administrator and Help Desk Technician.",
+              "Database Administrator and Security Administrator.",
+              "System Developer and System Administrator (with Production Access).",
+              "Project Manager and Business Analyst."
+            ],
+            "correctIndex": 2,
+            "explanation": "The correct answer is C. A System Developer should not have system administrator access to production systems. This prevents the developer from making unauthorized changes or introducing malicious code directly into the production environment. The other options present less critical SoD concerns.",
+            "hint": "Think about which combination of roles creates the greatest risk of unauthorized or malicious activity."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA2-005",
+    "courseId": "cisa",
+    "section": "CISA2",
+    "title": "IT Human Resource Management",
+    "description": "Learn controls over IT personnel throughout their employment lifecycle",
+    "order": 5,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "HR Controls",
+      "Background Checks",
+      "Training",
+      "Termination Controls"
+    ],
+    "blueprintArea": "CISA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "People are often the weakest link in security. Proper HR controls ensure that IT staff are qualified, trustworthy, trained, and that access is promptly removed when employment ends."
+        },
+        {
+          "title": "Pre-Employment Controls",
+          "type": "text",
+          "content": "**Before Hiring:**\n\n**Job Definition**\n\u2022 Clear role descriptions\n\u2022 Required qualifications\n\u2022 Security clearance needs\n\n**Screening**\n\u2022 Background checks\n\u2022 Reference verification\n\u2022 Criminal history (where permitted)\n\u2022 Credit checks (for financial roles)\n\n**Employment Terms**\n\u2022 Confidentiality agreements\n\u2022 Acceptable use acknowledgment\n\u2022 Non-compete clauses\n\u2022 IP assignment agreements\n\n**\u26a0\ufe0f Legal Note:** Pre-employment screening must comply with local laws and regulations regarding privacy and discrimination."
+        },
+        {
+          "title": "During Employment Controls",
+          "type": "text",
+          "content": "**Ongoing HR Controls:**\n\n**Training and Awareness**\n\u2022 Security awareness training\n\u2022 Role-specific technical training\n\u2022 Compliance training\n\u2022 Regular refresher courses\n\n**Access Management**\n\u2022 Least privilege access\n\u2022 Periodic access reviews\n\u2022 Role change updates\n\u2022 Temporary access controls\n\n**Performance Management**\n\u2022 Regular performance reviews\n\u2022 Security compliance metrics\n\u2022 Career development\n\u2022 Succession planning\n\n**Monitoring**\n\u2022 Activity logging\n\u2022 Behavior monitoring (with notice)\n\u2022 Insider threat programs"
+        },
+        {
+          "title": "Termination Controls",
+          "type": "table",
+          "headers": [
+            "Control",
+            "Purpose",
+            "Timing"
+          ],
+          "rows": [
+            [
+              "Access revocation",
+              "Remove all system access",
+              "Immediate upon termination"
+            ],
+            [
+              "Badge/key return",
+              "Prevent physical access",
+              "During exit process"
+            ],
+            [
+              "Equipment return",
+              "Recover company assets",
+              "During exit process"
+            ],
+            [
+              "Exit interview",
+              "Knowledge transfer, concerns",
+              "Before departure"
+            ],
+            [
+              "Account audit",
+              "Review recent activity",
+              "Post-termination"
+            ],
+            [
+              "Forwarding",
+              "Route emails appropriately",
+              "As needed"
+            ]
+          ]
+        },
+        {
+          "title": "Handling Involuntary Terminations",
+          "type": "text",
+          "content": "**High-Risk Terminations:**\n\n**Immediate Actions:**\n\u2022 Disable access before/during notification\n\u2022 Escort from premises\n\u2022 Collect all assets\n\u2022 Monitor for anomalous activity\n\n**Special Considerations:**\n\u2022 Privileged access holders\n\u2022 Employees with system knowledge\n\u2022 Disgruntled employees\n\u2022 Reduction in force situations\n\n**Coordination Required:**\n\u2022 HR and IT synchronization\n\u2022 Manager notification\n\u2022 Security involvement\n\u2022 Legal guidance if needed"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Pre-employment controls include screening, agreements, and job definition",
+            "Ongoing controls include training, access reviews, and monitoring",
+            "Termination controls must be timely, especially for involuntary separations",
+            "Access revocation should be immediate upon termination",
+            "HR and IT must coordinate closely on employee transitions"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Pre-Employment Screening Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason for conducting background checks on potential IT employees, especially those with access to sensitive data?",
+            "options": [
+              "To ensure the candidate's resume is accurate.",
+              "To mitigate the risk of hiring individuals with a history of malicious activity or negligence.",
+              "To comply with industry best practices for human resource management.",
+              "To reduce the cost of employee training by identifying candidates with prior experience."
+            ],
+            "correctIndex": 1,
+            "explanation": "Background checks are crucial for mitigating risk. While verifying resumes and complying with best practices are important, the primary goal is to prevent hiring individuals who could pose a security threat. Reducing training costs is a secondary benefit.",
+            "hint": "Focus on the primary objective of security controls."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Termination Procedures",
+          "reveal": {
+            "question": "List three immediate actions that should be taken during an involuntary termination of an IT employee with privileged access.",
+            "answer": "1. Disable all access (before or during notification). 2. Escort the employee from the premises. 3. Collect all company assets (laptop, phone, badges, etc.)."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Training Types: Security vs. Technical",
+          "comparison": {
+            "headers": [
+              "Security Awareness Training",
+              "Role-Specific Technical Training"
+            ],
+            "rows": [
+              {
+                "label": "Primary Focus",
+                "values": [
+                  "General understanding of security threats and best practices.",
+                  "Specific skills and knowledge needed to perform job duties securely."
+                ]
+              },
+              {
+                "label": "Target Audience",
+                "values": [
+                  "All employees.",
+                  "Employees in specific IT roles (e.g., developers, system administrators)."
+                ]
+              },
+              {
+                "label": "Example Topic",
+                "values": [
+                  "Phishing awareness, password security, data classification.",
+                  "Secure coding practices, vulnerability management, incident response."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA2-006",
+    "courseId": "cisa",
+    "section": "CISA2",
+    "title": "IT Vendor and Third-Party Management",
+    "description": "Understand controls for managing IT vendors and outsourcing risks",
+    "order": 6,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Vendor Management",
+      "Outsourcing",
+      "Contracts",
+      "Third-Party Risk"
+    ],
+    "blueprintArea": "CISA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Organizations increasingly rely on third parties for IT services. Vendor risk is YOUR risk - a vendor breach can expose your organization to significant harm. Strong vendor management is essential."
+        },
+        {
+          "title": "Vendor Management Lifecycle",
+          "type": "text",
+          "content": "**Phases of Vendor Management:**\n\n**1. Planning**\n\u2022 Define requirements\n\u2022 Determine criticality\n\u2022 Identify risks\n\u2022 Market research\n\n**2. Selection**\n\u2022 RFP/RFI process\n\u2022 Due diligence\n\u2022 Risk assessment\n\u2022 Reference checks\n\n**3. Contracting**\n\u2022 SLA negotiation\n\u2022 Security requirements\n\u2022 Audit rights\n\u2022 Exit provisions\n\n**4. Onboarding**\n\u2022 Access provisioning\n\u2022 Training\n\u2022 Control validation\n\u2022 Integration testing\n\n**5. Monitoring**\n\u2022 Performance tracking\n\u2022 Security assessments\n\u2022 Compliance verification\n\u2022 Relationship management\n\n**6. Offboarding**\n\u2022 Data return/destruction\n\u2022 Access termination\n\u2022 Knowledge transfer\n\u2022 Contract closure"
+        },
+        {
+          "title": "Key Contract Provisions",
+          "type": "table",
+          "headers": [
+            "Provision",
+            "Purpose",
+            "Requirement"
+          ],
+          "rows": [
+            [
+              "SLA",
+              "Performance standards",
+              "Measurable metrics, penalties"
+            ],
+            [
+              "Security",
+              "Data protection",
+              "Specific security controls"
+            ],
+            [
+              "Audit Rights",
+              "Oversight capability",
+              "Right to audit vendor"
+            ],
+            [
+              "Subcontracting",
+              "Fourth-party control",
+              "Approval requirements"
+            ],
+            [
+              "Termination",
+              "Exit planning",
+              "Transition assistance"
+            ],
+            [
+              "Liability",
+              "Risk allocation",
+              "Breach responsibility"
+            ],
+            [
+              "Business Continuity",
+              "Resilience",
+              "DR/BC requirements"
+            ]
+          ]
+        },
+        {
+          "title": "Third-Party Risk Assessment",
+          "type": "text",
+          "content": "**Risk Categories:**\n\n**Strategic Risk**\n\u2022 Vendor stability\n\u2022 Market position\n\u2022 Dependency level\n\n**Operational Risk**\n\u2022 Service delivery capability\n\u2022 Process maturity\n\u2022 Geographic considerations\n\n**Security Risk**\n\u2022 Security posture\n\u2022 Incident history\n\u2022 Data handling practices\n\n**Compliance Risk**\n\u2022 Regulatory compliance\n\u2022 Industry standards\n\u2022 Certification status\n\n**Financial Risk**\n\u2022 Financial stability\n\u2022 Insurance coverage\n\u2022 Pricing sustainability"
+        },
+        {
+          "title": "Vendor Security Assessment",
+          "type": "text",
+          "content": "**Assessment Approaches:**\n\n**Questionnaires**\n\u2022 SIG (Standardized Information Gathering)\n\u2022 CAIQ (Cloud Security Alliance)\n\u2022 Custom questionnaires\n\n**Certifications**\n\u2022 SOC 2 Type II reports\n\u2022 ISO 27001 certification\n\u2022 Industry-specific certifications\n\n**Audits**\n\u2022 On-site assessments\n\u2022 Penetration testing\n\u2022 Control validation\n\n**Continuous Monitoring**\n\u2022 Security ratings (BitSight, SecurityScorecard)\n\u2022 News monitoring\n\u2022 Dark web monitoring\n\n**Key Consideration:** Risk-tier vendors based on data access and criticality to determine assessment depth."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Vendor management lifecycle: planning, selection, contracting, onboarding, monitoring, offboarding",
+            "Key contract provisions: SLAs, security requirements, audit rights, termination",
+            "Assess strategic, operational, security, compliance, and financial risks",
+            "Use SOC 2 reports, certifications, and questionnaires for security assessment",
+            "Tier vendors by risk and adjust oversight accordingly"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Vendor Management Lifecycle Check",
+          "knowledgeCheck": {
+            "question": "During which phase of the vendor management lifecycle should an organization primarily focus on negotiating Service Level Agreements (SLAs) and defining security requirements?",
+            "options": [
+              "Planning",
+              "Selection",
+              "Contracting",
+              "Termination"
+            ],
+            "correctIndex": 2,
+            "explanation": "The Contracting phase is when the specific terms and conditions of the vendor relationship are formalized, including SLAs defining performance expectations and security requirements to protect organizational data and systems.",
+            "hint": "Think about when you would actually agree to the terms of service."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Third-Party Risk Categories",
+          "reveal": {
+            "question": "Name the four risk categories associated with third-party risk assessment.",
+            "answer": "The four risk categories are Strategic Risk, Operational Risk, Security Risk, and Compliance Risk."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Assessment Approaches: Questionnaires vs. Certifications",
+          "comparison": {
+            "headers": [
+              "Questionnaires (e.g., SIG, CAIQ)",
+              "Certifications (e.g., SOC 2, ISO 27001)"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Gathering specific information about a vendor's controls and practices through direct questioning.",
+                  "Verifying that a vendor has met a certain set of standards as assessed by an independent auditor."
+                ]
+              },
+              {
+                "label": "Customization",
+                "values": [
+                  "Highly customizable to address specific organizational concerns and requirements.",
+                  "Standardized and may not cover all organizational requirements."
+                ]
+              },
+              {
+                "label": "Level of Assurance",
+                "values": [
+                  "Depends on the accuracy and completeness of the vendor's responses.",
+                  "Provides a baseline level of assurance based on the certification standard."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA2-007",
+    "courseId": "cisa",
+    "section": "CISA2",
+    "title": "IT Risk Management Framework",
+    "description": "Master the principles and processes of IT risk management",
+    "order": 7,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Risk Framework",
+      "Risk Identification",
+      "Risk Analysis",
+      "Risk Response"
+    ],
+    "blueprintArea": "CISA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Risk management is central to IT governance. As a CISA, you must understand how organizations identify, assess, and respond to IT risks. This domain is heavily tested!"
+        },
+        {
+          "title": "Risk Management Process",
+          "type": "text",
+          "content": "**Risk Management Steps:**\n\n**1. Risk Identification**\n\u2022 Identify assets and threats\n\u2022 Identify vulnerabilities\n\u2022 Document risk scenarios\n\n**2. Risk Analysis**\n\u2022 Assess likelihood\n\u2022 Assess impact\n\u2022 Calculate risk level\n\n**3. Risk Evaluation**\n\u2022 Compare to risk appetite\n\u2022 Prioritize risks\n\u2022 Determine treatment need\n\n**4. Risk Treatment**\n\u2022 Select response strategy\n\u2022 Implement controls\n\u2022 Document decisions\n\n**5. Risk Monitoring**\n\u2022 Track risk indicators\n\u2022 Reassess periodically\n\u2022 Report to stakeholders"
+        },
+        {
+          "title": "Risk Analysis Approaches",
+          "type": "table",
+          "headers": [
+            "Approach",
+            "Method",
+            "Advantages",
+            "Disadvantages"
+          ],
+          "rows": [
+            [
+              "Qualitative",
+              "High/Medium/Low ratings",
+              "Quick, easy to communicate",
+              "Subjective, less precise"
+            ],
+            [
+              "Quantitative",
+              "Monetary values (ALE)",
+              "Objective, supports ROI",
+              "Data-intensive, complex"
+            ],
+            [
+              "Semi-Quantitative",
+              "Numeric scales (1-5)",
+              "Balance of both",
+              "May suggest false precision"
+            ]
+          ]
+        },
+        {
+          "title": "Quantitative Risk Formulas",
+          "type": "text",
+          "content": "**Key Formulas:**\n\n**Asset Value (AV)**\n\u2022 Replacement cost of asset\n\n**Exposure Factor (EF)**\n\u2022 Percentage of asset lost if threat occurs\n\n**Single Loss Expectancy (SLE)**\n\u2022 SLE = AV \u00d7 EF\n\u2022 Expected loss from single incident\n\n**Annual Rate of Occurrence (ARO)**\n\u2022 Expected frequency per year\n\n**Annual Loss Expectancy (ALE)**\n\u2022 ALE = SLE \u00d7 ARO\n\u2022 Expected annual loss\n\n**Example:**\nServer value = $100,000 (AV)\nFlood damage = 60% (EF)\nSLE = $100,000 \u00d7 0.60 = $60,000\nFlood frequency = 0.1/year (ARO)\nALE = $60,000 \u00d7 0.1 = $6,000/year"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Risk Formulas",
+          "type": "callout",
+          "content": "**\"Single ALE = AV \u00d7 EF \u00d7 ARO\"**\n\nBut step by step:\n\u2022 **SLE** = **A**sset **V**alue \u00d7 **E**xposure **F**actor\n\u2022 **ALE** = **S**ingle **L**oss **E**xpectancy \u00d7 **A**nnual **R**ate of **O**ccurrence\n\n*Think: \"Security Leaders Evaluate All Risks Often\"*"
+        },
+        {
+          "title": "Risk Treatment Options",
+          "type": "text",
+          "content": "**Four Risk Response Strategies:**\n\n**1. Risk Mitigation (Reduce)**\n\u2022 Implement controls to reduce likelihood or impact\n\u2022 Most common response\n\u2022 Examples: firewalls, encryption, training\n\n**2. Risk Transfer (Share)**\n\u2022 Shift risk to another party\n\u2022 Examples: insurance, outsourcing, contracts\n\u2022 Does not eliminate risk\n\n**3. Risk Avoidance**\n\u2022 Eliminate the activity causing risk\n\u2022 Examples: don't store certain data, exit market\n\u2022 May limit business opportunity\n\n**4. Risk Acceptance**\n\u2022 Acknowledge risk and proceed\n\u2022 Requires proper authority\n\u2022 Must be documented\n\u2022 Within risk appetite"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Risk management: identify, analyze, evaluate, treat, monitor",
+            "Qualitative is quick; quantitative provides monetary values",
+            "ALE = SLE \u00d7 ARO; SLE = AV \u00d7 EF",
+            "Four responses: mitigate, transfer, avoid, accept",
+            "Risk acceptance requires proper authority and documentation"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Risk Analysis Knowledge Check",
+          "knowledgeCheck": {
+            "question": "An organization identifies a critical server with a replacement cost of $50,000. If a successful ransomware attack occurs, it is estimated that 40% of the server's value would be lost. The security team estimates that such an attack could occur, on average, once every five years. What is the Annual Loss Expectancy (ALE) for this risk?",
+            "options": [
+              "$4,000",
+              "$10,000",
+              "$20,000",
+              "$50,000"
+            ],
+            "correctIndex": 1,
+            "explanation": "The SLE is calculated as AV * EF, which is $50,000 * 0.40 = $20,000. The ALE is calculated as SLE * ARO. In this case, ARO is 1/5 = 0.2. Therefore, ALE is $20,000 * 0.2 = $4,000. Thus, the correct answer is $4,000.",
+            "hint": "Remember the formulas: SLE = AV * EF and ALE = SLE * ARO. Convert the ARO into a decimal representation of the frequency per year."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Key Formula Recall",
+          "reveal": {
+            "question": "What formula is used to calculate the Single Loss Expectancy (SLE)?",
+            "answer": "SLE = Asset Value (AV) * Exposure Factor (EF)"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Risk Identification vs. Risk Analysis",
+          "comparison": {
+            "headers": [
+              "Risk Identification",
+              "Risk Analysis"
+            ],
+            "rows": [
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "Discover potential risks",
+                  "Assess the impact and likelihood of identified risks"
+                ]
+              },
+              {
+                "label": "Key Activities",
+                "values": [
+                  "Identifying assets, threats, and vulnerabilities; documenting risk scenarios",
+                  "Assessing likelihood and impact; calculating risk level"
+                ]
+              },
+              {
+                "label": "Output",
+                "values": [
+                  "List of potential risks",
+                  "Risk level (e.g., High, Medium, Low) for each identified risk"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA2-008",
+    "courseId": "cisa",
+    "section": "CISA2",
+    "title": "IT Risk Assessment Practices",
+    "description": "Learn practical techniques for conducting IT risk assessments",
+    "order": 8,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Risk Assessment",
+      "Threat Analysis",
+      "Vulnerability Assessment",
+      "Risk Register"
+    ],
+    "blueprintArea": "CISA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Risk assessments are the foundation of audit planning and control evaluation. As a CISA, you'll both conduct risk assessments and evaluate management's risk assessment processes."
+        },
+        {
+          "title": "Risk Assessment Components",
+          "type": "text",
+          "content": "**Three Key Elements:**\n\n**1. Asset Identification**\n\u2022 Hardware and software\n\u2022 Data and information\n\u2022 People and skills\n\u2022 Processes and procedures\n\u2022 Reputation and brand\n\n**2. Threat Identification**\n\u2022 Natural (floods, earthquakes)\n\u2022 Environmental (power failure, HVAC)\n\u2022 Human deliberate (hackers, insiders)\n\u2022 Human accidental (errors, mistakes)\n\u2022 Technical (hardware failure, bugs)\n\n**3. Vulnerability Identification**\n\u2022 Technical vulnerabilities\n\u2022 Process weaknesses\n\u2022 People vulnerabilities\n\u2022 Physical security gaps\n\u2022 Configuration issues"
+        },
+        {
+          "title": "Common Threat Categories",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Examples",
+            "Typical Controls"
+          ],
+          "rows": [
+            [
+              "Malware",
+              "Ransomware, viruses",
+              "Anti-malware, patching"
+            ],
+            [
+              "Social Engineering",
+              "Phishing, pretexting",
+              "Training, awareness"
+            ],
+            [
+              "Insider Threat",
+              "Fraud, theft",
+              "Access controls, monitoring"
+            ],
+            [
+              "External Attack",
+              "DDoS, exploitation",
+              "Firewalls, IDS/IPS"
+            ],
+            [
+              "Physical",
+              "Theft, tampering",
+              "Locks, surveillance"
+            ],
+            [
+              "Environmental",
+              "Fire, flood",
+              "Suppression, DR site"
+            ]
+          ]
+        },
+        {
+          "title": "Vulnerability Assessment Methods",
+          "type": "text",
+          "content": "**Assessment Techniques:**\n\n**Automated Scanning**\n\u2022 Network vulnerability scanners\n\u2022 Web application scanners\n\u2022 Code analysis tools\n\u2022 Configuration assessment\n\n**Manual Testing**\n\u2022 Penetration testing\n\u2022 Security reviews\n\u2022 Architecture assessment\n\u2022 Process walkthroughs\n\n**Third-Party Sources**\n\u2022 CVE databases\n\u2022 Vendor advisories\n\u2022 Threat intelligence feeds\n\u2022 Industry alerts\n\n**Key Principle:** Vulnerabilities create risk only when threats can exploit them. Consider both together."
+        },
+        {
+          "title": "Risk Register",
+          "type": "text",
+          "content": "**Risk Register Contents:**\n\n**For Each Risk:**\n\u2022 Risk ID and description\n\u2022 Risk category\n\u2022 Threat and vulnerability\n\u2022 Likelihood rating\n\u2022 Impact rating\n\u2022 Overall risk level\n\u2022 Risk owner\n\u2022 Treatment strategy\n\u2022 Controls in place\n\u2022 Residual risk\n\u2022 Status and updates\n\n**Register Maintenance:**\n\u2022 Update regularly\n\u2022 Review with stakeholders\n\u2022 Report to governance bodies\n\u2022 Track treatment progress"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Risk assessment identifies assets, threats, and vulnerabilities",
+            "Common threats: malware, social engineering, insiders, external attacks",
+            "Use both automated scanning and manual testing for vulnerabilities",
+            "Risk register documents risks, owners, treatments, and status",
+            "Maintain and update risk register regularly"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Asset Identification",
+          "knowledgeCheck": {
+            "question": "Which of the following BEST describes why 'reputation and brand' are included as assets during the asset identification phase of a risk assessment?",
+            "options": [
+              "They directly impact the organization's revenue streams and market position.",
+              "They are easily quantifiable and provide a concrete basis for risk calculation.",
+              "They are mandated by regulatory compliance requirements.",
+              "They are essential for maintaining employee morale and productivity."
+            ],
+            "correctIndex": 0,
+            "explanation": "Reputation and brand are crucial assets because damage to them can significantly affect an organization's financial performance, customer loyalty, and overall market standing. A negative incident impacting reputation can lead to decreased revenue, loss of customers, and difficulty attracting new business.",
+            "hint": "Consider the long-term impact of a security breach on customer trust."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Threat vs. Vulnerability",
+          "reveal": {
+            "question": "What is the key difference between a THREAT and a VULNERABILITY?",
+            "answer": "A THREAT is a potential danger or event that could exploit a vulnerability. A VULNERABILITY is a weakness in an asset or control that could be exploited by a threat. Threats EXPLOIT Vulnerabilities."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Automated vs. Manual Vulnerability Assessment",
+          "comparison": {
+            "headers": [
+              "Automated Scanning",
+              "Manual Testing"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Identifies known vulnerabilities quickly and efficiently.",
+                  "Uncovers complex and hidden vulnerabilities, assesses business impact."
+                ]
+              },
+              {
+                "label": "Tools",
+                "values": [
+                  "Network vulnerability scanners, web application scanners, code analysis tools",
+                  "Penetration testing, security reviews, architecture assessment, process walkthroughs"
+                ]
+              },
+              {
+                "label": "Expertise",
+                "values": [
+                  "Requires technical expertise to configure and interpret results.",
+                  "Requires significant security expertise and understanding of business context."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Risk Register Application",
+          "knowledgeCheck": {
+            "question": "An IS auditor is reviewing a risk register and notices that the 'Treatment Strategy' field for a high-risk vulnerability is listed as 'Accept'. Which of the following should the IS auditor be MOST concerned with?",
+            "options": [
+              "Whether the risk owner has the authority to accept such a risk.",
+              "Whether the risk register is being updated frequently enough.",
+              "Whether the 'Controls in Place' field is adequately documented.",
+              "Whether a cost-benefit analysis was performed to justify accepting the risk."
+            ],
+            "correctIndex": 3,
+            "explanation": "Accepting a high-risk vulnerability should always be supported by a thorough cost-benefit analysis. Accepting a risk implies that the cost of mitigating the risk outweighs the potential impact of the risk, and this decision should be documented and justified.",
+            "hint": "Consider the financial implications of both mitigating and accepting the risk."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA2-009",
+    "courseId": "cisa",
+    "section": "CISA2",
+    "title": "Regulatory Compliance and Privacy",
+    "description": "Understand key compliance requirements and privacy regulations affecting IT",
+    "order": 9,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Compliance",
+      "Privacy Regulations",
+      "Data Protection",
+      "Industry Requirements"
+    ],
+    "blueprintArea": "CISA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Regulatory compliance is a key driver of IT controls. Non-compliance can result in significant fines, legal action, and reputational damage. IS auditors must understand applicable requirements."
+        },
+        {
+          "title": "Major Privacy Regulations",
+          "type": "table",
+          "headers": [
+            "Regulation",
+            "Jurisdiction",
+            "Key Requirements"
+          ],
+          "rows": [
+            [
+              "GDPR",
+              "EU/EEA",
+              "Consent, data rights, breach notification, DPO"
+            ],
+            [
+              "CCPA/CPRA",
+              "California",
+              "Disclosure, opt-out, data access rights"
+            ],
+            [
+              "HIPAA",
+              "US Healthcare",
+              "PHI protection, administrative/technical/physical safeguards"
+            ],
+            [
+              "GLBA",
+              "US Financial",
+              "Privacy notices, safeguards rule"
+            ],
+            [
+              "PIPEDA",
+              "Canada",
+              "Consent, purpose limitation, accountability"
+            ]
+          ]
+        },
+        {
+          "title": "GDPR Key Principles",
+          "type": "text",
+          "content": "**GDPR Data Protection Principles:**\n\n**1. Lawfulness, Fairness, Transparency**\n\u2022 Legal basis for processing\n\u2022 Fair to data subjects\n\u2022 Clear privacy notices\n\n**2. Purpose Limitation**\n\u2022 Collected for specified purposes\n\u2022 Not processed incompatibly\n\n**3. Data Minimization**\n\u2022 Adequate, relevant, limited\n\u2022 Only what's necessary\n\n**4. Accuracy**\n\u2022 Keep data accurate\n\u2022 Update or delete inaccurate data\n\n**5. Storage Limitation**\n\u2022 Retain only as long as necessary\n\u2022 Implement retention schedules\n\n**6. Integrity and Confidentiality**\n\u2022 Appropriate security\n\u2022 Protect against unauthorized access\n\n**7. Accountability**\n\u2022 Demonstrate compliance\n\u2022 Document processing activities"
+        },
+        {
+          "title": "Industry-Specific Requirements",
+          "type": "text",
+          "content": "**Sector-Specific Compliance:**\n\n**Financial Services**\n\u2022 SOX (Sarbanes-Oxley)\n\u2022 PCI DSS for card data\n\u2022 FFIEC guidance\n\u2022 AML/BSA requirements\n\n**Healthcare**\n\u2022 HIPAA Security Rule\n\u2022 HITECH Act\n\u2022 FDA 21 CFR Part 11\n\n**Government/Defense**\n\u2022 FISMA\n\u2022 FedRAMP\n\u2022 NIST 800-171\n\u2022 CMMC\n\n**Publicly Traded**\n\u2022 SOX Section 404\n\u2022 SEC cybersecurity disclosure\n\u2022 Audit requirements"
+        },
+        {
+          "title": "Compliance Monitoring",
+          "type": "text",
+          "content": "**Compliance Program Elements:**\n\n**Governance**\n\u2022 Compliance oversight\n\u2022 Regulatory intelligence\n\u2022 Policy management\n\n**Assessment**\n\u2022 Gap analysis\n\u2022 Self-assessments\n\u2022 Third-party audits\n\n**Monitoring**\n\u2022 Control testing\n\u2022 Continuous monitoring\n\u2022 Exception tracking\n\n**Reporting**\n\u2022 Management reporting\n\u2022 Regulatory filings\n\u2022 Audit committee updates\n\n**Remediation**\n\u2022 Issue tracking\n\u2022 Corrective actions\n\u2022 Root cause analysis"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Key privacy regulations: GDPR, CCPA, HIPAA, GLBA",
+            "GDPR principles: lawfulness, purpose limitation, minimization, accuracy, security",
+            "Industry requirements add specific controls (PCI, HIPAA, SOX)",
+            "Compliance programs include governance, assessment, monitoring, reporting",
+            "IS auditors evaluate compliance control effectiveness"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "GDPR Principles Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following GDPR principles requires that personal data be collected only for specified, explicit, and legitimate purposes and not further processed in a manner that is incompatible with those purposes?",
+            "options": [
+              "Lawfulness, Fairness, and Transparency",
+              "Purpose Limitation",
+              "Data Minimization",
+              "Accuracy"
+            ],
+            "correctIndex": 1,
+            "explanation": "The Purpose Limitation principle mandates that data is collected for specified purposes and not processed incompatibly. Lawfulness, Fairness, and Transparency deals with the legal basis for processing and clear privacy notices. Data Minimization focuses on collecting only adequate and relevant data. Accuracy ensures data is correct and up to date.",
+            "hint": "Think about what principle directly addresses *why* data is collected."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall Key Regulations",
+          "reveal": {
+            "question": "What U.S. law primarily governs the privacy and security of protected health information (PHI)?",
+            "answer": "The Health Insurance Portability and Accountability Act (HIPAA)"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "FISMA vs. FedRAMP",
+          "comparison": {
+            "headers": [
+              "FISMA",
+              "FedRAMP"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Security of federal government information and systems",
+                  "Security assessment and authorization for cloud service providers (CSPs) serving the federal government"
+                ]
+              },
+              {
+                "label": "Applicability",
+                "values": [
+                  "Federal agencies and their contractors",
+                  "Cloud service providers offering services to federal agencies"
+                ]
+              },
+              {
+                "label": "Goal",
+                "values": [
+                  "Ensure the confidentiality, integrity, and availability of federal information and systems",
+                  "Provide a standardized approach to security assessment, authorization, and continuous monitoring for cloud products and services"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Compliance Monitoring",
+          "knowledgeCheck": {
+            "question": "Which element of a compliance program is MOST directly responsible for identifying weaknesses in existing controls?",
+            "options": [
+              "Governance",
+              "Assessment",
+              "Monitoring",
+              "Reporting"
+            ],
+            "correctIndex": 1,
+            "explanation": "The Assessment element, which includes gap analyses, self-assessments, and third-party audits, is specifically designed to identify control weaknesses. Monitoring focuses on the ongoing effectiveness of controls, while Governance provides oversight and Reporting communicates the results.",
+            "hint": "Consider which element actively seeks out areas for improvement."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA2-010",
+    "courseId": "cisa",
+    "section": "CISA2",
+    "title": "Business Impact Analysis and Criticality",
+    "description": "Learn to identify and prioritize critical business processes and supporting IT",
+    "order": 10,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "BIA",
+      "Criticality Assessment",
+      "RTO/RPO",
+      "Dependencies"
+    ],
+    "blueprintArea": "CISA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Business Impact Analysis (BIA) identifies what matters most to the organization. It drives recovery priorities, resource allocation, and control investments."
+        },
+        {
+          "title": "BIA Process",
+          "type": "text",
+          "content": "**BIA Steps:**\n\n**1. Identify Business Processes**\n\u2022 Inventory key processes\n\u2022 Document process owners\n\u2022 Map to organizational units\n\n**2. Determine Dependencies**\n\u2022 IT systems supporting each process\n\u2022 Data requirements\n\u2022 Third-party dependencies\n\u2022 People and skills\n\n**3. Assess Impact of Disruption**\n\u2022 Financial impact over time\n\u2022 Operational impact\n\u2022 Regulatory/legal impact\n\u2022 Reputational impact\n\n**4. Define Recovery Objectives**\n\u2022 Recovery Time Objective (RTO)\n\u2022 Recovery Point Objective (RPO)\n\u2022 Minimum recovery configuration\n\n**5. Prioritize Recovery**\n\u2022 Rank by criticality\n\u2022 Sequence restoration\n\u2022 Allocate resources"
+        },
+        {
+          "title": "Key Recovery Metrics",
+          "type": "table",
+          "headers": [
+            "Metric",
+            "Definition",
+            "Determines"
+          ],
+          "rows": [
+            [
+              "RTO",
+              "Maximum acceptable downtime",
+              "Recovery speed needed"
+            ],
+            [
+              "RPO",
+              "Maximum acceptable data loss",
+              "Backup frequency needed"
+            ],
+            [
+              "MTD",
+              "Maximum tolerable downtime",
+              "When organization fails"
+            ],
+            [
+              "WRT",
+              "Work recovery time",
+              "Time to verify/validate"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: RTO vs RPO",
+          "type": "callout",
+          "content": "**RTO = \"Right Time Operational\"**\n\u2022 How fast must we recover?\n\u2022 Measured from disruption to restoration\n\n**RPO = \"Right Point of data\"**\n\u2022 How much data can we lose?\n\u2022 Measured from last backup to disruption\n\n*RTO looks FORWARD; RPO looks BACKWARD*"
+        },
+        {
+          "title": "Impact Categories",
+          "type": "text",
+          "content": "**Types of Business Impact:**\n\n**Financial Impact**\n\u2022 Lost revenue\n\u2022 Increased costs\n\u2022 Penalties and fines\n\u2022 Lost market share\n\n**Operational Impact**\n\u2022 Customer service degradation\n\u2022 Supply chain disruption\n\u2022 Production stoppage\n\u2022 Employee productivity loss\n\n**Regulatory/Legal Impact**\n\u2022 Compliance violations\n\u2022 Legal liability\n\u2022 License implications\n\u2022 Reporting failures\n\n**Reputational Impact**\n\u2022 Customer trust\n\u2022 Brand value\n\u2022 Public perception\n\u2022 Partner relationships"
+        },
+        {
+          "title": "Using BIA Results",
+          "type": "text",
+          "content": "**BIA Informs:**\n\n**Recovery Planning**\n\u2022 Disaster recovery strategy\n\u2022 Resource allocation\n\u2022 Recovery sequence priorities\n\n**Control Investment**\n\u2022 Focus on critical systems\n\u2022 Justify security spending\n\u2022 Risk-based decisions\n\n**Audit Planning**\n\u2022 Prioritize audit coverage\n\u2022 Focus on high-impact areas\n\u2022 Resource allocation\n\n**Governance**\n\u2022 Board reporting\n\u2022 Executive decisions\n\u2022 Strategic planning"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "BIA identifies critical processes and recovery priorities",
+            "RTO = recovery speed; RPO = acceptable data loss",
+            "Impact includes financial, operational, regulatory, and reputational",
+            "BIA informs DR planning, control investment, and audit planning",
+            "MTD is the point where organization viability is threatened"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "BIA Process Knowledge Check",
+          "knowledgeCheck": {
+            "question": "During a Business Impact Analysis (BIA), which of the following is the MOST important initial step?",
+            "options": [
+              "Determining the Recovery Time Objective (RTO) for critical systems.",
+              "Identifying and documenting key business processes.",
+              "Assessing the financial impact of potential disruptions.",
+              "Establishing service level agreements (SLAs) with third-party vendors."
+            ],
+            "correctIndex": 1,
+            "explanation": "Identifying and documenting key business processes is the foundation of a BIA. Without knowing the key processes, it is impossible to accurately assess their impact or determine appropriate recovery objectives. The other options are important but follow the initial identification of processes.",
+            "hint": "Think about what you need to know FIRST before determining impact or recovery times."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "RTO vs. RPO",
+          "reveal": {
+            "question": "What is the key difference between Recovery Time Objective (RTO) and Recovery Point Objective (RPO)?",
+            "answer": "RTO defines the *maximum acceptable downtime* for a business process or system. RPO defines the *maximum acceptable data loss* measured in time."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Types of Business Impact",
+          "comparison": {
+            "headers": [
+              "Financial Impact",
+              "Operational Impact",
+              "Regulatory/Legal Impact"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "The impact on the organization's monetary position.",
+                  "The impact on the day-to-day activities of the organization.",
+                  "The impact on the organization's compliance with laws, regulations, and contractual obligations."
+                ]
+              },
+              {
+                "label": "Examples",
+                "values": [
+                  "Lost revenue, increased costs, penalties, lost market share",
+                  "Customer service degradation, supply chain disruption, production stoppage, employee productivity loss",
+                  "Non-compliance fines, legal sanctions, reputational damage"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA2-011",
+    "courseId": "cisa",
+    "section": "CISA2",
+    "title": "IT Service Management (ITSM)",
+    "description": "Understand ITIL and IT service management processes",
+    "order": 11,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "ITIL",
+      "ITSM",
+      "Service Desk",
+      "SLA Management"
+    ],
+    "blueprintArea": "CISA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IT Service Management (ITSM) provides the operational framework for delivering IT services. IS auditors evaluate ITSM processes to ensure reliable, secure service delivery."
+        },
+        {
+          "title": "What is ITIL?",
+          "type": "text",
+          "content": "**ITIL Definition:**\n\nITIL (Information Technology Infrastructure Library) is the most widely adopted framework for IT service management. It provides best practices for aligning IT services with business needs.\n\n**ITIL 4 Guiding Principles:**\n\n1. **Focus on value** - Create value for stakeholders\n2. **Start where you are** - Assess current state\n3. **Progress iteratively with feedback** - Improve continuously\n4. **Collaborate and promote visibility** - Work together\n5. **Think and work holistically** - End-to-end perspective\n6. **Keep it simple and practical** - Avoid overcomplication\n7. **Optimize and automate** - Eliminate waste"
+        },
+        {
+          "title": "Key ITSM Processes",
+          "type": "table",
+          "headers": [
+            "Process",
+            "Purpose",
+            "Key Activities"
+          ],
+          "rows": [
+            [
+              "Incident Management",
+              "Restore normal service",
+              "Log, categorize, resolve, close"
+            ],
+            [
+              "Problem Management",
+              "Prevent future incidents",
+              "Root cause, known errors, fixes"
+            ],
+            [
+              "Change Management",
+              "Control changes to IT",
+              "Request, assess, approve, implement"
+            ],
+            [
+              "Configuration Management",
+              "Maintain configuration data",
+              "CMDB, baselines, relationships"
+            ],
+            [
+              "Service Request",
+              "Handle service requests",
+              "Catalog, fulfill, track"
+            ],
+            [
+              "Service Level Management",
+              "Manage SLAs",
+              "Define, monitor, report, improve"
+            ]
+          ]
+        },
+        {
+          "title": "Incident vs. Problem Management",
+          "type": "text",
+          "content": "**Key Distinctions:**\n\n**Incident Management**\n\u2022 Focus: Restore service quickly\n\u2022 Timeframe: Immediate\n\u2022 Goal: Minimize business impact\n\u2022 Question: \"How do we fix it now?\"\n\n**Problem Management**\n\u2022 Focus: Find root cause\n\u2022 Timeframe: Longer-term\n\u2022 Goal: Prevent future incidents\n\u2022 Question: \"Why did it happen?\"\n\n**Example:**\n\u2022 **Incident:** Server crashed, restart to restore\n\u2022 **Problem:** Why did it crash? Memory leak, need patch"
+        },
+        {
+          "title": "Service Level Management",
+          "type": "text",
+          "content": "**SLA Components:**\n\n**Service Level Agreement (SLA)**\n\u2022 Agreement between IT and customer\n\u2022 Defines service expectations\n\u2022 Measurable metrics\n\n**Operational Level Agreement (OLA)**\n\u2022 Internal IT team agreements\n\u2022 Support the SLA\n\n**Underpinning Contract (UC)**\n\u2022 With external vendors\n\u2022 Support service delivery\n\n**Key Metrics:**\n\u2022 Availability percentage\n\u2022 Response time\n\u2022 Resolution time\n\u2022 Customer satisfaction\n\u2022 Incident volume"
+        },
+        {
+          "title": "Auditing ITSM",
+          "type": "text",
+          "content": "**Audit Considerations:**\n\n**Incident Management**\n\u2022 Incidents logged and tracked?\n\u2022 Prioritization criteria defined?\n\u2022 Escalation procedures followed?\n\u2022 Metrics monitored?\n\n**Change Management**\n\u2022 Formal change process exists?\n\u2022 Risk assessment performed?\n\u2022 Approvals documented?\n\u2022 Testing requirements met?\n\n**Problem Management**\n\u2022 Root cause analysis performed?\n\u2022 Known errors documented?\n\u2022 Patterns analyzed?\n\u2022 Permanent fixes implemented?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ITIL is the leading framework for IT service management",
+            "Key processes: incident, problem, change, configuration, service request, SLM",
+            "Incidents restore service; problems address root causes",
+            "SLAs define service expectations; OLAs and UCs support them",
+            "Auditors evaluate process existence, compliance, and effectiveness"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "ITIL 4 Guiding Principles Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which ITIL 4 guiding principle emphasizes the importance of understanding the needs of stakeholders and ensuring that IT services deliver tangible benefits?",
+            "options": [
+              "Focus on value",
+              "Start where you are",
+              "Progress iteratively with feedback",
+              "Collaborate and promote visibility"
+            ],
+            "correctIndex": 0,
+            "explanation": "Focus on value is about ensuring that every activity within IT service management contributes to the creation of value for the organization and its stakeholders. It requires a thorough understanding of stakeholder needs and expectations.",
+            "hint": "Consider what the ultimate goal of any IT service should be."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Incident vs. Problem Management: Key Differences",
+          "comparison": {
+            "headers": [
+              "Incident Management",
+              "Problem Management"
+            ],
+            "rows": [
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "Restore service operation as quickly as possible.",
+                  "Identify and resolve the root cause of incidents to prevent recurrence."
+                ]
+              },
+              {
+                "label": "Time Horizon",
+                "values": [
+                  "Short-term (immediate resolution)",
+                  "Long-term (permanent resolution)"
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Service Restoration",
+                  "Root Cause Analysis"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "SLA Components: Test Your Recall",
+          "reveal": {
+            "question": "What type of agreement outlines internal IT team responsibilities to support the service levels defined in the SLA?",
+            "answer": "Operational Level Agreement (OLA)"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Service Level Management Scenario",
+          "knowledgeCheck": {
+            "question": "An organization's SLA with a cloud provider specifies 99.99% uptime for a critical application. Which of the following is the MOST important action for the CISA to recommend regarding this SLA?",
+            "options": [
+              "Ensure that the SLA includes penalties for not meeting the uptime target.",
+              "Verify that the organization has implemented redundant systems to support the uptime target.",
+              "Confirm that the organization has a process to monitor and report on the cloud provider's performance against the SLA.",
+              "Review the cloud provider's security policies to ensure they align with the organization's requirements."
+            ],
+            "correctIndex": 2,
+            "explanation": "While all options are important, monitoring and reporting on the cloud provider's performance against the SLA is the MOST critical. Without effective monitoring, the organization cannot determine if the cloud provider is meeting the agreed-upon service levels and take corrective action if necessary.",
+            "hint": "Think about the core purpose of an SLA - ensuring service delivery."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA2-012",
+    "courseId": "cisa",
+    "section": "CISA2",
+    "title": "IT Budgeting and Financial Management",
+    "description": "Understand IT financial management and investment decision-making",
+    "order": 12,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "IT Budget",
+      "TCO",
+      "ROI",
+      "Investment Prioritization"
+    ],
+    "blueprintArea": "CISA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IT is a significant organizational investment. Understanding IT financial management helps auditors evaluate whether IT resources are used effectively and investments deliver value."
+        },
+        {
+          "title": "IT Budget Categories",
+          "type": "text",
+          "content": "**Budget Components:**\n\n**Capital Expenditures (CapEx)**\n\u2022 Hardware purchases\n\u2022 Software licenses (perpetual)\n\u2022 Major projects\n\u2022 Infrastructure investments\n\n**Operating Expenditures (OpEx)**\n\u2022 Staff salaries\n\u2022 Software subscriptions (SaaS)\n\u2022 Maintenance and support\n\u2022 Cloud services\n\u2022 Training\n\n**Trend:** Increasing shift from CapEx to OpEx due to cloud adoption and subscription models."
+        },
+        {
+          "title": "IT Investment Metrics",
+          "type": "table",
+          "headers": [
+            "Metric",
+            "Formula",
+            "Purpose"
+          ],
+          "rows": [
+            [
+              "ROI",
+              "(Net Benefits - Costs) / Costs",
+              "Investment return"
+            ],
+            [
+              "NPV",
+              "Present value of future cash flows",
+              "Time value consideration"
+            ],
+            [
+              "Payback Period",
+              "Initial cost / Annual savings",
+              "Time to recoup investment"
+            ],
+            [
+              "IRR",
+              "Discount rate where NPV = 0",
+              "Compare investments"
+            ],
+            [
+              "TCO",
+              "All costs over asset lifetime",
+              "True cost comparison"
+            ]
+          ]
+        },
+        {
+          "title": "Total Cost of Ownership (TCO)",
+          "type": "text",
+          "content": "**TCO Components:**\n\n**Acquisition Costs**\n\u2022 Purchase price\n\u2022 Implementation\n\u2022 Training\n\u2022 Customization\n\n**Operating Costs**\n\u2022 Maintenance\n\u2022 Support\n\u2022 Upgrades\n\u2022 Staffing\n\n**Hidden Costs**\n\u2022 Downtime\n\u2022 Security\n\u2022 Compliance\n\u2022 Integration\n\n**End-of-Life Costs**\n\u2022 Migration\n\u2022 Decommissioning\n\u2022 Data conversion\n\n**Why TCO Matters:** Lower purchase price may have higher TCO due to ongoing costs."
+        },
+        {
+          "title": "IT Portfolio Management",
+          "type": "text",
+          "content": "**Portfolio Categories:**\n\n**Run the Business (RTB)**\n\u2022 Maintain existing systems\n\u2022 Operational stability\n\u2022 Infrastructure refresh\n\u2022 Typically 60-80% of budget\n\n**Grow the Business (GTB)**\n\u2022 New capabilities\n\u2022 Strategic initiatives\n\u2022 Digital transformation\n\u2022 Typically 15-30% of budget\n\n**Transform the Business (TTB)**\n\u2022 Disruptive innovation\n\u2022 New business models\n\u2022 Emerging technology\n\u2022 Typically 5-15% of budget\n\n**Portfolio Balance:** Organizations should consciously allocate across categories."
+        },
+        {
+          "title": "Auditing IT Financial Management",
+          "type": "text",
+          "content": "**Key Audit Questions:**\n\n\u2022 Is there a formal IT budget process?\n\u2022 How are investments prioritized?\n\u2022 Are business cases required and tracked?\n\u2022 Is actual spending compared to budget?\n\u2022 Are project costs monitored?\n\u2022 Is value realization measured?\n\u2022 Are hidden costs considered?\n\u2022 Is TCO used for major decisions?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IT budget includes CapEx (purchases) and OpEx (ongoing costs)",
+            "Key metrics: ROI, NPV, payback period, IRR, TCO",
+            "TCO includes acquisition, operating, hidden, and end-of-life costs",
+            "Portfolio categories: Run, Grow, Transform the Business",
+            "Auditors evaluate budget process, prioritization, and value realization"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "IT Budgeting Concepts",
+          "knowledgeCheck": {
+            "question": "Which of the following BEST describes the primary focus of 'Run the Business' (RTB) IT portfolio investments?",
+            "options": [
+              "Implementing new strategic initiatives to gain a competitive advantage.",
+              "Maintaining existing systems and ensuring operational stability.",
+              "Investing in digital transformation projects to modernize the IT infrastructure.",
+              "Developing innovative solutions to disrupt the market."
+            ],
+            "correctIndex": 1,
+            "explanation": "RTB investments are primarily focused on maintaining existing systems and ensuring operational stability. This involves activities like infrastructure refresh and keeping the lights on. Options A, C, and D are more aligned with 'Grow the Business' or 'Transform the Business' investments.",
+            "hint": "Think about what is ESSENTIAL to keep the organization functioning day-to-day."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "TCO Recall",
+          "reveal": {
+            "question": "List three examples of 'Hidden Costs' when calculating Total Cost of Ownership (TCO).",
+            "answer": "Examples of hidden costs in TCO include: Downtime, Security breaches, Compliance issues, Integration challenges with existing systems, and potential data loss."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "CapEx vs. OpEx",
+          "comparison": {
+            "headers": [
+              "Capital Expenditure (CapEx)",
+              "Operating Expenditure (OpEx)"
+            ],
+            "rows": [
+              {
+                "label": "Nature",
+                "values": [
+                  "Investment in long-term assets",
+                  "Ongoing expenses for day-to-day operations"
+                ]
+              },
+              {
+                "label": "Accounting Treatment",
+                "values": [
+                  "Depreciated over time",
+                  "Expensed in the period incurred"
+                ]
+              },
+              {
+                "label": "Examples",
+                "values": [
+                  "Hardware purchases, Perpetual software licenses, Infrastructure investments",
+                  "Staff salaries, Software subscriptions (SaaS), Cloud services, Maintenance and support"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Investment Prioritization",
+          "knowledgeCheck": {
+            "question": "An organization is evaluating a project that requires a significant upfront investment in new hardware and software (CapEx) but promises to reduce ongoing maintenance costs (OpEx) significantly. Which financial metric would be MOST helpful in determining the long-term value and justification for this investment?",
+            "options": [
+              "Immediate cost savings in the first year.",
+              "Total Cost of Ownership (TCO) over the project's lifecycle.",
+              "The initial purchase price of the hardware and software.",
+              "The impact on the current year's operating budget."
+            ],
+            "correctIndex": 1,
+            "explanation": "TCO provides a comprehensive view of all costs associated with the project over its entire lifecycle, including acquisition, operating, hidden, and end-of-life costs. This allows for a more accurate assessment of the long-term value compared to focusing solely on initial costs or short-term savings.  The other options provide only a partial picture of the financial impact.",
+            "hint": "Think about which metric considers BOTH the up-front and ongoing costs."
+          }
+        }
+      ]
+    }
+  }
+]

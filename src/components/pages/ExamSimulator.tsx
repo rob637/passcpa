@@ -10,6 +10,7 @@ import {
   XCircle,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   Flag,
   // Pause,
   // Play,
@@ -41,9 +42,12 @@ import {
   getExamDescription,
   ExamConfig,
 } from '../../services/examService';
+import analytics from '../../services/analytics';
 // Keep mock exam imports for blueprint weights and configurations
 import { getMockExamsBySection, MockExamConfig, loadTestletTBS, BLUEPRINT_WEIGHTS } from '../../data/cpa/mock-exams';
 import { getTBSBySection } from '../../data/cpa/tbs';
+import { saveExamSession } from '../../services/examSessionService';
+import ExamHistory from '../exam/ExamHistory';
 
 type ExamState = 'intro' | 'mock-selection' | 'exam' | 'break' | 'review' | 'complete';
 type ExamMode = 'mini' | 'mini-tbs' | 'full' | 'curated';
@@ -51,8 +55,8 @@ type ExamMode = 'mini' | 'mini-tbs' | 'full' | 'curated';
 const ExamSimulator: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const courseHome = getHomePathFromLocation(location.pathname);
-  const { userProfile } = useAuth();
+  const _courseHome = getHomePathFromLocation(location.pathname);
+  const { user, userProfile } = useAuth();
   const { completeSimulation } = useStudy();
   const { courseId, course } = useCourse();
 
@@ -72,13 +76,114 @@ const ExamSimulator: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [showCalculator, setShowCalculator] = useState(false);
   const [startTime, setStartTime] = useState<number | null>(null);
+  
+  // Calculator state
+  const [calcDisplay, setCalcDisplay] = useState('0');
+  const [calcPrevValue, setCalcPrevValue] = useState<number | null>(null);
+  const [calcOperator, setCalcOperator] = useState<string | null>(null);
+  const [calcWaitingForOperand, setCalcWaitingForOperand] = useState(false);
   const [blueprintScores, setBlueprintScores] = useState<Record<string, { correct: number; total: number }>>({});
+  const [examResults, setExamResults] = useState<ReturnType<typeof calculateResults> | null>(null);
+
+  // Answer review state (for results screen)
+  const [reviewExpanded, setReviewExpanded] = useState(false);
+  const [reviewFilter, setReviewFilter] = useState<'all' | 'incorrect'>('incorrect');
+  const [tbsReviewExpanded, setTbsReviewExpanded] = useState(false);
+
+  // Calculator functions
+  const calcInputDigit = useCallback((digit: string) => {
+    if (calcWaitingForOperand) {
+      setCalcDisplay(digit);
+      setCalcWaitingForOperand(false);
+    } else {
+      setCalcDisplay(calcDisplay === '0' ? digit : calcDisplay + digit);
+    }
+  }, [calcDisplay, calcWaitingForOperand]);
+
+  const calcInputDecimal = useCallback(() => {
+    if (calcWaitingForOperand) {
+      setCalcDisplay('0.');
+      setCalcWaitingForOperand(false);
+    } else if (!calcDisplay.includes('.')) {
+      setCalcDisplay(calcDisplay + '.');
+    }
+  }, [calcDisplay, calcWaitingForOperand]);
+
+  const calcClear = useCallback(() => {
+    setCalcDisplay('0');
+    setCalcPrevValue(null);
+    setCalcOperator(null);
+    setCalcWaitingForOperand(false);
+  }, []);
+
+  const calcToggleSign = useCallback(() => {
+    const value = parseFloat(calcDisplay);
+    if (isNaN(value)) return;
+    setCalcDisplay(String(value * -1));
+  }, [calcDisplay]);
+
+  const calcPercent = useCallback(() => {
+    const value = parseFloat(calcDisplay);
+    if (isNaN(value)) return;
+    setCalcDisplay(String(value / 100));
+  }, [calcDisplay]);
+
+  const calcPerformOperation = useCallback((nextOperator: string) => {
+    const inputValue = parseFloat(calcDisplay);
+    if (isNaN(inputValue)) return;
+
+    if (calcPrevValue === null) {
+      setCalcPrevValue(inputValue);
+    } else if (calcOperator) {
+      const currentValue = calcPrevValue || 0;
+      let result: number;
+
+      switch (calcOperator) {
+        case '+': result = currentValue + inputValue; break;
+        case '-': result = currentValue - inputValue; break;
+        case '×': result = currentValue * inputValue; break;
+        case '÷': result = inputValue !== 0 ? currentValue / inputValue : 0; break;
+        default: result = inputValue;
+      }
+
+      if (!isNaN(result)) {
+        setCalcDisplay(String(result));
+        setCalcPrevValue(result);
+      }
+    }
+
+    setCalcWaitingForOperand(true);
+    setCalcOperator(nextOperator);
+  }, [calcDisplay, calcPrevValue, calcOperator]);
+
+  const calcEquals = useCallback(() => {
+    const inputValue = parseFloat(calcDisplay);
+    if (isNaN(inputValue)) return;
+
+    if (calcOperator && calcPrevValue !== null) {
+      let result: number;
+
+      switch (calcOperator) {
+        case '+': result = calcPrevValue + inputValue; break;
+        case '-': result = calcPrevValue - inputValue; break;
+        case '×': result = calcPrevValue * inputValue; break;
+        case '÷': result = inputValue !== 0 ? calcPrevValue / inputValue : 0; break;
+        default: result = inputValue;
+      }
+
+      if (!isNaN(result)) {
+        setCalcDisplay(String(result));
+        setCalcPrevValue(null);
+        setCalcOperator(null);
+        setCalcWaitingForOperand(true);
+      }
+    }
+  }, [calcDisplay, calcPrevValue, calcOperator]);
 
   // Session ID for deterministic option shuffling
   const [sessionId] = useState(() => `cpa-exam-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const timerRef = useRef<any>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   // Ref for scrolling to top of question on navigation (mobile fix)
   const questionTopRef = useRef<HTMLDivElement>(null);
   // Use getCurrentSectionForCourse to ensure section is valid for this course
@@ -200,6 +305,9 @@ const ExamSimulator: React.FC = () => {
       setTbsAnswers({});
       setFlagged(new Set());
       setBlueprintScores({});
+
+      // GA4 analytics — track exam start
+      analytics.startExam(currentSection);
     } catch (error) {
       logger.error('Error starting exam:', error);
     } finally {
@@ -217,7 +325,7 @@ const ExamSimulator: React.FC = () => {
     timerRef.current = setInterval(() => {
       setTimeLeft((t) => {
         if (t <= 1) {
-          clearInterval(timerRef.current);
+          if (timerRef.current) clearInterval(timerRef.current);
           setExamState('complete');
           feedback.complete();
           return 0;
@@ -230,7 +338,7 @@ const ExamSimulator: React.FC = () => {
       });
     }, 1000);
 
-    return () => clearInterval(timerRef.current);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [examState]);
 
   // Prevent accidental navigation away during active exam
@@ -422,12 +530,50 @@ const ExamSimulator: React.FC = () => {
     setExamState('complete');
     feedback.complete();
 
-    // Calculate score
+    // Calculate score once and store in state
     const results = calculateResults();
+    setExamResults(results);
     const timeSpent = startTime ? Math.round((Date.now() - startTime) / 60000) : 0;
 
     // Record simulation
     await completeSimulation('exam-sim-' + Date.now(), results.percentage, timeSpent);
+
+    // Save full exam session for later review
+    if (user?.uid) {
+      const sessionQuestions = questions.map(q => ({
+        id: q.id,
+        question: q.question,
+        options: q.options,
+        correctAnswer: q.correctAnswer,
+        userAnswer: answers[q.id],
+        explanation: q.explanation || '',
+        topic: q.topic || '',
+        blueprintArea: q.blueprintArea || '',
+      }));
+      saveExamSession(user.uid, {
+        courseId,
+        section: currentSection,
+        mode: examMode,
+        score: results.percentage,
+        mcqScore: results.mcqScore,
+        tbsScore: results.tbsScore,
+        passed: results.percentage >= examConfig.passingScore,
+        passingScore: examConfig.passingScore,
+        questionsTotal: questions.length,
+        questionsCorrect: results.correct,
+        questionsIncorrect: results.incorrect,
+        tbsTotal: results.tbsTotal,
+        tbsCorrect: Math.round(results.tbsCorrect || 0),
+        timeSpentMinutes: timeSpent,
+        completedAt: new Date(),
+        mockExamName: selectedMockExam?.name,
+        questions: sessionQuestions,
+        blueprintScores: results.blueprintResults,
+      });
+    }
+
+    // GA4 analytics — track exam completion
+    analytics.completeExam(currentSection, results.percentage, results.percentage >= examConfig.passingScore);
   };
 
   const calculateResults = () => {
@@ -524,27 +670,18 @@ const ExamSimulator: React.FC = () => {
 
   if (examState === 'intro') {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
-        <div className="max-w-3xl w-full">
-          <button
-            onClick={() => navigate(courseHome)}
-            className="mb-6 flex items-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
-          </button>
+      <div className="max-w-3xl mx-auto py-6 px-4">
+          {/* Header - outside the card */}
+          <div className="mb-6">
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
+              Exams
+            </h1>
+            <p className="text-slate-600 dark:text-slate-400">
+              Practice exams and simulations for {sectionInfo?.name || currentSection}
+            </p>
+          </div>
 
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
-            <div className="bg-primary-600 p-8 text-white">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
-                <FileText className="w-8 h-8 text-white" />
-              </div>
-              <h1 className="text-3xl font-bold mb-2">Exam Simulation</h1>
-              <p className="text-primary-100 text-lg">
-                Full {sectionInfo?.name} ({currentSection}) Exam Experience
-              </p>
-            </div>
-
             <div className="p-8">
               {/* Exam Mode Selection */}
               <h3 className="text-sm font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-4">Select Exam Type</h3>
@@ -712,16 +849,17 @@ const ExamSimulator: React.FC = () => {
               </button>
             </div>
           </div>
+
+          {/* Exam History */}
+          <ExamHistory />
         </div>
-      </div>
     );
   }
 
   // Mock Exam Selection Screen
   if (examState === 'mock-selection') {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
-        <div className="max-w-4xl w-full">
+      <div className="max-w-4xl mx-auto py-6 px-4">
           <button
             onClick={() => {
               setExamState('intro');
@@ -734,21 +872,20 @@ const ExamSimulator: React.FC = () => {
           </button>
 
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
-            <div className="bg-gradient-to-r from-primary-600 to-primary-700 p-8 text-white">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                  <Target className="w-7 h-7 text-white" />
+            <div className="p-8 border-b border-slate-100 dark:border-slate-700">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-amber-500 flex items-center justify-center text-white font-bold">
+                  <Target className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold">Curated Mock Exams</h1>
-                  <p className="text-primary-100">
+                  <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+                    Curated Mock Exams
+                  </h1>
+                  <p className="text-slate-600 dark:text-slate-400">
                     Blueprint-balanced exams for {currentSection}
                   </p>
                 </div>
               </div>
-              <p className="text-primary-100 text-sm">
-                Each mock exam is carefully designed to match the {course?.metadata?.examProvider || 'official'} Blueprint weights and question distribution.
-              </p>
             </div>
 
             <div className="p-6">
@@ -844,7 +981,6 @@ const ExamSimulator: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
     );
   }
 
@@ -931,7 +1067,7 @@ const ExamSimulator: React.FC = () => {
 
   // Complete Screen
   if (examState === 'complete') {
-    const results = calculateResults();
+    const results = examResults || calculateResults();
     const passed = results.percentage >= examConfig.passingScore;
 
     // Prometric Results Screen
@@ -1031,6 +1167,169 @@ const ExamSimulator: React.FC = () => {
                           })}
                       </tbody>
                     </table>
+                  </div>
+                </>
+              )}
+
+              {/* Review Questions Button */}
+              <div className="prometric-results-divider" />
+              <div className="prometric-results-section">
+                <button
+                  onClick={() => setReviewExpanded(!reviewExpanded)}
+                  className="prometric-btn w-full flex items-center justify-between"
+                >
+                  <span>Review Questions ({results.incorrect} incorrect)</span>
+                  <span>{reviewExpanded ? '▲' : '▼'}</span>
+                </button>
+                
+                {reviewExpanded && (
+                  <div className="mt-4 max-h-[40vh] overflow-y-auto">
+                    <div className="flex gap-2 mb-3">
+                      <button
+                        onClick={() => setReviewFilter('incorrect')}
+                        className={clsx(
+                          'prometric-btn text-sm',
+                          reviewFilter === 'incorrect' && 'prometric-btn-primary'
+                        )}
+                      >
+                        Incorrect Only
+                      </button>
+                      <button
+                        onClick={() => setReviewFilter('all')}
+                        className={clsx(
+                          'prometric-btn text-sm',
+                          reviewFilter === 'all' && 'prometric-btn-primary'
+                        )}
+                      >
+                        All Questions
+                      </button>
+                    </div>
+                    
+                    {questions
+                      .map((q, idx) => ({ question: q, index: idx }))
+                      .filter(({ question }) => {
+                        const userAnswer = answers[question.id];
+                        const isCorrect = userAnswer === question.correctAnswer;
+                        return reviewFilter === 'all' || !isCorrect;
+                      })
+                      .map(({ question, index }) => {
+                        const userAnswer = answers[question.id];
+                        const isCorrect = userAnswer === question.correctAnswer;
+                        const userAnswerText = userAnswer !== undefined && question.options 
+                          ? question.options[userAnswer] 
+                          : 'Not answered';
+                        const correctAnswerText = question.options 
+                          ? question.options[question.correctAnswer] 
+                          : '';
+                        
+                        return (
+                          <div 
+                            key={question.id} 
+                            className="mb-4 p-3 border border-gray-400"
+                            style={{ backgroundColor: isCorrect ? '#e6f5e6' : '#ffe6e6' }}
+                          >
+                            <div className="flex items-start gap-2 mb-2">
+                              <span className="font-bold">Q{index + 1}.</span>
+                              <span className={isCorrect ? 'text-green-700' : 'text-red-700'}>
+                                {isCorrect ? '✓ Correct' : '✗ Incorrect'}
+                              </span>
+                            </div>
+                            <p className="mb-2 text-sm">{question.question}</p>
+                            <div className="text-sm space-y-1">
+                              <p><strong>Your answer:</strong> {userAnswerText}</p>
+                              {!isCorrect && (
+                                <p className="text-green-700"><strong>Correct answer:</strong> {correctAnswerText}</p>
+                              )}
+                              {question.explanation && (
+                                <div className="mt-2 p-2 bg-white border border-gray-300 text-sm">
+                                  <strong>Explanation:</strong> {question.explanation}
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                  </div>
+                )}
+              </div>
+
+              {/* TBS Review Section (Prometric) */}
+              {tbsItems.length > 0 && (
+                <>
+                  <div className="prometric-results-divider" />
+                  <div className="prometric-results-section">
+                    <button
+                      onClick={() => setTbsReviewExpanded(!tbsReviewExpanded)}
+                      className="prometric-btn w-full flex items-center justify-between"
+                    >
+                      <span>Review TBS ({tbsItems.length} simulations)</span>
+                      <span>{tbsReviewExpanded ? '▲' : '▼'}</span>
+                    </button>
+                    
+                    {tbsReviewExpanded && (
+                      <div className="mt-4 max-h-[40vh] overflow-y-auto">
+                        {tbsItems.map((tbs, tbsIndex) => (
+                          <div key={tbs.id} className="mb-4 p-3 border border-gray-400 bg-white">
+                            <div className="flex items-start gap-2 mb-2">
+                              <span className="font-bold">TBS {tbsIndex + 1}.</span>
+                              <span className="font-medium">{tbs.title}</span>
+                            </div>
+                            <p className="text-xs text-gray-600 mb-2">{tbs.type?.replace(/_/g, ' ')} • {tbs.blueprintArea}</p>
+                            
+                            {tbs.scenario && (
+                              <p className="mb-3 text-sm p-2 bg-gray-100 border">{typeof tbs.scenario === 'string' ? tbs.scenario.substring(0, 200) + '...' : ''}</p>
+                            )}
+                            
+                            {(tbs.requirements || []).map((req, reqIndex) => {
+                              const userAnswer = tbsAnswers[tbs.id]?.[req.id];
+                              let isCorrect = false;
+                              let userAnswerDisplay = 'Not answered';
+                              let correctAnswerDisplay = '';
+                              
+                              if (req.type === 'dropdown' || req.options) {
+                                const correctIdx = typeof req.correctAnswer === 'number' ? req.correctAnswer : undefined;
+                                isCorrect = userAnswer === correctIdx;
+                                userAnswerDisplay = typeof userAnswer === 'number' && req.options ? req.options[userAnswer] : 'Not answered';
+                                correctAnswerDisplay = typeof correctIdx === 'number' && req.options ? req.options[correctIdx] : '';
+                              } else if (req.type === 'calculation' || typeof req.correctAnswer === 'number') {
+                                const correctVal = typeof req.correctAnswer === 'number' ? req.correctAnswer : 0;
+                                const userVal = parseFloat(String(userAnswer || '0'));
+                                isCorrect = Math.abs(userVal - correctVal) <= (req.tolerance || 0);
+                                userAnswerDisplay = userAnswer !== undefined ? `$${Number(userAnswer).toLocaleString()}` : 'Not answered';
+                                correctAnswerDisplay = `$${correctVal.toLocaleString()}`;
+                              } else if (req.correctEntries) {
+                                userAnswerDisplay = userAnswer ? 'Entries provided' : 'Not answered';
+                                correctAnswerDisplay = 'See explanation';
+                              } else {
+                                userAnswerDisplay = userAnswer ? String(userAnswer) : 'Not answered';
+                                correctAnswerDisplay = req.correctAnswer ? String(req.correctAnswer) : '';
+                                isCorrect = String(userAnswer) === String(req.correctAnswer);
+                              }
+                              
+                              return (
+                                <div key={req.id} className="mb-2 p-2 border" style={{ backgroundColor: isCorrect ? '#e6f5e6' : '#ffe6e6' }}>
+                                  <p className="text-sm font-medium mb-1">
+                                    <span className={isCorrect ? 'text-green-700' : 'text-red-700'}>
+                                      {isCorrect ? '✓' : '✗'}
+                                    </span>{' '}
+                                    {req.question || req.text || `Requirement ${reqIndex + 1}`}
+                                  </p>
+                                  <p className="text-sm"><strong>Your answer:</strong> {userAnswerDisplay}</p>
+                                  {!isCorrect && correctAnswerDisplay && (
+                                    <p className="text-sm text-green-700"><strong>Correct:</strong> {correctAnswerDisplay}</p>
+                                  )}
+                                  {req.explanation && (
+                                    <div className="mt-1 p-2 bg-white border text-sm">
+                                      <strong>Explanation:</strong> {req.explanation}
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </>
               )}
@@ -1199,6 +1498,276 @@ const ExamSimulator: React.FC = () => {
             </div>
           )}
 
+          {/* Review Questions Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden mb-6">
+            <button
+              onClick={() => setReviewExpanded(!reviewExpanded)}
+              className="w-full flex items-center justify-between p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+            >
+              <div className="flex items-center gap-2">
+                <BookOpen className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+                <h3 className="text-sm font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
+                  Review Questions
+                </h3>
+                <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-2 py-1 rounded-full">
+                  {results.incorrect} incorrect
+                </span>
+              </div>
+              <ChevronDown className={clsx(
+                'w-5 h-5 text-slate-400 transition-transform',
+                reviewExpanded && 'rotate-180'
+              )} />
+            </button>
+            
+            {reviewExpanded && (
+              <div className="border-t border-slate-200 dark:border-slate-700">
+                {/* Filter tabs */}
+                <div className="flex gap-2 p-4 border-b border-slate-200 dark:border-slate-700">
+                  <button
+                    onClick={() => setReviewFilter('incorrect')}
+                    className={clsx(
+                      'px-3 py-1.5 text-sm font-medium rounded-lg transition-colors',
+                      reviewFilter === 'incorrect'
+                        ? 'bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-400'
+                        : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700'
+                    )}
+                  >
+                    Incorrect ({results.incorrect})
+                  </button>
+                  <button
+                    onClick={() => setReviewFilter('all')}
+                    className={clsx(
+                      'px-3 py-1.5 text-sm font-medium rounded-lg transition-colors',
+                      reviewFilter === 'all'
+                        ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400'
+                        : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700'
+                    )}
+                  >
+                    All Questions ({questions.length})
+                  </button>
+                </div>
+                
+                {/* Question list */}
+                <div className="divide-y divide-slate-200 dark:divide-slate-700 max-h-[60vh] overflow-y-auto">
+                  {questions
+                    .map((q, idx) => ({ question: q, index: idx }))
+                    .filter(({ question }) => {
+                      const userAnswer = answers[question.id];
+                      const isCorrect = userAnswer === question.correctAnswer;
+                      return reviewFilter === 'all' || !isCorrect;
+                    })
+                    .map(({ question, index }) => {
+                      const userAnswer = answers[question.id];
+                      const isCorrect = userAnswer === question.correctAnswer;
+                      const userAnswerText = userAnswer !== undefined && question.options 
+                        ? question.options[userAnswer] 
+                        : 'Not answered';
+                      const correctAnswerText = question.options 
+                        ? question.options[question.correctAnswer] 
+                        : '';
+                      
+                      return (
+                        <div key={question.id} className="p-4">
+                          <div className="flex items-start gap-3 mb-3">
+                            <div className={clsx(
+                              'w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold',
+                              isCorrect 
+                                ? 'bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-400' 
+                                : 'bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-400'
+                            )}>
+                              {isCorrect ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
+                            </div>
+                            <div className="flex-1">
+                              <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
+                                Question {index + 1} • {question.topic || question.blueprintArea || 'General'}
+                              </p>
+                              <p className="text-sm text-slate-900 dark:text-white font-medium">
+                                {question.question}
+                              </p>
+                            </div>
+                          </div>
+                          
+                          <div className="ml-11 space-y-2">
+                            <div className={clsx(
+                              'p-3 rounded-lg text-sm',
+                              isCorrect 
+                                ? 'bg-success-50 dark:bg-success-900/20 border border-success-200 dark:border-success-800'
+                                : 'bg-error-50 dark:bg-error-900/20 border border-error-200 dark:border-error-800'
+                            )}>
+                              <span className="font-medium text-slate-700 dark:text-slate-300">Your answer: </span>
+                              <span className={isCorrect ? 'text-success-700 dark:text-success-400' : 'text-error-700 dark:text-error-400'}>
+                                {userAnswerText}
+                              </span>
+                            </div>
+                            
+                            {!isCorrect && (
+                              <div className="p-3 rounded-lg text-sm bg-success-50 dark:bg-success-900/20 border border-success-200 dark:border-success-800">
+                                <span className="font-medium text-slate-700 dark:text-slate-300">Correct answer: </span>
+                                <span className="text-success-700 dark:text-success-400">{correctAnswerText}</span>
+                              </div>
+                            )}
+                            
+                            {question.explanation && (
+                              <div className="p-3 rounded-lg text-sm bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600">
+                                <p className="font-medium text-slate-700 dark:text-slate-300 mb-1">Explanation:</p>
+                                <p className="text-slate-600 dark:text-slate-400">{question.explanation}</p>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* TBS Review Section */}
+          {tbsItems.length > 0 && (
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden mb-6">
+              <button
+                onClick={() => setTbsReviewExpanded(!tbsReviewExpanded)}
+                className="w-full flex items-center justify-between p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+              >
+                <div className="flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+                  <h3 className="text-sm font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
+                    Review Task-Based Simulations
+                  </h3>
+                  <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-2 py-1 rounded-full">
+                    {tbsItems.length} TBS
+                  </span>
+                </div>
+                <ChevronDown className={clsx(
+                  'w-5 h-5 text-slate-400 transition-transform',
+                  tbsReviewExpanded && 'rotate-180'
+                )} />
+              </button>
+              
+              {tbsReviewExpanded && (
+                <div className="border-t border-slate-200 dark:border-slate-700 divide-y divide-slate-200 dark:divide-slate-700 max-h-[70vh] overflow-y-auto">
+                  {tbsItems.map((tbs, tbsIndex) => (
+                    <div key={tbs.id} className="p-6">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="w-8 h-8 rounded-full bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                          {tbsIndex + 1}
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+                            {tbs.title}
+                          </h4>
+                          <p className="text-xs text-slate-500 dark:text-slate-400">
+                            {tbs.type?.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())} • {tbs.blueprintArea}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      {/* Scenario */}
+                      {tbs.scenario && (
+                        <div className="mb-4 p-4 bg-slate-50 dark:bg-slate-700/50 rounded-lg text-sm text-slate-700 dark:text-slate-300">
+                          <p className="font-medium mb-2">Scenario:</p>
+                          <p>{typeof tbs.scenario === 'string' ? tbs.scenario : JSON.stringify(tbs.scenario)}</p>
+                        </div>
+                      )}
+                      
+                      {/* Requirements review */}
+                      <div className="space-y-4">
+                        {(tbs.requirements || []).map((req, reqIndex) => {
+                          const userAnswer = tbsAnswers[tbs.id]?.[req.id];
+                          let isCorrect = false;
+                          let userAnswerDisplay = 'Not answered';
+                          let correctAnswerDisplay = '';
+                          
+                          // Handle different requirement types
+                          if (req.type === 'dropdown' || req.options) {
+                            const correctIdx = typeof req.correctAnswer === 'number' ? req.correctAnswer : undefined;
+                            isCorrect = userAnswer === correctIdx;
+                            userAnswerDisplay = typeof userAnswer === 'number' && req.options 
+                              ? req.options[userAnswer] 
+                              : 'Not answered';
+                            correctAnswerDisplay = typeof correctIdx === 'number' && req.options 
+                              ? req.options[correctIdx] 
+                              : '';
+                          } else if (req.type === 'calculation' || typeof req.correctAnswer === 'number') {
+                            const correctVal = typeof req.correctAnswer === 'number' ? req.correctAnswer : 0;
+                            const tolerance = req.tolerance || 0;
+                            const userVal = parseFloat(String(userAnswer || '0'));
+                            isCorrect = Math.abs(userVal - correctVal) <= tolerance;
+                            userAnswerDisplay = userAnswer !== undefined ? `$${Number(userAnswer).toLocaleString()}` : 'Not answered';
+                            correctAnswerDisplay = `$${correctVal.toLocaleString()}`;
+                          } else if (req.correctEntries) {
+                            // Journal entry type - simplified display
+                            userAnswerDisplay = userAnswer ? 'Entries provided' : 'Not answered';
+                            correctAnswerDisplay = req.correctEntries.map(e => 
+                              `${e.account}: ${e.debit ? `Dr ${e.debit}` : ''} ${e.credit ? `Cr ${e.credit}` : ''}`
+                            ).join('; ');
+                            // Basic check - would need more sophisticated scoring
+                            isCorrect = false; // Journal entries require complex matching
+                          } else {
+                            userAnswerDisplay = userAnswer ? String(userAnswer) : 'Not answered';
+                            correctAnswerDisplay = req.correctAnswer ? String(req.correctAnswer) : '';
+                            isCorrect = String(userAnswer) === String(req.correctAnswer);
+                          }
+                          
+                          return (
+                            <div key={req.id} className="border border-slate-200 dark:border-slate-600 rounded-lg p-4">
+                              <div className="flex items-start gap-2 mb-3">
+                                <div className={clsx(
+                                  'w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0',
+                                  isCorrect 
+                                    ? 'bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-400'
+                                    : 'bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-400'
+                                )}>
+                                  {isCorrect ? <CheckCircle className="w-3 h-3" /> : <XCircle className="w-3 h-3" />}
+                                </div>
+                                <div className="flex-1">
+                                  <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
+                                    Requirement {reqIndex + 1}
+                                  </p>
+                                  <p className="text-sm font-medium text-slate-900 dark:text-white">
+                                    {req.question || req.text || `Requirement ${reqIndex + 1}`}
+                                  </p>
+                                </div>
+                              </div>
+                              
+                              <div className="ml-8 space-y-2">
+                                <div className={clsx(
+                                  'p-3 rounded-lg text-sm',
+                                  isCorrect 
+                                    ? 'bg-success-50 dark:bg-success-900/20 border border-success-200 dark:border-success-800'
+                                    : 'bg-error-50 dark:bg-error-900/20 border border-error-200 dark:border-error-800'
+                                )}>
+                                  <span className="font-medium text-slate-700 dark:text-slate-300">Your answer: </span>
+                                  <span className={isCorrect ? 'text-success-700 dark:text-success-400' : 'text-error-700 dark:text-error-400'}>
+                                    {userAnswerDisplay}
+                                  </span>
+                                </div>
+                                
+                                {!isCorrect && correctAnswerDisplay && (
+                                  <div className="p-3 rounded-lg text-sm bg-success-50 dark:bg-success-900/20 border border-success-200 dark:border-success-800">
+                                    <span className="font-medium text-slate-700 dark:text-slate-300">Correct answer: </span>
+                                    <span className="text-success-700 dark:text-success-400">{correctAnswerDisplay}</span>
+                                  </div>
+                                )}
+                                
+                                {req.explanation && (
+                                  <div className="p-3 rounded-lg text-sm bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600">
+                                    <p className="font-medium text-slate-700 dark:text-slate-300 mb-1">Explanation:</p>
+                                    <p className="text-slate-600 dark:text-slate-400">{req.explanation}</p>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Action Buttons */}
           <div className="flex gap-4">
             <button onClick={() => navigate('/practice')} className="btn-secondary flex-1">
@@ -1273,20 +1842,27 @@ const ExamSimulator: React.FC = () => {
                   <span>Calculator</span>
                   <button className="prometric-calculator-close" onClick={() => setShowCalculator(false)}>×</button>
                 </div>
-                <div className="prometric-calculator-display">0</div>
+                <div className="prometric-calculator-display">{calcDisplay.length > 12 ? parseFloat(calcDisplay).toExponential(6) : calcDisplay}</div>
                 <div className="prometric-calculator-buttons">
-                  {['7','8','9','/','4','5','6','*','1','2','3','-','0','.','=','+'].map(btn => (
-                    <button 
-                      key={btn} 
-                      className={clsx(
-                        'prometric-calc-btn',
-                        ['+','-','*','/'].includes(btn) && 'operator',
-                        btn === '=' && 'equals'
-                      )}
-                    >
-                      {btn}
-                    </button>
-                  ))}
+                  <button onClick={calcClear} className="prometric-calc-btn">C</button>
+                  <button onClick={calcToggleSign} className="prometric-calc-btn">±</button>
+                  <button onClick={calcPercent} className="prometric-calc-btn">%</button>
+                  <button onClick={() => calcPerformOperation('÷')} className={clsx('prometric-calc-btn operator', calcOperator === '÷' && 'active')}>÷</button>
+                  <button onClick={() => calcInputDigit('7')} className="prometric-calc-btn">7</button>
+                  <button onClick={() => calcInputDigit('8')} className="prometric-calc-btn">8</button>
+                  <button onClick={() => calcInputDigit('9')} className="prometric-calc-btn">9</button>
+                  <button onClick={() => calcPerformOperation('×')} className={clsx('prometric-calc-btn operator', calcOperator === '×' && 'active')}>×</button>
+                  <button onClick={() => calcInputDigit('4')} className="prometric-calc-btn">4</button>
+                  <button onClick={() => calcInputDigit('5')} className="prometric-calc-btn">5</button>
+                  <button onClick={() => calcInputDigit('6')} className="prometric-calc-btn">6</button>
+                  <button onClick={() => calcPerformOperation('-')} className={clsx('prometric-calc-btn operator', calcOperator === '-' && 'active')}>−</button>
+                  <button onClick={() => calcInputDigit('1')} className="prometric-calc-btn">1</button>
+                  <button onClick={() => calcInputDigit('2')} className="prometric-calc-btn">2</button>
+                  <button onClick={() => calcInputDigit('3')} className="prometric-calc-btn">3</button>
+                  <button onClick={() => calcPerformOperation('+')} className={clsx('prometric-calc-btn operator', calcOperator === '+' && 'active')}>+</button>
+                  <button onClick={() => calcInputDigit('0')} className="prometric-calc-btn" style={{gridColumn: 'span 2'}}>0</button>
+                  <button onClick={calcInputDecimal} className="prometric-calc-btn">.</button>
+                  <button onClick={calcEquals} className="prometric-calc-btn equals">=</button>
                 </div>
               </div>
             )}
@@ -1501,31 +2077,58 @@ const ExamSimulator: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex overflow-hidden min-h-0">
         {/* Main Content */}
-        <div className="flex-1 flex flex-col relative">
+        <div className="flex-1 flex flex-col relative min-h-0">
           {/* Calculator Overlay */}
           {showCalculator && (
-            <div className="absolute top-4 right-4 w-64 h-80 bg-slate-800 rounded-lg shadow-2xl z-50 border border-slate-700 flex flex-col">
+            <div className="absolute top-4 right-4 w-64 bg-slate-800 rounded-lg shadow-2xl z-50 border border-slate-700 flex flex-col">
               <div className="bg-slate-700 p-2 flex justify-between items-center rounded-t-lg cursor-move">
                 <span className="text-xs text-slate-300 font-bold uppercase">Calculator</span>
                 <button
                   onClick={() => setShowCalculator(false)}
-                  className="text-slate-600 hover:text-white"
+                  className="text-slate-400 hover:text-white"
                 >
                   <XCircle className="w-4 h-4" />
                 </button>
               </div>
-              <div className="flex-1 p-4 flex items-center justify-center text-slate-600 text-sm italic">
-                {/* Real calculator implementation would go here */}
-                Basic Calculator
+              {/* Calculator Display */}
+              <div className="bg-slate-900 p-3 text-right text-white text-2xl font-mono overflow-hidden">
+                {calcDisplay.length > 12 ? parseFloat(calcDisplay).toExponential(6) : calcDisplay}
+              </div>
+              {/* Calculator Buttons */}
+              <div className="grid grid-cols-4 gap-1 p-2">
+                {/* Row 1 */}
+                <button onClick={calcClear} className="bg-slate-600 hover:bg-slate-500 text-white p-3 rounded text-sm font-semibold">C</button>
+                <button onClick={calcToggleSign} className="bg-slate-600 hover:bg-slate-500 text-white p-3 rounded text-sm font-semibold">±</button>
+                <button onClick={calcPercent} className="bg-slate-600 hover:bg-slate-500 text-white p-3 rounded text-sm font-semibold">%</button>
+                <button onClick={() => calcPerformOperation('÷')} className={clsx('p-3 rounded text-sm font-semibold', calcOperator === '÷' ? 'bg-orange-300 text-orange-800' : 'bg-orange-500 hover:bg-orange-400 text-white')}>÷</button>
+                {/* Row 2 */}
+                <button onClick={() => calcInputDigit('7')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">7</button>
+                <button onClick={() => calcInputDigit('8')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">8</button>
+                <button onClick={() => calcInputDigit('9')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">9</button>
+                <button onClick={() => calcPerformOperation('×')} className={clsx('p-3 rounded text-sm font-semibold', calcOperator === '×' ? 'bg-orange-300 text-orange-800' : 'bg-orange-500 hover:bg-orange-400 text-white')}>×</button>
+                {/* Row 3 */}
+                <button onClick={() => calcInputDigit('4')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">4</button>
+                <button onClick={() => calcInputDigit('5')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">5</button>
+                <button onClick={() => calcInputDigit('6')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">6</button>
+                <button onClick={() => calcPerformOperation('-')} className={clsx('p-3 rounded text-sm font-semibold', calcOperator === '-' ? 'bg-orange-300 text-orange-800' : 'bg-orange-500 hover:bg-orange-400 text-white')}>−</button>
+                {/* Row 4 */}
+                <button onClick={() => calcInputDigit('1')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">1</button>
+                <button onClick={() => calcInputDigit('2')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">2</button>
+                <button onClick={() => calcInputDigit('3')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">3</button>
+                <button onClick={() => calcPerformOperation('+')} className={clsx('p-3 rounded text-sm font-semibold', calcOperator === '+' ? 'bg-orange-300 text-orange-800' : 'bg-orange-500 hover:bg-orange-400 text-white')}>+</button>
+                {/* Row 5 */}
+                <button onClick={() => calcInputDigit('0')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold col-span-2">0</button>
+                <button onClick={calcInputDecimal} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">.</button>
+                <button onClick={calcEquals} className="bg-orange-500 hover:bg-orange-400 text-white p-3 rounded text-sm font-semibold">=</button>
               </div>
             </div>
           )}
 
           {/* Question Area */}
-          <div ref={!usePrometricTheme ? questionTopRef : undefined} className="flex-1 overflow-y-auto p-6">
-            <div className="max-w-4xl mx-auto">
+          <div ref={!usePrometricTheme ? questionTopRef : undefined} className="flex-1 overflow-y-auto p-6 min-h-0">
+            <div className="max-w-4xl mx-auto pb-4">
               {currentTestletType === 'tbs' && currentTBS ? (
                 /* TBS Rendering */
                 <TBSRenderer

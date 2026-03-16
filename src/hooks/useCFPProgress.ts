@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import logger from '../utils/logger';
 import { useAuth } from './useAuth';
 import { getCFPProgress, CFPOverallProgress } from '../services/cfpProgressService';
 
@@ -19,7 +20,7 @@ export function useCFPProgress() {
         setProgress(data);
       } catch (err) {
         // logger.error('Failed to load CFP progress', err);
-        console.error(err);
+        logger.error('Failed to load CFP progress:', err);
         setError(err instanceof Error ? err : new Error('Unknown error'));
       } finally {
         setLoading(false);

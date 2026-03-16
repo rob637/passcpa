@@ -1,0 +1,851 @@
+[
+  {
+    "id": "CISA1-016",
+    "courseId": "cisa",
+    "section": "CISA1",
+    "title": "Risk-Based Audit Planning",
+    "description": "Learn to prioritize audit activities based on organizational risk assessment",
+    "order": 16,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Risk Assessment",
+      "Audit Universe",
+      "Annual Audit Plan",
+      "Resource Allocation"
+    ],
+    "blueprintArea": "CISA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Risk-based auditing ensures scarce audit resources focus on areas of greatest organizational risk. This approach is mandated by IIA standards and tested heavily on CISA."
+        },
+        {
+          "title": "The Risk-Based Approach",
+          "type": "text",
+          "content": "**Traditional vs. Risk-Based Auditing:**\n\n**Traditional (Cyclical) Approach:**\n\u2022 Audit everything on a fixed schedule\n\u2022 Equal attention to all areas\n\u2022 May waste resources on low-risk areas\n\u2022 May miss emerging risks between cycles\n\n**Risk-Based Approach:**\n\u2022 Prioritize based on risk levels\n\u2022 More frequent audits of high-risk areas\n\u2022 Resources allocated proportionally\n\u2022 Flexible to address emerging risks\n\u2022 Required by modern audit standards\n\n**Benefits of Risk-Based Auditing:**\n\u2022 Better use of limited resources\n\u2022 Greater management confidence\n\u2022 Alignment with business objectives\n\u2022 Timely identification of significant issues\n\u2022 Enhanced audit credibility"
+        },
+        {
+          "title": "Building the Audit Universe",
+          "type": "text",
+          "content": "**The Audit Universe** is a complete inventory of all auditable entities in the organization.\n\n**Components May Include:**\n\n**Business Processes:**\n\u2022 Revenue cycle\n\u2022 Procurement cycle\n\u2022 Financial reporting\n\u2022 Human resources\n\n**IT Assets:**\n\u2022 Applications\n\u2022 Databases\n\u2022 Networks\n\u2022 Cloud services\n\n**Regulatory Requirements:**\n\u2022 SOX compliance\n\u2022 Data privacy (GDPR, CCPA)\n\u2022 Industry-specific (HIPAA, PCI)\n\n**Third Parties:**\n\u2022 Outsourced functions\n\u2022 Cloud providers\n\u2022 Key vendors\n\n**Projects:**\n\u2022 System implementations\n\u2022 Major initiatives"
+        },
+        {
+          "title": "Risk Assessment Factors",
+          "type": "table",
+          "headers": [
+            "Factor",
+            "Description",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Impact",
+              "Potential harm if risks materialize",
+              "Financial loss, reputation damage, regulatory fines"
+            ],
+            [
+              "Likelihood",
+              "Probability of risk occurring",
+              "Historical incidents, threat landscape, control gaps"
+            ],
+            [
+              "Control Environment",
+              "Strength of existing controls",
+              "Prior audit results, management commitment"
+            ],
+            [
+              "Change",
+              "Degree of recent or planned change",
+              "New systems, reorganization, new regulations"
+            ],
+            [
+              "Complexity",
+              "Technical or operational complexity",
+              "System interdependencies, process complexity"
+            ],
+            [
+              "Materiality",
+              "Financial significance",
+              "Transaction volumes, asset values"
+            ],
+            [
+              "Time Since Last Audit",
+              "How long since area was examined",
+              "Prior audit date, findings addressed"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: CL-IMATE",
+          "type": "callout",
+          "content": "**Risk factors: CL-IMATE**\n\n\u2022 **C**hange - How much is changing?\n\u2022 **L**ikelihood - How probable?\n\u2022 **I**mpact - How severe?\n\u2022 **M**ateriality - How significant financially?\n\u2022 **A**udit history - When last reviewed?\n\u2022 **T**echnology complexity - How complex?\n\u2022 **E**nvironment - How strong are controls?"
+        },
+        {
+          "title": "Developing the Risk-Based Audit Plan",
+          "type": "text",
+          "content": "**Annual Audit Plan Development:**\n\n**Step 1: Update the Audit Universe**\n\u2022 Review for new systems/processes\n\u2022 Remove decommissioned items\n\u2022 Validate with management\n\n**Step 2: Assess Inherent Risk**\n\u2022 Score each entity on risk factors\n\u2022 Consider qualitative inputs\n\u2022 Consult with stakeholders\n\n**Step 3: Prioritize Entities**\n\u2022 Rank by combined risk score\n\u2022 Apply materiality thresholds\n\u2022 Consider coverage requirements\n\n**Step 4: Allocate Resources**\n\u2022 Match audit hours to risk levels\n\u2022 Consider team skills needed\n\u2022 Balance throughout the year\n\n**Step 5: Obtain Approval**\n\u2022 Present to audit committee\n\u2022 Document rationale\n\u2022 Plan for flexibility"
+        },
+        {
+          "title": "Dynamic Risk Assessment",
+          "type": "text",
+          "content": "**Adjusting the Plan Throughout the Year:**\n\nThe risk-based plan should be a living document that responds to:\n\n**Internal Changes:**\n\u2022 Organizational restructuring\n\u2022 System implementations\n\u2022 Management concerns\n\u2022 Prior audit findings\n\n**External Changes:**\n\u2022 Regulatory developments\n\u2022 Industry incidents\n\u2022 Emerging threats\n\u2022 Economic conditions\n\n**Reserve Capacity:**\n\u2022 Keep 10-15% capacity for unplanned work\n\u2022 Allows response to urgent requests\n\u2022 Enables emerging risk coverage\n\n**Communication:**\n\u2022 Report plan changes to audit committee\n\u2022 Document rationale for modifications\n\u2022 Track deferred audits for next cycle"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Risk-based auditing prioritizes resources toward highest-risk areas",
+            "The audit universe inventories all auditable entities",
+            "Risk factors include impact, likelihood, change, materiality, and control strength",
+            "Annual audit plans should be approved by the audit committee",
+            "Plans must be flexible to address emerging risks throughout the year"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Risk-Based vs. Traditional Auditing",
+          "knowledgeCheck": {
+            "question": "Which of the following is a PRIMARY disadvantage of a traditional, cyclical auditing approach compared to a risk-based approach?",
+            "options": [
+              "It focuses excessively on emerging risks, neglecting established controls.",
+              "It may allocate audit resources to areas of low risk, potentially overlooking significant vulnerabilities.",
+              "It requires a more complex and resource-intensive audit universe development.",
+              "It reduces the auditor's independence due to the need for constant risk assessment."
+            ],
+            "correctIndex": 1,
+            "explanation": "A traditional approach audits everything on a fixed schedule, giving equal attention to all areas. This can waste resources on low-risk areas and miss emerging risks between audit cycles. A risk-based approach prioritizes based on risk levels, focusing on the most critical vulnerabilities.",
+            "hint": "Consider where limited audit resources are BEST spent."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Audit Universe",
+          "reveal": {
+            "question": "What is the definition of an 'Audit Universe' in the context of risk-based audit planning?",
+            "answer": "The Audit Universe is a complete inventory of all auditable entities within an organization. It forms the foundation for risk assessment and audit planning."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Audit Universe Components: Business Processes vs IT Assets",
+          "comparison": {
+            "headers": [
+              "Business Processes",
+              "IT Assets"
+            ],
+            "rows": [
+              {
+                "label": "Examples",
+                "values": [
+                  "Revenue cycle, Procurement cycle, Financial reporting",
+                  "Applications, Databases, Networks, Cloud services"
+                ]
+              },
+              {
+                "label": "Risk Focus",
+                "values": [
+                  "Financial risk, operational risk, compliance risk",
+                  "Security risk, data integrity risk, availability risk"
+                ]
+              },
+              {
+                "label": "Audit Objectives",
+                "values": [
+                  "Effectiveness, efficiency, reliability of financial reporting",
+                  "Confidentiality, integrity, availability of data and systems"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Audit Universe Components: Risk Assessment",
+          "knowledgeCheck": {
+            "question": "During the risk assessment phase for audit planning, which of the following factors is MOST important to consider when evaluating the risk associated with a specific IT asset within the audit universe?",
+            "options": [
+              "The vendor providing support for the IT asset.",
+              "The number of employees who have access to the IT asset.",
+              "The potential impact on the organization if the IT asset is compromised or unavailable.",
+              "The age of the IT asset and its remaining useful life."
+            ],
+            "correctIndex": 2,
+            "explanation": "While all options are relevant, the potential impact on the organization if the IT asset is compromised (i.e., impact analysis) is the MOST important factor. This directly relates to the magnitude of the risk and helps prioritize audit efforts.",
+            "hint": "Think about what would cause the MOST DAMAGE to the organization."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA1-017",
+    "courseId": "cisa",
+    "section": "CISA1",
+    "title": "IT Risk Assessment Methodologies",
+    "description": "Master quantitative and qualitative approaches to assessing IT risk",
+    "order": 17,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Quantitative Risk",
+      "Qualitative Risk",
+      "Risk Matrices",
+      "Risk Treatment"
+    ],
+    "blueprintArea": "CISA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IS auditors must understand how organizations assess and prioritize risks. Risk assessment methodology questions appear frequently on the CISA exam."
+        },
+        {
+          "title": "Quantitative vs. Qualitative Risk Assessment",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Quantitative",
+            "Qualitative"
+          ],
+          "rows": [
+            [
+              "Output",
+              "Dollar values",
+              "Categories (High/Medium/Low)"
+            ],
+            [
+              "Data Required",
+              "Historical financial data",
+              "Expert judgment"
+            ],
+            [
+              "Precision",
+              "Appears precise",
+              "Subjective"
+            ],
+            [
+              "Effort",
+              "Resource-intensive",
+              "Faster to complete"
+            ],
+            [
+              "Best For",
+              "Insurance, budgeting",
+              "Prioritization, awareness"
+            ],
+            [
+              "Challenge",
+              "Data often unavailable",
+              "Consistency across raters"
+            ]
+          ]
+        },
+        {
+          "title": "Quantitative Risk Analysis",
+          "type": "text",
+          "content": "**Key Formulas:**\n\n**Single Loss Expectancy (SLE)**\nSLE = Asset Value \u00d7 Exposure Factor\n\u2022 Asset Value = Worth of the asset\n\u2022 Exposure Factor = % of asset lost\n\n**Annualized Rate of Occurrence (ARO)**\nARO = Expected number of incidents per year\n\u2022 Based on historical data or estimates\n\n**Annualized Loss Expectancy (ALE)**\nALE = SLE \u00d7 ARO\n\u2022 Total expected loss per year\n\u2022 Used to justify security spending\n\n**Example:**\n\u2022 Server worth $100,000\n\u2022 Attack causes 30% damage (EF = 0.30)\n\u2022 Attack expected once every 5 years (ARO = 0.2)\n\u2022 SLE = $100,000 \u00d7 0.30 = $30,000\n\u2022 ALE = $30,000 \u00d7 0.2 = $6,000/year"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: ES-ARE",
+          "type": "callout",
+          "content": "**Quantitative formulas: ES-ARE**\n\n\u2022 **E**xposure Factor \u00d7 Asset Value = **S**LE\n\u2022 **A**RO \u00d7 SLE = **ALE**\n\nThink: \"E-SARE\" - like \"Is Are\" but for risk math!"
+        },
+        {
+          "title": "Qualitative Risk Assessment",
+          "type": "text",
+          "content": "**Process:**\n\n**1. Identify Risks**\n\u2022 Brainstorming sessions\n\u2022 Interviews with stakeholders\n\u2022 Historical incident review\n\u2022 Industry benchmarks\n\n**2. Define Rating Scales**\n\u2022 Likelihood scale (e.g., 1-5 or L/M/H)\n\u2022 Impact scale (same approach)\n\u2022 Clear definitions for each level\n\n**3. Rate Each Risk**\n\u2022 Use consistent raters or consensus\n\u2022 Document rationale\n\u2022 Allow for adjustment\n\n**4. Plot on Risk Matrix**\n\u2022 Likelihood vs. Impact\n\u2022 Identifies priority quadrants\n\u2022 Guides treatment decisions"
+        },
+        {
+          "title": "Sample Risk Matrix",
+          "type": "table",
+          "headers": [
+            "",
+            "Low Impact",
+            "Medium Impact",
+            "High Impact"
+          ],
+          "rows": [
+            [
+              "High Likelihood",
+              "Medium",
+              "High",
+              "Critical"
+            ],
+            [
+              "Medium Likelihood",
+              "Low",
+              "Medium",
+              "High"
+            ],
+            [
+              "Low Likelihood",
+              "Low",
+              "Low",
+              "Medium"
+            ]
+          ]
+        },
+        {
+          "title": "Risk Treatment Options",
+          "type": "text",
+          "content": "**The Four Ts of Risk Treatment:**\n\n**1. Terminate (Avoid)**\n\u2022 Stop the activity causing risk\n\u2022 Example: Discontinue a risky product line\n\u2022 Not always feasible\n\n**2. Transfer**\n\u2022 Shift risk to another party\n\u2022 Example: Insurance, outsourcing\n\u2022 Cost of transfer vs. risk reduction\n\n**3. Tolerate (Accept)**\n\u2022 Accept residual risk\n\u2022 Appropriate when cost of treatment exceeds benefit\n\u2022 Requires documented approval\n\n**4. Treat (Mitigate)**\n\u2022 Implement controls to reduce risk\n\u2022 Most common response\n\u2022 Reduces likelihood or impact"
+        },
+        {
+          "title": "Residual Risk",
+          "type": "text",
+          "content": "**Inherent Risk vs. Residual Risk:**\n\n**Inherent Risk**\n= Risk before any controls\n= Gross risk level\n\n**Control Effectiveness**\n= How much risk controls reduce\n= Measured through testing\n\n**Residual Risk**\n= Inherent Risk - Control Effectiveness\n= Risk remaining after controls\n= Must be accepted by management\n\n**Risk Appetite vs. Risk Tolerance:**\n\u2022 Risk Appetite = How much risk the org wants to take\n\u2022 Risk Tolerance = Acceptable variance from appetite\n\u2022 Residual risk should fall within tolerance"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Quantitative gives dollar values (ALE = SLE \u00d7 ARO); qualitative gives categories",
+            "SLE = Asset Value \u00d7 Exposure Factor",
+            "Risk matrices plot likelihood vs. impact to prioritize",
+            "Treatment options: Terminate, Transfer, Tolerate, Treat (The Four Ts)",
+            "Residual risk is what remains after controls and must be formally accepted"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Quantitative Risk Analysis: Calculations",
+          "knowledgeCheck": {
+            "question": "An organization identifies a server with an asset value of $50,000. Historical data suggests that a potential security breach could result in a 20% loss of the server's value. The organization anticipates approximately 2 such incidents per year. What is the Annualized Loss Expectancy (ALE)?",
+            "options": [
+              "$10,000",
+              "$20,000",
+              "$5,000",
+              "$25,000"
+            ],
+            "correctIndex": 2,
+            "explanation": "First, calculate the Single Loss Expectancy (SLE): SLE = Asset Value * Exposure Factor = $50,000 * 0.20 = $10,000. Then, calculate the Annualized Loss Expectancy (ALE): ALE = SLE * ARO = $10,000 * 0.5 = $5,000. ARO is the Annualized Rate of Occurrence, which is 2 incidents per year in this case.",
+            "hint": "Remember the formulas: SLE = Asset Value * Exposure Factor; ALE = SLE * ARO"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Qualitative Risk Assessment: The First Step",
+          "reveal": {
+            "question": "What is the FIRST step in performing a Qualitative Risk Assessment?",
+            "answer": "The first step in a Qualitative Risk Assessment is to **Identify Risks**. This involves techniques like brainstorming sessions, interviews with stakeholders, historical incident review, and industry benchmarks to uncover potential threats and vulnerabilities."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Quantitative vs. Qualitative Risk Assessment",
+          "comparison": {
+            "headers": [
+              "Quantitative Risk Assessment",
+              "Qualitative Risk Assessment"
+            ],
+            "rows": [
+              {
+                "label": "Nature of Analysis",
+                "values": [
+                  "Numerical and Data-Driven",
+                  "Judgmental and Descriptive"
+                ]
+              },
+              {
+                "label": "Data Requirements",
+                "values": [
+                  "Requires substantial historical data and accurate estimates",
+                  "Relies on expert opinion and subjective scales"
+                ]
+              },
+              {
+                "label": "Outcome",
+                "values": [
+                  "Provides specific numerical values for risk (e.g., ALE)",
+                  "Provides risk rankings based on likelihood and impact scales (e.g., High, Medium, Low)"
+                ]
+              },
+              {
+                "label": "Cost and Time",
+                "values": [
+                  "More time-consuming and potentially costly",
+                  "Generally quicker and less expensive"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA1-018",
+    "courseId": "cisa",
+    "section": "CISA1",
+    "title": "Audit Quality Assurance and Improvement",
+    "description": "Understand how to maintain and enhance the quality of the IS audit function",
+    "order": 18,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Quality Assurance",
+      "Internal Assessment",
+      "External Assessment",
+      "Continuous Improvement"
+    ],
+    "blueprintArea": "CISA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Quality assurance ensures audit work meets professional standards and provides reliable assurance. The IIA Standards require a Quality Assurance and Improvement Program (QAIP)."
+        },
+        {
+          "title": "Quality Assurance and Improvement Program (QAIP)",
+          "type": "text",
+          "content": "**QAIP Components:**\n\n**Purpose:**\n\u2022 Ensure audit activity conforms to Standards\n\u2022 Promote continuous improvement\n\u2022 Enhance credibility with stakeholders\n\u2022 Identify improvement opportunities\n\n**Required Elements:**\n\u2022 Internal assessments (ongoing + periodic)\n\u2022 External assessments (at least every 5 years)\n\u2022 Results communicated to senior management and board\n\u2022 Chief Audit Executive responsibility\n\n**Coverage:**\n\u2022 All aspects of the internal audit activity\n\u2022 Conformance with Definition, Standards, Code of Ethics\n\u2022 Efficiency and effectiveness of operations"
+        },
+        {
+          "title": "Internal Assessments",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Frequency",
+            "Methods",
+            "Performed By"
+          ],
+          "rows": [
+            [
+              "Ongoing Monitoring",
+              "Continuous",
+              "Supervision, checklists, feedback",
+              "Audit management"
+            ],
+            [
+              "Periodic Self-Assessment",
+              "Annual",
+              "Self-assessment surveys, benchmarking",
+              "Audit team with oversight"
+            ]
+          ]
+        },
+        {
+          "title": "Ongoing Monitoring Activities",
+          "type": "text",
+          "content": "**Supervision:**\n\u2022 Review of work papers\n\u2022 Coaching during fieldwork\n\u2022 Sign-off on conclusions\n\u2022 Timeliness tracking\n\n**Checklists and Templates:**\n\u2022 Standardized work paper formats\n\u2022 Completion checklists\n\u2022 Quality review questions\n\n**Performance Metrics:**\n\u2022 Cycle time by audit phase\n\u2022 Budget vs. actual hours\n\u2022 Client satisfaction scores\n\u2022 Finding acceptance rates\n\n**Feedback Mechanisms:**\n\u2022 Post-audit surveys\n\u2022 Exit meeting input\n\u2022 Periodic stakeholder interviews"
+        },
+        {
+          "title": "External Assessments",
+          "type": "text",
+          "content": "**Requirements:**\n\u2022 At least once every 5 years\n\u2022 Qualified, independent assessor\n\u2022 Self-assessment with independent validation allowed\n\n**Assessor Qualifications:**\n\u2022 Competent in professional practice of internal auditing\n\u2022 Independent of the organization being assessed\n\u2022 No conflict of interest\n\n**Assessment Scope:**\n\u2022 Conformance with Standards and Code of Ethics\n\u2022 Efficiency and effectiveness of activities\n\u2022 Comparison to best practices and successful practices\n\n**Outcome:**\n\u2022 Opinion on conformance\n\u2022 Recommendations for improvement\n\u2022 Results reported to board"
+        },
+        {
+          "title": "Quality Review Process",
+          "type": "text",
+          "content": "**Work Paper Review Checklist:**\n\n**Completeness:**\n\u25a1 All testing documented\n\u25a1 Evidence attached or cross-referenced\n\u25a1 Conclusions supported\n\u25a1 All sections of template completed\n\n**Accuracy:**\n\u25a1 Calculations verified\n\u25a1 Dates and references correct\n\u25a1 Naming conventions followed\n\u25a1 No copy/paste errors\n\n**Clarity:**\n\u25a1 Understandable by third party\n\u25a1 Abbreviations defined\n\u25a1 Logical organization\n\u25a1 Professional language\n\n**Timeliness:**\n\u25a1 Completed during fieldwork\n\u25a1 Review notes addressed promptly\n\u25a1 Filing deadline met"
+        },
+        {
+          "title": "Continuous Improvement",
+          "type": "text",
+          "content": "**Sources of Improvement Opportunities:**\n\n\u2022 QAIP assessment findings\n\u2022 Client feedback and surveys\n\u2022 Industry benchmarking\n\u2022 Professional development insights\n\u2022 Lessons learned sessions\n\u2022 Peer reviews\n\u2022 External auditor feedback\n\n**Improvement Categories:**\n\n\u2022 **Methodologies:** Better audit approaches, tools\n\u2022 **Technology:** Audit software, data analytics\n\u2022 **Skills:** Training, certifications, hiring\n\u2022 **Processes:** Efficiency gains, automation\n\u2022 **Communication:** Reporting clarity, stakeholder relations"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "QAIP includes ongoing internal, periodic internal, and external assessments",
+            "External assessments required at least every 5 years",
+            "CAE is responsible for the QAIP and communicating results to the board",
+            "Quality reviews check work papers for completeness, accuracy, clarity, timeliness",
+            "Continuous improvement leverages assessments, feedback, and benchmarking"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Quality Assurance and Improvement Program (QAIP) Purpose",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason for an organization to establish and maintain a Quality Assurance and Improvement Program (QAIP) for its internal audit function?",
+            "options": [
+              "To comply with regulatory requirements and industry best practices.",
+              "To ensure the internal audit activity conforms to the Standards, promotes continuous improvement, and enhances credibility with stakeholders.",
+              "To provide a structured framework for the internal audit team to follow during audit engagements.",
+              "To minimize the risk of financial misstatements and fraudulent activities within the organization."
+            ],
+            "correctIndex": 1,
+            "explanation": "While compliance, structure, and risk mitigation are benefits of a good internal audit function, the QAIP's primary purpose is to ensure adherence to standards, promote continuous improvement, and enhance stakeholder credibility. This encompasses the other options.",
+            "hint": "Think about the overarching goals of an effective internal audit function."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "External Assessment Frequency",
+          "reveal": {
+            "question": "How often must an external assessment of the internal audit activity be conducted, at a minimum?",
+            "answer": "At least once every 5 years."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Internal vs. External Assessments",
+          "comparison": {
+            "headers": [
+              "Internal Assessment",
+              "External Assessment"
+            ],
+            "rows": [
+              {
+                "label": "Frequency",
+                "values": [
+                  "Ongoing and Periodic",
+                  "At least every 5 years"
+                ]
+              },
+              {
+                "label": "Conducted By",
+                "values": [
+                  "Internal Audit Staff/Management",
+                  "Qualified, Independent Assessor"
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Continuous Monitoring, Self-Identification of Improvements",
+                  "Objective Evaluation, Identification of Opportunities for Improvement by an Outsider"
+                ]
+              },
+              {
+                "label": "Objectivity",
+                "values": [
+                  "Potentially Subjective",
+                  "Objective"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Assessor Independence",
+          "knowledgeCheck": {
+            "question": "Which of the following situations would MOST likely impair the independence of an external assessor conducting a quality assessment of the internal audit function?",
+            "options": [
+              "The assessor has previously provided consulting services to the organization's IT department.",
+              "The assessor has a close personal relationship with the organization's CFO.",
+              "The assessor has extensive experience in auditing similar organizations within the same industry.",
+              "The assessor uses standardized assessment methodologies and tools."
+            ],
+            "correctIndex": 1,
+            "explanation": "A close personal relationship with a key member of management (CFO) presents a significant conflict of interest that could impair the assessor's objectivity and independence. Previous consulting services to a separate department, industry experience, and use of standardized methodologies are generally acceptable.",
+            "hint": "Consider which relationship would most directly impact the assessor's ability to provide an unbiased evaluation."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA1-019",
+    "courseId": "cisa",
+    "section": "CISA1",
+    "title": "IS Audit Professional Ethics",
+    "description": "Learn the ethical principles that guide IS audit professional conduct",
+    "order": 19,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Ethics",
+      "Independence",
+      "Objectivity",
+      "Confidentiality",
+      "Code of Ethics"
+    ],
+    "blueprintArea": "CISA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Ethical conduct is the foundation of audit credibility. The CISA exam tests understanding of ISACA's Code of Professional Ethics and common ethical dilemmas."
+        },
+        {
+          "title": "ISACA Code of Professional Ethics",
+          "type": "text",
+          "content": "**Principles:**\n\n**1. Support Implementation of Standards**\n\u2022 Follow ISACA standards and guidelines\n\u2022 Support their implementation in practice\n\n**2. Maintain Privacy and Confidentiality**\n\u2022 Protect information obtained in work\n\u2022 Not disclose without proper authorization\n\u2022 Exception: Legal or professional obligations\n\n**3. Maintain Competence**\n\u2022 Only accept work you're qualified to perform\n\u2022 Continuously improve skills\n\u2022 Act with due professional care\n\n**4. Act with Integrity**\n\u2022 Honest and trustworthy\n\u2022 Avoid conflicts of interest\n\u2022 Report impairments to independence\n\n**5. Maintain Independence**\n\u2022 Real and perceived independence\n\u2022 Avoid activities that impair objectivity\n\n**6. Uphold Professional Standards**\n\u2022 Reflect positively on the profession\n\u2022 Avoid actions that discredit ISACA"
+        },
+        {
+          "title": "Independence and Objectivity",
+          "type": "table",
+          "headers": [
+            "Concept",
+            "Definition",
+            "Threats"
+          ],
+          "rows": [
+            [
+              "Organizational Independence",
+              "Audit function free from management influence",
+              "Reporting to operations, budget control by auditee"
+            ],
+            [
+              "Individual Independence",
+              "Auditor free from personal bias",
+              "Prior involvement, relationships, financial interest"
+            ],
+            [
+              "Professional Objectivity",
+              "Unbiased judgment in evaluations",
+              "Preconceived notions, confirmation bias"
+            ]
+          ]
+        },
+        {
+          "title": "Common Ethical Dilemmas",
+          "type": "text",
+          "content": "**Scenario 1: Prior Involvement**\n\u2022 Auditor implemented the system being audited\n\u2022 Impairment to independence\n\u2022 Solution: Disclose and reassign\n\n**Scenario 2: Management Pressure**\n\u2022 Executive asks to soften finding\n\u2022 Threatens audit credibility\n\u2022 Solution: Maintain professional judgment, escalate\n\n**Scenario 3: Confidentiality Conflict**\n\u2022 Auditor discovers fraud\n\u2022 Confidentiality vs. duty to report\n\u2022 Solution: Follow organization's fraud reporting policy\n\n**Scenario 4: Gifts and Entertainment**\n\u2022 Auditee offers expensive gift\n\u2022 Creates appearance of impropriety\n\u2022 Solution: Decline or follow organization's gift policy\n\n**Scenario 5: Outside Employment**\n\u2022 Auditor consults for company they might audit\n\u2022 Conflict of interest\n\u2022 Solution: Disclose and avoid the engagement"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: SPIC-MU",
+          "type": "callout",
+          "content": "**ISACA Ethics Code: SPIC-MU**\n\n\u2022 **S**tandards - Support implementation\n\u2022 **P**rivacy - Maintain confidentiality\n\u2022 **I**ntegrity - Act honestly\n\u2022 **C**ompetence - Stay qualified\n\u2022 **M**aintain independence\n\u2022 **U**phold professional standards"
+        },
+        {
+          "title": "Safeguards for Independence",
+          "type": "text",
+          "content": "**Organizational Safeguards:**\n\u2022 Report functionally to the board/audit committee\n\u2022 Administrative reporting separate from operational management\n\u2022 Audit committee approves CAE appointment/removal\n\u2022 Adequate resources independent of management\n\n**Individual Safeguards:**\n\u2022 Rotation of audit assignments\n\u2022 Cooling-off periods after operational roles\n\u2022 Mandatory disclosure of conflicts\n\u2022 Review by independent parties\n\n**Engagement Safeguards:**\n\u2022 Scope approved by audit committee\n\u2022 Access to information and personnel\n\u2022 Authority to report findings directly\n\u2022 Protection from retaliation"
+        },
+        {
+          "title": "Reporting Impairments",
+          "type": "text",
+          "content": "**When to Report:**\n\n\u2022 Impairment is known or should be known\n\u2022 Before undertaking the engagement\n\u2022 As soon as impairment is discovered\n\n**Who to Report To:**\n\n\u2022 Chief Audit Executive\n\u2022 Audit Committee (for organizational impairments)\n\u2022 Appropriate parties based on nature of impairment\n\n**Documentation:**\n\n\u2022 Nature of the impairment\n\u2022 Steps taken to address\n\u2022 Resolution or mitigation\n\u2022 Disclosure in audit report if material"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ISACA Code covers: Standards, Privacy, Integrity, Competence, Independence, Professional Standards",
+            "Independence must be organizational (audit function) and individual (auditor)",
+            "Common threats: prior involvement, relationships, management pressure, gifts",
+            "Impairments to independence must be disclosed and addressed",
+            "Audit committee provides key safeguard for organizational independence"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Independence and Objectivity",
+          "knowledgeCheck": {
+            "question": "An IS auditor previously implemented a key component of the system they are now assigned to audit. According to the ISACA Code of Professional Ethics, what is the MOST appropriate course of action?",
+            "options": [
+              "Proceed with the audit without disclosing the prior involvement, as long as the auditor believes they can remain objective.",
+              "Disclose the prior involvement to management and request reassignment to a different audit.",
+              "Disclose the prior involvement in the audit report, but continue with the audit.",
+              "Request a second opinion from another auditor and proceed based on their recommendation."
+            ],
+            "correctIndex": 1,
+            "explanation": "The ISACA Code of Professional Ethics emphasizes the importance of independence and objectivity. Prior involvement in the system being audited creates a potential conflict of interest and impairs independence. Disclosing the prior involvement and requesting reassignment is the most appropriate action to maintain ethical standards and ensure an unbiased audit.",
+            "hint": "Consider the core principles of the ISACA Code of Professional Ethics related to objectivity and independence."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Reveal: ISACA Code of Ethics Principle",
+          "reveal": {
+            "question": "What is the core principle related to protecting information obtained during your work?",
+            "answer": "Maintain Privacy and Confidentiality: Protect information obtained in work; Not disclose without proper authorization; Exception: Legal or professional obligation."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Management Pressure",
+          "knowledgeCheck": {
+            "question": "During an IS audit, a senior executive pressures the auditor to soften a critical finding that could negatively impact the company's reputation. What is the auditor's MOST ethical course of action?",
+            "options": [
+              "Comply with the executive's request to maintain a positive working relationship.",
+              "Modify the finding slightly to make it less severe, while still conveying the key concerns.",
+              "Maintain professional judgment, refuse to alter the finding, and escalate the issue to a higher authority within the organization or the audit committee.",
+              "Ignore the executive's request and proceed with the original finding, but avoid direct confrontation."
+            ],
+            "correctIndex": 2,
+            "explanation": "Maintaining professional judgment and objectivity is paramount. Succumbing to management pressure compromises the integrity of the audit. Escalating the issue ensures that ethical considerations are addressed and the audit findings accurately reflect the situation.",
+            "hint": "Consider the ISACA Code of Ethics principle related to independence and objectivity, and the potential consequences of compromising audit findings."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA1-020",
+    "courseId": "cisa",
+    "section": "CISA1",
+    "title": "Audit of Third-Party and Outsourced Functions",
+    "description": "Learn to assess controls over vendors, cloud providers, and outsourced operations",
+    "order": 20,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Third-Party Risk",
+      "SOC Reports",
+      "Vendor Management",
+      "Cloud Auditing"
+    ],
+    "blueprintArea": "CISA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Organizations increasingly rely on third parties for critical functions. The organization remains responsible for controls even when operations are outsourced. Third-party risk is a hot topic on the CISA exam."
+        },
+        {
+          "title": "Third-Party Risk Categories",
+          "type": "text",
+          "content": "**Strategic Risk:**\n\u2022 Vendor fails to deliver expected value\n\u2022 Misalignment with business objectives\n\n**Operational Risk:**\n\u2022 Service disruptions\n\u2022 Performance failures\n\u2022 Process breakdown\n\n**Compliance Risk:**\n\u2022 Regulatory violations\n\u2022 Contract breaches\n\u2022 Audit failures\n\n**Financial Risk:**\n\u2022 Vendor financial instability\n\u2022 Unexpected costs\n\u2022 Disputes over billing\n\n**Reputational Risk:**\n\u2022 Vendor incidents reflect on organization\n\u2022 Customer trust impact\n\u2022 Media exposure\n\n**Information Security Risk:**\n\u2022 Data breaches at vendor\n\u2022 Unauthorized access\n\u2022 Inadequate controls"
+        },
+        {
+          "title": "Third-Party Risk Management Process",
+          "type": "table",
+          "headers": [
+            "Phase",
+            "Activities",
+            "Audit Focus"
+          ],
+          "rows": [
+            [
+              "Due Diligence",
+              "Evaluate vendor before selection",
+              "Was risk assessment performed? Documented?"
+            ],
+            [
+              "Contracting",
+              "Define security requirements, SLAs",
+              "Are security terms adequate? Right to audit?"
+            ],
+            [
+              "Onboarding",
+              "Provision access, train on policies",
+              "Appropriate access? Policies communicated?"
+            ],
+            [
+              "Ongoing Monitoring",
+              "Review performance, assess risks",
+              "Regular reviews? Issues addressed?"
+            ],
+            [
+              "Periodic Assessment",
+              "Evaluate controls, audit",
+              "Latest SOC report? Findings resolved?"
+            ],
+            [
+              "Termination",
+              "Revoke access, return data",
+              "Complete offboarding? Data handled properly?"
+            ]
+          ]
+        },
+        {
+          "title": "SOC Reports Explained",
+          "type": "text",
+          "content": "**SOC = Service Organization Control**\n\n**SOC 1 (ICFR - Financial Reporting)**\n\u2022 Controls relevant to user financial statements\n\u2022 Replaces SAS 70\n\u2022 Used by financial statement auditors\n\n**SOC 2 (Trust Services Criteria)**\n\u2022 Security, Availability, Processing Integrity, Confidentiality, Privacy\n\u2022 Relevant for IT controls evaluation\n\u2022 Most commonly requested by customers\n\n**SOC 3 (General Use)**\n\u2022 Public summary report\n\u2022 Same criteria as SOC 2\n\u2022 No detailed description of tests\n\n**Type I vs. Type II:**\n\u2022 Type I: Design of controls at a point in time\n\u2022 Type II: Design AND operating effectiveness over a period\n\u2022 Type II is more valuable for reliance"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: SOC Types",
+          "type": "callout",
+          "content": "**SOC 1** = **F**inancial (think: 1 = First priority is financials)\n**SOC 2** = **T**echnical (think: 2 = Technical controls)\n**SOC 3** = **G**eneral public (think: 3 = General audience)\n\n**Type I** = **I**nstant (point in time)\n**Type II** = **T**imeframe (period of time)"
+        },
+        {
+          "title": "Using SOC Reports in Audits",
+          "type": "text",
+          "content": "**Evaluating a SOC Report:**\n\n**1. Confirm Coverage**\n\u2022 Does report cover services you use?\n\u2022 Report period matches your needs?\n\u2022 Type II preferred over Type I\n\n**2. Review Auditor's Opinion**\n\u2022 Unqualified (clean) opinion desired\n\u2022 Note any exceptions or qualifications\n\u2022 Understand basis for opinion\n\n**3. Evaluate Control Descriptions**\n\u2022 Controls adequate for your needs?\n\u2022 Any gaps in coverage?\n\u2022 Understand complementary user controls\n\n**4. Review Test Results**\n\u2022 Any exceptions noted?\n\u2022 Are exceptions material to your reliance?\n\u2022 How did service organization respond?\n\n**5. Assess Complementary User Controls**\n\u2022 These are YOUR responsibility\n\u2022 Must be in place for system to work as intended\n\u2022 Document your implementation"
+        },
+        {
+          "title": "Cloud Provider Auditing",
+          "type": "text",
+          "content": "**Cloud Audit Challenges:**\n\n**Limited Access:**\n\u2022 Can't walk into cloud data centers\n\u2022 Rely on provider attestations\n\u2022 Contract for audit rights\n\n**Shared Responsibility:**\n\u2022 Provider secures infrastructure\n\u2022 Customer secures data and access\n\u2022 Model varies by service type (IaaS/PaaS/SaaS)\n\n**Multi-Tenancy:**\n\u2022 Data segregation controls critical\n\u2022 Other tenants' activities could affect you\n\u2022 Understand isolation mechanisms\n\n**Audit Approach:**\n\u2022 Obtain SOC 2 reports\n\u2022 Review certifications (ISO 27001, CSA STAR)\n\u2022 Test customer-controlled settings\n\u2022 Verify compliance configurations\n\u2022 Test access management and encryption"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Organizations remain responsible for controls over outsourced functions",
+            "Third-party risk includes operational, compliance, financial, security, and reputational",
+            "SOC 1 = financial controls; SOC 2 = security/privacy; SOC 3 = public summary",
+            "Type II reports cover operating effectiveness over time (more valuable than Type I)",
+            "Cloud audits rely on SOC reports, certifications, and testing customer configurations"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Third-Party Risk Assessment",
+          "knowledgeCheck": {
+            "question": "Which of the following third-party risks is MOST directly associated with a vendor's failure to meet agreed-upon service levels, leading to business interruptions?",
+            "options": [
+              "Strategic Risk",
+              "Operational Risk",
+              "Compliance Risk",
+              "Financial Risk"
+            ],
+            "correctIndex": 1,
+            "explanation": "Operational risk encompasses service disruptions and performance failures, directly impacting business operations. Strategic risk is more about misalignment with overall business goals. Compliance risk relates to regulatory adherence and contract fulfillment, and financial risk pertains to potential monetary losses.",
+            "hint": "Think about which risk category directly impacts daily business functions."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "SOC Report Recall",
+          "reveal": {
+            "question": "What are the Trust Services Criteria used in a SOC 2 report?",
+            "answer": "Security, Availability, Processing Integrity, Confidentiality, and Privacy"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "SOC 1 vs. SOC 2",
+          "comparison": {
+            "headers": [
+              "SOC 1",
+              "SOC 2"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Controls relevant to user entities' financial statements",
+                  "Controls relevant to security, availability, processing integrity, confidentiality, and privacy"
+                ]
+              },
+              {
+                "label": "Primary Users",
+                "values": [
+                  "Financial Statement Auditors",
+                  "User Entities, regulators, business partners"
+                ]
+              },
+              {
+                "label": "Replaces",
+                "values": [
+                  "SAS 70",
+                  "N/A"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "SOC Report Usage",
+          "knowledgeCheck": {
+            "question": "A company is outsourcing its payroll processing. Which type of SOC report would be MOST relevant for the company's external financial auditors to review?",
+            "options": [
+              "SOC 1",
+              "SOC 2",
+              "SOC 3",
+              "Any type of SOC report"
+            ],
+            "correctIndex": 0,
+            "explanation": "SOC 1 reports are specifically designed to address controls relevant to user entities' financial statements. Payroll processing directly impacts financial reporting, making SOC 1 the most relevant report for the financial auditors.",
+            "hint": "Consider which report directly relates to financial reporting processes."
+          }
+        }
+      ]
+    }
+  }
+]

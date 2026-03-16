@@ -1,0 +1,471 @@
+nohup: ignoring input
+
+LLM Content Enhancement Pipeline
+Started: 2026-03-09 10:00:21
+======================================================================
+
+📝 Enhancing MCQs...
+  CIA1: All MCQs already enhanced ✓
+  CIA2: All MCQs already enhanced ✓
+  CIA3: 614 MCQs to enhance...
+    [10/614] +10 enhanced
+    [20/614] +10 enhanced
+    [30/614] +10 enhanced
+    [40/614] +10 enhanced
+    [50/614] +10 enhanced
+    [60/614] +10 enhanced
+    [70/614] +10 enhanced
+    [80/614] +10 enhanced
+    [90/614] +10 enhanced
+    [100/614] +10 enhanced
+    [110/614] +10 enhanced
+    [120/614] +10 enhanced
+    [130/614] +10 enhanced
+    [140/614] +10 enhanced
+    [150/614] +10 enhanced
+    [160/614] +10 enhanced
+    JSON parse error (attempt 1), retrying...
+    [170/614] +10 enhanced
+    [180/614] +10 enhanced
+    [190/614] +10 enhanced
+    [200/614] +10 enhanced
+    [210/614] +10 enhanced
+    JSON parse error (attempt 1), retrying...
+    [220/614] +10 enhanced
+    [230/614] +10 enhanced
+    [240/614] +10 enhanced
+    [250/614] +10 enhanced
+    [260/614] +10 enhanced
+    [270/614] +10 enhanced
+    [280/614] +10 enhanced
+    [290/614] +10 enhanced
+    [300/614] +10 enhanced
+    [310/614] +10 enhanced
+    ⚠ Batch returned 11, expected 10. Retrying individual...
+    JSON parse error (attempt 1), retrying...
+    [330/614] +10 enhanced
+    [340/614] +10 enhanced
+    [350/614] +10 enhanced
+    [360/614] +10 enhanced
+    [370/614] +10 enhanced
+    [380/614] +10 enhanced
+    [390/614] +10 enhanced
+    [400/614] +10 enhanced
+    [410/614] +10 enhanced
+    [420/614] +10 enhanced
+    [430/614] +10 enhanced
+    [440/614] +10 enhanced
+    [450/614] +10 enhanced
+    [460/614] +10 enhanced
+    JSON parse error (attempt 1), retrying...
+    [470/614] +10 enhanced
+    [480/614] +10 enhanced
+    [490/614] +10 enhanced
+    [500/614] +10 enhanced
+    ⚠ Batch returned 11, expected 10. Retrying individual...
+    [520/614] +10 enhanced
+    [530/614] +10 enhanced
+    [540/614] +10 enhanced
+    [550/614] +10 enhanced
+    [560/614] +10 enhanced
+    [570/614] +10 enhanced
+    [580/614] +10 enhanced
+    [590/614] +10 enhanced
+    [600/614] +10 enhanced
+    [610/614] +10 enhanced
+    [614/614] +4 enhanced
+  CIA3: 614/614 MCQs enhanced ✓
+  CISA1: 159 MCQs to enhance...
+    [10/159] +10 enhanced
+    [20/159] +10 enhanced
+    [30/159] +10 enhanced
+    [40/159] +10 enhanced
+    [50/159] +10 enhanced
+    [60/159] +10 enhanced
+    [70/159] +10 enhanced
+    [80/159] +10 enhanced
+    [90/159] +10 enhanced
+    [100/159] +10 enhanced
+    [110/159] +10 enhanced
+    [120/159] +10 enhanced
+    [130/159] +10 enhanced
+    [140/159] +10 enhanced
+    [150/159] +10 enhanced
+    [159/159] +9 enhanced
+  CISA1: 159/159 MCQs enhanced ✓
+  CISA2: 122 MCQs to enhance...
+    [10/122] +10 enhanced
+    [20/122] +10 enhanced
+    [30/122] +10 enhanced
+    [40/122] +10 enhanced
+    [50/122] +10 enhanced
+    [60/122] +10 enhanced
+    [70/122] +10 enhanced
+    [80/122] +10 enhanced
+    [90/122] +10 enhanced
+    [100/122] +10 enhanced
+    [110/122] +10 enhanced
+    [120/122] +10 enhanced
+    [122/122] +2 enhanced
+  CISA2: 122/122 MCQs enhanced ✓
+  CISA3: 137 MCQs to enhance...
+    [10/137] +10 enhanced
+    [20/137] +10 enhanced
+    [30/137] +10 enhanced
+    [40/137] +10 enhanced
+    [50/137] +10 enhanced
+    [60/137] +10 enhanced
+    [70/137] +10 enhanced
+    [80/137] +10 enhanced
+    [90/137] +10 enhanced
+    [100/137] +10 enhanced
+    [110/137] +10 enhanced
+    [120/137] +10 enhanced
+    [130/137] +10 enhanced
+    [137/137] +7 enhanced
+  CISA3: 137/137 MCQs enhanced ✓
+  CISA4: 152 MCQs to enhance...
+    [10/152] +10 enhanced
+    [20/152] +10 enhanced
+    [30/152] +10 enhanced
+    [40/152] +10 enhanced
+    ⚠ Batch returned 11, expected 10. Retrying individual...
+    [60/152] +10 enhanced
+    [70/152] +10 enhanced
+    [80/152] +10 enhanced
+    [90/152] +10 enhanced
+    [100/152] +10 enhanced
+    [110/152] +10 enhanced
+    [120/152] +10 enhanced
+    [130/152] +10 enhanced
+    [140/152] +10 enhanced
+    [150/152] +10 enhanced
+    [152/152] +2 enhanced
+  CISA4: 152/152 MCQs enhanced ✓
+  CISA5: 188 MCQs to enhance...
+    [10/188] +10 enhanced
+    [20/188] +10 enhanced
+    [30/188] +10 enhanced
+    [40/188] +10 enhanced
+    [50/188] +10 enhanced
+    [60/188] +10 enhanced
+    JSON parse error (attempt 1), retrying...
+    [70/188] +10 enhanced
+    [80/188] +10 enhanced
+    [90/188] +10 enhanced
+    [100/188] +10 enhanced
+    [110/188] +10 enhanced
+    [120/188] +10 enhanced
+    [130/188] +10 enhanced
+    [140/188] +10 enhanced
+    [150/188] +10 enhanced
+    [160/188] +10 enhanced
+    [170/188] +10 enhanced
+    [180/188] +10 enhanced
+    [188/188] +8 enhanced
+  CISA5: 188/188 MCQs enhanced ✓
+  FAR: 152 MCQs to enhance...
+    JSON parse error (attempt 1), retrying...
+    [10/152] +10 enhanced
+    [20/152] +10 enhanced
+    [30/152] +10 enhanced
+    [40/152] +10 enhanced
+    [50/152] +10 enhanced
+    ⚠ Batch returned 9, expected 10. Retrying individual...
+    JSON parse error (attempt 1), retrying...
+    [70/152] +10 enhanced
+    [80/152] +10 enhanced
+    [90/152] +10 enhanced
+    ⚠ Batch returned 11, expected 10. Retrying individual...
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 1), retrying...
+    [110/152] +10 enhanced
+    [120/152] +10 enhanced
+    [130/152] +10 enhanced
+    ⚠ Batch returned 11, expected 10. Retrying individual...
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    ✗ Failed far-1628: Could not parse JSON from response: line 1 column 1 (char 0)
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    ✗ Failed far-1629: Could not parse JSON from response: line 1 column 1 (char 0)
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    ✗ Failed far-1630: Could not parse JSON from response: line 1 column 1 (char 0)
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    ✗ Failed far-1631: Could not parse JSON from response: line 1 column 1 (char 0)
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    ✗ Failed far-1632: Could not parse JSON from response: line 1 column 1 (char 0)
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    ✗ Failed far-1637: Could not parse JSON from response: line 1 column 1 (char 0)
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    [150/152] +10 enhanced
+    [152/152] +2 enhanced
+  FAR: 146/152 MCQs enhanced ✓
+  SEE1: 31 MCQs to enhance...
+    ⚠ Batch returned 11, expected 10. Retrying individual...
+    [20/31] +10 enhanced
+    [30/31] +10 enhanced
+    [31/31] +1 enhanced
+  SEE1: 31/31 MCQs enhanced ✓
+  CFP-PCR: 130 MCQs to enhance...
+    [10/130] +10 enhanced
+    [20/130] +10 enhanced
+    JSON parse error (attempt 1), retrying...
+    [30/130] +10 enhanced
+    [40/130] +10 enhanced
+    [50/130] +10 enhanced
+    [60/130] +10 enhanced
+    [70/130] +10 enhanced
+    [80/130] +10 enhanced
+    [90/130] +10 enhanced
+    [100/130] +10 enhanced
+    [110/130] +10 enhanced
+    [120/130] +10 enhanced
+    [130/130] +10 enhanced
+  CFP-PCR: 130/130 MCQs enhanced ✓
+  CFP-GEN: 244 MCQs to enhance...
+    [10/244] +10 enhanced
+    [20/244] +10 enhanced
+    [30/244] +10 enhanced
+    [40/244] +10 enhanced
+    [50/244] +10 enhanced
+    [60/244] +10 enhanced
+    [70/244] +10 enhanced
+    [80/244] +10 enhanced
+    [90/244] +10 enhanced
+    [100/244] +10 enhanced
+    [110/244] +10 enhanced
+    [120/244] +10 enhanced
+    [130/244] +10 enhanced
+    [140/244] +10 enhanced
+    [150/244] +10 enhanced
+    [160/244] +10 enhanced
+    [170/244] +10 enhanced
+    [180/244] +10 enhanced
+    [190/244] +10 enhanced
+    [200/244] +10 enhanced
+    [210/244] +10 enhanced
+    [220/244] +10 enhanced
+    [230/244] +10 enhanced
+    [240/244] +10 enhanced
+    [244/244] +4 enhanced
+  CFP-GEN: 244/244 MCQs enhanced ✓
+  CFP-RISK: 178 MCQs to enhance...
+    [10/178] +10 enhanced
+    [20/178] +10 enhanced
+    [30/178] +10 enhanced
+    [40/178] +10 enhanced
+    [50/178] +10 enhanced
+    [60/178] +10 enhanced
+    [70/178] +10 enhanced
+    [80/178] +10 enhanced
+    JSON parse error (attempt 1), retrying...
+    [90/178] +10 enhanced
+    [100/178] +10 enhanced
+    [110/178] +10 enhanced
+    [120/178] +10 enhanced
+    [130/178] +10 enhanced
+    JSON parse error (attempt 1), retrying...
+    [140/178] +10 enhanced
+    [150/178] +10 enhanced
+    [160/178] +10 enhanced
+    [170/178] +10 enhanced
+    [178/178] +8 enhanced
+  CFP-RISK: 178/178 MCQs enhanced ✓
+  CFP-INV: 276 MCQs to enhance...
+    [10/276] +10 enhanced
+    [20/276] +10 enhanced
+    [30/276] +10 enhanced
+    [40/276] +10 enhanced
+    [50/276] +10 enhanced
+    [60/276] +10 enhanced
+    JSON parse error (attempt 1), retrying...
+    [70/276] +10 enhanced
+    [80/276] +10 enhanced
+    [90/276] +10 enhanced
+    [100/276] +10 enhanced
+    [110/276] +10 enhanced
+    [120/276] +10 enhanced
+    [130/276] +10 enhanced
+    [140/276] +10 enhanced
+    [150/276] +10 enhanced
+    [160/276] +10 enhanced
+    [170/276] +10 enhanced
+    [180/276] +10 enhanced
+    [190/276] +10 enhanced
+    ⚠ Batch returned 11, expected 10. Retrying individual...
+    [210/276] +10 enhanced
+    [220/276] +10 enhanced
+    [230/276] +10 enhanced
+    [240/276] +10 enhanced
+    [250/276] +10 enhanced
+    [260/276] +10 enhanced
+    [270/276] +10 enhanced
+    [276/276] +6 enhanced
+  CFP-INV: 276/276 MCQs enhanced ✓
+  CFP-TAX: 227 MCQs to enhance...
+    [10/227] +10 enhanced
+    [20/227] +10 enhanced
+    [30/227] +10 enhanced
+    [40/227] +10 enhanced
+    [50/227] +10 enhanced
+    [60/227] +10 enhanced
+    [70/227] +10 enhanced
+    [80/227] +10 enhanced
+    [90/227] +10 enhanced
+    [100/227] +10 enhanced
+    [110/227] +10 enhanced
+    [120/227] +10 enhanced
+    [130/227] +10 enhanced
+    [140/227] +10 enhanced
+    [150/227] +10 enhanced
+    [160/227] +10 enhanced
+    [170/227] +10 enhanced
+    [180/227] +10 enhanced
+    ⚠ Batch returned 9, expected 10. Retrying individual...
+    [200/227] +10 enhanced
+    [210/227] +10 enhanced
+    [220/227] +10 enhanced
+    [227/227] +7 enhanced
+  CFP-TAX: 227/227 MCQs enhanced ✓
+  CFP-RET: 292 MCQs to enhance...
+    [10/292] +10 enhanced
+    [20/292] +10 enhanced
+    [30/292] +10 enhanced
+    [40/292] +10 enhanced
+    [50/292] +10 enhanced
+    [60/292] +10 enhanced
+    [70/292] +10 enhanced
+    [80/292] +10 enhanced
+    [90/292] +10 enhanced
+    JSON parse error (attempt 1), retrying...
+    [100/292] +10 enhanced
+    [110/292] +10 enhanced
+    ⚠ Batch returned 11, expected 10. Retrying individual...
+    [130/292] +10 enhanced
+    [140/292] +10 enhanced
+    [150/292] +10 enhanced
+    [160/292] +10 enhanced
+    [170/292] +10 enhanced
+    [180/292] +10 enhanced
+    [190/292] +10 enhanced
+    [200/292] +10 enhanced
+    [210/292] +10 enhanced
+    [220/292] +10 enhanced
+    ⚠ Batch returned 9, expected 10. Retrying individual...
+    [240/292] +10 enhanced
+    [250/292] +10 enhanced
+    [260/292] +10 enhanced
+    [270/292] +10 enhanced
+    JSON parse error (attempt 1), retrying...
+    [280/292] +10 enhanced
+    [290/292] +10 enhanced
+    [292/292] +2 enhanced
+  CFP-RET: 292/292 MCQs enhanced ✓
+  CFP-EST: 162 MCQs to enhance...
+    [10/162] +10 enhanced
+    [20/162] +10 enhanced
+    [30/162] +10 enhanced
+    [40/162] +10 enhanced
+    [50/162] +10 enhanced
+    [60/162] +10 enhanced
+    [70/162] +10 enhanced
+    [80/162] +10 enhanced
+    [90/162] +10 enhanced
+    [100/162] +10 enhanced
+    [110/162] +10 enhanced
+    [120/162] +10 enhanced
+    [130/162] +10 enhanced
+    [140/162] +10 enhanced
+    [150/162] +10 enhanced
+    [160/162] +10 enhanced
+    [162/162] +2 enhanced
+  CFP-EST: 162/162 MCQs enhanced ✓
+  CFP-PSY: 114 MCQs to enhance...
+    [10/114] +10 enhanced
+    [20/114] +10 enhanced
+    [30/114] +10 enhanced
+    [40/114] +10 enhanced
+    [50/114] +10 enhanced
+    [60/114] +10 enhanced
+    [70/114] +10 enhanced
+    [80/114] +10 enhanced
+    [90/114] +10 enhanced
+    [100/114] +10 enhanced
+    [110/114] +10 enhanced
+    [114/114] +4 enhanced
+  CFP-PSY: 114/114 MCQs enhanced ✓
+
+======================================================================
+COMPLETE: 3172 items enhanced in 3h 26m
+======================================================================
+
+
+======================================================================
+ENHANCEMENT PROGRESS
+======================================================================
+
+MCQs:
+  CIA1      : ✓
+  CIA2      : ✓
+  CIA3      : ✓
+  CISA1     : ✓
+  CISA2     : ✓
+  CISA3     : ✓
+  CISA4     : ✓
+  CISA5     : ✓
+  FAR       : 146/152
+  SEE1      : ✓
+  CFP-PCR   : ✓
+  CFP-GEN   : ✓
+  CFP-RISK  : ✓
+  CFP-INV   : ✓
+  CFP-TAX   : ✓
+  CFP-RET   : ✓
+  CFP-EST   : ✓
+  CFP-PSY   : ✓
+  TOTAL     : 4843/4849
+
+Lessons:
+  CIA1      : 0/43
+  CIA2      : 0/43
+  CIA3      : 0/39
+  CISA1     : 0/9
+  CISA2     : 0/7
+  CISA3     : 0/8
+  CISA4     : 0/9
+  CISA5     : 0/10
+  FAR       : 0/8
+  SEE1      : 0/5
+  CFP-PCR   : 0/7
+  CFP-GEN   : 0/14
+  CFP-RISK  : 0/10
+  CFP-INV   : 0/15
+  CFP-TAX   : 0/13
+  CFP-RET   : 0/16
+  CFP-EST   : 0/9
+  CFP-PSY   : 0/7
+  TOTAL     : 0/272
+
+Flashcards:
+  cia       : 0/991
+  cisa      : 0/315
+  cfp       : 0/704
+  cpa       : 0/64
+  ea        : 0/36
+  TOTAL     : 0/2110
+
+======================================================================
+GRAND TOTAL: 4843/7231 (67.0%)
+======================================================================
+

@@ -14,7 +14,7 @@ import type { CourseData } from '../../types/courseData';
 // Questions
 import { CISA_QUESTIONS } from './questions';
 
-// Flashcards
+// Flashcards (from JSON)
 import { allCisaFlashcards } from './flashcards';
 
 // Lessons

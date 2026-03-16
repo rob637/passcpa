@@ -1,0 +1,8112 @@
+{
+  "nextIndex": 1510,
+  "results": [
+    {
+      "id": "far-add-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-026",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-027",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-028",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-029",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-030",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-031",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-032",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-033",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-034",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-035",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-036",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-037",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-038",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-039",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-add-040",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-bc-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-bc-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cf-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cf-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cf-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cf-050",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cf-051",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cf-052",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cf-053",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-change-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-change-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-change-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-comp-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-con-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-con-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-con-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cons-050",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cons-051",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cons-052",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cons-053",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cons-054",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-consol-001",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is partially correct, but the answer is not the best. It should decrease inventory and retained earnings. Decreasing COGS is a consequence, not the direct elimination.",
+      "question": "Parker Corp. sells inventory to its subsidiary, Smith Co. Some of this inventory remains unsold at y",
+      "markedAnswer": 0,
+      "options": [
+        "Decreasing consolidated cost of goods sold/increasing inventory",
+        "Increasing consolidated inventory and decreasing consolidated sales revenue.",
+        "Eliminating intercompany profit by decreasing both inventory and consolidated retained earnings.",
+        "Decreasing the seller's cost of goods sold and increasing consolidated net income."
+      ]
+    },
+    {
+      "id": "far-consol-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cont-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-cont-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-015",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is correct, but the answer choice is poorly worded. It describes the *result* of the temporary difference, not the *type* of deferred tax item.",
+      "question": "Apex Industries has a temporary difference where the book carrying amount of equipment exceeds its t",
+      "markedAnswer": 0,
+      "options": [
+        "A temporary difference results in taxable amounts in future years — the book carrying amount of an asset exceeds its tax basis (or book liability is less than tax basis)",
+        "Taxable income exceeding book income permanently indicates a difference that will not reverse in the future, often due to items like municipal bond interest or the dividends received deduction.",
+        "Tax rates decreasing would affect the measurement of deferred tax assets and liabilities, potentially decreasing their value, but it doesn't create the temporary difference itself.",
+        "The company having an NOL carryforward creates a deferred tax asset, representing future tax savings, and is unrelated to the temporary difference arising from the equipment's book and tax basis."
+      ]
+    },
+    {
+      "id": "far-d1-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d1-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d10-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d11-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-004",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is confusing and potentially incorrect. The unrealized profit is $9,000. It should be eliminated against consolidated retained earnings. The NCI is impacted through its share of the subsidiary's income.",
+      "question": "In a consolidation, Parent owns 80% of Subsidiary. Subsidiary sells inventory to Parent (an upstream",
+      "markedAnswer": 2,
+      "options": [
+        "$30,000 unrealized profit eliminated entirely against the parent's income, reflecting the controlling interest's share of consolidated earnings.",
+        "$30,000 of unrealized profit eliminated, with no effect on NCI because the sale was upstream and only affects the subsidiary's income.",
+        "$9,000 eliminated ($30,000 × 30% = $9,000 unrealized profit), with NCI absorbing 20% of the elimination",
+        "$30,000 eliminated entirely against NCI, as the unrealized profit directly reduces the subsidiary's net income attributable to non-controlling interests."
+      ]
+    },
+    {
+      "id": "far-d12-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d12-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-022",
+      "verdict": "QUESTIONABLE",
+      "reason": "The answer depends on whether the management fee is expected to be settled. If it is, the gain/loss goes to net income, not OCI. The question is ambiguous.",
+      "question": "A U.S. parent charges a management fee of 100,000 euro to its German subsidiary. Under ASC 830-20, t",
+      "markedAnswer": 2,
+      "options": [
+        "Eliminated in consolidation, with no impact on either net income or other comprehensive income, as intra-entity transactions are considered unrealized from a consolidated perspective and should not affect the reported financial position.",
+        "Never recognized under any circumstances due to the intercompany nature of the transaction; the transaction is deemed to lack economic substance until realized through a transaction with an external, unrelated third party.",
+        "Included in the cumulative translation adjustment (CTA) in OCI, not in net income, if the transaction is of a long-term investment nature and settlement is not planned or anticipated in the foreseeable future",
+        "Recognized in the subsidiary's individual financial statements only, impacting the subsidiary's net income, but is subsequently adjusted through a direct equity adjustment at the parent level to avoid double-counting the gain or loss."
+      ]
+    },
+    {
+      "id": "far-d13-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d13-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-005",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be A because the calculation is correct, but the explanation incorrectly calculates basic EPS.",
+      "question": "A company has 200,000 common shares, net income of $800,000, and 10,000 shares of 8% convertible pre",
+      "markedAnswer": 3,
+      "options": [
+        "$3.20 (Numerator: $800,000 / Denominator: 200,000 + 50,000 = 250,000)",
+        "$3.50 (Numerator: $800,000 + $80,000 / Denominator: 200,000 + 30,000)",
+        "$4.00 (Numerator: $800,000 / Denominator: 200,000)",
+        "$2.80 (Numerator: $800,000 - $80,000 / Denominator: 200,000)"
+      ]
+    },
+    {
+      "id": "far-d14-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d14-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-014",
+      "verdict": "WRONG",
+      "reason": "The explanation describes both amortization and mark-to-market, but the answer only includes mark-to-market.",
+      "question": "Under ASU 2017-12, an entity that designates a purchased option as a hedging instrument may elect to",
+      "markedAnswer": 2,
+      "options": [
+        "Recognized immediately in net income as an adjustment to the carrying value of the hedged item, effectively treating the time value as an embedded derivative requiring bifurcation and immediate recognition.",
+        "Included in other comprehensive income (OCI) and reclassified to retained earnings only upon the ultimate disposition of the hedged item, thereby preserving the original cost basis for tax purposes.",
+        "Either (1) recognized in earnings using a systematic, rational method over the life of the hedge (amortization approach) or (2) recognized in earnings based on changes in fair value",
+        "Deducted from the option premium at inception and amortized over the life of the option contract as a reduction to interest expense, reflecting the implicit financing cost associated with the hedging strategy."
+      ]
+    },
+    {
+      "id": "far-d15-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d15-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-006",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be C because the additional goods are distinct but not priced at standalone selling price, so it's a cumulative catch-up adjustment.",
+      "question": "An entity has an existing contract to provide 100 units at $10 each. After delivering 60 units, the ",
+      "markedAnswer": 1,
+      "options": [
+        "Treated as a separate contract because the additional goods are distinct and the price change is not significant enough to impact the original contract's economics.",
+        "Treated as a termination of the existing contract and creation of a new contract because the modification represents a substantial change in the scope and price of the agreement.",
+        "Accounted for as a modification of the existing contract using a cumulative catch-up adjustment because the additional goods are NOT at standalone selling price",
+        "Ignored because the units are already partially delivered, and the modification only affects the remaining undelivered portion, which can be accounted for prospectively."
+      ]
+    },
+    {
+      "id": "far-d16-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-010",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be C because the reserve is a receivable.",
+      "question": "A company factors $500,000 of receivables without recourse. The factor withholds 5% as a reserve and",
+      "markedAnswer": 0,
+      "options": [
+        "$15,000 loss, recognizing only the factoring fee expense.",
+        "$40,000 loss, with no receivable due from the factor.",
+        "$15,000 loss, with a $25,000 receivable from factor",
+        "$25,000 receivable, representing the 5% withheld reserve."
+      ]
+    },
+    {
+      "id": "far-d16-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-015",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be D because 100 @ $10 + 200 @ $12 = $3400",
+      "question": "A company has the following inventory data: Beginning inventory: 100 units @ $10; Purchase 1: 200 un",
+      "markedAnswer": 3,
+      "options": [
+        "$3,800 (200 × $14 + 100 × $10)",
+        "$3,400 (100 × $14 + 200 × $10)",
+        "$4,200 (300 × $14, using last purchase)",
+        "$3,600 (100 × $10 + 200 × $12)"
+      ]
+    },
+    {
+      "id": "far-d16-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-017",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is confusing. Excluding markdowns from the cost-to-retail ratio results in a *higher* cost-to-retail ratio, not a lower one. This higher ratio, when applied to ending inventory at retail, results in a *lower* inventory valuation because it approximates the lower of cost or market. The answer is correct, but the explanation is misleading.",
+      "question": "Under the conventional retail method, markdowns are excluded from the cost-to-retail ratio calculati",
+      "markedAnswer": 3,
+      "options": [
+        "An overstatement of ending inventory because the cost-to-retail ratio is artificially inflated by excluding markdowns.",
+        "No effect on the cost-to-retail ratio, as markdowns are considered a separate adjustment made after the ratio is calculated.",
+        "Inventory at cost, reflecting the actual expenditures incurred to acquire the goods, regardless of retail price fluctuations.",
+        "A lower cost-to-retail percentage, producing a lower (more conservative) inventory valuation"
+      ]
+    },
+    {
+      "id": "far-d16-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d16-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d17-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d18-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d19-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d2-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d20-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d21-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d22-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d23-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d4-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-016",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be A because dividends decrease the investment account, not increase it.",
+      "question": "An investor owns 30% of an investee and uses the equity method. The investee reports net income of $",
+      "markedAnswer": 1,
+      "options": [
+        "Increase of $150,000 (30% of income, ignoring dividend impact)",
+        "Increase of $120,000 (30% of income less 30% of dividends)",
+        "Increase of $500,000 (reflecting investee's total reported income)",
+        "Increase of $30,000 (30% of dividends paid, ignoring income)"
+      ]
+    },
+    {
+      "id": "far-d5-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d5-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d6-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d7-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d8-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-014",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be $31,500, not $23,500.",
+      "question": "Under the CECL model, a company uses the aging schedule method. Receivables aging shows: Current $50",
+      "markedAnswer": 1,
+      "options": [
+        "$8,500 (using only current and 31-60 day balances)",
+        "$23,500 ($5,000 + $6,000 + $8,000 + $12,500)",
+        "$850,000 (total receivables before applying loss rates)",
+        "$42,500 (applying loss rates to all receivables, twice)"
+      ]
+    },
+    {
+      "id": "far-d9-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-d9-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-debt-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-debt-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-debt-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-003",
+      "verdict": "QUESTIONABLE",
+      "reason": "Postage stamps are generally not considered cash.",
+      "question": "During an audit of Harmon Industries, the auditor is reviewing the cash balance. Which of the follow",
+      "markedAnswer": 1,
+      "options": [
+        "Currency and coins held as compensating balances",
+        "Money market funds (with restrictions)",
+        "Petty cash and postage stamps on hand for use",
+        "Checking account balances net of outstanding checks"
+      ]
+    },
+    {
+      "id": "far-easy-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-exp-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-easy-sp-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-026",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-027",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-028",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-029",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-elite-030",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-eps-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-eps-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-eq-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-eq-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-eq-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-eq-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-026",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-027",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-028",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-029",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-030",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-031",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-032",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-033",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-034",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-035",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-036",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-037",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-038",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-039",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-exp-040",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-cf-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-cf-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-cf-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-cf-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-cf-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-eq-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-eq-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-eq-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-eq-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-eq-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-fa-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-fa-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-fa-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-gov-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-gov-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-gov-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-gov-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-gov-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-int-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-int-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-int-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-int-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-int-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-inv-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-inv-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-inv-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-inv-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-inv-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-lease-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-lease-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-lease-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-lease-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-lease-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-liab-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-liab-002",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be D because the warranty liability is 3% of sales or $30,000.",
+      "question": "A company sells products with 2-year warranties. Sales are $1,000,000 and estimated warranty costs a",
+      "markedAnswer": 0,
+      "options": [
+        "$15,000",
+        "$45,000",
+        "$10,000",
+        "$30,000"
+      ]
+    },
+    {
+      "id": "far-ext-liab-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-liab-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-liab-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-nfp-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-nfp-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-nfp-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-nfp-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-nfp-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-rev-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-rev-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-rev-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-rev-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ext-rev-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-100",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-101",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-102",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-103",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-104",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-105",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-106",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-107",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-108",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-109",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-110",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-111",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-112",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-113",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-114",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-115",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-116",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-117",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-118",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-119",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-120",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-121",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-122",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-123",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-124",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-125",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-126",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-127",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-128",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-129",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-130",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-131",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-132",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-133",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-134",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-135",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-136",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-137",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-138",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-139",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-140",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-141",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-142",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-143",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-144",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-145",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-146",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-147",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-148",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-149",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-150",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-151",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-152",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-154",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-155",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-156",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-157",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-158",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-159",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-160",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-161",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-162",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-163",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-164",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-165",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-166",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-167",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-168",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-169",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-170",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-171",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-172",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-173",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-174",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be A because access to IP is recognized over time.",
+      "question": "Revenue from a license that provides access to intellectual property (functional license) is recogni",
+      "markedAnswer": 1,
+      "options": [
+        "Ratably over the contract term, regardless of usage",
+        "At a point in time when license transfers",
+        "Only when cash is received, applying the cash basis method",
+        "Over time as the customer benefits from ongoing support"
+      ]
+    },
+    {
+      "id": "far-extra-175",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-176",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-177",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-178",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-179",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-180",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-181",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-182",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-183",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-184",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-185",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-186",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-187",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-188",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-189",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-190",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-191",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-92",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-93",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-94",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-95",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-96",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-97",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-98",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra-99",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-eq-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-eq-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-eq-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-gov-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-gov-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-gov-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-gov-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-inv-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-inv-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-inv-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-lease-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-lease-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-liab-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-liab-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-nfp-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-nfp-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-nfp-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-nfp-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-extra2-tax-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fa-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fa-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fa-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fa-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fa-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fi-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fi-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fi-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fi-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fi-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fi-050",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fi-051",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fi-052",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fi-053",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fs-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fs-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fs-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fs-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fs-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fv-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fv-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fx-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-fx-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gov-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gov-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gov-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gov-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gov-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gov-050",
+      "verdict": "QUESTIONABLE",
+      "reason": "The question is too simplistic. While B is technically correct, it's not informative. It should ask for an example of a governmental fund.",
+      "question": "The City of Harmony maintains several funds for its various activities. Which of the following fund ",
+      "markedAnswer": 1,
+      "options": [
+        "Component unit",
+        "Governmental fund",
+        "Fiduciary fund",
+        "Proprietary fund"
+      ]
+    },
+    {
+      "id": "far-gov-051",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gov-052",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gov-053",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-govt-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-int-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-int-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-int-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-intang-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-intang-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-intang-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-inv-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-inv-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-inv-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-inv-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-invest-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-invest-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-invest-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-invest-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-lease-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-lease-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-lease-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-lease-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-lease-050",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-lease-051",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-lease-052",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-lease-053",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-lease-054",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-liab-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-liab-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-liab-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-liab-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-018",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-mast-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-nfp-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-nfp-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-nfp-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-nfp-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-pen-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-pen-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ppe-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ppe-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ppe-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-ppe-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rec-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rec-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rec-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rev-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rev-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rev-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rev-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rev-050",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rev-051",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rev-052",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rev-053",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rev-054",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rev-adv-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rev-adv-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-rev-adv-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-scf-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-scf-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-scf-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-seg-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-stock-050",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-stock-051",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-stock-052",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-subev-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-subev-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-tax-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-tax-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-tax-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-tax-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-tax-050",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-tax-051",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-tax-052",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-tax-053",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-tax-054",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-005",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-007",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is a bit unclear, but the calculation and answer are correct.",
+      "question": "Reed Co. uses dollar-value LIFO. The base-year cost of ending inventory is $120,000, the current-yea",
+      "markedAnswer": 2,
+      "options": [
+        "$156,000",
+        "$150,000",
+        "$144,000",
+        "$120,000"
+      ]
+    },
+    {
+      "id": "far-wc-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-015",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-016",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-017",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-018",
+      "verdict": "QUESTIONABLE",
+      "reason": "While the credit to valuation allowance is correct, the debit is not always to income tax expense. It could be to OCI.",
+      "question": "At year-end, Volt Corp. has a deferred tax asset of $100,000 and believes it is more likely than not",
+      "markedAnswer": 2,
+      "options": [
+        "No entry needed until the DTA expires, as realization is uncertain and future taxable income is speculative.",
+        "Debit Income Tax Expense $40,000; Credit Deferred Tax Asset $40,000, recognizing the permanent difference.",
+        "Debit Income Tax Expense $40,000; Credit Valuation Allowance $40,000",
+        "Debit Valuation Allowance $40,000; Credit Deferred Tax Asset $40,000, reducing the asset to its realizable value."
+      ]
+    },
+    {
+      "id": "far-wc-019",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-020",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-021",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-022",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-023",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-024",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-025",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-026",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-027",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-028",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-029",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-030",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-031",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-032",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-033",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-034",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-035",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-036",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-037",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-039",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-040",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-041",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-042",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-043",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-044",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-045",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-046",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-047",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is incomplete. While the initial setup is correct, the actual calculation of the carrying amount at year-end requires more steps and specific interest rate calculation.",
+      "question": "On January 1, Year 1, Elm Corp. issued $1,000,000 of 8% bonds at 103. The bonds mature in 5 years an",
+      "markedAnswer": 0,
+      "options": [
+        "$1,024,850",
+        "$1,018,700",
+        "$1,012,550",
+        "$1,030,000"
+      ]
+    },
+    {
+      "id": "far-wc-048",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-049",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-050",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-051",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-052",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-053",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-054",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-055",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-056",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-057",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-058",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-059",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-060",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-061",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-062",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-063",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-064",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-065",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-066",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-067",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-069",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-070",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-071",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-072",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-073",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-074",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-075",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-076",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-077",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-078",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-079",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-080",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-081",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-082",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-083",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-084",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-085",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-086",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-087",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-088",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-089",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-090",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-091",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-092",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-093",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-094",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-095",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-096",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-097",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-098",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-099",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-100",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-101",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-102",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-103",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-104",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-105",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-106",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-107",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-108",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-109",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-110",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-111",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-112",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-113",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-114",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-115",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-116",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-118",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-119",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-120",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-121",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-122",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-123",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-124",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-125",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-126",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-127",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-128",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-129",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-130",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-131",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-132",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-133",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-134",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-135",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-136",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-137",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-138",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-139",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-140",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-141",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-142",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-143",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-144",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-145",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-146",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-147",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-148",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-149",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-150",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-151",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-152",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-153",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-154",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-155",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-156",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-157",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-158",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-159",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-160",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-161",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-162",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-163",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-164",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-165",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-166",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-167",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-168",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-169",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-170",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-171",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-172",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-173",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-174",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-175",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-176",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-177",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-178",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-179",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-180",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-181",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-182",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-183",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-184",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-185",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-186",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-187",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-188",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-189",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-190",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-191",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-192",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-193",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-194",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-195",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-196",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-197",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-198",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-199",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-200",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-201",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-202",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-203",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-204",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-205",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-206",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-207",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-208",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-209",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-210",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-211",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-212",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-213",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-wc-214",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1302",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1303",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1304",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is missing the call premium. Discount = $100,000. Amortized discount after 5 years = $50,000. Unamortized discount = $50,000. Call premium = $5,000,000 * 2% = $100,000. Loss on early extinguishment = Call price - Carrying amount = ($5,000,000 * 1.02) - ($5,000,000 - $50,000) = $5,100,000 - $4,950,000 = $150,000. The correct answer should be $150,000, which is not an option.",
+      "question": "On January 1, 2023, Alpha Corp. issued $5,000,000 of 8% bonds at 98, due in 10 years. The bonds pay ",
+      "markedAnswer": 0,
+      "options": [
+        "$130,000",
+        "$120,000",
+        "$230,000",
+        "$330,000"
+      ]
+    },
+    {
+      "id": "far-gen-1305",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1306",
+      "verdict": "WRONG",
+      "reason": "The depreciation expense for year 4 should be $88,000. Year 1: $500,000 * 20% = $100,000, BV = $400,000. Year 2: $400,000 * 20% = $80,000, BV = $320,000. Year 3: $320,000 * 20% = $64,000, BV = $256,000. Remaining depreciable base = $256,000 - $20,000 = $236,000. Depreciation expense for Year 4 = $236,000 / 4 = $59,000. The book value at the end of year 3 is $256,000. The remaining useful life is 4 years and the salvage value is $20,000. The depreciation expense for year 4 is ($256,000 - $20,000) / 4 = $59,000. The answer is incorrect.",
+      "question": "Apex Corp. purchased a machine on January 1, Year 1, for $500,000. The machine had an estimated usef",
+      "markedAnswer": 0,
+      "options": [
+        "$64,000",
+        "$80,000",
+        "$100,000",
+        "$112,500"
+      ]
+    },
+    {
+      "id": "far-gen-1307",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1308",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1309",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1310",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1311",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1312",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1313",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be B because the compensating balance is included in cash and cash equivalents since it is legally permitted to be withdrawn. $500,000 - $100,000 - $50,000 + $25,000 = $450,000",
+      "question": "Apex Corporation had a cash balance of $500,000 on December 31, Year 1. The following information is",
+      "markedAnswer": 3,
+      "options": [
+        "$425,000",
+        "$450,000",
+        "$500,000",
+        "$350,000"
+      ]
+    },
+    {
+      "id": "far-gen-1314",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be Loss of $150,000. The explanation incorrectly calculates the loss as $150,000 but states the answer is $120,000.",
+      "question": "On January 1, 2023, Beta Corp. issued $5,000,000 of 8% bonds at 98. The bonds mature on December 31,",
+      "markedAnswer": 2,
+      "options": [
+        "Loss of $220,000",
+        "Gain of $220,000",
+        "Loss of $120,000",
+        "Gain of $120,000"
+      ]
+    },
+    {
+      "id": "far-gen-1315",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1316",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1317",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1318",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1320",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1321",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1322",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1323",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1324",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1325",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be A because the question asks for the after-tax effect. The explanation incorrectly states the answer reflects the pre-tax impact.",
+      "question": "During 2023, Zeff Co. experienced a LIFO liquidation. The company sold 15,000 units, while only purc",
+      "markedAnswer": 0,
+      "options": [
+        "Increase of $56,250",
+        "Increase of $75,000",
+        "Decrease of $56,250",
+        "Decrease of $75,000"
+      ]
+    },
+    {
+      "id": "far-gen-1326",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be A because restricted cash is not included in cash and cash equivalents.",
+      "question": "Zeta Corp. has the following balances at December 31, Year 1:\n\n*   Cash in checking account: $50,000",
+      "markedAnswer": 1,
+      "options": [
+        "$90,000",
+        "$110,000",
+        "$120,000",
+        "$155,000"
+      ]
+    },
+    {
+      "id": "far-gen-1327",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1328",
+      "verdict": "QUESTIONABLE",
+      "reason": "Without the fair value of the asset, it's impossible to definitively determine if the PV of lease payments is >= 90% of the asset's fair value.",
+      "question": "On January 1, 2024, Miller Corp. entered into a 5-year lease for equipment. The present value of the",
+      "markedAnswer": 0,
+      "options": [
+        "Finance lease.",
+        "Operating lease.",
+        "Sale-type lease.",
+        "Direct financing lease."
+      ]
+    },
+    {
+      "id": "far-gen-1329",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1330",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is incomplete. Need to calculate goodwill first. Goodwill = $8,000,000 + $2,000,000 - $9,000,000 = $1,000,000. Impairment = $9,000,000 - $8,000,000 = $1,000,000. The full amount of the goodwill is impaired. The answer should be C.",
+      "question": "Parent Co. acquired 80% of Subsidiary Co. on January 1, Year 1, for $8,000,000. At the acquisition d",
+      "markedAnswer": 0,
+      "options": [
+        "$0",
+        "$800,000",
+        "$1,000,000",
+        "$1,800,000"
+      ]
+    },
+    {
+      "id": "far-gen-1331",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1332",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1333",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1334",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1335",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is confusing. While the answer is correct, the reasoning could be clearer. It should emphasize that the full $200,000 is recognized because it's more likely than not the position will be sustained.",
+      "question": "Zenith Corp. identified a tax position related to the deductibility of executive compensation. Zenit",
+      "markedAnswer": 2,
+      "options": [
+        "$0",
+        "$80,000",
+        "$120,000",
+        "$200,000"
+      ]
+    },
+    {
+      "id": "far-gen-1336",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1337",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1338",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1339",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1340",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1341",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1342",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1343",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1344",
+      "verdict": "D",
+      "reason": "WRONG|The correct answer should be $350,000."
+    },
+    {
+      "id": "far-gen-1345",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation calculates the taxable temporary difference correctly, but the final answer is incorrect. $400,000 * 25% = $100,000, not $75,000.",
+      "question": "During the year, Alpha Corp. recognized $500,000 in revenue from a sale with an extended warranty. F",
+      "markedAnswer": 0,
+      "options": [
+        "$75,000",
+        "$25,000",
+        "$125,000",
+        "$50,000"
+      ]
+    },
+    {
+      "id": "far-gen-1346",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1347",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is confusing. It calculates the DTL for depreciation and DTA for warranty separately, then mentions a net effect. The question is ambiguous if it's asking for the total deferred tax or only related to depreciation.",
+      "question": "During 2023, Beta Corp. reported pretax financial income of $500,000. Included in pretax financial i",
+      "markedAnswer": 0,
+      "options": [
+        "Deferred tax liability of $6,250.",
+        "Deferred tax asset of $2,000.",
+        "Deferred tax liability of $8,250.",
+        "Deferred tax asset of $6,250."
+      ]
+    },
+    {
+      "id": "far-gen-1348",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1349",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1350",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1351",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1352",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is correct, but the calculation is missing. It should be $5,000,000 * (1-0.03) * 0.95 = $4,657,500, which is not an option.",
+      "question": "The City of Willow Creek levied property taxes of $5,000,000 for the fiscal year ending June 30, 202",
+      "markedAnswer": 0,
+      "options": [
+        "$4,750,000",
+        "$4,940,000",
+        "$4,850,000",
+        "$5,000,000"
+      ]
+    },
+    {
+      "id": "far-gen-1353",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be $450,000.",
+      "question": "A city's General Fund received $500,000 in property taxes. Of this amount, $20,000 is expected to be",
+      "markedAnswer": 0,
+      "options": [
+        "$470,000",
+        "$500,000",
+        "$480,000",
+        "$450,000"
+      ]
+    },
+    {
+      "id": "far-gen-1354",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1355",
+      "verdict": "QUESTIONABLE",
+      "reason": "Need more information to determine major funds.",
+      "question": "The City of Metropolis has the following governmental funds for the year ended December 31, 2024 (in",
+      "markedAnswer": 0,
+      "options": [
+        "General Fund and Special Revenue Fund (Street Maintenance)",
+        "General Fund, Special Revenue Fund (Street Maintenance), and Capital Projects Fund",
+        "General Fund, Special Revenue Fund (Street Maintenance), Capital Projects Fund, and Debt Service Fund",
+        "General Fund only"
+      ]
+    },
+    {
+      "id": "far-gen-1356",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1357",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1358",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1359",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1360",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1361",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1362",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1363",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1364",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1365",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1366",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1367",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is incomplete. It needs to address whether the grant revenue is considered measurable and available.",
+      "question": "A city's general fund received $500,000 in property taxes, $100,000 in sales taxes, and $50,000 in g",
+      "markedAnswer": 1,
+      "options": [
+        "$650,000",
+        "$700,000",
+        "$675,000",
+        "$550,000"
+      ]
+    },
+    {
+      "id": "far-gen-1368",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1369",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1370",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1371",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1372",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1373",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1374",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is incorrect. It should be governmental funds fund balance plus adjustments for items like capital assets and long-term debt. The general long-term liabilities should be added, but the explanation is incomplete.",
+      "question": "The City of Willow Creek has the following balances at the end of its fiscal year:\n\n*   Governmental",
+      "markedAnswer": 0,
+      "options": [
+        "$8,000,000",
+        "$7,000,000",
+        "$5,000,000",
+        "$4,000,000"
+      ]
+    },
+    {
+      "id": "far-gen-1375",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1376",
+      "verdict": "WRONG",
+      "reason": "The explanation is incorrect. It only mentions the 10% test. The answer should consider both 10% and 5% tests.",
+      "question": "A city's General Fund had total assets of $5,000,000, total liabilities of $2,000,000, total revenue",
+      "markedAnswer": 0,
+      "options": [
+        "Yes, because its assets exceed 10% of the total governmental funds' assets.",
+        "No, because its revenues do not exceed 10% of the total governmental funds' revenues.",
+        "Yes, because it meets both the 10% and 5% criteria.",
+        "No, because its expenditures do not exceed 5% of the total governmental funds' expenditures."
+      ]
+    },
+    {
+      "id": "far-gen-1377",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1378",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is vague. The correct answer should be calculated and compared to the options.",
+      "question": "XYZ Corp. adopted CECL on January 1, 2024. On December 31, 2024, XYZ's accounts receivable balance i",
+      "markedAnswer": 1,
+      "options": [
+        "$105,000",
+        "$125,000",
+        "$160,000",
+        "$200,000"
+      ]
+    },
+    {
+      "id": "far-gen-1379",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1380",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1381",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1382",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1383",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1384",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1385",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is vague and doesn't provide a clear calculation.",
+      "question": "Alpha Corp. is experiencing significant financial difficulties and is in negotiations with its credi",
+      "markedAnswer": 0,
+      "options": [
+        "Gain of $1,200,000",
+        "Loss of $1,200,000",
+        "Gain of $1,440,000",
+        "Loss of $1,440,000"
+      ]
+    },
+    {
+      "id": "far-gen-1386",
+      "verdict": "A",
+      "reason": "WRONG|The correct answer should be D because the incremental fair value is ($22-$5) * 5 executives * 10,000 options = $850,000. This is recognized immediately."
+    },
+    {
+      "id": "far-gen-1387",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1388",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1389",
+      "verdict": "QUESTIONABLE",
+      "reason": "The calculation is correct, but the answer choices are off. $25,333 is the correct answer, not $25,000.",
+      "question": "On January 1, Year 1, Apex Corp. granted 10,000 stock options to its executives. Each option allows ",
+      "markedAnswer": 0,
+      "options": [
+        "$25,000",
+        "$26,667",
+        "$80,000",
+        "$76,000"
+      ]
+    },
+    {
+      "id": "far-gen-1390",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1391",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be $3,650. 100 * $10 + 200 * $12 = $3,400. Remaining 100 units are from the $15 batch, so 100 * $15 = $1,500. COGS = $1,000 + $2,400 + $250 = $3,650",
+      "question": "Best Bargains, Inc. uses the FIFO (first-in, first-out) inventory costing method. On January 1, they",
+      "markedAnswer": 0,
+      "options": [
+        "$3,450",
+        "$3,600",
+        "$3,750",
+        "$3,900"
+      ]
+    },
+    {
+      "id": "far-gen-1392",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1393",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1394",
+      "verdict": "WRONG",
+      "reason": "The correct answer is $50,000. $5,000,000 * 4% = $200,000. $200,000 - $150,000 = $50,000.",
+      "question": "Apex Appliances sells dishwashers with a standard two-year warranty covering parts and labor. Based ",
+      "markedAnswer": 0,
+      "options": [
+        "$50,000",
+        "$150,000",
+        "$200,000",
+        "$350,000"
+      ]
+    },
+    {
+      "id": "far-gen-1395",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1396",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1397",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1398",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1399",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1400",
+      "verdict": "WRONG",
+      "reason": "The correct answer is $50,000. (5,000 * ($22 - $15)) + (5,000 * ($18 - $15)) = $35,000 + $15,000 = $50,000",
+      "question": "On January 1, 2024, Apex Corp. had 100,000 shares of $1 par value common stock issued and outstandin",
+      "markedAnswer": 0,
+      "options": [
+        "$35,000",
+        "$40,000",
+        "$60,000",
+        "$75,000"
+      ]
+    },
+    {
+      "id": "far-gen-1401",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1402",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1403",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be D because the depreciation difference creates a DTA and the warranty difference creates a DTA, while the rent creates a DTL.",
+      "question": "Apex Corporation reported pretax financial income of $5,000,000 for the year ended December 31, 2023",
+      "markedAnswer": 0,
+      "options": [
+        "Deferred Tax Liability of $50,000",
+        "Deferred Tax Asset of $50,000",
+        "Deferred Tax Liability of $55,000",
+        "Deferred Tax Asset of $55,000"
+      ]
+    },
+    {
+      "id": "far-gen-1404",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1405",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1406",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1408",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1409",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be B because the lease is an operating lease, so the sale is recognized.",
+      "question": "On January 1, 2024, Gamma Corp. sold a building with a carrying amount of $800,000 to Delta Leasing ",
+      "markedAnswer": 3,
+      "options": [
+        "$0, Because the leaseback is classified as an operating lease, the entire gain is deferred.",
+        "$400,000",
+        "$200,000",
+        "$100,000"
+      ]
+    },
+    {
+      "id": "far-gen-1410",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be B because the employee is expected to work 5 years, so the maximum benefit is reduced by 5 * $2,000 = $10,000. The total expected benefit is $10,000. The amount attributed to the first year is $10,000 / 5 = $2,000.",
+      "question": "ABC Company sponsors a defined benefit postretirement health care plan. The plan’s benefit formula d",
+      "markedAnswer": 2,
+      "options": [
+        "$0",
+        "$2,000",
+        "$4,000",
+        "$20,000"
+      ]
+    },
+    {
+      "id": "far-gen-1411",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1412",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1413",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1414",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1415",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1416",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is not entirely accurate. While the most likely outcome is considered, the amount recognized should be the *largest* amount that is *cumulatively* greater than 50% likely to be realized. In this case, $300,000 is the only amount that meets that criteria, but the explanation could be more precise.",
+      "question": "During 2023, Beta Corp. identified a tax position related to a deduction claimed for research and de",
+      "markedAnswer": 2,
+      "options": [
+        "$0",
+        "$200,000",
+        "$300,000",
+        "$500,000"
+      ]
+    },
+    {
+      "id": "far-gen-1417",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1418",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1419",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is incomplete. It needs to show the calculations for each year to confirm the 2026 revenue.",
+      "question": "Barnaby Construction Company entered into a contract on January 1, 2024, to build a warehouse for $5",
+      "markedAnswer": 2,
+      "options": [
+        "$2,000,000",
+        "$2,100,000",
+        "$2,300,000",
+        "$2,500,000"
+      ]
+    },
+    {
+      "id": "far-gen-1420",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1421",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1422",
+      "verdict": "WRONG",
+      "reason": "The explanation incorrectly subtracts the actual return instead of the expected return. The correct answer should be B.",
+      "question": "Miller Company sponsors a post-retirement health care plan. The following information is available f",
+      "markedAnswer": 0,
+      "options": [
+        "$200,000",
+        "$210,000",
+        "$220,000",
+        "$320,000"
+      ]
+    },
+    {
+      "id": "far-gen-1423",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1424",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1425",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1426",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1427",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1428",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1429",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1430",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1431",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1432",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation only mentions the 10% test, but the 5% test is also required.",
+      "question": "The City of Anytown has the following governmental funds:\n\n*   General Fund: Total assets $5,000,000",
+      "markedAnswer": 0,
+      "options": [
+        "General Fund, Special Revenue Fund, and Capital Projects Fund",
+        "General Fund and Capital Projects Fund",
+        "General Fund, Special Revenue Fund, Capital Projects Fund, and Debt Service Fund",
+        "General Fund only"
+      ]
+    },
+    {
+      "id": "far-gen-1433",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1434",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1435",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1436",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1437",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1438",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1439",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1440",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1441",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1443",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1444",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1445",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1446",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1447",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1448",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is vague. Need to calculate the budgetary fund balance. Budgeted Revenues - Budgeted Expenditures = $5,000,000 - $4,500,000 = $500,000. The answer should be $500,000.",
+      "question": "The City of Millbrook's General Fund had the following activity during the year:\n\n*   Budgeted reven",
+      "markedAnswer": 0,
+      "options": [
+        "$300,000",
+        "$400,000",
+        "$500,000",
+        "$630,000"
+      ]
+    },
+    {
+      "id": "far-gen-1449",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1450",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1451",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is vague. Need to calculate the expected loss from the lawsuit and add it to the loan guarantee liability.",
+      "question": "Apex Corp. is involved in a lawsuit related to patent infringement. Apex's legal counsel believes th",
+      "markedAnswer": 1,
+      "options": [
+        "$2,900,000",
+        "$3,540,000",
+        "$3,500,000",
+        "$2,860,000"
+      ]
+    },
+    {
+      "id": "far-gen-1452",
+      "verdict": "WRONG",
+      "reason": "Net Realizable Value (NRV) = Estimated Selling Price - Estimated Costs to Complete and Sell = $62,000 - $15,000 = $47,000. Lower of Cost ($50,000) or NRV ($47,000) = $47,000. The correct answer should be A.",
+      "question": "Davis Company has the following information regarding its inventory:\n\n*   Historical Cost: $50,000\n*",
+      "markedAnswer": 1,
+      "options": [
+        "$47,000",
+        "$50,000",
+        "$62,000",
+        "$67,000"
+      ]
+    },
+    {
+      "id": "far-gen-1453",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1454",
+      "verdict": "WRONG",
+      "reason": "The explanation states the correct answer is $15,950, but the question is marked correct for $25,000.",
+      "question": "Summit Corp. sells specialized equipment to other businesses on credit terms of net 30. At December ",
+      "markedAnswer": 1,
+      "options": [
+        "$24,500",
+        "$25,000",
+        "$31,000",
+        "$48,000"
+      ]
+    },
+    {
+      "id": "far-gen-1455",
+      "verdict": "WRONG",
+      "reason": "The explanation states the correct answer is $800,000, but the question is marked correct for $775,000.",
+      "question": "During 2023, Zeff Co. experienced a LIFO liquidation. The company's beginning inventory consisted of",
+      "markedAnswer": 0,
+      "options": [
+        "$775,000",
+        "$800,000",
+        "$825,000",
+        "$850,000"
+      ]
+    },
+    {
+      "id": "far-gen-1456",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1457",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1458",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1459",
+      "verdict": "WRONG",
+      "reason": "NRV = $150,000 - $40,000 - $25,000 = $85,000. Lower of cost ($120,000) or NRV ($85,000) is $85,000. None of the answers are correct.",
+      "question": "Benson Company manufactures custom furniture. Due to a recent decline in demand for a particular mod",
+      "markedAnswer": 0,
+      "options": [
+        "$125,000",
+        "$120,000",
+        "$150,000",
+        "$160,000"
+      ]
+    },
+    {
+      "id": "far-gen-1460",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1461",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1462",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1463",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1464",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1465",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1466",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1467",
+      "verdict": "QUESTIONABLE",
+      "reason": "Need more information to verify unamortized discount/premium and issuance costs.",
+      "question": "On January 1, Year 1, Beta Corp. issued $5,000,000 of 10-year bonds at 98, with a stated interest ra",
+      "markedAnswer": 0,
+      "options": [
+        "$140,000",
+        "$100,000",
+        "$60,000",
+        "$40,000"
+      ]
+    },
+    {
+      "id": "far-gen-1468",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1469",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1470",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be A because (400000 * 0.01) + (200000 * 0.05) + (200000 * 0.15) = 4000 + 10000 + 30000 = 44000. Closest answer is A.",
+      "question": "On December 31, Year 1, Beta Corp. had outstanding accounts receivable of $800,000. Beta adopted CEC",
+      "markedAnswer": 1,
+      "options": [
+        "$46,000",
+        "$30,000",
+        "$20,000",
+        "$10,000"
+      ]
+    },
+    {
+      "id": "far-gen-1471",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1472",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1473",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be D because (100 * $10) + (150 * $12) = $2,800. Closest answer is D.",
+      "question": "During the month of October, Lambert Company had the following inventory transactions:\n\nOctober 1: B",
+      "markedAnswer": 3,
+      "options": [
+        "$2,600",
+        "$2,900",
+        "$2,700",
+        "$2,500"
+      ]
+    },
+    {
+      "id": "far-gen-1474",
+      "verdict": "QUESTIONABLE",
+      "reason": "The explanation is unclear and doesn't fully justify the answer. Needs more detailed calculation.",
+      "question": "Alpha Corp. granted 10,000 stock options to its executives on January 1, Year 1. The options vest ra",
+      "markedAnswer": 2,
+      "options": [
+        "$37,500",
+        "$60,000",
+        "$72,500",
+        "$95,000"
+      ]
+    },
+    {
+      "id": "far-gen-1475",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be D. $30,000 (ending balance) - $2,000 (beginning balance) + $8,000 (write-offs) - $1,000 (recoveries) = $35,000. Credit Loss Expense = $29,000.",
+      "question": "Apex Corporation adopted CECL on January 1, 2024. At December 31, 2024, Apex's aging of accounts rec",
+      "markedAnswer": 0,
+      "options": [
+        "$35,000",
+        "$37,000",
+        "$30,000",
+        "$27,000"
+      ]
+    },
+    {
+      "id": "far-gen-1476",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be A. NRV = $62,000 - $15,000 = $47,000. Lower of cost ($50,000) and NRV ($47,000) is $47,000.",
+      "question": "ABC Company has inventory with a historical cost of $50,000. The estimated selling price is $62,000,",
+      "markedAnswer": 1,
+      "options": [
+        "$47,000",
+        "$50,000",
+        "$62,000",
+        "$77,000"
+      ]
+    },
+    {
+      "id": "far-gen-1477",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1478",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1479",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1480",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1481",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1482",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1483",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be A ($200,000), but the explanation has the correct calculation.",
+      "question": "The City of Willow Creek operates a municipal golf course. During the year ended December 31, 2024, ",
+      "markedAnswer": 0,
+      "options": [
+        "$190,000",
+        "$160,000",
+        "$90,000",
+        "$60,000"
+      ]
+    },
+    {
+      "id": "far-gen-1484",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1485",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1486",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1488",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1489",
+      "verdict": "QUESTIONABLE",
+      "reason": "Without enterprise fund data, a definitive conclusion is not possible.",
+      "question": "The City of Anytown has the following governmental funds: General Fund, Special Revenue Fund, Capita",
+      "markedAnswer": 2,
+      "options": [
+        "General Fund only, because it is the primary operating fund and always considered a major fund, regardless of specific revenue or expenditure thresholds.",
+        "General Fund and Special Revenue Fund, as these funds are typically the largest in terms of operating activity and dedicated revenue streams within the governmental fund structure.",
+        "General Fund, Special Revenue Fund, and Capital Projects Fund",
+        "All governmental funds are considered major funds because the aggregate total assets, liabilities, revenues, and expenditures exceed a material threshold, requiring individual reporting."
+      ]
+    },
+    {
+      "id": "far-gen-1490",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1491",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1492",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1493",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1494",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be B because the repurchase option at more than fair value indicates a financing transaction.",
+      "question": "On January 1, 2024, Gamma Corp. sold a building to Beta Co. for $800,000, which approximated the bui",
+      "markedAnswer": 1,
+      "options": [
+        "Gamma should record a sale of the building for $800,000 and an operating lease.",
+        "Gamma should record a financing transaction, treating the $800,000 received as a loan.",
+        "Gamma should record a sale of the building for $800,000 and a finance lease.",
+        "Gamma should record a sale of the building for $800,000 and an operating lease, and also recognize a deferred gain equal to the difference between fair value and carrying amount."
+      ]
+    },
+    {
+      "id": "far-gen-1495",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-gen-1496",
+      "verdict": "QUESTIONABLE",
+      "reason": "Increase in DTA should be subtracted, so 500,000 + 75,000 - 30,000 + 40,000 - 15,000 = 570,000. Answer A is wrong.",
+      "question": "Apex Corporation reported net income of $500,000 for the year ended December 31, 2023. Depreciation ",
+      "markedAnswer": 0,
+      "options": [
+        "$590,000",
+        "$500,000",
+        "$580,000",
+        "$570,000"
+      ]
+    },
+    {
+      "id": "far-gen-1497",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-001",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-002",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-003",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-004",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-005",
+      "verdict": "WRONG",
+      "reason": "The weighted average cost is (100 * $10 + 300 * $12) / 400 = $11.50. COGS is 250 * $11.50 = $2,875. None of the answers are correct.",
+      "question": "Harmony Corp. uses the weighted-average method for inventory valuation. At the beginning of June, Ha",
+      "markedAnswer": 1,
+      "options": [
+        "$2,750",
+        "$3,000",
+        "$3,050",
+        "$2,950"
+      ]
+    },
+    {
+      "id": "far-9k-001-1",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-002-1",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be $3,480, so none of the options are correct.",
+      "question": "Gamma Inc. uses the weighted-average method to value its inventory. During the year, Gamma had the f",
+      "markedAnswer": 0,
+      "options": [
+        "$3,360",
+        "$3,600",
+        "$3,000",
+        "$3,500"
+      ]
+    },
+    {
+      "id": "far-9k-003-1",
+      "verdict": "WRONG",
+      "reason": "The correct EPS calculation yields $4.40, not $4.70, so the answer should be B",
+      "question": "Delta Corporation is a publicly traded company. During the current year, Delta reported net income o",
+      "markedAnswer": 2,
+      "options": [
+        "$5.00",
+        "$4.40",
+        "$4.70",
+        "$4.60"
+      ]
+    },
+    {
+      "id": "far-9k-004-1",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-005-1",
+      "verdict": "WRONG",
+      "reason": "The correct amount is $180,000, not $190,000, so none of the options are correct.",
+      "question": "Titan Industries purchased a machine for $500,000 on January 1, Year 1. The machine has an estimated",
+      "markedAnswer": 3,
+      "options": [
+        "$100,000",
+        "$90,000",
+        "$150,000",
+        "$190,000"
+      ]
+    },
+    {
+      "id": "far-9k-006",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-007",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-008",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-009",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-010",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-011",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-012",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-013",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-014",
+      "verdict": "CORRECT",
+      "reason": ""
+    },
+    {
+      "id": "far-9k-015",
+      "verdict": "WRONG",
+      "reason": "The correct answer should be $30,000 because the remaining useful life is 10 years. ($500,000 + $50,000) / 10 years = $55,000/year for years 1-5. Then $55,000/year * 5 years = $275,000 accumulated amortization. $550,000 - $275,000 = $275,000 remaining book value. $275,000 / 5 years remaining = $55,000.",
+      "question": "Evergreen Technologies acquired a patent for $500,000 on January 1, Year 1. The patent has a legal l",
+      "markedAnswer": 2,
+      "options": [
+        "A. $25,000",
+        "B. $50,000",
+        "C. $55,000",
+        "D. $30,000"
+      ]
+    },
+    {
+      "id": "far-9k-016",
+      "verdict": "QUESTIONABLE",
+      "reason": "Need to calculate the present value of the lease payments using the lower of the incremental borrowing rate or the implicit rate.",
+      "question": "TechSolutions Inc. entered into a lease agreement on January 1, 2024, for office space. The lease te",
+      "markedAnswer": 1,
+      "options": [
+        "$386,087",
+        "$388,951",
+        "$500,000",
+        "$379,079"
+      ]
+    },
+    {
+      "id": "far-9k-017",
+      "verdict": "WRONG",
+      "reason": "Weighted average cost = ((100 * $10) + (200 * $12) + (300 * $15)) / (100 + 200 + 300) = $5,900 / 600 = $9.8333 per unit. COGS = 400 * $9.8333 = $3,933.33. None of the answers are correct.",
+      "question": "Evergreen Corp. uses the weighted-average method for inventory valuation. At the beginning of March,",
+      "markedAnswer": 0,
+      "options": [
+        "$5,600",
+        "$5,200",
+        "$5,400",
+        "$5,800"
+      ]
+    }
+  ],
+  "timestamp": "2026-03-02T01:14:49.056Z"
+}

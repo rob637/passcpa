@@ -249,102 +249,10 @@ jobs:
           retention-days: 7
 
   # ============================================
-  # Deploy to Staging (develop branch → staging)
+  # Auto-deploy REMOVED — use deploy.yml workflow
+  # To deploy: Actions → "Deploy to Environment" → Run workflow
+  # Type "DEPLOY STAGING" or "DEPLOY PRODUCTION" to confirm
   # ============================================
-  deploy-staging:
-    needs: build-staging
-    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
-    runs-on: ubuntu-latest
-    environment:
-      name: staging
-      url: https://voraprep-staging.web.app
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: dist-staging
-          path: dist/
-
-      - name: Verify environment in build
-        run: |
-          echo "🔍 Verifying build targets correct environment..."
-          # Check for Firebase project ID in config (look for projectId assignments)
-          if grep -rE 'projectId["\s:]*["\s]*voraprep-prod' dist/assets/*.js 2>/dev/null; then
-            echo "❌ ERROR: Production config found in staging build!"
-            exit 1
-          fi
-          if grep -rE 'projectId["\s:]*["\s]*passcpa-dev' dist/assets/*.js 2>/dev/null; then
-            echo "❌ ERROR: Development config found in staging build!"
-            exit 1
-          fi
-          echo "✅ Build verified for staging environment"
-
-      - name: Deploy to Firebase (Staging)
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_STAGING }}
-          channelId: live
-          projectId: voraprep-staging
-        # Note: Functions not deployed to staging - growth functions require secrets only in production
-
-  # ============================================
-  # Deploy to Production (main branch)
-  # ============================================
-  deploy-production:
-    needs: build-production
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    environment:
-      name: production
-      url: https://voraprep.com
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: dist-production
-          path: dist/
-
-      - name: Verify environment in build
-        run: |
-          echo "🔍 Verifying build targets correct environment..."
-          # Check for Firebase project ID in config (look for projectId assignments)
-          if grep -rE 'projectId["\s:]*["\s]*passcpa-dev' dist/assets/*.js 2>/dev/null; then
-            echo "❌ ERROR: Development config found in production build!"
-            exit 1
-          fi
-          if grep -rE 'projectId["\s:]*["\s]*voraprep-staging' dist/assets/*.js 2>/dev/null; then
-            echo "❌ ERROR: Staging config found in production build!"
-            exit 1
-          fi
-          echo "✅ Build verified for production environment"
-
-      - name: Deploy to Firebase (Production)
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROD }}
-          channelId: live
-          projectId: voraprep-prod
-
-      - name: Setup Node.js for Functions
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Deploy Cloud Functions (Production)
-        run: |
-          echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROD }}' > "${{ runner.temp }}/gcloud-key.json"
-          cd functions && npm ci && cd ..
-          npx firebase-tools@latest deploy --only functions --project voraprep-prod
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud-key.json
 
   # ============================================
   # PR Preview Deployments

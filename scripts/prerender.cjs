@@ -4,10 +4,11 @@
  * Pre-renderer for VoraPrep
  * 
  * After `vite build`, this script:
- * 1. Starts a local static server pointing at dist/
- * 2. Crawls key public pages with Puppeteer
- * 3. Saves the fully-rendered HTML as static files
- * 4. Stops the server
+ * 1. Fetches all published blog articles from Firestore
+ * 2. Starts a local static server pointing at dist/
+ * 3. Crawls key public pages + all blog articles with Puppeteer
+ * 4. Saves the fully-rendered HTML as static files
+ * 5. Stops the server
  * 
  * This ensures Google crawlers see full HTML content immediately
  * (no waiting for React hydration / JS execution).
@@ -24,8 +25,8 @@ const path = require('path');
 const DIST_DIR = path.join(__dirname, '..', 'dist');
 const PORT = 4173;
 
-// Pages to pre-render (public-facing, SEO-critical)
-const ROUTES = [
+// Static pages to pre-render (public-facing, SEO-critical)
+const STATIC_ROUTES = [
   '/',
   '/cpa',
   '/ea-prep',
@@ -45,10 +46,51 @@ const ROUTES = [
   '/pricing',
   '/pass-guarantee',
   '/blog',
+];
+
+// Hardcoded blog articles (fallback if Firestore fetch fails)
+const FALLBACK_BLOG_ROUTES = [
   '/blog/cpa-exam-study-schedule-2026',
   '/blog/ea-vs-cpa-which-certification',
   '/blog/how-to-pass-far-first-try',
 ];
+
+/**
+ * Fetch published blog article slugs from Firestore REST API.
+ * Uses the production project since that's what we want indexed.
+ */
+async function fetchPublishedArticles() {
+  const projectId = process.env.VITE_FIREBASE_PROJECT_ID || 'voraprep-prod';
+  const collectionUrl = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/growth_content`;
+  
+  try {
+    // Fetch all documents (limited to 500 for safety)
+    const response = await fetch(`${collectionUrl}?pageSize=500`);
+    
+    if (!response.ok) {
+      console.log(`  ⚠️  Firestore API returned ${response.status} — using fallback routes`);
+      return [];
+    }
+    
+    const data = await response.json();
+    const documents = data.documents || [];
+    
+    // Filter to published articles with a slug
+    const publishedSlugs = documents
+      .filter(doc => {
+        const status = doc.fields?.status?.stringValue;
+        const slug = doc.fields?.slug?.stringValue;
+        return status === 'published' && slug;
+      })
+      .map(doc => `/blog/${doc.fields.slug.stringValue}`);
+    
+    console.log(`  📚 Found ${publishedSlugs.length} published articles in Firestore`);
+    return publishedSlugs;
+  } catch (err) {
+    console.log(`  ⚠️  Could not fetch from Firestore: ${err.message}`);
+    return [];
+  }
+}
 
 // Simple static file server
 function createServer() {
@@ -93,6 +135,14 @@ async function prerender() {
     console.error('❌ dist/ directory not found. Run `vite build` first.');
     process.exit(1);
   }
+
+  // Build dynamic routes: static pages + published blog articles
+  console.log('  Fetching published articles...');
+  const dynamicBlogRoutes = await fetchPublishedArticles();
+  const blogRoutes = dynamicBlogRoutes.length > 0 ? dynamicBlogRoutes : FALLBACK_BLOG_ROUTES;
+  const ROUTES = [...STATIC_ROUTES, ...blogRoutes];
+  
+  console.log(`  📄 ${STATIC_ROUTES.length} static pages + ${blogRoutes.length} blog articles = ${ROUTES.length} total`);
 
   // Start local server
   const server = createServer();

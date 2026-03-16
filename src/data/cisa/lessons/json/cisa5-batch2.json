@@ -1,0 +1,962 @@
+[
+  {
+    "id": "CISA5-021",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Identity and Access Management Fundamentals",
+    "description": "Master the principles of identity management, authentication, and authorization",
+    "order": 21,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "IAM",
+      "Authentication",
+      "Authorization",
+      "Access Control Models"
+    ],
+    "blueprintArea": "CISA5-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IAM is the cornerstone of information security. Properly implemented, it ensures only authorized users access appropriate resources. IAM is heavily tested on CISA."
+        },
+        {
+          "title": "The AAA Framework",
+          "type": "text",
+          "content": "**Authentication, Authorization, Accounting (AAA):**\n\n**Authentication - \"Who are you?\"**\n\u2022 Verify claimed identity\n\u2022 Credentials: passwords, tokens, biometrics\n\u2022 Result: Confirmed identity\n\n**Authorization - \"What can you do?\"**\n\u2022 Determine permitted actions\n\u2022 Based on roles, rules, policies\n\u2022 Result: Access rights granted/denied\n\n**Accounting (Auditing) - \"What did you do?\"**\n\u2022 Log user activities\n\u2022 Monitor and report\n\u2022 Support forensics and compliance\n\n**Identification (preceding AAA):**\n\u2022 Claim an identity\n\u2022 Username, account ID, badge number\n\u2022 Not proof, just assertion"
+        },
+        {
+          "title": "Authentication Factors",
+          "type": "table",
+          "headers": [
+            "Factor",
+            "Description",
+            "Examples",
+            "Weaknesses"
+          ],
+          "rows": [
+            [
+              "Something You Know",
+              "Knowledge-based",
+              "Password, PIN, security question",
+              "Can be shared, guessed, stolen"
+            ],
+            [
+              "Something You Have",
+              "Possession-based",
+              "Token, smart card, mobile phone",
+              "Can be lost, stolen, cloned"
+            ],
+            [
+              "Something You Are",
+              "Biometric",
+              "Fingerprint, face, iris, voice",
+              "Can be spoofed, privacy concerns"
+            ],
+            [
+              "Somewhere You Are",
+              "Location-based",
+              "GPS, IP address, geofencing",
+              "Can be spoofed, may be too restrictive"
+            ],
+            [
+              "Something You Do",
+              "Behavior-based",
+              "Typing pattern, mouse movement",
+              "Still maturing, false positives"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Authentication Factors",
+          "type": "callout",
+          "content": "**The Big 3: Know, Have, Are**\n\nThink of entering a secure building:\n\u2022 **Know**: Tell the guard the password\n\u2022 **Have**: Swipe your badge\n\u2022 **Are**: Scan your fingerprint\n\n**MFA = Multi-Factor**: Use 2+ DIFFERENT factor types\n2 passwords = NOT MFA (same factor type)"
+        },
+        {
+          "title": "Multi-Factor Authentication (MFA)",
+          "type": "text",
+          "content": "**Why MFA Matters:**\n\u2022 Single factor can be compromised\n\u2022 Multiple factors dramatically reduce risk\n\u2022 Required by many regulations (PCI DSS, HIPAA)\n\n**MFA Implementation Types:**\n\n**SMS/Voice OTP:**\n\u2022 One-time code sent to phone\n\u2022 Vulnerable to SIM swapping\n\u2022 Better than nothing, but weakest MFA\n\n**TOTP (Time-Based OTP):**\n\u2022 Authenticator app generates codes\n\u2022 Codes change every 30 seconds\n\u2022 More secure than SMS\n\n**Push Notifications:**\n\u2022 Approve/deny on mobile app\n\u2022 User-friendly\n\u2022 Watch for \"MFA fatigue\" attacks\n\n**Hardware Tokens:**\n\u2022 FIDO2/WebAuthn, YubiKey\n\u2022 Phishing-resistant\n\u2022 Strongest common method"
+        },
+        {
+          "title": "Access Control Models",
+          "type": "text",
+          "content": "**Discretionary Access Control (DAC):**\n\u2022 Owner controls access to resources\n\u2022 Users can share access\n\u2022 Flexible but less secure\n\u2022 Example: Windows file permissions\n\n**Mandatory Access Control (MAC):**\n\u2022 System enforces access based on labels\n\u2022 Users cannot change labels\n\u2022 Most restrictive, used in military\n\u2022 Example: Top Secret, Secret, Unclassified\n\n**Role-Based Access Control (RBAC):**\n\u2022 Access based on job roles\n\u2022 Users assigned to roles\n\u2022 Roles have permissions\n\u2022 Most common in enterprises\n\n**Attribute-Based Access Control (ABAC):**\n\u2022 Access based on attributes\n\u2022 User, resource, environment attributes\n\u2022 Most flexible, complex to manage\n\u2022 Example: IF user.department=Finance AND time=BusinessHours THEN allow"
+        },
+        {
+          "title": "Privileged Access Management (PAM)",
+          "type": "text",
+          "content": "**What is Privileged Access?**\n\u2022 Administrative accounts (root, admin)\n\u2022 Service accounts\n\u2022 Emergency/break-glass accounts\n\u2022 Accounts with elevated permissions\n\n**PAM Best Practices:**\n\n**Just-In-Time (JIT) Access:**\n\u2022 Grant privileges only when needed\n\u2022 Automatic expiration\n\u2022 Reduces standing privileges\n\n**Session Monitoring:**\n\u2022 Record privileged sessions\n\u2022 Real-time monitoring\n\u2022 Forensic evidence\n\n**Password Vaulting:**\n\u2022 Centralized credential storage\n\u2022 Automated rotation\n\u2022 Check-out/check-in process\n\n**Privileged Access Workstations (PAWs):**\n\u2022 Dedicated hardened systems\n\u2022 Only for admin tasks\n\u2022 Reduced attack surface"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "AAA: Authentication (who), Authorization (what), Accounting (audit)",
+            "Factors: Something you Know, Have, Are (plus location and behavior)",
+            "MFA requires 2+ different factor types; 2 passwords is NOT MFA",
+            "Access models: DAC (owner-controlled), MAC (system-enforced), RBAC (role-based), ABAC (attribute-based)",
+            "Privileged access needs extra controls: JIT, vaulting, monitoring, PAWs"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Authentication vs. Authorization",
+          "knowledgeCheck": {
+            "question": "Which of the following BEST describes the purpose of authorization within the AAA framework?",
+            "options": [
+              "Verifying a user's claimed identity using credentials.",
+              "Determining the specific actions a user is permitted to perform based on their role or policies.",
+              "Tracking user activity and resource consumption for auditing purposes.",
+              "Establishing a secure communication channel between a user and a system."
+            ],
+            "correctIndex": 1,
+            "explanation": "Authorization focuses on what a user can *do* after they have been authenticated. It's about granting or denying specific permissions based on established rules and policies. Authentication is verifying identity, and accounting is tracking resource usage.",
+            "hint": "Think about what happens *after* a user logs in successfully."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "MFA Recall",
+          "reveal": {
+            "question": "What is the primary reason that Multi-Factor Authentication (MFA) significantly reduces security risk compared to single-factor authentication?",
+            "answer": "Single-factor authentication relies on only one piece of evidence to verify a user's identity, making it vulnerable if that single factor is compromised (e.g., a stolen password). MFA requires multiple, independent factors, so even if one factor is compromised, the attacker still needs to overcome the other factors to gain access. This dramatically increases the difficulty and cost of a successful attack."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "MFA Implementation Comparison",
+          "comparison": {
+            "headers": [
+              "SMS/Voice OTP",
+              "Authenticator App"
+            ],
+            "rows": [
+              {
+                "label": "Security Strength",
+                "values": [
+                  "Weakest MFA option; vulnerable to SIM swapping",
+                  "Stronger than SMS; less susceptible to interception attacks"
+                ]
+              },
+              {
+                "label": "Convenience",
+                "values": [
+                  "Generally convenient, relies on mobile network availability",
+                  "Requires app installation and initial setup"
+                ]
+              },
+              {
+                "label": "Reliance on Third Party",
+                "values": [
+                  "Relies on mobile network provider",
+                  "Relies on app provider but generates codes locally"
+                ]
+              },
+              {
+                "label": "Cost",
+                "values": [
+                  "Potentially incurs SMS costs",
+                  "Generally free to use after app installation"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-022",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Cryptography Fundamentals",
+    "description": "Understand encryption, hashing, and cryptographic key management",
+    "order": 22,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Encryption",
+      "Symmetric",
+      "Asymmetric",
+      "Hashing",
+      "PKI"
+    ],
+    "blueprintArea": "CISA5-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Cryptography protects data confidentiality and integrity. Understanding crypto concepts helps auditors evaluate whether controls are properly implemented."
+        },
+        {
+          "title": "Symmetric vs. Asymmetric Encryption",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Symmetric",
+            "Asymmetric"
+          ],
+          "rows": [
+            [
+              "Keys",
+              "One shared key",
+              "Key pair (public + private)"
+            ],
+            [
+              "Speed",
+              "Fast",
+              "Slow (100-1000x slower)"
+            ],
+            [
+              "Key Distribution",
+              "Challenge (must share securely)",
+              "Easy (public key is public)"
+            ],
+            [
+              "Use Cases",
+              "Bulk data encryption",
+              "Key exchange, digital signatures"
+            ],
+            [
+              "Examples",
+              "AES, 3DES, ChaCha20",
+              "RSA, ECC, DSA"
+            ],
+            [
+              "Key Length",
+              "AES-256 (256 bits)",
+              "RSA-2048, ECC-256"
+            ]
+          ]
+        },
+        {
+          "title": "Common Algorithms",
+          "type": "text",
+          "content": "**Symmetric Algorithms:**\n\n**AES (Advanced Encryption Standard):**\n\u2022 Current gold standard\n\u2022 Key sizes: 128, 192, 256 bits\n\u2022 Block cipher (128-bit blocks)\n\n**3DES (Triple DES):**\n\u2022 Legacy, being phased out\n\u2022 Applies DES three times\n\u2022 Slower than AES\n\n**Asymmetric Algorithms:**\n\n**RSA:**\n\u2022 Most widely used\n\u2022 Based on factoring large primes\n\u2022 Key sizes: 2048, 3072, 4096 bits\n\n**ECC (Elliptic Curve Cryptography):**\n\u2022 Smaller keys, same security\n\u2022 ECC-256 \u2248 RSA-3072\n\u2022 More efficient for mobile\n\n**In Practice:**\nAsymmetric encrypts symmetric key \u2192 symmetric encrypts data"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Symmetric vs Asymmetric",
+          "type": "callout",
+          "content": "**SYMMETRIC = Same key (Sym = Same)**\nFast for big data, hard to share key safely\n\n**ASYMMETRIC = A pair of keys (A = Apart)**\nSlow but solves key sharing problem\n\nReal-world: Use asymmetric to share a symmetric key, then symmetric for the data!"
+        },
+        {
+          "title": "Hashing",
+          "type": "text",
+          "content": "**What is Hashing?**\n\u2022 One-way function\n\u2022 Fixed-length output regardless of input\n\u2022 Any change produces completely different hash\n\u2022 Cannot reverse to original (unlike encryption)\n\n**Properties of Good Hash:**\n\u2022 Deterministic: Same input \u2192 same hash\n\u2022 Fast to compute\n\u2022 Collision resistant: Hard to find two inputs with same hash\n\u2022 Avalanche effect: Small change \u2192 big hash change\n\n**Common Hash Algorithms:**\n\n| Algorithm | Output Size | Status |\n|-----------|-------------|--------|\n| MD5 | 128 bits | Broken, don't use |\n| SHA-1 | 160 bits | Deprecated |\n| SHA-256 | 256 bits | Current standard |\n| SHA-3 | Variable | Newest standard |\n\n**Use Cases:**\n\u2022 Password storage (with salt)\n\u2022 File integrity verification\n\u2022 Digital signatures\n\u2022 Blockchain"
+        },
+        {
+          "title": "Digital Signatures",
+          "type": "text",
+          "content": "**How Digital Signatures Work:**\n\n**Signing (Sender):**\n1. Hash the message\n2. Encrypt hash with sender's PRIVATE key\n3. Attach encrypted hash as signature\n\n**Verification (Recipient):**\n1. Decrypt signature with sender's PUBLIC key\n2. Hash the received message\n3. Compare: If hashes match, signature is valid\n\n**What Digital Signatures Provide:**\n\u2022 **Authentication**: Proves sender identity\n\u2022 **Integrity**: Proves message wasn't altered\n\u2022 **Non-repudiation**: Sender can't deny signing\n\n**Note:** Unlike encryption (public key encrypts, private decrypts), signatures work in reverse (private signs, public verifies)."
+        },
+        {
+          "title": "Public Key Infrastructure (PKI)",
+          "type": "text",
+          "content": "**PKI Components:**\n\n**Certificate Authority (CA):**\n\u2022 Issues and manages certificates\n\u2022 Verifies identity before issuing\n\u2022 Maintains revocation lists\n\n**Registration Authority (RA):**\n\u2022 Validates certificate requests\n\u2022 May be part of CA or separate\n\n**Digital Certificate:**\n\u2022 Binds public key to identity\n\u2022 Contains: Subject, issuer, validity, public key\n\u2022 X.509 is standard format\n\n**Certificate Revocation:**\n\u2022 CRL (Certificate Revocation List)\n\u2022 OCSP (Online Certificate Status Protocol)\n\u2022 Checks if certificate is still valid\n\n**Trust Chain:**\n\u2022 Root CA \u2192 Intermediate CA \u2192 End Entity\n\u2022 Each level signs the next\n\u2022 Trust anchors in browsers/OS"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Symmetric uses one shared key (fast); Asymmetric uses key pairs (slow but easier distribution)",
+            "AES-256 is current symmetric standard; RSA-2048+ or ECC for asymmetric",
+            "Hashing is one-way; SHA-256 is current standard; MD5 and SHA-1 are deprecated",
+            "Digital signatures: private key signs, public key verifies \u2192 provides authenticity and non-repudiation",
+            "PKI uses CAs to issue certificates that bind public keys to identities"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Symmetric Encryption Challenge",
+          "knowledgeCheck": {
+            "question": "An organization needs to select a symmetric encryption algorithm for securing sensitive data at rest. Considering performance and security strength, which of the following would be the MOST appropriate choice?",
+            "options": [
+              "DES",
+              "3DES",
+              "AES with 256-bit key",
+              "AES with 128-bit key"
+            ],
+            "correctIndex": 2,
+            "explanation": "AES with a 256-bit key offers the strongest security among the options and is the current gold standard. While AES with a 128-bit key is also strong and faster, the 256-bit key provides a higher level of security. DES and 3DES are legacy algorithms and are considered too weak for protecting highly sensitive data.",
+            "hint": "Consider security strength and current industry standards."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Hashing Properties Recall",
+          "reveal": {
+            "question": "What are the key properties of a good hashing algorithm?",
+            "answer": "A good hashing algorithm should be deterministic (same input always produces the same output), fast to compute, and collision-resistant (hard to find two different inputs that produce the same hash)."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Symmetric vs. Asymmetric Encryption",
+          "comparison": {
+            "headers": [
+              "Symmetric Encryption",
+              "Asymmetric Encryption"
+            ],
+            "rows": [
+              {
+                "label": "Key Management",
+                "values": [
+                  "Single secret key, key exchange is critical",
+                  "Key pair (public and private), key exchange is simpler but requires PKI"
+                ]
+              },
+              {
+                "label": "Speed",
+                "values": [
+                  "Faster",
+                  "Slower"
+                ]
+              },
+              {
+                "label": "Use Cases",
+                "values": [
+                  "Encrypting large amounts of data, bulk encryption",
+                  "Key exchange, digital signatures, authentication"
+                ]
+              },
+              {
+                "label": "Algorithms (Examples)",
+                "values": [
+                  "AES, 3DES",
+                  "RSA"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-023",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Network Security Controls",
+    "description": "Learn network protection technologies and their audit considerations",
+    "order": 23,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Firewalls",
+      "IDS/IPS",
+      "VPN",
+      "Network Segmentation",
+      "Zero Trust"
+    ],
+    "blueprintArea": "CISA5-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Network security controls protect the perimeter and internal network. Understanding these technologies helps auditors evaluate whether networks are properly protected."
+        },
+        {
+          "title": "Firewall Types",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Layer",
+            "Function",
+            "Limitations"
+          ],
+          "rows": [
+            [
+              "Packet Filter",
+              "Layer 3-4",
+              "Filter by IP, port, protocol",
+              "No session awareness"
+            ],
+            [
+              "Stateful",
+              "Layer 3-4",
+              "Track connection state",
+              "No deep inspection"
+            ],
+            [
+              "Application (WAF)",
+              "Layer 7",
+              "Inspect application content",
+              "Performance impact"
+            ],
+            [
+              "Next-Gen (NGFW)",
+              "All",
+              "Stateful + application + threat intel",
+              "Complex, costly"
+            ]
+          ]
+        },
+        {
+          "title": "Firewall Rule Best Practices",
+          "type": "text",
+          "content": "**Rule Order Matters:**\n\u2022 Process top-to-bottom\n\u2022 First match wins\n\u2022 Most specific rules first\n\u2022 Implicit deny at end (default deny)\n\n**Rule Hygiene:**\n\n**Do:**\n\u2022 Document business justification for each rule\n\u2022 Remove unused rules regularly\n\u2022 Use specific addresses, not \"any\"\n\u2022 Log denied traffic\n\u2022 Review rules periodically\n\n**Don't:**\n\u2022 Allow \"any\" to \"any\"\n\u2022 Leave rules from terminated projects\n\u2022 Allow unnecessary inbound access\n\u2022 Forget to log"
+        },
+        {
+          "title": "IDS vs. IPS",
+          "type": "text",
+          "content": "**Intrusion Detection System (IDS):**\n\u2022 Passive monitoring\n\u2022 Alerts on suspicious activity\n\u2022 Does NOT block traffic\n\u2022 Placed on network tap/span port\n\n**Intrusion Prevention System (IPS):**\n\u2022 Active inline device\n\u2022 Can block malicious traffic\n\u2022 Introduces latency risk\n\u2022 Placed in traffic path\n\n**Detection Methods:**\n\n**Signature-Based:**\n\u2022 Matches known attack patterns\n\u2022 Fast, low false positives\n\u2022 Cannot detect new (zero-day) attacks\n\n**Anomaly-Based:**\n\u2022 Baseline normal behavior\n\u2022 Detect deviations\n\u2022 Can find unknown attacks\n\u2022 Higher false positive rate"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: IDS vs IPS",
+          "type": "callout",
+          "content": "**IDS = Detective (D for Detect)**\nWatches and alerts, doesn't intervene\n\n**IPS = Patrol (P for Prevent)**\nActively blocks threats in real-time\n\nIDS is like a security camera\nIPS is like a security guard"
+        },
+        {
+          "title": "Network Segmentation",
+          "type": "text",
+          "content": "**Why Segment Networks?**\n\u2022 Limit breach impact (lateral movement)\n\u2022 Isolate sensitive systems\n\u2022 Compliance requirements (PCI DSS)\n\u2022 Performance optimization\n\n**Segmentation Approaches:**\n\n**VLANs:**\n\u2022 Logical separation at Layer 2\n\u2022 Easy to implement\n\u2022 Requires firewall between VLANs for access control\n\n**Physical Separation:**\n\u2022 Completely separate hardware\n\u2022 Highest security\n\u2022 Highest cost\n\n**Micro-Segmentation:**\n\u2022 Segment down to workload level\n\u2022 Software-defined\n\u2022 Zero trust approach"
+        },
+        {
+          "title": "Zero Trust Architecture",
+          "type": "text",
+          "content": "**Core Principle: Never trust, always verify**\n\n**Traditional Perimeter Security:**\n\u2022 Trust inside the network\n\u2022 Protect the edge\n\u2022 Once inside, move freely\n\n**Zero Trust:**\n\u2022 No implicit trust anywhere\n\u2022 Verify every access request\n\u2022 Least privilege access\n\u2022 Assume breach\n\n**Key Components:**\n\u2022 Strong identity verification\n\u2022 Device health validation\n\u2022 Micro-segmentation\n\u2022 Continuous monitoring\n\u2022 Encrypted communications\n\n**ZT Pillars (CISA model):**\n\u2022 Identity\n\u2022 Devices\n\u2022 Networks\n\u2022 Applications & Workloads\n\u2022 Data"
+        },
+        {
+          "title": "VPN Technologies",
+          "type": "text",
+          "content": "**VPN Types:**\n\n**Site-to-Site VPN:**\n\u2022 Connects two networks\n\u2022 Always-on\n\u2022 Configured on routers/firewalls\n\n**Remote Access VPN:**\n\u2022 Connects user to network\n\u2022 On-demand\n\u2022 Client software on endpoint\n\n**Protocols:**\n\n**IPsec:**\n\u2022 Network layer (Layer 3)\n\u2022 Strong security\n\u2022 Complex setup\n\n**SSL/TLS VPN:**\n\u2022 Application layer\n\u2022 Web-based or client\n\u2022 Easier through firewalls\n\n**WireGuard:**\n\u2022 Modern, lightweight\n\u2022 Simple configuration\n\u2022 Gaining adoption"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Firewalls: packet filter \u2192 stateful \u2192 application \u2192 NGFW (increasing capability)",
+            "IDS detects and alerts; IPS detects and blocks inline",
+            "Detection: Signature-based (known threats) vs Anomaly-based (unknown threats)",
+            "Network segmentation limits breach impact and lateral movement",
+            "Zero Trust: Never trust, always verify - no implicit trust based on network location"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-024",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Data Protection and Privacy",
+    "description": "Understand data classification, protection controls, and privacy requirements",
+    "order": 24,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Data Classification",
+      "DLP",
+      "Encryption",
+      "Privacy",
+      "Data Lifecycle"
+    ],
+    "blueprintArea": "CISA5-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Data is the asset organizations most need to protect. Understanding data protection helps auditors evaluate whether sensitive information is adequately safeguarded."
+        },
+        {
+          "title": "Data Classification",
+          "type": "text",
+          "content": "**Why Classify Data?**\n\u2022 Apply appropriate controls based on sensitivity\n\u2022 Regulatory compliance\n\u2022 Resource prioritization\n\u2022 User awareness\n\n**Common Classification Schemes:**\n\n**Corporate:**\n\u2022 Public\n\u2022 Internal\n\u2022 Confidential\n\u2022 Restricted/Secret\n\n**Government:**\n\u2022 Unclassified\n\u2022 Confidential\n\u2022 Secret\n\u2022 Top Secret\n\n**Key Principles:**\n\u2022 Data owner defines classification\n\u2022 Classification drives controls\n\u2022 Label data with classification\n\u2022 Review classifications periodically\n\u2022 Reclassify when sensitivity changes"
+        },
+        {
+          "title": "Data States",
+          "type": "table",
+          "headers": [
+            "State",
+            "Description",
+            "Protection Methods"
+          ],
+          "rows": [
+            [
+              "Data at Rest",
+              "Stored on disk, database, backup",
+              "Full disk encryption, database encryption, file encryption"
+            ],
+            [
+              "Data in Transit",
+              "Moving across network",
+              "TLS/SSL, VPN, encrypted protocols"
+            ],
+            [
+              "Data in Use",
+              "Being processed in memory",
+              "Memory encryption, secure enclaves, access controls"
+            ]
+          ]
+        },
+        {
+          "title": "Data Loss Prevention (DLP)",
+          "type": "text",
+          "content": "**What is DLP?**\nTechnology to prevent unauthorized data disclosure.\n\n**DLP Deployment Points:**\n\n**Endpoint DLP:**\n\u2022 Installed on workstations\n\u2022 Controls USB, email, print\n\u2022 Monitors user actions\n\n**Network DLP:**\n\u2022 Monitors traffic at network edge\n\u2022 Inspects email, web, file transfers\n\u2022 Can block or alert\n\n**Cloud DLP:**\n\u2022 Monitors cloud services\n\u2022 API integration with SaaS\n\u2022 Controls cloud uploads/shares\n\n**Detection Methods:**\n\u2022 Pattern matching (SSN, credit cards)\n\u2022 Fingerprinting (specific documents)\n\u2022 Machine learning (context-based)\n\u2022 Keywords and dictionaries"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Data States",
+          "type": "callout",
+          "content": "**RUT = Rest, Use, Transit**\n\n\u2022 **R**est: Sleeping on disk (encrypt the disk)\n\u2022 **U**se: Awake in memory (hardest to protect)\n\u2022 **T**ransit: Traveling (encrypt the connection)\n\nProtect data in ALL states!"
+        },
+        {
+          "title": "Privacy Principles",
+          "type": "text",
+          "content": "**Fair Information Practice Principles (FIPPs):**\n\n**1. Collection Limitation:**\n\u2022 Collect only what's needed\n\u2022 Lawful and fair means\n\u2022 With consent where appropriate\n\n**2. Data Quality:**\n\u2022 Relevant to purposes\n\u2022 Accurate, complete, current\n\n**3. Purpose Specification:**\n\u2022 State purposes at collection\n\u2022 Don't use for incompatible purposes\n\n**4. Use Limitation:**\n\u2022 Use only for stated purposes\n\u2022 Exceptions: Consent or legal requirement\n\n**5. Security Safeguards:**\n\u2022 Protect against unauthorized access\n\u2022 Protect against misuse, loss\n\n**6. Openness:**\n\u2022 Be transparent about practices\n\u2022 Policies available to individuals\n\n**7. Individual Participation:**\n\u2022 Right to access, correct, delete\n\n**8. Accountability:**\n\u2022 Organization is responsible for compliance"
+        },
+        {
+          "title": "Data Lifecycle Management",
+          "type": "text",
+          "content": "**Data Lifecycle Stages:**\n\n**1. Creation/Collection:**\n\u2022 Classify at creation\n\u2022 Minimize collection\n\u2022 Capture consent\n\n**2. Storage:**\n\u2022 Encrypt sensitive data\n\u2022 Access controls\n\u2022 Maintain integrity\n\n**3. Use/Processing:**\n\u2022 Limit access to authorized users\n\u2022 Log access\n\u2022 Maintain purpose limitation\n\n**4. Sharing/Transfer:**\n\u2022 Encrypt in transit\n\u2022 Verify recipient authorization\n\u2022 Document transfers\n\n**5. Archival:**\n\u2022 Retain per policy\n\u2022 Secure archive storage\n\u2022 Maintain retrievability\n\n**6. Destruction:**\n\u2022 Destroy when no longer needed\n\u2022 Use appropriate methods\n\u2022 Document destruction"
+        },
+        {
+          "title": "Data Destruction Methods",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Description",
+            "Use Cases"
+          ],
+          "rows": [
+            [
+              "Deletion",
+              "Remove file system pointers",
+              "Routine cleanup (not secure disposal)"
+            ],
+            [
+              "Overwriting",
+              "Write patterns over data",
+              "Reusing media (verify complete)"
+            ],
+            [
+              "Degaussing",
+              "Destroy magnetic field",
+              "Magnetic media (HDD, tape)"
+            ],
+            [
+              "Encryption (cryptographic erasure)",
+              "Destroy encryption keys",
+              "SSDs, cloud (fast, effective)"
+            ],
+            [
+              "Physical destruction",
+              "Shred, incinerate, pulverize",
+              "Highest sensitivity, end of life"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Classification drives protection controls; owner defines classification",
+            "Protect data at rest (encryption), in transit (TLS), and in use (access controls)",
+            "DLP prevents unauthorized data disclosure at endpoint, network, and cloud",
+            "Privacy principles: collection limitation, purpose specification, individual rights",
+            "Data destruction must match sensitivity; simple deletion is not secure disposal"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Data Classification Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason for implementing a data classification scheme within an organization?",
+            "options": [
+              "To ensure all data is stored on the most expensive storage media.",
+              "To apply appropriate security controls based on the data's sensitivity and criticality.",
+              "To simplify the process of data backup and recovery.",
+              "To provide unrestricted access to all data for all employees."
+            ],
+            "correctIndex": 1,
+            "explanation": "Applying appropriate security controls based on sensitivity is the primary goal of data classification. This ensures that sensitive data is adequately protected, and less sensitive data is not over-protected, leading to resource optimization.",
+            "hint": "Think about the core purpose of security policies - what are they trying to achieve?"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "DLP Deployment Points - Recall",
+          "reveal": {
+            "question": "Name two common DLP deployment points and briefly describe their function.",
+            "answer": "1. Endpoint DLP: Installed on workstations to control USB usage, email attachments, printing, and monitors user actions.\n2. Network DLP: Monitors network traffic at the network edge, inspecting email, web activity, and file transfers, and can block unauthorized data leaving the network."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Endpoint vs. Network DLP: Key Differences",
+          "comparison": {
+            "headers": [
+              "Endpoint DLP",
+              "Network DLP"
+            ],
+            "rows": [
+              {
+                "label": "Deployment Location",
+                "values": [
+                  "Installed on individual workstations or devices.",
+                  "Deployed at the network perimeter or key network segments."
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Controls actions on the device itself (e.g., copying to USB, printing).",
+                  "Monitors data in transit across the network (e.g., email, web traffic)."
+                ]
+              },
+              {
+                "label": "Visibility",
+                "values": [
+                  "Provides detailed visibility into user actions on specific devices.",
+                  "Provides visibility into data flows across the network."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-025",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Vulnerability Management",
+    "description": "Learn to audit vulnerability identification, assessment, and remediation processes",
+    "order": 25,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Vulnerability Scanning",
+      "Patch Management",
+      "Remediation",
+      "Risk Ranking"
+    ],
+    "blueprintArea": "CISA5-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Vulnerabilities are the weaknesses attackers exploit. Effective vulnerability management reduces the attack surface and is a key audit focus area."
+        },
+        {
+          "title": "Vulnerability Management Process",
+          "type": "text",
+          "content": "**1. Asset Discovery:**\n\u2022 Identify all assets in scope\n\u2022 Maintain accurate inventory\n\u2022 Discover shadow IT\n\n**2. Vulnerability Scanning:**\n\u2022 Regular automated scans\n\u2022 Authenticated for better coverage\n\u2022 Network, host, and application scans\n\n**3. Prioritization:**\n\u2022 Rank by severity and business context\n\u2022 CVSS scores as input\n\u2022 Consider exploitability and asset value\n\n**4. Remediation:**\n\u2022 Patch, configure, or mitigate\n\u2022 Track remediation actions\n\u2022 Verify fixes\n\n**5. Reporting:**\n\u2022 Metrics and trends\n\u2022 Compliance reporting\n\u2022 Exception management"
+        },
+        {
+          "title": "Vulnerability Scoring (CVSS)",
+          "type": "table",
+          "headers": [
+            "CVSS Score",
+            "Severity",
+            "Typical SLA"
+          ],
+          "rows": [
+            [
+              "9.0 - 10.0",
+              "Critical",
+              "24-72 hours"
+            ],
+            [
+              "7.0 - 8.9",
+              "High",
+              "7-14 days"
+            ],
+            [
+              "4.0 - 6.9",
+              "Medium",
+              "30 days"
+            ],
+            [
+              "0.1 - 3.9",
+              "Low",
+              "90 days"
+            ],
+            [
+              "0.0",
+              "None (Informational)",
+              "Plan for next cycle"
+            ]
+          ]
+        },
+        {
+          "title": "Authenticated vs. Unauthenticated Scans",
+          "type": "text",
+          "content": "**Unauthenticated (Network) Scan:**\n\u2022 Scans from outside perspective\n\u2022 Limited visibility\n\u2022 Finds exposed vulnerabilities\n\u2022 May miss local issues\n\n**Authenticated (Credentialed) Scan:**\n\u2022 Logs into systems\n\u2022 Full visibility of software\n\u2022 Finds missing patches, configs\n\u2022 More accurate results\n\n**Best Practice:**\n\u2022 Use authenticated scans for internal assets\n\u2022 Protect scan credentials\n\u2022 Use service accounts with minimal privileges\n\u2022 Credential rotation"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Vuln Management",
+          "type": "callout",
+          "content": "**DISCOVER \u2192 SCAN \u2192 RANK \u2192 FIX \u2192 VERIFY**\n\nThink of it like cleaning a house:\n1. Find all the rooms (Discover assets)\n2. Check for problems (Scan)\n3. Prioritize what to fix first (Rank)\n4. Fix the issues (Remediate)\n5. Make sure it's fixed (Verify)"
+        },
+        {
+          "title": "Patch Management",
+          "type": "text",
+          "content": "**Patch Lifecycle:**\n\n**1. Awareness:**\n\u2022 Subscribe to vendor notifications\n\u2022 Monitor vulnerability feeds\n\u2022 Security advisories (CISA KEV, etc.)\n\n**2. Assessment:**\n\u2022 Determine applicability\n\u2022 Evaluate criticality\n\u2022 Test compatibility\n\n**3. Acquisition:**\n\u2022 Download from trusted sources\n\u2022 Verify integrity (hashes)\n\n**4. Testing:**\n\u2022 Test in non-production first\n\u2022 Regression testing\n\u2022 Back-out plan\n\n**5. Deployment:**\n\u2022 Schedule appropriate window\n\u2022 Use automated deployment tools\n\u2022 Document deployment\n\n**6. Verification:**\n\u2022 Confirm successful installation\n\u2022 Rescan to verify remediation\n\u2022 Monitor for issues"
+        },
+        {
+          "title": "Remediation Alternatives",
+          "type": "text",
+          "content": "**When Patching Isn't Possible:**\n\n**Compensating Controls:**\n\u2022 Network segmentation\n\u2022 Additional monitoring\n\u2022 Access restrictions\n\u2022 Firewall rules\n\n**Other Options:**\n\u2022 Virtual patching (WAF rules)\n\u2022 Disable vulnerable feature\n\u2022 Increase monitoring\n\u2022 Accept risk (with approval)\n\n**Exception Management:**\n\u2022 Document business justification\n\u2022 Define compensating controls\n\u2022 Set expiration/review date\n\u2022 Require appropriate approval\n\u2022 Track and report"
+        },
+        {
+          "title": "Auditing Vulnerability Management",
+          "type": "text",
+          "content": "**Audit Areas:**\n\n**Coverage:**\n\u2022 Are all assets scanned?\n\u2022 Is scanning frequent enough?\n\u2022 Are scans authenticated?\n\n**Prioritization:**\n\u2022 Is CVSS considered?\n\u2022 Is business context factored in?\n\u2022 Are remediation SLAs defined?\n\n**Remediation:**\n\u2022 Are SLAs being met?\n\u2022 Is verification performed?\n\u2022 Are exceptions managed properly?\n\n**Metrics:**\n\u2022 Mean time to remediate\n\u2022 Number of critical vulnerabilities open\n\u2022 Trend over time\n\u2022 Scan coverage percentage"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Vulnerability management: Discover \u2192 Scan \u2192 Rank \u2192 Fix \u2192 Verify",
+            "CVSS provides standardized severity scoring (0-10 scale)",
+            "Authenticated scans provide better visibility than network scans",
+            "Patch management must include testing before production deployment",
+            "When patching isn't possible, implement compensating controls with documented exceptions"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Vulnerability Scanning Approaches",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST significant benefit of performing authenticated vulnerability scans over unauthenticated scans?",
+            "options": [
+              "They are faster to execute and consume fewer network resources.",
+              "They provide a comprehensive view of installed software, missing patches, and configuration vulnerabilities.",
+              "They can be performed without requiring any credentials, reducing administrative overhead.",
+              "They are less likely to trigger intrusion detection systems (IDS) or security information and event management (SIEM) alerts."
+            ],
+            "correctIndex": 1,
+            "explanation": "Authenticated scans log into systems, allowing for a more thorough evaluation of installed software, missing patches, and misconfigurations. Unauthenticated scans only see the system from the network perspective.",
+            "hint": "Think about what each type of scan can 'see'."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: Shadow IT",
+          "reveal": {
+            "question": "Define 'Shadow IT' and explain its relevance to vulnerability management.",
+            "answer": "Shadow IT refers to IT systems and solutions built and used inside an organization without explicit organizational approval. It's relevant to vulnerability management because these systems are often outside the scope of regular asset discovery and vulnerability scanning, creating potential security blind spots. They are likely unpatched and insecure."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Authenticated vs. Unauthenticated Scans",
+          "comparison": {
+            "headers": [
+              "Authenticated Scan",
+              "Unauthenticated Scan"
+            ],
+            "rows": [
+              {
+                "label": "Perspective",
+                "values": [
+                  "Internal (Logged In)",
+                  "External (Network View)"
+                ]
+              },
+              {
+                "label": "Visibility",
+                "values": [
+                  "Full software/config visibility",
+                  "Limited visibility of exposed services"
+                ]
+              },
+              {
+                "label": "Findings",
+                "values": [
+                  "Missing patches, config issues, software vulnerabilities",
+                  "Exposed vulnerabilities, open ports"
+                ]
+              },
+              {
+                "label": "Accuracy",
+                "values": [
+                  "More accurate",
+                  "Less accurate"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-026",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Security Awareness and Training",
+    "description": "Understand the human element of security and effective awareness programs",
+    "order": 26,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Security Awareness",
+      "Phishing Simulation",
+      "Training",
+      "Culture"
+    ],
+    "blueprintArea": "CISA5-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Humans are often called the weakest link in security. Effective awareness programs transform users from vulnerabilities into defenders."
+        },
+        {
+          "title": "Awareness vs. Training",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Security Awareness",
+            "Security Training"
+          ],
+          "rows": [
+            [
+              "Goal",
+              "Change behavior and culture",
+              "Build specific skills"
+            ],
+            [
+              "Audience",
+              "All personnel",
+              "Specific roles (IT, developers)"
+            ],
+            [
+              "Depth",
+              "Broad, general",
+              "Deep, specialized"
+            ],
+            [
+              "Format",
+              "Ongoing reinforcement",
+              "Structured courses"
+            ],
+            [
+              "Examples",
+              "Phishing tips, password guidance",
+              "Secure coding, incident response"
+            ]
+          ]
+        },
+        {
+          "title": "Effective Awareness Program Elements",
+          "type": "text",
+          "content": "**Content Topics:**\n\u2022 Phishing and social engineering\n\u2022 Password security\n\u2022 Physical security\n\u2022 Clean desk policy\n\u2022 Data handling\n\u2022 Incident reporting\n\u2022 Acceptable use\n\u2022 Remote work security\n\n**Delivery Methods:**\n\u2022 Online learning modules\n\u2022 Phishing simulations\n\u2022 Newsletters and email tips\n\u2022 Posters and screen savers\n\u2022 Lunch and learns\n\u2022 Security champions network\n\u2022 Gamification\n\n**Frequency:**\n\u2022 Annual comprehensive training\n\u2022 Monthly reinforcements\n\u2022 Event-driven (e.g., tax season fraud)\n\u2022 Real-time (phishing test feedback)"
+        },
+        {
+          "title": "Phishing Simulations",
+          "type": "text",
+          "content": "**Purpose:**\n\u2022 Measure susceptibility\n\u2022 Provide teachable moments\n\u2022 Track improvement over time\n\u2022 Identify high-risk users\n\n**Best Practices:**\n\n**Design:**\n\u2022 Realistic scenarios\n\u2022 Varying difficulty levels\n\u2022 Include spear phishing\n\u2022 Time randomization\n\n**Execution:**\n\u2022 Coordinate with HR and legal\n\u2022 Have opt-out for stress concerns\n\u2022 Immediate education on click\n\u2022 No public shaming\n\n**Metrics:**\n\u2022 Click rate\n\u2022 Report rate\n\u2022 Repeat clickers\n\u2022 Improvement over time"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: PEOPLE",
+          "type": "callout",
+          "content": "**Security awareness addresses PEOPLE:**\n\n\u2022 **P**hishing defense\n\u2022 **E**ducation on threats\n\u2022 **O**ngoing reinforcement\n\u2022 **P**assword practices\n\u2022 **L**earn from incidents\n\u2022 **E**mpower to report"
+        },
+        {
+          "title": "Role-Based Training",
+          "type": "text",
+          "content": "**By Role:**\n\n**All Employees:**\n\u2022 Basic security awareness\n\u2022 Acceptable use policy\n\u2022 Phishing recognition\n\u2022 Incident reporting\n\n**IT Staff:**\n\u2022 Secure configuration\n\u2022 Change management\n\u2022 Privileged access\n\u2022 Patch management\n\n**Developers:**\n\u2022 Secure coding (OWASP Top 10)\n\u2022 Input validation\n\u2022 Code review\n\u2022 Vulnerability remediation\n\n**Executives:**\n\u2022 Business email compromise\n\u2022 Governance and risk\n\u2022 Incident response decisions\n\u2022 Regulatory requirements\n\n**New Employees:**\n\u2022 Onboarding security training\n\u2022 Policy acknowledgment\n\u2022 Access provisioning process"
+        },
+        {
+          "title": "Measuring Effectiveness",
+          "type": "text",
+          "content": "**Metrics to Track:**\n\n**Behavioral Metrics:**\n\u2022 Phishing simulation click rates\n\u2022 Phishing report rates\n\u2022 Policy violations\n\u2022 Unauthorized software installs\n\n**Knowledge Metrics:**\n\u2022 Training completion rates\n\u2022 Quiz/assessment scores\n\u2022 Pre/post training comparison\n\n**Cultural Metrics:**\n\u2022 Security survey responses\n\u2022 Voluntary security participation\n\u2022 Unsolicited security reports\n\n**Outcome Metrics:**\n\u2022 Security incidents caused by users\n\u2022 Data breaches from human error\n\u2022 Audit findings related to awareness"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Awareness changes behavior broadly; training builds specific skills",
+            "Effective programs use multiple delivery methods and ongoing reinforcement",
+            "Phishing simulations measure susceptibility and provide teachable moments",
+            "Training should be tailored by role (all staff, IT, developers, executives)",
+            "Measure effectiveness through behavioral, knowledge, and outcome metrics"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Security Awareness Content Topics",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason to include 'Incident Reporting' in a security awareness training program?",
+            "options": [
+              "To ensure compliance with industry regulations.",
+              "To enable timely detection and response to security incidents.",
+              "To reduce the workload of the IT security team.",
+              "To improve employee morale."
+            ],
+            "correctIndex": 1,
+            "explanation": "Timely incident reporting is crucial for detecting and responding to security incidents, minimizing potential damage and enabling swift remediation efforts. While compliance is important, and reporting might indirectly affect workload or morale, the primary goal is incident detection and response.",
+            "hint": "Think about the immediate impact of an employee reporting a suspicious activity."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Phishing Simulation Purpose",
+          "reveal": {
+            "question": "List the four primary purposes of conducting phishing simulations as part of a security awareness program.",
+            "answer": "The four primary purposes are:\n1. Measure susceptibility to phishing attacks.\n2. Provide teachable moments when employees fall for the simulation.\n3. Track improvement in employee awareness over time.\n4. Identify high-risk users who may require additional training."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Realistic vs. Spear Phishing Scenarios",
+          "comparison": {
+            "headers": [
+              "Realistic Phishing Scenario",
+              "Spear Phishing Scenario"
+            ],
+            "rows": [
+              {
+                "label": "Target",
+                "values": [
+                  "Broad employee base",
+                  "Specific individuals or small groups"
+                ]
+              },
+              {
+                "label": "Content",
+                "values": [
+                  "Generic, widely applicable themes (e.g., password reset, holiday promotions)",
+                  "Highly personalized and targeted based on known information (e.g., recent project, supervisor's name)"
+                ]
+              },
+              {
+                "label": "Difficulty",
+                "values": [
+                  "Generally easier to detect",
+                  "More difficult to detect due to personalization"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Phishing Simulation Best Practices",
+          "knowledgeCheck": {
+            "question": "When planning a phishing simulation, which of the following is the MOST important consideration regarding coordination with other departments?",
+            "options": [
+              "Ensuring HR approves the timing and content to avoid disciplinary action.",
+              "Informing the legal department to determine liability in case of a successful attack.",
+              "Coordinating with IT to ensure technical infrastructure is prepared for increased network traffic.",
+              "All of the above"
+            ],
+            "correctIndex": 3,
+            "explanation": "All options are important. HR approval is crucial to avoid misinterpretations and potential disciplinary issues. Legal review is important to understand liability. IT must prepare for increased network traffic and potential incidents triggered by the simulation.",
+            "hint": "Think about the potential impact of a poorly planned simulation on different departments."
+          }
+        }
+      ]
+    }
+  }
+]

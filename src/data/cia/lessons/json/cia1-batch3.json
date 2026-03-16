@@ -1,0 +1,442 @@
+[
+  {
+    "id": "CIA1-CP-001",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "The 10 Core Principles: Complete Guide",
+    "description": "Master all 10 Core Principles for effective internal auditing with real-world applications",
+    "order": 50,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Core Principles",
+      "Effectiveness",
+      "Assessment"
+    ],
+    "blueprintArea": "CIA1-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The 10 Core Principles define what effective internal auditing looks like. The exam frequently tests whether an action supports or violates specific principles. You must know ALL 10 and be able to apply them to scenarios."
+        },
+        {
+          "title": "Overview: The 10 Core Principles",
+          "type": "text",
+          "content": "**All 10 must be present and operating effectively for IA to be considered effective.**\n\n1. **Demonstrates integrity** - Honest, brave, prudent\n2. **Demonstrates competence and due professional care** - Skilled, diligent\n3. **Is objective and free from undue influence** - Unbiased assessments\n4. **Aligns with strategies, objectives, and risks** - Relevant focus\n5. **Is appropriately positioned and adequately resourced** - Authority & resources\n6. **Demonstrates quality and continuous improvement** - QAIP\n7. **Communicates effectively** - Clear, timely, relevant\n8. **Provides risk-based assurance** - Risk-prioritized coverage\n9. **Is insightful, proactive, and future-focused** - Forward-looking\n10. **Promotes organizational improvement** - Drives change"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Core Principles",
+          "type": "callout",
+          "content": "**\"I Can Only Aim For Quality Communication \u2014 Inspiring Progressive Organizations\"**\n\n**I** - Integrity\n**C** - Competence\n**O** - Objectivity\n**A** - Alignment\n**F** - (properly) Positioned (\"Fit for purpose\")\n**Q** - Quality\n**C** - Communication\n**I** - (risk-based) Insurance (assurance)\n**P** - Proactive\n**O** - Organizational improvement"
+        },
+        {
+          "title": "Principles 1-3: The Character Principles",
+          "type": "text",
+          "content": "**These define WHO internal auditors must be:**\n\n**1. Integrity** \u2014 The foundation of trust\n\u2022 Honest in all professional matters\n\u2022 Courageous to report difficult findings\n\u2022 Actions consistent with values\n\u2022 Example: Reporting fraud even when politically inconvenient\n\n**2. Competence & Due Care** \u2014 The skill requirement\n\u2022 Possessing necessary knowledge\n\u2022 Applying professional skepticism\n\u2022 Continuous learning (CPD)\n\u2022 Example: Getting cybersecurity training before IT audits\n\n**3. Objectivity** \u2014 The independence imperative\n\u2022 Free from undue influence\n\u2022 No financial conflicts of interest\n\u2022 Balanced, unbiased assessments\n\u2022 Example: Declining to audit a department you previously managed"
+        },
+        {
+          "title": "Principles 4-6: The Structural Principles",
+          "type": "text",
+          "content": "**These define HOW internal audit must be organized:**\n\n**4. Alignment** \u2014 Connected to strategy\n\u2022 Audit plan reflects organizational risks\n\u2022 CAE understands business strategy\n\u2022 Resources directed at highest-risk areas\n\u2022 Example: Adjusting audit plan when M&A activity increases\n\n**5. Positioning & Resources** \u2014 Authority to act\n\u2022 CAE reports functionally to the board\n\u2022 Sufficient budget and staffing\n\u2022 Unrestricted access to information\n\u2022 Example: Direct access between CAE and Audit Committee chair\n\n**6. Quality** \u2014 Continuous improvement\n\u2022 QAIP with internal and external assessments\n\u2022 Conformance with Standards\n\u2022 Benchmarking against best practices\n\u2022 Example: Implementing recommendations from external QA review"
+        },
+        {
+          "title": "Principles 7-10: The Impact Principles",
+          "type": "text",
+          "content": "**These define WHAT internal audit must deliver:**\n\n**7. Communication** \u2014 Getting the message across\n\u2022 Timely, clear, and relevant reporting\n\u2022 Immediate escalation of critical findings\n\u2022 Appropriate level of detail for audience\n\u2022 Example: Flash reports for emergent risks\n\n**8. Risk-Based Assurance** \u2014 Focused coverage\n\u2022 Risk assessment drives the audit plan\n\u2022 Higher-risk areas get more attention\n\u2022 Dynamic response to changing risks\n\u2022 Example: Reprioritizing to cover new cyber threats\n\n**9. Insightful & Proactive** \u2014 Looking ahead\n\u2022 Identify emerging risks\n\u2022 Use data analytics for deeper insights\n\u2022 Catalyst for change, not just reviewer\n\u2022 Example: Alerting board to supply-chain risks before disruption\n\n**10. Organizational Improvement** \u2014 Driving value\n\u2022 Practical, actionable recommendations\n\u2022 Follow-up on implementation\n\u2022 Contributing to organizational learning\n\u2022 Example: Helping management redesign broken processes"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Partial Achievement",
+          "type": "warning",
+          "content": "Exam will test: \"If 8 of 10 Core Principles are effective, is internal audit effective?\"\n\n**Answer: NO.** ALL 10 must be present and operating effectively. Partial achievement = not fully effective."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 All 10 Core Principles must be effective \u2014 no exceptions\n\u2022 They cover character (1-3), structure (4-6), and impact (7-10)\n\u2022 Exam tests application \u2014 match scenarios to correct principle\n\u2022 Core Principles inform interpretation of the Standards\n\u2022 Use them as a self-assessment framework"
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Character Principles",
+          "knowledgeCheck": {
+            "question": "Which of the following scenarios BEST demonstrates a violation of the 'Objectivity' principle, one of the three character principles?",
+            "options": [
+              "An internal auditor reports a minor control deficiency to management, even though it may reflect poorly on their department's performance.",
+              "An internal auditor accepts a small gift (e.g., a pen) from a department they are auditing.",
+              "An internal auditor, whose spouse works in the finance department, is assigned to audit that department.",
+              "An internal auditor recommends improvements to a process that they previously helped design."
+            ],
+            "correctIndex": 2,
+            "explanation": "The BEST answer is C. Objectivity is compromised when personal relationships or other factors could unduly influence the auditor's judgment. Having a spouse in the department being audited creates a potential conflict of interest. While accepting gifts (B) is generally discouraged, it is not as direct a violation of objectivity as the spousal relationship. A (Integrity) and D (Independence) relate to other principles. A, while potentially affecting the auditor's career, demonstrates integrity, not a lack of objectivity. D, while potentially affecting independence, is not as direct a violation of objectivity as the spousal relationship.",
+            "hint": "Consider which scenario creates the GREATEST potential for bias in the auditor's judgment."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Structural Principles",
+          "reveal": {
+            "question": "Name the three 'Structural Principles' of Internal Auditing.",
+            "answer": "The three structural principles are: Alignment, Positioning & Resources, and Governance."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Impact of Ineffective Principles",
+          "knowledgeCheck": {
+            "question": "According to the lesson, what is the consequence if one or more of the 10 Core Principles of Internal Auditing are NOT present and operating effectively?",
+            "options": [
+              "The internal audit activity may still be considered effective, but with some limitations.",
+              "The internal audit activity is considered partially effective, requiring remediation.",
+              "The internal audit activity cannot be considered effective.",
+              "The internal audit activity will be considered effective with an explanation of the limitation."
+            ],
+            "correctIndex": 2,
+            "explanation": "The lesson states that ALL 10 principles must be present and operating effectively for the internal audit activity to be considered effective. Therefore, the correct answer is C.",
+            "hint": "Consider the 'Overview' section of the lesson - what is the key takeaway?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-IPPF-001",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "IPPF Framework: Complete Structure",
+    "description": "Navigate the International Professional Practices Framework \u2014 mandatory vs. recommended guidance",
+    "order": 51,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "IPPF",
+      "Mandatory Guidance",
+      "Recommended Guidance",
+      "Standards Structure"
+    ],
+    "blueprintArea": "CIA1-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The IPPF is the authoritative framework for internal audit practice globally. Exam questions test which elements are mandatory vs. recommended and the structure of the Standards. Knowing the framework's architecture is fundamental."
+        },
+        {
+          "title": "IPPF Structure Overview",
+          "type": "text",
+          "content": "**The IPPF has two categories of guidance:**\n\n**MANDATORY GUIDANCE (must comply):**\n1. Mission of Internal Audit\n2. Core Principles for the Professional Practice of Internal Auditing\n3. Definition of Internal Auditing\n4. Code of Ethics\n5. International Standards for the Professional Practice of Internal Auditing\n\n**RECOMMENDED GUIDANCE (should follow):**\n1. Implementation Guides\n2. Supplemental Guidance (Practice Guides, etc.)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Mandatory Elements",
+          "type": "callout",
+          "content": "**\"My Car Drives Carefully on Streets\"**\n\n**M** - Mission\n**C** - Core Principles\n**D** - Definition\n**C** - Code of Ethics\n**S** - Standards\n\nAll five are MANDATORY. Everything else is recommended."
+        },
+        {
+          "title": "Standards Architecture",
+          "type": "text",
+          "content": "**The Standards are organized into two main series:**\n\n**1000 Series: Attribute Standards**\n\u2022 Describe characteristics of audit organizations and individuals\n\u2022 1000: Purpose, Authority, Responsibility (Charter)\n\u2022 1100: Independence and Objectivity\n\u2022 1200: Proficiency and Due Professional Care\n\u2022 1300: Quality Assurance and Improvement Program\n\n**2000 Series: Performance Standards**\n\u2022 Describe nature of activities and quality criteria\n\u2022 2000: Managing the Internal Audit Activity\n\u2022 2100: Nature of Work\n\u2022 2200: Engagement Planning\n\u2022 2300: Performing the Engagement\n\u2022 2400: Communicating Results\n\u2022 2500: Monitoring Progress\n\u2022 2600: Communicating Acceptance of Risks"
+        },
+        {
+          "title": "Implementation Standards: A and C",
+          "type": "text",
+          "content": "**Implementation Standards expand on Attribute and Performance Standards:**\n\n\u2022 **\".A\"** suffix = Applies to **Assurance** activities\n  Example: Standard 2130.A1 - Assurance on controls\n\n\u2022 **\".C\"** suffix = Applies to **Consulting** activities\n  Example: Standard 2130.C1 - Consulting on controls\n\nThe base standard applies to BOTH assurance and consulting. Implementation Standards provide service-specific requirements."
+        },
+        {
+          "title": "Claiming Conformance",
+          "type": "text",
+          "content": "**Key Rules for Conformance:**\n\n\u2022 Must comply with ALL mandatory guidance to claim conformance\n\u2022 Recommended guidance is helpful but NOT required for conformance\n\u2022 If law prohibits compliance with a Standard \u2192 must disclose:\n  - The non-conformance\n  - The reason (legal prohibition)\n  - The impact on the activity\n\u2022 CAE must report on conformance to senior management and the board"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 IPPF = Mission + Core Principles + Definition + Ethics + Standards (mandatory) + Implementation Guides + Practice Guides (recommended)\n\u2022 Attribute Standards (1000s) = who we are; Performance Standards (2000s) = what we do\n\u2022 \"A\" suffix = Assurance; \"C\" suffix = Consulting\n\u2022 Must comply with ALL mandatory elements to claim conformance\n\u2022 Non-conformance due to law must be disclosed"
+        },
+        {
+          "type": "knowledge-check",
+          "title": "IPPF Guidance: Mandatory vs. Recommended",
+          "knowledgeCheck": {
+            "question": "Which of the following elements of the IPPF represents MANDATORY guidance that internal audit functions MUST comply with?",
+            "options": [
+              "Implementation Guides",
+              "Supplemental Guidance",
+              "International Standards for the Professional Practice of Internal Auditing",
+              "Practice Advisories"
+            ],
+            "correctIndex": 2,
+            "explanation": "The International Standards for the Professional Practice of Internal Auditing are part of the Mandatory Guidance within the IPPF. The other options fall under Recommended Guidance, which is encouraged but not required.",
+            "hint": "Think about what happens if an auditor *doesn't* follow a certain type of guidance."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Attribute Standards",
+          "reveal": {
+            "question": "The 1100 series of the International Standards focuses on what key attribute of internal auditors?",
+            "answer": "Independence and Objectivity. This series addresses organizational independence and individual objectivity, which are crucial for unbiased assessments."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Assurance vs. Consulting Activities",
+          "comparison": {
+            "headers": [
+              "Assurance Activities",
+              "Consulting Activities"
+            ],
+            "rows": [
+              {
+                "label": "Suffix in Implementation Standards",
+                "values": [
+                  ".A",
+                  ".C"
+                ]
+              },
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "Provide independent assessments of governance, risk management, and control processes.",
+                  "Provide advisory and related client service activities, the nature and scope of which are agreed with the client, and which are intended to add value and improve an organization\u2019s governance, risk management, and control processes."
+                ]
+              },
+              {
+                "label": "Objectivity",
+                "values": [
+                  "Auditor maintains objectivity by independently evaluating evidence.",
+                  "Auditor provides advice and guidance; less emphasis on independent assessment."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-PROF-L001",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Proficiency: IT Knowledge & Fraud Awareness",
+    "description": "Master proficiency requirements \u2014 IT competencies, fraud detection, and specialization needs",
+    "order": 52,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Proficiency",
+      "IT Knowledge",
+      "Fraud Awareness",
+      "Specialization"
+    ],
+    "blueprintArea": "CIA1-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Standard 1210 covers proficiency requirements that apply to EVERY internal auditor. The exam specifically tests IT knowledge requirements and fraud awareness even for non-specialist auditors. This is a commonly missed area!"
+        },
+        {
+          "title": "Collective Proficiency (Standard 1210)",
+          "type": "text",
+          "content": "**Key Concept: Collective vs. Individual Proficiency**\n\nThe internal audit activity must COLLECTIVELY possess or obtain:\n\u2022 Knowledge, skills, and other competencies to perform responsibilities\n\nNot every individual needs every skill, but the TEAM overall must have or be able to access the needed expertise.\n\n**The CAE's role:**\n\u2022 Assess staff competencies against needs\n\u2022 Identify gaps and plan development\n\u2022 Obtain external resources when needed\n\u2022 Ensure right people on right engagements"
+        },
+        {
+          "title": "IT Knowledge Requirements (1210.A3)",
+          "type": "text",
+          "content": "**ALL internal auditors need sufficient knowledge of:**\n\n\u2022 Key information technology risks\n\u2022 Key IT controls\n\u2022 Technology-based audit techniques\n\n**This does NOT mean everyone must be an IT expert!**\n\nBut they should understand:\n\u2022 IT general controls (access, change management, operations)\n\u2022 Data integrity and security basics\n\u2022 How to use CAATs (Computer-Assisted Audit Techniques)\n\u2022 Red flags indicating IT control failures\n\u2022 When to bring in IT audit specialists"
+        },
+        {
+          "title": "Fraud Knowledge Requirements (1210.A2)",
+          "type": "text",
+          "content": "**ALL internal auditors must have sufficient knowledge to:**\n\n\u2022 Evaluate the RISK of fraud\n\u2022 Identify INDICATORS (red flags) of fraud\n\u2022 Understand how fraud is managed by the organization\n\n**They are NOT expected to:**\n\u2022 Be fraud investigation experts\n\u2022 Conduct complete fraud investigations independently\n\u2022 Have the same expertise as a CFE (Certified Fraud Examiner)\n\n**What to do when fraud is suspected:**\n1. Extend audit procedures to gather indicators\n2. Document observations carefully\n3. Notify the CAE immediately\n4. CAE determines next steps (legal, investigation, board)"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Individual vs. Activity",
+          "type": "warning",
+          "content": "The exam will try to trick you:\n\n\"Does every internal auditor need IT expertise?\" \u2192 NO, the ACTIVITY collectively must.\n\"Can an auditor with no IT knowledge audit IT?\" \u2192 They should have GENERAL IT knowledge but can bring in specialists.\n\"Must internal auditors detect all fraud?\" \u2192 NO, but must evaluate risk and recognize red flags."
+        },
+        {
+          "title": "Due Professional Care (Standard 1220)",
+          "type": "text",
+          "content": "**Due professional care requires:**\n\n\u2022 Extent of work needed to achieve objectives\n\u2022 Relative complexity, materiality, and significance\n\u2022 Adequacy of governance, risk, control processes\n\u2022 Probability of significant errors, fraud, or noncompliance\n\u2022 Cost of assurance vs. potential benefits\n\n**Due care does NOT guarantee:**\n\u2022 All errors will be found\n\u2022 All fraud will be detected\n\u2022 All risks will be identified\n\n**Standard: Care and skill expected of a reasonably prudent and competent internal auditor.**"
+        },
+        {
+          "title": "Continuing Professional Development (1230)",
+          "type": "text",
+          "content": "**CPD is MANDATORY for all internal auditors:**\n\n\u2022 Enhance knowledge, skills, and competencies\n\u2022 Stay current with profession developments\n\u2022 Applies regardless of experience level\n\n**Acceptable CPD Activities:**\n\u2022 Professional seminars and conferences\n\u2022 Additional certifications (CIA, CISA, CFE)\n\u2022 Self-study and research\n\u2022 Teaching and mentoring\n\u2022 Professional association activities\n\u2022 On-the-job training and rotation\n\n**CIA CPE Requirements:**\n\u2022 40 hours per year\n\u2022 2 hours must be in ethics"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 Proficiency is collective \u2014 the team, not just individuals\n\u2022 ALL auditors need basic IT and fraud knowledge\n\u2022 Specialists fill gaps that generalists cannot\n\u2022 Due professional care \u2260 guarantee\n\u2022 CPD is mandatory and ongoing (40 hours/year for CIA)\n\u2022 Key phrase: \"reasonably prudent and competent\""
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Collective Proficiency Knowledge Check",
+          "knowledgeCheck": {
+            "question": "An internal audit activity is performing an audit of a complex derivatives trading system. While none of the current internal audit staff possess specific expertise in derivatives, the CAE has contracted with a subject matter expert to assist the team. According to Standard 1210, is this an acceptable approach to achieving proficiency?",
+            "options": [
+              "No, Standard 1210 requires that all internal auditors possess all necessary skills.",
+              "Yes, Standard 1210 allows the internal audit activity to obtain the necessary skills to perform its responsibilities.",
+              "No, contracting with a subject matter expert is a violation of auditor independence.",
+              "Yes, as long as the CAE documents the lack of internal expertise in the audit workpapers."
+            ],
+            "correctIndex": 1,
+            "explanation": "Standard 1210 emphasizes collective proficiency. The internal audit activity can either possess or obtain the necessary knowledge and skills. Contracting with an expert is a valid method of obtaining proficiency.",
+            "hint": "Consider the difference between individual and collective proficiency."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "IT Knowledge Requirements - Recall",
+          "reveal": {
+            "question": "Per standard 1210.A3, list three areas of IT knowledge ALL internal auditors should understand (even if they are not IT experts).",
+            "answer": "1. Key information technology risks\n2. Key IT controls\n3. Technology-based audit techniques"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Fraud Knowledge: Auditor vs. Expert",
+          "comparison": {
+            "headers": [
+              "Internal Auditor (General)",
+              "Fraud Investigation Expert"
+            ],
+            "rows": [
+              {
+                "label": "Responsibility",
+                "values": [
+                  "Evaluate the risk of fraud, identify indicators, and understand fraud management.",
+                  "Conduct complete fraud investigations independently."
+                ]
+              },
+              {
+                "label": "Expected Actions",
+                "values": [
+                  "Identify red flags and assess the adequacy of fraud controls.",
+                  "Gather evidence, interview witnesses, and determine the extent of fraud."
+                ]
+              },
+              {
+                "label": "Required Skill Level",
+                "values": [
+                  "Sufficient knowledge",
+                  "Expertise"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-ETHICS-L001",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Code of Ethics: Applied Scenarios",
+    "description": "Master the four ethical principles through real-world scenarios and application",
+    "order": 53,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Code of Ethics",
+      "Integrity",
+      "Objectivity",
+      "Confidentiality",
+      "Competency"
+    ],
+    "blueprintArea": "CIA1-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The Code of Ethics is heavily tested on the CIA exam. Questions present ethical scenarios and ask you to identify which principle was violated or which action is appropriate. Knowing the principles AND their Rules of Conduct is critical."
+        },
+        {
+          "title": "Code Structure",
+          "type": "text",
+          "content": "**The Code has two components:**\n\n1. **Principles** \u2014 Broad expectations (4 principles)\n2. **Rules of Conduct** \u2014 Specific behavioral requirements under each principle\n\n**Applies to:**\n\u2022 All IIA members and CIA holders\n\u2022 ALL individuals providing internal audit services (even non-members)\n\u2022 External providers performing internal audit work"
+        },
+        {
+          "title": "The Four Principles: I-O-C-C",
+          "type": "text",
+          "content": "**1. INTEGRITY**\n\u2022 Perform work with honesty, diligence, and responsibility\n\u2022 Observe the law and make disclosures expected by law/profession\n\u2022 Shall not knowingly participate in illegal/discreditable activities\n\u2022 Respect and contribute to legitimate objectives of organization\n\n**2. OBJECTIVITY**\n\u2022 Shall not participate in activities that may impair unbiased assessment\n\u2022 Shall not accept anything that may impair professional judgment\n\u2022 Disclose all material facts known that could distort reporting\n\n**3. CONFIDENTIALITY**\n\u2022 Prudent use and protection of information\n\u2022 Shall not use information for personal gain or contrary to law/objectives\n\n**4. COMPETENCY**\n\u2022 Engage only in services for which they have necessary knowledge\n\u2022 Continually improve proficiency and effectiveness\n\u2022 Follow applicable professional standards"
+        },
+        {
+          "title": "Scenario Application Practice",
+          "type": "text",
+          "content": "**Scenario 1:** An auditor owns stock in a company being audited.\n\u2192 Violation: **Objectivity** (financial interest creates impairment)\n\n**Scenario 2:** An auditor discusses audit findings at a dinner party.\n\u2192 Violation: **Confidentiality** (disclosing without authorization)\n\n**Scenario 3:** An auditor agrees to audit complex derivatives without expertise.\n\u2192 Violation: **Competency** (engaging in services beyond skill level)\n\n**Scenario 4:** An auditor finds evidence of fraud but doesn't report it.\n\u2192 Violation: **Integrity** (failing to make expected disclosures)\n\n**Scenario 5:** An auditor accepts a gift from the department being audited.\n\u2192 Violation: **Objectivity** (accepting something that may impair judgment)"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Strategy: Ethical Scenarios",
+          "type": "warning",
+          "content": "When faced with ethics scenarios:\n\n1. Identify which principle is at risk\n2. Look for the MOST DIRECT violation\n3. Remember: Integrity = honesty/courage; Objectivity = unbiased/no conflicts; Confidentiality = information protection; Competency = skills/standards\n4. If two principles seem to apply, choose the one MOST DIRECTLY related"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 Four principles: Integrity, Objectivity, Confidentiality, Competency (I-O-C-C)\n\u2022 Each principle has specific Rules of Conduct\n\u2022 Applies to ALL internal audit service providers\n\u2022 Violations may lead to IIA disciplinary action\n\u2022 Exam tests through scenario-based questions\n\u2022 When in doubt: integrity and objectivity are most fundamental"
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Scenario Analysis: Integrity Violation?",
+          "knowledgeCheck": {
+            "question": "An internal auditor discovers that a senior manager is consistently exaggerating expense reports by small amounts. The auditor, fearing reprisal from the manager who is influential within the organization, decides to ignore the discrepancies and not report them. Which principle of the IIA's Code of Ethics has the auditor most clearly violated?",
+            "options": [
+              "Objectivity",
+              "Confidentiality",
+              "Integrity",
+              "Competency"
+            ],
+            "correctIndex": 2,
+            "explanation": "The auditor's decision to ignore the discrepancies and not report them demonstrates a lack of honesty and responsibility, which directly violates the principle of Integrity. Integrity requires internal auditors to perform their work with honesty, diligence, and responsibility.",
+            "hint": "Consider which principle focuses on honesty and ethical conduct."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Code Structure",
+          "reveal": {
+            "question": "What are the two main components of the IIA's Code of Ethics?",
+            "answer": "The two main components are: 1. Principles (broad expectations) and 2. Rules of Conduct (specific behavioral requirements)."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Objectivity vs. Integrity",
+          "comparison": {
+            "headers": [
+              "Integrity",
+              "Objectivity"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Honesty, diligence, responsibility; ethical conduct",
+                  "Impartiality, intellectual honesty, freedom from conflicts of interest"
+                ]
+              },
+              {
+                "label": "Potential Violation Examples",
+                "values": [
+                  "Knowingly participating in illegal activities; failing to report known wrongdoing",
+                  "Auditing an area where the auditor has a close personal relationship; owning stock in an auditee"
+                ]
+              },
+              {
+                "label": "Primary Concern",
+                "values": [
+                  "Maintaining ethical standards and trustworthiness",
+                  "Ensuring unbiased assessments and reporting"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

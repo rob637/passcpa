@@ -1,0 +1,143 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = 'Free study guides, practice questions, and exam tips for CPA, EA, CMA, CIA, CFP, and CISA certification exams.',
+  ogImage = 'https://voraprep.com/og-image.png',
+  canonical,
+  noindex = false,
+} = Astro.props;
+
+const siteTitle = title.includes('VoraPrep') ? title : `${title} | VoraPrep`;
+const canonicalUrl = canonical || Astro.url.href;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{siteTitle}</title>
+  <meta name="description" content={description} />
+  
+  <!-- Canonical -->
+  <link rel="canonical" href={canonicalUrl} />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={siteTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content="VoraPrep" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={siteTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  
+  <!-- Robots -->
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VoraPrep",
+    "url": "https://voraprep.com",
+    "logo": "https://voraprep.com/logo.svg",
+    "description": "AI-powered exam prep for CPA, EA, CMA, CIA, CFP, and CISA certifications."
+  })} />
+</head>
+<body class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 sticky top-0 z-50">
+    <nav class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="https://voraprep.com" class="flex items-center gap-2 text-xl font-bold text-primary-600">
+        <img src="/logo.svg" alt="VoraPrep" class="h-8 w-8" />
+        <span>VoraPrep</span>
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="/blog" class="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 font-medium">
+          Blog
+        </a>
+        <a href="https://voraprep.com/register" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Start Free
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 dark:border-gray-800 mt-16 py-12 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Exams</h4>
+          <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <li><a href="https://voraprep.com/cpa" class="hover:text-primary-600">CPA Exam</a></li>
+            <li><a href="https://voraprep.com/ea-prep" class="hover:text-primary-600">EA Exam</a></li>
+            <li><a href="https://voraprep.com/cma" class="hover:text-primary-600">CMA Exam</a></li>
+            <li><a href="https://voraprep.com/cia" class="hover:text-primary-600">CIA Exam</a></li>
+            <li><a href="https://voraprep.com/cfp" class="hover:text-primary-600">CFP Exam</a></li>
+            <li><a href="https://voraprep.com/cisa" class="hover:text-primary-600">CISA Exam</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Resources</h4>
+          <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <li><a href="/blog" class="hover:text-primary-600">Blog</a></li>
+            <li><a href="https://voraprep.com/faq" class="hover:text-primary-600">FAQ</a></li>
+            <li><a href="https://voraprep.com/compare" class="hover:text-primary-600">Compare</a></li>
+            <li><a href="https://voraprep.com/pass-guarantee" class="hover:text-primary-600">Pass Guarantee</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Company</h4>
+          <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <li><a href="https://voraprep.com/about" class="hover:text-primary-600">About</a></li>
+            <li><a href="https://voraprep.com/help" class="hover:text-primary-600">Help</a></li>
+            <li><a href="https://voraprep.com/terms" class="hover:text-primary-600">Terms</a></li>
+            <li><a href="https://voraprep.com/privacy" class="hover:text-primary-600">Privacy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Subscribe</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+            Get exam tips and study guides in your inbox.
+          </p>
+          <a href="https://voraprep.com/register" class="inline-block text-sm bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+            Sign Up Free
+          </a>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-500 dark:text-gray-400">
+        <p>&copy; {new Date().getFullYear()} VoraPrep. All rights reserved.</p>
+        <p class="mt-1">AI-powered exam prep that gets you to 75+</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

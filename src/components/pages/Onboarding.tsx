@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Button } from '../common/Button';
 import { trackEvent } from '../../services/analytics';
 import { FEATURES } from '../../config/featureFlags';
-// getCourseHomePath removed — onboarding now navigates to /diagnostic
+import { getCourseHomePath } from '../../utils/courseNavigation';
 import { useCourse } from '../../providers/CourseProvider';
 import { createExamDateUpdate, createStudyPlanUpdate } from '../../utils/profileHelpers';
 import {
@@ -154,6 +154,8 @@ const WelcomeStep: React.FC<WelcomeStepProps> = ({ courseId, isCourseSwitching }
       <img 
         src="/logo-icon.svg" 
         alt="VoraPrep" 
+        width="80" 
+        height="80" 
         className="w-20 h-20 mx-auto mb-6"
       />
       <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Welcome to VoraPrep! 🎉</h1>
@@ -461,7 +463,7 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange, courseId, 
           onClick={onSkip}
           className="w-full mt-4 text-center text-sm text-slate-500 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
         >
-          Skip for now — I'll set this later
+          Skip — use default (3 months from now)
         </button>
       )}
     </div>
@@ -831,16 +833,24 @@ const Onboarding: React.FC = () => {
         }
       }
       
-      // Navigate to diagnostic quiz to assess baseline knowledge
-      // Users can skip the diagnostic from within the quiz page
       // Sync the selected course to CourseProvider so everything
       // downstream (subscription, routing, etc.) uses the right course
       if (selectedCourse && selectedCourse !== currentCourseId) {
         setCourse(selectedCourse as CourseId);
       }
-      // Pass selected section via router state so the diagnostic page
-      // can use it immediately without waiting for profile state to propagate
-      navigate('/diagnostic', { state: { section: selectedSection } });
+
+      // FastTrack: Skip diagnostic entirely and go straight to dashboard
+      // This reduces friction for new users - they can explore immediately
+      // and get prompted to take diagnostic later after trying practice
+      if (FEATURES.fastTrackOnboarding) {
+        logger.info('FastTrack: skipping diagnostic, going to dashboard');
+        navigate(getCourseHomePath(selectedCourse as CourseId));
+      } else {
+        // Navigate to diagnostic quiz to assess baseline knowledge
+        // Pass selected section via router state so the diagnostic page
+        // can use it immediately without waiting for profile state to propagate
+        navigate('/diagnostic', { state: { section: selectedSection } });
+      }
     } catch (error) {
       logger.error('Error completing onboarding:', error);
     } finally {
@@ -879,13 +889,15 @@ const Onboarding: React.FC = () => {
     trackEvent('onboarding_daily_goal_set', { goal, course: selectedCourse });
   };
 
-  // Skip exam date - set default 3 months from now
+  // Skip exam date - set default 3 months from now and auto-advance
   const handleSkipExamDate = () => {
     const defaultDate = new Date();
     defaultDate.setMonth(defaultDate.getMonth() + 3);
     const dateStr = defaultDate.toISOString().split('T')[0];
     setExamDate(dateStr);
     trackEvent('onboarding_exam_date_skipped', { course: selectedCourse, default_date: dateStr });
+    // Auto-advance to next step (users expect skip to move forward)
+    handleNext();
   };
 
   const renderStep = () => {

@@ -21,11 +21,15 @@ const AuthLayout = () => {
             <img 
               src="/logo.svg" 
               alt="VoraPrep" 
+              width="120" 
+              height="40" 
               className="h-10 dark:hidden" 
             />
             <img 
               src="/logo-white.svg" 
               alt="VoraPrep" 
+              width="120" 
+              height="40" 
               className="h-10 hidden dark:block" 
             />
           </Link>

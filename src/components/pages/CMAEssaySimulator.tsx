@@ -90,19 +90,27 @@ const CMAEssaySimulator: React.FC = () => {
 
   const handleSubmit = async () => {
     if (!currentTask) return;
+    
+    // Guard: prevent blank submissions
+    const wordCount = response.trim().split(/\s+/).filter(w => w.length > 0).length;
+    if (wordCount < 5) {
+      return;
+    }
+    
     setIsTimerRunning(false);
     setIsSubmitting(true);
 
     try {
-      const completionPrompt = `
-      Task Scenario: ${currentTask.scenario}
-      
-      Task Requirements: ${currentTask.task || currentTask.prompt}
-      
-      Student Response: ${response}
-      
-      Please evaluate this response based on the CMA Essay Grading Rubric.
-      `;
+      const completionPrompt = `**TASK SCENARIO:**
+${currentTask.scenario}
+
+**TASK REQUIREMENTS:**
+${currentTask.task || currentTask.prompt}
+
+**STUDENT RESPONSE:**
+${response}
+
+Grade this essay response strictly against the scenario and task requirements above. Use the rubric provided in your instructions. End with "Score: XX/100".`;
 
       const feedback = await aiService.generateAIResponse(
         completionPrompt, 
@@ -116,11 +124,21 @@ const CMAEssaySimulator: React.FC = () => {
       setAiFeedback(feedback);
       setViewState('results');
       
-      // Record essay completion - use word count as a simple quality metric
+      // Extract score from AI feedback if available, otherwise use content analysis
       if (user?.uid && currentTask) {
-        const wordCount = response.trim().split(/\s+/).length;
-        // Score based on meeting word count threshold (150+ = good)
-        const score = wordCount >= 150 ? 80 : Math.round((wordCount / 150) * 75);
+        let score: number;
+        const scoreMatch = feedback.match(/Score:\s*(\d+)\s*\/\s*100/i) 
+                        || feedback.match(/(\d+)\s*\/\s*100/);
+        if (scoreMatch) {
+          score = Math.min(100, Math.max(0, parseInt(scoreMatch[1], 10)));
+        } else {
+          // Fallback: content-based scoring (better than pure word count)
+          const paragraphs = response.trim().split(/\n\s*\n/).filter(p => p.trim().length > 0);
+          const hasStructure = paragraphs.length >= 3;
+          const meetsLength = wordCount >= 150;
+          const hasDepth = wordCount >= 250;
+          score = 40 + (meetsLength ? 15 : 0) + (hasStructure ? 15 : 0) + (hasDepth ? 10 : 0);
+        }
         const timeSpent = (currentTask.estimatedTime * 60) - timeLeft;
         await recordEssayResult(user.uid, currentTask.id, score, currentTask.section, timeSpent);
         // Record points to daily log for daily goal progress (15 pts per essay)
@@ -139,8 +157,20 @@ const CMAEssaySimulator: React.FC = () => {
       }, 100);
     } catch (error) {
       logger.error('Error grading essay:', error);
-      // Fallback if AI fails (offline or error)
-      setAiFeedback("Unable to connect to AI Grading Service. Please check your connection and try again.");
+      // Show structured error feedback instead of rendering error text as a grade report
+      setAiFeedback("## ⚠️ AI Grading Unavailable\n\nThe AI grading service could not be reached. Your essay has been saved.\n\n**Self-Assessment Tips:**\n- Did you address all parts of the task requirement?\n- Did you use proper memo/business format?\n- Did you support your position with relevant examples?\n- Is your response well-organized with clear paragraphs?\n\nPlease try submitting again when your connection is restored.");
+      setViewState('results');
+      
+      // Still record the attempt with a content-based score
+      if (user?.uid && currentTask) {
+        const wordCount = response.trim().split(/\s+/).filter(w => w.length > 0).length;
+        const paragraphs = response.trim().split(/\n\s*\n/).filter(p => p.trim().length > 0);
+        const score = 40 + (wordCount >= 150 ? 15 : 0) + (paragraphs.length >= 3 ? 15 : 0) + (wordCount >= 250 ? 10 : 0);
+        const timeSpent = (currentTask.estimatedTime * 60) - timeLeft;
+        await recordEssayResult(user.uid, currentTask.id, score, currentTask.section, timeSpent).catch((e) => {
+          logger.warn('Failed to record essay result:', e);
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }

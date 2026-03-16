@@ -1,0 +1,3007 @@
+[
+  {
+    "id": "CMA2-D-001",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Enterprise Risk Management Framework",
+    "description": "Understand ERM concepts and the COSO framework",
+    "order": 34,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "ERM",
+      "COSO framework",
+      "Risk appetite",
+      "Risk culture"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Risk is inherent in business. CMAs play a key role in identifying, measuring, and managing risks that could derail strategic objectives. Enterprise Risk Management provides a systematic approach to handling the full spectrum of organizational risks."
+        },
+        {
+          "title": "What is Enterprise Risk Management?",
+          "type": "text",
+          "content": "**COSO ERM Definition:**\n\"A process, effected by an entity's board of directors, management and other personnel, applied in strategy setting and across the enterprise, designed to identify potential events that may affect the entity, and manage risk to be within its risk appetite.\"\n\n**Key concepts:**\n\u2022 Not just risk avoidance - risk optimization\n\u2022 Aligned with strategy and objectives\n\u2022 Enterprise-wide (not siloed)\n\u2022 Creates and preserves value"
+        },
+        {
+          "title": "COSO ERM Components (2017)",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Focus Area"
+          ],
+          "rows": [
+            [
+              "Governance & Culture",
+              "Board oversight, operating structure, talent, values"
+            ],
+            [
+              "Strategy & Objective-Setting",
+              "Business context, risk appetite, strategy"
+            ],
+            [
+              "Performance",
+              "Risk identification, assessment, prioritization, response"
+            ],
+            [
+              "Review & Revision",
+              "Risk changes, performance review, improvements"
+            ],
+            [
+              "Information, Communication & Reporting",
+              "IT systems, internal/external communication"
+            ]
+          ]
+        },
+        {
+          "title": "Risk Appetite vs. Risk Tolerance",
+          "type": "text",
+          "content": "**Risk Appetite:**\nAmount of risk an organization is willing to accept in pursuit of value\n(Set at strategic level by board)\n\n**Risk Tolerance:**\nAcceptable variation around specific objectives\n(Operational/tactical implementation)\n\n**Example:**\nRisk appetite: \"We accept moderate operational risk for higher returns\"\nRisk tolerance: \"System downtime must not exceed 2 hours per month\"\n\n**Appetite is strategic; Tolerance is tactical!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: COSO ERM",
+          "type": "callout",
+          "content": "**\"GS-PRI\"** - Five components:\n\n**G**overnance & Culture (foundation)\n**S**trategy & Objective-Setting (direction)\n**P**erformance (action)\n**R**eview & Revision (feedback)\n**I**nformation, Communication & Reporting (glue)\n\n**Culture is the FOUNDATION!\nWithout strong risk culture, frameworks fail.**"
+        },
+        {
+          "title": "Risk Categories",
+          "type": "text",
+          "content": "**Strategic risk:** Related to high-level goals (market shifts, M&A)\n\n**Operations risk:** Day-to-day execution (supply chain, IT systems)\n\n**Reporting risk:** Financial/non-financial reporting accuracy\n\n**Compliance risk:** Laws, regulations, contracts\n\n**Hazard risk:** Property, liability, business interruption\n\n**Financial risk:** Interest rate, currency, credit, liquidity\n\n**Different risks require different management approaches!**"
+        },
+        {
+          "title": "Benefits of ERM",
+          "type": "text",
+          "content": "**Value creation through:**\n\n\u2022 Better strategic decisions\n\u2022 Reduced surprise events\n\u2022 Improved capital allocation\n\u2022 Enhanced resilience\n\u2022 Regulatory compliance\n\u2022 Stakeholder confidence\n\n**Risk-aware culture:**\n\u2022 Everyone understands their role\n\u2022 Risks are openly discussed\n\u2022 Balanced risk-taking encouraged\n\n*ERM is NOT about eliminating risk - it's about taking the RIGHT risks!*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ERM is enterprise-wide, strategy-aligned risk management",
+            "COSO 2017: Governance, Strategy, Performance, Review, Information",
+            "Risk appetite = Strategic willingness to accept risk",
+            "Risk tolerance = Operational limits around objectives",
+            "Categories: Strategic, Operations, Reporting, Compliance, Financial",
+            "Culture is foundational to effective ERM",
+            "Goal is risk OPTIMIZATION, not elimination"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "COSO ERM Framework Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the BEST description of the COSO Enterprise Risk Management (ERM) framework?",
+            "options": [
+              "A process designed to eliminate all risks within an organization.",
+              "A process, effected by an entity's board of directors, management, and other personnel, applied in strategy setting and across the enterprise, designed to identify potential events that may affect the entity, and manage risk to be within its risk appetite.",
+              "A set of rules and regulations that all organizations must follow to be compliant.",
+              "A tool used solely by the internal audit department to assess control effectiveness."
+            ],
+            "correctIndex": 1,
+            "explanation": "The COSO ERM framework is a process involving all levels of an organization, integrated with strategy, and aimed at managing risk within the organization's risk appetite. It doesn't eliminate all risks, but rather manages them to an acceptable level.",
+            "hint": "Consider the key elements of the COSO ERM definition provided in the lesson."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Risk Appetite Recall",
+          "reveal": {
+            "question": "Define Risk Appetite.",
+            "answer": "Risk Appetite is the amount of risk an organization is willing to accept in pursuit of value. It is typically set at a strategic level by the board of directors."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Risk Appetite vs. Risk Tolerance",
+          "comparison": {
+            "headers": [
+              "Risk Appetite",
+              "Risk Tolerance"
+            ],
+            "rows": [
+              {
+                "label": "Level of Focus",
+                "values": [
+                  "Strategic",
+                  "Operational/Tactical"
+                ]
+              },
+              {
+                "label": "Definition",
+                "values": [
+                  "Amount of risk an organization is willing to accept",
+                  "Acceptable variation around specific objectives"
+                ]
+              },
+              {
+                "label": "Responsibility",
+                "values": [
+                  "Board of Directors",
+                  "Management"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-002",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Risk Identification and Assessment",
+    "description": "Learn techniques for identifying and evaluating risks",
+    "order": 35,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Risk identification",
+      "Risk assessment",
+      "Heat maps",
+      "Likelihood and impact"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "You can't manage what you don't know about. CMAs help identify risks across the organization and assess their potential impact. This forms the basis for prioritization and response planning - critical inputs to strategic decision-making."
+        },
+        {
+          "title": "Risk Identification Methods",
+          "type": "text",
+          "content": "**Common techniques:**\n\n**Brainstorming:** Cross-functional teams identify risks\n**Interviews:** Key personnel discuss concerns\n**Checklists:** Industry-specific risk inventories\n**Process analysis:** Map processes, identify failure points\n**Scenario analysis:** \"What if\" situations\n**SWOT analysis:** Threats are external risks\n**Historical data:** Past incidents and near-misses\n\n**Use multiple methods for completeness!**"
+        },
+        {
+          "title": "Risk Assessment: Two Dimensions",
+          "type": "text",
+          "content": "**Every risk is assessed on:**\n\n**1. Likelihood (Probability):**\nHow likely is the risk event to occur?\n(Scale: Rare \u2192 Unlikely \u2192 Possible \u2192 Likely \u2192 Almost Certain)\n\n**2. Impact (Consequence):**\nWhat's the magnitude if it occurs?\n(Scale: Insignificant \u2192 Minor \u2192 Moderate \u2192 Major \u2192 Catastrophic)\n\n**Risk Rating = Likelihood \u00d7 Impact**"
+        },
+        {
+          "title": "Risk Assessment Matrix (Heat Map)",
+          "type": "table",
+          "headers": [
+            "Impact \u2192",
+            "Rare",
+            "Unlikely",
+            "Possible",
+            "Likely",
+            "Almost Certain"
+          ],
+          "rows": [
+            [
+              "Catastrophic",
+              "Medium",
+              "High",
+              "High",
+              "Extreme",
+              "Extreme"
+            ],
+            [
+              "Major",
+              "Medium",
+              "Medium",
+              "High",
+              "High",
+              "Extreme"
+            ],
+            [
+              "Moderate",
+              "Low",
+              "Medium",
+              "Medium",
+              "High",
+              "High"
+            ],
+            [
+              "Minor",
+              "Low",
+              "Low",
+              "Medium",
+              "Medium",
+              "High"
+            ],
+            [
+              "Insignificant",
+              "Low",
+              "Low",
+              "Low",
+              "Low",
+              "Medium"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Risk Assessment",
+          "type": "callout",
+          "content": "**\"L \u00d7 I = R\"**\n\n**L**ikelihood \u00d7 **I**mpact = **R**isk rating\n\n**Focus on:**\n\u2022 High likelihood + High impact = EXTREME (address NOW)\n\u2022 High likelihood + Low impact = Manage operationally\n\u2022 Low likelihood + High impact = Monitor/insure\n\u2022 Low likelihood + Low impact = Accept/ignore\n\n**The upper right corner needs immediate attention!**"
+        },
+        {
+          "title": "Inherent vs. Residual Risk",
+          "type": "text",
+          "content": "**Inherent risk:**\nRisk level BEFORE considering controls/mitigation\n(\"Gross\" risk)\n\n**Residual risk:**\nRisk level AFTER controls are applied\n(\"Net\" risk)\n\n**Risk response effectiveness:**\nResidual = Inherent - Control effectiveness\n\n**Example:**\nCyber attack: Inherent = Extreme\nAfter firewalls, training, backups: Residual = Medium\n\n**Compare residual risk to risk tolerance!**"
+        },
+        {
+          "title": "Quantitative Risk Assessment",
+          "type": "text",
+          "content": "**Putting numbers on risk:**\n\n**Expected loss = Probability \u00d7 Impact ($)**\n\n**Example:**\n5% chance of $1 million loss\nExpected loss = 0.05 \u00d7 $1,000,000 = $50,000\n\n**Value at Risk (VaR):**\nMaximum expected loss at given confidence level\n\"We are 95% confident losses won't exceed $X\"\n\n**Monte Carlo simulation:**\nModel thousands of scenarios probabilistically\n\n*Quantification enables cost-benefit analysis of mitigation!*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Use multiple methods to identify risks comprehensively",
+            "Assess risks on likelihood and impact",
+            "Risk = Likelihood \u00d7 Impact (use matrix/heat map)",
+            "Inherent vs. Residual: Before and after controls",
+            "Extreme risks require immediate attention",
+            "Quantify risks when possible: Expected loss = P \u00d7 I",
+            "Compare residual risk to risk tolerance"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Risk Identification Methods",
+          "knowledgeCheck": {
+            "question": "Which risk identification technique is MOST reliant on the diverse perspectives of individuals from various departments within an organization?",
+            "options": [
+              "Checklist",
+              "Brainstorming",
+              "Process Analysis",
+              "Scenario Analysis"
+            ],
+            "correctIndex": 1,
+            "explanation": "Brainstorming sessions are specifically designed to gather a wide range of ideas and perspectives from individuals across different departments. This allows for a more comprehensive identification of potential risks. Checklists are predefined, process analysis focuses on specific processes, and scenario analysis explores hypothetical situations, but brainstorming directly leverages diverse viewpoints.",
+            "hint": "Consider which technique emphasizes the active contribution of multiple people from different areas of the company."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Likelihood and Impact Scales",
+          "reveal": {
+            "question": "List the typical scale used for Likelihood (Probability) in risk assessment, from least to most likely.",
+            "answer": "Rare \u2192 Unlikely \u2192 Possible \u2192 Likely \u2192 Almost Certain"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Risk Assessment & Prioritization",
+          "knowledgeCheck": {
+            "question": "A company identifies a risk with a 'Likely' probability and a 'Moderate' impact. According to typical risk assessment principles, how should this risk be generally categorized?",
+            "options": [
+              "Low Priority",
+              "Medium Priority",
+              "High Priority",
+              "Insignificant"
+            ],
+            "correctIndex": 2,
+            "explanation": "A 'Likely' probability and a 'Moderate' impact typically result in a 'High' priority. While the exact categorization might vary based on the specific company's risk matrix, this combination generally warrants significant attention and mitigation efforts. The higher both the likelihood and impact, the greater the priority.",
+            "hint": "Think about how both dimensions (likelihood and impact) contribute to overall risk severity."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Scenario Analysis vs. Process Analysis",
+          "comparison": {
+            "headers": [
+              "Scenario Analysis",
+              "Process Analysis"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Explores hypothetical future events and their potential impact.",
+                  "Examines existing processes to identify potential weaknesses and failure points."
+                ]
+              },
+              {
+                "label": "Method",
+                "values": [
+                  "Develops 'what-if' situations and analyzes their consequences.",
+                  "Maps process flows, identifies bottlenecks, and analyzes potential failure modes at each step."
+                ]
+              },
+              {
+                "label": "Outcome",
+                "values": [
+                  "Provides insights into a range of possible future outcomes and their associated risks.",
+                  "Identifies specific vulnerabilities within a process and suggests improvements to mitigate those risks."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-003",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Risk Mitigation Strategies",
+    "description": "Explore options for responding to identified risks",
+    "order": 36,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Risk response",
+      "Avoidance",
+      "Reduction",
+      "Transfer",
+      "Acceptance"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Once risks are identified and assessed, what do we do about them? CMAs evaluate risk response options, weighing costs against benefits. The goal is to bring residual risk within acceptable tolerance while considering resource constraints."
+        },
+        {
+          "title": "The Four Risk Responses",
+          "type": "table",
+          "headers": [
+            "Response",
+            "Action",
+            "When to Use"
+          ],
+          "rows": [
+            [
+              "Avoid",
+              "Eliminate the risk entirely",
+              "Risk exceeds appetite; no acceptable control"
+            ],
+            [
+              "Reduce/Mitigate",
+              "Decrease likelihood or impact",
+              "Controls are cost-effective"
+            ],
+            [
+              "Transfer/Share",
+              "Shift risk to third party",
+              "Insurance, contracts, hedging"
+            ],
+            [
+              "Accept",
+              "Retain the risk as-is",
+              "Within tolerance; mitigation too costly"
+            ]
+          ]
+        },
+        {
+          "title": "Risk Avoidance",
+          "type": "text",
+          "content": "**Eliminate the activity that creates risk:**\n\n**Examples:**\n\u2022 Don't enter a risky market\n\u2022 Discontinue a dangerous product\n\u2022 Avoid high-risk customers\n\u2022 Exit an unstable region\n\n**Advantages:**\nRisk completely eliminated\n\n**Disadvantages:**\nMay forfeit opportunity\nNot always possible for core activities\n\n*Avoidance may mean avoiding profit too!*"
+        },
+        {
+          "title": "Risk Reduction/Mitigation",
+          "type": "text",
+          "content": "**Decrease probability or impact through controls:**\n\n**Examples:**\n\u2022 Safety training (reduce accident likelihood)\n\u2022 Fire suppression systems (reduce fire impact)\n\u2022 Inventory buffers (reduce supply chain impact)\n\u2022 Cybersecurity measures (reduce breach likelihood)\n\n**Cost-benefit analysis:**\nCost of control vs. Expected loss reduction\n\n**Implement if:** Cost < Expected benefit"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Risk Responses",
+          "type": "callout",
+          "content": "**\"ARTA\"** - Four T's variation:\n\n**A**void: Get out (don't play the game)\n**R**educe: Control it (play safer)\n**T**ransfer: Pass it (let someone else play)\n**A**ccept: Live with it (keep playing as-is)\n\n**Choose based on:**\n\u2022 Risk vs. Reward tradeoff\n\u2022 Cost of response\n\u2022 Risk appetite/tolerance"
+        },
+        {
+          "title": "Risk Transfer",
+          "type": "text",
+          "content": "**Shift risk to a third party:**\n\n**Insurance:**\n\u2022 Property, liability, business interruption\n\u2022 Pay premium to transfer financial impact\n\n**Contracts:**\n\u2022 Hold-harmless clauses\n\u2022 Warranty/guarantee requirements\n\u2022 Outsourcing with SLAs\n\n**Hedging:**\n\u2022 Derivatives for financial risks\n\n**Note:** Transfer doesn't eliminate risk, just financially shifts it!\nReputational risk often can't be transferred."
+        },
+        {
+          "title": "Risk Acceptance",
+          "type": "text",
+          "content": "**Consciously retain the risk:**\n\n**Active acceptance:**\n\u2022 Establish contingency plans\n\u2022 Reserve funds for potential losses\n\u2022 Monitor the risk\n\n**Passive acceptance:**\n\u2022 No specific action taken\n\u2022 Appropriate only for minor risks\n\n**Reasons to accept:**\n\u2022 Within risk tolerance\n\u2022 Cost of mitigation exceeds benefit\n\u2022 Risk is inherent to business strategy\n\n**Document the acceptance decision!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four responses: Avoid, Reduce, Transfer, Accept",
+            "Avoid = Eliminate the activity creating risk",
+            "Reduce = Controls to decrease likelihood/impact",
+            "Transfer = Insurance, contracts, hedging",
+            "Accept = Retain within tolerance",
+            "Choose response based on cost-benefit analysis",
+            "Document all risk response decisions"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-004",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Financial Risk Management",
+    "description": "Manage interest rate, currency, credit, and liquidity risks",
+    "order": 37,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Interest rate risk",
+      "Currency risk",
+      "Credit risk",
+      "Liquidity risk"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Financial risks can devastate even operationally excellent companies. CMAs must understand interest rate, currency, credit, and liquidity risks - and the tools to manage them. These risks interact and can cascade during crises!"
+        },
+        {
+          "title": "Interest Rate Risk",
+          "type": "text",
+          "content": "**Risk that interest rate changes hurt financial position:**\n\n**For borrowers (variable rate debt):**\nRising rates \u2192 Higher interest expense\n\n**For investors (fixed rate bonds):**\nRising rates \u2192 Bond values decline\n\n**Measurement:**\n\u2022 Duration (sensitivity to rate changes)\n\u2022 Gap analysis (asset/liability mismatch)\n\n**Management:**\n\u2022 Match fixed/variable assets and liabilities\n\u2022 Interest rate swaps\n\u2022 Interest rate caps/floors"
+        },
+        {
+          "title": "Currency (Foreign Exchange) Risk",
+          "type": "text",
+          "content": "**Risk from exchange rate fluctuations:**\n\n**Transaction exposure:**\nExisting contractual cash flows in foreign currency\n\n**Translation exposure:**\nConverting foreign subsidiary financials\n\n**Economic exposure:**\nLong-term competitive position from FX changes\n\n**Management:**\n\u2022 Natural hedging (match currency revenues/costs)\n\u2022 Forward contracts (lock in rate)\n\u2022 Currency options (protection with upside)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Currency Risk Types",
+          "type": "callout",
+          "content": "**\"TTE\"** - Three exposures:\n\n**T**ransaction: Known future cash flows (hedgeable!)\n**T**ranslation: Accounting conversion (paper only)\n**E**conomic: Long-term competitiveness (strategic)\n\n**Transaction risk is most directly hedgeable!\nEconomic risk requires strategic response.**"
+        },
+        {
+          "title": "Credit Risk",
+          "type": "text",
+          "content": "**Risk that counterparty fails to pay:**\n\n**Sources:**\n\u2022 Customer non-payment (accounts receivable)\n\u2022 Bond default\n\u2022 Counterparty default on derivatives\n\n**Assessment:**\n\u2022 Credit analysis (5 C's: Character, Capacity, Capital, Collateral, Conditions)\n\u2022 Credit ratings (S&P, Moody's)\n\u2022 Credit scoring models\n\n**Management:**\n\u2022 Credit limits\n\u2022 Collateral requirements\n\u2022 Credit insurance\n\u2022 Diversification\n\u2022 Credit derivatives (CDS)"
+        },
+        {
+          "title": "Liquidity Risk",
+          "type": "text",
+          "content": "**Two dimensions:**\n\n**Funding liquidity:**\nAbility to meet obligations as they come due\n(Can we pay our bills?)\n\n**Market liquidity:**\nAbility to sell assets without significant loss\n(Can we convert assets to cash?)\n\n**Management:**\n\u2022 Cash reserves and buffers\n\u2022 Credit facilities (backup lines)\n\u2022 Asset-liability matching\n\u2022 Stress testing\n\u2022 Contingency funding plan\n\n*Liquidity kills companies faster than losses!*"
+        },
+        {
+          "title": "Financial Risk Summary",
+          "type": "table",
+          "headers": [
+            "Risk Type",
+            "Primary Driver",
+            "Key Hedging Tool"
+          ],
+          "rows": [
+            [
+              "Interest rate",
+              "Rate volatility",
+              "Swaps, caps/floors"
+            ],
+            [
+              "Currency",
+              "Exchange rates",
+              "Forwards, options"
+            ],
+            [
+              "Credit",
+              "Counterparty default",
+              "Credit limits, CDS"
+            ],
+            [
+              "Liquidity",
+              "Cash flow mismatch",
+              "Credit lines, reserves"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Interest rate risk: Use duration, swaps, caps/floors",
+            "Currency risk: Transaction, Translation, Economic exposures",
+            "Credit risk: The 5 C's; managed by limits, collateral, insurance",
+            "Liquidity risk: Funding (pay bills) and Market (sell assets)",
+            "Match asset and liability characteristics",
+            "Diversification reduces some risks",
+            "Stress testing reveals vulnerabilities"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Interest Rate Risk Knowledge Check",
+          "knowledgeCheck": {
+            "question": "A company has issued fixed-rate bonds. If interest rates rise, which of the following is TRUE?",
+            "options": [
+              "The market value of the bonds will increase.",
+              "The company's interest expense will increase.",
+              "The market value of the bonds will decrease.",
+              "The company's interest expense will decrease."
+            ],
+            "correctIndex": 2,
+            "explanation": "Rising interest rates make existing fixed-rate bonds less attractive because new bonds will be issued with higher interest payments. Therefore, the market value of the existing bonds will decrease to compensate.",
+            "hint": "Consider the perspective of an investor looking to purchase bonds."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: Types of Currency Exposure",
+          "reveal": {
+            "question": "Define Transaction Exposure in the context of Currency Risk.",
+            "answer": "Transaction exposure arises from existing contractual cash flows denominated in a foreign currency. These cash flows are subject to gains or losses due to exchange rate fluctuations between the transaction date and the settlement date."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Credit Risk Assessment Tools",
+          "comparison": {
+            "headers": [
+              "Credit Analysis (5 C's)",
+              "Credit Ratings (S&P, Moody's)"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Micro-level; specific to the borrower",
+                  "Macro-level; broader assessment of creditworthiness"
+                ]
+              },
+              {
+                "label": "Perspective",
+                "values": [
+                  "Internal assessment, often used by lenders",
+                  "External assessment, provided by rating agencies"
+                ]
+              },
+              {
+                "label": "Basis",
+                "values": [
+                  "Based on the 5 C's of credit: Character, Capacity, Capital, Collateral, Conditions",
+                  "Based on quantitative and qualitative factors, including financial ratios, industry outlook, and management quality"
+                ]
+              },
+              {
+                "label": "Output",
+                "values": [
+                  "Detailed understanding of the borrower's risk profile",
+                  "Summary rating (e.g., AAA, BB) indicating the probability of default"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-005",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Hedging with Derivatives",
+    "description": "Use derivatives to manage financial risks",
+    "order": 38,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Forwards",
+      "Futures",
+      "Options",
+      "Swaps"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Derivatives are powerful tools for managing financial risk. CMAs must understand how forwards, futures, options, and swaps work - and how to use them appropriately. Misuse of derivatives has caused spectacular failures; proper use provides stability."
+        },
+        {
+          "title": "What Are Derivatives?",
+          "type": "text",
+          "content": "**Financial instruments whose value derives from an underlying asset:**\n\n**Underlying assets:**\n\u2022 Currencies\n\u2022 Interest rates\n\u2022 Commodities\n\u2022 Stocks/indices\n\n**Uses:**\n\u2022 Hedging (reduce risk)\n\u2022 Speculation (take on risk)\n\u2022 Arbitrage (exploit price differences)\n\n**CMAs focus on HEDGING - using derivatives to REDUCE risk!**"
+        },
+        {
+          "title": "Forward Contracts",
+          "type": "text",
+          "content": "**Agreement to buy/sell asset at future date for price set today:**\n\n**Characteristics:**\n\u2022 Customized (OTC - over-the-counter)\n\u2022 Obligation for both parties\n\u2022 No cash changes hands until settlement\n\u2022 Counterparty risk\n\n**Example:**\nCompany expects \u20ac1,000,000 payment in 90 days\nEnters forward to sell \u20ac1M at rate $1.10/\u20ac\nLocks in $1,100,000 regardless of spot rate in 90 days\n\n**Eliminates uncertainty, but also eliminates upside!**"
+        },
+        {
+          "title": "Futures Contracts",
+          "type": "text",
+          "content": "**Like forwards, but standardized and exchange-traded:**\n\n**Differences from forwards:**\n\u2022 Standardized terms (size, dates)\n\u2022 Exchange-traded (clearinghouse guarantee)\n\u2022 Marked-to-market daily\n\u2022 Margin requirements\n\u2022 Highly liquid\n\n**Common futures:**\n\u2022 Currency futures\n\u2022 Interest rate futures (T-bonds, Eurodollars)\n\u2022 Commodity futures (oil, gold, wheat)\n\u2022 Index futures (S&P 500)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Forwards vs. Futures",
+          "type": "callout",
+          "content": "**\"Forwards are FLEXIBLE, Futures are FORMAL\"**\n\n**Forwards:**\n\u2022 Custom terms\n\u2022 OTC (over-the-counter)\n\u2022 Counterparty risk\n\u2022 No margin\n\n**Futures:**\n\u2022 Standardized\n\u2022 Exchange-traded\n\u2022 Clearinghouse guarantee\n\u2022 Daily margin calls\n\n**Both are OBLIGATIONS - must settle!**"
+        },
+        {
+          "title": "Options",
+          "type": "text",
+          "content": "**Right (not obligation) to buy/sell at specified price:**\n\n**Call option:** Right to BUY\n**Put option:** Right to SELL\n\n**Key terms:**\n\u2022 Strike price: Price at which option can be exercised\n\u2022 Premium: Cost to purchase the option\n\u2022 Expiration: Date option expires\n\n**Example:**\nBuy call option on \u20ac1M at strike $1.12, premium $20,000\n\u2022 If spot > $1.12: Exercise option, buy at $1.12\n\u2022 If spot < $1.12: Let expire, buy at lower spot\n\n**Provides protection with upside potential!**"
+        },
+        {
+          "title": "Interest Rate Swaps",
+          "type": "text",
+          "content": "**Exchange interest payment streams:**\n\n**Plain vanilla swap:**\nFixed rate payments \u2194 Floating rate payments\n(Same notional principal, same currency)\n\n**Example:**\nCompany has $10M floating rate loan\nWorried rates will rise\nEnters swap: Pay fixed 5%, receive floating rate\n\n**Net effect:**\nFloating on loan cancels with floating received\n\u2192 Company effectively pays fixed 5%\n\n**Converts floating to fixed exposure!**"
+        },
+        {
+          "title": "Derivative Positions",
+          "type": "table",
+          "headers": [
+            "Position",
+            "Profits When",
+            "Risk Profile"
+          ],
+          "rows": [
+            [
+              "Long forward/future",
+              "Price rises",
+              "Unlimited up/downside"
+            ],
+            [
+              "Short forward/future",
+              "Price falls",
+              "Unlimited up/downside"
+            ],
+            [
+              "Long call",
+              "Price rises above strike",
+              "Max loss = Premium"
+            ],
+            [
+              "Long put",
+              "Price falls below strike",
+              "Max loss = Premium"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Hedge Accounting",
+          "type": "warning",
+          "content": "**Under GAAP, derivatives are marked to market on balance sheet:**\n\n**Problem:** Gains/losses on hedge create P&L volatility\neven if hedge is effective.\n\n**Solution:** Hedge accounting (ASC 815)\n\u2022 Designate as hedge upfront\n\u2022 Document hedge relationship\n\u2022 Assess effectiveness\n\u2022 Match derivative gains/losses with hedged item\n\n**Without hedge accounting, P&L can be volatile!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Derivatives derive value from underlying assets",
+            "Forwards: Custom, OTC, counterparty risk",
+            "Futures: Standardized, exchange-traded, margined",
+            "Options: Right (not obligation); premium = max loss",
+            "Swaps: Exchange payment streams (e.g., fixed for floating)",
+            "Hedging reduces risk; speculation increases it",
+            "Hedge accounting matches gains/losses with hedged item"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Forward vs. Futures: Which is Right?",
+          "knowledgeCheck": {
+            "question": "A U.S. company needs to hedge a very specific amount of Euros receivable in 187 days. The company treasurer is concerned about counterparty risk. Which derivative instrument would be MOST appropriate for the company?",
+            "options": [
+              "A forward contract",
+              "A futures contract",
+              "An option contract",
+              "A swap agreement"
+            ],
+            "correctIndex": 0,
+            "explanation": "A forward contract is the most appropriate choice because it can be customized to the exact amount and date needed. While counterparty risk exists, it can be mitigated through careful selection of a reputable counterparty. Futures contracts are standardized and may not perfectly match the company's needs. Options offer the right, but not the obligation, to trade, which may not be suitable for hedging a known receivable. Swaps are generally used for longer-term risk management.",
+            "hint": "Consider the flexibility and standardization of each instrument, as well as the company's specific needs."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Your Understanding of Marking to Market",
+          "reveal": {
+            "question": "Explain the process of 'marking to market' in the context of futures contracts and its impact on margin accounts.",
+            "answer": "Marking to market is the daily process of adjusting futures contract values to reflect current market prices. Each day, the exchange calculates the gains or losses on a futures contract based on the difference between the previous day's settlement price and the current day's settlement price. These gains or losses are then credited or debited to the investor's margin account. If the margin account falls below the maintenance margin level, the investor receives a margin call and must deposit additional funds to bring the account back to the initial margin level. This process helps to minimize counterparty risk by ensuring that losses are settled daily."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Forwards vs. Futures: A Side-by-Side Comparison",
+          "comparison": {
+            "headers": [
+              "Forward Contracts",
+              "Futures Contracts"
+            ],
+            "rows": [
+              {
+                "label": "Trading Venue",
+                "values": [
+                  "Over-the-counter (OTC)",
+                  "Exchange-traded"
+                ],
+                "hint": "Where does the trading take place?"
+              },
+              {
+                "label": "Standardization",
+                "values": [
+                  "Customized",
+                  "Standardized"
+                ],
+                "hint": "Are the terms flexible?"
+              },
+              {
+                "label": "Counterparty Risk",
+                "values": [
+                  "Higher",
+                  "Lower (Clearinghouse Guarantee)"
+                ],
+                "hint": "Who guarantees the contract?"
+              },
+              {
+                "label": "Liquidity",
+                "values": [
+                  "Lower",
+                  "Higher"
+                ],
+                "hint": "How easy is it to exit the contract?"
+              },
+              {
+                "label": "Margin Requirements",
+                "values": [
+                  "None initially",
+                  "Yes, daily marking to market"
+                ],
+                "hint": "Are there upfront or ongoing costs?"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-006",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Operational and Strategic Risk",
+    "description": "Manage non-financial risks including operational, reputational, and strategic",
+    "order": 39,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Operational risk",
+      "Business continuity",
+      "Reputational risk",
+      "Strategic risk"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Not all risks are financial. Operational failures, reputational damage, and strategic missteps can be equally devastating. CMAs must understand these non-financial risks and how to incorporate them into enterprise risk management."
+        },
+        {
+          "title": "Operational Risk",
+          "type": "text",
+          "content": "**Risk of loss from failed internal processes, people, or systems:**\n\n**Categories:**\n\u2022 Process failures (errors, delays)\n\u2022 People (fraud, incompetence, turnover)\n\u2022 Systems (IT failures, cyber attacks)\n\u2022 External events (natural disasters, terrorism)\n\n**Examples:**\n\u2022 Data breach\n\u2022 Equipment breakdown\n\u2022 Employee fraud\n\u2022 Supply chain disruption\n\n**Management:** Controls, redundancy, training, monitoring"
+        },
+        {
+          "title": "Business Continuity Planning",
+          "type": "text",
+          "content": "**Preparing for and recovering from disruptions:**\n\n**Key components:**\n\n**Business Impact Analysis (BIA):**\nIdentify critical processes and recovery priorities\n\n**Recovery strategies:**\n\u2022 Backup facilities\n\u2022 Data backup/recovery\n\u2022 Alternative suppliers\n\u2022 Remote work capabilities\n\n**Crisis management:**\n\u2022 Communication plans\n\u2022 Decision authority\n\u2022 Succession planning\n\n**Testing:**\nRegular drills and simulations"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: BCP Steps",
+          "type": "callout",
+          "content": "**\"BIRDT\"** - Business Continuity:\n\n**B**IA - Business Impact Analysis\n**I**dentify recovery strategies\n**R**esources needed for recovery\n**D**ocument the plan\n**T**est regularly\n\n**A plan that hasn't been tested is just a wish!**"
+        },
+        {
+          "title": "Reputational Risk",
+          "type": "text",
+          "content": "**Risk that negative perceptions harm the business:**\n\n**Triggers:**\n\u2022 Ethical lapses\n\u2022 Product failures/recalls\n\u2022 Environmental incidents\n\u2022 Social media crises\n\u2022 Data breaches\n\n**Consequences:**\n\u2022 Customer defection\n\u2022 Difficulty hiring\n\u2022 Investor concerns\n\u2022 Regulatory scrutiny\n\n**Management:**\n\u2022 Strong ethical culture\n\u2022 Crisis communication plan\n\u2022 Social media monitoring\n\u2022 Stakeholder engagement\n\n*Reputation takes years to build, moments to destroy!*"
+        },
+        {
+          "title": "Strategic Risk",
+          "type": "text",
+          "content": "**Risk that strategic decisions or external changes harm value:**\n\n**Sources:**\n\u2022 Poor strategic choices\n\u2022 Disruptive technology\n\u2022 Changing customer preferences\n\u2022 Regulatory changes\n\u2022 New competitors\n\n**Examples:**\n\u2022 Kodak and digital photography\n\u2022 Blockbuster and streaming\n\u2022 Taxi industry and ride-sharing\n\n**Management:**\n\u2022 Environmental scanning\n\u2022 Scenario planning\n\u2022 Strategic flexibility\n\u2022 Innovation investment"
+        },
+        {
+          "title": "Comparing Risk Categories",
+          "type": "table",
+          "headers": [
+            "Risk Type",
+            "Primary Focus",
+            "Key Management Tool"
+          ],
+          "rows": [
+            [
+              "Operational",
+              "Internal failures",
+              "Controls, redundancy"
+            ],
+            [
+              "Business continuity",
+              "Disruption recovery",
+              "BCP, backup systems"
+            ],
+            [
+              "Reputational",
+              "Stakeholder perception",
+              "Culture, communication"
+            ],
+            [
+              "Strategic",
+              "Long-term positioning",
+              "Scenario planning, agility"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Operational risk: Failed processes, people, or systems",
+            "BCP ensures recovery from disruptions",
+            "Reputational risk can cascade from any other risk",
+            "Strategic risk relates to long-term competitive position",
+            "All risk types are interconnected",
+            "Culture is foundational to non-financial risk management",
+            "Regular testing validates recovery capabilities"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Operational Risk Identification",
+          "knowledgeCheck": {
+            "question": "Which of the following scenarios BEST exemplifies an operational risk related to 'people' within a manufacturing company?",
+            "options": [
+              "A major earthquake damaging the production facility.",
+              "A widespread computer virus shutting down the company's network.",
+              "A key employee with specialized knowledge of a critical machine leaving the company and joining a competitor.",
+              "A significant increase in the price of raw materials needed for production."
+            ],
+            "correctIndex": 2,
+            "explanation": "The correct answer is C. The loss of a key employee with specialized knowledge directly impacts the company's operations due to the reliance on that individual's skills. This falls under the 'people' category of operational risk. The other options represent external events, system failures, and market risks, respectively.",
+            "hint": "Think about which scenario directly involves the actions or absence of employees and their impact on operations."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Business Continuity Planning Recall",
+          "reveal": {
+            "question": "What are the two key components of business continuity planning described in the lesson?",
+            "answer": "The two key components are: 1) Business Impact Analysis (BIA) - identifying critical processes and recovery priorities; and 2) Recovery Strategies - plans for restoring operations, such as backup facilities, data backup/recovery, alternative suppliers, and remote work capabilities."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Operational vs. Strategic Risk",
+          "comparison": {
+            "headers": [
+              "Operational Risk",
+              "Strategic Risk"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Internal processes, people, systems, and external events that disrupt day-to-day operations.",
+                  "Decisions and plans regarding the organization's overall goals, market position, and long-term sustainability."
+                ]
+              },
+              {
+                "label": "Time Horizon",
+                "values": [
+                  "Short-term; immediate impact on operations.",
+                  "Long-term; affecting the company's future direction and success."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "A power outage halting production.",
+                  "Entering a new market without sufficient market research."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-007",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Hedging Strategies with Derivatives",
+    "description": "Understand how companies use derivatives to hedge financial risks",
+    "order": 40,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Hedging concepts",
+      "Forward contracts",
+      "Futures",
+      "Options and swaps"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Companies face financial risks from currency fluctuations, interest rate changes, and commodity price swings. CMAs help design hedging strategies using derivatives to protect cash flows and earnings. Understanding these instruments is critical for risk management and financial planning."
+        },
+        {
+          "title": "What Is Hedging?",
+          "type": "text",
+          "content": "**Definition:** Taking an offsetting position to reduce exposure to price changes\n\n**Goal:** Reduce uncertainty, NOT profit from speculation\n\n**Example:**\nA US importer will pay €1 million in 90 days. If the dollar weakens, the payment costs more.\n\n**Hedge:** Lock in an exchange rate today using a forward contract.\n\n**Result:** Known cost regardless of exchange rate movement.\n\n**Key Principle:** Hedging involves a trade-off - you give up potential gains to avoid potential losses."
+        },
+        {
+          "title": "Types of Derivatives",
+          "type": "table",
+          "headers": [
+            "Derivative",
+            "How It Works",
+            "Obligation"
+          ],
+          "rows": [
+            [
+              "Forward Contract",
+              "Agreement to buy/sell at a set price on a future date",
+              "Both parties obligated"
+            ],
+            [
+              "Futures Contract",
+              "Standardized forward traded on exchange",
+              "Both parties obligated"
+            ],
+            [
+              "Option",
+              "Right (not obligation) to buy/sell at set price",
+              "Holder has right, seller has obligation"
+            ],
+            [
+              "Swap",
+              "Exchange of cash flows between parties",
+              "Both parties obligated"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Derivatives",
+          "type": "callout",
+          "content": "**\"FFOS\" = The Four Derivatives:**\n\n**F**orwards - Private, customized, OTC\n**F**utures - Public, standardized, exchange-traded\n**O**ptions - Right but not obligation (pay premium)\n**S**waps - Exchange cash flow streams\n\n**Obligation mnemonic:** \"Forwards and Futures are FIRM; Options give OPTIONS.\""
+        },
+        {
+          "title": "Forward Contracts",
+          "type": "text",
+          "content": "**Characteristics:**\n• Private agreement between two parties\n• Customized terms (amount, date, price)\n• Traded over-the-counter (OTC)\n• No upfront cost (except credit risk)\n• Counterparty risk exists\n\n**Example - Currency Forward:**\nUS company will receive €500,000 in 6 months\nCurrent rate: $1.10/€\nForward rate locked: $1.12/€\n\nIn 6 months, company receives:\n€500,000 × $1.12 = $560,000 (guaranteed)\n\nIf spot rate is $1.05, company is better off\nIf spot rate is $1.20, company is worse off\n→ But certainty was the goal!"
+        },
+        {
+          "title": "Futures Contracts",
+          "type": "text",
+          "content": "**Characteristics:**\n• Standardized contracts (size, expiration)\n• Traded on organized exchanges (CME, NYMEX)\n• Daily settlement (mark-to-market)\n• Clearinghouse eliminates counterparty risk\n• Margin requirements\n\n**Futures vs. Forwards:**\n• Forwards: Flexible, private, counterparty risk\n• Futures: Standardized, liquid, daily settlement\n\n**Example - Commodity Futures:**\nAirline locks in fuel prices for next quarter\nBuys futures at $80/barrel\nIf price rises to $100, gains on futures offset higher fuel costs"
+        },
+        {
+          "title": "⚠️ Exam Trap: Basis Risk",
+          "type": "warning",
+          "content": "**Basis = Spot Price - Futures Price**\n\n**Basis Risk:** The hedge may not perfectly offset the exposure\n\n**Causes:**\n• Hedged item differs from contract specification\n• Different delivery dates\n• Different locations\n\n**Example:**\nJet fuel hedged with crude oil futures\nCrude and jet fuel prices usually move together, but not perfectly\n→ Imperfect hedge leaves residual risk\n\n**Key Point:** Hedging reduces but may not eliminate all risk"
+        },
+        {
+          "title": "Options for Hedging",
+          "type": "text",
+          "content": "**Call Option:** Right to BUY at strike price\nUsed to hedge against price INCREASES\n\n**Put Option:** Right to SELL at strike price\nUsed to hedge against price DECREASES\n\n**Option Premium:** Upfront cost for the right\n\n**Example - Hedging Import Costs:**\nUS company must pay ¥100 million in 3 months\nRisk: Yen strengthens (more expensive)\n\nBuy call option on ¥ at strike $0.0090/¥\nPremium: $10,000\n\nIf ¥ strengthens to $0.0100:\n→ Exercise option, pay $0.0090\n→ Saved $100,000 minus premium\n\nIf ¥ weakens to $0.0080:\n→ Let option expire, pay spot\n→ Lost only the $10,000 premium"
+        },
+        {
+          "title": "Interest Rate Swaps",
+          "type": "text",
+          "content": "**Most Common Type:** Fixed-for-floating swap\n\n**How It Works:**\n• Party A pays fixed rate, receives floating\n• Party B pays floating rate, receives fixed\n• Only net payments exchanged\n\n**Example:**\nCompany has $10M floating-rate loan (SOFR + 2%)\nWants certainty → Enters swap to pay fixed 5%\n\n**Swap Mechanics:**\n• Company pays 5% fixed to swap counterparty\n• Company receives SOFR from swap counterparty\n• Net effect: Company pays fixed 5% + 2% = 7%\n\n**Result:** Floating debt converted to fixed"
+        },
+        {
+          "title": "Hedging Effectiveness",
+          "type": "text",
+          "content": "**Hedge Accounting Requirements:**\nTo qualify for hedge accounting under GAAP:\n• Formal documentation at inception\n• Hedging relationship is highly effective\n• Effectiveness tested regularly\n\n**Effectiveness Range:** 80-125%\nChange in hedge value / Change in hedged item value\nMust fall within this range\n\n**If Not Effective:**\nHedge does not qualify\nDerivative changes flow through P&L immediately (volatility)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Hedging reduces price risk by taking offsetting positions",
+            "Four main derivatives: Forwards, Futures, Options, Swaps",
+            "Forwards/Futures create obligations; Options give rights",
+            "Futures are standardized and exchange-traded; Forwards are customized OTC",
+            "Call options hedge against price increases; Puts hedge against decreases",
+            "Interest rate swaps convert floating to fixed rate exposure (or vice versa)",
+            "Basis risk means hedges may not perfectly offset exposure",
+            "Hedge accounting requires formal documentation and effectiveness testing"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Choosing the Right Derivative",
+          "knowledgeCheck": {
+            "question": "A US company will receive €2 million from a European customer in 90 days and wants to ELIMINATE exchange rate risk. Which derivative is MOST appropriate?",
+            "options": [
+              "Buy a call option on euros",
+              "Buy a put option on euros",
+              "Enter a forward contract to sell euros",
+              "Enter an interest rate swap"
+            ],
+            "correctIndex": 2,
+            "explanation": "The company will receive euros and needs to convert to dollars. A forward contract to sell euros locks in the exchange rate, eliminating uncertainty. A put option would also provide protection but at a cost (premium) and allows upside. An interest rate swap addresses interest rate risk, not currency risk.",
+            "hint": "The company needs to SELL euros in the future - what locks in that rate?"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Option Hedging",
+          "knowledgeCheck": {
+            "question": "A company with floating-rate debt is worried about rising interest rates. Which derivative could LIMIT (but not eliminate) its exposure while preserving the benefit of falling rates?",
+            "options": [
+              "Forward rate agreement",
+              "Interest rate swap (pay fixed, receive floating)",
+              "Interest rate cap (call option on rates)",
+              "Interest rate floor (put option on rates)"
+            ],
+            "correctIndex": 2,
+            "explanation": "An interest rate cap acts like a call option on interest rates. If rates rise above the cap, the company receives a payment offsetting higher interest costs. If rates fall, the company benefits from lower rates (only loses the premium). A swap would lock in a fixed rate, eliminating both upside and downside.",
+            "hint": "The company wants protection with upside - which instrument provides that?"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Forwards vs. Futures",
+          "reveal": {
+            "question": "What are the key differences between forward contracts and futures contracts?",
+            "answer": "Forwards: (1) Private OTC agreements, (2) Customized terms, (3) Counterparty credit risk, (4) Settlement at maturity. Futures: (1) Exchange-traded, (2) Standardized contracts, (3) Clearinghouse eliminates counterparty risk, (4) Daily mark-to-market settlement, (5) Margin requirements."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-008",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Currency Risk Management",
+    "description": "Master techniques for managing foreign exchange exposure in multinational operations",
+    "order": 38,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Currency risk",
+      "Transaction exposure",
+      "Translation exposure",
+      "Economic exposure"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Global operations mean currency exposure! A strong dollar can wipe out overseas profits, while currency hedging gone wrong can create massive losses. CMAs help quantify currency risk and evaluate hedging strategies that protect the business."
+        },
+        {
+          "title": "Three Types of Currency Exposure",
+          "type": "text",
+          "content": "**1. Transaction Exposure**\n• Risk from existing contractual obligations\n• Known future cash flows in foreign currency\n• Example: Receivable of €100,000 due in 60 days\n\n**2. Translation Exposure (Accounting)**\n• Risk from consolidating foreign subsidiary financials\n• Impact on reported earnings and equity\n• Example: Translating UK subsidiary's £ results to $\n\n**3. Economic (Operating) Exposure**\n• Risk to future cash flows and competitive position\n• Long-term strategic impact\n• Example: Japanese competitor becomes cheaper when ¥ weakens"
+        },
+        {
+          "title": "🧠 Memory Aid: Currency Exposure Types",
+          "type": "callout",
+          "content": "**\"TTE\" - Three exposure types:**\n\n**T**ransaction - Contracts (SHORT-TERM, hedgeable)\n**T**ranslation - Accounting (BOOK, paper exposure)\n**E**conomic - Competitive position (LONG-TERM, strategic)\n\n**Most easily hedged → Least:**\nTransaction > Translation > Economic"
+        },
+        {
+          "title": "Transaction Exposure Management",
+          "type": "table",
+          "headers": [
+            "Technique",
+            "How It Works",
+            "Pros/Cons"
+          ],
+          "rows": [
+            [
+              "Forward Contract",
+              "Lock in rate for future exchange",
+              "Pro: Certainty / Con: No upside if rate improves"
+            ],
+            [
+              "Currency Option",
+              "Right (not obligation) to exchange at set rate",
+              "Pro: Upside potential / Con: Premium cost"
+            ],
+            [
+              "Money Market Hedge",
+              "Borrow in one currency, convert, invest in other",
+              "Pro: Uses existing markets / Con: Complex"
+            ],
+            [
+              "Natural Hedge",
+              "Match currency of revenues and costs",
+              "Pro: No cost / Con: Not always possible"
+            ],
+            [
+              "Leading/Lagging",
+              "Accelerate or delay payments based on expectations",
+              "Pro: Simple / Con: Speculation risk"
+            ]
+          ]
+        },
+        {
+          "title": "Forward Contract Example",
+          "type": "text",
+          "content": "**Scenario:**\nUS company has €500,000 receivable due in 90 days\nCurrent spot rate: $1.10/€\n90-day forward rate: $1.08/€\n\n**Without Hedge:**\nIf € strengthens to $1.15: Receive $575,000\nIf € weakens to $1.05: Receive $525,000\n\n**With Forward Contract:**\nLock in $1.08/€\nGuaranteed receipt: €500,000 × $1.08 = $540,000\n\n**Trade-off:**\n• Certainty of $540,000\n• Give up potential upside if € strengthens\n• Protected from downside if € weakens"
+        },
+        {
+          "title": "⚠️ Exam Trap: Money Market Hedge",
+          "type": "warning",
+          "content": "**The exam loves this calculation!**\n\n**Steps for Money Market Hedge (Receivable):**\n\n1. Borrow in foreign currency (present value of receivable)\n2. Convert to domestic currency at spot rate\n3. Invest in domestic currency\n4. Use receivable to repay foreign loan\n\n**Example: €500,000 receivable in 90 days**\nEuro borrowing rate: 4% annual (1% for 90 days)\nUS investment rate: 2% annual (0.5% for 90 days)\nSpot: $1.10/€\n\n**Step 1:** Borrow €500,000 / 1.01 = €495,050\n**Step 2:** Convert: €495,050 × $1.10 = $544,555\n**Step 3:** Invest: $544,555 × 1.005 = $547,278\n**Step 4:** Repay loan with €500,000 receivable\n\n**Net receipt:** $547,278"
+        },
+        {
+          "title": "Translation Exposure",
+          "type": "text",
+          "content": "**Current Rate Method (ASC 830):**\n• Assets and liabilities: Current rate\n• Equity: Historical rates\n• Income statement: Average rate\n• Translation adjustment: OCI\n\n**Balance Sheet Exposure:**\n• Net assets denominated in foreign currency\n• Exposure = Foreign currency assets - liabilities\n\n**Limited Hedging Options:**\n• Matching foreign debt to foreign assets\n• Balance sheet restructuring\n• Currency swaps\n\n**Key Point:** Translation exposure creates paper gains/losses - not actual cash flow impact"
+        },
+        {
+          "title": "Economic Exposure",
+          "type": "text",
+          "content": "**The Hardest to Hedge:**\n\n**Sources:**\n• Competitors in different currency zones\n• Input costs in foreign currency\n• Customer price sensitivity\n\n**Example:**\nUS automaker competes with Japanese imports\nWhen ¥ weakens: Japanese cars become cheaper\nUS maker loses market share or margins\n\n**Management Strategies:**\n• Diversify production locations\n• Match revenue and cost currencies\n• Flexible pricing strategies\n• Product differentiation\n\n**Financial Hedging:** Generally NOT effective for economic exposure - requires strategic/operational changes"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Transaction exposure (contracts) is most easily hedged",
+            "Translation exposure affects reported financials but not cash flows",
+            "Economic exposure requires strategic/operational solutions",
+            "Forward contracts provide certainty but give up upside potential",
+            "Options cost premiums but preserve upside",
+            "Money market hedge uses borrowing and investing to replicate forward",
+            "Natural hedging (matching currencies) is cost-free when possible"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Currency Exposure Types",
+          "knowledgeCheck": {
+            "question": "A US company owns a manufacturing subsidiary in Germany. When the euro weakens against the dollar, the US dollar value of the subsidiary's net assets decreases upon consolidation. What type of currency exposure does this represent?",
+            "options": [
+              "Transaction exposure",
+              "Translation exposure",
+              "Economic exposure",
+              "Credit exposure"
+            ],
+            "correctIndex": 1,
+            "explanation": "This is translation exposure - the risk that arises from consolidating foreign subsidiary financial statements into the parent company's reporting currency. The change in net asset value is a paper adjustment that goes to other comprehensive income.",
+            "hint": "Consider whether this involves an actual cash flow or a financial reporting adjustment."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Forward vs Option Trade-off",
+          "reveal": {
+            "question": "When should a company use currency options instead of forward contracts for hedging?",
+            "answer": "Currency options are preferred when: (1) The company wants to protect against adverse movements while retaining upside potential, (2) The underlying exposure is uncertain (contingent transactions), (3) The cost of the option premium is acceptable, and (4) The company has a directional view that the currency might move favorably. Forward contracts are better when certainty is paramount and the cost of giving up upside is acceptable."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-009",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Measuring and Reporting Risk",
+    "description": "Learn quantitative measures for risk assessment and effective risk reporting",
+    "order": 39,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Value at Risk",
+      "Risk measures",
+      "Risk reporting",
+      "Stress testing"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Management needs to know: 'How much could we lose?' CMAs help quantify risk exposure, design risk reports for stakeholders, and stress-test financial plans. Understanding VaR and other risk measures is increasingly expected in corporate finance roles."
+        },
+        {
+          "title": "Value at Risk (VaR)",
+          "type": "text",
+          "content": "**Definition:** Maximum expected loss over a given time period at a given confidence level\n\n**Components:**\n• Time horizon (e.g., 1 day, 10 days)\n• Confidence level (e.g., 95%, 99%)\n• Dollar amount at risk\n\n**Example Statement:**\n\"Our 1-day 95% VaR is $5 million\"\n\n**Interpretation:**\nWe are 95% confident that we will not lose more than $5 million in one day.\n\nOr equivalently:\nThere is a 5% chance of losing MORE than $5 million in one day."
+        },
+        {
+          "title": "🧠 Memory Aid: VaR Interpretation",
+          "type": "callout",
+          "content": "**\"95% VaR of $5M\" means:**\n\n**95 out of 100 days:** Loss will be less than $5M\n**5 out of 100 days:** Loss COULD exceed $5M\n\n**Key insight:**\nVaR tells you the threshold - NOT the worst case!\nIn the 5% tail, losses could be much larger.\n\n**Higher confidence = Higher VaR:**\n99% VaR > 95% VaR (for same portfolio)"
+        },
+        {
+          "title": "VaR Calculation Methods",
+          "type": "table",
+          "headers": [
+            "Method",
+            "How It Works",
+            "Pros/Cons"
+          ],
+          "rows": [
+            [
+              "Historical Simulation",
+              "Use actual past returns",
+              "Pro: No distribution assumption / Con: Past may not predict future"
+            ],
+            [
+              "Variance-Covariance",
+              "Assume normal distribution",
+              "Pro: Simple calculation / Con: Fat tails underestimated"
+            ],
+            [
+              "Monte Carlo",
+              "Simulate thousands of scenarios",
+              "Pro: Flexible / Con: Computationally intensive"
+            ]
+          ]
+        },
+        {
+          "title": "VaR Limitations",
+          "type": "list",
+          "items": [
+            "**Doesn't measure tail risk** - What happens in the worst 5%?",
+            "**Assumes normal conditions** - Breaks down in crises",
+            "**Not additive** - Can't simply add VaRs across units",
+            "**Backward-looking** - Based on historical data",
+            "**Single number** - Oversimplifies complex risk profile",
+            "**Can be gamed** - Models can be manipulated"
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: VaR vs Expected Shortfall",
+          "type": "warning",
+          "content": "**Expected Shortfall (ES) or CVaR:**\nAverage loss GIVEN that loss exceeds VaR\n\n**Why it's better:**\n• Measures tail risk (what VaR ignores)\n• Coherent risk measure\n• Preferred by regulators (Basel III)\n\n**Example:**\n95% VaR = $5 million (threshold)\n95% ES = $8 million (average when exceeding VaR)\n\n**Key Point:**\nES answers: \"When things go really bad, HOW bad?\"\nVaR only says: \"Things usually won't exceed this.\""
+        },
+        {
+          "title": "Stress Testing",
+          "type": "text",
+          "content": "**Purpose:** Test portfolio/company under extreme scenarios\n\n**Types:**\n\n**Historical Scenarios:**\n• 2008 Financial Crisis\n• COVID-19 market crash\n• Dot-com bubble burst\n\n**Hypothetical Scenarios:**\n• Interest rates rise 300 bps\n• Oil prices double\n• Major customer defaults\n\n**Reverse Stress Testing:**\n• Start with failure state\n• Work backward to identify causes\n• \"What could break us?\"\n\n**Key Value:**\nStress tests reveal vulnerabilities that VaR misses"
+        },
+        {
+          "title": "Effective Risk Reporting",
+          "type": "text",
+          "content": "**Elements of Good Risk Reports:**\n\n**1. Key Risk Indicators (KRIs)**\n• Leading indicators of risk\n• Thresholds and triggers\n• Traffic light status\n\n**2. Risk Dashboard**\n• Visual summary of exposures\n• Trend analysis\n• Concentration risks\n\n**3. Narrative Context**\n• What changed since last report?\n• Emerging risks\n• Management actions\n\n**4. Drill-Down Capability**\n• From summary to detail\n• By business unit/risk type"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "VaR measures maximum expected loss at a given confidence level",
+            "Higher confidence level = higher VaR number",
+            "VaR doesn't tell you what happens in the tail (worst cases)",
+            "Expected Shortfall (CVaR) measures average loss beyond VaR",
+            "Methods: Historical simulation, variance-covariance, Monte Carlo",
+            "Stress testing complements VaR by exploring extreme scenarios",
+            "Effective risk reporting combines metrics, visuals, and narrative"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "VaR Interpretation",
+          "knowledgeCheck": {
+            "question": "A company's risk management department reports that the firm's 10-day 99% VaR is $12 million. Which statement correctly interprets this?",
+            "options": [
+              "The expected loss over the next 10 days is $12 million",
+              "There is a 99% probability that losses will exceed $12 million over 10 days",
+              "There is a 1% probability that losses will exceed $12 million over 10 days",
+              "The maximum possible loss over 10 days is $12 million"
+            ],
+            "correctIndex": 2,
+            "explanation": "A 99% VaR of $12 million means we are 99% confident losses will not exceed $12 million - equivalently, there is a 1% probability (100% - 99%) that losses WILL exceed $12 million over the time period.",
+            "hint": "The confidence level tells you the probability of NOT exceeding the VaR."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Why Use Expected Shortfall?",
+          "reveal": {
+            "question": "Why do regulators increasingly prefer Expected Shortfall (ES) over Value at Risk (VaR)?",
+            "answer": "Expected Shortfall is preferred because: (1) It measures tail risk - the average loss when VaR is exceeded, (2) It's a coherent risk measure (satisfies mathematical properties including sub-additivity), (3) It discourages concentration in tail risks that VaR ignores, (4) It provides more information about extreme loss scenarios, and (5) It better captures \"fat tail\" risks that normal distributions underestimate."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-010",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Commodity Price Risk Management",
+    "description": "Protect profit margins from volatile input costs using hedging strategies",
+    "order": 40,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Commodity risk",
+      "Hedging",
+      "Futures contracts",
+      "Price volatility"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Raw material costs can make or break profitability! From fuel to metals to agricultural products, commodity price swings create budget variances and margin pressure. CMAs help quantify commodity exposure and evaluate hedging strategies."
+        },
+        {
+          "title": "Commodity Price Risk",
+          "type": "text",
+          "content": "**Definition:** Risk that raw material or input prices will change unfavorably\n\n**Industries Most Affected:**\n• Airlines (jet fuel)\n• Food processors (corn, wheat, sugar)\n• Manufacturers (steel, aluminum, copper)\n• Utilities (natural gas, coal)\n• Transportation (diesel)\n\n**Impact:**\n• Unpredictable production costs\n• Difficulty in pricing products\n• Margin volatility\n• Budgeting challenges"
+        },
+        {
+          "title": "Hedging with Futures",
+          "type": "text",
+          "content": "**Futures Contract:** Agreement to buy/sell commodity at set price on future date\n\n**For a Buyer (need to purchase commodity):**\n• Buy (go long) futures contracts\n• Locks in purchase price\n• If prices rise, gain on futures offsets higher spot price\n\n**Example:**\nAirline needs 1 million gallons jet fuel in 3 months\nCurrent futures price: $2.50/gallon\n\n**Buy futures to lock in $2.50**\n\n**If prices rise to $3.00:**\n• Pay $3.00 at spot\n• Gain $0.50 on futures\n• Net cost: $2.50 (hedged)\n\n**If prices fall to $2.00:**\n• Pay $2.00 at spot\n• Lose $0.50 on futures\n• Net cost: $2.50 (hedged)"
+        },
+        {
+          "title": "🧠 Memory Aid: Long vs Short",
+          "type": "callout",
+          "content": "**\"BUY LONG, SELL SHORT\":**\n\n**Go LONG (buy futures) when:**\n• You will NEED to BUY the commodity\n• You fear prices will RISE\n\n**Go SHORT (sell futures) when:**\n• You will NEED to SELL the commodity\n• You fear prices will FALL\n\n**Match your hedge to your exposure!**"
+        },
+        {
+          "title": "Hedging Strategies",
+          "type": "table",
+          "headers": [
+            "Strategy",
+            "Description",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "Full Hedge",
+              "Hedge 100% of exposure",
+              "Maximum price certainty"
+            ],
+            [
+              "Partial Hedge",
+              "Hedge portion of exposure (e.g., 50%)",
+              "Some certainty while keeping upside"
+            ],
+            [
+              "Layered Hedge",
+              "Hedge different portions at different times",
+              "Dollar-cost averaging"
+            ],
+            [
+              "Option Collar",
+              "Buy call + sell put (or vice versa)",
+              "Range of acceptable prices"
+            ],
+            [
+              "No Hedge",
+              "Accept price risk",
+              "Risk tolerance, small exposure"
+            ]
+          ]
+        },
+        {
+          "title": "Cross Hedging",
+          "type": "text",
+          "content": "**When exact futures don't exist:**\n\n**Definition:** Using futures on a related commodity\n\n**Example:**\nNo jet fuel futures contract\nUse crude oil or heating oil futures\n\n**Basis Risk:**\n• Hedged commodity moves differently than underlying\n• Imperfect correlation\n• Some residual risk remains\n\n**Hedge Ratio:**\n• May need to adjust quantity hedged\n• Based on historical correlation\n\n**Key Point:** Cross hedging reduces but doesn't eliminate risk"
+        },
+        {
+          "title": "⚠️ Exam Trap: Hedge Accounting",
+          "type": "warning",
+          "content": "**Not all hedges qualify for hedge accounting!**\n\n**Without hedge accounting:**\n• Mark derivatives to market through P&L\n• Creates earnings volatility\n• Even if economic hedge is working\n\n**To qualify for hedge accounting (ASC 815):**\n• Document hedge relationship\n• Demonstrate hedge effectiveness\n• Ongoing effectiveness testing\n\n**Hedge Accounting Benefit:**\n• Matches timing of gains/losses\n• Reduces reported volatility\n• Better reflects economic reality"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Commodity risk affects margins for industries with significant input costs",
+            "Futures contracts lock in prices for future purchases or sales",
+            "Go long to hedge planned purchases; go short to hedge planned sales",
+            "Cross hedging uses related commodities when exact futures unavailable",
+            "Basis risk remains with cross hedges or imperfect matches",
+            "Hedge accounting requires documentation and effectiveness testing",
+            "Hedge strategy depends on risk tolerance and exposure size"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Hedging Position",
+          "knowledgeCheck": {
+            "question": "A food manufacturer expects to purchase 100,000 bushels of corn in 6 months for production. To hedge this commodity price risk, the manufacturer should:",
+            "options": [
+              "Sell corn futures contracts",
+              "Buy corn futures contracts",
+              "Buy corn put options",
+              "Sell corn call options"
+            ],
+            "correctIndex": 1,
+            "explanation": "Since the manufacturer needs to BUY corn in the future, they should BUY (go long) corn futures. If corn prices rise, the gain on the futures position will offset the higher purchase price.",
+            "hint": "Match your position to your future need - buying the commodity means going long."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-011",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Interest Rate Risk Management",
+    "description": "Protect against adverse interest rate movements using hedging instruments",
+    "order": 41,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Interest rate risk",
+      "Hedging",
+      "Interest rate swaps",
+      "Duration"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Interest rates affect borrowing costs, investment returns, and asset values! Companies with floating-rate debt or investment portfolios face significant exposure to rate changes. CMAs help quantify this risk and evaluate hedging strategies."
+        },
+        {
+          "title": "Types of Interest Rate Exposure",
+          "type": "text",
+          "content": "**Cash Flow Exposure:**\n• Floating-rate debt → higher rates = higher interest expense\n• Variable-rate investments → uncertainty in returns\n\n**Value (Price) Exposure:**\n• Fixed-rate bonds lose value when rates rise\n• Present value of future cash flows decreases\n\n**Examples:**\n• Company with $50M floating-rate loan\n• Pension fund holding fixed-rate bonds\n• Bank with mortgage portfolio\n\n**Key:** Identify exposure BEFORE rates move!"
+        },
+        {
+          "title": "Interest Rate Swaps",
+          "type": "text",
+          "content": "**Definition:** Agreement to exchange interest payment obligations\n\n**Most Common: Fixed-for-Floating Swap**\n\n**Company with floating-rate debt:**\n• Currently pays: SOFR + 2%\n• Wants: Fixed rate certainty\n\n**Solution: Pay-fixed swap**\n• Pay fixed rate to counterparty\n• Receive floating rate from counterparty\n• Net effect: Converts floating to fixed\n\n**Example:**\n• Loan: SOFR + 2% (floating)\n• Swap: Pay 4% fixed, Receive SOFR\n• Net: 4% + 2% = 6% fixed\n\n**Risk converted from floating to fixed!"
+        },
+        {
+          "title": "🧠 Memory Aid: Swap Direction",
+          "type": "callout",
+          "content": "**\"Match Your Need\":**\n\n**If you HAVE floating debt and want fixed:**\n• Enter PAY-FIXED swap\n• Receive floating to offset your floating cost\n\n**If you HAVE fixed debt and want floating:**\n• Enter RECEIVE-FIXED swap\n• Pay floating, receive fixed to offset\n\n**The swap offsets your underlying exposure!**"
+        },
+        {
+          "title": "Duration as Risk Measure",
+          "type": "text",
+          "content": "**Definition:** Weighted average time until cash flows received\n\n**More practically:** Sensitivity of bond price to interest rate changes\n\n**Formula (approximate):**\n% Change in Price ≈ -Duration × Change in Yield\n\n**Example:**\nBond duration: 5 years\nInterest rates rise: 1%\n\nPrice change ≈ -5 × 1% = -5%\n\n**Key Relationships:**\n• Longer maturity = Higher duration\n• Lower coupon = Higher duration\n• Higher duration = More interest rate risk"
+        },
+        {
+          "title": "Hedging Strategies",
+          "type": "table",
+          "headers": [
+            "Instrument",
+            "Use",
+            "Characteristic"
+          ],
+          "rows": [
+            [
+              "Interest Rate Swap",
+              "Convert fixed/floating",
+              "Customizable, OTC"
+            ],
+            [
+              "Interest Rate Cap",
+              "Ceiling on floating rate",
+              "Pays upfront premium"
+            ],
+            [
+              "Interest Rate Floor",
+              "Minimum on floating rate",
+              "Protects investors"
+            ],
+            [
+              "Interest Rate Collar",
+              "Range (cap + floor)",
+              "Lower premium"
+            ],
+            [
+              "Treasury Futures",
+              "Standardized hedging",
+              "Exchange-traded"
+            ]
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: Accounting for Swaps",
+          "type": "warning",
+          "content": "**Fair Value Changes:**\n• Swaps are derivatives marked to market\n• Changes flow through income or OCI\n\n**Hedge Accounting (if qualified):**\n• Cash flow hedge: Changes in OCI\n• Fair value hedge: Changes in income\n• Must document and test effectiveness\n\n**Without hedge accounting:**\n• Swap gains/losses hit P&L immediately\n• Creates earnings volatility\n• Even if economic hedge is working!\n\n**Exam Focus:** Know the economic logic of why you hedge"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Interest rate risk affects cash flows (floating) and values (fixed)",
+            "Swaps exchange fixed for floating interest obligations",
+            "Pay-fixed swap converts floating debt to fixed",
+            "Duration measures bond price sensitivity to rates",
+            "Higher duration = more interest rate risk",
+            "Caps, floors, and collars provide rate boundaries",
+            "Hedge accounting reduces earnings volatility from hedge gains/losses"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Interest Rate Swaps",
+          "knowledgeCheck": {
+            "question": "A company has a $10 million floating-rate loan at SOFR + 1.5%. It enters a swap to pay 4.5% fixed and receive SOFR. What is the company's net effective interest rate?",
+            "options": [
+              "4.5%",
+              "5.5%",
+              "6.0%",
+              "SOFR + 1.5%"
+            ],
+            "correctIndex": 2,
+            "explanation": "Net rate = Pay on loan (SOFR + 1.5%) + Pay on swap (4.5%) - Receive on swap (SOFR) = SOFR + 1.5% + 4.5% - SOFR = 6.0% fixed. The floating components cancel out, leaving a fixed rate.",
+            "hint": "The SOFR received from the swap offsets the SOFR paid on the loan."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-012",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Currency Hedging Strategies",
+    "description": "Learn how multinational companies manage foreign exchange risk through hedging",
+    "order": 12,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Currency risk",
+      "Foreign exchange hedging",
+      "Forwards and options",
+      "Natural hedging"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Currency volatility can wipe out profits on international transactions! CMAs at multinational companies must understand FX exposure types and hedging instruments to protect margins and provide reliable financial forecasts."
+        },
+        {
+          "title": "Types of Currency Exposure",
+          "type": "text",
+          "content": "**Transaction Exposure:**\n• Risk from existing contractual obligations\n• Accounts receivable/payable in foreign currency\n• Most direct and measurable\n\n**Translation Exposure:**\n• Risk when consolidating foreign subsidiary financials\n• Balance sheet items translated at changing rates\n• Accounting exposure, may not affect cash\n\n**Economic (Operating) Exposure:**\n• Impact on competitive position and cash flows\n• Future sales affected by exchange rates\n• Hardest to measure and hedge"
+        },
+        {
+          "title": "Exposure Comparison",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Source",
+            "Hedgeable?"
+          ],
+          "rows": [
+            [
+              "Transaction",
+              "Contractual cash flows",
+              "Yes - forwards, options"
+            ],
+            [
+              "Translation",
+              "Financial consolidation",
+              "Partially - balance sheet hedges"
+            ],
+            [
+              "Economic",
+              "Competitive position",
+              "Difficult - operational hedges"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Hedging Instruments",
+          "type": "callout",
+          "content": "**\"FON\" - Foreign Exchange Tools:**\n\n**F**orwards - Lock in rate, OBLIGATION to exchange\n• No upfront cost\n• Give up upside AND protected from downside\n\n**O**ptions - Right (not obligation) to exchange\n• Pay premium upfront\n• Keep upside, protected from downside\n\n**N**atural Hedging - Match revenues with costs\n• Source materials in same currency as sales\n• No derivative needed\n• Operational strategy"
+        },
+        {
+          "title": "Forward Contracts",
+          "type": "text",
+          "content": "**Mechanics:**\n• Agreement to exchange currencies at future date\n• Rate locked in today\n• No cash exchanged until settlement\n\n**Example:**\nUS company will receive €1,000,000 in 90 days\nCurrent spot rate: $1.10/€\nForward rate: $1.08/€\n\n**Without hedge:** Unknown USD amount\n**With forward:** Locks in $1,080,000\n\n**Outcome if euro strengthens to $1.15:**\n• Without hedge: $1,150,000 (better)\n• With forward: $1,080,000 (gave up gain)\n\n**Outcome if euro weakens to $1.05:**\n• Without hedge: $1,050,000 (worse)\n• With forward: $1,080,000 (protected from loss)"
+        },
+        {
+          "title": "Currency Options",
+          "type": "text",
+          "content": "**Right, not obligation:**\n\n**Call Option:** Right to BUY currency at strike price\n**Put Option:** Right to SELL currency at strike price\n\n**Example:**\nUS company will receive €1,000,000 in 90 days\nBuys put option: Strike $1.08/€, Premium $20,000\n\n**If euro weakens to $1.05:**\n• Exercise put, receive $1,080,000\n• Net after premium: $1,060,000\n• Protected from downside\n\n**If euro strengthens to $1.15:**\n• Let option expire, convert at spot\n• Receive $1,150,000\n• Net after premium: $1,130,000\n• Kept the upside!\n\n**Trade-off:** Premium cost vs. flexibility"
+        },
+        {
+          "title": "⚠️ Exam Trap: Forwards vs Options",
+          "type": "warning",
+          "content": "**Know the key differences:**\n\n**Forward:**\n• NO upfront cost\n• MUST exchange at forward rate\n• No upside potential\n• Full downside protection\n\n**Option:**\n• Upfront premium cost\n• CHOICE to exercise or not\n• Keeps upside potential\n• Full downside protection\n\n**When to use each:**\n• Forward: Certain cash flow, want zero-cost hedge\n• Option: Uncertain cash flow, want to keep upside"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Three exposures: Transaction, Translation, Economic",
+            "Transaction exposure is most hedgeable with derivatives",
+            "Forwards: Lock in rate, obligated to exchange, no upfront cost",
+            "Options: Right to exchange, pay premium, keep upside",
+            "Natural hedging: Match foreign currency revenues with costs",
+            "Forward gives up opportunity; Option preserves it for a cost",
+            "Economic exposure requires operational (not financial) hedging"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Hedging Instrument Selection",
+          "knowledgeCheck": {
+            "question": "A US exporter expects to receive ¥100 million from a Japanese customer in 60 days and wants to protect against yen depreciation while keeping potential gains if yen strengthens. Which instrument should it use?",
+            "options": [
+              "Forward contract to sell yen",
+              "Forward contract to buy yen",
+              "Put option on yen",
+              "Call option on yen"
+            ],
+            "correctIndex": 2,
+            "explanation": "A put option on yen gives the right to SELL yen at the strike price (protection against yen weakening) while allowing the exporter to benefit if yen strengthens (just let option expire). A forward would protect but eliminate upside.",
+            "hint": "The exporter will RECEIVE yen and must SELL it for dollars. Which option gives the right to sell?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-013",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Portfolio Theory and Diversification",
+    "description": "Apply modern portfolio theory to investment decisions and risk management",
+    "order": 13,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Portfolio theory",
+      "Diversification",
+      "Systematic risk",
+      "Beta"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Don't put all your eggs in one basket - but know WHY! CMAs use portfolio theory to understand risk-return tradeoffs, evaluate investment decisions, and communicate with investors. Beta and diversification concepts are essential CMA exam topics."
+        },
+        {
+          "title": "Types of Risk",
+          "type": "text",
+          "content": "**Systematic (Market) Risk:**\n• Affects all investments\n• Cannot be diversified away\n• Economic recessions, inflation, interest rates\n• Measured by BETA\n• Investors require premium for bearing it\n\n**Unsystematic (Unique) Risk:**\n• Affects specific company/industry\n• CAN be diversified away\n• Management changes, product failures, lawsuits\n• No premium - investors can eliminate it\n\n**Total Risk = Systematic + Unsystematic**"
+        },
+        {
+          "title": "Risk Comparison",
+          "type": "table",
+          "headers": [
+            "Systematic Risk",
+            "Unsystematic Risk"
+          ],
+          "rows": [
+            [
+              "Market-wide factors",
+              "Company-specific factors"
+            ],
+            [
+              "Cannot diversify away",
+              "Can diversify away"
+            ],
+            [
+              "Measured by Beta",
+              "Measured by residual variance"
+            ],
+            [
+              "Compensated in CAPM",
+              "Not compensated"
+            ],
+            [
+              "Examples: GDP, rates, inflation",
+              "Examples: CEO change, recall"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Beta Interpretation",
+          "type": "callout",
+          "content": "**Beta (β) measures systematic risk:**\n\n**β = 1.0** - Moves with market\n(If market up 10%, stock up ~10%)\n\n**β > 1.0** - More volatile than market\nβ = 1.5: Market up 10% → Stock up ~15%\n(Tech stocks, growth companies)\n\n**β < 1.0** - Less volatile than market\nβ = 0.5: Market up 10% → Stock up ~5%\n(Utilities, stable dividend payers)\n\n**β = 0** - No correlation to market\n(Treasury bills)\n\n**β negative** - Moves opposite to market\n(Gold stocks, some hedge strategies)"
+        },
+        {
+          "title": "Diversification Effect",
+          "type": "text",
+          "content": "**How portfolios reduce risk:**\n\n**Single Stock:**\nTotal risk = High (systematic + unsystematic)\n\n**Adding More Stocks:**\nUnsystematic risks cancel out\n(Some go up when others go down)\n\n**Well-Diversified Portfolio (20-30 stocks):**\nMost unsystematic risk eliminated\nOnly systematic risk remains\n\n**Key Insight:**\nYou don't get paid for taking unsystematic risk\nbecause you can eliminate it for free\n\n**Correlation matters:**\n• Low correlation = better diversification\n• Perfect correlation = no diversification benefit"
+        },
+        {
+          "title": "Portfolio Beta",
+          "type": "text",
+          "content": "**Weighted Average:**\n\nPortfolio Beta = Σ (Weight_i × Beta_i)\n\n**Example:**\n| Stock | Weight | Beta |\n|-------|--------|------|\n| A | 40% | 1.2 |\n| B | 35% | 0.8 |\n| C | 25% | 1.5 |\n\n**Portfolio Beta:**\n= 0.40(1.2) + 0.35(0.8) + 0.25(1.5)\n= 0.48 + 0.28 + 0.375\n= **1.135**\n\nPortfolio is slightly more volatile than market\n\n**Use Case:**\nAdjust portfolio beta to match risk tolerance"
+        },
+        {
+          "title": "⚠️ Exam Trap: CAPM and Beta",
+          "type": "warning",
+          "content": "**Required Return = Rf + β(Rm - Rf)**\n\n**Where:**\n• Rf = Risk-free rate\n• Rm = Expected market return\n• (Rm - Rf) = Market risk premium\n\n**Key Relationships:**\n• Higher beta → Higher required return\n• Beta measures only systematic risk\n• Diversified investors use CAPM\n\n**Common Mistakes:**\n• Using total risk instead of beta\n• Forgetting beta multiplies ONLY the premium\n• Confusing risk premium with market return"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Systematic risk: Market-wide, cannot diversify, measured by beta",
+            "Unsystematic risk: Company-specific, can diversify, no premium",
+            "Diversification eliminates unsystematic risk with 20-30 stocks",
+            "Beta = 1 moves with market; >1 more volatile; <1 less volatile",
+            "Portfolio beta is weighted average of individual betas",
+            "CAPM: Required return = Rf + Beta(Rm - Rf)",
+            "Only systematic risk is rewarded because unsystematic is diversifiable"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Beta and Required Return",
+          "knowledgeCheck": {
+            "question": "If the risk-free rate is 3%, market return is 11%, and a stock has beta of 1.5, what is the required return using CAPM?",
+            "options": [
+              "11%",
+              "12%",
+              "15%",
+              "19.5%"
+            ],
+            "correctIndex": 2,
+            "explanation": "Required Return = Rf + β(Rm - Rf) = 3% + 1.5(11% - 3%) = 3% + 1.5(8%) = 3% + 12% = 15%.",
+            "hint": "CAPM formula: Risk-free rate + Beta × (Market return - Risk-free rate)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-014",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Country and Political Risk",
+    "description": "Assess and manage political risks in international business operations",
+    "order": 14,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Political risk",
+      "Country risk",
+      "Expropriation",
+      "International risk"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Going global? Political risk can destroy value overnight! CMAs must factor country risk into investment decisions, incorporating risk premiums and hedging strategies. Understanding political risk is essential for international project evaluation."
+        },
+        {
+          "title": "Types of Political Risk",
+          "type": "text",
+          "content": "**Macro Political Risk:**\n• Affects all foreign businesses\n• Revolution, war, nationalization\n• Currency controls, sanctions\n\n**Micro Political Risk:**\n• Affects specific industries or firms\n• Targeted tax increases\n• Contract renegotiation\n• Regulatory changes\n\n**Ownership Risk:**\n• Expropriation (taking assets)\n• Confiscation (no compensation)\n• Nationalization (industry-wide)\n\n**Operating Risk:**\n• Interference in operations\n• Price controls\n• Local content requirements\n\n**Transfer Risk:**\n• Limits on repatriating profits\n• Currency convertibility restrictions"
+        },
+        {
+          "title": "Political Risk Factors",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Indicators"
+          ],
+          "rows": [
+            [
+              "Political stability",
+              "Government changes, civil unrest, corruption"
+            ],
+            [
+              "Legal environment",
+              "Property rights, contract enforcement, judiciary"
+            ],
+            [
+              "Economic policy",
+              "Fiscal/monetary stability, trade openness"
+            ],
+            [
+              "Regulatory risk",
+              "Frequent rule changes, arbitrary enforcement"
+            ],
+            [
+              "Social factors",
+              "Labor relations, nationalism, ethnic tension"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Risk Mitigation Strategies",
+          "type": "callout",
+          "content": "**\"JILPD\" - Managing Political Risk:**\n\n**J**oint ventures - Share risk with local partner\n\n**I**nsurance - Political risk insurance (OPIC, MIGA)\n\n**L**egal protection - Investment treaties, arbitration clauses\n\n**P**olitical involvement - Government relations, local hiring\n\n**D**iversification - Spread investments across countries\n\n**Also:** Minimize exposed assets, use local debt financing"
+        },
+        {
+          "title": "Incorporating Risk into Analysis",
+          "type": "text",
+          "content": "**Risk-Adjusted Required Return:**\n\n**Approach 1: Add Country Risk Premium**\nRequired Return = Domestic WACC + Country Risk Premium\n\nPremium based on:\n• Political risk ratings\n• Sovereign bond spreads\n• Historical volatility\n\n**Approach 2: Adjust Cash Flows**\n• Reduce expected cash flows for probability of adverse events\n• Scenario analysis (best/base/worst case)\n\n**Approach 3: Certainty Equivalents**\n• Convert risky cash flows to certain equivalents\n• Discount at risk-free rate\n\n**Best Practice:** Use both higher hurdle rate AND scenario analysis"
+        },
+        {
+          "title": "Political Risk Insurance",
+          "type": "text",
+          "content": "**Coverage Types:**\n• Expropriation\n• Political violence\n• Currency inconvertibility\n• Contract frustration\n\n**Providers:**\n• **OPIC** (US government agency)\n• **MIGA** (World Bank Group)\n• Private insurers (Lloyd's, etc.)\n\n**Benefits:**\n• Financial protection\n• Enables investment in riskier markets\n• May deter host government actions\n\n**Limitations:**\n• Premiums can be substantial\n• Coverage limits\n• Exclusions and conditions\n• Doesn't cover all risks"
+        },
+        {
+          "title": "⚠️ Exam Trap: Emerging Market Risk",
+          "type": "warning",
+          "content": "**Higher returns require higher risk adjustment:**\n\n**Common Errors:**\n• Using domestic WACC without premium\n• Ignoring correlation between risks\n• Over-relying on historical data\n\n**Remember:**\n• Political risk can change rapidly\n• Past stability doesn't guarantee future\n• Emerging market returns are often illusory\n\n**Due Diligence:**\n• Understand local legal system\n• Assess regulatory environment\n• Consider exit strategy before entry\n• Don't chase returns without adjusting for risk"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Political risk: Macro (all firms), Micro (specific firms/industries)",
+            "Three types: Ownership (expropriation), Operating, Transfer (repatriation)",
+            "Mitigation: Joint ventures, Insurance, Legal protection, Diversification",
+            "Incorporate into analysis via country risk premium or cash flow adjustment",
+            "Political risk insurance: OPIC, MIGA, private providers",
+            "Emerging markets require higher hurdle rates and scenario analysis",
+            "Past stability doesn't guarantee future - risks can change rapidly"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Political Risk Assessment",
+          "knowledgeCheck": {
+            "question": "A country announces that all foreign mining companies must have 51% local ownership within 5 years. What type of political risk is this?",
+            "options": [
+              "Macro political risk",
+              "Micro political risk (operating risk)",
+              "Transfer risk",
+              "Confiscation"
+            ],
+            "correctIndex": 1,
+            "explanation": "This is micro political risk because it targets a specific industry (mining). It's also an operating risk (interference in business operations) rather than ownership risk (no total seizure) or transfer risk (not about profit repatriation).",
+            "hint": "Consider whether this affects all businesses or just specific industries, and whether it's about ownership, operations, or transfers."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-015",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Credit Risk Management",
+    "description": "Evaluate and manage the risk of customer and counterparty defaults",
+    "order": 15,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Credit risk",
+      "Credit analysis",
+      "Collection policy",
+      "Allowance for doubtful accounts"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Extending credit increases sales but creates risk of non-payment! CMAs balance the sales benefits of credit against potential bad debts. Credit policy decisions directly impact cash flow, working capital, and profitability."
+        },
+        {
+          "title": "Types of Credit Risk",
+          "type": "text",
+          "content": "**Customer Credit Risk:**\n• Will customers pay their bills?\n• Accounts receivable collection\n• Bad debt expense\n\n**Counterparty Risk:**\n• Partners in financial transactions\n• Derivative contracts\n• Bank deposits\n\n**Sovereign Risk:**\n• Foreign government default\n• Country-specific regulations\n• Currency restrictions\n\n**Concentration Risk:**\n• Too much exposure to one customer\n• Industry concentration\n• Geographic concentration"
+        },
+        {
+          "title": "The 5 C's of Credit",
+          "type": "table",
+          "headers": [
+            "Factor",
+            "What It Measures",
+            "How Assessed"
+          ],
+          "rows": [
+            [
+              "Character",
+              "Willingness to pay",
+              "Credit history, references"
+            ],
+            [
+              "Capacity",
+              "Ability to pay",
+              "Cash flow, debt ratios"
+            ],
+            [
+              "Capital",
+              "Financial cushion",
+              "Net worth, equity"
+            ],
+            [
+              "Collateral",
+              "Security for debt",
+              "Assets pledged"
+            ],
+            [
+              "Conditions",
+              "External factors",
+              "Economy, industry trends"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Credit Terms",
+          "type": "callout",
+          "content": "**\"2/10, Net 30\" - Standard credit terms:**\n\n• **2** = 2% discount\n• **10** = If paid within 10 days\n• **Net 30** = Full payment due in 30 days\n\n**Cost of not taking discount:**\n= (Discount % / (100 - Discount %)) × (365 / (Full days - Discount days))\n\n**Example - 2/10, Net 30:**\n= (2/98) × (365/20)\n= 0.0204 × 18.25\n= **37.2% annual cost!**\n\n**Takeaway:** Missing early payment discounts is expensive financing!"
+        },
+        {
+          "title": "Credit Policy Components",
+          "type": "text",
+          "content": "**Credit Standards:**\n• Minimum criteria for credit approval\n• Tighter = fewer bad debts, fewer sales\n• Looser = more sales, more bad debts\n\n**Credit Terms:**\n• Payment period (Net 30, Net 60)\n• Discounts for early payment\n• Industry-specific norms\n\n**Collection Policy:**\n• When to follow up\n• Collection procedures\n• When to use collection agency\n• When to write off\n\n**Trade-off Analysis:**\nIncremental revenue vs. Incremental costs\n(Bad debts + Carrying costs + Collection costs)"
+        },
+        {
+          "title": "Credit Analysis Ratios",
+          "type": "text",
+          "content": "**Accounts Receivable Turnover:**\n= Credit Sales / Average A/R\n• Higher = faster collection\n\n**Days Sales Outstanding (DSO):**\n= 365 / A/R Turnover\n= Average A/R / (Credit Sales / 365)\n• Compare to credit terms\n\n**Aging Schedule:**\n• Current (0-30 days): 60%\n• 31-60 days: 25%\n• 61-90 days: 10%\n• Over 90 days: 5%\n\n**Bad Debt Analysis:**\n• Historical bad debt %\n• By customer segment\n• By industry\n• By geography"
+        },
+        {
+          "title": "⚠️ Exam Trap: Credit Policy Decisions",
+          "type": "warning",
+          "content": "**Credit policy changes have multiple effects:**\n\n**Loosening credit standards:**\n• ↑ Sales volume\n• ↑ Bad debt expense\n• ↑ Collection costs\n• ↑ A/R investment (more capital tied up)\n\n**Decision rule:**\nLoosen credit if:\nIncremental profit > Incremental costs\n\n**Include ALL costs:**\n• Variable cost of additional sales\n• Bad debt on incremental sales\n• Carrying cost of higher A/R\n• Additional collection effort\n\n**Don't forget opportunity cost of tied-up capital!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Credit risk: Customer, counterparty, sovereign, concentration",
+            "5 C's: Character, Capacity, Capital, Collateral, Conditions",
+            "DSO should approximate credit terms; longer = collection issues",
+            "Credit policy trade-off: More sales vs. more bad debts",
+            "Missing early payment discounts is expensive (often 30%+ annualized)",
+            "Aging schedules identify problem accounts early",
+            "Credit decisions: Incremental profit must exceed incremental costs"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Credit Terms Cost",
+          "knowledgeCheck": {
+            "question": "A supplier offers terms of 3/15, Net 45. What is the approximate annualized cost of not taking the discount?",
+            "options": [
+              "24.3%",
+              "37.1%",
+              "49.2%",
+              "3.0%"
+            ],
+            "correctIndex": 1,
+            "explanation": "Cost = (3/97) × (365/30) = 0.0309 × 12.17 = 37.6% ≈ 37.1%. The 30-day difference (45-15) is the period the discount is forfeited. This represents very expensive financing that should usually be avoided.",
+            "hint": "Formula: (Discount%/(100-Discount%)) × (365/(Full days - Discount days))"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-016",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Operational Risk Management",
+    "description": "Identify, assess, and mitigate risks from people, processes, systems, and external events",
+    "order": 16,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Operational risk",
+      "Risk assessment",
+      "Business continuity",
+      "Internal controls"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Operational failures can destroy companies overnight! From IT outages to supply chain disruptions to fraud, operational risks threaten business continuity. CMAs assess these risks, design controls, and ensure the organization can survive unexpected events."
+        },
+        {
+          "title": "Operational Risk Categories",
+          "type": "text",
+          "content": "**People Risk:**\n• Human error\n• Fraud and misconduct\n• Key person dependency\n• Labor issues\n\n**Process Risk:**\n• Inefficient operations\n• Control failures\n• Documentation gaps\n• Quality failures\n\n**Systems Risk:**\n• IT failures\n• Cybersecurity breaches\n• Data integrity\n• System obsolescence\n\n**External Events:**\n• Natural disasters\n• Pandemics\n• Supply chain disruption\n• Regulatory changes"
+        },
+        {
+          "title": "Risk Assessment Matrix",
+          "type": "table",
+          "headers": [
+            "Likelihood",
+            "Low Impact",
+            "Medium Impact",
+            "High Impact"
+          ],
+          "rows": [
+            [
+              "High",
+              "Medium Risk",
+              "High Risk",
+              "Critical Risk"
+            ],
+            [
+              "Medium",
+              "Low Risk",
+              "Medium Risk",
+              "High Risk"
+            ],
+            [
+              "Low",
+              "Low Risk",
+              "Low Risk",
+              "Medium Risk"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Risk Response Strategies",
+          "type": "callout",
+          "content": "**\"AMAT\" - Four risk responses:**\n\n**A**void\n• Don't do the risky activity\n• Exit market, discontinue product\n\n**M**itigate/Reduce\n• Controls to lower likelihood or impact\n• Most common response\n\n**A**ccept\n• Tolerate the risk\n• For low-impact, low-likelihood\n• May self-insure\n\n**T**ransfer\n• Shift risk to third party\n• Insurance\n• Outsourcing\n• Contractual provisions\n\n**Choose based on:** Risk tolerance, cost of response"
+        },
+        {
+          "title": "Key Risk Indicators (KRIs)",
+          "type": "text",
+          "content": "**Purpose:**\n• Early warning of emerging risks\n• Lead indicators (vs lag indicators)\n• Trigger investigation/action\n\n**Examples by Category:**\n• People: Employee turnover, overtime rates\n• Process: Error rates, cycle time increases\n• Systems: System downtime, failed logins\n• External: Supplier financial distress\n\n**Characteristics of Good KRIs:**\n• Measurable and timely\n• Actionable thresholds\n• Linked to risk appetite\n• Cost-effective to collect"
+        },
+        {
+          "title": "Business Continuity Planning",
+          "type": "text",
+          "content": "**Business Impact Analysis (BIA):**\n• Identify critical functions\n• Assess impact of disruption\n• Determine recovery priorities\n\n**Key Metrics:**\n• RTO - Recovery Time Objective\n  (How fast must we recover?)\n• RPO - Recovery Point Objective\n  (How much data can we lose?)\n\n**Continuity Strategies:**\n• Backup sites (hot, warm, cold)\n• Data backup and recovery\n• Alternative suppliers\n• Cross-training\n• Communication plans\n\n**Testing:**\n• Tabletop exercises\n• Simulation tests\n• Full-scale tests"
+        },
+        {
+          "title": "⚠️ Exam Trap: Internal Control Framework",
+          "type": "warning",
+          "content": "**COSO Internal Control Components:**\n\n1. **Control Environment** - Tone at the top\n2. **Risk Assessment** - Identify and analyze risks\n3. **Control Activities** - Policies and procedures\n4. **Information & Communication** - Quality info flows\n5. **Monitoring** - Ongoing and separate evaluations\n\n**Common Control Types:**\n• Preventive vs Detective\n• Automated vs Manual\n• Segregation of duties\n• Authorization limits\n\n**Know:** COSO framework is the standard for internal control design and assessment"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Operational risk: People, Process, Systems, External events",
+            "Risk assessment: Likelihood × Impact = Risk level",
+            "Responses: Avoid, Mitigate, Accept, Transfer (AMAT)",
+            "KRIs: Lead indicators that warn of emerging risks",
+            "BCP: RTO (recovery time), RPO (data loss tolerance)",
+            "COSO: 5 components of internal control",
+            "Testing business continuity plans is essential"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Risk Response",
+          "knowledgeCheck": {
+            "question": "A company purchases insurance to cover losses from customer lawsuits. What risk response strategy is this?",
+            "options": [
+              "Avoidance",
+              "Mitigation",
+              "Acceptance",
+              "Transfer"
+            ],
+            "correctIndex": 3,
+            "explanation": "Insurance is risk transfer - the company pays a premium to shift the financial impact of lawsuits to the insurance company. The risk of lawsuits still exists, but the financial consequences are borne by the insurer up to policy limits.",
+            "hint": "What happens to the financial burden when an insured event occurs?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-017",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Enterprise Risk Management (ERM)",
+    "description": "Implement organization-wide risk management frameworks",
+    "order": 17,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Enterprise risk management",
+      "COSO ERM",
+      "Risk appetite",
+      "Risk governance"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "ERM connects risk to strategy! CMAs are increasingly involved in enterprise risk management - quantifying risks, analyzing trade-offs, and reporting to leadership. ERM ensures the organization takes the right risks for the right returns."
+        },
+        {
+          "title": "What is ERM?",
+          "type": "text",
+          "content": "**Definition (COSO):**\nA process applied in strategy setting and across the enterprise, designed to identify potential events that may affect the entity, and manage risk to be within its risk appetite, to provide reasonable assurance regarding achievement of objectives.\n\n**Key Concepts:**\n• Enterprise-wide view\n• Connected to strategy\n• Portfolio approach to risk\n• Risk appetite framework\n\n**Evolution:**\n• From: Siloed risk management\n• To: Integrated, strategic perspective"
+        },
+        {
+          "title": "COSO ERM Framework",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Governance & Culture",
+              "Board oversight, ethics, values"
+            ],
+            [
+              "Strategy & Objectives",
+              "Align risk with strategy"
+            ],
+            [
+              "Performance",
+              "Identify, assess, prioritize, respond"
+            ],
+            [
+              "Review & Revision",
+              "Monitor changes, evaluate performance"
+            ],
+            [
+              "Information & Communication",
+              "Share risk information across entity"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Risk Appetite Hierarchy",
+          "type": "callout",
+          "content": "**Three levels of risk guidance:**\n\n**Risk Capacity:**\n• Maximum risk entity CAN take\n• Limited by capital, resources\n• This is the ceiling\n\n**Risk Appetite:**\n• Risk entity IS WILLING to take\n• Board-approved statement\n• Aligned with strategy\n\n**Risk Tolerance:**\n• Acceptable variation around targets\n• Operating boundaries\n• Specific metrics\n\n**Example:**\n• Capacity: Could survive $50M loss\n• Appetite: Will accept up to $30M risk\n• Tolerance: Revenue can vary ±5%"
+        },
+        {
+          "title": "Risk Categories in ERM",
+          "type": "text",
+          "content": "**Strategic Risks:**\n• Competitive threats\n• Technology disruption\n• Reputation damage\n• M&A integration\n\n**Financial Risks:**\n• Market risks (currency, interest, commodity)\n• Credit/counterparty\n• Liquidity\n\n**Operational Risks:**\n• Process failures\n• IT/Cyber\n• Human resources\n• Supply chain\n\n**Compliance Risks:**\n• Regulatory violations\n• Legal liability\n• Environmental"
+        },
+        {
+          "title": "ERM Process Steps",
+          "type": "text",
+          "content": "**1. Identify Risks:**\n• Workshops, interviews, surveys\n• Historical analysis\n• External scanning\n\n**2. Assess Risks:**\n• Likelihood and impact\n• Inherent vs residual risk\n• Quantify where possible\n\n**3. Prioritize:**\n• Risk heat map\n• Focus on material risks\n• Consider correlations\n\n**4. Respond:**\n• Avoid, Mitigate, Accept, Transfer\n• Cost-benefit analysis\n• Risk owners assigned\n\n**5. Monitor & Report:**\n• Key risk indicators\n• Board reporting\n• Emerging risk watch"
+        },
+        {
+          "title": "⚠️ Exam Trap: Inherent vs Residual Risk",
+          "type": "warning",
+          "content": "**Know the difference!**\n\n**Inherent Risk:**\n• Risk BEFORE controls\n• Raw exposure\n• If nothing done\n\n**Residual Risk:**\n• Risk AFTER controls\n• Remaining exposure\n• What you actually face\n\n**Residual = Inherent - Control Effectiveness**\n\n**Example:**\n• Inherent fraud risk: High\n• Controls: Segregation of duties, approvals\n• Residual fraud risk: Medium\n\n**Focus remediation on:**\n• High residual risks\n• Weak control areas\n• Compare residual to appetite"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ERM: Enterprise-wide, strategy-connected risk management",
+            "COSO ERM: 5 components including Governance, Strategy, Performance",
+            "Risk Capacity > Appetite > Tolerance (hierarchy)",
+            "Categories: Strategic, Financial, Operational, Compliance",
+            "Inherent risk: Before controls; Residual: After controls",
+            "Process: Identify, Assess, Prioritize, Respond, Monitor",
+            "Risk owners must be assigned for accountability"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "ERM Concepts",
+          "knowledgeCheck": {
+            "question": "A company identifies that a major customer represents 35% of revenue. The board has stated they will not accept single-customer dependence above 20%. This 20% limit represents:",
+            "options": [
+              "Risk capacity",
+              "Risk appetite",
+              "Risk tolerance",
+              "Inherent risk"
+            ],
+            "correctIndex": 2,
+            "explanation": "The 20% limit is a risk tolerance - a specific, measurable boundary that defines acceptable variation. Risk appetite would be the broader statement about willingness to accept customer concentration risk. When the 35% exposure exceeds the 20% tolerance, action is needed.",
+            "hint": "Tolerance defines specific quantitative limits."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-018",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Liquidity Risk Management",
+    "description": "Identify and manage risks related to cash flow and funding",
+    "order": 18,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Liquidity risk",
+      "Funding risk",
+      "Cash management",
+      "Liquidity ratios"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Companies fail from lack of cash, not lack of profits! CMAs monitor liquidity to ensure the company can meet obligations when due. The 2008 financial crisis demonstrated how quickly liquidity can evaporate. Proactive liquidity management is survival insurance."
+        },
+        {
+          "title": "What is Liquidity Risk?",
+          "type": "text",
+          "content": "**Definition:**\nRisk of being unable to meet short-term obligations when due\n\n**Two Dimensions:**\n\n**1. Funding Liquidity Risk:**\n• Can't raise cash quickly\n• Loss of credit access\n• Bank line cancellation\n\n**2. Market Liquidity Risk:**\n• Can't sell assets quickly\n• Forced to accept price discounts\n• No buyers in market\n\n**Why It Matters:**\n• Solvent companies can fail from illiquidity\n• Reputation damage\n• Missed opportunities\n• Bankruptcy worst case"
+        },
+        {
+          "title": "Liquidity Metrics",
+          "type": "table",
+          "headers": [
+            "Ratio",
+            "Formula",
+            "Target"
+          ],
+          "rows": [
+            [
+              "Current Ratio",
+              "CA / CL",
+              ">1.5-2.0"
+            ],
+            [
+              "Quick Ratio",
+              "(CA - Inventory) / CL",
+              ">1.0"
+            ],
+            [
+              "Cash Ratio",
+              "Cash / CL",
+              ">0.2-0.5"
+            ],
+            [
+              "Cash Conversion Cycle",
+              "DSO + DIO - DPO",
+              "Lower better"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Liquidity Sources",
+          "type": "callout",
+          "content": "**Internal Sources:**\n• Operating cash flow\n• Working capital reduction\n• Asset sales\n• Dividend reduction\n\n**External Sources:**\n• Bank credit lines\n• Commercial paper\n• Term loans\n• Bond issuance\n• Equity issuance\n• Factoring receivables\n\n**Liquidity Buffer:**\nMaintain cushion above minimum needs\n• Cash reserves\n• Unused credit lines\n• Liquid investments\n\nRule: Don't tap ALL sources - keep reserves!"
+        },
+        {
+          "title": "Liquidity Risk Drivers",
+          "type": "text",
+          "content": "**Business Factors:**\n• Seasonality\n• Customer concentration\n• Inventory buildup needs\n• Capital expenditure timing\n• Revenue volatility\n\n**Financial Factors:**\n• Debt maturity schedule\n• Covenant compliance\n• Interest rate changes\n• Credit rating changes\n\n**External Factors:**\n• Economic conditions\n• Industry conditions\n• Credit market freeze\n• Banking relationship changes\n\n**Early Warning Signs:**\n• Declining cash balances\n• Stretching payables\n• Drawing on credit lines\n• Deteriorating ratios"
+        },
+        {
+          "title": "Liquidity Risk Mitigation",
+          "type": "text",
+          "content": "**Cash Flow Forecasting:**\n• Rolling 13-week forecast\n• Multiple scenarios\n• Stress testing\n\n**Diversify Funding:**\n• Multiple banks\n• Different instruments\n• Stagger maturities\n• Mix fixed/floating\n\n**Working Capital Efficiency:**\n• Accelerate collections\n• Optimize inventory\n• Manage payables wisely\n\n**Contingency Planning:**\n• Identify backup sources\n• Maintain relationships\n• Pre-arrange facilities\n• Asset pledging options"
+        },
+        {
+          "title": "⚠️ Exam Trap: Liquidity vs Solvency",
+          "type": "warning",
+          "content": "**Don't confuse these!**\n\n**Liquidity:**\n• Short-term focus\n• Can pay current obligations?\n• Current ratio, quick ratio\n• Operating cash flow\n\n**Solvency:**\n• Long-term focus\n• Total assets > Total liabilities?\n• Debt-to-equity ratio\n• Interest coverage\n\n**Key Point:**\nA company can be SOLVENT (assets > liabilities)\nbut ILLIQUID (can't pay tomorrow's obligations)\n\nThis is why cash flow matters - timing matters!\n\nProfitable companies fail when they run out of cash!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Liquidity risk: Unable to meet short-term obligations when due",
+            "Two types: Funding liquidity and market liquidity",
+            "Key ratios: Current, quick, cash ratio, CCC",
+            "Sources: Internal (operations, assets) and external (credit)",
+            "Warning signs: Declining cash, stretched payables, credit draws",
+            "Mitigation: Forecasting, diversified funding, WC efficiency",
+            "Liquidity ≠ Solvency: Profitable firms can be illiquid"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Liquidity Ratios",
+          "knowledgeCheck": {
+            "question": "A company has: Cash $50K, Receivables $150K, Inventory $200K, Current Liabilities $250K. What is the quick ratio?",
+            "options": [
+              "0.60",
+              "0.80",
+              "1.60",
+              "2.00"
+            ],
+            "correctIndex": 1,
+            "explanation": "Quick ratio = (Current Assets - Inventory) / Current Liabilities = ($50K + $150K) / $250K = $200K / $250K = 0.80. This excludes inventory because it's less liquid than cash or receivables.",
+            "hint": "Quick ratio excludes inventory. Use (Cash + Receivables) / Current Liabilities."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-019",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Hedging Strategies",
+    "description": "Use derivatives and other tools to manage financial risks",
+    "order": 19,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Hedging",
+      "Derivatives",
+      "Risk management",
+      "Currency hedging"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Hedging protects the company from adverse price movements! CMAs evaluate hedging strategies, account for derivatives, and measure hedge effectiveness. Understanding hedging helps manage currency, interest rate, and commodity price risks."
+        },
+        {
+          "title": "What is Hedging?",
+          "type": "text",
+          "content": "**Definition:**\nReducing risk by taking an offsetting position\n\n**Purpose:**\n• Reduce earnings volatility\n• Protect against adverse moves\n• Make outcomes more predictable\n• NOT speculation for profit\n\n**What Can Be Hedged:**\n• Currency exchange rates\n• Interest rates\n• Commodity prices\n• Equity prices\n\n**Trade-off:**\n• Protection comes at a cost\n• Limit downside BUT also upside\n• Basis risk remains"
+        },
+        {
+          "title": "Derivative Instruments",
+          "type": "table",
+          "headers": [
+            "Instrument",
+            "Description",
+            "Key Feature"
+          ],
+          "rows": [
+            [
+              "Forward",
+              "Agreement to buy/sell at future date",
+              "Customized, OTC"
+            ],
+            [
+              "Future",
+              "Standardized forward",
+              "Exchange-traded, margin"
+            ],
+            [
+              "Option",
+              "Right (not obligation) to buy/sell",
+              "Premium paid"
+            ],
+            [
+              "Swap",
+              "Exchange of cash flows",
+              "Interest rate, currency"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Forwards vs Options",
+          "type": "callout",
+          "content": "**Forward/Future:**\n• OBLIGATION to transact\n• No upfront cost (futures have margin)\n• Lock in price - no flexibility\n• Symmetric payoff (gains/losses)\n\n**Option:**\n• RIGHT, not obligation\n• Pay premium upfront\n• Flexibility - only use if beneficial\n• Asymmetric payoff (limited loss, unlimited gain)\n\n**When to Use:**\n• Forward: High confidence in exposure\n• Option: Want protection but keep upside\n\n**Example:**\nUS company due to receive €1M in 90 days\n• Forward: Lock in $/€ rate now\n• Option: Pay premium for right to sell € at set rate"
+        },
+        {
+          "title": "Currency Hedging",
+          "type": "text",
+          "content": "**Transaction Exposure:**\n• Known future receipts/payments\n• Hedge with forwards, options\n\n**Translation Exposure:**\n• Converting subsidiary financials\n• Balance sheet effect\n• Less commonly hedged\n\n**Economic Exposure:**\n• Long-term competitive position\n• Operational hedges (diversify)\n\n**Natural Hedging:**\n• Match currency of revenues and costs\n• Borrow in same currency as assets\n• No derivatives needed\n\n**Leading and Lagging:**\n• Accelerate or delay payment timing\n• Based on currency expectations"
+        },
+        {
+          "title": "Interest Rate Hedging",
+          "type": "text",
+          "content": "**Risk:**\nFloating rate debt → Payment uncertainty\n\n**Interest Rate Swap:**\n• Exchange floating for fixed payments\n• Counterparty exchanges fixed for floating\n• Net settlement periodically\n\n**Example:**\n• Company has $10M floating debt (SOFR + 2%)\n• Enter swap: Receive floating, pay 5% fixed\n• Net effect: Fixed 5% + 2% = 7% locked\n\n**Caps and Floors:**\n• Cap: Maximum rate (buy call)\n• Floor: Minimum rate (buy put)\n• Collar: Buy cap, sell floor (reduces cost)\n\n**Fixed for Floating:**\nSometimes companies want floating exposure!"
+        },
+        {
+          "title": "⚠️ Exam Trap: Hedge Accounting",
+          "type": "warning",
+          "content": "**Accounting for Hedges (ASC 815):**\n\n**Without Hedge Accounting:**\n• Derivative: Mark to market through P&L\n• Hedged item: Different timing\n• Creates volatility (mismatch)\n\n**With Hedge Accounting:**\n• Match timing of gains/losses\n• Reduces artificial volatility\n\n**Types:**\n• **Fair Value Hedge:** Offset changes in asset/liability\n• **Cash Flow Hedge:** Hedge future cash flows, gains to OCI\n• **Net Investment Hedge:** Foreign subsidiary investment\n\n**Requirements:**\n• Formal documentation\n• Effectiveness testing\n• Strict rules - frequently tested!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Hedging: Reduce risk through offsetting positions",
+            "Derivatives: Forwards, futures, options, swaps",
+            "Forward: Obligation, no upfront cost, locks in price",
+            "Option: Right (not obligation), pay premium, keeps upside",
+            "Currency hedging: Transaction, translation, economic exposure",
+            "Interest rate swap: Exchange floating for fixed payments",
+            "Hedge accounting: Matches timing, reduces P&L volatility"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Hedging Instruments",
+          "knowledgeCheck": {
+            "question": "A company wants to protect against currency depreciation but still benefit if the currency appreciates. Which instrument is most appropriate?",
+            "options": [
+              "Forward contract",
+              "Currency swap",
+              "Currency option",
+              "Money market hedge"
+            ],
+            "correctIndex": 2,
+            "explanation": "Options provide the right but not obligation to transact, allowing the company to benefit from favorable currency movements while protecting against adverse ones. Forwards lock in a rate regardless of subsequent movements, eliminating both downside and upside.",
+            "hint": "Which instrument provides downside protection while preserving upside?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-020",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Insurance and Risk Transfer",
+    "description": "Use insurance and other mechanisms to transfer risks",
+    "order": 20,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Insurance",
+      "Risk transfer",
+      "Self-insurance",
+      "Captive insurance"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Insurance is a key risk management tool! CMAs evaluate insurance decisions, manage self-insurance reserves, and analyze the cost-benefit of risk transfer. Understanding insurance options helps optimize the risk management mix."
+        },
+        {
+          "title": "Risk Response Options",
+          "type": "text",
+          "content": "**Four Risk Treatment Options:**\n\n**1. Avoid:**\n• Don't take the risk\n• Exit activity\n\n**2. Reduce/Mitigate:**\n• Controls to lower likelihood/impact\n• Prevention and detection\n\n**3. Transfer:**\n• Insurance\n• Contracts\n• Outsourcing\n• Hedging\n\n**4. Accept/Retain:**\n• Accept the residual risk\n• Self-insure\n• Budget for losses\n\n**Selection:**\nBased on likelihood, impact, and cost"
+        },
+        {
+          "title": "Insurance Types",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Coverage",
+            "Purpose"
+          ],
+          "rows": [
+            [
+              "Property",
+              "Physical assets",
+              "Fire, theft, natural disaster"
+            ],
+            [
+              "Liability",
+              "Third-party claims",
+              "Lawsuits, injuries"
+            ],
+            [
+              "D&O",
+              "Directors/Officers",
+              "Management decisions"
+            ],
+            [
+              "Business Interruption",
+              "Lost income",
+              "Operations stoppage"
+            ],
+            [
+              "Cyber",
+              "Data breach/cyber",
+              "Security incidents"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Insurance Decisions",
+          "type": "callout",
+          "content": "**When to Buy Insurance:**\n\n**Insure When:**\n• Potential loss is catastrophic\n• Can't absorb loss\n• Required by contract/regulation\n• Cost is reasonable vs risk\n\n**Self-Insure (Retain) When:**\n• Losses are predictable\n• Can absorb financially\n• Insurance is expensive\n• Better risk information than insurer\n\n**Key Analysis:**\n• Expected losses\n• Insurance premium\n• Administrative costs\n• Cash flow impact\n• Risk tolerance"
+        },
+        {
+          "title": "Self-Insurance",
+          "type": "text",
+          "content": "**Definition:**\nRetaining risk rather than transferring to insurer\n\n**How It Works:**\n• Set aside reserves for expected losses\n• Pay claims directly\n• May buy excess coverage for large losses\n\n**Advantages:**\n• Avoid insurer profit margin\n• Cash flow benefits\n• Control over claims\n• Incentive to reduce losses\n\n**Disadvantages:**\n• Volatile costs\n• Large loss exposure\n• Administrative burden\n\n**Hybrid Approaches:**\n• High deductibles\n• Self-insured retention (SIR)\n• Captive insurance companies"
+        },
+        {
+          "title": "Captive Insurance",
+          "type": "text",
+          "content": "**Definition:**\nCompany-owned insurer for own risks\n\n**How It Works:**\n• Form subsidiary insurance company\n• Pay premiums to captive\n• Captive pays claims\n• Often in favorable jurisdiction\n\n**Advantages:**\n• Access reinsurance markets\n• Retain underwriting profit\n• Tax deductible premiums\n• Cover hard-to-insure risks\n• Stabilize costs\n\n**Disadvantages:**\n• Capital requirements\n• Regulatory compliance\n• Still retain ultimate risk\n\n**Common Uses:**\n• Large companies\n• Healthcare organizations"
+        },
+        {
+          "title": "⚠️ Exam Trap: Insurance Concepts",
+          "type": "warning",
+          "content": "**Know These Terms:**\n\n**Premium:**\n• Amount paid for coverage\n• Usually annual\n\n**Deductible:**\n• Amount insured pays first\n• Higher deductible = lower premium\n\n**Policy Limit:**\n• Maximum insurer pays\n• Per occurrence or aggregate\n\n**Coinsurance:**\n• Sharing of cost after deductible\n• 80/20: Insurer pays 80%\n\n**Indemnification:**\n• Restore to pre-loss position\n• Can't profit from insurance\n\n**Subrogation:**\n• Insurer's right to pursue third party"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Risk responses: Avoid, reduce, transfer, accept",
+            "Insurance types: Property, liability, D&O, business interruption, cyber",
+            "Insure catastrophic, unpredictable risks",
+            "Self-insure predictable, manageable losses",
+            "Self-insurance: Reserves, direct payment, volatile",
+            "Captive insurance: Company-owned insurer for own risks",
+            "Key terms: Premium, deductible, limit, coinsurance, subrogation"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Risk Transfer",
+          "knowledgeCheck": {
+            "question": "A company forms a wholly-owned subsidiary to insure its own risks and access reinsurance markets. This arrangement is called:",
+            "options": [
+              "Self-insurance",
+              "Captive insurance",
+              "Facultative reinsurance",
+              "Excess insurance"
+            ],
+            "correctIndex": 1,
+            "explanation": "A captive insurance company is a wholly-owned subsidiary formed to insure the parent's risks. It allows the company to retain underwriting profits, access reinsurance, and potentially deduct premiums while still ultimately retaining the risk.",
+            "hint": "Which arrangement involves a company-owned insurer?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-021",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Currency Risk Management",
+    "description": "Manage foreign exchange exposure",
+    "order": 21,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Currency risk",
+      "Transaction exposure",
+      "Translation exposure",
+      "Hedging"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Global operations mean currency risk! CMAs must understand how exchange rate movements affect cash flows, financial statements, and competitive position. Currency risk management protects profitability and cash flows from adverse FX movements. Essential for any company with international operations."
+        },
+        {
+          "title": "Types of Currency Exposure",
+          "type": "text",
+          "content": "**Transaction Exposure:**\n• Impact on cash flows\n• From existing obligations\n• A/R, A/P in foreign currency\n• Most directly managed\n\n**Translation Exposure:**\n• Impact on financial statements\n• Converting subsidiary results\n• Accounting, not economic\n• Often not hedged\n\n**Economic/Operating Exposure:**\n• Impact on competitive position\n• Future cash flows\n• Long-term strategic\n• Hardest to measure"
+        },
+        {
+          "title": "Currency Exposure Types",
+          "type": "table",
+          "headers": [
+            "Exposure",
+            "Time Frame",
+            "Impact"
+          ],
+          "rows": [
+            [
+              "Transaction",
+              "Known timing",
+              "Actual cash flows"
+            ],
+            [
+              "Translation",
+              "Reporting period",
+              "Financial statement values"
+            ],
+            [
+              "Economic",
+              "Long-term",
+              "Competitive position, future CFs"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Hedging Instruments",
+          "type": "callout",
+          "content": "**Forward Contract:**\n• Agreement to exchange at future date\n• Locked-in rate\n• Obligation (must execute)\n• Customized, OTC\n\n**Futures Contract:**\n• Similar to forward\n• Exchange-traded, standardized\n• Daily settlement\n• More liquid\n\n**Currency Option:**\n• Right, not obligation\n• Pay premium\n• Protects downside\n• Keeps upside potential\n\n**Money Market Hedge:**\n• Borrow/lend to offset\n• Match currency of asset/liability\n• Natural hedge"
+        },
+        {
+          "title": "Transaction Exposure Example",
+          "type": "text",
+          "content": "**Scenario:**\nUS company to receive €1,000,000 in 90 days\nCurrent spot: $1.10/€\n90-day forward: $1.08/€\n\n**Unhedged:**\n• If € strengthens to $1.15: Receive $1,150,000\n• If € weakens to $1.05: Receive $1,050,000\n• Range: $100,000 depending on rates\n\n**Forward Hedge:**\n• Sell €1M forward at $1.08\n• Guaranteed: $1,080,000\n• No upside, no downside\n\n**Option Hedge:**\n• Buy put option at $1.10 strike\n• Pay premium (say $15,000)\n• If € < $1.10: Exercise, get $1.10\n• If € > $1.10: Let expire, get spot rate"
+        },
+        {
+          "title": "Natural Hedging",
+          "type": "text",
+          "content": "**Operational Strategies:**\n• Match revenues and costs in same currency\n• Source from countries where you sell\n• Borrow in currency of revenues\n• Invoice in home currency\n\n**Leading and Lagging:**\n• **Lead:** Accelerate payment if currency weakening\n• **Lag:** Delay payment if currency strengthening\n\n**Netting:**\n• Offset intra-company payables/receivables\n• Only settle net amount\n• Reduces transaction costs\n\n**Benefits:**\n• No derivative costs\n• Reduces but doesn't eliminate exposure\n• Strategic, long-term approach"
+        },
+        {
+          "title": "⚠️ Exam Trap: Forwards vs Options",
+          "type": "warning",
+          "content": "**Forward Contracts:**\n• OBLIGATION to transact\n• Locks in rate exactly\n• No upside if rates move favorably\n• No premium cost\n• Best when: Want certainty\n\n**Options:**\n• RIGHT, not obligation\n• Protection with participation\n• Keep upside potential\n• Require premium payment\n• Best when: Want protection + upside\n\n**Common Exam Distinction:**\n• 'Must exercise' = Forward/Futures\n• 'Can choose' = Option\n• Option cost = Premium\n\n**Hedging Policy:**\nCompanies often hedge transaction exposure\nOften choose NOT to hedge translation exposure"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Three types: Transaction, Translation, Economic exposure",
+            "Transaction: Known, affects actual cash flows",
+            "Translation: Accounting, affects reported numbers",
+            "Hedging tools: Forwards, futures, options, money market",
+            "Forwards: Lock in rate, obligation",
+            "Options: Pay premium, keep upside, right not obligation",
+            "Natural hedges: Match currencies, netting, leading/lagging"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Currency Risk",
+          "knowledgeCheck": {
+            "question": "A US company will pay £10 million in 60 days. To hedge this exposure, the company should:",
+            "options": [
+              "Sell pounds forward",
+              "Buy pounds forward",
+              "Buy a pound put option",
+              "Do nothing since translation exposure is unhedgeable"
+            ],
+            "correctIndex": 1,
+            "explanation": "The company has a pound payable (transaction exposure). To hedge, it should buy pounds forward to lock in the exchange rate. This ensures certainty about the dollar cost of the payment regardless of exchange rate movements.",
+            "hint": "Match the hedge to the exposure - payable means you need to BUY the currency."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-022",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Credit Risk Management",
+    "description": "Assess and manage customer credit risk",
+    "order": 22,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Credit risk",
+      "Credit policy",
+      "Credit analysis",
+      "Credit terms"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Bad debts directly reduce profitability! CMAs support credit decisions that balance sales growth with collection risk. Effective credit management protects cash flow while enabling competitive customer terms. This overlaps with working capital management."
+        },
+        {
+          "title": "Credit Risk Overview",
+          "type": "text",
+          "content": "**What is Credit Risk?**\n• Risk that customer won't pay\n• Results in bad debt expense\n• Affects cash flow and profitability\n\n**Trade Credit:**\n• Company extends credit to customers\n• Creates accounts receivable\n• Balance: Sales vs bad debts\n\n**Credit Policy Elements:**\n• Credit standards (who qualifies)\n• Credit terms (payment period)\n• Collection procedures\n\n**Goal:**\nMaximize profitable sales while minimizing bad debts"
+        },
+        {
+          "title": "The Five Cs of Credit",
+          "type": "table",
+          "headers": [
+            "Factor",
+            "Assessment"
+          ],
+          "rows": [
+            [
+              "Character",
+              "Willingness to pay, reputation, history"
+            ],
+            [
+              "Capacity",
+              "Ability to pay from cash flow"
+            ],
+            [
+              "Capital",
+              "Financial strength, net worth"
+            ],
+            [
+              "Collateral",
+              "Assets to secure payment"
+            ],
+            [
+              "Conditions",
+              "Economic/industry conditions"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Credit Decision Analysis",
+          "type": "callout",
+          "content": "**Should We Extend Credit?**\n\n**Expected Profit from Credit Sale:**\n= (1 - Bad debt %) × Contribution margin\n- (Bad debt % × Variable cost)\n\n**Simplified:**\nIf Contribution margin > Expected bad debt loss\n→ Extend credit\n\n**Example:**\n• Selling price: $100\n• Variable cost: $60\n• CM: $40\n• Bad debt probability: 10%\n\n**Expected value:**\n0.90 × $40 - 0.10 × $60\n= $36 - $6 = $30 expected profit\n→ Extend credit!\n\n**Break-even bad debt rate:**\nCM / Sales price = $40 / $100 = 40%"
+        },
+        {
+          "title": "Credit Terms and Discounts",
+          "type": "text",
+          "content": "**Standard Terms Format:**\n2/10, n/30\n• 2% discount if paid within 10 days\n• Full amount due in 30 days\n\n**Setting Credit Terms:**\n• Industry norms\n• Competitive necessity\n• Customer bargaining power\n• Cost of carrying receivables\n\n**Loosening Credit Standards:**\n• Increases sales\n• Increases bad debts\n• Increases carrying costs\n• Net profit impact depends on margins\n\n**Tightening Credit Standards:**\n• Opposite effects\n• Reduces risk but may lose sales"
+        },
+        {
+          "title": "Credit Analysis Tools",
+          "type": "text",
+          "content": "**Information Sources:**\n• Credit bureaus (D&B, Experian)\n• Financial statements\n• Bank references\n• Trade references\n• Payment history\n\n**Key Ratios:**\n• Current ratio, quick ratio\n• Debt-to-equity\n• Times interest earned\n• Days sales outstanding\n\n**Credit Scoring:**\n• Quantitative models\n• Weight multiple factors\n• Produce credit score\n• Automate decisions\n\n**Monitoring:**\n• Age accounts receivable\n• Track payment patterns\n• Watch for warning signs"
+        },
+        {
+          "title": "⚠️ Exam Trap: Changing Credit Policy",
+          "type": "warning",
+          "content": "**Incremental Analysis:**\n\nWhen evaluating credit policy changes:\n\n**Loosening Standards - Consider:**\n+ Additional contribution margin\n- Additional bad debt losses\n- Additional carrying costs\n= Net change in profit\n\n**Example:**\n• New sales: $500,000\n• CM ratio: 30%\n• Additional CM: $150,000\n• Bad debt rate: 8%: $40,000\n• Carrying cost: $10,000\n• Net benefit: $100,000\n\n**Common Mistake:**\nForgetting opportunity cost of investment in A/R\n\n**Carrying Cost:**\n= Average A/R × Cost of capital\n= (Sales/365 × Collection period) × Cost %"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Credit risk: Customer may not pay, creating bad debt",
+            "5 Cs: Character, Capacity, Capital, Collateral, Conditions",
+            "Credit extends sales but increases bad debts and carrying costs",
+            "Extend credit if: CM > Expected bad debt loss",
+            "Credit terms: Discount/discount period, net/net period",
+            "Policy changes: Analyze incremental profit impact",
+            "Include carrying cost (investment in A/R × cost of capital)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Credit Risk",
+          "knowledgeCheck": {
+            "question": "A product has $100 selling price, $70 variable cost, and estimated 5% bad debt rate. What is the expected profit from a credit sale?",
+            "options": [
+              "$25.00",
+              "$26.50",
+              "$28.50",
+              "$30.00"
+            ],
+            "correctIndex": 1,
+            "explanation": "CM = $100 - $70 = $30. Expected profit = 0.95 × $30 - 0.05 × $70 = $28.50 - $3.50 = $25.00... Wait, let me recalculate: 95% pay: we get $30 CM. 5% don't pay: we lose $70 variable cost. Expected = 0.95($30) - 0.05($70) = $28.50 - $3.50 = $25.00.",
+            "hint": "Consider both the CM from payers and loss from non-payers."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-023",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Enterprise Risk Management Framework",
+    "description": "Apply COSO ERM to organizational risk management",
+    "order": 23,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Enterprise risk management",
+      "COSO ERM",
+      "Risk identification",
+      "Risk appetite"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Risk is everywhere in business! CMAs support enterprise-wide risk management by identifying, measuring, and monitoring risks. Understanding ERM frameworks helps integrate risk thinking into strategic planning and operational decisions."
+        },
+        {
+          "title": "ERM Overview",
+          "type": "text",
+          "content": "**Enterprise Risk Management (ERM):**\n• Holistic view of organizational risks\n• Integrated into strategy and performance\n• Board and management responsibility\n• Not just risk avoidance - risk optimization\n\n**ERM vs Traditional Risk Management:**\n• Traditional: Siloed, department-level\n• ERM: Enterprise-wide, integrated\n• Traditional: Defensive\n• ERM: Strategic, value-creating\n\n**Key Frameworks:**\n• COSO ERM (most common)\n• ISO 31000"
+        },
+        {
+          "title": "COSO ERM Components",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Focus"
+          ],
+          "rows": [
+            [
+              "Governance & Culture",
+              "Tone at top, oversight, ethics"
+            ],
+            [
+              "Strategy & Objective-Setting",
+              "Align risks with strategy"
+            ],
+            [
+              "Performance",
+              "Identify, assess, prioritize risks"
+            ],
+            [
+              "Review & Revision",
+              "Monitor changes, improve ERM"
+            ],
+            [
+              "Information & Communication",
+              "Report risks across organization"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Key ERM Concepts",
+          "type": "callout",
+          "content": "**Risk Appetite:**\n• Amount of risk willing to accept\n• Set by board\n• Aligned with strategy\n• Qualitative or quantitative\n\n**Risk Tolerance:**\n• Acceptable variation around objectives\n• More specific than appetite\n• Often quantified\n\n**Risk Capacity:**\n• Maximum risk organization can absorb\n• Before threatening viability\n• Financial and operational limits\n\n**Relationship:**\nCapacity > Appetite > Tolerance\n\nCapacity = The most we CAN take\nAppetite = What we WANT to take\nTolerance = Acceptable range"
+        },
+        {
+          "title": "Risk Identification and Assessment",
+          "type": "text",
+          "content": "**Risk Identification Methods:**\n• Brainstorming sessions\n• Historical analysis\n• Industry benchmarking\n• Process analysis\n• SWOT analysis\n• Scenario planning\n\n**Risk Assessment:**\n• **Likelihood:** Probability of occurrence\n• **Impact:** Severity if it occurs\n• **Velocity:** Speed of impact\n\n**Risk Map (Heat Map):**\n• Plot risks by likelihood and impact\n• Prioritize high/high quadrant\n• Visual communication tool\n\n**Inherent vs Residual Risk:**\n• Inherent: Before controls\n• Residual: After controls applied"
+        },
+        {
+          "title": "Risk Responses",
+          "type": "text",
+          "content": "**Four Risk Response Options:**\n\n**Avoid:**\n• Eliminate the activity\n• Exit the market\n• Don't pursue opportunity\n\n**Reduce (Mitigate):**\n• Implement controls\n• Lower likelihood or impact\n• Most common response\n\n**Share (Transfer):**\n• Insurance\n• Partnerships\n• Contracts (indemnification)\n• Hedging\n\n**Accept:**\n• Within risk appetite\n• Cost of response > benefit\n• Document and monitor\n\n**Choice depends on:** Risk vs reward, cost of response, risk appetite"
+        },
+        {
+          "title": "⚠️ Exam Trap: ERM vs Internal Control",
+          "type": "warning",
+          "content": "**Don't Confuse:**\n\n**COSO ERM:**\n• Risk-focused\n• Strategic and operational\n• 5 components (2017 update)\n• Broader scope\n• Upside and downside risk\n\n**COSO Internal Control:**\n• Control-focused\n• Financial reporting focus\n• 5 components (different ones)\n• Narrower scope\n• Primarily downside risk\n\n**Relationship:**\n• Internal control is PART OF ERM\n• ERM is broader strategic framework\n• Both from COSO\n\n**Exam Tip:**\nKnow which framework is being referenced"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ERM: Enterprise-wide, integrated risk management",
+            "COSO ERM: 5 components including governance and strategy",
+            "Risk appetite: Amount of risk willing to accept",
+            "Risk tolerance: Acceptable variation around objectives",
+            "Assess risks by likelihood, impact, and velocity",
+            "Responses: Avoid, Reduce, Share, Accept",
+            "Internal control is part of, but narrower than, ERM"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "ERM",
+          "knowledgeCheck": {
+            "question": "The amount of risk an organization is willing to accept in pursuit of its objectives is called:",
+            "options": [
+              "Risk tolerance",
+              "Risk capacity",
+              "Risk appetite",
+              "Risk exposure"
+            ],
+            "correctIndex": 2,
+            "explanation": "Risk appetite is the amount of risk an organization is willing to accept in pursuit of value. It's a strategic concept set by the board and guides risk-taking throughout the organization. Risk tolerance is the acceptable variation around specific objectives.",
+            "hint": "Which term describes willingness to accept risk?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-D-024",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Operational Risk Management",
+    "description": "Identify and mitigate risks in business operations",
+    "order": 24,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Operational risk",
+      "Business continuity",
+      "Process risk",
+      "Risk mitigation"
+    ],
+    "blueprintArea": "CMA2-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Operations can fail in many ways! CMAs help identify operational risks, quantify their impact, and develop mitigation strategies. Understanding operational risk is crucial for protecting value and ensuring business continuity."
+        },
+        {
+          "title": "Operational Risk Defined",
+          "type": "text",
+          "content": "**Operational Risk:**\nRisk of loss from inadequate or failed:\n• Internal processes\n• People\n• Systems\n• External events\n\n**Examples:**\n• System failure or cyber attack\n• Employee fraud or error\n• Supply chain disruption\n• Natural disasters\n• Regulatory non-compliance\n• Product defects\n• Process breakdowns"
+        },
+        {
+          "title": "Categories of Operational Risk",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Examples",
+            "Mitigation"
+          ],
+          "rows": [
+            [
+              "People Risk",
+              "Fraud, error, turnover, injury",
+              "Training, controls, culture"
+            ],
+            [
+              "Process Risk",
+              "Errors, inefficiency, breakdowns",
+              "Documentation, automation"
+            ],
+            [
+              "Systems Risk",
+              "IT failure, cyber, data loss",
+              "Backup, security, redundancy"
+            ],
+            [
+              "External Risk",
+              "Suppliers, disasters, regulation",
+              "Diversification, insurance, compliance"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Risk Assessment Matrix",
+          "type": "callout",
+          "content": "**Risk Assessment:**\n\n**Likelihood × Impact = Risk Priority**\n\n| | Low Impact | High Impact |\n|---|---|---|\n| **High Likelihood** | Monitor | Top Priority |\n| **Low Likelihood** | Accept | Prepare |\n\n**Focus on:**\n• High likelihood + high impact = Immediate action\n• Low likelihood + high impact = Contingency plans\n• High likelihood + low impact = Controls and monitoring\n• Low likelihood + low impact = Accept or ignore\n\n**Memory:**\n'Likely and Lethal = Lead with action'"
+        },
+        {
+          "title": "Business Continuity Planning",
+          "type": "text",
+          "content": "**Business Continuity Plan (BCP):**\n• How to continue operations during disruption\n• Identifies critical business functions\n• Recovery strategies and timelines\n\n**Key Elements:**\n• **Business Impact Analysis (BIA):** Which processes are critical?\n• **Recovery Time Objective (RTO):** How quickly must we recover?\n• **Recovery Point Objective (RPO):** How much data loss is acceptable?\n\n**Disaster Recovery (DR):**\n• Subset of BCP\n• Focus on IT systems recovery\n• Backup sites, data restoration\n\n**Testing:**\n• Tabletop exercises\n• Walkthrough drills\n• Full simulation tests"
+        },
+        {
+          "title": "Key Risk Indicators (KRIs)",
+          "type": "text",
+          "content": "**Key Risk Indicators:**\nMetrics that signal increasing risk\n\n**Examples:**\n• System downtime frequency\n• Employee turnover rate\n• Customer complaints\n• Failed quality inspections\n• Cybersecurity incidents\n• Near-miss events\n\n**Characteristics of Good KRIs:**\n• Leading (not lagging)\n• Measurable and objective\n• Relevant to key risks\n• Have defined thresholds\n• Trigger action when exceeded\n\n**KRI vs KPI:**\n• KRI: Risk focused (what could go wrong)\n• KPI: Performance focused (how are we doing)"
+        },
+        {
+          "title": "⚠️ Exam Trap: Risk vs Control",
+          "type": "warning",
+          "content": "**Don't Confuse:**\n\n**Risk:**\n• What could go wrong\n• Potential negative event\n• Uncertainty about outcomes\n• Examples: Fraud, system failure\n\n**Control:**\n• What we do about it\n• Action to mitigate risk\n• Preventive or detective\n• Examples: Segregation of duties, backups\n\n**Inherent Risk:**\n• Risk before controls\n• Raw exposure\n\n**Residual Risk:**\n• Risk after controls\n• What remains despite mitigation\n\n**Formula:**\nInherent Risk - Control Effectiveness = Residual Risk"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Operational risk: Losses from failed processes, people, systems, or external events",
+            "Categories: People, Process, Systems, External",
+            "Assess by likelihood × impact",
+            "BCP: Plan for business continuation during disruption",
+            "RTO: Recovery time; RPO: Acceptable data loss",
+            "KRIs: Leading indicators of increasing risk",
+            "Residual risk = Inherent risk after controls"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Operational Risk",
+          "knowledgeCheck": {
+            "question": "A company determines that its order processing system must be restored within 4 hours of failure to avoid significant customer impact. This 4-hour target is the:",
+            "options": [
+              "Recovery Point Objective (RPO)",
+              "Recovery Time Objective (RTO)",
+              "Business Impact Analysis (BIA)",
+              "Key Risk Indicator (KRI)"
+            ],
+            "correctIndex": 1,
+            "explanation": "Recovery Time Objective (RTO) is the maximum acceptable time to restore a system or process after disruption. RPO relates to data loss tolerance (how far back in time can data be lost). The 4-hour restoration target is an RTO.",
+            "hint": "Which term refers to how quickly a system must be restored?"
+          }
+        }
+      ]
+    }
+  }
+]

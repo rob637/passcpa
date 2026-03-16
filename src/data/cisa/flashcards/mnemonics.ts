@@ -16,6 +16,7 @@ export interface MnemonicFlashcard {
   topic?: string;
   difficulty?: 'easy' | 'medium' | 'hard';
   mnemonic?: string;
+  blueprintArea?: string;
 }
 
 // ==========================================
@@ -25,6 +26,7 @@ export const CISA1_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa1-mn-001',
     section: 'CISA1',
+    blueprintArea: 'CISA1',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -37,6 +39,7 @@ export const CISA1_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa1-mn-002',
     section: 'CISA1',
+    blueprintArea: 'CISA1',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -49,6 +52,7 @@ export const CISA1_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa1-mn-003',
     section: 'CISA1',
+    blueprintArea: 'CISA1',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -61,6 +65,7 @@ export const CISA1_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa1-mn-004',
     section: 'CISA1',
+    blueprintArea: 'CISA1',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -73,6 +78,7 @@ export const CISA1_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa1-mn-005',
     section: 'CISA1',
+    blueprintArea: 'CISA1',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -91,6 +97,7 @@ export const CISA2_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa2-mn-001',
     section: 'CISA2',
+    blueprintArea: 'CISA2',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -103,6 +110,7 @@ export const CISA2_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa2-mn-002',
     section: 'CISA2',
+    blueprintArea: 'CISA2',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -115,6 +123,7 @@ export const CISA2_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa2-mn-003',
     section: 'CISA2',
+    blueprintArea: 'CISA2',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -127,6 +136,7 @@ export const CISA2_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa2-mn-004',
     section: 'CISA2',
+    blueprintArea: 'CISA2',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -139,6 +149,7 @@ export const CISA2_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa2-mn-005',
     section: 'CISA2',
+    blueprintArea: 'CISA2',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -157,6 +168,7 @@ export const CISA3_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa3-mn-001',
     section: 'CISA3',
+    blueprintArea: 'CISA3',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -169,6 +181,7 @@ export const CISA3_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa3-mn-002',
     section: 'CISA3',
+    blueprintArea: 'CISA3',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -181,6 +194,7 @@ export const CISA3_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa3-mn-003',
     section: 'CISA3',
+    blueprintArea: 'CISA3',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -193,6 +207,7 @@ export const CISA3_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa3-mn-004',
     section: 'CISA3',
+    blueprintArea: 'CISA3',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -205,6 +220,7 @@ export const CISA3_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa3-mn-005',
     section: 'CISA3',
+    blueprintArea: 'CISA3',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -223,6 +239,7 @@ export const CISA4_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa4-mn-001',
     section: 'CISA4',
+    blueprintArea: 'CISA4',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -235,6 +252,7 @@ export const CISA4_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa4-mn-002',
     section: 'CISA4',
+    blueprintArea: 'CISA4',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -247,6 +265,7 @@ export const CISA4_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa4-mn-003',
     section: 'CISA4',
+    blueprintArea: 'CISA4',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -259,6 +278,7 @@ export const CISA4_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa4-mn-004',
     section: 'CISA4',
+    blueprintArea: 'CISA4',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -271,6 +291,7 @@ export const CISA4_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa4-mn-005',
     section: 'CISA4',
+    blueprintArea: 'CISA4',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -289,6 +310,7 @@ export const CISA5_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa5-mn-001',
     section: 'CISA5',
+    blueprintArea: 'CISA5',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -301,6 +323,7 @@ export const CISA5_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa5-mn-002',
     section: 'CISA5',
+    blueprintArea: 'CISA5',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -313,6 +336,7 @@ export const CISA5_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa5-mn-003',
     section: 'CISA5',
+    blueprintArea: 'CISA5',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -325,6 +349,7 @@ export const CISA5_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa5-mn-004',
     section: 'CISA5',
+    blueprintArea: 'CISA5',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -337,6 +362,7 @@ export const CISA5_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa5-mn-005',
     section: 'CISA5',
+    blueprintArea: 'CISA5',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -349,6 +375,7 @@ export const CISA5_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa5-mn-006',
     section: 'CISA5',
+    blueprintArea: 'CISA5',
 
     type: 'concept',
     topic: 'mnemonic',

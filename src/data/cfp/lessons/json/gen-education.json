@@ -1,0 +1,1537 @@
+[
+  {
+    "id": "CFP-GEN-L016",
+    "courseId": "cfp",
+    "section": "CFP-GEN",
+    "blueprintArea": "GEN-4",
+    "title": "529 Plans - Qualified Tuition Programs",
+    "description": "Understand 529 plan types, contribution rules, tax benefits, and qualified expenses for education savings",
+    "order": 16,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "529 Plans",
+      "College Savings Plans",
+      "Prepaid Tuition Plans",
+      "Super-Funding",
+      "SECURE 2.0",
+      "Education Expenses"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "529 Plans are state-sponsored, tax-advantaged savings accounts designed to encourage saving for future education costs. Understanding the different types, contribution rules, and qualified expenses is essential for CFP\u00ae professionals advising families on education planning strategies."
+        },
+        {
+          "title": "Two Types of 529 Plans",
+          "type": "text",
+          "content": "There are two main types of 529 plans, each with different features and benefits."
+        },
+        {
+          "title": "529 College Savings Plans",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Contributions",
+              "Cash only, invested in mutual fund-like options"
+            ],
+            [
+              "Control",
+              "Account owner controls investments and distributions"
+            ],
+            [
+              "Use",
+              "Any eligible institution nationwide"
+            ],
+            [
+              "Growth",
+              "Tax-deferred; tax-free if used for qualified expenses"
+            ]
+          ]
+        },
+        {
+          "title": "Prepaid Tuition Plans",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Contributions",
+              "Purchase tuition credits/units"
+            ],
+            [
+              "Guarantee",
+              "Covers future tuition regardless of increases"
+            ],
+            [
+              "Use",
+              "Usually limited to participating schools (often in-state)"
+            ],
+            [
+              "Status",
+              "Declining - fewer states offer them"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Tip: 529 Plan Types",
+          "type": "warning",
+          "content": "Most exam questions focus on 529 College Savings Plans. Know both types exist, but expect the majority of questions to test College Savings Plan rules."
+        },
+        {
+          "title": "Key Tax Benefits",
+          "type": "text",
+          "content": "529 plans offer significant federal and state tax advantages for education savers."
+        },
+        {
+          "title": "Federal Tax Treatment",
+          "type": "table",
+          "headers": [
+            "Benefit",
+            "Description"
+          ],
+          "rows": [
+            [
+              "No federal deduction",
+              "Contributions are NOT federally tax-deductible"
+            ],
+            [
+              "Tax-deferred growth",
+              "Earnings grow without annual taxation"
+            ],
+            [
+              "Tax-free withdrawals",
+              "For qualified education expenses"
+            ],
+            [
+              "Gift tax exclusion",
+              "Contributions qualify for annual exclusion"
+            ]
+          ]
+        },
+        {
+          "title": "State Tax Treatment",
+          "type": "text",
+          "content": "Many states offer **state income tax deductions** for contributions:\n\n\u2022 Deduction limited to in-state plans for some states\n\u2022 Some states offer deduction for any plan\n\u2022 Varies widely - know the client's state"
+        },
+        {
+          "title": "Contribution Rules",
+          "type": "text",
+          "content": "There's no annual federal contribution limit for 529 plans, but several considerations apply:"
+        },
+        {
+          "title": "Contribution Considerations",
+          "type": "table",
+          "headers": [
+            "Consideration",
+            "Details"
+          ],
+          "rows": [
+            [
+              "Gift tax",
+              "Contributions over $19,000/year (2026) per beneficiary use lifetime exclusion"
+            ],
+            [
+              "State limits",
+              "Aggregate limits typically $300,000-$550,000 per beneficiary"
+            ],
+            [
+              "Income limits",
+              "NONE - anyone can contribute regardless of income"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83d\udcca Super-Funding (5-Year Election)",
+          "type": "example",
+          "content": "Contributors can make a lump sum contribution and spread it over 5 years for gift tax purposes.\n\n**2026 Example:**\n\u2022 Maximum super-fund amount: $19,000 \u00d7 5 = **$95,000**\n\u2022 Married couple splitting gifts: $38,000 \u00d7 5 = **$190,000**\n\n**Rules:**\n\u2022 Must file Form 709 each year\n\u2022 Contributor must survive 5 years or excess reverts to estate\n\u2022 No additional gifts to that beneficiary during 5-year period"
+        },
+        {
+          "title": "SECURE 2.0 Act: 529 to Roth IRA Rollover",
+          "type": "text",
+          "content": "**Effective 2024**: Unused 529 funds can be rolled to a **Roth IRA** for the beneficiary. This is a major planning opportunity for families with excess education savings."
+        },
+        {
+          "title": "529 to Roth IRA Rollover Requirements",
+          "type": "table",
+          "headers": [
+            "Requirement",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Account age",
+              "529 must be open 15+ years"
+            ],
+            [
+              "Contribution age",
+              "Contributions from last 5 years excluded"
+            ],
+            [
+              "Annual limit",
+              "Subject to Roth IRA contribution limit ($7,500 in 2026)"
+            ],
+            [
+              "Lifetime limit",
+              "$35,000 maximum rollover per beneficiary"
+            ],
+            [
+              "Income test",
+              "Beneficiary must have earned income"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: SECURE 2.0 Roth Rollover",
+          "type": "callout",
+          "content": "Remember the key numbers: **15 years** (account age), **$35K** (lifetime limit), **5-year lookback** (recent contributions excluded)."
+        },
+        {
+          "title": "Qualified Education Expenses",
+          "type": "text",
+          "content": "Understanding what qualifies for tax-free 529 withdrawals is critical for exam success."
+        },
+        {
+          "title": "Higher Education (Tax-Free Qualified)",
+          "type": "list",
+          "content": [
+            {
+              "term": "Tuition and fees",
+              "definition": "Required for enrollment"
+            },
+            {
+              "term": "Room and board",
+              "definition": "If enrolled at least half-time"
+            },
+            {
+              "term": "Books and supplies",
+              "definition": "Required for courses"
+            },
+            {
+              "term": "Computers and equipment",
+              "definition": "Required for enrollment"
+            },
+            {
+              "term": "Special needs services",
+              "definition": "For special needs beneficiaries"
+            },
+            {
+              "term": "Student loan repayment",
+              "definition": "Up to $10,000 lifetime (SECURE Act)"
+            }
+          ],
+          "items": [
+            "**Tuition & Fees**: Enrollment or attendance costs.",
+            "**Books & Supplies**: Required course materials.",
+            "**Equipment**: Computers and peripherals (if req or for 529).",
+            "**Room & Board**: Only if student is enrolled at least half-time.",
+            "**Special Needs**: Services for special needs beneficiaries."
+          ]
+        },
+        {
+          "title": "K-12 Tuition (Limited)",
+          "type": "text",
+          "content": "\u2022 Up to **$10,000 per year** per beneficiary\n\u2022 **Tuition only** - not books, supplies, or room"
+        },
+        {
+          "title": "Apprenticeship Programs",
+          "type": "text",
+          "content": "Registered apprenticeship programs now qualify for fees, books, supplies, and equipment."
+        },
+        {
+          "title": "Non-Qualified Distributions",
+          "type": "text",
+          "content": "If funds are used for non-qualified expenses, different tax treatment applies:"
+        },
+        {
+          "title": "Non-Qualified Distribution Tax Treatment",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Tax Treatment"
+          ],
+          "rows": [
+            [
+              "Contributions",
+              "Return tax-free (already taxed)"
+            ],
+            [
+              "Earnings",
+              "Taxed as ordinary income + 10% penalty"
+            ]
+          ]
+        },
+        {
+          "title": "Penalty Waivers",
+          "type": "text",
+          "content": "The 10% penalty is waived if:\n\n\u2022 Beneficiary receives tax-free scholarship (to extent of scholarship)\n\u2022 Beneficiary attends U.S. military academy\n\u2022 Beneficiary dies or becomes disabled\n\u2022 Beneficiary receives qualifying employer education assistance"
+        },
+        {
+          "title": "Investment Options",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Age-based",
+              "Automatically becomes more conservative as child ages"
+            ],
+            [
+              "Risk-based",
+              "Choose aggressive, moderate, or conservative"
+            ],
+            [
+              "Static/Individual",
+              "Choose specific funds (stocks, bonds, etc.)"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Investment Change Limit",
+          "type": "warning",
+          "content": "Can change investment strategy **twice per year**. However, you can change anytime when **changing beneficiaries**."
+        },
+        {
+          "title": "Account Ownership and Control",
+          "type": "table",
+          "headers": [
+            "Role",
+            "Rights"
+          ],
+          "rows": [
+            [
+              "Account Owner",
+              "Contributes, controls investments, requests distributions, can change beneficiary"
+            ],
+            [
+              "Beneficiary",
+              "Person whose education expenses are paid; no control rights"
+            ]
+          ]
+        },
+        {
+          "title": "Changing Beneficiaries",
+          "type": "text",
+          "content": "Can change to another **member of the family** without tax consequences:\n\n\u2022 Siblings, children, parents, grandparents\n\u2022 First cousins, aunts, uncles\n\u2022 In-laws of the above\n\u2022 Spouse of the beneficiary"
+        },
+        {
+          "title": "Financial Aid Impact (FAFSA Treatment)",
+          "type": "table",
+          "headers": [
+            "Owner Type",
+            "EFC Impact"
+          ],
+          "rows": [
+            [
+              "Parent-owned",
+              "Counted as parental asset (5.64% maximum)"
+            ],
+            [
+              "Student-owned",
+              "Counted as student asset (higher impact)"
+            ],
+            [
+              "Grandparent-owned",
+              "Previously distributions as untaxed income (now simplified)"
+            ]
+          ]
+        },
+        {
+          "title": "FAFSA Simplification Act (2024)",
+          "type": "callout",
+          "content": "Grandparent-owned 529s no longer count against student aid under the FAFSA Simplification Act."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "**529 College Savings Plans** = investment accounts with tax-free growth for education",
+            "**No federal deduction**, but many states offer deductions",
+            "**Super-funding**: Up to 5 years of gifts at once ($95,000 single/$190,000 married in 2026)",
+            "**SECURE 2.0**: Unused funds can roll to Roth IRA ($35,000 lifetime limit)",
+            "Non-qualified withdrawals: **Earnings taxed + 10% penalty**"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "529 Plan Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following statements regarding 529 plans is MOST accurate?",
+            "options": [
+              "Earnings in a 529 plan are always subject to federal income tax upon withdrawal.",
+              "529 plans are only available for tuition expenses at four-year colleges and universities.",
+              "Contributions to a 529 plan are always deductible for federal income tax purposes.",
+              "529 plans offer tax-advantaged savings for qualified education expenses."
+            ],
+            "correctIndex": 3,
+            "explanation": "529 plans provide tax-advantaged savings, meaning earnings grow tax-deferred and withdrawals are tax-free when used for qualified education expenses. While some states offer deductions for contributions, this is not a federal benefit. 529 plans can be used for more than just four-year colleges, and earnings are only taxed if not used for qualified expenses.",
+            "hint": "Think about the core benefit that makes 529 plans attractive for college savings."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "SECURE 2.0 and 529 Plans",
+          "reveal": {
+            "question": "Explain how the SECURE 2.0 Act impacts 529 plans, focusing on potential rollovers.",
+            "answer": "The SECURE 2.0 Act allows beneficiaries of 529 plans to roll over unused funds into a Roth IRA, subject to certain conditions. Specifically, the 529 plan must have been open for more than 15 years, the rollover is subject to annual Roth IRA contribution limits and a lifetime cap, and the beneficiary of the Roth IRA must be the same as the 529 plan beneficiary."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "College Savings vs. Prepaid Tuition Plans",
+          "comparison": {
+            "headers": [
+              "College Savings Plan (529)"
+            ],
+            "rows": [
+              {
+                "label": "Investment Risk",
+                "values": [
+                  "The account owner directs investments; performance depends on market conditions."
+                ]
+              },
+              {
+                "label": "Qualified Expenses",
+                "values": [
+                  "Can be used for tuition, fees, room and board, books, and supplies at eligible educational institutions (including K-12 up to $10,000 per year)."
+                ]
+              },
+              {
+                "label": "Tuition Locking",
+                "values": [
+                  "Does not lock in tuition rates."
+                ]
+              },
+              {
+                "label": "State Residency",
+                "values": [
+                  "Often, but not always, open to out-of-state residents."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-GEN-L017",
+    "courseId": "cfp",
+    "section": "CFP-GEN",
+    "blueprintArea": "GEN-4",
+    "title": "Coverdell ESAs and Education Savings Bonds",
+    "description": "Compare Coverdell ESA contribution limits, income restrictions, and K-12 advantages with 529 plans and savings bond education exclusions",
+    "order": 17,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Coverdell ESA",
+      "Education IRAs",
+      "Series EE Bonds",
+      "Series I Bonds",
+      "Education Savings",
+      "K-12 Education"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Beyond 529 plans, Coverdell ESAs and certain savings bonds offer additional tax-advantaged education savings options. Understanding the differences helps advisors recommend the right mix of education funding vehicles for each client situation."
+        },
+        {
+          "title": "Coverdell Education Savings Accounts (ESAs)",
+          "type": "text",
+          "content": "Coverdell ESAs (formerly Education IRAs) provide tax-free growth for education expenses with some key limitations."
+        },
+        {
+          "title": "Coverdell ESA Overview",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Annual contribution limit",
+              "**$2,000** per beneficiary"
+            ],
+            [
+              "Contribution deadline",
+              "April 15 of following year"
+            ],
+            [
+              "Income limits",
+              "Phase-out applies (see below)"
+            ],
+            [
+              "Age limit",
+              "Beneficiary must be under 18 (exceptions for special needs)"
+            ],
+            [
+              "Distribution deadline",
+              "Funds must be used by age 30"
+            ]
+          ]
+        },
+        {
+          "title": "Income Phase-Out (2026)",
+          "type": "table",
+          "headers": [
+            "Filing Status",
+            "Full Contribution",
+            "Phase-Out",
+            "No Contribution"
+          ],
+          "rows": [
+            [
+              "Single/HOH",
+              "< $95,000",
+              "$95,000 - $110,000",
+              "> $110,000"
+            ],
+            [
+              "MFJ",
+              "< $190,000",
+              "$190,000 - $220,000",
+              "> $220,000"
+            ]
+          ]
+        },
+        {
+          "title": "Coverdell vs. 529 Comparison",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Coverdell ESA",
+            "529 Plan"
+          ],
+          "rows": [
+            [
+              "Annual contribution limit",
+              "$2,000",
+              "No limit (gift tax applies)"
+            ],
+            [
+              "Income limits",
+              "Yes (phase-out)",
+              "**None**"
+            ],
+            [
+              "Age restrictions",
+              "Under 18 to contribute, 30 to use",
+              "**None**"
+            ],
+            [
+              "K-12 expenses",
+              "Broad (tuition, books, supplies, uniforms)",
+              "**Tuition only** ($10,000 max)"
+            ],
+            [
+              "Investment options",
+              "Self-directed (any investment)",
+              "Limited to plan options"
+            ],
+            [
+              "State tax deduction",
+              "**No**",
+              "Often yes"
+            ]
+          ]
+        },
+        {
+          "title": "Key Advantage of Coverdell",
+          "type": "callout",
+          "content": "**Broader K-12 qualified expenses** - not just tuition, but also books and supplies, tutoring, uniforms, transportation, and computer equipment."
+        },
+        {
+          "title": "Distribution Rules",
+          "type": "text",
+          "content": "Coverdell ESAs offer different qualified expenses for higher education versus K-12."
+        },
+        {
+          "title": "Higher Education Qualified Expenses",
+          "type": "text",
+          "content": "Same as 529: tuition, fees, books, room & board, computer equipment."
+        },
+        {
+          "title": "Elementary/Secondary (K-12) Qualified Expenses",
+          "type": "list",
+          "content": [
+            {
+              "term": "Tuition, fees, books, supplies",
+              "definition": "Core educational expenses"
+            },
+            {
+              "term": "Academic tutoring",
+              "definition": "Supplemental instruction"
+            },
+            {
+              "term": "Room and board",
+              "definition": "If away from home"
+            },
+            {
+              "term": "Uniforms",
+              "definition": "Required school attire"
+            },
+            {
+              "term": "Transportation",
+              "definition": "To and from school"
+            },
+            {
+              "term": "Extended day programs",
+              "definition": "Before/after school care"
+            }
+          ],
+          "items": [
+            "**529 Plans**: Up to $10,000 per year per beneficiary for K-12 tuition.",
+            "**Coverdell ESA**: Tuition, fees, books, supplies, equipment, tutoring, and special needs services for K-12."
+          ]
+        },
+        {
+          "title": "Non-Qualified Distributions",
+          "type": "text",
+          "content": "Same as 529:\n\n\u2022 Contributions return tax-free\n\u2022 Earnings taxed as ordinary income + **10% penalty**"
+        },
+        {
+          "title": "\u26a0\ufe0f Coordination with 529",
+          "type": "warning",
+          "content": "Can contribute to **both** Coverdell and 529 in same year for same beneficiary, but total education tax benefits cannot exceed actual qualified expenses. Expenses used for Coverdell can't also be used for 529 or AOTC/LLC."
+        },
+        {
+          "title": "Series EE and Series I Savings Bonds",
+          "type": "text",
+          "content": "Interest from EE and I bonds can be **tax-free** if used for qualified higher education expenses."
+        },
+        {
+          "title": "Education Tax Exclusion Requirements",
+          "type": "table",
+          "headers": [
+            "Requirement",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Bond issuance",
+              "Must be issued **after 1989**"
+            ],
+            [
+              "Owner age",
+              "Owner must be **at least 24** at issuance"
+            ],
+            [
+              "Ownership",
+              "Owner or co-owner must be taxpayer, spouse, or dependent"
+            ],
+            [
+              "Qualified expenses",
+              "Tuition and REQUIRED fees at eligible institution"
+            ],
+            [
+              "Registration",
+              "Cannot be in child's name"
+            ]
+          ]
+        },
+        {
+          "title": "Income Limits (2026)",
+          "type": "table",
+          "headers": [
+            "Filing Status",
+            "Full Exclusion",
+            "Phase-Out",
+            "No Exclusion"
+          ],
+          "rows": [
+            [
+              "Single/HOH",
+              "< $100,800",
+              "$100,800 - $115,800",
+              "> $115,800"
+            ],
+            [
+              "MFJ",
+              "< $151,300",
+              "$151,300 - $181,300",
+              "> $181,300"
+            ]
+          ]
+        },
+        {
+          "title": "Bond Exclusion Calculation",
+          "type": "text",
+          "content": "If qualified expenses are less than total bond proceeds, a partial exclusion applies:\n\n$$\\text{Excludable Interest} = \\text{Interest} \\times \\frac{\\text{Qualified Expenses}}{\\text{Bond Proceeds}}$$"
+        },
+        {
+          "title": "\ud83d\udcca Bond Exclusion Example",
+          "type": "example",
+          "content": "**Bond redemption**: $15,000 (principal) + $3,000 (interest) = $18,000\n**Qualified expenses**: $12,000\n\n$$\\text{Excludable Interest} = \\$3,000 \\times \\frac{\\$12,000}{\\$18,000} = \\$2,000$$\n\n**Tax-free interest**: $2,000\n**Taxable interest**: $1,000"
+        },
+        {
+          "title": "Coordination Rules",
+          "type": "text",
+          "content": "Understanding how multiple education accounts interact is crucial for planning."
+        },
+        {
+          "title": "Same Year Contributions",
+          "type": "text",
+          "content": "Can fund multiple accounts for same beneficiary:\n\n\u2022 529 Plan\n\u2022 Coverdell ESA\n\u2022 UTMA/UGMA\n\u2022 Trust accounts"
+        },
+        {
+          "title": "\u26a0\ufe0f No Double-Dipping",
+          "type": "warning",
+          "content": "An expense can only qualify for **ONE** tax benefit:\n\n\u2022 529 tax-free distribution, OR\n\u2022 Coverdell tax-free distribution, OR\n\u2022 AOTC/LLC tax credit, OR\n\u2022 Qualified scholarship\n\n**Strategy**: Use some expenses for tax credits (AOTC/LLC) and others for 529/Coverdell."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "**Coverdell ESA**: $2,000/year limit, income phase-out, must use by age 30",
+            "**Coverdell K-12 advantage**: Broader expenses (books, tutoring) vs. 529 tuition-only limit",
+            "**Savings bonds education exclusion**: Owner must be 24+ at issuance",
+            "**Bonds must be in parent/taxpayer name**, not child's name",
+            "**Same expense cannot be used** for both 529/Coverdell AND education credits"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Coverdell ESA Eligibility and Contributions",
+          "knowledgeCheck": {
+            "question": "Which of the following statements regarding Coverdell ESAs is CORRECT?",
+            "options": [
+              "Contributions are tax-deductible.",
+              "The maximum annual contribution is $4,000 per beneficiary.",
+              "Contributions can be made regardless of the contributor's income.",
+              "The beneficiary must use the funds by age 30, unless they have special needs."
+            ],
+            "correctIndex": 3,
+            "explanation": "The correct answer is D. Coverdell ESAs require funds to be used by age 30 (unless the beneficiary is a special needs beneficiary). Contributions are NOT tax-deductible. The maximum annual contribution is $2,000 per beneficiary. Contributions are limited based on the contributor's income.",
+            "hint": "Remember the contribution limit and the beneficiary age restriction."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Tax Implications of Education Savings Bonds",
+          "reveal": {
+            "question": "Under what circumstances are Series EE or Series I bonds exempt from federal income tax when used for education expenses?",
+            "answer": "The bonds must be redeemed in the same year that qualified education expenses are incurred. The bonds must be registered in the name of the parent (if the child is a dependent) and the taxpayer's modified adjusted gross income (MAGI) must be below a certain level (which is subject to change each year). The taxpayer must be over age 24 when the bond is issued."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Coverdell ESA vs. 529 Plan",
+          "comparison": {
+            "headers": [
+              "Coverdell ESA",
+              "529 Plan"
+            ],
+            "rows": [
+              {
+                "label": "Contribution Limit",
+                "values": [
+                  "$2,000 per beneficiary per year",
+                  "Varies by state; often much higher"
+                ]
+              },
+              {
+                "label": "Eligible Education Expenses",
+                "values": [
+                  "K-12 and higher education",
+                  "Primarily higher education; some plans allow K-12"
+                ]
+              },
+              {
+                "label": "Control of Investments",
+                "values": [
+                  "Greater control over investments",
+                  "Limited investment options, typically managed by the state or institution"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-GEN-L018",
+    "courseId": "cfp",
+    "section": "CFP-GEN",
+    "blueprintArea": "GEN-4",
+    "title": "Education Tax Credits and Deductions",
+    "description": "Compare AOTC and Lifetime Learning Credit, apply income phase-outs, and coordinate education credits with 529/Coverdell distributions",
+    "order": 18,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "American Opportunity Tax Credit",
+      "Lifetime Learning Credit",
+      "Student Loan Interest Deduction",
+      "Education Tax Benefits",
+      "Section 127"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Education tax credits provide dollar-for-dollar reductions in tax liability, often more valuable than deductions. Understanding when to use AOTC vs. LLC and how to coordinate with 529 plans can save families thousands of dollars."
+        },
+        {
+          "title": "American Opportunity Tax Credit (AOTC)",
+          "type": "text",
+          "content": "The **most valuable** education tax credit for undergraduates."
+        },
+        {
+          "title": "AOTC Overview",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Maximum credit",
+              "**$2,500 per student per year**"
+            ],
+            [
+              "Calculation",
+              "100% of first $2,000 + 25% of next $2,000"
+            ],
+            [
+              "Refundable portion",
+              "**40% ($1,000) is refundable**"
+            ],
+            [
+              "Eligibility period",
+              "**First 4 years** of post-secondary education"
+            ],
+            [
+              "Enrollment",
+              "At least **half-time**"
+            ],
+            [
+              "Felony drug conviction",
+              "**Disqualifies**"
+            ]
+          ]
+        },
+        {
+          "title": "AOTC Qualified Expenses",
+          "type": "list",
+          "content": [
+            {
+              "term": "Tuition and required fees",
+              "definition": "Costs required for enrollment"
+            },
+            {
+              "term": "Course materials",
+              "definition": "Books, supplies, equipment required for courses"
+            },
+            {
+              "term": "NOT included",
+              "definition": "Room and board, transportation, insurance"
+            }
+          ],
+          "items": [
+            "**Tuition**: Cost of instruction.",
+            "**Fees**: Required enrollment fees.",
+            "**Course Materials**: Books/supplies needed for course (even if not bought from institution).",
+            "**Excluded**: Room and board, transportation, insurance, medical expenses are NOT qualified for AOTC."
+          ]
+        },
+        {
+          "title": "AOTC Income Phase-Out (2026)",
+          "type": "table",
+          "headers": [
+            "Filing Status",
+            "Full Credit",
+            "Phase-Out",
+            "No Credit"
+          ],
+          "rows": [
+            [
+              "Single/HOH",
+              "< $80,000",
+              "$80,000 - $90,000",
+              "> $90,000"
+            ],
+            [
+              "MFJ",
+              "< $160,000",
+              "$160,000 - $180,000",
+              "> $180,000"
+            ]
+          ]
+        },
+        {
+          "title": "Lifetime Learning Credit (LLC)",
+          "type": "text",
+          "content": "Broader eligibility than AOTC, but smaller benefit."
+        },
+        {
+          "title": "LLC Overview",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Maximum credit",
+              "**$2,000 per tax return** (not per student)"
+            ],
+            [
+              "Calculation",
+              "20% of first $10,000 in expenses"
+            ],
+            [
+              "Refundable",
+              "**No** - non-refundable credit"
+            ],
+            [
+              "Eligibility period",
+              "**Unlimited** - any year, any number of years"
+            ],
+            [
+              "Enrollment",
+              "**Any enrollment** - even one course"
+            ],
+            [
+              "Felony drug conviction",
+              "**No restriction**"
+            ]
+          ]
+        },
+        {
+          "title": "LLC Qualified Expenses",
+          "type": "text",
+          "content": "\u2022 Tuition and required fees\n\u2022 Course materials if required to be purchased from institution\n\u2022 **NOT** included: Books purchased elsewhere, room and board"
+        },
+        {
+          "title": "LLC Income Phase-Out (2026)",
+          "type": "table",
+          "headers": [
+            "Filing Status",
+            "Full Credit",
+            "Phase-Out",
+            "No Credit"
+          ],
+          "rows": [
+            [
+              "Single/HOH",
+              "< $80,000",
+              "$80,000 - $90,000",
+              "> $90,000"
+            ],
+            [
+              "MFJ",
+              "< $160,000",
+              "$160,000 - $180,000",
+              "> $180,000"
+            ]
+          ]
+        },
+        {
+          "title": "AOTC vs. LLC Comparison",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "AOTC",
+            "LLC"
+          ],
+          "rows": [
+            [
+              "Maximum",
+              "$2,500/student",
+              "$2,000/return"
+            ],
+            [
+              "Refundable",
+              "Yes (40%)",
+              "No"
+            ],
+            [
+              "Years available",
+              "4 years only",
+              "Unlimited"
+            ],
+            [
+              "Enrollment",
+              "Half-time minimum",
+              "Even one course"
+            ],
+            [
+              "Professional degrees",
+              "No (undergrad only)",
+              "**Yes**"
+            ],
+            [
+              "Graduate school",
+              "No",
+              "**Yes**"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: AOTC vs. LLC",
+          "type": "callout",
+          "content": "**AOTC = American = First 4 is the OPPORTUNITY**\n**LLC = Lifetime = LEARNING for LIFE (unlimited years)**\n\nUse AOTC for first 4 years of college; switch to LLC for 5th year or graduate school."
+        },
+        {
+          "title": "Choosing the Right Credit",
+          "type": "text",
+          "content": "**Choose AOTC when:**\n\u2022 First 4 years of undergraduate\n\u2022 The student has no felony drug conviction\n\u2022 Need refundable credit (low tax liability)\n\n**Choose LLC when:**\n\u2022 Graduate school or professional degree\n\u2022 5th year of undergraduate\n\u2022 Less than half-time enrollment\n\u2022 Taking courses for job skills (not degree)"
+        },
+        {
+          "title": "Student Loan Interest Deduction",
+          "type": "text",
+          "content": "**Above-the-line deduction** (reduces AGI regardless of itemizing)."
+        },
+        {
+          "title": "Student Loan Interest Deduction Overview",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Maximum deduction",
+              "**$2,500 per year**"
+            ],
+            [
+              "Loan type",
+              "Any qualified education loan"
+            ],
+            [
+              "Interest only",
+              "Cannot deduct principal"
+            ],
+            [
+              "Dependency",
+              "Cannot claim if claimed as dependent"
+            ]
+          ]
+        },
+        {
+          "title": "Student Loan Interest Income Phase-Out (2026)",
+          "type": "table",
+          "headers": [
+            "Filing Status",
+            "Full Deduction",
+            "Phase-Out",
+            "No Deduction"
+          ],
+          "rows": [
+            [
+              "Single/HOH",
+              "< $80,000",
+              "$80,000 - $95,000",
+              "> $95,000"
+            ],
+            [
+              "MFJ",
+              "< $165,000",
+              "$165,000 - $195,000",
+              "> $195,000"
+            ]
+          ]
+        },
+        {
+          "title": "Qualified Loans",
+          "type": "text",
+          "content": "**Qualified:**\n\u2022 Federal student loans\n\u2022 Private student loans\n\u2022 Loans from any lender for qualified education expenses\n\n**NOT Qualified:**\n\u2022 Loans from relatives\n\u2022 Employer plan loans\n\u2022 Loans from qualified retirement plans"
+        },
+        {
+          "title": "\u26a0\ufe0f Coordination with 529/Coverdell",
+          "type": "warning",
+          "content": "**You cannot double-dip**: Expenses used for tax-free distributions CANNOT also be used for education credits."
+        },
+        {
+          "title": "\ud83d\udcca Optimal Strategy Example",
+          "type": "example",
+          "content": "For a student with $15,000 in tuition and $5,000 in books:\n\n**Option A: All 529**\n\u2022 Withdraw $20,000 tax-free from 529\n\u2022 No education credits\n\n**Option B: Split (Usually Better)**\n\u2022 Withdraw $16,000 from 529 for room/board and remaining tuition\n\u2022 Pay $4,000 of tuition out-of-pocket (or taxable 529)\n\u2022 Claim AOTC: 100% \u00d7 $2,000 + 25% \u00d7 $2,000 = **$2,500 credit**\n\n**Net Benefit**: $2,500 credit > tax avoided on $4,000 of 529 earnings"
+        },
+        {
+          "title": "Employer-Provided Education Assistance (Section 127)",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Maximum exclusion",
+              "**$5,250 per year**"
+            ],
+            [
+              "Courses",
+              "Any education (doesn't need to be job-related)"
+            ],
+            [
+              "Undergraduate and graduate",
+              "Both qualify"
+            ],
+            [
+              "Student loans",
+              "Can be used for student loan repayment (through 2025)"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "**AOTC**: $2,500/student, 40% refundable, first 4 undergraduate years only",
+            "**LLC**: $2,000/return, non-refundable, unlimited years, includes graduate school",
+            "**Student loan interest**: Up to $2,500 deduction, above-the-line",
+            "**No double-dipping**: Separate expenses for 529/Coverdell vs. credits",
+            "**Employer education assistance**: $5,250 tax-free per year"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "AOTC Qualified Expenses Check",
+          "knowledgeCheck": {
+            "question": "Which of the following expenses qualifies for the American Opportunity Tax Credit (AOTC)?",
+            "options": [
+              "Room and board",
+              "Tuition and required fees",
+              "Transportation",
+              "Medical expenses"
+            ],
+            "correctIndex": 1,
+            "explanation": "Tuition and required fees are specifically listed as qualified expenses for the AOTC. Room and board, transportation, and medical expenses are not.",
+            "hint": "Remember the specific items that are included versus excluded."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "AOTC - Most Valuable?",
+          "reveal": {
+            "question": "Why is the American Opportunity Tax Credit (AOTC) often considered the most valuable education tax credit for undergraduates?",
+            "answer": "The AOTC is often the most valuable because it offers a larger maximum credit amount, a portion of it is refundable (meaning you can receive some of the credit back as a refund even if you don't owe any taxes), and it is available for the first four years of higher education."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "AOTC vs Lifetime Learning Credit",
+          "comparison": {
+            "headers": [
+              "American Opportunity Tax Credit (AOTC)",
+              "Lifetime Learning Credit (LLC)"
+            ],
+            "rows": [
+              {
+                "label": "Student Level",
+                "values": [
+                  "Undergraduate (first 4 years)",
+                  "Undergraduate, Graduate, Professional"
+                ]
+              },
+              {
+                "label": "Credit Amount",
+                "values": [
+                  "Up to $2,500",
+                  "Up to $2,000"
+                ]
+              },
+              {
+                "label": "Refundable",
+                "values": [
+                  "40% refundable (up to $1,000)",
+                  "Nonrefundable"
+                ]
+              },
+              {
+                "label": "Coursework",
+                "values": [
+                  "Degree seeking",
+                  "Degree seeking or courses to improve job skills"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-GEN-L019",
+    "courseId": "cfp",
+    "section": "CFP-GEN",
+    "blueprintArea": "GEN-4",
+    "title": "Financial Aid and Student Loan Strategies",
+    "description": "Understand FAFSA methodology, asset treatment differences, federal vs. private loans, and strategies to maximize financial aid eligibility",
+    "order": 19,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "FAFSA",
+      "Student Aid Index",
+      "Financial Aid",
+      "Federal Student Loans",
+      "Private Student Loans",
+      "Asset Positioning"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Understanding financial aid can help families maximize eligibility and minimize education costs. The difference between parent-owned and student-owned assets can mean thousands of dollars in aid eligibility."
+        },
+        {
+          "title": "FAFSA Overview",
+          "type": "text",
+          "content": "The **Free Application for Federal Student Aid (FAFSA)** determines eligibility for:\n\n\u2022 Federal grants (Pell Grant, FSEOG)\n\u2022 Federal student loans (Direct)\n\u2022 Work-study programs\n\u2022 Many state and institutional aid programs"
+        },
+        {
+          "title": "FAFSA Simplification Act (Effective 2024-25)",
+          "type": "callout",
+          "content": "Major changes include:\n\n\u2022 New **Student Aid Index (SAI)** replaces EFC\n\u2022 Reduced questions (108 \u2192 36)\n\u2022 Simplified needs test for more families\n\u2022 Grandparent-owned 529s no longer counted as student income"
+        },
+        {
+          "title": "Student Aid Index (SAI) Calculation",
+          "type": "text",
+          "content": "The SAI formula considers both parent and student income and assets."
+        },
+        {
+          "title": "Parent Income Assessment",
+          "type": "table",
+          "headers": [
+            "Parent AGI Component",
+            "Treatment"
+          ],
+          "rows": [
+            [
+              "Total income",
+              "Starting point"
+            ],
+            [
+              "Minus: Allowances",
+              "Income protection, employment expense, taxes"
+            ],
+            [
+              "Adjusted Available Income (AAI)",
+              "Subject to 22%-47% contribution rate"
+            ]
+          ]
+        },
+        {
+          "title": "Parent Asset Assessment",
+          "type": "table",
+          "headers": [
+            "Asset Type",
+            "Assessment Rate"
+          ],
+          "rows": [
+            [
+              "Parent assets above asset protection",
+              "**Up to 5.64%** per year"
+            ],
+            [
+              "Asset protection allowance",
+              "Based on age ($0 for younger parents)"
+            ]
+          ]
+        },
+        {
+          "title": "Student Income Assessment",
+          "type": "table",
+          "headers": [
+            "Student Income",
+            "Treatment"
+          ],
+          "rows": [
+            [
+              "Income protection",
+              "~$9,410 (2024-25)"
+            ],
+            [
+              "Income above protection",
+              "**50%** assessed"
+            ]
+          ]
+        },
+        {
+          "title": "Student Asset Assessment",
+          "type": "table",
+          "headers": [
+            "Asset Type",
+            "Assessment Rate"
+          ],
+          "rows": [
+            [
+              "All student assets",
+              "**20%** per year"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Critical Asset Distinction",
+          "type": "warning",
+          "content": "Parent assets are assessed at a maximum of **5.64%** while student assets are assessed at **20%**. This 3.5\u00d7 difference makes asset ownership structure critically important."
+        },
+        {
+          "title": "Asset Treatment by Account Type",
+          "type": "text",
+          "content": "Different accounts have very different financial aid impacts."
+        },
+        {
+          "title": "Parental Assets (5.64% Maximum)",
+          "type": "text",
+          "content": "\u2022 **Parent-owned 529 plans** (student is beneficiary)\n\u2022 **Cash, checking, savings**\n\u2022 **Investment accounts** (non-retirement)\n\u2022 **Real estate** (excluding primary home)\n\u2022 **Business equity** (if >100 employees)"
+        },
+        {
+          "title": "Student Assets (20%)",
+          "type": "text",
+          "content": "\u2022 **Student-owned 529 plans**\n\u2022 **UTMA/UGMA custodial accounts** (student is owner at majority)\n\u2022 **Student savings/checking**\n\u2022 **Student investments**"
+        },
+        {
+          "title": "Excluded Assets",
+          "type": "text",
+          "content": "\u2022 **Retirement accounts** (401k, IRA, Roth IRA, pensions)\n\u2022 **Primary residence equity**\n\u2022 **Cash value of life insurance**\n\u2022 **Personal property** (cars, furniture)\n\u2022 **Small business equity** (<100 employees, family-owned)"
+        },
+        {
+          "title": "\ud83d\udcca Impact Analysis Example",
+          "type": "example",
+          "content": "**Client Situation:**\n\u2022 Parent-owned 529: $100,000\n\u2022 UTMA in student's name: $50,000\n\n**Financial Aid Impact:**\n\u2022 529 impact: $100,000 \u00d7 5.64% = **$5,640** expected contribution\n\u2022 UTMA impact: $50,000 \u00d7 20% = **$10,000** expected contribution\n\n**Key Insight:** UTMA nearly **doubles** the financial aid impact despite being half the value!"
+        },
+        {
+          "title": "Federal Student Loan Types",
+          "type": "text",
+          "content": "Understanding the different federal loan options helps families make informed borrowing decisions."
+        },
+        {
+          "title": "Direct Subsidized Loans",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Eligibility",
+              "Demonstrated financial need"
+            ],
+            [
+              "Interest accrual",
+              "Government pays interest during school"
+            ],
+            [
+              "Annual limits",
+              "$3,500 (Fr), $4,500 (So), $5,500 (Jr/Sr)"
+            ],
+            [
+              "Aggregate limit",
+              "$23,000 (dependent undergraduate)"
+            ]
+          ]
+        },
+        {
+          "title": "Direct Unsubsidized Loans",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Eligibility",
+              "No need requirement"
+            ],
+            [
+              "Interest accrual",
+              "Student responsible from disbursement"
+            ],
+            [
+              "Annual limits",
+              "Same base + additional amounts"
+            ],
+            [
+              "Aggregate limit",
+              "$31,000 (dependent undergraduate)"
+            ]
+          ]
+        },
+        {
+          "title": "Parent PLUS Loans",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Eligibility",
+              "Parent of dependent student, no adverse credit"
+            ],
+            [
+              "Amount",
+              "Up to cost of attendance minus other aid"
+            ],
+            [
+              "Interest",
+              "Higher rate than student loans"
+            ],
+            [
+              "Repayment",
+              "Parent is responsible (cannot transfer)"
+            ]
+          ]
+        },
+        {
+          "title": "Financial Aid Strategies",
+          "type": "text",
+          "content": "Several legitimate strategies can help maximize financial aid eligibility."
+        },
+        {
+          "title": "1. Asset Positioning",
+          "type": "text",
+          "content": "**Before FAFSA filing:**\n\n\u2022 Reduce cash in student's name\n\u2022 Pay down debt with liquid assets\n\u2022 Max out parent retirement contributions (excluded)\n\u2022 Consider prepaying non-education expenses"
+        },
+        {
+          "title": "2. Timing Income",
+          "type": "text",
+          "content": "\u2022 Defer bonuses if possible\n\u2022 Realize capital gains in non-FAFSA years\n\u2022 Control income recognition where possible"
+        },
+        {
+          "title": "3. Use Parent-Owned 529s",
+          "type": "text",
+          "content": "\u2022 Counts as parent asset (5.64%) not student (20%)\n\u2022 Qualified distributions don't count as income"
+        },
+        {
+          "title": "4. FAFSA Filing Timing",
+          "type": "text",
+          "content": "\u2022 File early (October 1 for following fall)\n\u2022 Use prior-prior year tax data\n\u2022 Submit corrections promptly if situation changes"
+        },
+        {
+          "title": "Private Student Loans",
+          "type": "text",
+          "content": "Private loans should typically be a last resort after exhausting federal options."
+        },
+        {
+          "title": "When to Consider Private Loans",
+          "type": "text",
+          "content": "\u2022 After exhausting federal options\n\u2022 If federal limits don't meet needs\n\u2022 If credit-worthy with low rates available"
+        },
+        {
+          "title": "Federal vs. Private Loan Comparison",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Federal",
+            "Private"
+          ],
+          "rows": [
+            [
+              "Interest rates",
+              "Set by law (fixed)",
+              "Based on credit (often variable)"
+            ],
+            [
+              "Income-driven repayment",
+              "Yes",
+              "Rarely"
+            ],
+            [
+              "Public Service Forgiveness",
+              "Yes",
+              "No"
+            ],
+            [
+              "Death/disability discharge",
+              "Yes",
+              "Varies"
+            ],
+            [
+              "Cosigner release",
+              "N/A",
+              "Sometimes available"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "**Parent assets**: 5.64% max assessment; **Student assets**: 20% assessment",
+            "**UTMA disadvantage**: Counted as student asset (4\u00d7 worse for aid)",
+            "**Retirement accounts**: Excluded from FAFSA",
+            "**FAFSA Simplification**: Grandparent 529s no longer hurt aid",
+            "**Federal loans first**: Better protections than private loans"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "FAFSA and SAI Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is MOST accurate regarding the Student Aid Index (SAI)?",
+            "options": [
+              "The SAI is solely determined by the student's income and assets.",
+              "The SAI is solely determined by the parents' income and assets.",
+              "The SAI is a measure of a family's ability to contribute to college costs, considering both parent and student income and assets.",
+              "The SAI is only used to determine eligibility for federal student loans."
+            ],
+            "correctIndex": 2,
+            "explanation": "The Student Aid Index (SAI) considers both the parent's and the student's income and assets to determine the family's ability to contribute to college costs. It's a comprehensive assessment, not limited to just one party or type of aid.",
+            "hint": "Think about who is primarily responsible for funding a student's education."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Federal Aid Programs - Name That Program!",
+          "reveal": {
+            "question": "Which federal grant program provides aid to undergraduate students with exceptional financial need, and unlike a loan, does not need to be repaid?",
+            "answer": "The Pell Grant. It's a need-based federal grant that doesn't require repayment, making it a valuable resource for eligible students."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Federal vs. Private Student Loans",
+          "comparison": {
+            "headers": [
+              "Federal Student Loans",
+              "Private Student Loans"
+            ],
+            "rows": [
+              {
+                "label": "Interest Rates",
+                "values": [
+                  "Often fixed and may be lower",
+                  "Can be fixed or variable and are often higher"
+                ]
+              },
+              {
+                "label": "Repayment Options",
+                "values": [
+                  "Offer income-driven repayment plans and deferment/forbearance options",
+                  "Typically have fewer repayment options and less flexible deferment/forbearance policies"
+                ]
+              },
+              {
+                "label": "Eligibility",
+                "values": [
+                  "Available to eligible students who complete the FAFSA",
+                  "Credit-based; requires a credit check and may require a co-signer"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

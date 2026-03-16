@@ -5,6 +5,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
+import logger from '../../../../utils/logger';
 import { Loader2 } from 'lucide-react';
 import DOMPurify from 'dompurify';
 import { ResourceItem } from '../resourceConfig';
@@ -149,7 +150,7 @@ export const CheatsheetViewer: React.FC<CheatsheetViewerProps> = ({ courseId, it
           const availablePaths = pathInfo.isReference 
             ? Object.keys(referenceModules) 
             : Object.keys(cheatsheetModules);
-          console.warn('Available paths:', availablePaths);
+          logger.warn('Available paths:', availablePaths);
           setError(`Content file not found: ${pathInfo.path}`);
           return;
         }
@@ -157,7 +158,7 @@ export const CheatsheetViewer: React.FC<CheatsheetViewerProps> = ({ courseId, it
         const md = await loader();
         setContent(md as string);
       } catch (err) {
-        console.error('Failed to load cheatsheet:', err);
+        logger.error('Failed to load cheatsheet:', err);
         setError('Unable to load cheatsheet content');
       } finally {
         setLoading(false);

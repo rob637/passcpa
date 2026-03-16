@@ -6,6 +6,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
+import logger from '../../../../utils/logger';
 import { 
   ChevronDown, 
   ChevronRight, 
@@ -126,7 +127,7 @@ export const StudyGuideViewer: React.FC<StudyGuideViewerProps> = ({ courseId, it
           setError(`Study guide not found: ${item.id}`);
         }
       } catch (err) {
-        console.error('Failed to load study guide:', err);
+        logger.error('Failed to load study guide:', err);
         setError('Unable to load study guide content');
       } finally {
         setLoading(false);

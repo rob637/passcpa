@@ -9,8 +9,15 @@ import {
   DollarSign
 } from 'lucide-react';
 import { CMA_COURSE } from '../../courses/cma';
+import { useSEO } from '../../hooks/useSEO';
 
 const CMAInfo = () => {
+  useSEO({
+    title: 'CMA Exam Guide 2026 | Format, Sections & Requirements',
+    description: 'Complete guide to the CMA exam: Part 1 (Financial Planning) and Part 2 (Strategic Management). Learn about exam format, passing scores, and how to prepare.',
+    canonicalUrl: 'https://voraprep.com/cma-exam-info',
+  });
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header */}

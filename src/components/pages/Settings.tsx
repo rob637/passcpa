@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import logger from '../../utils/logger';
 import {
   User as UserIcon,
   Bell,
-  Target,
   Shield,
   MessageSquare,
   Wifi,
@@ -15,20 +14,21 @@ import {
   Sun,
   Moon,
   Monitor,
+  Sunrise,
   Palette,
   RefreshCw,
   CheckCircle,
   Smartphone,
   Users,
-  Award,
-  CreditCard,
-  ExternalLink,
   ChevronDown,
   Download,
   Share,
   PlusSquare,
   CheckCircle2,
   Zap,
+  ExternalLink,
+  Trash2,
+  AlertTriangle,
 } from 'lucide-react';
 import { usePWAInstall } from '../../hooks/usePWAInstall';
 import { triggerUpdateBanner } from '../common/UpdateBanner';
@@ -38,11 +38,10 @@ import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
 import { useTabKeyboard } from '../../hooks/useKeyboardNavigation';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { storage, auth, functions } from '../../config/firebase';
+import { storage, auth } from '../../config/firebase';
 import { linkWithPopup, unlink, GoogleAuthProvider } from 'firebase/auth';
 import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
-import { DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026, isBefore2026Blueprint } from '../../config/examConfig';
 import { getSectionDisplayInfo, getDefaultSection, getCurrentSectionForCourse } from '../../utils/sectionUtils';
 import { createExamDateUpdate, getExamDate } from '../../utils/profileHelpers';
 import {
@@ -52,10 +51,7 @@ import {
 } from '../../services/pushNotifications';
 import { getCacheStatus, clearCache, cacheQuestions } from '../../services/offlineCache';
 import { fetchQuestions } from '../../services/questionService';
-import { useSubscription, EXAM_PRICING, isFounderPricingActive } from '../../services/subscription';
-import { isCourseActive } from '../../courses';
-import type { CourseId } from '../../types/course';
-import { httpsCallable } from 'firebase/functions';
+import { resetUserProgress } from '../../services/progressResetService';
 import { InviteFriends } from '../common/InviteFriends';
 import { PassedCelebration } from '../common/PassedCelebration';
 import { Timestamp } from 'firebase/firestore';
@@ -98,18 +94,17 @@ const Settings: React.FC = () => {
   const { user, userProfile, updateUserProfile, resetPassword, signOut } = useAuth();
   const { courseId, course } = useCourse();
   const { darkMode, themeMode, setThemeMode } = useTheme();
-  const { subscription, getExamAccess } = useSubscription();
-  const navigate = useNavigate();
   // const { startTour, resetTour } = useTour();
   const [searchParams] = useSearchParams();
   const initialTab = searchParams.get('tab') || 'profile';
   const [activeTab, setActiveTab] = useState(initialTab);
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
   const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
   const [isCheckingUpdate, setIsCheckingUpdate] = useState(false);
   const [updateCheckResult, setUpdateCheckResult] = useState<'none' | 'available' | null>(null);
-  const [isManagingSubscription, setIsManagingSubscription] = useState(false);
+  const [isResettingProgress, setIsResettingProgress] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Profile from auth
@@ -302,6 +297,8 @@ const Settings: React.FC = () => {
 
   const handleSave = async () => {
     setIsSaving(true);
+    setSaveError(null);
+    
     try {
       // Create multi-course aware exam date update
       // Pass courseId so single-exam courses (CFP, CISA) use course ID as key
@@ -311,6 +308,14 @@ const Settings: React.FC = () => {
         examDate ? new Date(examDate) : null,
         courseId
       );
+      
+      // Debug: Log what we're saving
+      logger.log('[Settings] Saving exam date:', {
+        courseId,
+        examDate,
+        examDateUpdate,
+        examSection,
+      });
       
       // Save profile settings
       await updateUserProfile({
@@ -324,48 +329,46 @@ const Settings: React.FC = () => {
         timezone,
       });
       
-      // Setup daily reminder using unified notification service
-      if (user?.uid) {
-        await setupDailyReminder(
-          user.uid,
-          notifications.dailyReminder,
-          reminderTime || '09:00'
-        );
-        
-        // Update weekly report preference
-        await setWeeklyReportEnabled(user.uid, notifications.weeklyReport);
-        
-        // Clear daily plan cache to force regeneration with new exam date/daily goal
-        // This ensures the plan recalculates intensity based on the new exam date
-        await clearTodaysPlan(user.uid, examSection);
-        logger.log('Daily plan cache cleared - will regenerate with updated settings');
-      }
+      logger.log('[Settings] Profile updated successfully');
       
+      // Profile saved successfully - show success immediately
       setSaveSuccess(true);
       setTimeout(() => setSaveSuccess(false), 2000);
+      
+      // Non-critical post-save tasks (don't block success)
+      if (user?.uid) {
+        try {
+          await setupDailyReminder(
+            user.uid,
+            notifications.dailyReminder,
+            reminderTime || '09:00'
+          );
+        } catch (e) {
+          logger.warn('[Settings] Daily reminder setup failed (non-critical):', e);
+        }
+        
+        try {
+          await setWeeklyReportEnabled(user.uid, notifications.weeklyReport);
+        } catch (e) {
+          logger.warn('[Settings] Weekly report pref update failed (non-critical):', e);
+        }
+        
+        // Clear daily plan cache to force regeneration with new exam date/daily goal
+        try {
+          await clearTodaysPlan(user.uid, examSection);
+          logger.log('Daily plan cache cleared - will regenerate with updated settings');
+        } catch (e) {
+          logger.warn('[Settings] Daily plan cache clear failed (non-critical):', e);
+        }
+      }
     } catch (error) {
       logger.error('Error saving settings:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Failed to save settings';
+      setSaveError(errorMessage);
+      // Clear error after 5 seconds
+      setTimeout(() => setSaveError(null), 5000);
     } finally {
       setIsSaving(false);
-    }
-  };
-
-  const handleManageSubscription = async () => {
-    if (!user) return;
-    setIsManagingSubscription(true);
-    try {
-      const createPortalSession = httpsCallable<{ returnUrl: string }, { url: string }>(
-        functions,
-        'createCustomerPortalSession'
-      );
-      const result = await createPortalSession({
-        returnUrl: window.location.href
-      });
-      window.location.href = result.data.url;
-    } catch (error) {
-      logger.error('Error opening subscription portal:', error);
-      alert('Unable to open subscription management. Please try again.');
-      setIsManagingSubscription(false);
     }
   };
 
@@ -373,7 +376,6 @@ const Settings: React.FC = () => {
 
   const tabs: Tab[] = [
     { id: 'profile', label: 'Profile', icon: UserIcon },
-    { id: 'study', label: 'Study Plan', icon: Target },
     { id: 'invite', label: 'Invite Friends', icon: Users },
     { id: 'appearance', label: 'Appearance', icon: Palette },
     { id: 'notifications', label: 'Notifications', icon: Bell },
@@ -523,161 +525,6 @@ const Settings: React.FC = () => {
               </div>
             )}
 
-            {/* Study Plan Tab */}
-            {activeTab === 'study' && (
-              <div className="card-body space-y-6">
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div
-                      className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
-                      style={{ backgroundColor: course?.color || '#3b82f6' }}
-                    >
-                      {course?.shortName || 'CPA'}
-                    </div>
-                    <div>
-                      <h2 className="text-lg font-semibold text-slate-900 dark:text-white">{course?.name || 'CPA Exam Review'} Settings</h2>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">Use the course selector in the sidebar to switch exams</p>
-                    </div>
-                  </div>
-
-                  {/* Exam Section - All Courses */}
-                  {course && (
-                  <div className="mb-6">
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                      Current Exam Section
-                    </label>
-                    {(() => {
-                      // For CPA: Determine available sections based on user's exam date
-                      let availableSections: string[];
-                      if (courseId === 'cpa') {
-                        // BEC was retired December 15, 2023 - only BAR/ISC/TCP available
-                        // Blueprint date only affects TAX LAW content (OBBBA), not section availability
-                        availableSections = [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
-                      } else {
-                        // For other courses, show all sections except PREP (strategy sections)
-                        availableSections = course.sections
-                          .filter((s: { id: string }) => s.id !== 'PREP')
-                          .map((s: { id: string }) => s.id);
-                      }
-                      
-                      return (
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                          {course.sections
-                            .filter((s: { id: string }) => availableSections.includes(s.id))
-                            .map((section: { id: string }) => {
-                              const displayInfo = getSectionDisplayInfo(section.id, courseId);
-                              if (!displayInfo) return null;
-                              return (
-                            <button
-                              key={section.id}
-                              onClick={() => setExamSection(section.id)}
-                              className={clsx(
-                                'p-3 rounded-xl border-2 text-left transition-all',
-                                examSection === section.id
-                                  ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
-                                  : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 dark:hover:border-primary-500'
-                              )}
-                            >
-                              <div
-                                className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs mb-2"
-                                style={{ backgroundColor: displayInfo.color }}
-                              >
-                                {displayInfo.shortName}
-                              </div>
-                              <div className="text-sm font-medium text-slate-900 dark:text-slate-100">
-                                {displayInfo.shortName}
-                              </div>
-                            </button>
-                              );
-                          })}
-                        </div>
-                      );
-                    })()}
-                    
-                    {/* Blueprint Info Note - CPA only */}
-                    {courseId === 'cpa' && (
-                    <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                      <div className="flex gap-2">
-                        <Info className="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
-                        <div className="text-sm text-blue-800 dark:text-blue-200">
-                          {isBefore2026Blueprint() ? (
-                            <>
-                              <strong>2025 vs 2026 Blueprint:</strong> Choose one discipline section (BAR, ISC, or TCP).
-                              Starting July 1, 2026, REG and TCP will have significant tax law updates (OBBBA).
-                              Content will adapt automatically based on your target exam date.
-                            </>
-                          ) : (
-                            <>
-                              <strong>2026 Blueprint:</strong> Choose one discipline section (BAR, ISC, or TCP) 
-                              based on your career path. AUD, FAR, and REG are required for all candidates.
-                            </>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                    )}
-                  </div>
-                  )}
-
-                  {/* Exam Date */}
-                  <div className="mb-6">
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                      Target Exam Date
-                    </label>
-                    <input
-                      type="date"
-                      value={examDate}
-                      onChange={(e) => setExamDate(e.target.value)}
-                      className="w-full sm:w-auto px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:[color-scheme:dark]"
-                    />
-                  </div>
-
-                  {/* Daily Goal */}
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                      Daily Point Goal
-                    </label>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                      {DAILY_GOAL_PRESETS.map((preset: any) => (
-                        <button
-                          key={preset.points}
-                          onClick={() => setDailyGoal(preset.points)}
-                          className={clsx(
-                            'p-3 rounded-xl border-2 text-left transition-all',
-                            dailyGoal === preset.points
-                              ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
-                              : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 dark:hover:border-primary-500'
-                          )}
-                        >
-                          <div className="text-lg font-bold text-primary-600 dark:text-primary-400">{preset.points} pts</div>
-                          <div className="text-xs text-slate-600 dark:text-slate-400">{preset.name}</div>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* I Passed Celebration */}
-                  <div className="pt-6 mt-6 border-t border-slate-200 dark:border-slate-700">
-                    <h3 className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
-                      Passed Your Exam?
-                    </h3>
-                    <button
-                      onClick={() => setShowPassedCelebration(true)}
-                      className="flex items-center gap-3 w-full p-4 rounded-xl border-2 border-emerald-200 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/20 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all text-left"
-                    >
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white">
-                        <Award className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-emerald-700 dark:text-emerald-400">I Passed!</div>
-                        <div className="text-sm text-slate-600 dark:text-slate-400">Celebrate and share your success</div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-
             {/* Invite Friends Tab */}
             {activeTab === 'invite' && (
               <div className="card-body">
@@ -768,6 +615,42 @@ const Settings: React.FC = () => {
                     </button>
 
                     <button
+                      onClick={() => setThemeMode('auto')}
+                      className={clsx(
+                        'w-full flex items-center gap-4 p-4 rounded-xl border-2 text-left transition-all',
+                        themeMode === 'auto'
+                          ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                          : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
+                      )}
+                    >
+                      <div className={clsx(
+                        'w-12 h-12 rounded-full flex items-center justify-center',
+                        themeMode === 'auto' ? 'bg-primary-100 dark:bg-primary-800' : 'bg-slate-100 dark:bg-slate-800'
+                      )}>
+                        <Sunrise className={clsx(
+                          'w-6 h-6',
+                          themeMode === 'auto' ? 'text-primary-600' : 'text-slate-500 dark:text-slate-400'
+                        )} />
+                      </div>
+                      <div className="flex-1">
+                        <div className={clsx(
+                          'font-semibold',
+                          themeMode === 'auto' ? 'text-primary-700 dark:text-primary-300' : 'text-slate-900 dark:text-white'
+                        )}>Auto</div>
+                        <div className="text-sm text-slate-500 dark:text-slate-400">
+                          Light by day (7 AM – 7 PM), dark by night
+                        </div>
+                      </div>
+                      {themeMode === 'auto' && (
+                        <div className="w-5 h-5 rounded-full bg-primary-500 flex items-center justify-center">
+                          <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                      )}
+                    </button>
+
+                    <button
                       onClick={() => setThemeMode('system')}
                       className={clsx(
                         'w-full flex items-center gap-4 p-4 rounded-xl border-2 text-left transition-all',
@@ -808,6 +691,7 @@ const Settings: React.FC = () => {
                     <div className="text-sm text-slate-600 dark:text-slate-300">
                       <strong>Current:</strong> {darkMode ? 'Dark mode active' : 'Light mode active'}
                       {themeMode === 'system' && ' (following system preference)'}
+                      {themeMode === 'auto' && ' (time-based auto switching)'}
                     </div>
                   </div>
                 </div>
@@ -1044,7 +928,7 @@ const Settings: React.FC = () => {
                         Connect with other exam candidates, share study tips, and practice daily quiz questions in our Discord server.
                       </p>
                       <a
-                        href="https://discord.gg/XBjzDrws"
+                        href="https://discord.gg/SNZJHr26"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium"
@@ -1146,128 +1030,6 @@ const Settings: React.FC = () => {
 
                     <div className="border-t border-slate-200 pt-6"></div>
 
-                    {/* Subscription Management — Per-Exam */}
-                    <h3 className="font-medium text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-                      <CreditCard className="w-5 h-5" />
-                      Subscriptions & Trials
-                    </h3>
-                    <div className="space-y-3 mb-6">
-                      {(['cpa', 'ea', 'cma', 'cia', 'cisa', 'cfp'] as CourseId[]).filter(isCourseActive).map(examId => {
-                        const access = getExamAccess(examId);
-                        const examName = examId.toUpperCase();
-                        const pricing = EXAM_PRICING[examId];
-                        const isActive = examId === courseId;
-                        // Show: current exam always, other exams if user has interacted
-                        const hasInteraction = access.isPaid || access.isTrialing || access.trialExpired;
-                        if (!isActive && !hasInteraction) return null;
-
-                        return (
-                          <div key={examId} className={clsx(
-                            'rounded-xl border p-4 transition-colors',
-                            isActive
-                              ? 'bg-primary-50 dark:bg-primary-900/10 border-primary-200 dark:border-primary-800'
-                              : 'bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700'
-                          )}>
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-3">
-                                <div className={clsx(
-                                  'w-10 h-10 rounded-lg flex items-center justify-center font-bold text-sm',
-                                  access.isPaid
-                                    ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
-                                    : access.isTrialing
-                                      ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'
-                                      : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400'
-                                )}>
-                                  {examName}
-                                </div>
-                                <div>
-                                  <div className="font-medium text-slate-900 dark:text-white flex items-center gap-2">
-                                    {examName} Exam
-                                    {isActive && (
-                                      <span className="text-xs bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 px-1.5 py-0.5 rounded">Current</span>
-                                    )}
-                                  </div>
-                                  <div className="text-sm text-slate-600 dark:text-slate-400">
-                                    {access.isPaid ? (
-                                      <span className={`${access.cancelAtPeriodEnd ? 'text-amber-600 dark:text-amber-400' : 'text-green-600 dark:text-green-400'} flex items-center gap-1`}>
-                                        <CheckCircle className="w-3.5 h-3.5" />
-                                        {access.cancelAtPeriodEnd ? 'Cancels' : 'Subscribed'}
-                                        {access.currentPeriodEnd && (
-                                          <span className="text-slate-500">
-                                            {access.cancelAtPeriodEnd
-                                              ? ` on ${new Date(access.currentPeriodEnd).toLocaleDateString()}`
-                                              : ` · Renews ${new Date(access.currentPeriodEnd).toLocaleDateString()}`
-                                            }
-                                          </span>
-                                        )}
-                                      </span>
-                                    ) : access.isTrialing ? (
-                                      <span className="text-blue-600 dark:text-blue-400">
-                                        Trial · {access.trialDaysRemaining}d remaining
-                                        {access.trialEndDate && (
-                                          <span className="text-slate-500"> · Ends {new Date(access.trialEndDate).toLocaleDateString()}</span>
-                                        )}
-                                      </span>
-                                    ) : access.trialExpired ? (
-                                      <span className="text-amber-600 dark:text-amber-400">Trial expired</span>
-                                    ) : (
-                                      <span>Free trial available</span>
-                                    )}
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="flex items-center gap-2">
-                                {/* Upgrade buttons for non-paid exams */}
-                                {!access.isPaid && (access.trialExpired || access.isTrialing) && (
-                                  <div className="flex items-center gap-2">
-                                    <button
-                                      onClick={() => navigate(`/start-checkout?course=${examId}&interval=monthly`)}
-                                      className="flex items-center gap-1.5 text-sm bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-medium px-3 py-1.5 rounded-lg transition-colors"
-                                    >
-                                      <span className="text-xs">
-                                        ${isFounderPricingActive() ? pricing.founderMonthly : pricing.monthly}/mo
-                                      </span>
-                                    </button>
-                                    <button
-                                      onClick={() => navigate(`/start-checkout?course=${examId}&interval=annual`)}
-                                      className="flex items-center gap-1.5 text-sm bg-primary-600 hover:bg-primary-700 text-white font-medium px-3 py-1.5 rounded-lg transition-colors"
-                                    >
-                                      <span className="text-xs">
-                                        ${isFounderPricingActive() ? pricing.founderAnnual : pricing.annual}/yr
-                                      </span>
-                                      <span className="text-xs bg-green-500/20 text-green-100 px-1.5 py-0.5 rounded font-normal">Save 40%+</span>
-                                    </button>
-                                  </div>
-                                )}
-                                {/* Manage button for paid subscribers */}
-                                {access.isPaid && subscription?.stripeCustomerId && (
-                                  <button
-                                    onClick={handleManageSubscription}
-                                    disabled={isManagingSubscription}
-                                    className="flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium px-3 py-1.5 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors disabled:opacity-50"
-                                  >
-                                    {isManagingSubscription ? (
-                                      <>
-                                        <Loader2 className="w-4 h-4 animate-spin" />
-                                        Opening...
-                                      </>
-                                    ) : (
-                                      <>
-                                        Manage
-                                        <ExternalLink className="w-4 h-4" />
-                                      </>
-                                    )}
-                                  </button>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    <div className="border-t border-slate-200 pt-6"></div>
-
                     {/* Actions */}
                     <h3 className="font-medium text-slate-900 dark:text-white mb-3">Security & Session</h3>
                     <div className="space-y-3">
@@ -1294,6 +1056,79 @@ const Settings: React.FC = () => {
                         Sign Out
                       </Button>
                     </div>
+
+                    <div className="border-t border-slate-200 dark:border-slate-700 pt-6 mt-6"></div>
+
+                    {/* Data Management */}
+                    <h3 className="font-medium text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                      <Trash2 className="w-4 h-4" />
+                      Data Management
+                    </h3>
+                    <div className="rounded-xl border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-900/20 p-4 mb-4">
+                      <div className="flex gap-3">
+                        <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="text-sm font-medium text-amber-800 dark:text-amber-300">
+                            Reset All Progress
+                          </p>
+                          <p className="text-sm text-amber-700 dark:text-amber-400 mt-1">
+                            This will permanently delete all your study progress including question history,
+                            lesson completions, daily activity logs, and study plan metrics. This cannot be undone.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <Button
+                      onClick={async () => {
+                        if (!user?.uid) return;
+                        const confirmed = window.confirm(
+                          'Are you sure you want to reset ALL progress data? This will delete:\n\n' +
+                          '• All question history\n' +
+                          '• All lesson progress\n' +
+                          '• All daily activity logs\n' +
+                          '• All TBS/CBQ history\n' +
+                          '• Study plan metrics\n\n' +
+                          'This action CANNOT be undone.'
+                        );
+                        if (!confirmed) return;
+
+                        // Double confirm for safety
+                        const doubleConfirm = window.confirm(
+                          'FINAL CONFIRMATION\n\n' +
+                          'Type "RESET" in the next prompt to confirm deletion of all progress data.'
+                        );
+                        if (!doubleConfirm) return;
+
+                        const typed = window.prompt('Type RESET to confirm:');
+                        if (typed !== 'RESET') {
+                          alert('Reset cancelled. You must type RESET exactly.');
+                          return;
+                        }
+
+                        setIsResettingProgress(true);
+                        try {
+                          const result = await resetUserProgress(user.uid);
+                          if (result.success) {
+                            const total = Object.values(result.deleted).reduce((a, b) => a + b, 0);
+                            alert(`Progress reset complete!\n\nDeleted ${total} records.\n\nRefresh the page to see changes.`);
+                            window.location.reload();
+                          } else {
+                            alert(`Reset completed with some errors:\n${result.errors.join('\n')}`);
+                          }
+                        } catch (err) {
+                          logger.error('Error resetting progress:', err);
+                          alert('Failed to reset progress. Please try again.');
+                        } finally {
+                          setIsResettingProgress(false);
+                        }
+                      }}
+                      variant="secondary"
+                      leftIcon={isResettingProgress ? Loader2 : Trash2}
+                      disabled={isResettingProgress}
+                      className="w-full sm:w-auto text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 border-red-200 dark:border-red-800"
+                    >
+                      {isResettingProgress ? 'Resetting...' : 'Reset All Progress'}
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -1483,7 +1318,7 @@ const Settings: React.FC = () => {
                         </div>
                         <div>
                           <h3 className="text-xl font-bold text-slate-900 dark:text-white">VoraPrep</h3>
-                          <p className="text-sm text-slate-600 dark:text-slate-400">AI-Powered Exam Prep</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">Pass Your Exam First Try</p>
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-4">
@@ -1592,20 +1427,26 @@ const Settings: React.FC = () => {
 
             {/* Save Button - only show on tabs with saveable settings */}
             {['profile', 'study', 'notifications'].includes(activeTab) && (
-              <div className="p-6 border-t border-slate-200 dark:border-slate-700 flex justify-end">
-                <Button
-                  onClick={handleSave}
-                  disabled={isSaving}
-                  loading={isSaving}
-                  variant="primary"
-                >
-                  {isSaving ? 'Saving...' : 'Save Changes'}
-                </Button>
-                {saveSuccess && (
-                    <div className="ml-4 flex items-center text-green-600 dark:text-green-400 animate-fade-in">
-                         <span className="mr-2">Saved!</span>
-                         {/* Icon could go here */}
-                    </div>
+              <div className="p-6 border-t border-slate-200 dark:border-slate-700 flex flex-col items-end gap-2">
+                <div className="flex items-center">
+                  <Button
+                    onClick={handleSave}
+                    disabled={isSaving}
+                    loading={isSaving}
+                    variant="primary"
+                  >
+                    {isSaving ? 'Saving...' : 'Save Changes'}
+                  </Button>
+                  {saveSuccess && (
+                      <div className="ml-4 flex items-center text-green-600 dark:text-green-400 animate-fade-in">
+                           <span className="mr-2">Saved!</span>
+                      </div>
+                  )}
+                </div>
+                {saveError && (
+                  <div className="text-sm text-red-600 dark:text-red-400">
+                    {saveError}
+                  </div>
                 )}
               </div>
             )}

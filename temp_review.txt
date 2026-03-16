@@ -1,0 +1,116 @@
+def auto_update_question_service(job: dict) -> bool:
+    """Add section routing to src/services/questionService.ts."""
+    filepath = Path('src/services/questionService.ts')
+    if not filepath.exists():
+        return False
+
+    content = filepath.read_text()
+    bp = job['blueprint']
+    course_id = job['courseId']
+    exam = job['examName']
+    sections = bp['sections']
+    section_ids = [s['id'] for s in sections]
+
+    if section_ids[0] in content:
+        print(f"    ✅ {course_id} sections already in questionService")
+        return True
+
+    first_id = section_ids[0]
+
+    # Determine condition
+    if '-' in first_id:
+        prefix = first_id.split('-')[0]
+        condition = f"section.startsWith('{prefix}-')"
+    else:
+        id_list = ', '.join(f"'{sid}'" for sid in section_ids)
+        condition = f"[{id_list}].includes(section)"
+
+    switch_cases = []
+    for s in sections:
+        sec_var = s['id'].replace('-', '_').upper()
+        switch_cases.append(f"          case '{s['id']}': questions = {course_id}Data.{sec_var}_QUESTIONS || []; break;")
+
+    block = f"""
+    // {exam} sections
+    else if ({condition}) {{
+      try {{
+        const {course_id}Data = await import('../data/{course_id}/questions');
+        switch (section) {{
+{chr(10).join(switch_cases)}
+          default: questions = [];
+        }}
+      }} catch (e) {{
+        logger.error('Failed to load {exam} data', e);
+        questions = [];
+      }}
+    }}"""
+
+    # Insert before the LRU eviction comment
+    insertion_point = "    // LRU eviction: remove oldest sections if cache is full"
+    if insertion_point in content:
+        content = content.replace(insertion_point, block + "\n\n" + insertion_point)
+
+    filepath.write_text(content)
+    print(f"    ✅ Added {course_id} routing to questionService")
+    return True
+
+
+def auto_update_adaptive_engine_adapter(job: dict) -> bool:
+    """Add case blocks to src/services/adaptiveEngineAdapter.ts."""
+    filepath = Path('src/services/adaptiveEngineAdapter.ts')
+    if not filepath.exists():
+        return False
+
+    content = filepath.read_text()
+    course_id = job['courseId']
+
+    if f"case '{course_id}':" in content:
+        print(f"    ✅ '{course_id}' already in adaptiveEngineAdapter")
+        return True
+
+    # recordAnswerToEngine case
+    record_case = f"""      case '{course_id}': {{
+        const engine = await import('./{course_id}AdaptiveEngine');
+        engine.recordAnswer(
+          questionId,
+          section as Parameters<typeof engine.recordAnswer>[1],
+          options.blueprintArea,
+          isCorrect,
+          [],
+          timeMs,
+        );
+        break;
+      }}
+"""
+
+    # selectQuestionsFromEngine case
+    select_case = f"""      case '{course_id}': {{
+        const engine = await import('./{course_id}AdaptiveEngine');
+        const results = engine.selectQuestions(
+          allQuestions as unknown as Parameters<typeof engine.selectQuestions>[0],
+          {{
+            sections: section ? [section] as any : undefined,
+            difficulty,
+            count,
+            excludeRecent: true,
+            prioritizeWeakAreas,
+            includeReviewDue,
+            examWeighted,
+          }}
+        );
+        return results as unknown as Question[];
+      }}
+"""
+
+    # Insert record case before first 'default:' in recordAnswerToEngine
+    default_marker = "      default:\n        logger.warn(`No adaptive engine for course: ${courseId}`);"
+    idx = content.find(default_marker)
+    if idx > 0:
+        content = content[:idx] + record_case + content[idx:]
+
+    # Insert select case before second 'default:' (in selectQuestionsFromEngine)
+    # Find from the updated content
+    select_default = "      default:\n        logger.warn(`No adaptive engine for course: ${courseId}`);\n        return [];"
+    idx2 = content.find(select_default)
+    if idx2 > 0:
+        content = content[:idx2] + select_case + content[idx2:]

@@ -56,7 +56,7 @@ const COMPARISONS: ExamComparison[] = [
       { feature: 'PWA + Mobile Access', voraprep: true, competitors: ['App', 'App', 'App'] },
       { feature: 'Pass Guarantee', voraprep: true, competitors: [true, true, true] },
     ],
-    verdict: 'VoraPrep delivers AI-powered adaptive learning and an AI tutor for CPA exam prep at $249/year — while Becker charges $3,499 for a video-heavy course. If you learn best through active practice rather than watching lectures, VoraPrep is the clear choice.',
+    verdict: 'VoraPrep delivers adaptive study plans and instant explanations for CPA exam prep at $249/year — while Becker charges $3,499 for a video-heavy course. If you learn best through active practice rather than watching lectures, VoraPrep is the clear choice.',
   },
   {
     id: 'ea',
@@ -74,7 +74,7 @@ const COMPARISONS: ExamComparison[] = [
       { feature: 'All 3 SEE Parts', voraprep: true, competitors: [true, true, true] },
       { feature: 'Pass Guarantee', voraprep: true, competitors: [true, false, true] },
     ],
-    verdict: 'For EA exam prep, VoraPrep offers AI-powered adaptive learning at $149/year vs. $400–$629 for traditional courses. With an AI tutor and spaced repetition — features no EA competitor offers — VoraPrep helps you study smarter, not just harder.',
+    verdict: 'For EA exam prep, VoraPrep offers adaptive study plans at $149/year vs. $400–$629 for traditional courses. With instant explanations and spaced repetition — features no EA competitor offers — VoraPrep helps you study smarter, not just harder.',
   },
   {
     id: 'cma',
@@ -93,7 +93,7 @@ const COMPARISONS: ExamComparison[] = [
       { feature: 'Essay/CBQ Practice', voraprep: true, competitors: [true, true, true] },
       { feature: 'Pass Guarantee', voraprep: true, competitors: [true, true, false] },
     ],
-    verdict: 'VoraPrep CMA prep costs $199/year with AI-powered adaptive learning — competing courses charge $1,100–$1,599 for mostly static content. VoraPrep is the only CMA prep with an AI tutor and spaced repetition.',
+    verdict: 'VoraPrep CMA prep costs $199/year with adaptive study plans — competing courses charge $1,100–$1,599 for mostly static content. VoraPrep is the only CMA prep with instant explanations and spaced repetition.',
   },
   {
     id: 'cia',
@@ -177,7 +177,7 @@ const Compare = () => {
   useSEO({
     title: 'Compare Exam Prep Courses',
     description:
-      'Compare VoraPrep vs Becker, Roger, Surgent, Gleim, Wiley, and more. See pricing, features, and AI-powered tools side-by-side for CPA, EA, CMA, CIA, CFP, and CISA exam prep.',
+      'Compare VoraPrep vs Becker, Roger, Surgent, Gleim, Wiley, and more. See pricing, features, and study tools side-by-side for CPA, EA, CMA, CIA, CFP, and CISA exam prep.',
     canonicalUrl: 'https://voraprep.com/compare',
   });
 

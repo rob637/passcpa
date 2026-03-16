@@ -1,0 +1,227 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://voraprep.com/schemas/tbs.schema.json",
+  "title": "VoraPrep Task-Based Simulation",
+  "description": "Schema for CPA/CMA exam TBS with UWorld-style comprehensive explanations",
+  "type": "object",
+  "required": ["section", "tbs"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "section": {
+      "type": "string",
+      "description": "Exam section (FAR, AUD, REG, BAR, ISC, TCP)"
+    },
+    "exportedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO timestamp when this file was generated"
+    },
+    "tbs": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/TBS" },
+      "description": "Array of Task-Based Simulations"
+    }
+  },
+  "definitions": {
+    "TBS": {
+      "type": "object",
+      "required": ["id", "section", "type", "difficulty", "scenario", "requirements"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z]+-tbs-[a-z0-9-]+$",
+          "description": "Unique TBS ID (lowercase, hyphenated, e.g., far-tbs-001)"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 1,
+          "description": "TBS version number for tracking changes"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["draft", "review", "approved", "retired"],
+          "default": "approved",
+          "description": "TBS lifecycle status"
+        },
+        "courseId": {
+          "type": "string",
+          "enum": ["cpa", "ea", "cma", "cia", "cisa", "cfp"],
+          "default": "cpa",
+          "description": "Which exam course this TBS belongs to"
+        },
+        "section": {
+          "type": "string",
+          "description": "Exam section (FAR, AUD, REG, BAR, ISC, TCP)"
+        },
+        "blueprintArea": {
+          "type": "string",
+          "description": "Blueprint area code (e.g., FAR-II, AUD-III)"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["journal_entry", "reconciliation", "document_review", "research", "calculation", "form_completion", "written_communication", "multiple_choice"],
+          "description": "TBS simulation type"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 5,
+          "description": "Brief descriptive title"
+        },
+        "topic": {
+          "type": "string",
+          "description": "Topic category"
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["easy", "medium", "hard"],
+          "description": "TBS difficulty level"
+        },
+        "timeEstimate": {
+          "type": "integer",
+          "minimum": 5,
+          "maximum": 60,
+          "description": "Estimated time to complete in minutes"
+        },
+        "scenario": {
+          "type": "string",
+          "minLength": 50,
+          "description": "The scenario/case study text presented to the candidate"
+        },
+        "exhibits": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/TBSExhibit" },
+          "description": "Supporting documents, spreadsheets, etc."
+        },
+        "requirements": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/TBSRequirement" },
+          "minItems": 1,
+          "description": "Tasks the candidate must complete"
+        },
+        "hints": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional hints for the entire TBS"
+        },
+        "references": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Authoritative references (ASC, IRC, AU-C, etc.)"
+        },
+        "sourceFile": {
+          "type": "string",
+          "description": "Original TypeScript source file for migration tracking"
+        }
+      }
+    },
+    "TBSExhibit": {
+      "type": "object",
+      "required": ["id", "type", "title"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["document", "spreadsheet", "email", "memo", "invoice", "contract", "form", "image"]
+        },
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string",
+          "description": "Text content or markdown"
+        },
+        "data": {
+          "description": "Structured data (e.g., spreadsheet rows/cols)"
+        }
+      }
+    },
+    "TBSRequirement": {
+      "type": "object",
+      "required": ["id", "type", "question"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique requirement ID within this TBS"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["calculation", "multiple_choice", "journal_entry", "dropdown", "text", "reconciliation", "form", "research"],
+          "description": "Type of response expected"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 10,
+          "description": "The task/question text"
+        },
+        "options": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "For multiple_choice or dropdown types"
+        },
+        "correctAnswer": {
+          "description": "Correct answer - type varies by requirement type (number, string, index, etc.)"
+        },
+        "correctEntries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "account": { "type": "string" },
+              "debit": { "type": ["number", "null"] },
+              "credit": { "type": ["number", "null"] }
+            },
+            "required": ["account"]
+          },
+          "description": "For journal_entry type - the correct journal entries"
+        },
+        "tolerance": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Acceptable tolerance for numeric answers"
+        },
+        "points": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Points for this requirement"
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 50,
+          "description": "UWorld-style comprehensive explanation with step-by-step solution"
+        },
+        "whyWrong": {
+          "type": "object",
+          "additionalProperties": { "type": "string" },
+          "description": "For MCQ requirements - why each wrong answer is incorrect"
+        },
+        "keyFormula": {
+          "type": "string",
+          "description": "Key formula or equation used"
+        },
+        "commonMistakes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Common errors candidates make"
+        },
+        "examTip": {
+          "type": "string",
+          "description": "Practical exam-day tip"
+        },
+        "conceptReview": {
+          "type": "string",
+          "description": "Brief review of the underlying concept"
+        },
+        "hints": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Hints specific to this requirement"
+        }
+      }
+    }
+  }
+}

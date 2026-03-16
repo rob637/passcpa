@@ -22,7 +22,7 @@ export default function CIADashboard() {
   const navigate = useNavigate();
   const { userProfile } = useAuth();
   const { progress, loading } = useCIAProgress();
-  const { daysToExam } = useStudyPlan('cia');
+  const { daysUntilExam } = useStudyPlan();
   
   // Get config for CIA
   const config = getDashboardConfig('cia');
@@ -36,8 +36,8 @@ export default function CIADashboard() {
     questionsAnswered: progress?.overall.totalQuestionsAttempted || 0,
     studyStreak: progress?.overall.streakDays || 0,
     accuracy: Math.round(progress?.overall.overallAccuracy || 0),
-    daysToExam,
-  }), [progress, daysToExam]);
+    daysToExam: daysUntilExam,
+  }), [progress, daysUntilExam]);
   
   // Transform sections into template format
   const sections: ExamSection[] = useMemo(() => 

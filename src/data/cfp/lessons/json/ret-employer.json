@@ -1,0 +1,991 @@
+[
+  {
+    "id": "CFP-RET-L005",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "401(k) Plans - Features and Rules",
+    "description": "Explain 401(k) contribution limits and catch-up provisions",
+    "order": 5,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Explain 401(k) contribution limits and catch-up provisions",
+      "Compare traditional and Roth 401(k) contributions",
+      "Apply vesting schedules and employer matching",
+      "Identify distribution rules and penalties"
+    ],
+    "blueprintArea": "RET-2",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "The 401(k) is the most common employer-sponsored retirement plan, named after the Internal Revenue Code section that created it. It's available for for-profit companies and allows employee deferrals plus employer contributions."
+        },
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "401(k) plans are the primary retirement savings vehicle for most Americans. Understanding contribution limits, matching, and distribution rules is essential for maximizing retirement savings."
+        },
+        {
+          "title": "Contribution Limits (2026)",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Limit"
+          ],
+          "rows": [
+            [
+              "Under age 50 (employee deferral)",
+              "$24,500"
+            ],
+            [
+              "Age 50+ (with catch-up)",
+              "$24,500 + $7,500 = $32,000"
+            ],
+            [
+              "Total Annual Addition (415 Limit)",
+              "$71,500 ($79,000 with catch-up)"
+            ]
+          ]
+        },
+        {
+          "title": "SECURE 2.0 Enhanced Catch-Up",
+          "type": "text",
+          "content": "Starting 2025, ages 60-63 get higher catch-up: $10,000 or 150% of regular catch-up (approximately $11,250). This creates additional savings opportunity for those close to retirement."
+        },
+        {
+          "title": "Traditional vs. Roth 401(k)",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Traditional 401(k)",
+            "Roth 401(k)"
+          ],
+          "rows": [
+            [
+              "Contribution tax",
+              "Pre-tax (deductible)",
+              "After-tax (no deduction)"
+            ],
+            [
+              "Growth",
+              "Tax-deferred",
+              "Tax-deferred"
+            ],
+            [
+              "Distributions",
+              "Taxable",
+              "Tax-free (if qualified)"
+            ],
+            [
+              "RMDs",
+              "Required at 73",
+              "No RMDs (SECURE 2.0)"
+            ],
+            [
+              "Best if",
+              "Higher bracket now",
+              "Lower bracket now or same/higher later"
+            ]
+          ]
+        },
+        {
+          "title": "Roth 401(k) Qualified Distribution",
+          "type": "text",
+          "content": "Tax-free if: (1) Account held 5 years from first contribution, AND (2) Age 59\u00bd, death, or disability."
+        },
+        {
+          "title": "Employer Contributions",
+          "type": "list",
+          "items": [
+            "Common match formulas: 50% on first 6% = 3%, or 100% on first 3% + 50% on next 2% = 4%",
+            "Safe Harbor 401(k): 3% non-elective OR 100% on first 3% + 50% on next 2% (4% total)",
+            "Safe harbor contributions must be immediately vested",
+            "Profit Sharing: Discretionary, up to 25% of eligible payroll"
+          ]
+        },
+        {
+          "title": "Vesting Schedules",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Year 1",
+            "Year 2",
+            "Year 3",
+            "Year 4",
+            "Year 5",
+            "Year 6"
+          ],
+          "rows": [
+            [
+              "Cliff",
+              "0%",
+              "0%",
+              "100%",
+              "100%",
+              "100%",
+              "100%"
+            ],
+            [
+              "Graded",
+              "0%",
+              "20%",
+              "40%",
+              "60%",
+              "80%",
+              "100%"
+            ],
+            [
+              "Safe Harbor",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "100%"
+            ]
+          ]
+        },
+        {
+          "title": "Exam Tip",
+          "type": "warning",
+          "content": "Employee contributions are ALWAYS 100% vested immediately. Vesting schedules only apply to employer contributions."
+        },
+        {
+          "title": "Distribution Triggering Events",
+          "type": "list",
+          "items": [
+            "Separation from service (any age)",
+            "Age 59\u00bd (while still employed)",
+            "Disability",
+            "Death",
+            "Plan termination",
+            "Hardship (special rules)"
+          ]
+        },
+        {
+          "title": "Exceptions to 10% Early Withdrawal Penalty",
+          "type": "table",
+          "headers": [
+            "Exception",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Age 55",
+              "Separation from service in year turning 55+"
+            ],
+            [
+              "Disability",
+              "Unable to engage in gainful activity"
+            ],
+            [
+              "Death",
+              "To beneficiary after death"
+            ],
+            [
+              "QDRO",
+              "Qualified domestic relations order"
+            ],
+            [
+              "Medical expenses",
+              "Exceeding 7.5% of AGI"
+            ],
+            [
+              "72(t)",
+              "Substantially equal periodic payments"
+            ]
+          ]
+        },
+        {
+          "title": "401(k) Loans",
+          "type": "text",
+          "content": "Limit: Lesser of 50% of vested balance OR $50,000 (reduced by highest loan balance in prior 12 months). Must repay within 5 years (longer for home purchase) with level amortization. Default = deemed distribution (taxable + penalty if under 59\u00bd)."
+        },
+        {
+          "title": "Required Minimum Distributions",
+          "type": "text",
+          "content": "RMD Starting Age: 73 (SECURE 2.0 for those turning 72 after 2022), Age 75 starting in 2033. Still-Working Exception: No RMDs if still employed by sponsoring employer AND not a 5%+ owner. RMD = Account Balance (Dec 31 prior year) / Life Expectancy Factor."
+        },
+        {
+          "title": "SECURE 2.0 Updates",
+          "type": "table",
+          "headers": [
+            "Change",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "RMD age",
+              "73 (2023-2032), 75 (2033+)"
+            ],
+            [
+              "Roth employer contributions",
+              "Now allowed"
+            ],
+            [
+              "Roth 401(k) RMDs",
+              "Eliminated (can stay in account)"
+            ],
+            [
+              "Student loan match",
+              "Employer can match student loan payments"
+            ],
+            [
+              "Emergency savings",
+              "Sidecar accounts permitted"
+            ]
+          ]
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "2026 limits: $24,500 employee ($32,000 with catch-up); $71,500 total",
+            "Roth 401(k): After-tax in, tax-free out (if qualified)",
+            "Age 55 rule: Penalty-free withdrawals at separation after 55",
+            "Safe harbor: 3% non-elective or 4% match, immediately vested",
+            "RMDs start: Age 73 (75 in 2033)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "401(k) Contribution Limits and Catch-Up Provisions",
+          "knowledgeCheck": {
+            "question": "In 2025, assuming the regular catch-up contribution limit for those age 50 and over remains at $7,500, what is the maximum catch-up contribution amount for an individual aged 62, as allowed by SECURE 2.0's enhanced catch-up provision?",
+            "options": [
+              "$7,500",
+              "$10,000",
+              "$11,250",
+              "$17,500"
+            ],
+            "correctIndex": 2,
+            "explanation": "The SECURE 2.0 Act stipulates that those aged 60-63 can contribute the greater of $10,000 or 150% of the regular catch-up amount. In this case, 150% of $7,500 is $11,250, which is greater than $10,000. Therefore, the maximum catch-up contribution is $11,250.",
+            "hint": "Remember to calculate 150% of the regular catch-up amount and compare it to the $10,000 threshold."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Traditional vs. Roth 401(k)",
+          "comparison": {
+            "headers": [
+              "Traditional 401(k)",
+              "Roth 401(k)"
+            ],
+            "rows": [
+              {
+                "label": "Contribution Tax Treatment",
+                "values": [
+                  "Pre-tax contributions; reduces taxable income in the year of contribution.",
+                  "After-tax contributions; no immediate tax benefit."
+                ]
+              },
+              {
+                "label": "Withdrawal Tax Treatment (in retirement)",
+                "values": [
+                  "Taxable withdrawals in retirement.",
+                  "Qualified withdrawals are tax-free in retirement (principal and earnings)."
+                ]
+              },
+              {
+                "label": "Impact on Current vs. Future Tax Liability",
+                "values": [
+                  "Lowers current taxable income, potentially higher taxes in retirement.",
+                  "Higher current taxable income, potentially no taxes on qualified withdrawals in retirement."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Vesting Schedules",
+          "reveal": {
+            "question": "Define 'vesting' in the context of a 401(k) plan, and explain its significance for an employee.",
+            "answer": "Vesting refers to an employee's right to employer-matching contributions or profit sharing in a retirement plan. It determines when the employee has full ownership of these contributions. Until fully vested, the employee might forfeit a portion of the employer contributions if they leave the company. Vesting schedules dictate how quickly an employee gains ownership."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L006",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "403(b) and 457 Plans",
+    "description": "Distinguish 403(b) plans from 401(k) plans",
+    "order": 6,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Distinguish 403(b) plans from 401(k) plans",
+      "Explain 457(b) governmental vs. non-governmental differences",
+      "Apply special catch-up provisions",
+      "Coordinate multiple employer plan contributions"
+    ],
+    "blueprintArea": "RET-2",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "403(b) and 457 plans serve specific employer types with unique rules that differ from traditional 401(k)s. Understanding these differences is crucial for planning."
+        },
+        {
+          "title": "403(b) Plans - Tax-Sheltered Annuities",
+          "type": "text",
+          "content": "Eligible employers: Public schools (K-12 and higher education), Tax-exempt 501(c)(3) organizations (hospitals, charities), Churches and religious organizations. Same contribution limits as 401(k): Under 50: $24,500, Age 50+: $32,000, Total annual addition: $71,500."
+        },
+        {
+          "title": "403(b) 15-Year Catch-Up",
+          "type": "callout",
+          "content": "Employees with 15+ years of service with same employer get additional $3,000/year (lifetime max $15,000). Must be used BEFORE age 50 catch-up. Maximum possible: $24,500 + $3,000 + $7,500 = $35,000."
+        },
+        {
+          "title": "403(b) Investment Options",
+          "type": "list",
+          "items": [
+            "Annuities (from insurance companies)",
+            "Mutual funds (custodial accounts)",
+            "Church retirement accounts (for churches only)",
+            "Individual stocks NOT permitted in 403(b) plans"
+          ]
+        },
+        {
+          "title": "457(b) Plan Types",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Governmental 457(b)",
+            "Non-Governmental 457(b)"
+          ],
+          "rows": [
+            [
+              "Employers",
+              "State/local government",
+              "Tax-exempt organizations"
+            ],
+            [
+              "Tax treatment",
+              "Same as 401(k)/403(b)",
+              "Deferred compensation"
+            ],
+            [
+              "Rollover",
+              "To IRA, 401(k), etc.",
+              "ONLY to another 457(b)"
+            ],
+            [
+              "Creditor protection",
+              "Protected",
+              "NOT protected"
+            ],
+            [
+              "Early withdrawal penalty",
+              "None!",
+              "None"
+            ]
+          ]
+        },
+        {
+          "title": "Key 457(b) Advantage",
+          "type": "warning",
+          "content": "Governmental 457(b) has NO 10% early withdrawal penalty regardless of age at separation. This makes it excellent for early retirees!"
+        },
+        {
+          "title": "457(b) Special 3-Year Catch-Up",
+          "type": "text",
+          "content": "In the 3 years before normal retirement age, can contribute up to double the limit (2026: up to $49,000). Cannot use both 3-year catch-up AND age 50 catch-up in same year."
+        },
+        {
+          "title": "Coordinating Multiple Plans",
+          "type": "table",
+          "headers": [
+            "Combination",
+            "Limits",
+            "Total Possible"
+          ],
+          "rows": [
+            [
+              "401(k) + 457(b)",
+              "Separate limits",
+              "$49,000 (under 50)"
+            ],
+            [
+              "403(b) + 457(b)",
+              "Separate limits",
+              "$49,000 (under 50)"
+            ],
+            [
+              "401(k) + 403(b)",
+              "Shared limit",
+              "$24,500 combined"
+            ]
+          ]
+        },
+        {
+          "title": "403(b) vs. 401(k) Comparison",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "403(b)",
+            "401(k)"
+          ],
+          "rows": [
+            [
+              "Employers",
+              "Non-profits, schools",
+              "For-profit"
+            ],
+            [
+              "Investment options",
+              "Annuities, mutual funds",
+              "Broader options"
+            ],
+            [
+              "15-year catch-up",
+              "Yes",
+              "No"
+            ],
+            [
+              "ERISA coverage",
+              "Often exempt",
+              "Required"
+            ],
+            [
+              "Age 55 rule",
+              "Modified (public safety)",
+              "Yes"
+            ]
+          ]
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "403(b): For non-profits/schools; 15-year catch-up available",
+            "457(b) governmental: NO 10% early withdrawal penalty",
+            "457(b) non-governmental: Not rollover eligible to IRA; not creditor protected",
+            "Dual contribution: 401(k)/403(b) + 457(b) = separate limits ($49,000 total if under 50)",
+            "3-year catch-up: 457(b) allows double limit in final 3 years"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "403(b) Eligibility Check",
+          "knowledgeCheck": {
+            "question": "Which of the following employers is ELIGIBLE to sponsor a 403(b) plan?",
+            "options": [
+              "A for-profit hospital chain",
+              "A public elementary school",
+              "A privately held technology company",
+              "A large accounting firm"
+            ],
+            "correctIndex": 1,
+            "explanation": "Public schools (K-12 and higher education) are eligible to sponsor 403(b) plans. For-profit entities and most privately held companies generally sponsor 401(k) plans.",
+            "hint": "Think about the types of organizations that are typically tax-exempt."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Contribution Limits Quick Recall",
+          "reveal": {
+            "question": "What is the 403(b) contribution limit for an individual under age 50 in 2023?",
+            "answer": "$22,500 (Same as 401k). The 2024 limit is $23,000. Knowing the yearly contribution limits is crucial for the CFP exam."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "403(b) vs. 401(k) - Key Differences",
+          "comparison": {
+            "headers": [
+              "403(b) Plan",
+              "401(k) Plan"
+            ],
+            "rows": [
+              {
+                "label": "Eligible Employers",
+                "values": [
+                  "Public schools, 501(c)(3) organizations, Churches",
+                  "Any for-profit or non-profit organization"
+                ]
+              },
+              {
+                "label": "Investment Options",
+                "values": [
+                  "Annuities and mutual funds",
+                  "Wider range of investments including stocks, bonds, and mutual funds"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L007",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Defined Benefit Pension Plans",
+    "description": "Explain how defined benefit pensions work",
+    "order": 7,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Explain how defined benefit pensions work",
+      "Calculate pension benefits using common formulas",
+      "Evaluate lump sum vs. annuity pension options",
+      "Understand PBGC protection limits"
+    ],
+    "blueprintArea": "RET-2",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Defined Benefit (DB) plans provide a guaranteed lifetime income based on a formula, rather than account balance. The employer bears both investment and longevity risk."
+        },
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "While fewer employees have DB plans today, understanding them remains important. Many clients have old pensions, and DB plans are making a comeback for high-income business owners."
+        },
+        {
+          "title": "DB Plan Characteristics",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Benefit promise",
+              "Guaranteed monthly income in retirement"
+            ],
+            [
+              "Investment risk",
+              "Borne by employer"
+            ],
+            [
+              "Longevity risk",
+              "Borne by employer"
+            ],
+            [
+              "Funding",
+              "Employer contributes actuarially required amounts"
+            ],
+            [
+              "Portability",
+              "Limited (benefits based on tenure)"
+            ]
+          ]
+        },
+        {
+          "title": "Common Benefit Formulas",
+          "type": "text",
+          "content": "Flat Dollar: Annual Benefit = Years of Service \u00d7 Dollar Amount (e.g., $75 \u00d7 30 years = $2,250/month). Career Average: Benefit = Years \u00d7 Multiplier \u00d7 Career Average Salary. Final Average (most common): Benefit = Years \u00d7 Multiplier \u00d7 Final Average (highest 3-5 years). Example: 30 years \u00d7 1.5% \u00d7 $100,000 = $45,000/year."
+        },
+        {
+          "title": "Vesting Schedules (ERISA)",
+          "type": "table",
+          "headers": [
+            "Schedule",
+            "Year 3",
+            "Year 4",
+            "Year 5",
+            "Year 6",
+            "Year 7"
+          ],
+          "rows": [
+            [
+              "Cliff",
+              "0%",
+              "0%",
+              "100%",
+              "100%",
+              "100%"
+            ],
+            [
+              "Graded",
+              "20%",
+              "40%",
+              "60%",
+              "80%",
+              "100%"
+            ]
+          ]
+        },
+        {
+          "title": "Lump Sum vs. Annuity Decision",
+          "type": "table",
+          "headers": [
+            "Factor",
+            "Favors Lump Sum",
+            "Favors Annuity"
+          ],
+          "rows": [
+            [
+              "Health/life expectancy",
+              "Poor health",
+              "Good health/longevity"
+            ],
+            [
+              "Investment confidence",
+              "High confidence",
+              "Risk averse"
+            ],
+            [
+              "Legacy goals",
+              "Want to leave to heirs",
+              "Spouse needs survivor benefit"
+            ],
+            [
+              "Employer concern",
+              "Solvency worries",
+              "Stable company"
+            ],
+            [
+              "Need for flexibility",
+              "Variable needs",
+              "Stable income needs"
+            ]
+          ]
+        },
+        {
+          "title": "Joint and Survivor Annuities",
+          "type": "table",
+          "headers": [
+            "Option",
+            "While Both Alive",
+            "After First Death"
+          ],
+          "rows": [
+            [
+              "Single Life",
+              "100%",
+              "$0"
+            ],
+            [
+              "50% J&S",
+              "~88% of single life",
+              "50% to survivor"
+            ],
+            [
+              "75% J&S",
+              "~82% of single life",
+              "75% to survivor"
+            ],
+            [
+              "100% J&S",
+              "~76% of single life",
+              "100% to survivor"
+            ]
+          ]
+        },
+        {
+          "title": "Exam Tip",
+          "type": "warning",
+          "content": "ERISA requires QJSA (Qualified Joint and Survivor Annuity) as default for married participants. At least 50% continues to surviving spouse. Spouse must consent to waive."
+        },
+        {
+          "title": "PBGC Protection",
+          "type": "text",
+          "content": "PBGC insures private-sector defined benefit plans. 2026 Maximum Insured Benefit at age 65: $7,108/month ($85,295/year). Benefits exceeding PBGC limits, plans less than 5 years old, and health/welfare benefits are NOT covered."
+        },
+        {
+          "title": "Cash Balance Plans (Hybrid)",
+          "type": "text",
+          "content": "Looks like a DC plan (individual account) but IS a DB plan (employer bears risk). Account grows with Pay Credits (% of salary) and Interest Credits (guaranteed rate). Example: 5% pay credit on $100,000 = $5,000/year + 4% interest on balance."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "DB formula: Years \u00d7 Multiplier \u00d7 Final Average Salary (commonly)",
+            "Employer bears all investment and longevity risk",
+            "Lump sum suits short life expectancy, legacy goals, investment confidence",
+            "Annuity suits long life expectancy, guaranteed income needs, risk aversion",
+            "PBGC insures up to ~$85,300/year (2026) at age 65"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Defined Benefit Pension Plan Formula Practice",
+          "knowledgeCheck": {
+            "question": "Sarah is retiring after 25 years of service. Her defined benefit pension plan uses a final average salary formula, calculating benefits as 1.75% of her final average salary for each year of service. Her final average salary, calculated from her highest three years, is $120,000. What is Sarah's expected annual pension benefit?",
+            "options": [
+              "$35,000",
+              "$42,000",
+              "$52,500",
+              "$60,000"
+            ],
+            "correctIndex": 3,
+            "explanation": "The correct answer is $60,000. The calculation is: 25 years * 1.75% * $120,000 = $52,500. Therefore, the expected annual pension benefit is $52,500. However, the question asks for the *monthly* benefit. Divide the annual benefit by 12: $52,500 / 12 = $4,375",
+            "hint": "Remember to multiply years of service by the percentage multiplier by the final average salary to find the annual benefit."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Key Concept Recall: Risk Allocation",
+          "reveal": {
+            "question": "In a defined benefit pension plan, who bears the investment risk and the longevity risk?",
+            "answer": "The employer bears both the investment risk (the risk that investments underperform) and the longevity risk (the risk that retirees live longer than expected)."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Lump Sum vs. Annuity: Key Considerations",
+          "comparison": {
+            "headers": [
+              "Lump Sum Option",
+              "Annuity Option"
+            ],
+            "rows": [
+              {
+                "label": "Investment Control",
+                "values": [
+                  "Participant has full control over investment decisions.",
+                  "Employer/Pension Plan controls investment decisions."
+                ]
+              },
+              {
+                "label": "Longevity Risk",
+                "values": [
+                  "Participant assumes longevity risk; may outlive savings.",
+                  "Pension plan assumes longevity risk; guaranteed lifetime income."
+                ]
+              },
+              {
+                "label": "Inflation Risk",
+                "values": [
+                  "Can be mitigated through investment strategies (e.g., inflation-protected securities).",
+                  "May or may not have inflation adjustments (COLA); fixed income may erode over time."
+                ]
+              },
+              {
+                "label": "PBGC Protection",
+                "values": [
+                  "Not applicable after distribution.",
+                  "Protected up to PBGC limits, but coverage is not guaranteed in all situations."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L008",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Profit Sharing and Stock Bonus Plans",
+    "description": "Explain profit sharing plan features and contribution rules",
+    "order": 8,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Explain profit sharing plan features and contribution rules",
+      "Distinguish ESOPs from other stock bonus plans",
+      "Apply contribution allocation methods",
+      "Identify ESOP-specific tax benefits"
+    ],
+    "blueprintArea": "RET-2",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Profit sharing and stock bonus plans are employer-funded retirement vehicles that provide flexible contribution options without requiring employee deferrals."
+        },
+        {
+          "title": "Profit Sharing Plans",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Contributions",
+              "100% employer-funded"
+            ],
+            [
+              "Discretionary",
+              "Amount can vary year to year"
+            ],
+            [
+              "Maximum",
+              "25% of eligible payroll"
+            ],
+            [
+              "Individual maximum",
+              "Lesser of 100% compensation or $71,500 (2026)"
+            ]
+          ]
+        },
+        {
+          "title": "Allocation Methods",
+          "type": "list",
+          "items": [
+            "Pro-Rata (most common): Same percentage of compensation to all participants",
+            "New Comparability (age-weighted): Allocates more to older, higher-paid employees",
+            "Integrated with Social Security: Higher contribution % above SS wage base"
+          ]
+        },
+        {
+          "title": "Pro-Rata Example",
+          "type": "text",
+          "content": "$100,000 profit sharing pool with $500,000 total eligible compensation. Allocation rate = 20%. Employee earning $75,000 receives: $75,000 \u00d7 20% = $15,000."
+        },
+        {
+          "title": "Stock Bonus Plans",
+          "type": "text",
+          "content": "Similar to profit sharing but contributions made in company stock. Benefits distributed in company stock. Participant bears stock price risk. Creates employee ownership culture."
+        },
+        {
+          "title": "Employee Stock Ownership Plans (ESOPs)",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Leveraged",
+              "Can borrow to buy company stock"
+            ],
+            [
+              "Mandatory stock investment",
+              "Must invest primarily in employer stock"
+            ],
+            [
+              "Put option",
+              "Employees can sell stock back to company"
+            ],
+            [
+              "Tax benefits",
+              "Unique benefits for C-corporation shareholders"
+            ]
+          ]
+        },
+        {
+          "title": "Section 1042 Rollover",
+          "type": "callout",
+          "content": "C-corporation selling shareholders can sell 30%+ of company to ESOP, reinvest in qualified replacement property, and defer capital gains indefinitely. Requirements: Stock held 3+ years, C-corporation, seller cannot participate as employee afterwards."
+        },
+        {
+          "title": "ESOP Diversification Rights",
+          "type": "text",
+          "content": "After age 55 and 10 years of participation: Can diversify up to 25% of account (years 1-5), up to 50% in final year. This protects employees from concentration risk."
+        },
+        {
+          "title": "Profit Sharing vs. ESOP",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Profit Sharing",
+            "ESOP"
+          ],
+          "rows": [
+            [
+              "Investment",
+              "Diversified",
+              "Company stock"
+            ],
+            [
+              "Leverage",
+              "No",
+              "Yes (can borrow)"
+            ],
+            [
+              "Employer deduction",
+              "Contribution",
+              "Contribution + dividends"
+            ],
+            [
+              "1042 rollover",
+              "No",
+              "Yes (C-corps)"
+            ],
+            [
+              "Risk",
+              "Diversified",
+              "Concentrated"
+            ]
+          ]
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Profit sharing: 100% employer-funded, discretionary, up to 25% of payroll",
+            "Allocation methods: Pro-rata, age-weighted/new comparability, SS-integrated",
+            "ESOPs: Can leverage (borrow), must invest in employer stock",
+            "Section 1042: C-corp sellers can defer capital gains into replacement property",
+            "ESOP diversification: 25% after age 55 + 10 years; 50% in final year"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Profit Sharing Contribution Calculation",
+          "knowledgeCheck": {
+            "question": "An employer sponsors a profit sharing plan and allocates contributions using a pro-rata method. The company's total profit sharing pool is $250,000, and the total eligible compensation for all employees is $1,000,000. Sarah earns $80,000. What is Sarah's profit sharing allocation?",
+            "options": [
+              "$10,000",
+              "$20,000",
+              "$25,000",
+              "$80,000"
+            ],
+            "correctIndex": 2,
+            "explanation": "The allocation rate is calculated as $250,000 / $1,000,000 = 25%. Sarah's allocation is $80,000 * 25% = $20,000.",
+            "hint": "First, calculate the allocation rate based on the total profit sharing pool and total eligible compensation."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "ESOP Tax Benefits",
+          "reveal": {
+            "question": "Name at least two tax benefits specific to ESOPs (Employee Stock Ownership Plans) that are NOT typically found in other stock bonus or profit sharing plans.",
+            "answer": "1. **Tax-deductible dividends:** Dividends paid on ESOP stock are tax-deductible to the company if they are used to repay the ESOP loan or passed through to participants. 2. **Deferral of capital gains:** Under certain conditions, a seller of company stock to an ESOP can defer capital gains if the proceeds are reinvested in qualified replacement property. 3. **S-Corp ESOPs:** An ESOP can be the sole shareholder of an S-Corporation, potentially shielding profits from income tax at the corporate level (although distributions to employee-owners are still taxed)."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Profit Sharing vs. Stock Bonus Plans",
+          "comparison": {
+            "headers": [
+              "Profit Sharing Plan",
+              "Stock Bonus Plan"
+            ],
+            "rows": [
+              {
+                "label": "Contribution Type",
+                "values": [
+                  "Cash or company stock",
+                  "Primarily company stock"
+                ]
+              },
+              {
+                "label": "Distribution Type",
+                "values": [
+                  "Cash, company stock, or other property",
+                  "Primarily company stock"
+                ]
+              },
+              {
+                "label": "Investment Risk",
+                "values": [
+                  "Participant can diversify investments (if allowed)",
+                  "Participant bears the risk of company stock performance"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

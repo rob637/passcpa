@@ -326,20 +326,24 @@ export function useTabKeyboard(
   const tabCount = tabIds.length;
 
   const handlePrevTab = useCallback(() => {
+    if (tabCount === 0) return;
     const newIndex = (activeIndex - 1 + tabCount) % tabCount;
     onTabChange(tabIds[newIndex]);
   }, [activeIndex, tabCount, tabIds, onTabChange]);
 
   const handleNextTab = useCallback(() => {
+    if (tabCount === 0) return;
     const newIndex = (activeIndex + 1) % tabCount;
     onTabChange(tabIds[newIndex]);
   }, [activeIndex, tabCount, tabIds, onTabChange]);
 
   const handleFirstTab = useCallback(() => {
+    if (tabCount === 0) return;
     onTabChange(tabIds[0]);
-  }, [tabIds, onTabChange]);
+  }, [tabIds, tabCount, onTabChange]);
 
   const handleLastTab = useCallback(() => {
+    if (tabCount === 0) return;
     onTabChange(tabIds[tabCount - 1]);
   }, [tabIds, tabCount, onTabChange]);
 

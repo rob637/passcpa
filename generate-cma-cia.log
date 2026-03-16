@@ -1,0 +1,445 @@
+
+Generating 250 questions for cma/cma1...
+  Batch 1: generating 5 (0/250 done)
+  Got 5 valid questions
+  Batch 2: generating 5 (5/250 done)
+  Got 5 valid questions
+  Batch 3: generating 5 (10/250 done)
+  Got 5 valid questions
+  Batch 4: generating 5 (15/250 done)
+  Got 5 valid questions
+  Batch 5: generating 5 (20/250 done)
+  Got 5 valid questions
+  Batch 6: generating 5 (25/250 done)
+  Got 5 valid questions
+  Batch 7: generating 5 (30/250 done)
+  Got 5 valid questions
+  Batch 8: generating 5 (35/250 done)
+  Got 5 valid questions
+  Batch 9: generating 5 (40/250 done)
+  Got 5 valid questions
+  Batch 10: generating 5 (45/250 done)
+  Got 5 valid questions
+  Batch 11: generating 5 (50/250 done)
+  Got 5 valid questions
+  Batch 12: generating 5 (55/250 done)
+  Got 5 valid questions
+  Batch 13: generating 5 (60/250 done)
+  Got 5 valid questions
+  Batch 14: generating 5 (65/250 done)
+  Got 5 valid questions
+  Batch 15: generating 5 (70/250 done)
+  Got 5 valid questions
+  Batch 16: generating 5 (75/250 done)
+  Got 5 valid questions
+  Batch 17: generating 5 (80/250 done)
+  Got 5 valid questions
+  Batch 18: generating 5 (85/250 done)
+  Got 5 valid questions
+  Batch 19: generating 5 (90/250 done)
+  Got 5 valid questions
+  Batch 20: generating 5 (95/250 done)
+  Got 5 valid questions
+  Batch 21: generating 5 (100/250 done)
+  Got 5 valid questions
+  Batch 22: generating 5 (105/250 done)
+  Got 5 valid questions
+  Batch 23: generating 5 (110/250 done)
+  Got 5 valid questions
+  Batch 24: generating 5 (115/250 done)
+  Got 5 valid questions
+  Batch 25: generating 5 (120/250 done)
+  Got 5 valid questions
+  Batch 26: generating 5 (125/250 done)
+  Got 5 valid questions
+  Batch 27: generating 5 (130/250 done)
+  Got 5 valid questions
+  Batch 28: generating 5 (135/250 done)
+  Got 5 valid questions
+  Batch 29: generating 5 (140/250 done)
+  Got 5 valid questions
+  Batch 30: generating 5 (145/250 done)
+  Got 5 valid questions
+  Batch 31: generating 5 (150/250 done)
+  Got 5 valid questions
+  Batch 32: generating 5 (155/250 done)
+  Got 5 valid questions
+  Batch 33: generating 5 (160/250 done)
+  Got 5 valid questions
+  Batch 34: generating 5 (165/250 done)
+  Got 5 valid questions
+  Batch 35: generating 5 (170/250 done)
+  Got 5 valid questions
+  Batch 36: generating 5 (175/250 done)
+JSON parse error: Unexpected token ']', ..."tively.", ],
+    "co"... is not valid JSON
+  Got 0 valid questions
+  Batch 37: generating 5 (175/250 done)
+  Got 5 valid questions
+  Batch 38: generating 5 (180/250 done)
+  Got 5 valid questions
+  Batch 39: generating 5 (185/250 done)
+  Got 5 valid questions
+  Batch 40: generating 5 (190/250 done)
+  Got 5 valid questions
+  Batch 41: generating 5 (195/250 done)
+JSON parse error: Bad escaped character in JSON at position 909 (line 12 column 138)
+  Got 0 valid questions
+  Batch 42: generating 5 (195/250 done)
+  Got 5 valid questions
+  Batch 43: generating 5 (200/250 done)
+  Got 5 valid questions
+  Batch 44: generating 5 (205/250 done)
+  Got 5 valid questions
+  Batch 45: generating 5 (210/250 done)
+  Got 5 valid questions
+  Batch 46: generating 5 (215/250 done)
+  Got 5 valid questions
+  Batch 47: generating 5 (220/250 done)
+  Got 5 valid questions
+  Batch 48: generating 5 (225/250 done)
+  Got 5 valid questions
+  Batch 49: generating 5 (230/250 done)
+  Got 5 valid questions
+  Batch 50: generating 5 (235/250 done)
+  Got 5 valid questions
+  Batch 51: generating 5 (240/250 done)
+  Got 5 valid questions
+  Batch 52: generating 5 (245/250 done)
+  Got 5 valid questions
+  Saved 250 questions to cma/cma1
+
+Generating 250 questions for cma/cma2...
+  Batch 1: generating 5 (0/250 done)
+  Got 5 valid questions
+  Batch 2: generating 5 (5/250 done)
+  Got 5 valid questions
+  Batch 3: generating 5 (10/250 done)
+  Got 5 valid questions
+  Batch 4: generating 5 (15/250 done)
+  Got 5 valid questions
+  Batch 5: generating 5 (20/250 done)
+  Got 4 valid questions
+  Batch 6: generating 5 (24/250 done)
+  Got 5 valid questions
+  Batch 7: generating 5 (29/250 done)
+  Got 5 valid questions
+  Batch 8: generating 5 (34/250 done)
+  Got 5 valid questions
+  Batch 9: generating 5 (39/250 done)
+  Got 5 valid questions
+  Batch 10: generating 5 (44/250 done)
+  Got 5 valid questions
+  Batch 11: generating 5 (49/250 done)
+  Got 5 valid questions
+  Batch 12: generating 5 (54/250 done)
+JSON parse error: Unexpected token ']', ..."iately.", ],
+    "co"... is not valid JSON
+  Got 0 valid questions
+  Batch 13: generating 5 (54/250 done)
+  Got 5 valid questions
+  Batch 14: generating 5 (59/250 done)
+  Got 5 valid questions
+  Batch 15: generating 5 (64/250 done)
+  Got 5 valid questions
+  Batch 16: generating 5 (69/250 done)
+  Got 5 valid questions
+  Batch 17: generating 5 (74/250 done)
+  Got 5 valid questions
+  Batch 18: generating 5 (79/250 done)
+  Got 5 valid questions
+  Batch 19: generating 5 (84/250 done)
+  Got 5 valid questions
+  Batch 20: generating 5 (89/250 done)
+  Got 5 valid questions
+  Batch 21: generating 5 (94/250 done)
+  Got 5 valid questions
+  Batch 22: generating 5 (99/250 done)
+  Got 5 valid questions
+  Batch 23: generating 5 (104/250 done)
+  Got 5 valid questions
+  Batch 24: generating 5 (109/250 done)
+  Got 5 valid questions
+  Batch 25: generating 5 (114/250 done)
+  Got 5 valid questions
+  Batch 26: generating 5 (119/250 done)
+  Got 5 valid questions
+  Batch 27: generating 5 (124/250 done)
+  Got 5 valid questions
+  Batch 28: generating 5 (129/250 done)
+  Got 5 valid questions
+  Batch 29: generating 5 (134/250 done)
+  Got 5 valid questions
+  Batch 30: generating 5 (139/250 done)
+  Got 5 valid questions
+  Batch 31: generating 5 (144/250 done)
+  Got 5 valid questions
+  Batch 32: generating 5 (149/250 done)
+  Got 5 valid questions
+  Batch 33: generating 5 (154/250 done)
+JSON parse error: Bad control character in string literal in JSON at position 6693 (line 42 column 3471)
+  Got 0 valid questions
+  Batch 34: generating 5 (154/250 done)
+  Got 5 valid questions
+  Batch 35: generating 5 (159/250 done)
+  Got 5 valid questions
+  Batch 36: generating 5 (164/250 done)
+  Got 5 valid questions
+  Batch 37: generating 5 (169/250 done)
+  Got 5 valid questions
+  Batch 38: generating 5 (174/250 done)
+  Got 5 valid questions
+  Batch 39: generating 5 (179/250 done)
+  Got 5 valid questions
+  Batch 40: generating 5 (184/250 done)
+  Got 5 valid questions
+  Batch 41: generating 5 (189/250 done)
+  Got 5 valid questions
+  Batch 42: generating 5 (194/250 done)
+  Got 5 valid questions
+  Batch 43: generating 5 (199/250 done)
+  Got 5 valid questions
+  Batch 44: generating 5 (204/250 done)
+  Got 5 valid questions
+  Batch 45: generating 5 (209/250 done)
+  Got 5 valid questions
+  Batch 46: generating 5 (214/250 done)
+  Got 5 valid questions
+  Batch 47: generating 5 (219/250 done)
+  Got 5 valid questions
+  Batch 48: generating 5 (224/250 done)
+  Got 5 valid questions
+  Batch 49: generating 5 (229/250 done)
+  Got 5 valid questions
+  Batch 50: generating 5 (234/250 done)
+  Got 5 valid questions
+  Batch 51: generating 5 (239/250 done)
+  Got 5 valid questions
+  Batch 52: generating 5 (244/250 done)
+  Got 5 valid questions
+  Batch 53: generating 5 (249/250 done)
+  Got 5 valid questions
+  Saved 254 questions to cma/cma2
+
+Generating 170 questions for cia/cia1...
+  Batch 1: generating 5 (0/170 done)
+  Got 5 valid questions
+  Batch 2: generating 5 (5/170 done)
+  Got 5 valid questions
+  Batch 3: generating 5 (10/170 done)
+  Got 5 valid questions
+  Batch 4: generating 5 (15/170 done)
+  Got 5 valid questions
+  Batch 5: generating 5 (20/170 done)
+  Got 5 valid questions
+  Batch 6: generating 5 (25/170 done)
+  Got 5 valid questions
+  Batch 7: generating 5 (30/170 done)
+  Got 5 valid questions
+  Batch 8: generating 5 (35/170 done)
+  Got 5 valid questions
+  Batch 9: generating 5 (40/170 done)
+  Got 5 valid questions
+  Batch 10: generating 5 (45/170 done)
+  Got 5 valid questions
+  Batch 11: generating 5 (50/170 done)
+  Got 5 valid questions
+  Batch 12: generating 5 (55/170 done)
+  Got 5 valid questions
+  Batch 13: generating 5 (60/170 done)
+  Got 5 valid questions
+  Batch 14: generating 5 (65/170 done)
+  Got 5 valid questions
+  Batch 15: generating 5 (70/170 done)
+  Got 5 valid questions
+  Batch 16: generating 5 (75/170 done)
+  Got 5 valid questions
+  Batch 17: generating 5 (80/170 done)
+  Got 5 valid questions
+  Batch 18: generating 5 (85/170 done)
+  Got 5 valid questions
+  Batch 19: generating 5 (90/170 done)
+  Got 5 valid questions
+  Batch 20: generating 5 (95/170 done)
+  Got 5 valid questions
+  Batch 21: generating 5 (100/170 done)
+  Got 4 valid questions
+  Batch 22: generating 5 (104/170 done)
+  Got 5 valid questions
+  Batch 23: generating 5 (109/170 done)
+  Got 5 valid questions
+  Batch 24: generating 5 (114/170 done)
+  Got 5 valid questions
+  Batch 25: generating 5 (119/170 done)
+  Got 5 valid questions
+  Batch 26: generating 5 (124/170 done)
+  Got 4 valid questions
+  Batch 27: generating 5 (128/170 done)
+  Got 5 valid questions
+  Batch 28: generating 5 (133/170 done)
+  Got 5 valid questions
+  Batch 29: generating 5 (138/170 done)
+  Got 5 valid questions
+  Batch 30: generating 5 (143/170 done)
+  Got 5 valid questions
+  Batch 31: generating 5 (148/170 done)
+  Got 5 valid questions
+  Batch 32: generating 5 (153/170 done)
+  Got 5 valid questions
+  Batch 33: generating 5 (158/170 done)
+  Got 5 valid questions
+  Batch 34: generating 5 (163/170 done)
+  Got 5 valid questions
+  Batch 35: generating 5 (168/170 done)
+  Got 5 valid questions
+  Saved 173 questions to cia/cia1
+
+Generating 165 questions for cia/cia2...
+  Batch 1: generating 5 (0/165 done)
+  Got 5 valid questions
+  Batch 2: generating 5 (5/165 done)
+  Got 5 valid questions
+  Batch 3: generating 5 (10/165 done)
+  Got 5 valid questions
+  Batch 4: generating 5 (15/165 done)
+  Got 5 valid questions
+  Batch 5: generating 5 (20/165 done)
+  Got 5 valid questions
+  Batch 6: generating 5 (25/165 done)
+  Got 5 valid questions
+  Batch 7: generating 5 (30/165 done)
+  Got 5 valid questions
+  Batch 8: generating 5 (35/165 done)
+  Got 5 valid questions
+  Batch 9: generating 5 (40/165 done)
+  Got 5 valid questions
+  Batch 10: generating 5 (45/165 done)
+  Got 5 valid questions
+  Batch 11: generating 5 (50/165 done)
+  Got 5 valid questions
+  Batch 12: generating 5 (55/165 done)
+  Got 5 valid questions
+  Batch 13: generating 5 (60/165 done)
+  Got 5 valid questions
+  Batch 14: generating 5 (65/165 done)
+  Got 5 valid questions
+  Batch 15: generating 5 (70/165 done)
+  Got 5 valid questions
+  Batch 16: generating 5 (75/165 done)
+  Got 5 valid questions
+  Batch 17: generating 5 (80/165 done)
+  Got 5 valid questions
+  Batch 18: generating 5 (85/165 done)
+JSON parse error: Unexpected token ']', ..."liance.",
+],
+    "co"... is not valid JSON
+  Got 0 valid questions
+  Batch 19: generating 5 (85/165 done)
+  Got 5 valid questions
+  Batch 20: generating 5 (90/165 done)
+  Got 5 valid questions
+  Batch 21: generating 5 (95/165 done)
+  Got 5 valid questions
+  Batch 22: generating 5 (100/165 done)
+  Got 5 valid questions
+  Batch 23: generating 5 (105/165 done)
+  Got 5 valid questions
+  Batch 24: generating 5 (110/165 done)
+  Got 5 valid questions
+  Batch 25: generating 5 (115/165 done)
+  Got 5 valid questions
+  Batch 26: generating 5 (120/165 done)
+  Got 5 valid questions
+  Batch 27: generating 5 (125/165 done)
+  Got 5 valid questions
+  Batch 28: generating 5 (130/165 done)
+  Got 5 valid questions
+  Batch 29: generating 5 (135/165 done)
+  Got 5 valid questions
+  Batch 30: generating 5 (140/165 done)
+  Got 5 valid questions
+  Batch 31: generating 5 (145/165 done)
+  Got 5 valid questions
+  Batch 32: generating 5 (150/165 done)
+  Got 5 valid questions
+  Batch 33: generating 5 (155/165 done)
+JSON parse error: Unexpected token ']', ..." policy.",],
+    "co"... is not valid JSON
+  Got 0 valid questions
+  Batch 34: generating 5 (155/165 done)
+  Got 5 valid questions
+  Batch 35: generating 5 (160/165 done)
+  Got 5 valid questions
+  Saved 165 questions to cia/cia2
+
+Generating 165 questions for cia/cia3...
+  Batch 1: generating 5 (0/165 done)
+  Got 5 valid questions
+  Batch 2: generating 5 (5/165 done)
+  Got 5 valid questions
+  Batch 3: generating 5 (10/165 done)
+  Got 5 valid questions
+  Batch 4: generating 5 (15/165 done)
+  Got 5 valid questions
+  Batch 5: generating 5 (20/165 done)
+  Got 5 valid questions
+  Batch 6: generating 5 (25/165 done)
+  Got 5 valid questions
+  Batch 7: generating 5 (30/165 done)
+  Got 5 valid questions
+  Batch 8: generating 5 (35/165 done)
+  Got 5 valid questions
+  Batch 9: generating 5 (40/165 done)
+  Got 5 valid questions
+  Batch 10: generating 5 (45/165 done)
+  Got 5 valid questions
+  Batch 11: generating 5 (50/165 done)
+  Got 5 valid questions
+  Batch 12: generating 5 (55/165 done)
+  Got 5 valid questions
+  Batch 13: generating 5 (60/165 done)
+  Got 5 valid questions
+  Batch 14: generating 5 (65/165 done)
+  Got 5 valid questions
+  Batch 15: generating 5 (70/165 done)
+  Got 5 valid questions
+  Batch 16: generating 5 (75/165 done)
+  Got 5 valid questions
+  Batch 17: generating 5 (80/165 done)
+  Got 5 valid questions
+  Batch 18: generating 5 (85/165 done)
+  Got 5 valid questions
+  Batch 19: generating 5 (90/165 done)
+  Got 5 valid questions
+  Batch 20: generating 5 (95/165 done)
+  Got 5 valid questions
+  Batch 21: generating 5 (100/165 done)
+  Got 5 valid questions
+  Batch 22: generating 5 (105/165 done)
+  Got 5 valid questions
+  Batch 23: generating 5 (110/165 done)
+  Got 5 valid questions
+  Batch 24: generating 5 (115/165 done)
+  Got 5 valid questions
+  Batch 25: generating 5 (120/165 done)
+  Got 5 valid questions
+  Batch 26: generating 5 (125/165 done)
+  Got 5 valid questions
+  Batch 27: generating 5 (130/165 done)
+  Got 5 valid questions
+  Batch 28: generating 5 (135/165 done)
+  Got 5 valid questions
+  Batch 29: generating 5 (140/165 done)
+  Got 5 valid questions
+  Batch 30: generating 5 (145/165 done)
+  Got 5 valid questions
+  Batch 31: generating 5 (150/165 done)
+  Got 5 valid questions
+  Batch 32: generating 5 (155/165 done)
+  Got 5 valid questions
+  Batch 33: generating 5 (160/165 done)
+  Got 5 valid questions
+  Saved 165 questions to cia/cia3
+
+=== Complete ===
+Total generated: 1007

@@ -6,8 +6,10 @@
  * without needing to know about specific courses.
  */
 
-import { Home, BookOpen, User, Compass, Target, LucideIcon } from 'lucide-react';
+import { Home, User, Compass, LucideIcon, FileText, Map } from 'lucide-react';
 import { CourseId } from '../types/course';
+
+export type NavType = 'home' | 'learn' | 'practice' | 'you' | 'strategy' | 'exam' | 'study-plan';
 
 export interface NavItem {
   /** URL path for navigation */
@@ -19,7 +21,9 @@ export interface NavItem {
   /** Onboarding tour ID */
   tourId: string;
   /** Navigation type for active state detection */
-  navType: 'home' | 'learn' | 'practice' | 'you' | 'strategy';
+  navType: NavType;
+  /** Whether to show a health indicator badge */
+  showHealthBadge?: boolean;
 }
 
 export interface CourseNavConfig {
@@ -30,6 +34,8 @@ export interface CourseNavConfig {
     practice: string;
     you: string;
     strategy: string;
+    exam: string;
+    studyPlan: string;
   };
   /** Paths that should be considered "active" for each nav type */
   activePaths: {
@@ -38,6 +44,8 @@ export interface CourseNavConfig {
     practice: string[];
     you: string[];
     strategy: string[];
+    exam: string[];
+    'study-plan': string[];
   };
   /** Whether to show the Strategy nav item */
   showStrategy: boolean;
@@ -57,13 +65,17 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
       practice: '/practice',
       you: '/you',
       strategy: '/resources',
+      exam: '/exam',
+      studyPlan: '/study-plan',
     },
     activePaths: {
-      home: ['/home', '/flashcards', '/quiz', '/exam', '/tbs', '/ai-tutor', '/tutor'],
+      home: ['/home', '/flashcards', '/quiz', '/tbs', '/ai-tutor', '/tutor'],
       learn: ['/learn', '/lessons'],
       practice: ['/practice'],
       you: ['/you', '/progress', '/settings', '/achievements', '/community'],
       strategy: ['/resources', '/resources/strategy'],
+      exam: ['/exam'],
+      'study-plan': ['/study-plan'],
     },
     showStrategy: true,
   },
@@ -74,6 +86,8 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
       practice: '/practice',
       you: '/you',
       strategy: '/resources',
+      exam: '/ea-exam',
+      studyPlan: '/study-plan',
     },
     activePaths: {
       home: ['/ea'],
@@ -81,6 +95,8 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
       practice: ['/practice'],
       you: ['/you', '/progress', '/settings', '/achievements'],
       strategy: ['/resources', '/resources/strategy'],
+      exam: ['/ea-exam'],
+      'study-plan': ['/study-plan'],
     },
     showStrategy: true,
   },
@@ -91,6 +107,8 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
       practice: '/practice',
       you: '/you',
       strategy: '/resources',
+      exam: '/cma-exam',
+      studyPlan: '/study-plan',
     },
     activePaths: {
       home: ['/cma/dashboard', '/cma/essay-simulator'],
@@ -98,6 +116,8 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
       practice: ['/practice', '/cma/practice'],
       you: ['/you', '/progress', '/settings', '/achievements'],
       strategy: ['/resources', '/resources/strategy'],
+      exam: ['/cma-exam'],
+      'study-plan': ['/study-plan'],
     },
     showStrategy: true,
   },
@@ -108,6 +128,8 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
       practice: '/practice',
       you: '/you',
       strategy: '/resources',
+      exam: '/cia-exam',
+      studyPlan: '/study-plan',
     },
     activePaths: {
       home: ['/cia/dashboard'],
@@ -115,6 +137,8 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
       practice: ['/practice', '/cia/practice'],
       you: ['/you', '/progress', '/settings', '/achievements'],
       strategy: ['/resources', '/resources/strategy'],
+      exam: ['/cia-exam'],
+      'study-plan': ['/study-plan'],
     },
     showStrategy: true,
   },
@@ -125,6 +149,8 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
       practice: '/practice',
       you: '/you',
       strategy: '/resources',
+      exam: '/cfp-exam',
+      studyPlan: '/study-plan',
     },
     activePaths: {
       home: ['/cfp/dashboard', '/cfp/case-study'],
@@ -132,6 +158,8 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
       practice: ['/practice', '/cfp/practice'],
       you: ['/you', '/progress', '/settings', '/achievements'],
       strategy: ['/resources', '/resources/strategy'],
+      exam: ['/cfp-exam'],
+      'study-plan': ['/study-plan'],
     },
     showStrategy: true,
   },
@@ -142,6 +170,8 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
       practice: '/practice',
       you: '/you',
       strategy: '/resources',
+      exam: '/cisa-exam',
+      studyPlan: '/study-plan',
     },
     activePaths: {
       home: ['/cisa/dashboard'],
@@ -149,6 +179,8 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
       practice: ['/practice', '/cisa/practice'],
       you: ['/you', '/progress', '/settings', '/achievements'],
       strategy: ['/resources', '/resources/strategy'],
+      exam: ['/cisa-exam'],
+      'study-plan': ['/study-plan'],
     },
     showStrategy: true,
   },
@@ -162,11 +194,20 @@ export function getNavItems(courseId: CourseId): NavItem[] {
   
   const items: NavItem[] = [
     { path: config.paths.home, icon: Home, label: 'Home', tourId: 'home', navType: 'home' },
-    { path: config.paths.learn, icon: BookOpen, label: 'Learn', tourId: 'learn', navType: 'learn' },
-    { path: config.paths.practice, icon: Target, label: 'Practice', tourId: 'practice', navType: 'practice' },
+    { path: config.paths.exam, icon: FileText, label: 'Exams', tourId: 'exam', navType: 'exam' },
   ];
   
-  // Insert Resources between Practice and You
+  // Add Study Plan between Exams and Resources
+  items.push({
+    path: config.paths.studyPlan,
+    icon: Map,
+    label: 'Study Plan',
+    tourId: 'study-plan',
+    navType: 'study-plan',
+    showHealthBadge: true,
+  });
+  
+  // Insert Resources between Study Plan and You
   if (config.showStrategy) {
     items.push({
       path: config.paths.strategy,
@@ -187,7 +228,7 @@ export function getNavItems(courseId: CourseId): NavItem[] {
  * Check if a navigation item is active for the current path.
  */
 export function isNavActive(
-  navType: 'home' | 'learn' | 'practice' | 'you' | 'strategy',
+  navType: NavType,
   pathname: string,
   searchParams: URLSearchParams,
   courseId: CourseId

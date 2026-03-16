@@ -5,6 +5,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
+import logger from '../../../../utils/logger';
 import { Loader2, Calculator, Info } from 'lucide-react';
 import { ResourceItem } from '../resourceConfig';
 
@@ -97,7 +98,7 @@ export const FormulaSheetViewer: React.FC<FormulaSheetViewerProps> = ({ courseId
           setError(`Formula sheet not found: ${item.id}`);
         }
       } catch (err) {
-        console.error('Failed to load formula sheet:', err);
+        logger.error('Failed to load formula sheet:', err);
         setError('Unable to load formula sheet content');
       } finally {
         setLoading(false);

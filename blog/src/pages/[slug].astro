@@ -1,0 +1,196 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+import { getPublishedArticles, getArticleBySlug, getExamName, getExamColor } from '../lib/articles';
+
+// For static site generation, we need to define all paths
+export async function getStaticPaths() {
+  const articles = await getPublishedArticles();
+  
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+interface Props {
+  article: Awaited<ReturnType<typeof getArticleBySlug>>;
+}
+
+const { article } = Astro.props;
+
+if (!article) {
+  return Astro.redirect('/blog');
+}
+
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+};
+
+// Parse markdown content to HTML (simple version)
+const renderMarkdown = (content: string) => {
+  if (!content) return '';
+  
+  return content
+    // Remove YAML frontmatter
+    .replace(/^---[\s\S]*?---\n*/, '')
+    // Remove meta description line at top
+    .replace(/^(?:\*\*)?Meta\s*Description:?\*?\*?\s*.+\n+/im, '')
+    // Headings
+    .replace(/^### (.+)$/gm, '<h3 class="text-xl font-semibold mt-8 mb-4 text-gray-900 dark:text-white">$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2 class="text-2xl font-bold mt-10 mb-4 text-gray-900 dark:text-white">$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1 class="text-3xl font-bold mt-12 mb-6 text-gray-900 dark:text-white">$1</h1>')
+    // Bold and italic
+    .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    // Lists
+    .replace(/^- (.+)$/gm, '<li class="ml-4">$1</li>')
+    .replace(/^(\d+)\. (.+)$/gm, '<li class="ml-4">$2</li>')
+    // Links
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-primary-600 hover:underline">$1</a>')
+    // Paragraphs (simple: wrap non-tag lines)
+    .split('\n\n')
+    .map(para => {
+      const trimmed = para.trim();
+      if (!trimmed) return '';
+      if (trimmed.startsWith('<')) return trimmed;
+      if (trimmed.startsWith('-') || /^\d+\./.test(trimmed)) {
+        return `<ul class="list-disc pl-6 my-4 space-y-2">${trimmed}</ul>`;
+      }
+      return `<p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">${trimmed}</p>`;
+    })
+    .join('\n');
+};
+
+// JSON-LD for article
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": article.title,
+  "description": article.metaDescription || '',
+  "author": {
+    "@type": "Organization",
+    "name": "VoraPrep"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "VoraPrep",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://voraprep.com/logo.svg"
+    }
+  },
+  "datePublished": article.publishedAt.toISOString(),
+  "dateModified": (article.updatedAt || article.publishedAt).toISOString(),
+  "mainEntityOfPage": `https://voraprep.com/blog/${article.slug}`,
+  "image": article.ogImage || "https://voraprep.com/og-image.png"
+};
+---
+
+<BlogLayout 
+  title={article.metaTitle || article.title}
+  description={article.metaDescription}
+  ogImage={article.ogImage || 'https://voraprep.com/og-image.png'}
+  canonical={`https://voraprep.com/blog/${article.slug}`}
+>
+  <!-- Article JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <!-- Breadcrumb -->
+    <nav class="mb-8" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+        <li>
+          <a href="https://voraprep.com" class="hover:text-primary-600">Home</a>
+        </li>
+        <li>→</li>
+        <li>
+          <a href="/blog" class="hover:text-primary-600">Blog</a>
+        </li>
+        <li>→</li>
+        <li class="text-gray-900 dark:text-white truncate max-w-xs">
+          {article.title}
+        </li>
+      </ol>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        {article.courseId && (
+          <span class={`px-3 py-1 rounded-full text-sm font-medium text-white uppercase ${getExamColor(article.courseId)}`}>
+            {getExamName(article.courseId)}
+          </span>
+        )}
+        <time datetime={article.publishedAt.toISOString()} class="text-gray-500 dark:text-gray-400">
+          {formatDate(article.publishedAt)}
+        </time>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white leading-tight">
+        {article.title}
+      </h1>
+      {article.metaDescription && (
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-400">
+          {article.metaDescription}
+        </p>
+      )}
+    </header>
+
+    <!-- Article Content -->
+    <div class="prose prose-lg dark:prose-invert max-w-none article-content" set:html={renderMarkdown(article.generatedContent || '')} />
+
+    <!-- CTA Box -->
+    <div class="mt-12 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 md:p-8">
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+        Ready to pass your {article.courseId ? article.courseId.toUpperCase() : ''} exam?
+      </h3>
+      <p class="text-gray-600 dark:text-gray-400 mb-4">
+        VoraPrep uses AI to create a personalized study plan based on your schedule and weak areas.
+      </p>
+      <a href={`https://voraprep.com/${article.courseId || 'register'}`} class="inline-flex items-center justify-center bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors">
+        Start Free Trial →
+      </a>
+    </div>
+
+    <!-- Related Articles / Back to Blog -->
+    <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+      <a href="/blog" class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:underline font-medium">
+        ← Back to all articles
+      </a>
+    </div>
+  </article>
+</BlogLayout>
+
+<style>
+  /* Additional prose styles for article content */
+  .article-content :global(h1),
+  .article-content :global(h2),
+  .article-content :global(h3) {
+    scroll-margin-top: 80px;
+  }
+  
+  .article-content :global(ul),
+  .article-content :global(ol) {
+    @apply my-4 pl-6;
+  }
+  
+  .article-content :global(li) {
+    @apply mb-2;
+  }
+  
+  .article-content :global(blockquote) {
+    @apply border-l-4 border-primary-500 pl-4 italic text-gray-600 dark:text-gray-400 my-6;
+  }
+  
+  .article-content :global(code) {
+    @apply bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm;
+  }
+  
+  .article-content :global(pre) {
+    @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto my-6;
+  }
+</style>

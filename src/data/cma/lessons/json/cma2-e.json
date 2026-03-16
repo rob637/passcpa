@@ -1,0 +1,2922 @@
+[
+  {
+    "id": "CMA2-E-001",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Capital Budgeting Process",
+    "description": "Understand the steps and considerations in capital investment decisions",
+    "order": 40,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Capital budgeting",
+      "Investment process",
+      "Project classification",
+      "Post-audit"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Capital investments are the largest financial decisions organizations make. CMAs analyze investments, build business cases, and monitor project performance. These decisions shape the company's future for years or decades!"
+        },
+        {
+          "title": "What is Capital Budgeting?",
+          "type": "text",
+          "content": "**Definition:**\nThe process of planning and evaluating significant investments in long-term assets.\n\n**Characteristics:**\n\u2022 Large initial outlay\n\u2022 Benefits over multiple years\n\u2022 Often irreversible\n\u2022 Significant strategic impact\n\n**Examples:**\n\u2022 New plant or facility\n\u2022 Major equipment purchases\n\u2022 Acquisitions\n\u2022 R&D investments\n\u2022 IT systems"
+        },
+        {
+          "title": "Capital Budgeting Steps",
+          "type": "table",
+          "headers": [
+            "Step",
+            "Description",
+            "CMA Role"
+          ],
+          "rows": [
+            [
+              "1. Identify",
+              "Generate investment ideas",
+              "Collect proposals from business units"
+            ],
+            [
+              "2. Evaluate",
+              "Analyze financial returns",
+              "Build financial models, calculate NPV/IRR"
+            ],
+            [
+              "3. Select",
+              "Choose best projects",
+              "Present analysis, support decision"
+            ],
+            [
+              "4. Implement",
+              "Execute project",
+              "Track spending vs. budget"
+            ],
+            [
+              "5. Monitor",
+              "Post-implementation review",
+              "Compare actual to projected returns"
+            ]
+          ]
+        },
+        {
+          "title": "Project Classifications",
+          "type": "text",
+          "content": "**By purpose:**\n\u2022 **Replacement:** Maintain operations or reduce costs\n\u2022 **Expansion:** Increase capacity for existing products\n\u2022 **New products/markets:** Strategic growth\n\u2022 **Regulatory/safety:** Mandatory compliance\n\n**By relationship:**\n\u2022 **Independent:** Can accept/reject separately\n\u2022 **Mutually exclusive:** Accept one means reject others\n\u2022 **Contingent:** One depends on another\n\n**Classification affects how we evaluate!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Capital Budgeting",
+          "type": "callout",
+          "content": "**\"IESIM\"** - The five-step process:\n\n**I**dentify opportunities\n**E**valuate alternatives\n**S**elect best projects\n**I**mplement chosen projects\n**M**onitor results (post-audit)\n\n**CMAs are involved in every step!**"
+        },
+        {
+          "title": "Relevant Cash Flows",
+          "type": "text",
+          "content": "**Include these cash flows:**\n\u2022 Initial investment (negative)\n\u2022 Operating cash inflows\n\u2022 Working capital changes\n\u2022 Terminal/salvage value\n\u2022 Tax effects\n\n**Exclude:**\n\u2022 Sunk costs (already spent)\n\u2022 Allocated overhead (not incremental)\n\u2022 Financing costs (in discount rate)\n\n**Key principle:** Only INCREMENTAL cash flows matter!"
+        },
+        {
+          "title": "Post-Implementation Audit",
+          "type": "text",
+          "content": "**Purpose:**\n\u2022 Compare actual vs. projected results\n\u2022 Identify reasons for variances\n\u2022 Improve future forecasting\n\u2022 Hold managers accountable\n\n**Challenges:**\n\u2022 Isolating project's specific contribution\n\u2022 Changed assumptions over time\n\u2022 Reluctance to admit poor decisions\n\n**Best practice:** Compare to original approval document, not revised forecasts!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Capital budgeting evaluates large, long-term investments",
+            "Five steps: Identify, Evaluate, Select, Implement, Monitor",
+            "Projects classified by purpose and relationship to others",
+            "Only incremental cash flows are relevant",
+            "Exclude sunk costs and allocated overhead",
+            "Post-audit compares actual to projected returns",
+            "CMAs build models and support decisions throughout process"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Capital Budgeting Characteristics",
+          "knowledgeCheck": {
+            "question": "Which of the following is NOT a typical characteristic of capital budgeting decisions?",
+            "options": [
+              "A small initial outlay relative to the company's total assets.",
+              "Benefits expected to be received over multiple years.",
+              "Potential strategic impact on the organization.",
+              "Often involves investments that are difficult to reverse."
+            ],
+            "correctIndex": 0,
+            "explanation": "Capital budgeting decisions involve significant investments in long-term assets. A small initial outlay would not typically be considered a capital budgeting decision.",
+            "hint": "Think about the scale of projects usually considered for capital budgeting."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Project Classification Recall",
+          "reveal": {
+            "question": "Define an 'Independent' project in the context of capital budgeting.",
+            "answer": "An independent project is one whose acceptance or rejection does not affect the acceptance or rejection of other projects. The decision to undertake the project is made solely on its own merits."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Project Classification Example",
+          "knowledgeCheck": {
+            "question": "A company is considering upgrading its existing safety equipment to comply with new government regulations. How would this project most likely be classified?",
+            "options": [
+              "Replacement: Cost Reduction",
+              "Expansion: Existing Products",
+              "New Products/Markets",
+              "Regulatory/Safety"
+            ],
+            "correctIndex": 3,
+            "explanation": "Projects undertaken to comply with laws or regulations are classified as Regulatory/Safety projects. These are often mandatory and may not directly contribute to profitability.",
+            "hint": "Consider the primary driver behind the project."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Independent vs. Mutually Exclusive Projects",
+          "comparison": {
+            "headers": [
+              "Independent Projects",
+              "Mutually Exclusive Projects"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Acceptance/rejection of one project does not affect others.",
+                  "Acceptance of one project automatically rejects others."
+                ]
+              },
+              {
+                "label": "Decision Making",
+                "values": [
+                  "Can accept multiple projects if each meets the investment criteria.",
+                  "Must choose only one project, even if multiple meet the investment criteria."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Investing in new equipment for two separate, unrelated product lines.",
+                  "Choosing between two different locations for a single new factory."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-002",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Net Present Value (NPV)",
+    "description": "Calculate and interpret NPV for investment evaluation",
+    "order": 41,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "NPV",
+      "Discounted cash flows",
+      "Required rate of return",
+      "Accept/reject decision"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "NPV is the gold standard of capital budgeting! It directly measures value creation in today's dollars. CMAs must master NPV calculations and understand why NPV is theoretically superior to other methods. Exam heavily tests this!"
+        },
+        {
+          "title": "NPV Formula",
+          "type": "text",
+          "content": "**Net Present Value:**\n\nNPV = \u03a3 [CFt / (1 + r)^t] - Initial Investment\n\n**Where:**\n\u2022 CFt = Cash flow in period t\n\u2022 r = Required rate of return (discount rate)\n\u2022 t = Time period\n\n**Decision rule:**\n\u2022 NPV > 0 \u2192 Accept (creates value)\n\u2022 NPV < 0 \u2192 Reject (destroys value)\n\u2022 NPV = 0 \u2192 Indifferent (earns exactly required return)"
+        },
+        {
+          "title": "NPV Calculation Example",
+          "type": "text",
+          "content": "**Project data:**\n\u2022 Initial investment: $100,000\n\u2022 Annual cash flows: $30,000 for 5 years\n\u2022 Required return: 10%\n\n**Present Value of annuity:**\nPVA = $30,000 \u00d7 PVIFA(10%, 5)\nPVA = $30,000 \u00d7 3.7908 = $113,724\n\n**NPV:**\nNPV = $113,724 - $100,000 = **$13,724**\n\n**Decision:** Accept! Project creates $13,724 of value."
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: NPV Interpretation",
+          "type": "callout",
+          "content": "**\"NPV = How Much Richer\"**\n\nPositive NPV tells you exactly how much wealthier the shareholders become in TODAY'S dollars.\n\n\u2022 NPV of $50,000 = Shareholders are $50,000 richer\n\u2022 NPV of -$20,000 = Would destroy $20,000 of value\n\n**That's why it's the best measure!**"
+        },
+        {
+          "title": "Why NPV is Superior",
+          "type": "table",
+          "headers": [
+            "Advantage",
+            "Explanation"
+          ],
+          "rows": [
+            [
+              "Dollar measure",
+              "Shows actual value created (additive)"
+            ],
+            [
+              "Time value",
+              "Properly discounts future cash flows"
+            ],
+            [
+              "All cash flows",
+              "Considers entire project life"
+            ],
+            [
+              "Correct reinvestment",
+              "Assumes reinvestment at cost of capital (realistic)"
+            ],
+            [
+              "Additive",
+              "Sum of project NPVs = Portfolio NPV"
+            ]
+          ]
+        },
+        {
+          "title": "Choosing the Discount Rate",
+          "type": "text",
+          "content": "**Options for discount rate:**\n\n**Weighted Average Cost of Capital (WACC):**\n\u2022 Most common for average-risk projects\n\u2022 Reflects company's overall cost of capital\n\n**Risk-adjusted rate:**\n\u2022 Higher rate for riskier projects\n\u2022 Lower rate for safer projects\n\n**Hurdle rate:**\n\u2022 Minimum acceptable return\n\u2022 May include strategic premium\n\n**Wrong rate = Wrong decision!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: NPV vs. IRR Conflict",
+          "type": "warning",
+          "content": "**When NPV and IRR give different rankings:**\n\nThis happens with mutually exclusive projects of different:\n\u2022 Size (scale)\n\u2022 Timing of cash flows\n\u2022 Project life\n\n**Always choose based on NPV!**\n\nNPV measures actual value creation; IRR can mislead when projects differ significantly."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "NPV = PV of inflows - Initial investment",
+            "Accept if NPV > 0 (creates shareholder value)",
+            "NPV shows value creation in today's dollars",
+            "Use WACC or risk-adjusted rate for discounting",
+            "NPV is theoretically superior to other methods",
+            "When NPV and IRR conflict, use NPV",
+            "NPVs are additive across projects"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "NPV Decision Rule",
+          "knowledgeCheck": {
+            "question": "Project X has an initial investment of $200,000 and is expected to generate annual cash inflows of $60,000 for the next 5 years. The company's required rate of return is 12%. Using the present value of an annuity factor (PVIFA) of 3.6048, what is the best course of action?",
+            "options": [
+              "Accept the project; NPV = $16,288",
+              "Reject the project; NPV = -$16,288",
+              "Accept the project; NPV = $216,288",
+              "Reject the project; NPV = -$216,288"
+            ],
+            "correctIndex": 0,
+            "explanation": "First, calculate the present value of the annuity: $60,000 * 3.6048 = $216,288. Then, calculate the NPV: $216,288 - $200,000 = $16,288. Since the NPV is greater than 0, the project should be accepted.",
+            "hint": "Remember to calculate the present value of the cash flows before determining the NPV."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "NPV Formula Recall",
+          "reveal": {
+            "question": "Write out the Net Present Value (NPV) formula and define each component.",
+            "answer": "NPV = \u03a3 [CFt / (1 + r)^t] - Initial Investment\n\nWhere:\nCFt = Cash flow in period t\nr = Required rate of return (discount rate)\nt = Time period"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Impact of Discount Rate",
+          "knowledgeCheck": {
+            "question": "How does an increase in the required rate of return (discount rate) generally affect the Net Present Value (NPV) of a project, assuming all other factors remain constant?",
+            "options": [
+              "Increases the NPV",
+              "Decreases the NPV",
+              "Has no effect on the NPV",
+              "The effect is unpredictable and depends on the project's cash flows"
+            ],
+            "correctIndex": 1,
+            "explanation": "An increase in the discount rate means that future cash flows are worth less in today's dollars. Therefore, a higher discount rate reduces the present value of the future cash flows, leading to a lower NPV. If the discount rate is high enough, the NPV may become negative.",
+            "hint": "Think about the denominator in the NPV formula."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-003",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Internal Rate of Return (IRR)",
+    "description": "Calculate and evaluate investments using IRR",
+    "order": 42,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "IRR",
+      "Modified IRR",
+      "IRR limitations",
+      "Multiple IRRs"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "IRR is popular because it's expressed as a percentage, making it easy to compare to cost of capital. CMAs must understand IRR calculations, its limitations, and when it can mislead. Many executives prefer IRR, so you need to interpret it correctly!"
+        },
+        {
+          "title": "IRR Definition",
+          "type": "text",
+          "content": "**Internal Rate of Return:**\nThe discount rate that makes NPV = 0\n\nSolve for r where:\n\u03a3 [CFt / (1 + r)^t] = Initial Investment\n\n**Decision rule:**\n\u2022 IRR > Required return \u2192 Accept\n\u2022 IRR < Required return \u2192 Reject\n\u2022 IRR = Required return \u2192 Indifferent\n\n**IRR represents the project's percentage return on investment.**"
+        },
+        {
+          "title": "IRR Calculation",
+          "type": "text",
+          "content": "**Trial and error or financial calculator/Excel:**\n\n**Example:**\n\u2022 Initial investment: $100,000\n\u2022 Year 1 CF: $60,000\n\u2022 Year 2 CF: $60,000\n\n**Find r where:**\n-$100,000 + $60,000/(1+r) + $60,000/(1+r)\u00b2 = 0\n\n**Solution:** IRR \u2248 13.1%\n\n**At 10% required return:** Accept (13.1% > 10%)\n**At 15% required return:** Reject (13.1% < 15%)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: IRR Meaning",
+          "type": "callout",
+          "content": "**\"IRR = Breakeven Cost of Capital\"**\n\nIRR tells you the maximum cost of capital at which the project is still acceptable.\n\n\u2022 If IRR = 15%, you can borrow up to 15% and still break even\n\u2022 If cost of capital > IRR, you're paying more than the project earns\n\n**IRR is the project's \"interest rate\"**"
+        },
+        {
+          "title": "IRR Limitations",
+          "type": "table",
+          "headers": [
+            "Problem",
+            "Cause",
+            "Solution"
+          ],
+          "rows": [
+            [
+              "Multiple IRRs",
+              "Non-conventional cash flows",
+              "Use NPV or MIRR"
+            ],
+            [
+              "Scale ignored",
+              "Percentage, not dollars",
+              "Use NPV for ranking"
+            ],
+            [
+              "Reinvestment assumption",
+              "Assumes reinvest at IRR",
+              "Use MIRR"
+            ],
+            [
+              "No IRR",
+              "All positive or all negative CFs",
+              "Use NPV"
+            ],
+            [
+              "Mutually exclusive",
+              "May conflict with NPV",
+              "Use NPV"
+            ]
+          ]
+        },
+        {
+          "title": "Modified IRR (MIRR)",
+          "type": "text",
+          "content": "**MIRR addresses reinvestment problem:**\n\n1. Discount all negative cash flows to present at financing rate\n2. Compound all positive cash flows to terminal value at reinvestment rate\n3. Find MIRR that equates PV of costs to FV of benefits\n\n**Formula:**\nMIRR = (Terminal Value / PV of Costs)^(1/n) - 1\n\n**MIRR uses realistic reinvestment rate (usually WACC)**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Non-Conventional Cash Flows",
+          "type": "warning",
+          "content": "**When cash flows change signs multiple times:**\n\n**Conventional:** - + + + + (one sign change)\n\u2022 One IRR exists\n\n**Non-conventional:** - + + + - + (multiple sign changes)\n\u2022 Multiple IRRs possible!\n\u2022 Each sign change can create another IRR\n\n**Example:** Project with cleanup costs at end\n-$100, +$200, +$200, -$150\n\n**Solution:** Use NPV profile or MIRR"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IRR = Discount rate where NPV = 0",
+            "Accept if IRR > Required return",
+            "IRR is the project's percentage return",
+            "Limitation: Assumes reinvestment at IRR (unrealistic)",
+            "Multiple IRRs possible with non-conventional cash flows",
+            "Scale problem: High IRR on small investment may not be best",
+            "When conflicting with NPV, use NPV for decision"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "IRR Decision Rule",
+          "knowledgeCheck": {
+            "question": "Project X has an initial investment of $500,000 and is expected to generate annual cash flows of $150,000 for the next 5 years. The calculated IRR for Project X is 12%. If the company's required rate of return is 11%, what decision should be made regarding Project X?",
+            "options": [
+              "Accept Project X",
+              "Reject Project X",
+              "Be indifferent towards Project X",
+              "More information is needed to make a decision"
+            ],
+            "correctIndex": 0,
+            "explanation": "Since the IRR of 12% is greater than the required rate of return of 11%, the project is expected to generate a return higher than the minimum acceptable return. Therefore, the project should be accepted.",
+            "hint": "Consider the relationship between IRR and the required rate of return."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "IRR Definition Recall",
+          "reveal": {
+            "question": "Define Internal Rate of Return (IRR) in a single sentence.",
+            "answer": "Internal Rate of Return (IRR) is the discount rate that makes the net present value (NPV) of all cash flows from a particular project equal to zero."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "IRR Calculation Implication",
+          "knowledgeCheck": {
+            "question": "A project has an initial investment of $200,000 and generates the following cash flows: Year 1: $80,000, Year 2: $70,000, Year 3: $60,000, and Year 4: $50,000. If the IRR is calculated to be 9%, and the company's cost of capital is 10%, what does this imply?",
+            "options": [
+              "The project is profitable and should be accepted.",
+              "The project is unprofitable and should be rejected.",
+              "The project will break even at the 9% discount rate.",
+              "The project's NPV will be positive at the 10% cost of capital."
+            ],
+            "correctIndex": 2,
+            "explanation": "The IRR of 9% means that the project's NPV is zero when discounted at a 9% rate. Since the cost of capital is 10%, which is higher than the IRR, the project's NPV at 10% will be negative, making the project unprofitable at that cost of capital. However, it breaks even at 9%.",
+            "hint": "Relate the IRR to the NPV at different discount rates."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-004",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Payback and Other Methods",
+    "description": "Apply payback period, discounted payback, and accounting rate of return",
+    "order": 43,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Payback period",
+      "Discounted payback",
+      "Accounting rate of return",
+      "Profitability index"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "While NPV is theoretically best, many companies use simpler methods too. Payback measures liquidity risk, and ARR connects to accounting returns. CMAs must understand all methods because different stakeholders prefer different measures!"
+        },
+        {
+          "title": "Simple Payback Period",
+          "type": "text",
+          "content": "**Definition:**\nTime required to recover the initial investment.\n\n**Formula (even cash flows):**\nPayback = Initial Investment / Annual Cash Flow\n\n**Decision rule:**\nAccept if Payback < Maximum acceptable period\n\n**Example:**\nInvestment: $100,000, Annual CF: $25,000\nPayback = $100,000 / $25,000 = **4 years**"
+        },
+        {
+          "title": "Payback with Uneven Cash Flows",
+          "type": "text",
+          "content": "**Cumulative approach:**\n\n| Year | Cash Flow | Cumulative |\n|------|-----------|------------|\n| 0 | -$100,000 | -$100,000 |\n| 1 | $30,000 | -$70,000 |\n| 2 | $40,000 | -$30,000 |\n| 3 | $50,000 | +$20,000 |\n\n**Payback between years 2 and 3:**\nPayback = 2 + ($30,000 / $50,000) = **2.6 years**\n\n(Recovered $70,000 in first 2 years, need $30,000 more from Year 3's $50,000)"
+        },
+        {
+          "title": "Payback Advantages and Disadvantages",
+          "type": "table",
+          "headers": [
+            "Advantages",
+            "Disadvantages"
+          ],
+          "rows": [
+            [
+              "Simple to calculate",
+              "Ignores time value of money"
+            ],
+            [
+              "Easy to understand",
+              "Ignores cash flows after payback"
+            ],
+            [
+              "Measures liquidity risk",
+              "Arbitrary cutoff period"
+            ],
+            [
+              "Favors shorter projects",
+              "Doesn't measure profitability"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Payback Uses",
+          "type": "callout",
+          "content": "**\"PILL\"** - When payback makes sense:\n\n**P**reliminary screening\n**I**lliquidity concerns\n**L**imited time horizon\n**L**ack of data for detailed analysis\n\n**Use as supplement to NPV, not replacement!**"
+        },
+        {
+          "title": "Discounted Payback",
+          "type": "text",
+          "content": "**Improvement:** Use present values of cash flows\n\n| Year | CF | PV@10% | Cumulative PV |\n|------|------|--------|---------------|\n| 0 | -$100,000 | -$100,000 | -$100,000 |\n| 1 | $40,000 | $36,364 | -$63,636 |\n| 2 | $40,000 | $33,058 | -$30,578 |\n| 3 | $40,000 | $30,053 | -$525 |\n| 4 | $40,000 | $27,321 | +$26,796 |\n\n**Discounted payback \u2248 3.02 years**\n\n**Better than simple payback but still ignores post-payback CFs!**"
+        },
+        {
+          "title": "Profitability Index (PI)",
+          "type": "text",
+          "content": "**Formula:**\nPI = PV of Future Cash Flows / Initial Investment\n\nOR: PI = 1 + (NPV / Initial Investment)\n\n**Decision rule:**\n\u2022 PI > 1 \u2192 Accept\n\u2022 PI < 1 \u2192 Reject\n\n**Example:**\nPV of inflows: $113,724, Investment: $100,000\nPI = $113,724 / $100,000 = **1.14**\n\n**Useful when capital is rationed:** Rank by PI to maximize NPV per dollar invested."
+        },
+        {
+          "title": "Accounting Rate of Return (ARR)",
+          "type": "text",
+          "content": "**Formula:**\nARR = Average Accounting Profit / Average Investment\n\nOR: ARR = Average Net Income / [(Initial + Salvage) / 2]\n\n**Example:**\nAverage net income: $15,000\nInitial: $100,000, Salvage: $20,000\nAverage investment: ($100,000 + $20,000) / 2 = $60,000\n\nARR = $15,000 / $60,000 = **25%**\n\n**Uses accounting income, not cash flows - major weakness!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Payback: Time to recover investment (ignores TVM)",
+            "Discounted payback: Uses PVs (still ignores post-payback)",
+            "PI = PV of inflows / Investment (useful for capital rationing)",
+            "ARR uses accounting income (not cash flows)",
+            "Payback useful for liquidity assessment and screening",
+            "All methods have limitations - NPV remains best",
+            "Use multiple methods for complete picture"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Payback Period Calculation",
+          "knowledgeCheck": {
+            "question": "Project X requires an initial investment of $200,000 and is expected to generate the following cash flows: Year 1: $50,000, Year 2: $60,000, Year 3: $70,000, Year 4: $80,000. What is the payback period for Project X?",
+            "options": [
+              "3.13 years",
+              "2.86 years",
+              "2.71 years",
+              "3.00 years"
+            ],
+            "correctIndex": 2,
+            "explanation": "The cumulative cash flows are: Year 1: -$150,000, Year 2: -$90,000, Year 3: -$20,000.  Payback occurs between years 3 and 4. Payback = 3 + ($20,000/$80,000) = 3 + 0.25 = 2.71 years",
+            "hint": "Calculate the cumulative cash flows for each year until the initial investment is recovered."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Formula",
+          "reveal": {
+            "question": "What is the formula for calculating the payback period when cash flows are even?",
+            "answer": "Payback Period = Initial Investment / Annual Cash Flow"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Payback Period vs. Discounted Payback Period",
+          "comparison": {
+            "headers": [
+              "Simple Payback Period",
+              "Discounted Payback Period"
+            ],
+            "rows": [
+              {
+                "label": "Cash Flows",
+                "values": [
+                  "Uses nominal (undiscounted) cash flows.",
+                  "Uses discounted cash flows (present values)."
+                ]
+              },
+              {
+                "label": "Time Value of Money",
+                "values": [
+                  "Ignores the time value of money.",
+                  "Considers the time value of money."
+                ]
+              },
+              {
+                "label": "Decision Making",
+                "values": [
+                  "Simpler and easier to calculate, but less accurate.",
+                  "More complex to calculate, but provides a more accurate picture of profitability."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-005",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Risk Analysis in Capital Budgeting",
+    "description": "Incorporate risk into capital investment analysis",
+    "order": 44,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Sensitivity analysis",
+      "Scenario analysis",
+      "Simulation",
+      "Risk-adjusted discount rate"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Cash flow projections are uncertain. CMAs must quantify this uncertainty through risk analysis! Single-point estimates can be dangerously misleading. Sensitivity and scenario analysis reveal what drives project risk and inform better decisions."
+        },
+        {
+          "title": "Sources of Project Risk",
+          "type": "text",
+          "content": "**Revenue risk:**\n\u2022 Price uncertainty\n\u2022 Volume uncertainty\n\u2022 Competition\n\u2022 Economic conditions\n\n**Cost risk:**\n\u2022 Input cost volatility\n\u2022 Labor costs\n\u2022 Operating efficiency\n\n**Execution risk:**\n\u2022 Construction delays\n\u2022 Cost overruns\n\u2022 Technology problems\n\n**Identify key risk drivers for each project!**"
+        },
+        {
+          "title": "Sensitivity Analysis",
+          "type": "text",
+          "content": "**Definition:**\nChange ONE variable at a time to see impact on NPV.\n\n**Example:**\nBase case NPV: $50,000\n\n| Variable | -10% Change | +10% Change |\n|----------|-------------|-------------|\n| Price | -$30,000 | +$70,000 |\n| Volume | -$20,000 | +$60,000 |\n| Costs | +$60,000 | +$40,000 |\n\n**Conclusion:** NPV most sensitive to PRICE changes."
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Sensitivity Analysis",
+          "type": "callout",
+          "content": "**\"One at a Time\"**\n\nSensitivity analysis changes ONE variable while holding others constant.\n\n**Shows:**\n\u2022 Which variables matter most\n\u2022 Breakeven points for each variable\n\u2022 Where to focus risk management\n\n**Limitation:** Ignores correlations between variables!"
+        },
+        {
+          "title": "Scenario Analysis",
+          "type": "text",
+          "content": "**Definition:**\nChange MULTIPLE variables together for different scenarios.\n\n**Common scenarios:**\n\u2022 Base case (most likely)\n\u2022 Best case (optimistic)\n\u2022 Worst case (pessimistic)\n\n**Example:**\n| Scenario | Price | Volume | Costs | NPV |\n|----------|-------|--------|-------|-----|\n| Best | $55 | 12,000 | $30 | $150,000 |\n| Base | $50 | 10,000 | $35 | $50,000 |\n| Worst | $45 | 8,000 | $40 | -$30,000 |\n\n**Better than sensitivity: Considers correlations!**"
+        },
+        {
+          "title": "Monte Carlo Simulation",
+          "type": "text",
+          "content": "**Most sophisticated approach:**\n\n1. Assign probability distributions to key variables\n2. Computer randomly samples from distributions\n3. Calculate NPV for each sample\n4. Repeat thousands of times\n5. Analyze distribution of outcomes\n\n**Results show:**\n\u2022 Expected NPV\n\u2022 Standard deviation of NPV\n\u2022 Probability NPV < 0\n\u2022 Range of possible outcomes\n\n**Requires specialized software (Excel @RISK, Crystal Ball)**"
+        },
+        {
+          "title": "Risk-Adjusted Discount Rate",
+          "type": "text",
+          "content": "**Increase discount rate for riskier projects:**\n\n**Company WACC:** 10%\n\n| Project Type | Risk Adjustment | Rate Used |\n|--------------|-----------------|------------|\n| Replacement | -2% | 8% |\n| Expansion | 0% | 10% |\n| New product | +3% | 13% |\n| New market | +5% | 15% |\n\n**Higher rate \u2192 Lower NPV \u2192 Harder to accept**\n\n**Compensates for risk in the cash flows themselves!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Certainty Equivalents",
+          "type": "warning",
+          "content": "**Alternative to risk-adjusted rate:**\n\n\u2022 Convert risky cash flows to \"certainty equivalents\"\n\u2022 Discount at risk-free rate\n\u2022 CE = Risky CF \u00d7 Certainty Coefficient\n\n**Example:**\nRisky CF: $100,000, Certainty coefficient: 0.85\nCE = $100,000 \u00d7 0.85 = $85,000\nDiscount $85,000 at risk-free rate\n\n**Both methods should give same answer if done correctly!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Sensitivity: Change one variable, see NPV impact",
+            "Scenario: Change multiple variables together",
+            "Simulation: Probability distributions and thousands of trials",
+            "Risk-adjusted rate: Higher rate for riskier projects",
+            "Sensitivity reveals key drivers; Scenario addresses correlations",
+            "Understand probability of negative NPV, not just expected NPV",
+            "Match risk analysis method to project importance"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Sensitivity Analysis Challenge",
+          "knowledgeCheck": {
+            "question": "A project has a base case NPV of $100,000. Sensitivity analysis reveals the following: a 5% decrease in sales price decreases NPV by $40,000, a 5% increase in variable costs decreases NPV by $20,000, and a 5% increase in fixed costs decreases NPV by $10,000. Which variable is the MOST sensitive to changes in the project's NPV?",
+            "options": [
+              "Sales Price",
+              "Variable Costs",
+              "Fixed Costs",
+              "All are equally sensitive"
+            ],
+            "correctIndex": 0,
+            "explanation": "Sales price is the most sensitive because a 5% change results in the largest change in NPV ($40,000). While costs also impact NPV, the impact of a price change is greater.",
+            "hint": "Consider the absolute value of the NPV change for each variable."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Project Risk Categories",
+          "reveal": {
+            "question": "Name the three primary categories of project risk discussed in this lesson.",
+            "answer": "The three categories are: Revenue risk, Cost risk, and Execution risk."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Sensitivity vs. Scenario Analysis",
+          "comparison": {
+            "headers": [
+              "Sensitivity Analysis",
+              "Scenario Analysis"
+            ],
+            "rows": [
+              {
+                "label": "Number of Variables Changed",
+                "values": [
+                  "One variable at a time",
+                  "Multiple variables simultaneously"
+                ]
+              },
+              {
+                "label": "Purpose",
+                "values": [
+                  "Identify the most critical variables",
+                  "Assess project viability under different conditions"
+                ]
+              },
+              {
+                "label": "Complexity",
+                "values": [
+                  "Simpler to perform",
+                  "More complex, requires defining scenarios"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Identifying Risk Types",
+          "knowledgeCheck": {
+            "question": "A project's profitability is heavily dependent on securing a specific patent. Failure to obtain this patent would significantly reduce projected revenues. This risk is best categorized as:",
+            "options": [
+              "Cost Risk",
+              "Execution Risk",
+              "Revenue Risk",
+              "Interest Rate Risk"
+            ],
+            "correctIndex": 2,
+            "explanation": "This is Revenue Risk because the uncertainty surrounding obtaining the patent directly impacts the project's potential revenue stream.",
+            "hint": "Think about which category of risk is most directly affected by the patent outcome."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-006",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Real Options and Strategic Value",
+    "description": "Evaluate managerial flexibility and strategic options in capital budgeting",
+    "order": 45,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Real options",
+      "Option to expand",
+      "Option to abandon",
+      "Strategic value"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "NPV assumes passive management, but projects often include valuable flexibility! Real options capture the value of being able to expand, abandon, or delay. CMAs who understand real options can justify strategic investments that basic NPV might reject."
+        },
+        {
+          "title": "What are Real Options?",
+          "type": "text",
+          "content": "**Definition:**\nThe right, but not obligation, to take future actions based on new information.\n\n**Key insight:**\n\u2022 Traditional NPV assumes fixed plan\n\u2022 Real options recognize management flexibility\n\u2022 Flexibility has value, especially under uncertainty\n\n**Option value increases with:**\n\u2022 Greater uncertainty\n\u2022 Longer time to decide\n\u2022 More flexibility"
+        },
+        {
+          "title": "Types of Real Options",
+          "type": "table",
+          "headers": [
+            "Option Type",
+            "Description",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Expand",
+              "Right to increase scale if successful",
+              "Build plant with room to add capacity"
+            ],
+            [
+              "Abandon",
+              "Right to exit if unsuccessful",
+              "Sell assets, shut down division"
+            ],
+            [
+              "Delay",
+              "Right to postpone investment",
+              "Wait for more market information"
+            ],
+            [
+              "Switch",
+              "Right to change inputs or outputs",
+              "Flexible manufacturing equipment"
+            ],
+            [
+              "Stage",
+              "Right to invest in phases",
+              "Pilot project before full rollout"
+            ]
+          ]
+        },
+        {
+          "title": "Option to Expand Example",
+          "type": "text",
+          "content": "**Base project:**\n\u2022 Investment: $100,000\n\u2022 Expected NPV: -$10,000\n\u2022 Standard analysis: REJECT\n\n**With expansion option:**\n\u2022 If market conditions favorable (40% probability)\n\u2022 Can invest additional $150,000\n\u2022 Additional NPV: $80,000\n\n**Value of option:**\n40% \u00d7 $80,000 = $32,000\n\n**Adjusted NPV:** -$10,000 + $32,000 = **$22,000**\n\n**Decision with option: ACCEPT!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Real Options",
+          "type": "callout",
+          "content": "**\"FADED\"** - Types of real options:\n\n**F**lexibility to switch\n**A**bandon if failing\n**D**elay investment\n**E**xpand if successful\n**D**ivide into stages\n\n**Total value = NPV + Value of options**"
+        },
+        {
+          "title": "Option to Abandon",
+          "type": "text",
+          "content": "**Value of being able to exit:**\n\n**Without abandon option:**\n\u2022 Must continue even if project fails\n\u2022 NPV includes full downside\n\n**With abandon option:**\n\u2022 Can sell assets/exit if failing\n\u2022 Limits downside losses\n\u2022 Salvage value sets floor\n\n**Example:**\nProject fails 30% of time, loss = $200,000\nAbandonment recovers $150,000\nOption value: 30% \u00d7 ($200,000 - $50,000 loss) = $45,000 saved"
+        },
+        {
+          "title": "Strategic Investments",
+          "type": "text",
+          "content": "**Some investments create future opportunities:**\n\n\u2022 R&D projects (platform for future products)\n\u2022 Market entry (beachhead for expansion)\n\u2022 Learning investments (develop capabilities)\n\u2022 Standard-setting (influence industry)\n\n**These may have negative NPV but positive strategic value!**\n\n**CMA challenge:** Quantify strategic value without wishful thinking\n\n**Approach:** Identify and value specific options created"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Real options = value of managerial flexibility",
+            "Common options: Expand, Abandon, Delay, Switch, Stage",
+            "Total value = Traditional NPV + Option value",
+            "Options more valuable with higher uncertainty",
+            "Strategic investments often contain embedded options",
+            "Abandonment option limits downside risk",
+            "Real options can justify investments that NPV alone rejects"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Real Options vs. Traditional NPV",
+          "knowledgeCheck": {
+            "question": "Which of the following statements BEST describes the key difference between traditional Net Present Value (NPV) analysis and the real options approach in project valuation?",
+            "options": [
+              "Traditional NPV assumes fixed investment decisions, while real options recognize and value managerial flexibility to adapt to future conditions.",
+              "Traditional NPV incorporates all possible future scenarios, while real options only consider the most likely scenario.",
+              "Traditional NPV discounts cash flows at a higher rate than the real options approach.",
+              "Traditional NPV is used for short-term projects, while real options are used for long-term projects."
+            ],
+            "correctIndex": 0,
+            "explanation": "The core difference lies in the recognition of management's ability to react to new information. Traditional NPV assumes a static plan, whereas real options acknowledge the value of flexibility.",
+            "hint": "Think about how management can change course after a project has started."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Option to Abandon: Key Consideration",
+          "reveal": {
+            "question": "What is the MOST important factor to consider when evaluating an option to abandon a project?",
+            "answer": "The salvage value of the project's assets, as this represents the potential recovery of investment if the project is terminated. This value should be compared against the present value of continuing the project under adverse conditions."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Option Value and Uncertainty",
+          "knowledgeCheck": {
+            "question": "According to real options theory, how does increased uncertainty (e.g., higher volatility in market conditions) generally affect the value of a real option?",
+            "options": [
+              "Increased uncertainty decreases the value of the option.",
+              "Increased uncertainty increases the value of the option.",
+              "Uncertainty has no impact on the value of the option.",
+              "Increased uncertainty only affects the option value if the underlying asset has a negative expected return."
+            ],
+            "correctIndex": 1,
+            "explanation": "Greater uncertainty increases the potential for large positive payoffs while limiting downside losses (since the option not to proceed can be exercised). This asymmetric payoff profile makes the option more valuable.",
+            "hint": "Consider the potential for both upside and downside scenarios."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-007",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Post-Audit of Capital Projects",
+    "description": "Learn how to evaluate completed capital investments to improve future decision-making",
+    "order": 46,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Post-audit process",
+      "Variance analysis",
+      "Lessons learned",
+      "Accountability"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Capital investments often don't deliver promised returns! Post-audits hold managers accountable, identify estimation biases, and improve future investment decisions. CMAs play a key role in designing and conducting these reviews."
+        },
+        {
+          "title": "What Is a Post-Audit?",
+          "type": "text",
+          "content": "**Definition:** A formal review of a completed capital project comparing actual results to original projections\n\n**Timing:**\n• 1-3 years after project completion\n• When project reaches steady-state operations\n• Sufficient time to measure actual performance\n\n**Purpose:**\n• Accountability - Did we deliver what we promised?\n• Learning - What can we improve for future projects?\n• Continuous improvement - Reduce estimation bias\n• Feedback loop - Close the planning-to-results cycle"
+        },
+        {
+          "title": "Post-Audit Process",
+          "type": "text",
+          "content": "**Step 1: Gather Data**\n• Original capital request and projections\n• Actual costs incurred\n• Actual revenues/savings achieved\n• Timeline comparison (on time vs. delayed)\n\n**Step 2: Calculate Actual Performance**\n• Recompute NPV/IRR using actual cash flows\n• Compare to original projections\n\n**Step 3: Analyze Variances**\n• Identify significant deviations\n• Determine root causes\n• Distinguish controllable from uncontrollable factors\n\n**Step 4: Document Lessons**\n• What went right? What went wrong?\n• How can future estimates improve?\n\n**Step 5: Report Results**\n• Present findings to management\n• Recommend process improvements"
+        },
+        {
+          "title": "🧠 Memory Aid: Post-Audit Benefits",
+          "type": "callout",
+          "content": "**\"CLIP\" - Why post-audits matter:**\n\n**C**apture lessons for future projects\n**L**imit overoptimism in proposals\n**I**mprove estimation accuracy\n**P**romote accountability\n\nWithout post-audits, managers learn nothing from past investments!"
+        },
+        {
+          "title": "Common Variance Categories",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Typical Causes",
+            "Questions to Ask"
+          ],
+          "rows": [
+            [
+              "Implementation Cost",
+              "Scope creep, design changes, inflation",
+              "Were estimates realistic? Was scope controlled?"
+            ],
+            [
+              "Timeline",
+              "Approval delays, resource constraints, complexity",
+              "Were milestones achievable? What caused delays?"
+            ],
+            [
+              "Revenue/Savings",
+              "Market changes, competitive response, adoption rate",
+              "Were forecasts reasonable? Did market change?"
+            ],
+            [
+              "Operating Costs",
+              "Maintenance, staffing, integration issues",
+              "Were operating requirements understood?"
+            ]
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: Post-Audit Challenges",
+          "type": "warning",
+          "content": "**Why Post-Audits Are Difficult:**\n\n**1. Sunk Cost Bias**\n• Resistance to admitting bad decisions\n• \"We've already spent the money\"\n\n**2. Changed Circumstances**\n• Hard to compare when market conditions shifted\n• What was \"actual\" vs. projection?\n\n**3. Measurement Problems**\n• Separating project impact from other changes\n• Identifying incremental cash flows\n\n**4. Political Resistance**\n• Sponsors may resist negative findings\n• Need organizational support for honest reviews"
+        },
+        {
+          "title": "Best Practices",
+          "type": "list",
+          "items": [
+            "**Document original assumptions** clearly for later comparison",
+            "**Conduct audits independently** of project sponsors",
+            "**Focus on learning**, not blame",
+            "**Track patterns** across multiple projects for systematic bias",
+            "**Include post-audit requirements** in capital request policy",
+            "**Share findings** across the organization"
+          ]
+        },
+        {
+          "title": "Behavioral Impact",
+          "type": "text",
+          "content": "**Knowing a Post-Audit Will Occur:**\n\n**Positive Effects:**\n• More realistic projections (less \"hockey stick\" forecasts)\n• Better upfront analysis\n• Stronger supporting documentation\n• Increased accountability\n\n**Potential Negative Effects:**\n• Risk aversion - managers avoid bold projects\n• Gaming - structuring to pass audit criteria\n• Blame avoidance - unwillingness to propose innovations\n\n**Balance:** Make audits learning opportunities, not punitive exercises"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Post-audits compare actual project results to original projections",
+            "Conduct 1-3 years after project completion when results are measurable",
+            "Process: Gather data, calculate actual performance, analyze variances, document lessons",
+            "Common variances: cost overruns, delays, revenue shortfalls, operating cost increases",
+            "Post-audits promote accountability and reduce estimation bias",
+            "Challenges include sunk cost bias, changed circumstances, and political resistance",
+            "Focus on learning and improvement, not blame"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Post-Audit Purpose",
+          "knowledgeCheck": {
+            "question": "Which of the following is the PRIMARY purpose of conducting a post-audit of a capital investment project?",
+            "options": [
+              "To assign blame for cost overruns",
+              "To improve the accuracy of future capital budgeting decisions",
+              "To determine whether the project should be abandoned",
+              "To calculate actual depreciation expense"
+            ],
+            "correctIndex": 1,
+            "explanation": "The primary purpose of post-audits is to learn from completed projects and improve future capital budgeting decisions. This includes identifying estimation biases, understanding what went right or wrong, and promoting accountability for more realistic forecasting.",
+            "hint": "Think about the forward-looking benefits of reviewing past decisions."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Post-Audit Challenges",
+          "reveal": {
+            "question": "What factors make post-audits difficult to conduct effectively?",
+            "answer": "Key challenges include: (1) Sunk cost bias and resistance to admitting bad decisions, (2) Changed circumstances that make comparison difficult, (3) Measurement problems in isolating project impact, (4) Political resistance from project sponsors, and (5) Difficulty separating controllable from uncontrollable variances."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-008",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Capital Rationing and Project Selection",
+    "description": "Learn to select optimal projects when capital is limited and projects compete for funding",
+    "order": 47,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Capital rationing",
+      "Profitability index",
+      "Project ranking",
+      "Constrained optimization"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Companies rarely have unlimited capital! When good projects exceed available funds, CMAs must help select the combination that maximizes shareholder value. This is where the Profitability Index becomes essential."
+        },
+        {
+          "title": "What Is Capital Rationing?",
+          "type": "text",
+          "content": "**Definition:** Limiting capital investment below the level that would be optimal if funds were unlimited\n\n**Types:**\n\n**Hard Rationing:**\n• External constraint (can't raise funds)\n• Market conditions, credit restrictions\n• Company at debt capacity\n\n**Soft Rationing:**\n• Internal, self-imposed limit\n• Management policy decision\n• Conservative growth strategy\n\n**Key Implication:** Cannot accept all positive-NPV projects\nMust choose projects that maximize value per dollar invested"
+        },
+        {
+          "title": "Profitability Index (PI)",
+          "type": "text",
+          "content": "**Formula:**\n\nPI = PV of Future Cash Flows / Initial Investment\n\n**Or equivalently:**\nPI = (NPV + Initial Investment) / Initial Investment\nPI = 1 + (NPV / Initial Investment)\n\n**Decision Rules:**\n• PI > 1: Accept (positive NPV)\n• PI < 1: Reject (negative NPV)\n• Higher PI = better value per dollar\n\n**Example:**\nProject A: NPV = $50,000, Investment = $200,000\nPI = ($50,000 + $200,000) / $200,000 = 1.25\n\nProject B: NPV = $30,000, Investment = $100,000\nPI = ($30,000 + $100,000) / $100,000 = 1.30\n\n**Project B has higher PI = more value per dollar invested!**"
+        },
+        {
+          "title": "🧠 Memory Aid: PI vs NPV",
+          "type": "callout",
+          "content": "**When to use which:**\n\n**NPV** = Best for UNLIMITED capital\n• Accept all positive NPV projects\n• Maximizes total wealth\n\n**PI** = Best for RATIONED capital\n• Rank by value per dollar\n• Maximizes wealth per dollar invested\n\n**Remember:**\nNPV tells you total dollars created\nPI tells you efficiency (bang per buck)"
+        },
+        {
+          "title": "Project Selection Under Rationing",
+          "type": "text",
+          "content": "**Process:**\n\n**Step 1:** Calculate NPV and PI for all projects\n\n**Step 2:** Rank projects by PI (highest first)\n\n**Step 3:** Select projects in order until capital exhausted\n\n**Example:**\nCapital budget: $500,000\n\n| Project | Investment | NPV | PI |\n|---------|------------|-----|----|\n| A | $200,000 | $60,000 | 1.30 |\n| B | $150,000 | $52,500 | 1.35 |\n| C | $250,000 | $50,000 | 1.20 |\n| D | $100,000 | $25,000 | 1.25 |\n\n**Ranked by PI:** B (1.35), A (1.30), D (1.25), C (1.20)\n\n**Selection:** B + A + D = $450,000 invested\nTotal NPV = $137,500\n\n**vs selecting C + A:** $450,000 invested\nTotal NPV = $110,000 (worse!)"
+        },
+        {
+          "title": "⚠️ Exam Trap: PI Limitations",
+          "type": "warning",
+          "content": "**When PI Ranking Can Mislead:**\n\n**1. Indivisible Projects**\nCan't do 0.5 of a project - must consider combinations\n\n**2. Multi-Period Rationing**\nCapital constraints over multiple years complicate analysis\n\n**3. Mutually Exclusive Projects**\nPI may rank smaller project higher even if larger NPV available\n\n**4. Scale Differences**\nSmall high-PI project may leave capital unused\n\n**Best Practice:**\nUse PI for initial ranking, then check combinations to maximize total NPV within budget"
+        },
+        {
+          "title": "Integer Programming Approach",
+          "type": "text",
+          "content": "**For Complex Situations:**\n\n**When Simple Ranking Fails:**\n• Projects have dependencies\n• Multiple constraints (capital + labor)\n• Multi-period rationing\n\n**Integer Programming:**\n• Decision variable: accept (1) or reject (0)\n• Maximize: Total NPV\n• Subject to: Budget constraint(s)\n\n**Example Formulation:**\nMaximize: 60,000X_A + 52,500X_B + 50,000X_C + 25,000X_D\nSubject to: 200,000X_A + 150,000X_B + 250,000X_C + 100,000X_D ≤ 500,000\nWhere X = 0 or 1\n\n**Practical Note:** Usually solved with software"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Capital rationing means choosing among positive-NPV projects",
+            "Hard rationing is external (market); soft rationing is internal (policy)",
+            "PI = PV of cash flows / Initial investment (or 1 + NPV/Investment)",
+            "PI > 1 means positive NPV; higher PI means more efficiency",
+            "Under rationing, rank by PI to maximize value per dollar",
+            "Check combinations when projects are indivisible",
+            "NPV still matters for total wealth creation"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Profitability Index Calculation",
+          "knowledgeCheck": {
+            "question": "Project X requires an initial investment of $400,000 and has a net present value of $80,000. What is the profitability index?",
+            "options": [
+              "0.20",
+              "0.80",
+              "1.20",
+              "5.00"
+            ],
+            "correctIndex": 2,
+            "explanation": "PI = (NPV + Initial Investment) / Initial Investment = ($80,000 + $400,000) / $400,000 = $480,000 / $400,000 = 1.20. Alternatively, PI = 1 + (NPV/Investment) = 1 + ($80,000/$400,000) = 1 + 0.20 = 1.20.",
+            "hint": "PI equals the PV of cash flows divided by initial investment, or equivalently 1 + (NPV/Investment)."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "NPV vs PI Conflict",
+          "reveal": {
+            "question": "When might NPV and PI rankings give conflicting recommendations, and how should a manager resolve the conflict?",
+            "answer": "Conflicts occur when: (1) Projects differ significantly in scale, (2) High-PI project has lower total NPV than low-PI project. Resolution: Under unlimited capital, choose higher NPV (total wealth). Under capital rationing, use PI to maximize wealth per dollar invested. If high-PI project leaves capital unused, check whether combinations of smaller projects can generate more total NPV."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-009",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Modified Internal Rate of Return (MIRR)",
+    "description": "Overcome IRR limitations with a more realistic reinvestment assumption",
+    "order": 48,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "MIRR",
+      "Reinvestment assumption",
+      "IRR limitations",
+      "Capital budgeting"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "IRR has a major flaw - it assumes intermediate cash flows are reinvested at the IRR itself, which is often unrealistically high! MIRR corrects this by using a more realistic reinvestment rate, giving a more accurate picture of project returns."
+        },
+        {
+          "title": "IRR's Reinvestment Problem",
+          "type": "text",
+          "content": "**The Hidden Assumption in IRR:**\n\nWhen calculating IRR, the math implicitly assumes that all intermediate cash flows are reinvested at the IRR.\n\n**Example:**\nProject with IRR = 25%\nYear 1 cash flow: $100,000\n\n**IRR assumes:** This $100,000 earns 25% until project end\n\n**Reality:** Company probably earns its cost of capital (say 10%) on excess cash\n\n**Result:** IRR overstates the true project return"
+        },
+        {
+          "title": "MIRR Solution",
+          "type": "text",
+          "content": "**Modified IRR Uses Two Rates:**\n\n**1. Finance Rate (for negative cash flows)**\n• Cost of funding outflows\n• Usually the cost of capital\n• Discounts outflows to present\n\n**2. Reinvestment Rate (for positive cash flows)**\n• Rate earned on inflows\n• Often cost of capital or a realistic return rate\n• Compounds inflows to terminal value\n\n**MIRR Formula:**\nMIRR = ⁿ√(Terminal Value of Inflows / PV of Outflows) - 1\n\nWhere n = number of periods"
+        },
+        {
+          "title": "🧠 Memory Aid: MIRR Steps",
+          "type": "callout",
+          "content": "**\"PTM\" - Three-Step Process:**\n\n**P**resent value of all OUTFLOWS (negative CFs)\n• Discount to time zero at finance rate\n\n**T**erminal value of all INFLOWS (positive CFs)\n• Compound to end of project at reinvestment rate\n\n**M**IRR calculation\n• Find rate that equates PV to TV\n• MIRR = (TV/PV)^(1/n) - 1"
+        },
+        {
+          "title": "MIRR Example",
+          "type": "text",
+          "content": "**Project:**\nYear 0: -$100,000\nYear 1: +$50,000\nYear 2: +$60,000\nYear 3: +$40,000\n\n**Finance rate:** 10%\n**Reinvestment rate:** 12%\n\n**Step 1: PV of Outflows**\n$100,000 (already at time 0)\n\n**Step 2: Terminal Value of Inflows**\n$50,000 × (1.12)² = $62,720\n$60,000 × (1.12)¹ = $67,200\n$40,000 × (1.12)⁰ = $40,000\nTV = $169,920\n\n**Step 3: Calculate MIRR**\nMIRR = ³√($169,920 / $100,000) - 1\nMIRR = ³√1.6992 - 1\nMIRR = 1.193 - 1 = 19.3%"
+        },
+        {
+          "title": "IRR vs MIRR Comparison",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "IRR",
+            "MIRR"
+          ],
+          "rows": [
+            [
+              "Reinvestment assumption",
+              "At IRR itself",
+              "At chosen reinvestment rate"
+            ],
+            [
+              "Multiple IRR problem",
+              "Yes (non-conventional CFs)",
+              "No - single answer"
+            ],
+            [
+              "Ease of calculation",
+              "Easier (one rate)",
+              "Slightly harder (two rates)"
+            ],
+            [
+              "Realism",
+              "Often overestimates return",
+              "More realistic"
+            ],
+            [
+              "Decision consistency",
+              "May conflict with NPV",
+              "Usually consistent with NPV"
+            ]
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: When to Use MIRR",
+          "type": "warning",
+          "content": "**Use MIRR when:**\n• IRR is unrealistically high\n• Project has non-conventional cash flows\n• Comparing projects of different sizes\n• More realistic return estimate needed\n\n**MIRR ≤ IRR always** (when reinvestment rate < IRR)\n\n**Decision Rule:**\n• MIRR > Cost of Capital → Accept\n• MIRR < Cost of Capital → Reject\n\n**Exam Note:** If given both finance and reinvestment rates, you're calculating MIRR!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IRR unrealistically assumes reinvestment at the IRR rate",
+            "MIRR uses a specified reinvestment rate (usually cost of capital)",
+            "MIRR solves the multiple IRR problem for non-conventional cash flows",
+            "Process: PV outflows, TV inflows, then find connecting rate",
+            "MIRR ≤ IRR when reinvestment rate is below IRR",
+            "MIRR is more consistent with NPV ranking",
+            "Accept if MIRR > cost of capital"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "MIRR Understanding",
+          "knowledgeCheck": {
+            "question": "A project has an IRR of 28% and a cost of capital of 12%. If MIRR is calculated using 12% as both the finance rate and reinvestment rate, the MIRR will most likely be:",
+            "options": [
+              "Equal to 28%",
+              "Greater than 28%",
+              "Less than 28% but greater than 12%",
+              "Less than 12%"
+            ],
+            "correctIndex": 2,
+            "explanation": "MIRR will be less than IRR (28%) because it uses a lower reinvestment rate (12% instead of 28%). However, since the project was acceptable under IRR (28% > 12%), it will also be acceptable under MIRR (MIRR > 12% cost of capital).",
+            "hint": "MIRR is lower than IRR when the reinvestment rate is below the IRR."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-010",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Cost of Capital Estimation",
+    "description": "Calculate cost of debt, cost of equity, and weighted average cost of capital",
+    "order": 50,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Cost of capital",
+      "WACC",
+      "Cost of debt",
+      "Cost of equity",
+      "CAPM"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Cost of capital is the HURDLE RATE for investments! Every capital budgeting decision uses it as the minimum acceptable return. CMAs must understand how to calculate WACC and its components to evaluate projects and measure economic value added."
+        },
+        {
+          "title": "Component Costs Overview",
+          "type": "text",
+          "content": "**WACC = Weighted Average Cost of Capital**\n\n**Formula:**\nWACC = (Weight of Debt × After-tax Cost of Debt) + (Weight of Equity × Cost of Equity)\n\n**Components:**\n• **Cost of Debt:** Interest rate on borrowing, adjusted for tax shield\n• **Cost of Equity:** Return required by shareholders\n• **Weights:** Based on target or market value capital structure\n\n**Example:**\nDebt: 40% of capital, 8% interest, 25% tax rate\nEquity: 60% of capital, 12% required return\n\nWACC = (0.40 × 8% × 0.75) + (0.60 × 12%)\nWACC = 2.4% + 7.2% = 9.6%"
+        },
+        {
+          "title": "After-Tax Cost of Debt",
+          "type": "text",
+          "content": "**Interest is tax-deductible!**\n\n**Formula:**\nAfter-tax Cost of Debt = Pre-tax Rate × (1 - Tax Rate)\n\n**Example:**\nBond yields 8%\nTax rate 25%\n\nAfter-tax cost = 8% × (1 - 0.25) = 6%\n\n**Why it matters:**\n• Debt is \"cheaper\" than it appears\n• Tax shield reduces effective cost\n• $100 interest expense saves $25 in taxes\n• Net cost is only $75\n\n**Sources for pre-tax rate:**\n• Yield to maturity on bonds\n• Interest rate on bank loans"
+        },
+        {
+          "title": "Cost of Equity: CAPM",
+          "type": "text",
+          "content": "**Capital Asset Pricing Model:**\n\n**Ke = Rf + β × (Rm - Rf)**\n\n**Where:**\n• Ke = Cost of equity\n• Rf = Risk-free rate (Treasury rate)\n• β = Beta (systematic risk)\n• Rm = Expected market return\n• (Rm - Rf) = Market risk premium\n\n**Example:**\nRisk-free rate: 3%\nMarket return: 10%\nBeta: 1.2\n\nKe = 3% + 1.2 × (10% - 3%)\nKe = 3% + 1.2 × 7%\nKe = 3% + 8.4% = 11.4%"
+        },
+        {
+          "title": "🧠 Memory Aid: Beta Interpretation",
+          "type": "callout",
+          "content": "**Beta measures volatility relative to market:**\n\n**β = 1.0:** Same volatility as market\n**β > 1.0:** More volatile (riskier, higher return required)\n**β < 1.0:** Less volatile (safer, lower return required)\n\n**Examples:**\n• β = 1.5: Stock moves 50% MORE than market\n• β = 0.8: Stock moves 20% LESS than market\n\n**Higher risk = Higher required return!**"
+        },
+        {
+          "title": "Alternative: Dividend Growth Model",
+          "type": "text",
+          "content": "**Gordon Growth Model:**\n\n**Ke = (D₁ / P₀) + g**\n\n**Where:**\n• D₁ = Next year's expected dividend\n• P₀ = Current stock price\n• g = Dividend growth rate\n\n**Example:**\nCurrent stock price: $50\nNext dividend: $2.50\nGrowth rate: 5%\n\nKe = ($2.50 / $50) + 5%\nKe = 5% + 5% = 10%\n\n**Limitations:**\n• Assumes constant growth forever\n• Requires dividend-paying stock\n• Sensitive to growth estimate"
+        },
+        {
+          "title": "Capital Structure Weights",
+          "type": "text",
+          "content": "**Preferred: Market value weights**\n\n**Market Value of Debt:**\n• Use market price of bonds\n• Or book value if no market price\n\n**Market Value of Equity:**\n• Share price × Shares outstanding\n• = Market capitalization\n\n**Example:**\nMarket value of debt: $400 million\nMarket value of equity: $600 million\nTotal: $1,000 million\n\nWeight of debt: 40%\nWeight of equity: 60%"
+        },
+        {
+          "title": "⚠️ Exam Trap: WACC Pitfalls",
+          "type": "warning",
+          "content": "**Common mistakes to avoid:**\n\n**1. Forgetting tax adjustment on debt**\n• Always use AFTER-tax cost of debt\n• Multiply by (1 - Tax Rate)\n\n**2. Using book value weights**\n• Prefer market value when available\n• Book values can be outdated\n\n**3. Wrong beta application**\n• Beta adjusts equity cost, not debt cost\n\n**4. Ignoring preferred stock**\n• If present, add as third component\n• Cost of preferred = Dividend / Price\n• No tax adjustment (dividends not deductible)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "WACC = weighted average of after-tax debt and equity costs",
+            "After-tax cost of debt = Pre-tax rate × (1 - Tax rate)",
+            "CAPM: Ke = Rf + Beta × (Rm - Rf)",
+            "Higher beta = higher risk = higher required return",
+            "Dividend growth model: Ke = (D1/P0) + g",
+            "Use market value weights for capital structure",
+            "WACC is the discount rate for capital budgeting"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "WACC Calculation",
+          "knowledgeCheck": {
+            "question": "A company has: 30% debt (pre-tax cost 6%), 70% equity (cost 14%), tax rate 40%. What is WACC?",
+            "options": [
+              "8.6%",
+              "10.88%",
+              "11.8%",
+              "12.2%"
+            ],
+            "correctIndex": 1,
+            "explanation": "After-tax debt cost = 6% × (1-0.40) = 3.6%. WACC = (0.30 × 3.6%) + (0.70 × 14%) = 1.08% + 9.80% = 10.88%.",
+            "hint": "Remember to adjust debt cost for taxes before weighting."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-011",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Real Options in Capital Budgeting",
+    "description": "Value managerial flexibility and strategic options in investment decisions",
+    "order": 51,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Real options",
+      "Strategic flexibility",
+      "Option value",
+      "Capital budgeting"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Traditional NPV assumes a fixed path - but managers can ADAPT! Real options analysis values the flexibility to expand, abandon, delay, or change projects as information unfolds. This is especially valuable for high-uncertainty investments."
+        },
+        {
+          "title": "What Are Real Options?",
+          "type": "text",
+          "content": "**Definition:** Rights (not obligations) embedded in investment projects\n\n**Financial options vs Real options:**\n• Financial: Call/put on stocks (traded)\n• Real: Options on physical assets/projects (not traded)\n\n**Key insight:**\nStandard DCF assumes now-or-never decision\nReal options recognize you can WAIT, EXPAND, or ABANDON\n\n**Value equation:**\nExpanded NPV = Traditional NPV + Value of Flexibility"
+        },
+        {
+          "title": "Types of Real Options",
+          "type": "table",
+          "headers": [
+            "Option Type",
+            "Description",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Option to Defer",
+              "Wait before investing",
+              "Hold land, develop later"
+            ],
+            [
+              "Option to Expand",
+              "Scale up if successful",
+              "Build larger factory later"
+            ],
+            [
+              "Option to Abandon",
+              "Exit if unsuccessful",
+              "Sell assets, stop losses"
+            ],
+            [
+              "Option to Contract",
+              "Scale down",
+              "Reduce capacity in downturn"
+            ],
+            [
+              "Option to Switch",
+              "Change inputs/outputs",
+              "Flex-fuel plant"
+            ],
+            [
+              "Staging Option",
+              "Invest in phases",
+              "Pilot project first"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: When Options Matter",
+          "type": "callout",
+          "content": "**\"VUCI\" - Real Options Are Valuable When:**\n\n**V**olatility is high (outcomes uncertain)\n**U**ncertainty can be resolved over time\n**C**ash flows are marginal (near breakeven)\n**I**nvestment is somewhat reversible\n\n**Low volatility + irreversible = Options don't add much value**\n**High volatility + flexibility = Options are very valuable**"
+        },
+        {
+          "title": "Option to Defer Example",
+          "type": "text",
+          "content": "**Scenario:**\nProject NPV today: -$2 million (would reject)\n\n**But: Can wait 1 year to decide**\n• 50% chance: Market improves, NPV = +$10M\n• 50% chance: Market worsens, NPV = -$8M\n\n**If invest today:**\nNPV = -$2M (bad deal)\n\n**If wait:**\n• Good outcome: Invest, earn $10M\n• Bad outcome: Don't invest, lose $0\n• Expected value = 50%($10M) + 50%($0) = $5M\n• Less delay cost (say, $0.5M) = $4.5M\n\n**Value of waiting = $4.5M > -$2M!**\nOption to defer is worth $6.5M"
+        },
+        {
+          "title": "Comparing to Traditional NPV",
+          "type": "comparison",
+          "items": [
+            {
+              "name": "Traditional NPV",
+              "points": [
+                "Now-or-never decision",
+                "Fixed project plan",
+                "Single expected outcome",
+                "Ignores flexibility value"
+              ]
+            },
+            {
+              "name": "Real Options Approach",
+              "points": [
+                "Can wait for information",
+                "Adaptive project planning",
+                "Multiple possible outcomes",
+                "Values managerial flexibility"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: Real Options Limitations",
+          "type": "warning",
+          "content": "**When real options analysis is problematic:**\n\n• **Hard to estimate volatility** for non-traded assets\n• **Complex math** (Black-Scholes, binomial trees)\n• **Can justify bad projects** with enough \"option value\"\n• **Options may not exist** (competitors may move first)\n• **Exercise not really optional** (sunk costs, contracts)\n\n**Exam Approach:**\n• Understand conceptually how options add value\n• Recognize when flexibility is valuable\n• Don't need to calculate option values mathematically"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Real options value managerial flexibility in projects",
+            "Types: defer, expand, abandon, contract, switch, stage",
+            "Expanded NPV = Traditional NPV + Option Value",
+            "Options most valuable with high uncertainty and flexibility",
+            "Option to defer: wait for information, avoid downside",
+            "Option to abandon: limit losses if project fails",
+            "Complements, doesn't replace, traditional NPV analysis"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Real Options",
+          "knowledgeCheck": {
+            "question": "A mining company buys mineral rights that allow (but don't require) mining operations to begin anytime in the next 10 years. This represents which type of real option?",
+            "options": [
+              "Option to expand",
+              "Option to defer",
+              "Option to abandon",
+              "Option to switch"
+            ],
+            "correctIndex": 1,
+            "explanation": "This is an option to defer. The company can wait to see how mineral prices evolve before committing to mining operations. If prices rise, they develop the mine. If prices stay low, they can wait or let the option expire.",
+            "hint": "What flexibility does buying the rights give them? The right to wait and decide later."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-012",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Economic Value Added (EVA)",
+    "description": "Measure true economic profit by accounting for the cost of all capital",
+    "order": 12,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Economic Value Added",
+      "EVA",
+      "Residual income",
+      "Value-based management"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Accounting profit hides the true cost of equity! EVA reveals whether a company is actually creating value for shareholders by charging for ALL capital - not just debt. Positive EVA means value creation; negative means value destruction."
+        },
+        {
+          "title": "EVA Concept",
+          "type": "text",
+          "content": "**The Problem with Accounting Profit:**\nNet income deducts interest expense (cost of debt)\nBut IGNORES the cost of equity capital\nShareholders expect returns too!\n\n**EVA Solution:**\nCharge for the cost of ALL capital employed\n\n**EVA Formula:**\nEVA = NOPAT - (Capital × Cost of Capital)\n\n**Where:**\n• NOPAT = Net Operating Profit After Tax\n• Capital = Total invested capital (debt + equity)\n• Cost of Capital = WACC\n\n**Alternative:**\nEVA = (ROIC - WACC) × Capital"
+        },
+        {
+          "title": "EVA Interpretation",
+          "type": "table",
+          "headers": [
+            "EVA Result",
+            "Meaning",
+            "Implication"
+          ],
+          "rows": [
+            [
+              "EVA > 0",
+              "Earning above cost of capital",
+              "Creating shareholder value"
+            ],
+            [
+              "EVA = 0",
+              "Earning exactly cost of capital",
+              "Breaking even economically"
+            ],
+            [
+              "EVA < 0",
+              "Earning below cost of capital",
+              "Destroying shareholder value"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: EVA vs Other Metrics",
+          "type": "callout",
+          "content": "**Why EVA beats Net Income:**\n\n**Net Income:** Can be positive while destroying value\n(If returns < cost of equity)\n\n**ROI/ROE:** Percentage only - ignores scale\n(10% return on $100 < 8% return on $10,000)\n\n**EVA:** Dollar amount of value created\n(After charging for ALL capital)\n\n**Both ROE and EVA have a place:**\n• ROE for comparing efficiency across companies\n• EVA for measuring absolute value creation"
+        },
+        {
+          "title": "EVA Calculation Example",
+          "type": "text",
+          "content": "**Given:**\n• Operating income: $500,000\n• Tax rate: 30%\n• Total capital invested: $2,000,000\n• WACC: 10%\n\n**Step 1: Calculate NOPAT**\nNOPAT = $500,000 × (1 - 0.30) = $350,000\n\n**Step 2: Calculate Capital Charge**\nCapital Charge = $2,000,000 × 10% = $200,000\n\n**Step 3: Calculate EVA**\nEVA = $350,000 - $200,000 = **$150,000**\n\n**Interpretation:**\nCompany created $150,000 of shareholder value\nReturns exceeded cost of capital by $150K"
+        },
+        {
+          "title": "Improving EVA",
+          "type": "text",
+          "content": "**Four Levers to Increase EVA:**\n\n**1. Increase NOPAT (Same Capital)**\n• Grow revenue\n• Improve margins\n• Operational efficiency\n\n**2. Reduce Capital (Same NOPAT)**\n• Better asset utilization\n• Sell underperforming assets\n• Reduce working capital\n\n**3. Invest in Positive-EVA Projects**\n• Projects with ROIC > WACC\n• Grow capital IF returns exceed cost\n\n**4. Reduce WACC**\n• Optimize capital structure\n• Refinance expensive debt\n• Reduce risk (lowers cost)"
+        },
+        {
+          "title": "⚠️ Exam Trap: EVA Adjustments",
+          "type": "warning",
+          "content": "**Pure EVA requires adjustments to GAAP:**\n\n**Common EVA Adjustments:**\n• Capitalize and amortize R&D\n• Capitalize operating leases (less relevant post ASC 842)\n• Add back goodwill amortization\n• Adjust for deferred taxes\n\n**Purpose:** Make accounting numbers more \"economic\"\n\n**CMA Exam:** Usually uses simplified version\nBe aware adjustments exist but calculate with given data"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "EVA = NOPAT - (Capital × WACC)",
+            "Positive EVA means true value creation (returns > all capital costs)",
+            "Net income ignores equity cost; EVA charges for ALL capital",
+            "Four levers: Increase NOPAT, Reduce capital, Invest wisely, Lower WACC",
+            "Alternative: EVA = (ROIC - WACC) × Capital",
+            "EVA gives dollar amount of value created/destroyed",
+            "ROI is ratio (efficiency); EVA is dollars (absolute value)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "EVA Calculation",
+          "knowledgeCheck": {
+            "question": "Division A has NOPAT of $800,000 and invested capital of $5 million. Division B has NOPAT of $600,000 and invested capital of $3 million. If WACC is 12%, which division creates more economic value?",
+            "options": [
+              "Division A (EVA = $200,000)",
+              "Division B (EVA = $240,000)",
+              "Both create equal EVA",
+              "Neither creates positive EVA"
+            ],
+            "correctIndex": 1,
+            "explanation": "Division A EVA: $800,000 - ($5M × 12%) = $800,000 - $600,000 = $200,000. Division B EVA: $600,000 - ($3M × 12%) = $600,000 - $360,000 = $240,000. Division B creates more value despite lower NOPAT.",
+            "hint": "Calculate EVA for each: NOPAT minus (Capital × WACC). Don't be fooled by absolute NOPAT."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-013",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Dividend Policy",
+    "description": "Understand theories and factors affecting corporate dividend decisions",
+    "order": 13,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Dividend policy",
+      "Dividend theories",
+      "Payout ratio",
+      "Stock dividends"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Should we pay dividends or reinvest? CMAs help analyze the trade-offs between returning cash to shareholders and funding growth. Understanding dividend policy theories helps communicate with investors and support board decisions."
+        },
+        {
+          "title": "Dividend Policy Theories",
+          "type": "text",
+          "content": "**Dividend Irrelevance (Miller & Modigliani):**\n• In perfect markets, dividends don't matter\n• Investors can create \"homemade dividends\"\n• Value depends on earnings, not payout\n\n**Bird-in-Hand Theory:**\n• Dividends are less risky than capital gains\n• Investors prefer certain dividends\n• Higher dividends → Higher valuation\n\n**Tax Preference Theory:**\n• Capital gains taxed at lower rate (often)\n• Capital gains tax can be deferred\n• Investors prefer lower dividends\n\n**Signaling Theory:**\n• Dividends signal management confidence\n• Dividend increase = Positive signal\n• Dividend cut = Negative signal"
+        },
+        {
+          "title": "Theory Comparison",
+          "type": "table",
+          "headers": [
+            "Theory",
+            "Dividend Impact on Value",
+            "Implication"
+          ],
+          "rows": [
+            [
+              "Irrelevance",
+              "None",
+              "Policy doesn't matter"
+            ],
+            [
+              "Bird-in-Hand",
+              "Higher dividends = Higher value",
+              "Pay more dividends"
+            ],
+            [
+              "Tax Preference",
+              "Lower dividends = Higher value",
+              "Retain earnings"
+            ],
+            [
+              "Signaling",
+              "Stable dividends signal strength",
+              "Maintain/grow dividends"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Dividend Policies",
+          "type": "callout",
+          "content": "**Types of dividend policies:**\n\n**Stable Dividend:**\n• Fixed amount per share\n• Predictable for investors\n• Reluctant to cut (signaling concern)\n\n**Constant Payout Ratio:**\n• Fixed % of earnings\n• Dividends fluctuate with earnings\n• Less predictable\n\n**Residual Dividend:**\n• Pay dividends only after funding investments\n• Prioritizes positive NPV projects\n• Most volatile\n\n**Low Regular + Extra:**\n• Small regular dividend\n• Extra dividend in good years\n• Flexibility without signaling concerns"
+        },
+        {
+          "title": "Factors Affecting Dividend Policy",
+          "type": "text",
+          "content": "**Internal Factors:**\n• Liquidity position (need cash?)\n• Investment opportunities (NPV projects?)\n• Debt covenants (restrictions?)\n• Access to capital markets\n• Ownership preferences\n\n**External Factors:**\n• Tax laws (dividend vs capital gains rates)\n• Legal restrictions (retained earnings limit)\n• Inflation (real vs nominal dollars)\n• Industry norms\n\n**Life Cycle Impact:**\n• Growth phase: Low/no dividends, reinvest\n• Mature phase: Higher dividends, fewer opportunities\n• Decline phase: High dividends, return capital"
+        },
+        {
+          "title": "Stock Dividends and Splits",
+          "type": "text",
+          "content": "**Stock Dividend:**\n• Additional shares to existing shareholders\n• No cash leaves company\n• Proportional ownership unchanged\n• Accounting: Transfer RE to Common Stock\n\n**Stock Split:**\n• Increase shares, reduce par value\n• 2-for-1: Twice as many shares at half price\n• No dollar impact on equity\n• Purpose: Lower share price, increase liquidity\n\n**Reverse Split:**\n• Decrease shares, increase price\n• 1-for-5: One share for every five\n• Purpose: Meet exchange requirements\n• Often seen negatively"
+        },
+        {
+          "title": "⚠️ Exam Trap: Cash vs Stock Dividends",
+          "type": "warning",
+          "content": "**Key Distinctions:**\n\n**Cash Dividend:**\n• Reduces both assets (cash) and equity (RE)\n• Creates tax liability for shareholders\n• Company needs cash\n\n**Stock Dividend:**\n• No asset change\n• Rearranges equity accounts only\n• Generally not taxable to shareholders\n• Company keeps cash\n\n**Why issue stock dividend?**\n• Conserve cash\n• Lower share price (like split)\n• Signal without cash commitment\n\n**Neither changes shareholder wealth!**\n(Just slices the same pie differently)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four theories: Irrelevance, Bird-in-Hand, Tax Preference, Signaling",
+            "Policies: Stable, Constant Payout, Residual, Low Regular + Extra",
+            "Factors: Liquidity, opportunities, covenants, taxes, life cycle",
+            "Stock dividends and splits don't change shareholder wealth",
+            "Growth companies retain; Mature companies pay dividends",
+            "Dividend cuts send negative signals (signaling theory)",
+            "CMAs analyze trade-offs between dividends and reinvestment"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Dividend Theory",
+          "knowledgeCheck": {
+            "question": "According to the signaling theory of dividends, what does an unexpected dividend increase communicate to the market?",
+            "options": [
+              "The company has no profitable investment opportunities",
+              "Management is confident about future earnings",
+              "The company has too much debt",
+              "Tax rates are about to change"
+            ],
+            "correctIndex": 1,
+            "explanation": "Signaling theory holds that dividend changes communicate management's private information about future prospects. An increase signals confidence in future earnings sustainability because managers are reluctant to cut dividends later.",
+            "hint": "Signaling theory focuses on what dividend changes communicate about management's view of the future."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-014",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Capital Structure Theory",
+    "description": "Understand optimal capital structure and its impact on firm value",
+    "order": 14,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Capital structure",
+      "Modigliani-Miller",
+      "Financial leverage",
+      "Optimal debt"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "How should we finance the company? The debt vs. equity decision affects cost of capital, risk, and firm value. CMAs analyze capital structure alternatives and their impact on WACC, EPS, and financial flexibility."
+        },
+        {
+          "title": "Capital Structure Fundamentals",
+          "type": "text",
+          "content": "**Capital Structure:**\n• Mix of debt and equity financing\n• Expressed as D/E ratio or Debt/Total Capital\n\n**Trade-off:**\n• Debt is cheaper (interest is tax-deductible)\n• But debt increases financial risk\n• Goal: Find optimal balance\n\n**Financial Leverage:**\n• Using debt to magnify returns\n• Good times: Leverage amplifies gains\n• Bad times: Leverage amplifies losses\n• More debt = More leverage = More risk"
+        },
+        {
+          "title": "Modigliani-Miller Propositions",
+          "type": "table",
+          "headers": [
+            "Proposition",
+            "Without Taxes",
+            "With Taxes"
+          ],
+          "rows": [
+            [
+              "M&M I: Firm Value",
+              "Value independent of capital structure",
+              "Value increases with debt (tax shield)"
+            ],
+            [
+              "M&M II: Cost of Equity",
+              "Cost of equity increases with leverage",
+              "Same, but offset partially by tax benefit"
+            ],
+            [
+              "WACC",
+              "WACC constant at all debt levels",
+              "WACC decreases as debt increases"
+            ],
+            [
+              "Implication",
+              "Capital structure doesn't matter",
+              "100% debt is optimal (unrealistic)"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Trade-Off Theory",
+          "type": "callout",
+          "content": "**Balancing Benefits vs. Costs of Debt:**\n\n**Benefits of Debt:**\n• Tax shield (Interest × Tax Rate)\n• Discipline on management (must make payments)\n• Lower cost than equity\n\n**Costs of Debt:**\n• Financial distress costs\n• Bankruptcy risk\n• Agency costs (bondholder conflicts)\n• Loss of flexibility\n\n**Optimal Structure:**\nWhere marginal benefit of tax shield\nequals marginal cost of distress\n\n**Picture:** Upside-down U curve for firm value"
+        },
+        {
+          "title": "Financial Distress Costs",
+          "type": "text",
+          "content": "**Direct Costs:**\n• Legal and administrative fees\n• Court costs\n• Accountant/advisor fees\n• Typically 3-6% of firm value\n\n**Indirect Costs (Often Larger):**\n• Lost sales (customers worried)\n• Lost suppliers (demand cash)\n• Lost employees (leave for stability)\n• Management distraction\n• Fire sale of assets\n• Inability to invest\n\n**Key Insight:**\nDistress costs increase with probability of distress\nMore debt = Higher probability = Higher expected costs"
+        },
+        {
+          "title": "Pecking Order Theory",
+          "type": "text",
+          "content": "**Alternative View:**\nCompanies prefer financing in specific order:\n\n**1. Internal Funds (First Choice)**\n• Retained earnings\n• No transaction costs\n• No information asymmetry\n\n**2. Debt (Second Choice)**\n• Less information-sensitive than equity\n• Fixed claim, simpler to value\n\n**3. Equity (Last Resort)**\n• Signaling problem\n• Issuing equity signals overvaluation\n• Stock price often drops on announcement\n\n**Implication:**\nNo \"optimal\" target - Structure reflects history of financing needs"
+        },
+        {
+          "title": "⚠️ Exam Trap: EPS-EBIT Analysis",
+          "type": "warning",
+          "content": "**Comparing financing alternatives at different EBIT levels:**\n\n**Find Indifference Point:**\nEBIT where EPS is same under debt vs equity\n\n**Formula:**\n(EBIT - I1)(1-T) / Shares1 = (EBIT - I2)(1-T) / Shares2\n\n**Above indifference:**\nDebt financing = Higher EPS\n\n**Below indifference:**\nEquity financing = Higher EPS\n\n**Note:**\nHigher EPS doesn't mean better!\nDebt increases risk - higher EPS at higher risk\n\n**Don't confuse EPS maximization with value maximization!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Capital structure: Mix of debt and equity financing",
+            "M&M without taxes: Structure doesn't matter",
+            "M&M with taxes: More debt = Higher value (tax shield)",
+            "Trade-off theory: Balance tax benefits vs distress costs",
+            "Pecking order: Internal funds > Debt > Equity",
+            "Distress costs limit debt benefits at high leverage",
+            "EPS-EBIT analysis: Find indifference point between alternatives"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Capital Structure Concepts",
+          "knowledgeCheck": {
+            "question": "According to trade-off theory, what happens to the optimal debt level for a company with very stable cash flows and mostly tangible assets?",
+            "options": [
+              "Lower optimal debt - stability means no need for tax shield",
+              "Higher optimal debt - lower distress costs allow more leverage",
+              "No change - optimal debt is the same for all companies",
+              "Cannot be determined without knowing interest rates"
+            ],
+            "correctIndex": 1,
+            "explanation": "Stable cash flows reduce probability of distress, and tangible assets have higher liquidation values, reducing distress costs. This allows the firm to take on more debt before marginal distress costs equal marginal tax benefits.",
+            "hint": "Trade-off theory says optimal debt is where tax shield benefit equals distress cost. What affects distress cost?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-015",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Mergers and Acquisitions Analysis",
+    "description": "Evaluate M&A opportunities using financial and strategic analysis",
+    "order": 15,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Mergers",
+      "Acquisitions",
+      "Valuation",
+      "Synergies"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "M&A transforms companies overnight! CMAs play critical roles in M&A - valuing targets, analyzing synergies, conducting due diligence, and integrating financial systems. Understanding M&A fundamentals is essential for corporate finance careers."
+        },
+        {
+          "title": "Types of Business Combinations",
+          "type": "text",
+          "content": "**Merger:**\n• Two companies combine into one\n• One entity survives (or new entity formed)\n• Usually friendly, negotiated\n\n**Acquisition:**\n• One company buys another\n• Target may or may not continue\n• Can be friendly or hostile\n\n**Types by Strategic Rationale:**\n• **Horizontal:** Same industry (Competitors)\n• **Vertical:** Supply chain integration\n• **Conglomerate:** Unrelated businesses\n\n**Payment Methods:**\n• Cash\n• Stock\n• Debt\n• Combination"
+        },
+        {
+          "title": "Synergy Types",
+          "type": "table",
+          "headers": [
+            "Synergy Type",
+            "Source",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Revenue",
+              "Cross-selling, New markets",
+              "Selling acquirer products to target customers"
+            ],
+            [
+              "Cost",
+              "Economies of scale",
+              "Eliminate duplicate functions"
+            ],
+            [
+              "Financial",
+              "Lower cost of capital",
+              "Combined entity gets better credit terms"
+            ],
+            [
+              "Tax",
+              "Tax loss carryforwards",
+              "Profitable company acquires one with NOLs"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: M&A Valuation Methods",
+          "type": "callout",
+          "content": "**\"CMD\" - Three valuation approaches:**\n\n**C**omparables (Market approach)\n• Comparable company analysis\n• Use multiples: P/E, EV/EBITDA\n• \"What are similar companies worth?\"\n\n**M**arket price\n• Current stock price (if public)\n• Add premium for control\n• Typical premium: 20-40%\n\n**D**CF (Discounted Cash Flow)\n• Present value of future cash flows\n• Most theoretically sound\n• Highly sensitive to assumptions\n\n**Reality:** Use all three and triangulate!"
+        },
+        {
+          "title": "Key M&A Metrics",
+          "type": "text",
+          "content": "**Acquisition Premium:**\n= (Price paid - Target stock price) / Target stock price\n• Typically 20-40%\n• Reflects control value + synergies\n\n**Break-even Synergy:**\n= Premium paid / Target value\n• Minimum synergies needed to justify premium\n\n**Accretion/Dilution:**\n• Does deal increase or decrease acquirer EPS?\n• Accretive = EPS increases\n• Dilutive = EPS decreases\n\n**Pro Forma Analysis:**\n• Combined financial statements\n• Shows post-merger impact\n• With and without synergies"
+        },
+        {
+          "title": "Due Diligence Areas",
+          "type": "text",
+          "content": "**Financial Due Diligence:**\n• Quality of earnings\n• Working capital normalization\n• Hidden liabilities\n• Revenue sustainability\n\n**Operational Due Diligence:**\n• Key customer/supplier concentration\n• Technology and systems\n• Employee retention risk\n• Integration complexity\n\n**Legal Due Diligence:**\n• Contracts and commitments\n• Litigation exposure\n• Regulatory compliance\n• Intellectual property\n\n**CMA Role:** Lead financial due diligence, validate synergy assumptions"
+        },
+        {
+          "title": "⚠️ Exam Trap: Why M&A Fails",
+          "type": "warning",
+          "content": "**Most M&A destroys value for acquirer!**\n\n**Common Failure Causes:**\n• Overpaying (bidding wars)\n• Overestimating synergies\n• Underestimating integration costs\n• Cultural incompatibility\n• Key employee departures\n\n**Winner's Curse:**\nThe \"winning\" bidder often overpaid\nOther bidders saw problems you missed\n\n**Synergy Reality Check:**\n• Revenue synergies rarely materialize fully\n• Cost synergies more reliable\n• Implementation takes longer than planned\n• Hidden costs appear during integration\n\n**CMA Role:** Be skeptical, stress-test assumptions!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Merger vs Acquisition: Combination vs purchase",
+            "Horizontal, Vertical, Conglomerate: Based on strategic fit",
+            "Synergies: Revenue, Cost, Financial, Tax",
+            "Valuation: Comparables, Market price + premium, DCF",
+            "Typical acquisition premium: 20-40% over market price",
+            "Accretion/Dilution: Does EPS increase or decrease?",
+            "Due diligence: Financial, Operational, Legal validation",
+            "Most M&A fails - overpayment and integration issues common"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "M&A Premium",
+          "knowledgeCheck": {
+            "question": "A target company's stock trades at $40. The acquirer pays $52 per share. What is the acquisition premium?",
+            "options": [
+              "12%",
+              "23%",
+              "30%",
+              "52%"
+            ],
+            "correctIndex": 2,
+            "explanation": "Premium = ($52 - $40) / $40 = $12 / $40 = 30%. This premium reflects the value of control plus expected synergies. The acquirer must realize at least 30% value improvement to justify the price paid.",
+            "hint": "Premium = (Price Paid - Market Price) / Market Price"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-016",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Working Capital Investment Policy",
+    "description": "Balance liquidity and profitability in current asset management",
+    "order": 16,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Working capital policy",
+      "Liquidity",
+      "Current assets",
+      "Risk-return tradeoff"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Working capital ties up cash! CMAs help optimize the balance between holding enough current assets to operate smoothly and minimizing the cash tied up in inventory and receivables. The right policy depends on your industry and risk tolerance."
+        },
+        {
+          "title": "Working Capital Components",
+          "type": "text",
+          "content": "**Current Assets:**\n• Cash and equivalents\n• Marketable securities\n• Accounts receivable\n• Inventory\n• Prepaid expenses\n\n**Current Liabilities:**\n• Accounts payable\n• Accrued expenses\n• Short-term debt\n• Current portion of long-term debt\n\n**Net Working Capital:**\n= Current Assets - Current Liabilities\n• Positive = Cushion\n• Negative = Aggressive financing\n\n**Working Capital Investment:**\nLevel of CA you choose to maintain"
+        },
+        {
+          "title": "Investment Policies",
+          "type": "table",
+          "headers": [
+            "Policy",
+            "Current Assets",
+            "Risk",
+            "Return"
+          ],
+          "rows": [
+            [
+              "Aggressive",
+              "Low levels",
+              "Higher",
+              "Higher"
+            ],
+            [
+              "Moderate",
+              "Medium levels",
+              "Moderate",
+              "Moderate"
+            ],
+            [
+              "Conservative",
+              "High levels",
+              "Lower",
+              "Lower"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Policy Trade-offs",
+          "type": "callout",
+          "content": "**Aggressive (Low CA):**\n• Minimum inventory levels\n• Tight credit terms (low A/R)\n• Low cash balances\n• Risk: Stockouts, liquidity crises\n• Benefit: Less capital tied up, higher returns\n\n**Conservative (High CA):**\n• Large safety stock\n• Generous credit terms\n• Large cash buffers\n• Risk: Redundant assets, lower returns\n• Benefit: No stockouts, easy payment\n\n**Match to business:**\n• Predictable demand → Aggressive OK\n• Volatile demand → Conservative safer"
+        },
+        {
+          "title": "Cash Conversion Cycle",
+          "type": "text",
+          "content": "**CCC = DIO + DSO - DPO**\n\n**Days Inventory Outstanding (DIO):**\n= (Inventory / COGS) × 365\n• Days to sell inventory\n\n**Days Sales Outstanding (DSO):**\n= (A/R / Credit Sales) × 365\n• Days to collect receivables\n\n**Days Payables Outstanding (DPO):**\n= (A/P / COGS) × 365\n• Days to pay suppliers\n\n**Lower CCC = Less cash tied up**\n• Reduce DIO: Lean inventory\n• Reduce DSO: Faster collection\n• Increase DPO: Slow pay (within terms)\n\n**Negative CCC:** Collect before paying! (Amazon)"
+        },
+        {
+          "title": "Financing Policies",
+          "type": "text",
+          "content": "**Aggressive Financing:**\n• More short-term debt\n• Lower interest cost\n• Higher refinancing risk\n\n**Conservative Financing:**\n• More long-term debt/equity\n• Higher interest cost\n• Lower refinancing risk\n\n**Matching Principle:**\n• Finance permanent CA with long-term\n• Finance seasonal CA with short-term\n• Lowest overall cost with acceptable risk\n\n**Permanent vs Temporary CA:**\n• Permanent: Base level needed year-round\n• Temporary: Seasonal peaks above base"
+        },
+        {
+          "title": "⚠️ Exam Trap: Return vs Liquidity",
+          "type": "warning",
+          "content": "**More current assets = Less risk, LESS return!**\n\n**Why lower returns?**\n• Cash earns little interest\n• Inventory has carrying costs\n• A/R ties up capital\n• Opportunity cost of tied-up funds\n\n**But too few current assets:**\n• Lost sales (stockouts)\n• Lost customers (tight credit)\n• Inability to pay bills\n• Higher short-term borrowing costs\n\n**Find the balance:**\n• Model trade-offs\n• Consider industry norms\n• Match to demand variability\n• Factor in supplier reliability"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Net Working Capital = Current Assets - Current Liabilities",
+            "Aggressive: Low CA, higher risk, higher return",
+            "Conservative: High CA, lower risk, lower return",
+            "CCC = DIO + DSO - DPO (lower is better)",
+            "Matching principle: Match asset life to financing term",
+            "Permanent CA financed long-term; temporary CA short-term",
+            "Trade-off: Liquidity vs profitability"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Working Capital Policy",
+          "knowledgeCheck": {
+            "question": "A company with stable, predictable demand wants to maximize returns. Which working capital investment policy should it adopt?",
+            "options": [
+              "Conservative - high current asset levels",
+              "Aggressive - low current asset levels",
+              "Moderate - medium current asset levels",
+              "Policy doesn't matter if demand is stable"
+            ],
+            "correctIndex": 1,
+            "explanation": "With stable, predictable demand, an aggressive (low CA) policy makes sense. The company can safely carry minimal inventory and cash because stockout risk is low. This minimizes capital tied up in current assets, maximizing returns. Unpredictable demand would warrant a more conservative approach.",
+            "hint": "When uncertainty is low, what level of safety buffer is needed?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-017",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Lease vs Buy Decisions",
+    "description": "Evaluate the financial impact of leasing versus purchasing assets",
+    "order": 17,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Lease analysis",
+      "Capital budgeting",
+      "Financing alternatives",
+      "Cash flow comparison"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Equipment and real estate decisions involve billions in corporate spend! CMAs analyze lease vs buy alternatives to minimize cost and match financing to asset life. After ASC 842, both options appear on the balance sheet - making the analysis even more important."
+        },
+        {
+          "title": "Lease vs Buy Overview",
+          "type": "text",
+          "content": "**Buying:**\n• Own the asset\n• Large upfront payment\n• Depreciation deduction\n• Maintenance responsibility\n• Residual value risk/benefit\n\n**Leasing:**\n• Use without owning\n• Lower initial outlay\n• Lease payment deduction\n• Maintenance may be included\n• Flexibility to upgrade\n\n**Key Question:**\nWhat is the present value cost of each option?"
+        },
+        {
+          "title": "Types of Leases",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Finance Lease",
+            "Operating Lease"
+          ],
+          "rows": [
+            [
+              "Economics",
+              "Like ownership",
+              "Pure rental"
+            ],
+            [
+              "Term",
+              "Most of asset life",
+              "Shorter term"
+            ],
+            [
+              "Ownership transfer",
+              "Often transfers",
+              "Remains with lessor"
+            ],
+            [
+              "Purchase option",
+              "Usually bargain",
+              "Typically none"
+            ],
+            [
+              "Income Statement",
+              "Interest + Depreciation",
+              "Lease expense"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Lease vs Buy Analysis",
+          "type": "callout",
+          "content": "**Compare NPV of cash flows:**\n\n**Buy Cash Flows:**\n• - Initial purchase price\n• - Maintenance costs (after-tax)\n• + Tax savings from depreciation\n• + Salvage value at end\n\n**Lease Cash Flows:**\n• - Lease payments (after-tax)\n• + Tax savings from lease deduction\n• - Lost salvage value\n\n**Discount Rate:**\n• After-tax cost of debt\n• (Lease is financing decision)\n\n**Choose option with LOWER NPV cost**\n(or HIGHER NPV of savings)"
+        },
+        {
+          "title": "Quantitative Analysis Example",
+          "type": "text",
+          "content": "**Equipment Cost: $100,000**\n• 5-year life, straight-line depreciation\n• Salvage value: $10,000\n• Tax rate: 30%\n• After-tax cost of debt: 5%\n\n**Buy Analysis:**\n• Purchase: ($100,000)\n• Annual depreciation tax shield: $18,000 × 30% = $5,400\n• PV of tax shields: $5,400 × 4.329 = $23,377\n• PV of salvage: $10,000 × 0.784 = $7,840\n• Net cost: $100,000 - $23,377 - $7,840 = $68,783\n\n**Lease Analysis (compare to $68,783):**\n• Annual lease: $22,000\n• After-tax: $22,000 × (1 - 0.30) = $15,400\n• PV: $15,400 × 4.329 = $66,667\n\n**Decision: Lease is cheaper ($66,667 vs $68,783)**"
+        },
+        {
+          "title": "Qualitative Factors",
+          "type": "text",
+          "content": "**Favors Buying:**\n• Long asset life needed\n• Specialized equipment\n• Strong residual value\n• Customization required\n• Low obsolescence risk\n\n**Favors Leasing:**\n• Technology changes rapidly\n• Preserve capital\n• Off-balance sheet (pre-ASC 842)\n• Flexibility to exit\n• Bundled services\n\n**Other Considerations:**\n• Restrictions in loan covenants\n• Alternative minimum tax\n• State/local property taxes\n• insurance requirements"
+        },
+        {
+          "title": "⚠️ Exam Trap: ASC 842 Impact",
+          "type": "warning",
+          "content": "**ASC 842 changed lease accounting!**\n\n**Old Rules (ASC 840):**\n• Operating leases off-balance sheet\n• Created 'synthetic debt'\n• Lease vs buy had B/S impact\n\n**New Rules (ASC 842):**\n• Most leases on balance sheet\n• ROU asset and lease liability\n• Less B/S difference between options\n\n**Decision still matters:**\n• Cash flow timing different\n• Tax treatment different\n• Risk allocation different\n• Flexibility different\n\n**Don't assume 'leasing to stay off B/S' is still valid!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Compare NPV of after-tax cash flows",
+            "Buy: Purchase, maintenance, tax shields, salvage",
+            "Lease: After-tax lease payments, lost salvage",
+            "Use after-tax cost of debt as discount rate",
+            "Finance lease: Like ownership; Operating: Pure rental",
+            "ASC 842: Most leases now on balance sheet",
+            "Consider qualitative factors: Obsolescence, flexibility, capital"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Lease Analysis",
+          "knowledgeCheck": {
+            "question": "In a lease vs buy analysis, which discount rate should typically be used?",
+            "options": [
+              "WACC (weighted average cost of capital)",
+              "After-tax cost of debt",
+              "Cost of equity",
+              "Risk-free rate"
+            ],
+            "correctIndex": 1,
+            "explanation": "The after-tax cost of debt is used because lease vs buy is a financing decision, not an investment decision. Both options provide the same asset use, so the question is which financing method is cheaper. Since leasing is an alternative to debt financing, use the debt rate.",
+            "hint": "Leasing is a financing alternative, not a project investment."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-018",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "International Finance Considerations",
+    "description": "Navigate financial management in multinational operations",
+    "order": 18,
+    "duration": 40,
+    "difficulty": "advanced",
+    "topics": [
+      "International finance",
+      "Multinational operations",
+      "Transfer pricing",
+      "Repatriation"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Global operations add complexity but also opportunity! CMAs in multinational companies deal with currency risk, transfer pricing, tax optimization, and cross-border cash management. Understanding these issues is essential as companies operate across borders."
+        },
+        {
+          "title": "Key International Finance Issues",
+          "type": "text",
+          "content": "**Currency Risk:**\n• Transaction exposure - specific transactions\n• Translation exposure - financial statement conversion\n• Economic exposure - competitive position\n\n**Political Risk:**\n• Expropriation\n• Currency controls\n• Regulatory changes\n• Political instability\n\n**Tax Considerations:**\n• Different tax rates\n• Withholding taxes\n• Transfer pricing rules\n• Tax treaties\n\n**Operational Issues:**\n• Cultural differences\n• Legal systems\n• Accounting standards (IFRS vs GAAP)\n• Infrastructure differences"
+        },
+        {
+          "title": "Transfer Pricing",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Description",
+            "Use"
+          ],
+          "rows": [
+            [
+              "Market Price",
+              "External market price",
+              "Active market exists"
+            ],
+            [
+              "Cost Plus",
+              "Cost + markup %",
+              "No market, manufacturing"
+            ],
+            [
+              "Resale Minus",
+              "Resale price - margin",
+              "Distribution"
+            ],
+            [
+              "TNMM",
+              "Net margin comparison",
+              "Complex transactions"
+            ],
+            [
+              "Profit Split",
+              "Allocate combined profit",
+              "Unique intangibles"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Arm's Length Principle",
+          "type": "callout",
+          "content": "**The Golden Rule of Transfer Pricing:**\n\nPrice transactions between related parties as if they were unrelated (arm's length)\n\n**Why It Matters:**\n• Prevents profit shifting to low-tax jurisdictions\n• Tax authorities enforce aggressively\n• Penalties for non-compliance\n\n**Example Problem:**\n• Parent in US (Tax rate 25%)\n• Sub in Ireland (Tax rate 12%)\n• Incentive: Overprice goods TO Ireland\n• Result: More profit in low-tax country\n\n**Tax Authorities:**\n• IRS, OECD guidelines\n• Documentation requirements\n• Country-by-country reporting\n• Advance pricing agreements (APAs)"
+        },
+        {
+          "title": "Cash Repatriation",
+          "type": "text",
+          "content": "**Bringing Overseas Cash Home:**\n\n**Methods:**\n• Dividends - Most common, may have withholding tax\n• Management fees - For services provided\n• Royalties - For IP usage\n• Intercompany loans - Repayment\n• Transfer pricing adjustments\n\n**Tax Considerations:**\n• Withholding taxes on dividends\n• US tax on repatriation (pre-2017)\n• Tax treaties reduce withholding\n• GILTI and other anti-deferral rules\n\n**Cash Pooling:**\n• Centralize cash management\n• Reduce overall borrowing\n• Better liquidity management\n• Notional or physical pooling"
+        },
+        {
+          "title": "International Working Capital",
+          "type": "text",
+          "content": "**Challenges:**\n• Different banking systems\n• Currency conversions\n• Payment term expectations\n• Collection difficulty\n• Capital movement restrictions\n\n**Solutions:**\n• Regional treasury centers\n• In-house banking\n• Netting - offset intercompany flows\n• Leading and lagging - adjust payment timing\n• Reinvoicing centers\n\n**Documentation:**\n• Letters of credit\n• Documentary collections\n• Trade credit insurance\n• Factoring"
+        },
+        {
+          "title": "⚠️ Exam Trap: Transfer Pricing Objectives",
+          "type": "warning",
+          "content": "**Transfer pricing serves MULTIPLE goals - they can conflict!**\n\n**Tax Minimization:**\n• Shift profits to low-tax locations\n• Subject to tax authority challenge\n\n**Performance Evaluation:**\n• Fair measure of subsidiary profit\n• Manager motivation\n\n**Goal Congruence:**\n• Company-wide optimization\n• Prevent suboptimal decisions\n\n**Customs Duties:**\n• Lower price = lower import duty\n• Opposite of tax incentive!\n\n**Key Point:**\nNo single transfer price satisfies all objectives!\nCompromises required"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "International finance adds: currency, political, tax risks",
+            "Transfer pricing: Price intercompany transactions at arm's length",
+            "Methods: Market price, cost plus, resale minus, TNMM, profit split",
+            "Arm's length: Price as if parties were unrelated",
+            "Repatriation: Dividends, fees, royalties, loan repayment",
+            "Cash pooling: Centralize multinational cash management",
+            "Transfer pricing objectives can conflict (tax vs evaluation)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Transfer Pricing",
+          "knowledgeCheck": {
+            "question": "When a comparable uncontrolled transaction price is available, which transfer pricing method is generally preferred by tax authorities?",
+            "options": [
+              "Cost plus method",
+              "Comparable uncontrolled price (market price)",
+              "Transactional net margin method",
+              "Profit split method"
+            ],
+            "correctIndex": 1,
+            "explanation": "When a comparable market price exists, the comparable uncontrolled price (CUP) method is most direct and preferred. Other methods are used when no comparable external transaction exists. CUP best reflects arm's length pricing.",
+            "hint": "Which method most directly reflects what unrelated parties would charge?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-019",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Dividend Policy",
+    "description": "Understand dividend decisions and their impact on value",
+    "order": 19,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Dividend policy",
+      "Payout decisions",
+      "Stock repurchases",
+      "Shareholder returns"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Dividends return cash to shareholders - but at what cost? CMAs analyze dividend capacity, forecast cash flows, and evaluate the trade-off between dividends and reinvestment. Understanding dividend policy helps with financial planning and stakeholder communication."
+        },
+        {
+          "title": "Dividend Policy Theories",
+          "type": "text",
+          "content": "**Dividend Irrelevance (Miller-Modigliani):**\n• In perfect markets, dividend policy doesn't affect value\n• Investors can create 'homemade' dividends\n• Value comes from investment decisions\n\n**Bird-in-Hand Theory:**\n• Investors prefer certain dividends to uncertain capital gains\n• Higher dividends = higher value\n• Reduce risk premium\n\n**Tax Preference Theory:**\n• Capital gains often taxed lower\n• Lower dividends = higher value\n• Tax timing advantage\n\n**Reality:**\nMarket imperfections make policy matter"
+        },
+        {
+          "title": "Dividend Policies",
+          "type": "table",
+          "headers": [
+            "Policy",
+            "Description",
+            "Pros/Cons"
+          ],
+          "rows": [
+            [
+              "Stable",
+              "Consistent $ per share",
+              "Predictable; may cut if earnings drop"
+            ],
+            [
+              "Constant Payout",
+              "Fixed % of earnings",
+              "Fluctuates with earnings"
+            ],
+            [
+              "Residual",
+              "Pay after funding investments",
+              "Efficient but unpredictable"
+            ],
+            [
+              "Hybrid",
+              "Base + extra",
+              "Flexibility with stability"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Dividend Decisions",
+          "type": "callout",
+          "content": "**Factors Affecting Dividend Policy:**\n\n**Legal Constraints:**\n• Capital impairment rules\n• Bond covenants\n• State laws\n\n**Liquidity:**\n• Cash availability\n• Not just earnings\n\n**Investment Needs:**\n• Good projects available?\n• Retain for growth\n\n**Tax Considerations:**\n• Shareholder preferences\n• Corporate vs individual rates\n\n**Signaling:**\n• Dividend cuts = bad news signal\n• Increases = confidence in future\n\n**Clientele Effect:**\n• Attract investors who prefer your policy"
+        },
+        {
+          "title": "Stock Repurchases",
+          "type": "text",
+          "content": "**What is a Buyback?**\nCompany purchases own shares in market\n\n**Methods:**\n• Open market repurchase\n• Tender offer (premium)\n• Dutch auction\n• Direct negotiation\n\n**Why Repurchase?**\n• Return cash (alternative to dividend)\n• Signal undervaluation\n• Offset dilution from stock options\n• Increase EPS\n• Tax advantages\n\n**Impact:**\n• Fewer shares outstanding\n• Higher EPS (if earnings unchanged)\n• Higher stock price (usually)\n• Treasury stock on balance sheet"
+        },
+        {
+          "title": "Dividends vs Repurchases",
+          "type": "text",
+          "content": "**Dividends:**\n• Regular, ongoing commitment\n• Taxed as ordinary income\n• All shareholders participate\n• Clear signal\n\n**Repurchases:**\n• Flexible, one-time\n• Capital gains tax (often lower)\n• Participation is optional\n• Can time around stock price\n\n**Trend:**\nRepurchases have grown relative to dividends\n\n**CMA Analysis:**\n• Cash flow projections\n• Investment opportunities\n• Shareholder preferences\n• Tax implications"
+        },
+        {
+          "title": "⚠️ Exam Trap: Dividend Mechanics",
+          "type": "warning",
+          "content": "**Know the key dates!**\n\n**Declaration Date:**\n• Board announces dividend\n• Creates liability\n\n**Record Date:**\n• Shareholders of record get dividend\n\n**Ex-Dividend Date:**\n• 1-2 business days before record date\n• Buy after this = no dividend\n• Stock price drops by ~dividend amount\n\n**Payment Date:**\n• Cash actually paid\n\n**Stock Dividend vs Stock Split:**\n• Both increase shares, no cash\n• Stock dividend: Transfer from RE to C/S\n• Stock split: No journal entry, just par value change"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "M-M: Dividend policy irrelevant in perfect markets",
+            "Bird-in-hand: Investors prefer certain dividends",
+            "Tax preference: Capital gains taxed lower than dividends",
+            "Policies: Stable, constant payout, residual, hybrid",
+            "Factors: Legal, liquidity, investments, taxes, signaling",
+            "Repurchases: Flexible alternative with tax advantages",
+            "Ex-dividend date: Buy after = no dividend; price drops"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Dividend Concepts",
+          "knowledgeCheck": {
+            "question": "A company decides to pay dividends only after funding all positive NPV projects. This is an example of which dividend policy?",
+            "options": [
+              "Stable dividend policy",
+              "Constant payout ratio",
+              "Residual dividend policy",
+              "Hybrid dividend policy"
+            ],
+            "correctIndex": 2,
+            "explanation": "Residual dividend policy pays dividends from earnings remaining after all acceptable investment opportunities are funded. This prioritizes investment but results in fluctuating dividends based on project availability and earnings.",
+            "hint": "Which policy treats dividends as a 'residual' after investment?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-020",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Business Valuation Methods",
+    "description": "Apply valuation approaches to value businesses and projects",
+    "order": 20,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Business valuation",
+      "DCF",
+      "Comparable companies",
+      "Enterprise value"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Business valuation is central to major corporate decisions! CMAs support M&A analysis, strategic planning, and value creation initiatives. Understanding valuation methods helps evaluate deals, challenge assumptions, and communicate with investment professionals."
+        },
+        {
+          "title": "Valuation Approaches",
+          "type": "text",
+          "content": "**Three Main Approaches:**\n\n**1. Income Approach:**\n• Discounted Cash Flow (DCF)\n• Based on future cash flows\n• Most theoretically correct\n\n**2. Market Approach:**\n• Comparable company analysis\n• Precedent transactions\n• Based on market prices\n\n**3. Asset Approach:**\n• Net asset value\n• Based on balance sheet\n• Used for asset-heavy businesses\n\n**Multiple Methods:**\nUse multiple approaches, triangulate"
+        },
+        {
+          "title": "Valuation Methods",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Formula/Approach",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "DCF",
+              "PV of future cash flows",
+              "Established, predictable"
+            ],
+            [
+              "Comparables",
+              "Multiple × Metric",
+              "Many peer companies"
+            ],
+            [
+              "Precedent",
+              "M&A transaction multiples",
+              "M&A context"
+            ],
+            [
+              "Net Asset",
+              "Assets - Liabilities",
+              "Asset-heavy, liquidation"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: DCF Valuation",
+          "type": "callout",
+          "content": "**DCF Framework:**\n\n**Enterprise Value =**\nPV of forecast period cash flows\n+ PV of terminal value\n\n**Free Cash Flow to Firm (FCFF):**\nEBIT\n× (1 - Tax rate)\n+ Depreciation\n- Capital expenditures\n- Δ Working capital\n= Unlevered free cash flow\n\n**Discount at WACC**\n\n**Terminal Value:**\n• Gordon growth: FCF × (1+g) / (WACC - g)\n• Exit multiple: EBITDA × Multiple\n\n**Equity Value = Enterprise Value - Net Debt**"
+        },
+        {
+          "title": "Comparable Company Analysis",
+          "type": "text",
+          "content": "**Process:**\n1. Identify comparable companies\n2. Calculate trading multiples\n3. Apply multiples to target\n\n**Common Multiples:**\n• EV/EBITDA - Most common\n• EV/Revenue - Loss-making companies\n• P/E - Net income\n• P/B - Asset-heavy\n\n**Selection Criteria:**\n• Same industry\n• Similar size\n• Similar growth\n• Similar margins\n• Similar risk\n\n**Adjust for differences** in growth, margins, capital structure"
+        },
+        {
+          "title": "Enterprise Value vs Equity Value",
+          "type": "text",
+          "content": "**Enterprise Value (EV):**\n• Value of entire business\n• Market cap + Debt - Cash\n• Independent of capital structure\n• Use with EBITDA, EBIT, Revenue\n\n**Equity Value:**\n• Value to shareholders only\n• Market cap (shares × price)\n• Use with Net income, Book value\n\n**Conversion:**\nEquity = Enterprise - Net Debt\nEnterprise = Equity + Net Debt\n\n**Net Debt = Total Debt - Cash**\n\nUse EV multiples when comparing across capital structures"
+        },
+        {
+          "title": "⚠️ Exam Trap: DCF Assumptions",
+          "type": "warning",
+          "content": "**DCF is Highly Assumption-Sensitive!**\n\n**Key Sensitivities:**\n• Revenue growth rate\n• Margin assumptions\n• Terminal growth rate\n• Discount rate (WACC)\n\n**Terminal Value:**\n• Often 60-80% of total value\n• Small changes in g or WACC = big impact\n• Always sanity check\n\n**Common Errors:**\n• Terminal growth > GDP growth (unrealistic)\n• Inconsistent assumptions\n• Ignoring working capital\n• Using EBITDA instead of FCF\n\n**Best Practice:**\nRun sensitivity analysis on key assumptions"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Three approaches: Income (DCF), Market (comparables), Asset",
+            "DCF: PV of projected cash flows + terminal value",
+            "FCFF = EBIT(1-T) + D&A - CapEx - ΔWC",
+            "Terminal value: Gordon growth or exit multiple",
+            "Enterprise Value = Equity + Net Debt",
+            "Equity Value = Enterprise - Net Debt",
+            "Comparable multiples: EV/EBITDA, P/E, EV/Revenue"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Valuation",
+          "knowledgeCheck": {
+            "question": "A company has Enterprise Value of $500M, debt of $150M, and cash of $30M. What is the Equity Value?",
+            "options": [
+              "$320M",
+              "$380M",
+              "$620M",
+              "$680M"
+            ],
+            "correctIndex": 1,
+            "explanation": "Equity Value = Enterprise Value - Net Debt. Net Debt = Debt - Cash = $150M - $30M = $120M. Equity Value = $500M - $120M = $380M. This represents the value available to equity shareholders.",
+            "hint": "Equity Value = EV - (Debt - Cash)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-021",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Capital Structure Theory",
+    "description": "Understand optimal capital structure decisions",
+    "order": 21,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Capital structure",
+      "Debt vs equity",
+      "WACC optimization",
+      "Financial leverage"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "How should a company be financed - debt or equity? CMAs support capital structure decisions that affect cost of capital, risk profile, and shareholder value. Understanding the trade-offs between debt and equity financing is essential for strategic financial management."
+        },
+        {
+          "title": "Capital Structure Basics",
+          "type": "text",
+          "content": "**Capital Structure:**\nMix of debt and equity financing\n\n**Debt Characteristics:**\n• Fixed payments (interest)\n• Tax deductible\n• Contractual obligation\n• Lower cost (less risk to lender)\n• Increases financial risk\n\n**Equity Characteristics:**\n• No required payments\n• Not tax deductible (dividends)\n• Residual claim\n• Higher cost (more risk to investor)\n• More flexibility\n\n**Goal:** Minimize WACC, maximize firm value"
+        },
+        {
+          "title": "Capital Structure Theories",
+          "type": "table",
+          "headers": [
+            "Theory",
+            "Key Idea",
+            "Implication"
+          ],
+          "rows": [
+            [
+              "M&M (No Tax)",
+              "Capital structure irrelevant",
+              "Value same regardless of D/E"
+            ],
+            [
+              "M&M (With Tax)",
+              "Debt adds value (tax shield)",
+              "100% debt optimal (but extreme)"
+            ],
+            [
+              "Trade-off Theory",
+              "Balance tax benefits vs distress costs",
+              "Optimal D/E exists"
+            ],
+            [
+              "Pecking Order",
+              "Prefer internal, then debt, then equity",
+              "No target ratio"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Trade-off Theory",
+          "type": "callout",
+          "content": "**Value of Levered Firm:**\n\nVL = VU + PV(Tax Shield) - PV(Distress Costs)\n\n**Benefits of Debt:**\n• Tax shield (Interest × Tax rate)\n• Lower cost than equity\n• Discipline on management\n\n**Costs of Debt:**\n• Financial distress (bankruptcy risk)\n• Agency costs (debt covenants)\n• Loss of flexibility\n\n**Optimal Point:**\nWhere marginal benefit = marginal cost\nWACC is minimized\nFirm value is maximized\n\n**Visual:**\nAs debt increases, WACC initially falls (tax benefit)\nThen rises (distress costs dominate)"
+        },
+        {
+          "title": "Factors Affecting Capital Structure",
+          "type": "text",
+          "content": "**Favoring More Debt:**\n• High tax rate (bigger tax shield)\n• Stable cash flows\n• Tangible assets (collateral)\n• Mature industry\n• Low growth (less need for flexibility)\n\n**Favoring More Equity:**\n• Volatile cash flows\n• High growth potential\n• Intangible assets\n• High business risk\n• Financial flexibility needed\n• Restrictive debt covenants\n\n**Industry Norms:**\nCompanies often target industry average"
+        },
+        {
+          "title": "Financial Leverage Effects",
+          "type": "text",
+          "content": "**Leverage Magnifies Returns:**\n• Good times: Higher ROE\n• Bad times: Lower (or negative) ROE\n\n**Example:**\n• Company A: 0% debt\n• Company B: 50% debt at 8% interest\n• Both have $100 assets, 30% tax rate\n\n**If EBIT = $20:**\n• A: ROE = $14 / $100 = 14%\n• B: Interest = $4, EBT = $16, NI = $11.2\n      ROE = $11.2 / $50 = 22.4%\n\n**If EBIT = $5:**\n• A: ROE = $3.5 / $100 = 3.5%\n• B: Interest = $4, EBT = $1, NI = $0.7\n      ROE = $0.7 / $50 = 1.4%\n\nLeverage increases volatility of ROE"
+        },
+        {
+          "title": "⚠️ Exam Trap: WACC vs Firm Value",
+          "type": "warning",
+          "content": "**Relationship:**\n• Lower WACC = Higher firm value\n• Firm value = Cash flows / WACC\n• They move INVERSELY\n\n**Optimal Capital Structure:**\n• MINIMIZES WACC\n• MAXIMIZES firm value\n\n**Common Exam Question:**\n'At what D/E ratio is firm value maximized?'\nAnswer: Where WACC is minimized\n\n**M&M Assumptions (unrealistic):**\n• No taxes\n• No bankruptcy costs\n• No agency costs\n• Perfect markets\n\n**Real world:**\nTrade-off theory more applicable"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Capital structure: Mix of debt and equity financing",
+            "Debt: Tax deductible, lower cost, increases risk",
+            "Equity: No tax benefit, more flexible, higher cost",
+            "Trade-off: Balance tax shield vs distress costs",
+            "Optimal structure minimizes WACC, maximizes value",
+            "Leverage magnifies returns (both up and down)",
+            "Stable companies can handle more debt"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Capital Structure",
+          "knowledgeCheck": {
+            "question": "According to trade-off theory, the optimal capital structure is where:",
+            "options": [
+              "Debt is 100% of capital",
+              "Debt is 0% of capital",
+              "WACC is minimized",
+              "Tax shield is maximized regardless of distress costs"
+            ],
+            "correctIndex": 2,
+            "explanation": "Trade-off theory suggests the optimal capital structure is where the marginal benefit of debt (tax shield) equals the marginal cost (financial distress). This point minimizes WACC and maximizes firm value - neither all debt nor all equity.",
+            "hint": "Where is the balance between debt benefits and costs?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-022",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Share Repurchases and Equity Management",
+    "description": "Understand stock buybacks and their effects",
+    "order": 22,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Stock repurchases",
+      "Buybacks",
+      "Treasury stock",
+      "EPS impact"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Companies spend billions on stock buybacks! CMAs analyze whether repurchases create or destroy value. Understanding the mechanics and motivations helps evaluate this significant use of corporate cash."
+        },
+        {
+          "title": "Stock Repurchase Basics",
+          "type": "text",
+          "content": "**What is a Repurchase?**\n• Company buys back its own shares\n• Reduces shares outstanding\n• Cash returned to shareholders\n\n**Methods:**\n• **Open market:** Buy on exchange\n• **Tender offer:** Fixed price offer to all\n• **Direct negotiation:** Buy from specific holder\n\n**Treasury Stock:**\n• Repurchased shares not retired\n• Held by company\n• No voting rights or dividends\n• Can be reissued later"
+        },
+        {
+          "title": "Repurchase vs Dividend",
+          "type": "table",
+          "headers": [
+            "Factor",
+            "Dividend",
+            "Repurchase"
+          ],
+          "rows": [
+            [
+              "Distribution",
+              "To all shareholders equally",
+              "Only to selling shareholders"
+            ],
+            [
+              "Flexibility",
+              "Creates expectation",
+              "More flexible"
+            ],
+            [
+              "Tax (typically)",
+              "Ordinary income",
+              "Capital gains"
+            ],
+            [
+              "Share count",
+              "Unchanged",
+              "Reduced"
+            ],
+            [
+              "EPS effect",
+              "None (shares same)",
+              "Increases (fewer shares)"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Reasons for Repurchases",
+          "type": "callout",
+          "content": "**Value-Creating Reasons:**\n• Stock is undervalued\n• Signal confidence\n• Tax-efficient cash return\n• Offset dilution from options\n• Adjust capital structure\n\n**Potentially Negative Reasons:**\n• No good investment opportunities\n• Manipulate EPS\n• Support stock price artificially\n• Executive compensation tied to EPS\n\n**Value Neutral:**\n• If stock is fairly valued\n• Same as dividend economically\n• Just different mechanism\n\n**Key Question:**\nIs the stock actually undervalued?\nManagement often thinks so (but they're biased)"
+        },
+        {
+          "title": "EPS Impact Analysis",
+          "type": "text",
+          "content": "**Simple Example:**\n• Net income: $100M\n• Shares before: 50M\n• EPS before: $2.00\n\n• Repurchase 5M shares at $20\n• Cost: $100M\n• Shares after: 45M\n• EPS after: $100M / 45M = $2.22\n• EPS increase: 11%\n\n**But Consider:**\n• Cash is gone ($100M)\n• Could have earned return on cash\n• If cash earned 5%: Lost $5M income\n• Adjusted: $95M / 45M = $2.11\n\n**True Test:**\nDoes after-tax yield on cash < earnings yield?\nIf yes, repurchase increases value"
+        },
+        {
+          "title": "Accounting for Treasury Stock",
+          "type": "text",
+          "content": "**Cost Method (Most Common):**\nDr. Treasury Stock (at cost)\nCr. Cash\n\n**Balance Sheet:**\n• Treasury stock = Contra equity\n• Reduces total equity\n• Shown at cost\n\n**Reissuance:**\n• If sold above cost: Credit APIC\n• If sold below cost: Debit APIC (to extent available) then Retained Earnings\n\n**Retirement:**\n• Removes treasury and original issuance\n• Permanently reduces shares"
+        },
+        {
+          "title": "⚠️ Exam Trap: Repurchase Analysis",
+          "type": "warning",
+          "content": "**Repurchases Don't Always Create Value!**\n\n**Overpaying:**\n• If price > intrinsic value\n• Wealth transfers TO selling shareholders\n• FROM remaining shareholders\n• Destroys value\n\n**Opportunity Cost:**\n• Cash unavailable for investments\n• May reduce growth\n• Compare to NPV of alternatives\n\n**Leverage Effect:**\n• Repurchases increase D/E ratio\n• Using cash reduces equity\n• May affect credit rating\n\n**EPS Manipulation:**\n• Higher EPS doesn't mean more value\n• If funded by debt, risk increases\n• Must consider cost of repurchase"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Repurchase: Company buys back shares, reduces outstanding",
+            "Treasury stock: Repurchased shares held by company",
+            "Methods: Open market, tender offer, negotiated",
+            "Increases EPS by reducing denominator",
+            "Only creates value if stock is undervalued",
+            "Compare to dividends: More flexible, often tax-preferred",
+            "Consider opportunity cost of cash used"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Stock Repurchases",
+          "knowledgeCheck": {
+            "question": "A company repurchases 10% of its shares when the stock is overvalued. This action:",
+            "options": [
+              "Creates value for remaining shareholders",
+              "Transfers wealth from remaining to selling shareholders",
+              "Has no effect on shareholder value",
+              "Always increases EPS and therefore value"
+            ],
+            "correctIndex": 1,
+            "explanation": "Repurchasing overvalued stock transfers wealth FROM remaining shareholders TO the selling shareholders. The company overpays for the shares, using cash that belonged to all shareholders to benefit only the sellers.",
+            "hint": "Who benefits when the company overpays?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-023",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Working Capital Metrics and Analysis",
+    "description": "Measure and optimize working capital performance",
+    "order": 23,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cash conversion cycle",
+      "Working capital turnover",
+      "Days metrics",
+      "Operating cycle"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Working capital is the lifeblood of operations! CMAs track working capital metrics to ensure liquidity, optimize cash flow, and identify improvement opportunities. Understanding these metrics is essential for operational finance."
+        },
+        {
+          "title": "Working Capital Basics",
+          "type": "text",
+          "content": "**Working Capital:**\nCurrent Assets - Current Liabilities\n\n**Components:**\n• Cash and marketable securities\n• Accounts receivable\n• Inventory\n• Accounts payable (subtracts)\n• Accrued expenses (subtracts)\n\n**Goals:**\n• Ensure liquidity\n• Minimize tied-up capital\n• Balance risk and return\n• Optimize cash flow timing"
+        },
+        {
+          "title": "Key Working Capital Metrics",
+          "type": "table",
+          "headers": [
+            "Metric",
+            "Formula",
+            "What It Measures"
+          ],
+          "rows": [
+            [
+              "Days Sales Outstanding",
+              "(Avg A/R / Credit Sales) × 365",
+              "Collection speed"
+            ],
+            [
+              "Days Inventory Outstanding",
+              "(Avg Inventory / COGS) × 365",
+              "Inventory holding period"
+            ],
+            [
+              "Days Payables Outstanding",
+              "(Avg A/P / Purchases) × 365",
+              "Payment speed to suppliers"
+            ],
+            [
+              "Operating Cycle",
+              "DIO + DSO",
+              "Purchase to collection"
+            ],
+            [
+              "Cash Conversion Cycle",
+              "DIO + DSO - DPO",
+              "Net cash tied up period"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Cash Conversion Cycle",
+          "type": "callout",
+          "content": "**Cash Conversion Cycle (CCC):**\n\nCCC = DIO + DSO - DPO\n\n**Interpretation:**\n• Days between cash outflow (pay suppliers) and cash inflow (collect from customers)\n• Lower is better (less cash tied up)\n• Can even be negative (incredible!)\n\n**Example:**\nDIO: 45 days (hold inventory)\nDSO: 30 days (collect receivables)\nDPO: 60 days (pay suppliers)\n\nCCC = 45 + 30 - 60 = 15 days\n\n**Negative CCC:**\nSome retailers collect before paying\nCustomers pay cash, suppliers wait\nAmazon famous for negative CCC"
+        },
+        {
+          "title": "Operating Cycle vs Cash Cycle",
+          "type": "text",
+          "content": "**Operating Cycle:**\nDIO + DSO\n• Time from buying inventory to collecting cash\n• Ignores when you pay suppliers\n• Pure operations view\n\n**Cash Conversion Cycle:**\nDIO + DSO - DPO\n• NET time cash is tied up\n• Accounts for supplier financing\n• Cash flow view\n\n**Relationship:**\nCCC = Operating Cycle - DPO\n\n**Visual Timeline:**\n1. Buy inventory (Day 0)\n2. Pay supplier (Day 60 = DPO)\n3. Sell inventory (Day 45 from purchase)\n4. Collect cash (Day 45 + 30 = Day 75)\n5. Cash outlay period: Day 60 to Day 75 = 15 days"
+        },
+        {
+          "title": "Improving Working Capital",
+          "type": "text",
+          "content": "**Reduce DSO (Faster Collections):**\n• Tighten credit policies\n• Offer early payment discounts\n• Faster invoicing\n• Better collection practices\n\n**Reduce DIO (Less Inventory):**\n• JIT inventory systems\n• Better demand forecasting\n• Eliminate slow-moving items\n• Vendor-managed inventory\n\n**Increase DPO (Slower Payments):**\n• Negotiate longer terms\n• Pay on due date, not early\n• Centralize payables\n• Balance with supplier relationships\n\n**Trade-offs:**\nDon't sacrifice sales for faster collection\nDon't create stockouts for less inventory\nDon't damage supplier relationships"
+        },
+        {
+          "title": "⚠️ Exam Trap: Days Calculations",
+          "type": "warning",
+          "content": "**Common Calculation Errors:**\n\n**Use Correct Denominator:**\n• DSO: Credit Sales (or total sales)\n• DIO: COGS (not sales!)\n• DPO: Purchases (calculate if needed)\n\n**Purchases Formula:**\nEnding Inventory - Beginning Inventory + COGS\n\n**Use Averages:**\n(Beginning + Ending) / 2\nFor balance sheet items\n\n**Two Formulas - Same Answer:**\n• Days = (Avg Balance / Flow) × 365\n• Days = 365 / Turnover ratio\n\n**Example:**\nA/R Turnover = 12 times\nDSO = 365 / 12 = 30.4 days"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Working capital = Current assets - Current liabilities",
+            "DSO: Days to collect; DIO: Days inventory held; DPO: Days to pay",
+            "Operating cycle = DIO + DSO",
+            "Cash conversion cycle = DIO + DSO - DPO",
+            "Lower CCC = Less cash tied up = Better",
+            "Improve by reducing DSO/DIO, increasing DPO",
+            "Balance working capital efficiency with operational needs"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Working Capital Metrics",
+          "knowledgeCheck": {
+            "question": "A company has DSO of 40 days, DIO of 55 days, and DPO of 35 days. What is the cash conversion cycle?",
+            "options": [
+              "95 days",
+              "60 days",
+              "50 days",
+              "130 days"
+            ],
+            "correctIndex": 1,
+            "explanation": "Cash Conversion Cycle = DIO + DSO - DPO = 55 + 40 - 35 = 60 days. This means the company has cash tied up in working capital for 60 days between paying suppliers and collecting from customers.",
+            "hint": "CCC = DIO + DSO - DPO (subtract payables because they delay cash outflow)."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-E-024",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Dividend Policy and Payout Decisions",
+    "description": "Analyze dividend theories and payout strategies",
+    "order": 24,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Dividend policy",
+      "Payout ratio",
+      "Dividend theories",
+      "Stock dividends"
+    ],
+    "blueprintArea": "CMA2-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "How much profit to distribute? CMAs provide the financial analysis behind dividend decisions, balancing shareholder expectations with reinvestment needs. Dividend policy signals management's confidence and affects share value."
+        },
+        {
+          "title": "Dividend Basics",
+          "type": "text",
+          "content": "**What are Dividends?**\n• Distribution of profits to shareholders\n• Cash or stock\n• Declared by board of directors\n• Not legally required (discretionary)\n\n**Key Dates:**\n• **Declaration date:** Board announces\n• **Record date:** Who gets dividend\n• **Ex-dividend date:** Stock trades without dividend\n• **Payment date:** Cash distributed\n\n**Key Ratios:**\n• Dividend yield = Annual dividend / Stock price\n• Payout ratio = Dividends / Net income\n• Retention ratio = 1 - Payout ratio"
+        },
+        {
+          "title": "Dividend Theories",
+          "type": "table",
+          "headers": [
+            "Theory",
+            "View",
+            "Implication"
+          ],
+          "rows": [
+            [
+              "Dividend Irrelevance (MM)",
+              "Dividends don't affect value",
+              "Focus on investment decisions"
+            ],
+            [
+              "Bird-in-Hand",
+              "Dividends preferred (less risky)",
+              "Higher dividends = higher value"
+            ],
+            [
+              "Tax Preference",
+              "Capital gains taxed lower",
+              "Lower dividends = higher value"
+            ],
+            [
+              "Signaling",
+              "Dividends signal confidence",
+              "Changes convey information"
+            ],
+            [
+              "Clientele Effect",
+              "Different investors want different policies",
+              "Match policy to investor base"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Dividend Policies",
+          "type": "callout",
+          "content": "**Policy Types:**\n\n**Stable Dividend:**\n• Consistent dollar amount\n• Grow gradually over time\n• Most common approach\n• Reduces uncertainty\n\n**Constant Payout:**\n• Fixed percentage of earnings\n• Dividends fluctuate with profits\n• Less predictable\n• Reflects company performance\n\n**Residual:**\n• Pay dividends from leftover earnings\n• After all +NPV projects funded\n• Most erratic\n• Investment first, dividends second\n\n**Memory:**\n• Stable = Smoothing\n• Constant = Percentage\n• Residual = Remainder"
+        },
+        {
+          "title": "Stock Dividends and Splits",
+          "type": "text",
+          "content": "**Stock Dividend:**\n• Additional shares to existing shareholders\n• Pro-rata distribution\n• No cash leaves company\n• Stock price adjusts down proportionally\n\n**Stock Split:**\n• Increase shares outstanding\n• 2-for-1 split: Own 100 shares → 200 shares\n• Price adjusts proportionally\n• Makes shares more affordable\n\n**Economic Effect:**\n• Neither changes shareholder wealth\n• 'Cutting pizza into more slices'\n• Psychological benefits\n• Improved liquidity (stock split)\n\n**Reverse Split:**\n• Opposite of split\n• Reduces shares, increases price\n• Often signals distress"
+        },
+        {
+          "title": "Factors Affecting Dividend Policy",
+          "type": "text",
+          "content": "**Internal Factors:**\n• Profitability and cash flow\n• Investment opportunities\n• Liquidity position\n• Debt covenants\n• Management preferences\n\n**External Factors:**\n• Tax laws (dividend vs capital gains)\n• Investor expectations\n• Industry norms\n• Economic conditions\n• Regulatory requirements\n\n**Practical Considerations:**\n• Cutting dividends = Very negative signal\n• Companies reluctant to cut\n• Build in cushion before raising\n• Special dividends for one-time cash"
+        },
+        {
+          "title": "⚠️ Exam Trap: Dividends vs Buybacks",
+          "type": "warning",
+          "content": "**Two Ways to Return Cash:**\n\n**Dividends:**\n• Regular payment to all shareholders\n• Creates taxable event\n• Expected to continue\n• Cutting is very negative signal\n\n**Share Buybacks:**\n• Company repurchases own shares\n• Optional for shareholder to sell\n• Often tax-advantaged\n• More flexible, no commitment\n• Increases EPS by reducing shares\n\n**Why Companies Prefer Buybacks:**\n• Flexibility\n• Tax efficiency\n• Signal undervaluation\n• Can cancel without penalty\n\n**Exam Tip:**\nUnderstand trade-offs between the two"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Dividends: Discretionary distribution of profits",
+            "Theories: Irrelevance, Bird-in-Hand, Tax Preference, Signaling",
+            "Policies: Stable dollar, Constant payout, Residual",
+            "Stock dividends/splits don't change shareholder wealth",
+            "Cutting dividends sends strong negative signal",
+            "Payout ratio = Dividends / Net income",
+            "Buybacks offer flexibility; dividends offer commitment"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Dividend Policy",
+          "knowledgeCheck": {
+            "question": "A company pays dividends only from earnings remaining after funding all positive-NPV investment projects. This policy is called:",
+            "options": [
+              "Stable dividend policy",
+              "Constant payout policy",
+              "Residual dividend policy",
+              "Signaling dividend policy"
+            ],
+            "correctIndex": 2,
+            "explanation": "Residual dividend policy pays dividends from 'residual' or leftover earnings after all profitable investment opportunities are funded. This prioritizes reinvestment but creates variable dividend payments.",
+            "hint": "Which policy treats dividends as what's left over after investing?"
+          }
+        }
+      ]
+    }
+  }
+]

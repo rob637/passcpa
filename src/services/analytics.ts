@@ -18,9 +18,11 @@ import { trackPWAEngagement } from '../hooks/usePWAInstall';
 // GA4 Measurement ID - Get from Google Analytics 4 Admin → Data Streams → Web
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || '';
 
-// Google Ads Conversion ID - Get from Google Ads → Tools → Conversions → Tag setup
-// Format: AW-XXXXXXXXX/YYYYYYYYYYYYYYY
-const GOOGLE_ADS_CONVERSION_ID = import.meta.env.VITE_GOOGLE_ADS_CONVERSION_ID || '';
+// Google Ads Conversion IDs - Get from Google Ads → Tools → Conversions → Tag setup
+// Format: AW-XXXXXXXXX/YYYYYYYYYYYYYYY (each conversion action has its own ID)
+const GOOGLE_ADS_SIGNUP_CONVERSION_ID = import.meta.env.VITE_GOOGLE_ADS_SIGNUP_CONVERSION_ID || import.meta.env.VITE_GOOGLE_ADS_CONVERSION_ID || '';
+const GOOGLE_ADS_TRIAL_CONVERSION_ID = import.meta.env.VITE_GOOGLE_ADS_TRIAL_CONVERSION_ID || '';
+const GOOGLE_ADS_PURCHASE_CONVERSION_ID = import.meta.env.VITE_GOOGLE_ADS_PURCHASE_CONVERSION_ID || '';
 
 let initialized = false;
 
@@ -32,7 +34,7 @@ export const initAnalytics = (): void => {
 
   // Skip if no measurement ID configured
   if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID.startsWith('G-XXXX')) {
-    logger.log('Analytics disabled: No GA4 Measurement ID configured. Set VITE_GA_MEASUREMENT_ID in your .env file.');
+    logger.log('Analytics disabled: No GA4 Measurement ID configured.');
     return;
   }
 
@@ -48,30 +50,67 @@ export const initAnalytics = (): void => {
     return;
   }
 
+  // Initialize dataLayer and gtag function BEFORE loading the script
+  // This is the standard Google-recommended pattern
+  window.dataLayer = window.dataLayer || [];
+  // Always create a fresh gtag function to avoid conflicts with Firebase SDK
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  window.gtag = function (..._args: unknown[]) {
+    // Using `arguments` object instead of spread for gtag compatibility
+    window.dataLayer.push(arguments);
+  };
+
+  // Google Consent Mode V2 (required since March 2024)
+  // Default to 'denied' for GDPR compliance — update via updateConsent() after user accepts
+  window.gtag('consent', 'default', {
+    'analytics_storage': 'granted',     // Required for basic analytics
+    'ad_storage': 'denied',             // Denied until explicit user consent
+    'ad_user_data': 'denied',           // Denied until explicit user consent
+    'ad_personalization': 'denied',     // Denied until explicit user consent
+  });
+
+  window.gtag('js', new Date());
+  window.gtag('config', GA_MEASUREMENT_ID, {
+    send_page_view: false, // We'll track manually for SPA
+  });
+
+  // Configure Google Ads for conversion tracking
+  const googleAdsIds = [GOOGLE_ADS_SIGNUP_CONVERSION_ID, GOOGLE_ADS_TRIAL_CONVERSION_ID, GOOGLE_ADS_PURCHASE_CONVERSION_ID]
+    .map(id => id.split('/')[0])
+    .filter(id => id && id.startsWith('AW-'));
+  
+  // Get unique account IDs
+  const uniqueAdsIds = [...new Set(googleAdsIds)];
+  for (const googleAdsId of uniqueAdsIds) {
+    window.gtag('config', googleAdsId);
+    logger.log('Google Ads configured:', googleAdsId);
+  }
+
   // Load gtag script
   const script = document.createElement('script');
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
   document.head.appendChild(script);
 
-  // Initialize gtag
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function (...args: any[]) {
-    // @ts-ignore - Argument spread is intended
-    window.dataLayer.push(args);
-  };
-  window.gtag('js', new Date());
-  window.gtag('config', GA_MEASUREMENT_ID, {
-    send_page_view: false, // We'll track manually for SPA
-    anonymize_ip: true,
-    cookie_flags: 'SameSite=None;Secure',
-  });
-
   initialized = true;
-  logger.log('Analytics initialized');
+  logger.log('Analytics initialized with Consent Mode V2');
 
   // Track session start for PWA install threshold
   trackPWAEngagement('session_start');
+};
+
+/**
+ * Update consent after user accepts cookie/privacy banner.
+ * Call this when user explicitly grants ad/personalization consent.
+ */
+export const updateConsent = (granted: boolean): void => {
+  if (!window.gtag) return;
+  const value = granted ? 'granted' : 'denied';
+  window.gtag('consent', 'update', {
+    'ad_storage': value,
+    'ad_user_data': value,
+    'ad_personalization': value,
+  });
 };
 
 /**
@@ -229,13 +268,13 @@ export const analytics = {
       user_id: userId,
     });
 
-    // Google Ads conversion
-    if (GOOGLE_ADS_CONVERSION_ID && window.gtag) {
+    // Google Ads conversion (Sign-up)
+    if (GOOGLE_ADS_SIGNUP_CONVERSION_ID && window.gtag) {
       window.gtag('event', 'conversion', {
-        send_to: GOOGLE_ADS_CONVERSION_ID,
+        send_to: GOOGLE_ADS_SIGNUP_CONVERSION_ID,
         event_category: 'signup',
       });
-      logger.log('Google Ads signup conversion tracked');
+      logger.log('Google Ads signup conversion tracked:', GOOGLE_ADS_SIGNUP_CONVERSION_ID);
     }
   },
 
@@ -249,15 +288,15 @@ export const analytics = {
       course_id: courseId,
     });
 
-    // Google Ads conversion
-    if (GOOGLE_ADS_CONVERSION_ID && window.gtag) {
+    // Google Ads conversion (Trial Start)
+    if (GOOGLE_ADS_TRIAL_CONVERSION_ID && window.gtag) {
       window.gtag('event', 'conversion', {
-        send_to: GOOGLE_ADS_CONVERSION_ID,
+        send_to: GOOGLE_ADS_TRIAL_CONVERSION_ID,
         event_category: 'trial_start',
         value: 0,
         currency: 'USD',
       });
-      logger.log('Google Ads trial start conversion tracked');
+      logger.log('Google Ads trial start conversion tracked:', GOOGLE_ADS_TRIAL_CONVERSION_ID);
     }
   },
 
@@ -274,24 +313,35 @@ export const analytics = {
       plan_type: planType,
     });
 
-    // Google Ads conversion with value
-    if (GOOGLE_ADS_CONVERSION_ID && window.gtag) {
+    // Google Ads conversion with value (Purchase)
+    if (GOOGLE_ADS_PURCHASE_CONVERSION_ID && window.gtag) {
       window.gtag('event', 'conversion', {
-        send_to: GOOGLE_ADS_CONVERSION_ID,
+        send_to: GOOGLE_ADS_PURCHASE_CONVERSION_ID,
         event_category: 'purchase',
         value: value,
         currency: 'USD',
         transaction_id: `${userId}_${Date.now()}`,
       });
-      logger.log(`Google Ads purchase conversion tracked: $${value}`);
+      logger.log(`Google Ads purchase conversion tracked: $${value}`, GOOGLE_ADS_PURCHASE_CONVERSION_ID);
     }
   },
 
   /**
-   * Check if Google Ads tracking is configured
+   * Check if Google Ads tracking is configured (at least signup is configured)
    */
   isGoogleAdsConfigured: (): boolean => {
-    return !!GOOGLE_ADS_CONVERSION_ID && !GOOGLE_ADS_CONVERSION_ID.startsWith('AW-XXXX');
+    return !!GOOGLE_ADS_SIGNUP_CONVERSION_ID && !GOOGLE_ADS_SIGNUP_CONVERSION_ID.startsWith('AW-XXXX');
+  },
+
+  /**
+   * Get Google Ads configuration status for each conversion type
+   */
+  getGoogleAdsStatus: (): { signup: boolean; trial: boolean; purchase: boolean } => {
+    return {
+      signup: !!GOOGLE_ADS_SIGNUP_CONVERSION_ID && !GOOGLE_ADS_SIGNUP_CONVERSION_ID.startsWith('AW-XXXX'),
+      trial: !!GOOGLE_ADS_TRIAL_CONVERSION_ID && !GOOGLE_ADS_TRIAL_CONVERSION_ID.startsWith('AW-XXXX'),
+      purchase: !!GOOGLE_ADS_PURCHASE_CONVERSION_ID && !GOOGLE_ADS_PURCHASE_CONVERSION_ID.startsWith('AW-XXXX'),
+    };
   },
 };
 

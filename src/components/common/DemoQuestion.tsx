@@ -10,6 +10,7 @@ import { CheckCircle, XCircle, Sparkles, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { TOTAL_DISPLAY } from '../../config/contentStats';
+import FormattedExplanation from './FormattedExplanation';
 
 interface DemoQuestionProps {
   question: string;
@@ -146,9 +147,9 @@ export const DemoQuestion = ({
                 {isCorrect ? 'Correct!' : 'Not quite'}
               </span>
             </div>
-            <p className="text-sm text-slate-600 dark:text-slate-400">
-              {explanation}
-            </p>
+            <div className="text-sm text-slate-600 dark:text-slate-400">
+              <FormattedExplanation text={explanation} />
+            </div>
           </div>
         )}
 

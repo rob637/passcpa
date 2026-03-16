@@ -7,6 +7,7 @@
  */
 
 import { CourseId } from '../types/course';
+import logger from '../utils/logger';
 import { getCourse } from '../courses';
 import { TBS } from '../types';
 import { loadCourseData } from './courseDataLoader';
@@ -239,7 +240,7 @@ export async function loadExamTBS(courseId: CourseId, sectionId: string, count: 
     const sectionTbs = allTbs.filter(t => t.section === sectionId);
     return sectionTbs.slice(0, count);
   } catch (error) {
-    console.error(`Failed to load TBS for ${courseId}/${sectionId}:`, error);
+    logger.error(`Failed to load TBS for ${courseId}/${sectionId}:`, error);
     return [];
   }
 }

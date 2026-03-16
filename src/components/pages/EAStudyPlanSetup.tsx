@@ -228,7 +228,7 @@ const PlanPreview: React.FC<PlanPreviewProps> = ({ plan }) => (
         <div className="flex items-center gap-2">
           <Clock className="w-4 h-4 text-warning-500" />
           <span className="text-sm text-slate-700 dark:text-slate-300">
-            {plan.hoursPerDay}h study time
+            {Math.round(plan.hoursPerDay * 10) / 10}h study time
           </span>
         </div>
         <div className="flex items-center gap-2">

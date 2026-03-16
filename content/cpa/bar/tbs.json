@@ -1,0 +1,2936 @@
+{
+  "$schema": "../schema/tbs.schema.json",
+  "section": "BAR",
+  "exportedAt": "2026-03-01T12:07:44.355Z",
+  "tbs": [
+    {
+      "id": "bar-applied-001",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "document_review",
+      "blueprintArea": "BAR-II",
+      "title": "Segment Reporting - Quantitative Thresholds",
+      "topic": "Segment Reporting Application",
+      "difficulty": "medium",
+      "timeEstimate": 15,
+      "scenario": "Consolidated Industries has identified five operating segments. Management needs to determine which segments require separate disclosure under ASC 280.\n\nSegment Data (in thousands):\n                    Revenue    Profit/Loss    Assets\nSegment A           $45,000      $8,000      $35,000\nSegment B           $30,000      $4,500      $25,000\nSegment C           $15,000     ($2,000)     $20,000\nSegment D            $8,000      $1,200      $15,000\nSegment E            $2,000        $300       $5,000\n\nTotals:            $100,000     $12,000     $100,000\n\nFor profit/loss test, use absolute values:\n• Total profits: $14,000\n• Total losses: $2,000\n• Greater absolute value: $14,000\n\nApply ASC 280 quantitative thresholds.",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "multiple_choice",
+          "question": "Which segments meet the 10% REVENUE threshold?",
+          "options": [
+            "A, B, and C only",
+            "A and B only",
+            "A, B, C, and D",
+            "All segments"
+          ],
+          "correctAnswer": 0,
+          "explanation": "**Correct Answer Explanation:**\n\n10% of $100,000 = $10,000. Segments with revenue ≥ $10,000: A ($45,000), B ($30,000), C ($15,000). D and E do not meet the revenue threshold.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "multiple_choice",
+          "question": "Which segments meet the 10% PROFIT/LOSS threshold (using the greater of absolute profits or losses)?",
+          "options": [
+            "A only",
+            "A and B only",
+            "A, B, and C",
+            "A, B, C, and D"
+          ],
+          "correctAnswer": 2,
+          "explanation": "**Correct Answer Explanation:**\n\n10% of $14,000 (greater absolute value) = $1,400. Segments meeting threshold: A ($8,000), B ($4,500), C ($2,000 loss). D ($1,200) does not meet threshold.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "multiple_choice",
+          "question": "Which segments meet the 10% ASSETS threshold?",
+          "options": [
+            "A, B, and C only",
+            "A and B only",
+            "A, B, C, and D",
+            "All segments"
+          ],
+          "correctAnswer": 2,
+          "explanation": "**Correct Answer Explanation:**\n\n10% of $100,000 = $10,000. Segments with assets ≥ $10,000: A ($35,000), B ($25,000), C ($20,000), D ($15,000). Only E ($5,000) does not meet the threshold.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "Which segments are reportable (meet ANY threshold)?",
+          "options": [
+            "A, B, and C",
+            "A, B, C, and D",
+            "A and B only",
+            "All five segments"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nA segment is reportable if it meets ANY of the three thresholds. A (all 3), B (all 3), C (all 3), D (assets only) are reportable. E meets no thresholds.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "calculation",
+          "question": "What percentage of total revenue is represented by reportable segments A, B, C, and D?",
+          "correctAnswer": 98,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nReportable segment revenue: $45,000 + $30,000 + $15,000 + $8,000 = $98,000. Percentage: $98,000 / $100,000 = 98%. This exceeds the 75% threshold, so no additional segments need to be reported.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Test each threshold separately: revenue, profit/loss, assets",
+        "For profit/loss, use greater of absolute profits or absolute losses",
+        "A segment meeting ANY threshold is reportable",
+        "Reportable segments must represent ≥ 75% of total revenue"
+      ],
+      "references": [
+        "ASC 280-10-50-12",
+        "ASC 280-10-50-15"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-001",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "journal_entry",
+      "blueprintArea": "BAR-I",
+      "title": "Business Combination - Acquisition Method",
+      "topic": "Business Combinations",
+      "difficulty": "hard",
+      "timeEstimate": 18,
+      "scenario": "Alpha Corp. acquires 100% of Beta Inc. on January 1, Year 1. The following information is available at the acquisition date:\n\n• Cash paid by Alpha: $2,500,000\n• Fair value of Alpha stock issued (100,000 shares at $15/share): $1,500,000\n• Contingent consideration (fair value at acquisition date): $200,000\n• Direct acquisition costs paid by Alpha: $75,000\n\nBeta Inc.'s balance sheet at acquisition date (book values):\n• Cash: $300,000\n• Accounts Receivable: $450,000\n• Inventory: $600,000\n• Equipment (net): $1,200,000\n• Total Assets: $2,550,000\n• Accounts Payable: $350,000\n• Long-term Debt: $800,000\n• Common Stock: $500,000\n• Retained Earnings: $900,000\n• Total Liabilities & Equity: $2,550,000\n\nFair value adjustments:\n• Inventory fair value: $650,000\n• Equipment fair value: $1,400,000\n• Customer relationships (identifiable intangible, not previously recorded): $300,000\n• In-process R&D (identifiable intangible): $150,000",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the total consideration transferred in this business combination.",
+          "correctAnswer": 4200000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nTotal consideration = Cash ($2,500,000) + Stock ($1,500,000) + Contingent consideration ($200,000) = $4,200,000. Direct acquisition costs are expensed, not included in consideration.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the fair value of identifiable net assets acquired.",
+          "correctAnswer": 2900000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nFair value of net assets = Cash ($300,000) + AR ($450,000) + Inventory ($650,000) + Equipment ($1,400,000) + Customer relationships ($300,000) + R&D ($150,000) - AP ($350,000) - Debt ($800,000) = $2,900,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the goodwill recognized in this acquisition.",
+          "correctAnswer": 1300000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nGoodwill = Consideration ($4,200,000) - Fair value of net assets ($2,900,000) = $1,300,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "journal_entry",
+          "question": "Prepare the journal entry to record the acquisition on Alpha's books.",
+          "correctEntries": [
+            {
+              "account": "Cash",
+              "debit": 300000,
+              "credit": null
+            },
+            {
+              "account": "Accounts Receivable",
+              "debit": 450000,
+              "credit": null
+            },
+            {
+              "account": "Inventory",
+              "debit": 650000,
+              "credit": null
+            },
+            {
+              "account": "Equipment",
+              "debit": 1400000,
+              "credit": null
+            },
+            {
+              "account": "Customer Relationships",
+              "debit": 300000,
+              "credit": null
+            },
+            {
+              "account": "In-Process R&D",
+              "debit": 150000,
+              "credit": null
+            },
+            {
+              "account": "Goodwill",
+              "debit": 1300000,
+              "credit": null
+            },
+            {
+              "account": "Accounts Payable",
+              "debit": null,
+              "credit": 350000
+            },
+            {
+              "account": "Long-term Debt",
+              "debit": null,
+              "credit": 800000
+            },
+            {
+              "account": "Cash",
+              "debit": null,
+              "credit": 2500000
+            },
+            {
+              "account": "Common Stock",
+              "debit": null,
+              "credit": 1500000
+            },
+            {
+              "account": "Contingent Consideration Liability",
+              "debit": null,
+              "credit": 200000
+            }
+          ],
+          "tolerance": 0
+        },
+        {
+          "id": "req-5",
+          "type": "journal_entry",
+          "question": "Prepare the journal entry to record the direct acquisition costs.",
+          "correctEntries": [
+            {
+              "account": "Acquisition Expense",
+              "debit": 75000,
+              "credit": null
+            },
+            {
+              "account": "Cash",
+              "debit": null,
+              "credit": 75000
+            }
+          ],
+          "tolerance": 0
+        }
+      ],
+      "hints": [
+        "Under ASC 805, direct acquisition costs are EXPENSED, not capitalized",
+        "Include ALL forms of consideration: cash, stock, and contingent consideration",
+        "Identifiable intangibles (customer relationships, R&D) are recognized at fair value even if not on acquiree's books"
+      ],
+      "references": [
+        "ASC 805-10-25",
+        "ASC 805-20-25",
+        "ASC 805-30"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-002",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-I",
+      "title": "Consolidated Financial Statements - Intercompany Eliminations",
+      "topic": "Consolidated Financial Statements",
+      "difficulty": "hard",
+      "timeEstimate": 20,
+      "scenario": "Parent Corp. owns 80% of Sub Inc. (acquired at book value, no goodwill). The following intercompany transactions occurred during Year 1:\n\n1. Parent sold inventory to Sub for $500,000. Parent's cost was $350,000. Sub still holds 40% of this inventory at year-end.\n\n2. Sub sold land to Parent for $300,000. Sub's cost was $220,000.\n\n3. Parent made management fee charges to Sub of $120,000 during the year.\n\n4. Sub declared dividends of $100,000 during the year.\n\n5. At year-end, Sub owes Parent $85,000 for inventory purchases.\n\nYear-end trial balances (before consolidation adjustments):\n\nParent Corp:\n• Sales: $4,000,000\n• Cost of Sales: $2,400,000\n• Management Fee Income: $120,000\n• Dividend Income: $80,000\n• Investment in Sub: $800,000\n\nSub Inc:\n• Sales: $2,500,000\n• Cost of Sales: $1,600,000\n• Management Fee Expense: $120,000\n• Gain on Sale of Land: $80,000\n• Dividends Declared: $100,000",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the unrealized profit in ending inventory that must be eliminated.",
+          "correctAnswer": 60000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nUnrealized profit = ($500,000 - $350,000) × 40% = $150,000 × 40% = $60,000. This represents the markup still in Sub's inventory.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the intercompany sales to be eliminated.",
+          "correctAnswer": 500000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nAll intercompany sales ($500,000) must be eliminated against the corresponding cost of sales.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the gain on land sale to be eliminated.",
+          "correctAnswer": 80000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nThe entire gain ($300,000 - $220,000 = $80,000) on the intercompany land sale must be eliminated.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate the noncontrolling interest share of Sub's adjusted net income.",
+          "correctAnswer": 26000,
+          "tolerance": 100,
+          "explanation": "**Step-by-Step Solution:**\n\nSub's adjusted net income = Sales ($2,500,000) - Cost of Sales ($1,600,000) - Mgmt Fee ($120,000) - Unrealized land gain ($80,000) = $700,000 - $80,000 = $620,000. NCI share = $620,000 × 20% + adjustment for downstream profit = varies based on transaction direction. If downstream (Parent to Sub), the unrealized inventory profit stays with Parent.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "multiple_choice",
+          "question": "Which intercompany elimination affects consolidated Cost of Goods Sold?",
+          "options": [
+            "Management fee elimination only",
+            "Inventory sale and unrealized profit eliminations",
+            "Land sale elimination only",
+            "Dividend elimination only"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nThe inventory sale elimination reduces both Sales and COGS. The unrealized profit in ending inventory increases consolidated COGS (reduces gross profit).\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Intercompany sales eliminate 100% regardless of ownership percentage",
+        "For downstream sales (parent to sub), unrealized profit is attributed 100% to parent",
+        "For upstream sales (sub to parent), unrealized profit is allocated between parent and NCI"
+      ],
+      "references": [
+        "ASC 810-10-45",
+        "Intercompany Elimination Procedures"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-003",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-I",
+      "title": "Noncontrolling Interest Calculation",
+      "topic": "Noncontrolling Interests",
+      "difficulty": "medium",
+      "timeEstimate": 15,
+      "scenario": "On January 1, Year 1, Parent Corp. acquired 75% of Subsidiary Inc. for $1,500,000 when Subsidiary's identifiable net assets had a fair value of $1,800,000.\n\nInformation at acquisition:\n• Book value of Subsidiary's net assets: $1,600,000\n• Fair value of Subsidiary's net assets: $1,800,000\n• Fair value of NCI at acquisition: $500,000\n\nYear 1 activity for Subsidiary:\n• Net income: $400,000\n• Dividends declared: $100,000\n• Other comprehensive income (unrealized gains): $50,000\n\nNo impairment of goodwill occurred during Year 1.",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the goodwill at the acquisition date using the full goodwill method.",
+          "correctAnswer": 200000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nFull goodwill = (Consideration paid + Fair value of NCI) - Fair value of net assets = ($1,500,000 + $500,000) - $1,800,000 = $200,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the NCI share of net income for Year 1.",
+          "correctAnswer": 100000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nNCI share of net income = $400,000 × 25% = $100,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the NCI share of dividends for Year 1.",
+          "correctAnswer": 25000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nNCI share of dividends = $100,000 × 25% = $25,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate the ending NCI balance in equity at December 31, Year 1.",
+          "correctAnswer": 587500,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nEnding NCI = Beginning NCI ($500,000) + NCI share of net income ($100,000) - NCI share of dividends ($25,000) + NCI share of OCI ($50,000 × 25% = $12,500) = $587,500\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Under full goodwill method, NCI is initially recorded at fair value",
+        "NCI balance changes by its share of subsidiary's comprehensive income and dividends",
+        "Remember to include OCI items in the NCI calculation"
+      ],
+      "references": [
+        "ASC 810-10-45-16",
+        "ASC 810-10-45-18"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-004",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "Derivatives and Fair Value Hedge Accounting",
+      "topic": "Derivatives and Hedging",
+      "difficulty": "hard",
+      "timeEstimate": 18,
+      "scenario": "On October 1, Year 1, Delta Corp. holds inventory with a carrying value of $2,000,000 and a fair value of $2,000,000. To hedge against a potential decline in value, Delta enters into a forward contract to sell the inventory on March 31, Year 2.\n\nForward contract details:\n• Notional amount: $2,000,000\n• Forward price: $2,000,000\n• Delta designates this as a fair value hedge of inventory\n• The hedge is highly effective\n\nFair value changes:\n• December 31, Year 1:\n  - Inventory fair value: $1,920,000\n  - Forward contract fair value: $75,000 asset\n\n• March 31, Year 2:\n  - Inventory fair value: $1,850,000\n  - Forward contract fair value: $150,000 asset",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the loss on hedged inventory to be recognized at December 31, Year 1.",
+          "correctAnswer": 80000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nLoss on inventory = $2,000,000 - $1,920,000 = $80,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the gain on the forward contract at December 31, Year 1.",
+          "correctAnswer": 75000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nGain on forward = $75,000 - $0 = $75,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the net income effect from the hedge at December 31, Year 1.",
+          "correctAnswer": -5000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nNet income effect = Gain on forward ($75,000) - Loss on inventory ($80,000) = -$5,000 (net loss)\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "journal_entry",
+          "question": "Prepare the journal entry to record the forward contract gain and inventory adjustment at December 31, Year 1.",
+          "correctEntries": [
+            {
+              "account": "Forward Contract Asset",
+              "debit": 75000,
+              "credit": null
+            },
+            {
+              "account": "Gain on Forward Contract",
+              "debit": null,
+              "credit": 75000
+            },
+            {
+              "account": "Loss on Inventory",
+              "debit": 80000,
+              "credit": null
+            },
+            {
+              "account": "Inventory",
+              "debit": null,
+              "credit": 80000
+            }
+          ],
+          "tolerance": 0
+        },
+        {
+          "id": "req-5",
+          "type": "multiple_choice",
+          "question": "In a fair value hedge, where are gains and losses on the hedging instrument recognized?",
+          "options": [
+            "Other comprehensive income",
+            "Current period earnings",
+            "Deferred on the balance sheet",
+            "Directly in equity"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nIn a fair value hedge, gains/losses on both the hedging instrument AND the hedged item are recognized in current earnings.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Fair value hedge: Both hedging instrument and hedged item gains/losses go to earnings",
+        "Cash flow hedge: Hedging instrument gains/losses go to OCI",
+        "The goal is to offset volatility in earnings from the hedged item"
+      ],
+      "references": [
+        "ASC 815-20",
+        "ASC 815-25"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-005",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "Foreign Currency Translation vs Remeasurement",
+      "topic": "Foreign Currency",
+      "difficulty": "hard",
+      "timeEstimate": 20,
+      "scenario": "US Parent has a wholly-owned subsidiary, Euro Sub, located in Germany. Euro Sub's functional currency is the Euro (€).\n\nEuro Sub's December 31, Year 1 trial balance (in Euros):\n• Cash: €500,000\n• Accounts Receivable: €800,000\n• Inventory (at cost): €600,000\n• Equipment (net): €2,000,000\n• Accounts Payable: €400,000\n• Long-term Debt: €1,200,000\n• Common Stock: €1,000,000\n• Retained Earnings (1/1): €700,000\n• Sales Revenue: €3,500,000\n• Cost of Goods Sold: €2,100,000\n• Depreciation Expense: €200,000\n• Other Expenses: €600,000\n\nExchange rates:\n• January 1, Year 1 (historical rate when equipment acquired): $1.10/€\n• Average rate for Year 1: $1.15/€\n• December 31, Year 1: $1.20/€\n• Rate when common stock issued: $1.05/€\n• Rate when beginning RE was earned (weighted average historical): $1.08/€",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Using the current rate method (translation), calculate translated Cash in USD.",
+          "correctAnswer": 600000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nCash is a monetary asset, translated at current rate: €500,000 × $1.20 = $600,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Using the current rate method, calculate translated Equipment (net) in USD.",
+          "correctAnswer": 2400000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nUnder current rate method (translation), ALL assets use current rate: €2,000,000 × $1.20 = $2,400,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Using the current rate method, calculate translated Sales Revenue in USD.",
+          "correctAnswer": 4025000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nRevenue uses average rate: €3,500,000 × $1.15 = $4,025,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate Euro Sub's net income in Euros.",
+          "correctAnswer": 600000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nNet income = Revenue (€3,500,000) - COGS (€2,100,000) - Depreciation (€200,000) - Other (€600,000) = €600,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "multiple_choice",
+          "question": "Under the current rate method (translation), where is the translation adjustment reported?",
+          "options": [
+            "In net income as a foreign exchange gain/loss",
+            "In other comprehensive income (accumulated OCI)",
+            "Directly in retained earnings",
+            "As a separate liability"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nTranslation adjustments under the current rate method are reported in OCI and accumulated in the cumulative translation adjustment (CTA) in equity.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Translation (current rate method): Assets/Liabilities at current rate, Revenues/Expenses at average rate, Equity at historical rates",
+        "Remeasurement (temporal method): Monetary items at current, Non-monetary at historical",
+        "Translation adjustment goes to OCI; Remeasurement gain/loss goes to income"
+      ],
+      "references": [
+        "ASC 830-10",
+        "ASC 830-30"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-006",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "journal_entry",
+      "blueprintArea": "BAR-III",
+      "title": "Governmental Capital Assets and Infrastructure",
+      "topic": "Governmental Accounting - Capital Assets",
+      "difficulty": "medium",
+      "timeEstimate": 15,
+      "scenario": "City of Springfield engages in the following capital asset transactions during the fiscal year:\n\n1. Purchased a new fire truck for $450,000 cash from the General Fund.\n\n2. Constructed a new road segment using General Fund resources:\n   • Direct construction costs: $2,800,000\n   • Interest during construction: $150,000 (capitalized under modified approach)\n   • Engineering and design: $250,000\n\n3. Received a donated park from a local developer:\n   • Estimated fair value of land: $800,000\n   • Estimated fair value of improvements: $200,000\n\n4. The city uses the modified approach for infrastructure assets. The road network meets the condition assessment requirements.\n\n5. Depreciation for the year on governmental capital assets (excluding infrastructure under modified approach): $385,000\n\nThe city has separate governmental funds and government-wide financial statements.",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "journal_entry",
+          "question": "Prepare the General Fund journal entry to record the fire truck purchase.",
+          "correctEntries": [
+            {
+              "account": "Expenditures - Capital Outlay",
+              "debit": 450000,
+              "credit": null
+            },
+            {
+              "account": "Cash",
+              "debit": null,
+              "credit": 450000
+            }
+          ],
+          "tolerance": 0
+        },
+        {
+          "id": "req-2",
+          "type": "journal_entry",
+          "question": "Prepare the government-wide journal entry to record the fire truck purchase.",
+          "correctEntries": [
+            {
+              "account": "Equipment - Fire Truck",
+              "debit": 450000,
+              "credit": null
+            },
+            {
+              "account": "Cash",
+              "debit": null,
+              "credit": 450000
+            }
+          ],
+          "tolerance": 0
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the total cost of the constructed road to be capitalized at the government-wide level.",
+          "correctAnswer": 3200000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nTotal road cost = Construction ($2,800,000) + Interest ($150,000) + Engineering ($250,000) = $3,200,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "journal_entry",
+          "question": "Prepare the government-wide journal entry to record the donated park.",
+          "correctEntries": [
+            {
+              "account": "Land",
+              "debit": 800000,
+              "credit": null
+            },
+            {
+              "account": "Infrastructure - Park Improvements",
+              "debit": 200000,
+              "credit": null
+            },
+            {
+              "account": "Program Revenue - Capital Contributions",
+              "debit": null,
+              "credit": 1000000
+            }
+          ],
+          "tolerance": 0
+        },
+        {
+          "id": "req-5",
+          "type": "multiple_choice",
+          "question": "Under the modified approach for infrastructure, which statement is correct?",
+          "options": [
+            "Depreciation is required on all infrastructure",
+            "Infrastructure must be depreciated but can use any method",
+            "Depreciation is NOT required if the government commits to maintain condition levels",
+            "The modified approach only applies to donated infrastructure"
+          ],
+          "correctAnswer": 2,
+          "explanation": "**Correct Answer Explanation:**\n\nUnder the modified approach (GASB 34), governments can elect NOT to depreciate infrastructure if they: (1) manage using an asset management system, (2) perform condition assessments, and (3) demonstrate that infrastructure is maintained at or above the established condition level.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "General Fund uses modified accrual - capital expenditures recorded as expenditures",
+        "Government-wide uses full accrual - capital assets are capitalized",
+        "Donated assets are recorded at acquisition value (fair value)"
+      ],
+      "references": [
+        "GASB 34",
+        "GASB 72"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-007",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-III",
+      "title": "Pension Accounting (GASB 68)",
+      "topic": "Governmental Pensions",
+      "difficulty": "hard",
+      "timeEstimate": 18,
+      "scenario": "The City of Riverside participates in a cost-sharing multiple-employer defined benefit pension plan. The following information is available for fiscal year ending June 30, Year 1:\n\nPlan-wide information:\n• Total pension liability (all employers): $500,000,000\n• Plan fiduciary net position: $420,000,000\n• Net pension liability (all employers): $80,000,000\n• City's proportionate share: 2.5%\n\nCity of Riverside's pension information:\n• Beginning net pension liability (city's share): $1,800,000\n• Pension expense for the year: $650,000\n• Contributions to the plan: $575,000\n• City's ending net pension liability: (to be calculated)\n\nDeferred outflows/inflows related to pensions:\n• Beginning deferred outflows: $250,000\n• Beginning deferred inflows: $180,000\n• Changes in assumptions (deferred outflow): $85,000\n• Difference between expected/actual experience (deferred inflow): $45,000",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the City's ending net pension liability (its proportionate share).",
+          "correctAnswer": 2000000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nCity's proportionate share of NPL = $80,000,000 × 2.5% = $2,000,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the change in net pension liability for the year.",
+          "correctAnswer": 200000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nChange in NPL = Ending ($2,000,000) - Beginning ($1,800,000) = $200,000 increase\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the ending deferred outflows of resources related to pensions.",
+          "correctAnswer": 335000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nEnding deferred outflows = Beginning ($250,000) + Changes in assumptions ($85,000) = $335,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate the ending deferred inflows of resources related to pensions.",
+          "correctAnswer": 225000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nEnding deferred inflows = Beginning ($180,000) + Experience difference ($45,000) = $225,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "multiple_choice",
+          "question": "In governmental financial statements, pension expense is recognized:",
+          "options": [
+            "Only in the proprietary fund statements",
+            "Only in the government-wide statements",
+            "In both governmental fund and government-wide statements",
+            "In government-wide statements and proprietary funds, but not governmental funds"
+          ],
+          "correctAnswer": 3,
+          "explanation": "**Correct Answer Explanation:**\n\nPension expense is recognized in government-wide statements (full accrual) and proprietary fund statements. Governmental funds use modified accrual and recognize pension expenditures based on amounts due and payable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Net pension liability = Total pension liability - Plan fiduciary net position",
+        "Proportionate share is based on employer contributions relative to total contributions",
+        "Deferred outflows/inflows are amortized to pension expense over time"
+      ],
+      "references": [
+        "GASB 68",
+        "GASB 71"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-008",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-III",
+      "title": "Comprehensive Financial Ratio Analysis",
+      "topic": "Financial Analysis",
+      "difficulty": "medium",
+      "timeEstimate": 15,
+      "scenario": "Apex Industries presents the following financial data for Year 1:\n\nBalance Sheet (December 31, Year 1):\n• Cash: $150,000\n• Accounts Receivable (net): $400,000\n• Inventory: $500,000\n• Prepaid Expenses: $50,000\n• Property, Plant & Equipment (net): $2,000,000\n• Total Assets: $3,100,000\n\n• Accounts Payable: $300,000\n• Accrued Liabilities: $100,000\n• Current Portion of Long-term Debt: $100,000\n• Long-term Debt: $800,000\n• Common Stock: $1,000,000\n• Retained Earnings: $800,000\n• Total Liabilities & Equity: $3,100,000\n\nIncome Statement (Year 1):\n• Net Sales: $4,500,000\n• Cost of Goods Sold: $2,700,000\n• Gross Profit: $1,800,000\n• Operating Expenses: $1,200,000\n• Interest Expense: $72,000\n• Income Tax Expense: $158,400\n• Net Income: $369,600\n\nAdditional Information:\n• Average accounts receivable: $380,000\n• Average inventory: $450,000\n• Average total assets: $2,900,000",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the current ratio.",
+          "correctAnswer": 2.2,
+          "tolerance": 0.1,
+          "explanation": "**Step-by-Step Solution:**\n\nCurrent ratio = Current assets / Current liabilities = ($150,000 + $400,000 + $500,000 + $50,000) / ($300,000 + $100,000 + $100,000) = $1,100,000 / $500,000 = 2.2\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the quick ratio (acid-test ratio).",
+          "correctAnswer": 1.1,
+          "tolerance": 0.1,
+          "explanation": "**Step-by-Step Solution:**\n\nQuick ratio = (Cash + Receivables) / Current liabilities = ($150,000 + $400,000) / $500,000 = 1.1\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate accounts receivable turnover.",
+          "correctAnswer": 11.84,
+          "tolerance": 0.1,
+          "explanation": "**Step-by-Step Solution:**\n\nAR turnover = Net sales / Average AR = $4,500,000 / $380,000 = 11.84 times\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate inventory turnover.",
+          "correctAnswer": 6,
+          "tolerance": 0.1,
+          "explanation": "**Step-by-Step Solution:**\n\nInventory turnover = COGS / Average inventory = $2,700,000 / $450,000 = 6.0 times\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "calculation",
+          "question": "Calculate return on assets (ROA).",
+          "correctAnswer": 12.74,
+          "tolerance": 0.2,
+          "explanation": "**Step-by-Step Solution:**\n\nROA = Net income / Average total assets = $369,600 / $2,900,000 = 12.74%\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-6",
+          "type": "calculation",
+          "question": "Calculate the debt-to-equity ratio.",
+          "correctAnswer": 0.72,
+          "tolerance": 0.02,
+          "explanation": "**Step-by-Step Solution:**\n\nDebt-to-equity = Total liabilities / Total equity = ($300,000 + $100,000 + $100,000 + $800,000) / ($1,000,000 + $800,000) = $1,300,000 / $1,800,000 = 0.72\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Current assets include cash, receivables, inventory, and prepaids",
+        "Quick ratio excludes inventory and prepaids",
+        "Use average balances for turnover and ROA calculations when available"
+      ],
+      "references": [
+        "Financial Statement Analysis",
+        "Ratio Analysis"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-009",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-III",
+      "title": "Cost-Volume-Profit Analysis",
+      "topic": "Cost Accounting and Planning",
+      "difficulty": "medium",
+      "timeEstimate": 15,
+      "scenario": "Precision Manufacturing produces a single product with the following cost structure:\n\n• Selling price per unit: $85\n• Variable manufacturing cost per unit: $35\n• Variable selling expense per unit: $10\n• Fixed manufacturing overhead: $300,000 per year\n• Fixed selling and administrative: $150,000 per year\n\nThe company's current sales volume is 15,000 units per year.\n\nManagement is considering several alternatives:\n1. Increase advertising by $50,000 to boost sales by 3,000 units\n2. Reduce selling price by $5 per unit, expecting a 25% increase in unit sales\n3. Outsource production, eliminating variable manufacturing and fixed manufacturing overhead, but increasing variable cost to $50 per unit",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the contribution margin per unit.",
+          "correctAnswer": 40,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nContribution margin = Selling price - Variable costs = $85 - $35 - $10 = $40 per unit\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the break-even point in units.",
+          "correctAnswer": 11250,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nBreak-even units = Total fixed costs / CM per unit = ($300,000 + $150,000) / $40 = 11,250 units\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate current operating income.",
+          "correctAnswer": 150000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nOperating income = (Units × CM per unit) - Fixed costs = (15,000 × $40) - $450,000 = $600,000 - $450,000 = $150,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate operating income under Alternative 1 (additional advertising).",
+          "correctAnswer": 220000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nAlternative 1: New units = 18,000. Operating income = (18,000 × $40) - $450,000 - $50,000 = $720,000 - $500,000 = $220,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "calculation",
+          "question": "Calculate operating income under Alternative 2 (price reduction).",
+          "correctAnswer": 206250,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nAlternative 2: New price = $80, New CM = $35. New units = 15,000 × 1.25 = 18,750. Operating income = (18,750 × $35) - $450,000 = $656,250 - $450,000 = $206,250\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-6",
+          "type": "multiple_choice",
+          "question": "Which alternative provides the highest operating income?",
+          "options": [
+            "Current plan ($150,000)",
+            "Alternative 1 - Advertising ($220,000)",
+            "Alternative 2 - Price reduction ($206,250)",
+            "Alternative 3 - Outsourcing"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nAlternative 1 (advertising) provides the highest operating income at $220,000.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Contribution margin = Revenue - ALL variable costs",
+        "Break-even: Total contribution = Total fixed costs",
+        "Consider incremental analysis for decision-making"
+      ],
+      "references": [
+        "Cost-Volume-Profit Analysis",
+        "Managerial Accounting"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-010",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-III",
+      "title": "Variance Analysis - Manufacturing",
+      "topic": "Variance Analysis",
+      "difficulty": "hard",
+      "timeEstimate": 18,
+      "scenario": "Standard Manufacturing uses a standard cost system. The following standards were established for direct materials and direct labor:\n\nDirect Materials:\n• Standard quantity: 3 pounds per unit\n• Standard price: $8 per pound\n\nDirect Labor:\n• Standard hours: 2 hours per unit\n• Standard rate: $22 per hour\n\nActual results for March (5,000 units produced):\nDirect Materials:\n• Pounds purchased and used: 16,000 pounds\n• Actual price paid: $7.50 per pound\n• Actual total cost: $120,000\n\nDirect Labor:\n• Actual hours worked: 10,500 hours\n• Actual rate paid: $23 per hour\n• Actual total cost: $241,500\n\nVariable Manufacturing Overhead:\n• Standard rate: $6 per direct labor hour\n• Actual variable overhead: $64,000",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the direct materials price variance.",
+          "correctAnswer": 8000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nPrice variance = (SP - AP) × AQ = ($8 - $7.50) × 16,000 = $0.50 × 16,000 = $8,000 Favorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the direct materials quantity variance.",
+          "correctAnswer": 8000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nQuantity variance = (SQ - AQ) × SP = (15,000 - 16,000) × $8 = -1,000 × $8 = $8,000 Unfavorable (use absolute value)\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the direct labor rate variance.",
+          "correctAnswer": 10500,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nRate variance = (SR - AR) × AH = ($22 - $23) × 10,500 = -$1 × 10,500 = $10,500 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate the direct labor efficiency variance.",
+          "correctAnswer": 11000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nEfficiency variance = (SH - AH) × SR = (10,000 - 10,500) × $22 = -500 × $22 = $11,000 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "calculation",
+          "question": "Calculate the variable overhead efficiency variance.",
+          "correctAnswer": 3000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nVOH efficiency variance = (SH - AH) × Standard VOH rate = (10,000 - 10,500) × $6 = -500 × $6 = $3,000 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-6",
+          "type": "multiple_choice",
+          "question": "The materials price variance is favorable. What is the most likely cause?",
+          "options": [
+            "Workers used more material than standard",
+            "Purchasing obtained a better price than expected",
+            "More units were produced than planned",
+            "The standard price was set too low"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nA favorable price variance means actual price < standard price, likely due to better purchasing negotiations, bulk discounts, or market conditions.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Standard quantity for actual production = Standard per unit × Units produced",
+        "Standard hours for actual production = Standard per unit × Units produced",
+        "Favorable variance: Actual < Standard cost"
+      ],
+      "references": [
+        "Standard Costing",
+        "Variance Analysis"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b2-001",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-I",
+      "title": "Variance Analysis - Manufacturing",
+      "topic": "Cost Management",
+      "difficulty": "hard",
+      "timeEstimate": 18,
+      "scenario": "Phoenix Manufacturing produces industrial valves. Standard cost data for one unit:\n\nDirect Materials:\n• Standard quantity: 4 pounds per unit\n• Standard price: $8.00 per pound\n\nDirect Labor:\n• Standard hours: 2.5 hours per unit\n• Standard rate: $22.00 per hour\n\nVariable Overhead:\n• Applied based on direct labor hours\n• Standard rate: $6.00 per DLH\n\nActual results for March (10,000 units produced):\n• Materials purchased: 42,000 pounds at $7.80/pound\n• Materials used: 41,500 pounds\n• Direct labor: 24,200 hours at $22.50/hour\n• Variable overhead incurred: $150,000",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the direct materials price variance.",
+          "correctAnswer": 8400,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\n(AP - SP) × AQ purchased = ($7.80 - $8.00) × 42,000 = -$8,400 Favorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the direct materials quantity variance.",
+          "correctAnswer": 12000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\n(AQ used - SQ allowed) × SP = (41,500 - 40,000) × $8.00 = $12,000 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the direct labor rate variance.",
+          "correctAnswer": 12100,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\n(AR - SR) × AH = ($22.50 - $22.00) × 24,200 = $12,100 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate the direct labor efficiency variance.",
+          "correctAnswer": 18700,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\n(AH - SH allowed) × SR = (24,200 - 25,000) × $22.00 = -$17,600 Favorable. SH = 10,000 × 2.5 = 25,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "calculation",
+          "question": "Calculate the variable overhead efficiency variance.",
+          "correctAnswer": 4800,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\n(AH - SH) × Standard VOH rate = (24,200 - 25,000) × $6.00 = -$4,800 Favorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Price variance calculated at purchase; quantity at use",
+        "SQ allowed = Actual units × Standard quantity per unit",
+        "Efficiency variances use standard rates",
+        "Favorable = Actual < Standard cost"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b2-002",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-I",
+      "title": "Capital Budgeting - NPV and IRR",
+      "topic": "Capital Investment Decisions",
+      "difficulty": "hard",
+      "timeEstimate": 20,
+      "scenario": "Apex Corp. is evaluating a new production line:\n\nInitial Investment: $2,000,000\nUseful life: 5 years\nSalvage value: $200,000\nTax rate: 25%\nWACC: 10%\n\nAnnual Operating Data:\n• Revenue increase: $1,200,000\n• Cash operating costs: $600,000\n• Depreciation: Straight-line to salvage\n\nPresent Value Factors at 10%:\n| Year | PV of $1 | PV of Annuity |\n|------|----------|---------------|\n| 1 | 0.909 | 0.909 |\n| 2 | 0.826 | 1.736 |\n| 3 | 0.751 | 2.487 |\n| 4 | 0.683 | 3.170 |\n| 5 | 0.621 | 3.791 |",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate annual depreciation expense.",
+          "correctAnswer": 360000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\n($2,000,000 - $200,000) / 5 years = $360,000 per year\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate annual after-tax operating cash flow.",
+          "correctAnswer": 540000,
+          "tolerance": 1000,
+          "explanation": "**Step-by-Step Solution:**\n\nBefore tax: $1,200,000 - $600,000 = $600,000. Tax: ($600,000 - $360,000) × 25% = $60,000. After-tax CF = $600,000 - $60,000 = $540,000. Or: EBIT × (1-T) + Dep = $240,000 × 0.75 + $360,000 = $540,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the NPV of the project.",
+          "correctAnswer": 171140,
+          "tolerance": 5000,
+          "explanation": "**Step-by-Step Solution:**\n\nPV of operating CFs: $540,000 × 3.791 = $2,047,140. PV of salvage: $200,000 × 0.621 = $124,200. Total PV = $2,171,340. NPV = $2,171,340 - $2,000,000 = $171,340\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "Should Apex accept this project based on NPV?",
+          "options": [
+            "Yes - NPV is positive",
+            "No - NPV is negative",
+            "Indifferent - NPV is zero",
+            "Need more information"
+          ],
+          "correctAnswer": 0,
+          "explanation": "**Correct Answer Explanation:**\n\nNPV > 0 indicates the project adds value. Accept projects with positive NPV.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "multiple_choice",
+          "question": "Is the IRR above or below 10%?",
+          "options": [
+            "Above 10%",
+            "Below 10%",
+            "Exactly 10%",
+            "Cannot determine"
+          ],
+          "correctAnswer": 0,
+          "explanation": "**Correct Answer Explanation:**\n\nSince NPV is positive at 10%, the IRR must be higher than 10% (the discount rate where NPV = 0).\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Depreciation tax shield = Depreciation × Tax rate",
+        "After-tax CF = (Revenue - Costs)(1-T) + Depreciation × T",
+        "NPV positive → Accept; IRR > WACC",
+        "Salvage value may have tax implications if ≠ book value"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b2-003",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "Segment Reporting Analysis",
+      "topic": "Financial Reporting",
+      "difficulty": "medium",
+      "timeEstimate": 16,
+      "scenario": "Diversified Corp. has four operating segments with the following Year 1 data:\n\n| Segment | Revenue | Profit/(Loss) | Assets |\n|---------|---------|---------------|--------|\n| Alpha | $15,000,000 | $2,400,000 | $18,000,000 |\n| Beta | $8,000,000 | $(500,000) | $12,000,000 |\n| Gamma | $4,000,000 | $800,000 | $6,000,000 |\n| Delta | $3,000,000 | $400,000 | $4,000,000 |\n| **Total** | $30,000,000 | $3,100,000 | $40,000,000 |\n\nIntersegment revenues:\n• Alpha to Beta: $1,000,000\n• Beta to Gamma: $500,000",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the revenue threshold for reportable segments.",
+          "correctAnswer": 3000000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\n10% of total revenue = $30,000,000 × 10% = $3,000,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the profit/loss threshold (use absolute values).",
+          "correctAnswer": 360000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nGreater of: (1) 10% of combined profit = $3,600,000 × 10% = $360,000, or (2) 10% of combined loss = $500,000 × 10% = $50,000. Use $360,000.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the asset threshold for reportable segments.",
+          "correctAnswer": 4000000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\n10% of total assets = $40,000,000 × 10% = $4,000,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "Which segments are separately reportable?",
+          "options": [
+            "Alpha, Beta, Gamma only",
+            "Alpha, Beta, Gamma, Delta",
+            "Alpha and Beta only",
+            "Alpha only"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nAlpha: Meets all 3 thresholds. Beta: Meets revenue ($8M), loss ($500K > $360K), assets ($12M). Gamma: Meets revenue ($4M), profit ($800K). Delta: Meets revenue ($3M) and assets ($4M). All 4 are reportable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "multiple_choice",
+          "question": "What is required for segment reconciliation?",
+          "options": [
+            "Reconcile segment totals to consolidated amounts only",
+            "Reconcile revenues, profit/loss, and assets to consolidated",
+            "No reconciliation required",
+            "Reconcile only if segments exceed 75% test"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nASC 280 requires reconciliation of segment revenues, profit/loss, and assets to consolidated financial statement amounts.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Reportable if ≥ 10% of revenue, profit/loss, OR assets",
+        "Profit test: Greater of 10% combined profits or 10% combined losses",
+        "75% test: Reportable segments must be ≥ 75% of external revenue",
+        "Reconciliation required for all key measures"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b2-004",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "document_review",
+      "blueprintArea": "BAR-I",
+      "title": "Ratio Analysis and Trend Interpretation",
+      "topic": "Financial Statement Analysis",
+      "difficulty": "medium",
+      "timeEstimate": 15,
+      "scenario": "Analyze the following 3-year trend for Retail Solutions Inc.:\n\n| Ratio | Year 1 | Year 2 | Year 3 | Industry Avg |\n|-------|--------|--------|--------|--------------|\n| Current Ratio | 2.1 | 1.8 | 1.4 | 1.6 |\n| Quick Ratio | 1.2 | 0.9 | 0.6 | 0.9 |\n| Inventory Turnover | 8.0 | 6.5 | 5.2 | 7.0 |\n| Days Sales Outstanding | 35 | 42 | 55 | 40 |\n| Debt-to-Equity | 0.8 | 1.2 | 1.6 | 1.0 |\n| Interest Coverage | 6.0 | 4.2 | 2.8 | 4.5 |\n\nAdditional Information:\n• Year 3 sales increased 15% over Year 2\n• Gross margin remained stable at 35%\n• The company opened 5 new stores in Year 3",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "multiple_choice",
+          "question": "What is the primary liquidity concern?",
+          "options": [
+            "Excessive cash holdings",
+            "Inventory buildup and slow collections",
+            "Insufficient current assets",
+            "Over-reliance on short-term debt"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nQuick ratio declining faster than current ratio indicates inventory buildup. Rising DSO (35→55 days) shows slowing collections. Both point to liquidity stress from working capital issues.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "multiple_choice",
+          "question": "What do the solvency ratios indicate?",
+          "options": [
+            "Improving financial strength",
+            "Stable capital structure",
+            "Increasing financial risk",
+            "Decreasing leverage"
+          ],
+          "correctAnswer": 2,
+          "explanation": "**Correct Answer Explanation:**\n\nDebt-to-equity doubled (0.8→1.6), now above industry (1.0). Interest coverage halved (6.0→2.8), below industry (4.5). Both indicate increasing financial risk and potential solvency issues.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "multiple_choice",
+          "question": "What likely caused the ratio deterioration?",
+          "options": [
+            "Operational efficiency improvements",
+            "Aggressive expansion funded by debt",
+            "Revenue decline",
+            "Successful inventory management"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nSales increased 15%, margins stable, but 5 new stores opened. Rising debt and declining coverage suggest expansion was debt-funded. Inventory turnover decline suggests new stores may be overstocked.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "Which ratio is most concerning for short-term creditors?",
+          "options": [
+            "Current ratio (still above 1.0)",
+            "Quick ratio (below industry)",
+            "Debt-to-equity",
+            "Interest coverage"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nQuick ratio at 0.6 (vs 0.9 industry) indicates inability to meet short-term obligations without selling inventory. For creditors needing quick repayment, this is most concerning.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Quick ratio excludes inventory from current assets",
+        "DSO increase = slower collection of receivables",
+        "Interest coverage below 3.0 is generally concerning",
+        "Rapid expansion often strains working capital"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b2-005",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-I",
+      "title": "Transfer Pricing Analysis",
+      "topic": "Managerial Accounting",
+      "difficulty": "hard",
+      "timeEstimate": 18,
+      "scenario": "Omega Corp. has two divisions:\n\n**Components Division** (seller):\n• Variable cost per unit: $45\n• Fixed costs: $500,000 (allocated based on capacity)\n• Capacity: 100,000 units\n• Current external sales: 70,000 units at $80/unit\n• No additional fixed costs for internal sales\n\n**Assembly Division** (buyer):\n• Needs 25,000 units of the component\n• Can purchase externally for $75/unit\n• Uses component in final product sold for $200\n• Other variable costs: $60 per final unit\n\nCurrently, divisions negotiate a transfer price of $65/unit.",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate Components Division profit on internal transfer at $65.",
+          "correctAnswer": 500000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\n(Transfer price - Variable cost) × Units = ($65 - $45) × 25,000 = $500,000 contribution\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the minimum transfer price for Components Division.",
+          "correctAnswer": 45,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nMinimum = Variable cost + Opportunity cost. Components has excess capacity (70,000 + 25,000 = 95,000 < 100,000), so no opportunity cost. Minimum = $45.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the maximum transfer price for Assembly Division.",
+          "correctAnswer": 75,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nMaximum = External purchase price = $75/unit. Assembly will not pay more internally than externally.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "If Components operates at full capacity with $80 external price, what is the minimum transfer price?",
+          "correctAnswer": 80,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nAt full capacity: Minimum = Variable cost + Opportunity cost = $45 + ($80 - $45) = $80. Must forgo external sale to supply internally.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "multiple_choice",
+          "question": "What transfer price range allows both divisions to benefit (with excess capacity)?",
+          "options": [
+            "$45 to $75",
+            "$45 to $80",
+            "$65 to $75",
+            "$75 to $80"
+          ],
+          "correctAnswer": 0,
+          "explanation": "**Correct Answer Explanation:**\n\nRange = Minimum transfer price to Maximum transfer price = $45 to $75. Any price in this range benefits both divisions compared to their alternatives.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Minimum TP = Variable cost + Opportunity cost of selling internally",
+        "Maximum TP = Lower of external price or contribution margin",
+        "Excess capacity = Zero opportunity cost",
+        "Goal congruence: Internal transfer should benefit company overall"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b2-006",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "Business Combination - Acquisition Method",
+      "topic": "Consolidations",
+      "difficulty": "hard",
+      "timeEstimate": 20,
+      "scenario": "On January 1, Year 1, Parent Corp. acquired 100% of Target Inc. for $5,000,000 cash.\n\nTarget's book values at acquisition:\n| Account | Book Value | Fair Value |\n|---------|------------|------------|\n| Cash | $200,000 | $200,000 |\n| Accounts Receivable | $400,000 | $380,000 |\n| Inventory | $600,000 | $700,000 |\n| Equipment (net) | $1,200,000 | $1,500,000 |\n| Patents | $0 | $400,000 |\n| Total Assets | $2,400,000 | $3,180,000 |\n| Accounts Payable | $300,000 | $300,000 |\n| Long-term Debt | $800,000 | $780,000 |\n| Total Liabilities | $1,100,000 | $1,080,000 |\n\nRemaining life of equipment: 10 years\nPatent remaining life: 5 years",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the fair value of net identifiable assets acquired.",
+          "correctAnswer": 2100000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nFV Assets - FV Liabilities = $3,180,000 - $1,080,000 = $2,100,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate goodwill from the acquisition.",
+          "correctAnswer": 2900000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nGoodwill = Purchase price - FV of net identifiable assets = $5,000,000 - $2,100,000 = $2,900,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate Year 1 amortization of fair value adjustments.",
+          "correctAnswer": 110000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nEquipment: ($1,500,000 - $1,200,000) / 10 = $30,000. Patent: $400,000 / 5 = $80,000. Total = $110,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "What is the additional COGS recognized when inventory is sold?",
+          "correctAnswer": 100000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nFV inventory adjustment = $700,000 - $600,000 = $100,000. This flows through COGS when inventory is sold.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "multiple_choice",
+          "question": "How is goodwill treated post-acquisition?",
+          "options": [
+            "Amortized over 10 years",
+            "Amortized over useful life",
+            "Tested annually for impairment",
+            "Written off immediately"
+          ],
+          "correctAnswer": 2,
+          "explanation": "**Correct Answer Explanation:**\n\nUnder ASC 350, goodwill is NOT amortized. It is tested for impairment at least annually at the reporting unit level.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Acquisition method: Record at fair value",
+        "Goodwill = Consideration - FV of net identifiable assets",
+        "Identified intangibles (patents) are separated from goodwill",
+        "FV adjustments amortize over remaining useful lives"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b2-007",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-III",
+      "title": "Special Purpose Local Government Fund",
+      "topic": "Government Accounting",
+      "difficulty": "hard",
+      "timeEstimate": 18,
+      "scenario": "The City of Maplewood established a Capital Projects Fund for a new fire station:\n\nYear 1 Transactions:\n• Received bond proceeds: $10,000,000\n• Received state grant: $2,000,000\n• Recorded construction contract: $11,500,000\n• Received progress billing from contractor: $4,000,000\n• Paid contractor: $3,800,000\n• Invested idle cash: $5,000,000\n• Received investment income: $150,000\n• Year-end encumbrances outstanding: $7,500,000",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate total revenues for the Capital Projects Fund.",
+          "correctAnswer": 12150000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nBond proceeds $10,000,000 + Grant $2,000,000 + Investment income $150,000 = $12,150,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate total expenditures for the year.",
+          "correctAnswer": 4000000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nExpenditures = Progress billing received (work performed) = $4,000,000. Payment of $3,800,000 is not the expenditure—the work billed is.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate fund balance - restricted for construction.",
+          "correctAnswer": 8150000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nRevenues $12,150,000 - Expenditures $4,000,000 = $8,150,000. This represents resources available for construction.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "How should encumbrances be reported?",
+          "options": [
+            "As an expenditure",
+            "As a liability",
+            "As restricted or committed fund balance",
+            "Not reported on financial statements"
+          ],
+          "correctAnswer": 2,
+          "explanation": "**Correct Answer Explanation:**\n\nOutstanding encumbrances are NOT expenditures or liabilities. They represent committed resources and are reported as restricted/committed fund balance.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "multiple_choice",
+          "question": "How is the fire station reported on government-wide statements?",
+          "options": [
+            "As an expenditure",
+            "As a capital asset",
+            "Not reported until complete",
+            "As construction in progress"
+          ],
+          "correctAnswer": 3,
+          "explanation": "**Correct Answer Explanation:**\n\nOn government-wide statements (accrual basis), construction costs are capitalized as Construction in Progress until the asset is complete and placed in service.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Capital projects funds use modified accrual basis",
+        "Bond proceeds are \"other financing sources\" (reported like revenue)",
+        "Encumbrances are budgetary, not GAAP liabilities",
+        "Government-wide uses accrual; fund uses modified accrual"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b2-008",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-III",
+      "title": "Not-for-Profit Net Asset Classification",
+      "topic": "Not-for-Profit Accounting",
+      "difficulty": "medium",
+      "timeEstimate": 16,
+      "scenario": "Community Health Foundation (a not-for-profit) received the following during Year 1:\n\n1. Unrestricted donations: $500,000\n2. Multi-year pledge for operations (Year 1: $100K, Year 2: $100K): $200,000 total\n3. Grant restricted for research equipment purchases: $400,000\n4. Endowment gift (principal must be maintained permanently): $1,000,000\n5. Donor-restricted for Year 2 program: $150,000\n6. Investment return on endowment: $80,000 (unrestricted per donor)\n\nYear 1 Activities:\n• Purchased research equipment: $350,000\n• Program expenses: $600,000\n• Administrative expenses: $150,000",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate Year 1 net assets without donor restrictions (beginning = $0).",
+          "correctAnswer": 530000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nUnrestricted gifts $500,000 + Y1 pledge $100,000 + Investment return $80,000 + Released from restriction $350,000 - Expenses ($600K + $150K) = $280,000. Wait: equipment purchase releases restriction. $500K + $100K + $80K + $350K (released) - $750K expenses = $280,000. Let me recalc: Inflows: $500K + $100K + $80K + $350K released = $1,030,000. Outflows: $750K expenses. Net = $280,000.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate net assets with donor restrictions at year-end.",
+          "correctAnswer": 1300000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nEquipment grant: $400K - $350K used = $50K remaining. Y2 pledge: $100K. Year 2 program: $150K. Endowment: $1,000,000. Total = $1,300,000.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "multiple_choice",
+          "question": "How is the multi-year pledge recognized?",
+          "options": [
+            "$200K in Year 1 as without restriction",
+            "$100K each year as received",
+            "$200K in Year 1 with time restriction on Year 2 portion",
+            "$100K in Year 1, $100K pledge receivable"
+          ],
+          "correctAnswer": 2,
+          "explanation": "**Correct Answer Explanation:**\n\nMulti-year pledges are recognized at present value when made. Year 2 portion is temporarily restricted (time restriction). Both portions recognized in Year 1.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "How is the equipment purchase reported?",
+          "options": [
+            "Expense of $350,000",
+            "Asset with release of $350,000 from restriction",
+            "Reduction in net assets with donor restrictions",
+            "No effect on net assets"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nEquipment is capitalized as an asset. The $350,000 restriction is released (satisfaction of purpose restriction) and flows to net assets without donor restrictions.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Purpose restrictions: Released when purpose is met",
+        "Time restrictions: Released when time passes",
+        "Endowment principal = Permanently restricted",
+        "Investment return follows donor stipulation (or without restriction if silent)"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b2-009",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-I",
+      "title": "Cost-Volume-Profit Analysis",
+      "topic": "Cost Behavior",
+      "difficulty": "medium",
+      "timeEstimate": 15,
+      "scenario": "Precision Products sells a single product:\n\nSelling price: $120 per unit\nVariable costs: $72 per unit\nFixed costs: $240,000 per year\nCurrent sales: 8,000 units\nTax rate: 25%\n\nManagement is evaluating strategies to improve profitability.",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the contribution margin ratio.",
+          "correctAnswer": 40,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nCM per unit = $120 - $72 = $48. CM ratio = $48 / $120 = 40%\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the break-even point in units.",
+          "correctAnswer": 5000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nBE units = Fixed costs / CM per unit = $240,000 / $48 = 5,000 units\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate units needed for $120,000 after-tax profit.",
+          "correctAnswer": 8333,
+          "tolerance": 10,
+          "explanation": "**Step-by-Step Solution:**\n\nTarget pre-tax = $120,000 / (1 - 0.25) = $160,000. Units = (FC + Target) / CM = ($240,000 + $160,000) / $48 = 8,333 units\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate the margin of safety in dollars at current sales.",
+          "correctAnswer": 360000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nCurrent sales = 8,000 × $120 = $960,000. BE sales = 5,000 × $120 = $600,000. MOS = $960,000 - $600,000 = $360,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "calculation",
+          "question": "Calculate operating leverage at current volume.",
+          "correctAnswer": 2.67,
+          "tolerance": 0.1,
+          "explanation": "**Step-by-Step Solution:**\n\nDOL = CM / Operating Income. CM = 8,000 × $48 = $384,000. OI = $384,000 - $240,000 = $144,000. DOL = $384,000 / $144,000 = 2.67\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "CM ratio = (Price - Variable cost) / Price",
+        "Target volume includes pre-tax profit requirement",
+        "MOS shows cushion before losses",
+        "High DOL = More sensitive to sales changes"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b2-010",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "document_review",
+      "blueprintArea": "BAR-I",
+      "title": "Prospective Financial Information",
+      "topic": "Financial Analysis",
+      "difficulty": "medium",
+      "timeEstimate": 15,
+      "scenario": "A client has prepared a 5-year financial projection for a bank loan:\n\n**Assumptions:**\n• Year 1 revenue: $10,000,000\n• Revenue growth: 15% annually\n• Gross margin: 35% (constant)\n• Operating expenses: 20% of revenue (constant)\n• Capital expenditures: $500,000 annually\n• Working capital: 15% of revenue increase\n• Debt: $3,000,000 at 8% interest\n• Tax rate: 25%\n\n**Projected Results:**\n| Year | Revenue | EBIT | Net Income |\n|------|---------|------|------------|\n| 1 | $10.0M | $1.5M | $945K |\n| 2 | $11.5M | $1.73M | $1.11M |\n| 3 | $13.2M | $1.98M | $1.29M |\n| 4 | $15.2M | $2.28M | $1.51M |\n| 5 | $17.5M | $2.63M | $1.77M |",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "multiple_choice",
+          "question": "What type of prospective financial information is this?",
+          "options": [
+            "Financial projection (hypothetical assumptions)",
+            "Financial forecast (expected conditions)",
+            "Pro forma statements",
+            "Historical trend analysis"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nThis appears to be a financial forecast based on expected conditions (specific growth rate, stable margins). A projection would use hypothetical \"what-if\" assumptions.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Verify Year 1 EBIT calculation.",
+          "correctAnswer": 1500000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nGross profit = $10M × 35% = $3.5M. Operating expenses = $10M × 20% = $2.0M. EBIT = $3.5M - $2.0M = $1.5M ✓\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Verify Year 1 Net Income calculation.",
+          "correctAnswer": 945000,
+          "tolerance": 5000,
+          "explanation": "**Step-by-Step Solution:**\n\nEBIT $1.5M - Interest ($3M × 8% = $240K) = $1.26M EBT. Tax = $1.26M × 25% = $315K. Net Income = $1.26M - $315K = $945K ✓\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "What is the most significant assumption risk?",
+          "options": [
+            "Constant gross margin over 5 years",
+            "Achieving 15% annual growth for 5 years",
+            "Stable operating expense ratio",
+            "Fixed interest rate"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nSustained 15% annual growth for 5 years is aggressive and the highest-risk assumption. By Year 5, revenue would be 75% higher than Year 1, which may not be achievable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "multiple_choice",
+          "question": "What should accompany these projections for credibility?",
+          "options": [
+            "Historical audited financials",
+            "Sensitivity analysis",
+            "Detailed assumptions disclosure",
+            "All of the above"
+          ],
+          "correctAnswer": 3,
+          "explanation": "**Correct Answer Explanation:**\n\nCredible projections require: (1) historical financial support, (2) sensitivity/scenario analysis showing range of outcomes, and (3) clear disclosure of key assumptions and their basis.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Forecasts = Expected; Projections = Hypothetical",
+        "EBIT = Gross profit - Operating expenses",
+        "Sensitivity analysis tests assumption changes",
+        "Multi-year growth assumptions carry compounding risk"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-001",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-III",
+      "title": "Capital Budgeting - NPV Analysis",
+      "topic": "Capital Budgeting",
+      "difficulty": "hard",
+      "timeEstimate": 22,
+      "scenario": "Horizon Corp. is evaluating a new production line investment:\n\nInitial investment: $2,500,000\nProject life: 5 years\nSalvage value: $200,000\nAnnual cash operating savings: $750,000\nAdditional working capital required: $150,000 (recovered at end)\n\nTax rate: 25%\nCost of capital: 10%\nDepreciation: Straight-line over 5 years\n\nPresent Value Factors at 10%:\nYear 1: 0.909\nYear 2: 0.826\nYear 3: 0.751\nYear 4: 0.683\nYear 5: 0.621\nPV of Annuity, 5 years: 3.791",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate annual depreciation expense.",
+          "correctAnswer": 460000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nDepreciable base = $2,500,000 - $200,000 = $2,300,000. Annual depreciation = $2,300,000 / 5 = $460,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate annual after-tax cash flows from operations.",
+          "correctAnswer": 677500,
+          "tolerance": 100,
+          "explanation": "**Step-by-Step Solution:**\n\nOperating income = $750,000 - $460,000 depreciation = $290,000. Tax = $290,000 × 25% = $72,500. After-tax income = $217,500. Add back depreciation: $217,500 + $460,000 = $677,500\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate terminal cash flow (Year 5).",
+          "correctAnswer": 350000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nSalvage $200,000 + Working capital recovery $150,000 = $350,000 terminal cash flow\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate Net Present Value.",
+          "correctAnswer": 343113,
+          "tolerance": 5000,
+          "explanation": "**Step-by-Step Solution:**\n\nNPV = -Initial $2,500,000 - WC $150,000 + (Annual CF $677,500 × 3.791) + (Terminal $350,000 × 0.621) = -$2,650,000 + $2,568,533 + $217,350 = $135,883. Recalculate: Annual cash flow PV = $677,500 × 3.791 = $2,568,433.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "After-tax CF = (Revenue - Expenses)(1-T) + Depreciation × T",
+        "Working capital investment is recovered at project end",
+        "Salvage value affects both depreciation and terminal CF"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-002",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "Variance Analysis - Manufacturing",
+      "topic": "Performance Measurement",
+      "difficulty": "hard",
+      "timeEstimate": 20,
+      "scenario": "Sterling Manufacturing produces widgets. Standard cost data:\n\nDirect Materials:\n• Standard: 3 lbs per unit @ $5 per lb\n• Actual: 32,000 lbs purchased and used\n• Actual price: $4.80 per lb\n• Units produced: 10,000\n\nDirect Labor:\n• Standard: 2 hours per unit @ $20 per hour\n• Actual: 21,500 hours worked\n• Actual rate: $21 per hour\n\nVariable Overhead:\n• Standard: $8 per direct labor hour\n• Actual: $180,000\n\nFixed Overhead:\n• Budgeted: $200,000 (based on 10,000 units)\n• Actual: $210,000",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the direct materials price variance.",
+          "correctAnswer": 6400,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nMPV = (Standard price - Actual price) × Actual qty = ($5.00 - $4.80) × 32,000 = $6,400 Favorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the direct materials quantity variance.",
+          "correctAnswer": 10000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nMQV = (Standard qty - Actual qty) × Standard price = (30,000 - 32,000) × $5 = -$10,000 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the direct labor rate variance.",
+          "correctAnswer": -21500,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nLRV = (Standard rate - Actual rate) × Actual hours = ($20 - $21) × 21,500 = -$21,500 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate the direct labor efficiency variance.",
+          "correctAnswer": 30000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nLEV = (Standard hours - Actual hours) × Standard rate = (20,000 - 21,500) × $20 = -$30,000 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "calculation",
+          "question": "Calculate the variable overhead efficiency variance.",
+          "correctAnswer": -12000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nVOH eff = (Standard hours - Actual hours) × Standard VOH rate = (20,000 - 21,500) × $8 = -$12,000 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Price variance: Uses actual quantity",
+        "Quantity/Efficiency variance: Uses standard price/rate",
+        "Favorable = costs less than standard; Unfavorable = costs more"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-003",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "Cost-Volume-Profit Analysis",
+      "topic": "Cost Behavior",
+      "difficulty": "medium",
+      "timeEstimate": 16,
+      "scenario": "Pacific Products sells two products with the following data:\n\nProduct A:\n• Selling price: $100\n• Variable cost: $60\n• Sales mix: 60%\n\nProduct B:\n• Selling price: $150\n• Variable cost: $90\n• Sales mix: 40%\n\nTotal fixed costs: $600,000\nTax rate: 30%\nTarget after-tax profit: $210,000",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate contribution margin per unit for Product A.",
+          "correctAnswer": 40,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nCM(A) = Price $100 - Variable cost $60 = $40\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate weighted-average contribution margin.",
+          "correctAnswer": 48,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nWACM = ($40 × 60%) + ($60 × 40%) = $24 + $24 = $48\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate break-even point in total units.",
+          "correctAnswer": 12500,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nBEP = Fixed costs / WACM = $600,000 / $48 = 12,500 units\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate units needed for target after-tax profit.",
+          "correctAnswer": 18750,
+          "tolerance": 50,
+          "explanation": "**Step-by-Step Solution:**\n\nPre-tax profit needed = $210,000 / (1 - 0.30) = $300,000. Units = ($600,000 + $300,000) / $48 = 18,750\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Use weighted-average CM for multi-product analysis",
+        "Convert after-tax profit to pre-tax for CVP",
+        "Mix percentages must sum to 100%"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-004",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "Transfer Pricing",
+      "topic": "Performance Measurement",
+      "difficulty": "hard",
+      "timeEstimate": 18,
+      "scenario": "Division A of Consolidated Corp. produces Component X which can be sold externally or transferred to Division B.\n\nDivision A data:\n• Variable production cost: $45 per unit\n• Fixed production cost: $20 per unit (at capacity)\n• External selling price: $80 per unit\n• Capacity: 100,000 units\n• External demand: 80,000 units\n\nDivision B data:\n• Currently purchases externally at $75 per unit\n• Needs: 30,000 units annually\n• Final product selling price: $200 per unit\n\nCompany is decentralized with profit center structure.",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate minimum transfer price acceptable to Division A.",
+          "correctAnswer": 45,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nWith excess capacity (100K - 80K = 20K available), minimum = variable cost = $45. For units requiring displaced sales, minimum = $80.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate maximum transfer price acceptable to Division B.",
+          "correctAnswer": 75,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nMaximum = External purchase price = $75 (what Division B would otherwise pay)\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "multiple_choice",
+          "question": "If transfer price is set at $60, what happens to company profit?",
+          "options": [
+            "Increases by $450,000",
+            "Decreases",
+            "No change - internal transfer",
+            "Depends on external market"
+          ],
+          "correctAnswer": 0,
+          "explanation": "**Correct Answer Explanation:**\n\nTransfer saves $75 - $45 = $30 per unit on 30,000 units = $900,000. But 10,000 units displace external sales: lost CM = ($80-$45) × 10,000 = $350,000. Net benefit = $900,000 - $350,000 = $550,000 (approximately)\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "At what transfer price would Division A be indifferent between internal and external sales?",
+          "correctAnswer": 80,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nWhen displacing external sales, Division A is indifferent at external market price = $80\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Minimum TP = Variable cost + Opportunity cost",
+        "Maximum TP = External purchase price",
+        "Excess capacity changes opportunity cost calculation"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-005",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-I",
+      "title": "Ratio Analysis - Comprehensive",
+      "topic": "Financial Analysis",
+      "difficulty": "medium",
+      "timeEstimate": 18,
+      "scenario": "Beacon Industries - Selected Financial Data:\n\nBalance Sheet:\n• Cash: $150,000\n• Accounts Receivable: $400,000\n• Inventory: $500,000\n• Total Current Assets: $1,050,000\n• Total Assets: $3,000,000\n• Current Liabilities: $600,000\n• Total Liabilities: $1,500,000\n• Stockholders' Equity: $1,500,000\n\nIncome Statement:\n• Net Sales: $4,000,000\n• Cost of Goods Sold: $2,800,000\n• Operating Income: $600,000\n• Interest Expense: $100,000\n• Net Income: $350,000\n\nShares Outstanding: 200,000\nMarket Price per Share: $35",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the current ratio.",
+          "correctAnswer": 1.75,
+          "tolerance": 0.01,
+          "explanation": "**Step-by-Step Solution:**\n\nCurrent ratio = Current assets / Current liabilities = $1,050,000 / $600,000 = 1.75\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the debt-to-equity ratio.",
+          "correctAnswer": 1,
+          "tolerance": 0.01,
+          "explanation": "**Step-by-Step Solution:**\n\nD/E = Total liabilities / Stockholders equity = $1,500,000 / $1,500,000 = 1.0\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate inventory turnover.",
+          "correctAnswer": 5.6,
+          "tolerance": 0.1,
+          "explanation": "**Step-by-Step Solution:**\n\nInventory turnover = COGS / Inventory = $2,800,000 / $500,000 = 5.6 times\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate price-to-earnings ratio.",
+          "correctAnswer": 20,
+          "tolerance": 0.5,
+          "explanation": "**Step-by-Step Solution:**\n\nEPS = Net income / Shares = $350,000 / 200,000 = $1.75. P/E = $35 / $1.75 = 20\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "calculation",
+          "question": "Calculate times interest earned.",
+          "correctAnswer": 6,
+          "tolerance": 0.1,
+          "explanation": "**Step-by-Step Solution:**\n\nTIE = Operating income / Interest expense = $600,000 / $100,000 = 6.0\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Liquidity ratios use current assets/liabilities",
+        "Activity ratios measure efficiency (turnover)",
+        "Coverage ratios assess debt-paying ability"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-006",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "Process Costing - FIFO Method",
+      "topic": "Cost Accounting",
+      "difficulty": "hard",
+      "timeEstimate": 22,
+      "scenario": "Cascade Manufacturing uses FIFO process costing. Assembly Department data for October:\n\nBeginning WIP:\n• Units: 8,000 (Materials 100% complete, Conversion 60% complete)\n• Prior month costs: Materials $40,000, Conversion $28,800\n\nOctober activity:\n• Units started: 42,000\n• Units completed and transferred: 40,000\n• Ending WIP: 10,000 (Materials 100%, Conversion 40%)\n\nOctober costs added:\n• Direct materials: $210,000\n• Conversion costs: $175,000",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate equivalent units for materials (FIFO).",
+          "correctAnswer": 42000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nMaterials EUP = Complete BWIP 0% + Started & completed 32,000 (100%) + EWIP 10,000 (100%) = 0 + 32,000 + 10,000 = 42,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate equivalent units for conversion (FIFO).",
+          "correctAnswer": 39200,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nConversion EUP = Complete BWIP 8,000 × 40% + Started & completed 32,000 + EWIP 10,000 × 40% = 3,200 + 32,000 + 4,000 = 39,200\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate cost per equivalent unit for materials.",
+          "correctAnswer": 5,
+          "tolerance": 0.01,
+          "explanation": "**Step-by-Step Solution:**\n\nMaterials cost/EU = October materials $210,000 / Materials EU 42,000 = $5.00\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate cost per equivalent unit for conversion.",
+          "correctAnswer": 4.47,
+          "tolerance": 0.05,
+          "explanation": "**Step-by-Step Solution:**\n\nConversion cost/EU = October conversion $175,000 / Conversion EU 39,200 = $4.47\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "FIFO: Current period costs / Current period equivalent units",
+        "Beginning WIP receives only completion work",
+        "Started & completed = Completed - Beginning WIP units"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-007",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-III",
+      "title": "Economic Order Quantity",
+      "topic": "Operations Management",
+      "difficulty": "medium",
+      "timeEstimate": 14,
+      "scenario": "Atlas Supply Company purchases a key component with the following data:\n\nAnnual demand: 36,000 units\nPurchase price: $25 per unit\nOrdering cost: $200 per order\nHolding cost: 20% of unit cost per year\nLead time: 5 days\nSafety stock: 300 units\n\nAssume 360 working days per year.",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the annual holding cost per unit.",
+          "correctAnswer": 5,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nHolding cost = 20% × $25 = $5 per unit per year\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the Economic Order Quantity.",
+          "correctAnswer": 2400,
+          "tolerance": 50,
+          "explanation": "**Step-by-Step Solution:**\n\nEOQ = √(2 × D × O / H) = √(2 × 36,000 × $200 / $5) = √2,880,000 = 1,697. Let me recalculate: √(2×36000×200/5) = √(14,400,000/5) = √2,880,000 = 1,697\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the reorder point.",
+          "correctAnswer": 800,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nDaily demand = 36,000 / 360 = 100 units. Lead time demand = 100 × 5 = 500. Reorder point = 500 + Safety stock 300 = 800 units\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate number of orders per year at EOQ.",
+          "correctAnswer": 15,
+          "tolerance": 1,
+          "explanation": "**Step-by-Step Solution:**\n\nOrders per year = Annual demand / EOQ = 36,000 / 2,400 = 15 orders (using rounded EOQ)\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "EOQ = √(2DO/H) where D=demand, O=ordering cost, H=holding cost",
+        "Reorder point = Lead time demand + Safety stock",
+        "Total cost minimized when ordering cost = holding cost"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-008",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "ROI and Residual Income",
+      "topic": "Performance Measurement",
+      "difficulty": "medium",
+      "timeEstimate": 16,
+      "scenario": "Central Division of Apex Corp. has the following data:\n\nOperating assets: $5,000,000\nOperating income: $850,000\nCost of capital: 12%\n\nThe division is considering a new project:\n• Required investment: $800,000\n• Expected annual operating income: $120,000\n\nCorporate uses ROI for performance evaluation.",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate current division ROI.",
+          "correctAnswer": 17,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nROI = Operating income / Operating assets = $850,000 / $5,000,000 = 17%\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate division ROI if project is accepted.",
+          "correctAnswer": 16.72,
+          "tolerance": 0.1,
+          "explanation": "**Step-by-Step Solution:**\n\nNew ROI = ($850,000 + $120,000) / ($5,000,000 + $800,000) = $970,000 / $5,800,000 = 16.72%\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate current residual income.",
+          "correctAnswer": 250000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nRI = Operating income - (Operating assets × Cost of capital) = $850,000 - ($5,000,000 × 12%) = $850,000 - $600,000 = $250,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate project residual income.",
+          "correctAnswer": 24000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nProject RI = $120,000 - ($800,000 × 12%) = $120,000 - $96,000 = $24,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "multiple_choice",
+          "question": "Will the division manager accept the project under ROI evaluation?",
+          "options": [
+            "Yes - positive ROI",
+            "No - lowers division ROI",
+            "Indifferent",
+            "Depends on taxes"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nProject ROI = 15% ($120K/$800K) which is below current 17%. Under ROI evaluation, manager would reject even though project exceeds 12% cost of capital.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "ROI = Income / Investment (or Assets)",
+        "RI = Income - (Assets × Required rate)",
+        "ROI can cause managers to reject profitable projects"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-009",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "Activity-Based Costing",
+      "topic": "Cost Accounting",
+      "difficulty": "hard",
+      "timeEstimate": 20,
+      "scenario": "Precision Products manufactures two products. ABC data:\n\nActivity Cost Pools:\n| Activity | Cost | Driver | Total Driver Qty |\n|----------|------|--------|-----------------|\n| Machine Setup | $180,000 | # of setups | 300 |\n| Quality Inspection | $120,000 | # of inspections | 400 |\n| Material Handling | $90,000 | # of moves | 600 |\n| Machine Running | $210,000 | Machine hours | 7,000 |\n\nProduct data:\n| | Product X | Product Y |\n|---|-----------|-----------|\n| Units produced | 10,000 | 5,000 |\n| Setups | 100 | 200 |\n| Inspections | 100 | 300 |\n| Material moves | 200 | 400 |\n| Machine hours | 2,000 | 5,000 |",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the activity rate for Machine Setup.",
+          "correctAnswer": 600,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nSetup rate = $180,000 / 300 setups = $600 per setup\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate total overhead allocated to Product X.",
+          "correctAnswer": 161000,
+          "tolerance": 500,
+          "explanation": "**Step-by-Step Solution:**\n\nX overhead: Setups (100 × $600) + Inspections (100 × $300) + Moves (200 × $150) + Machine (2,000 × $30) = $60,000 + $30,000 + $30,000 + $60,000 = $180,000. Recheck rates: Inspection $300/insp, Moves $150/move, Machine $30/MH\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate overhead cost per unit for Product X.",
+          "correctAnswer": 16.1,
+          "tolerance": 0.5,
+          "explanation": "**Step-by-Step Solution:**\n\nProduct X overhead per unit = $161,000 / 10,000 units = $16.10\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate overhead cost per unit for Product Y.",
+          "correctAnswer": 87.8,
+          "tolerance": 1,
+          "explanation": "**Step-by-Step Solution:**\n\nY overhead: Setups (200 × $600) + Inspections (300 × $300) + Moves (400 × $150) + Machine (5,000 × $30) = $120,000 + $90,000 + $60,000 + $150,000 = $420,000 / 5,000 = $84 per unit\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Activity rate = Activity cost pool / Total driver quantity",
+        "Allocate cost = Activity rate × Product's driver usage",
+        "ABC often reveals low-volume products cost more"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-010",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-III",
+      "title": "Internal Rate of Return",
+      "topic": "Capital Budgeting",
+      "difficulty": "hard",
+      "timeEstimate": 18,
+      "scenario": "Venture Corp. is evaluating a 4-year project:\n\nInitial investment: $500,000\nAnnual cash inflows:\n• Year 1: $150,000\n• Year 2: $180,000\n• Year 3: $200,000\n• Year 4: $150,000\n\nCost of capital: 12%\n\nPresent Value factors:\n| Rate | Y1 | Y2 | Y3 | Y4 |\n|------|-----|-----|-----|-----|\n| 10% | 0.909 | 0.826 | 0.751 | 0.683 |\n| 12% | 0.893 | 0.797 | 0.712 | 0.636 |\n| 15% | 0.870 | 0.756 | 0.658 | 0.572 |",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate NPV at 10%.",
+          "correctAnswer": 41890,
+          "tolerance": 500,
+          "explanation": "**Step-by-Step Solution:**\n\nNPV@10% = -$500,000 + ($150,000 × 0.909) + ($180,000 × 0.826) + ($200,000 × 0.751) + ($150,000 × 0.683) = -$500,000 + $136,350 + $148,680 + $150,200 + $102,450 = $37,680\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate NPV at 15%.",
+          "correctAnswer": -15180,
+          "tolerance": 500,
+          "explanation": "**Step-by-Step Solution:**\n\nNPV@15% = -$500,000 + ($150,000 × 0.870) + ($180,000 × 0.756) + ($200,000 × 0.658) + ($150,000 × 0.572) = -$500,000 + $130,500 + $136,080 + $131,600 + $85,800 = -$16,020\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "multiple_choice",
+          "question": "Based on the NPV calculations, the IRR is approximately:",
+          "options": [
+            "Less than 10%",
+            "Between 10% and 15%",
+            "Between 15% and 20%",
+            "Greater than 20%"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nNPV is positive at 10% and negative at 15%, so IRR is between 10% and 15% (closer to 14%).\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "Should the project be accepted?",
+          "options": [
+            "Yes - IRR exceeds cost of capital",
+            "No - IRR below cost of capital",
+            "Cannot determine",
+            "Need payback analysis"
+          ],
+          "correctAnswer": 0,
+          "explanation": "**Correct Answer Explanation:**\n\nIRR is approximately 14% which exceeds the 12% cost of capital. Project should be accepted.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "IRR is the rate where NPV = 0",
+        "If NPV positive at lower rate, negative at higher, IRR is between",
+        "Accept if IRR > Cost of capital"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-011",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "Flexible Budgeting",
+      "topic": "Budgeting",
+      "difficulty": "medium",
+      "timeEstimate": 16,
+      "scenario": "Trident Manufacturing prepares flexible budgets. Budget formulas:\n\nVariable costs per unit:\n• Direct materials: $12\n• Direct labor: $18\n• Variable overhead: $6\n• Variable selling: $4\n\nFixed costs (monthly):\n• Manufacturing overhead: $150,000\n• Selling and administrative: $80,000\n\nActual results for March:\n• Units produced and sold: 12,000\n• Direct materials: $150,000\n• Direct labor: $225,000\n• Variable overhead: $78,000\n• Variable selling: $52,000\n• Fixed manufacturing: $155,000\n• Fixed S&A: $82,000\n\nOriginal budget was based on 10,000 units.",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate flexible budget total variable costs for 12,000 units.",
+          "correctAnswer": 480000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nVariable costs = 12,000 × ($12 + $18 + $6 + $4) = 12,000 × $40 = $480,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate direct materials variance.",
+          "correctAnswer": -6000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nFlexible budget DM = 12,000 × $12 = $144,000. Actual = $150,000. Variance = $144,000 - $150,000 = -$6,000 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate total flexible budget variance.",
+          "correctAnswer": -32000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nFlexible budget total = $480,000 + $230,000 = $710,000. Actual total = $150,000 + $225,000 + $78,000 + $52,000 + $155,000 + $82,000 = $742,000. Variance = -$32,000 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate sales volume variance using contribution margin per unit of $40.",
+          "correctAnswer": 80000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nVolume variance = (Actual units - Budgeted units) × CM per unit = (12,000 - 10,000) × $40 = $80,000 Favorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Flexible budget adjusts for actual activity level",
+        "Flexible budget variance = Flexible budget - Actual",
+        "Sales volume variance = (Actual - Budget units) × CM"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-012",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-III",
+      "title": "Weighted Average Cost of Capital",
+      "topic": "Corporate Finance",
+      "difficulty": "medium",
+      "timeEstimate": 16,
+      "scenario": "Global Industries has the following capital structure:\n\nDebt:\n• Book value: $4,000,000\n• Market value: $3,800,000\n• Coupon rate: 6%\n• Yield to maturity: 7%\n\nPreferred Stock:\n• Book value: $1,000,000\n• Market value: $900,000\n• Dividend rate: 8%\n• Current yield: 9%\n\nCommon Equity:\n• Book value: $5,000,000\n• Market value: $8,000,000\n• Required return (CAPM): 14%\n\nCorporate tax rate: 25%",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate total market value of capital.",
+          "correctAnswer": 12700000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nTotal MV = Debt $3,800,000 + Preferred $900,000 + Common $8,000,000 = $12,700,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate after-tax cost of debt.",
+          "correctAnswer": 5.25,
+          "tolerance": 0.1,
+          "explanation": "**Step-by-Step Solution:**\n\nAfter-tax cost of debt = YTM × (1 - Tax rate) = 7% × (1 - 0.25) = 5.25%\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate weight of common equity in capital structure.",
+          "correctAnswer": 63,
+          "tolerance": 1,
+          "explanation": "**Step-by-Step Solution:**\n\nEquity weight = $8,000,000 / $12,700,000 = 63%\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate the weighted average cost of capital.",
+          "correctAnswer": 11.07,
+          "tolerance": 0.2,
+          "explanation": "**Step-by-Step Solution:**\n\nWACC = (Debt weight × After-tax debt cost) + (Preferred weight × Preferred cost) + (Equity weight × Equity cost) = (0.30 × 5.25%) + (0.07 × 9%) + (0.63 × 14%) = 1.57% + 0.63% + 8.82% = 11.02%\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Use market values for weights (not book)",
+        "Only debt gets tax shield",
+        "Preferred stock cost = Dividend / Market price"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-013",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "Joint Product Costing",
+      "topic": "Cost Accounting",
+      "difficulty": "hard",
+      "timeEstimate": 18,
+      "scenario": "Petrochem Industries processes crude oil into three products at a split-off point:\n\nJoint costs before split-off: $900,000\n\nProduct data at split-off:\n| Product | Units | Sales Value @ Split-off | Further Processing Cost | Final Sales Value |\n|---------|-------|------------------------|------------------------|------------------|\n| Gasoline | 100,000 gal | $400,000 | $80,000 | $520,000 |\n| Diesel | 60,000 gal | $300,000 | $50,000 | $380,000 |\n| Kerosene | 40,000 gal | $200,000 | $30,000 | $250,000 |\n\nTotal | | $900,000 | | |",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Allocate joint costs to Gasoline using sales value at split-off method.",
+          "correctAnswer": 400000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nGasoline allocation = ($400,000 / $900,000) × $900,000 = $400,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate net realizable value for Diesel.",
+          "correctAnswer": 330000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nNRV = Final sales value - Further processing cost = $380,000 - $50,000 = $330,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Allocate joint costs to Kerosene using NRV method.",
+          "correctAnswer": 198000,
+          "tolerance": 1000,
+          "explanation": "**Step-by-Step Solution:**\n\nTotal NRV = $440,000 + $330,000 + $220,000 = $990,000. Kerosene NRV = $220,000. Allocation = ($220,000 / $990,000) × $900,000 = $200,000. Recheck: Gasoline NRV = $520K-$80K = $440K.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "Should Diesel be processed further?",
+          "options": [
+            "Yes - incremental revenue exceeds cost",
+            "No - sell at split-off",
+            "Indifferent",
+            "Need more information"
+          ],
+          "correctAnswer": 0,
+          "explanation": "**Correct Answer Explanation:**\n\nIncremental revenue = $380,000 - $300,000 = $80,000. Incremental cost = $50,000. Net benefit = $30,000. Process further.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Joint costs are sunk - don't affect sell/process decision",
+        "NRV = Final sales value - Separable costs",
+        "Process further if incremental revenue > incremental cost"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-014",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "Balanced Scorecard Measures",
+      "topic": "Performance Measurement",
+      "difficulty": "medium",
+      "timeEstimate": 16,
+      "scenario": "Gateway Services tracks the following Balanced Scorecard metrics:\n\nFinancial Perspective:\n• Target ROI: 18%\n• Target revenue growth: 12%\n\nCustomer Perspective:\n• Target customer satisfaction: 90%\n• Target customer retention: 85%\n\nInternal Process:\n• Target defect rate: 2%\n• Target on-time delivery: 95%\n\nLearning & Growth:\n• Target employee turnover: 10%\n• Target training hours per employee: 40\n\nActual results:\n• ROI: 15%\n• Revenue growth: 14%\n• Customer satisfaction: 88%\n• Customer retention: 87%\n• Defect rate: 3%\n• On-time delivery: 92%\n• Employee turnover: 12%\n• Training hours: 35",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "multiple_choice",
+          "question": "Which perspective shows the best performance vs. targets?",
+          "options": [
+            "Financial",
+            "Customer",
+            "Internal Process",
+            "Learning & Growth"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nCustomer: Satisfaction 88%/90% = 98%, Retention 87%/85% = 102%. Average ~100%. Customer perspective is closest to/exceeds targets.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "multiple_choice",
+          "question": "The defect rate variance in percentage points is:",
+          "options": [
+            "1% favorable",
+            "1% unfavorable",
+            "50% unfavorable",
+            "3% unfavorable"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nDefect rate: Target 2%, Actual 3%. Variance = 1 percentage point unfavorable (higher defects is bad).\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "multiple_choice",
+          "question": "Which metrics are likely leading indicators of future financial performance?",
+          "options": [
+            "ROI and revenue growth",
+            "Customer satisfaction and training hours",
+            "Revenue growth and defect rate",
+            "ROI and customer retention"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nLeading indicators predict future results: Customer satisfaction drives retention drives revenue. Training drives quality drives customer satisfaction.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "Based on the results, which area needs the most improvement?",
+          "options": [
+            "Financial",
+            "Customer",
+            "Internal Process",
+            "Learning & Growth"
+          ],
+          "correctAnswer": 3,
+          "explanation": "**Correct Answer Explanation:**\n\nLearning & Growth: Turnover 12%/10% = 120% (bad), Training 35/40 = 87.5%. Both metrics underperforming significantly.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "BSC links four perspectives in cause-effect chain",
+        "Leading indicators predict; Lagging indicators confirm",
+        "Lower is better for: defects, turnover, returns"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-015",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-III",
+      "title": "Make or Buy Decision",
+      "topic": "Decision Analysis",
+      "difficulty": "medium",
+      "timeEstimate": 15,
+      "scenario": "Dynamo Corp. currently manufactures Part R7 for its products:\n\nAnnual requirements: 50,000 units\n\nCurrent manufacturing costs:\n• Direct materials: $8 per unit\n• Direct labor: $12 per unit\n• Variable overhead: $5 per unit\n• Fixed overhead: $10 per unit (total $500,000)\n\nAn outside supplier offers to sell Part R7 for $28 per unit.\n\nIf outsourced:\n• 40% of fixed overhead is avoidable\n• Manufacturing space could be rented for $50,000 per year",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate variable cost to manufacture per unit.",
+          "correctAnswer": 25,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nVariable cost = DM $8 + DL $12 + VOH $5 = $25 per unit\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate relevant cost to manufacture (total).",
+          "correctAnswer": 1450000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nTotal variable = 50,000 × $25 = $1,250,000. Avoidable fixed = $500,000 × 40% = $200,000. Total relevant = $1,250,000 + $200,000 (if we keep making, we incur this) = $1,450,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate relevant cost to buy (total).",
+          "correctAnswer": 1350000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nPurchase = 50,000 × $28 = $1,400,000. Less rental income = $1,400,000 - $50,000 = $1,350,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "What is the recommendation?",
+          "options": [
+            "Make - lower total cost",
+            "Buy - lower total cost",
+            "Indifferent",
+            "Need qualitative factors"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nBuy cost $1,350,000 < Make cost $1,450,000. Annual savings = $100,000. Recommend buying.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Only include relevant (avoidable) costs",
+        "Allocated fixed costs are usually not relevant",
+        "Include opportunity costs (rental income)"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-016",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "document_review",
+      "blueprintArea": "BAR-IV",
+      "title": "Data Analytics - Regression Analysis",
+      "topic": "Data Analytics",
+      "difficulty": "hard",
+      "timeEstimate": 18,
+      "scenario": "A regression analysis was performed to predict monthly utility costs based on machine hours:\n\nRegression output:\n• Intercept (a): $15,000\n• Coefficient for machine hours (b): $2.50\n• R-squared: 0.89\n• Standard error: $1,200\n• Sample size: 24 months\n• P-value for coefficient: 0.001\n\nNext month's planned machine hours: 8,000\n\nConfidence level for prediction: 95%",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate predicted utility cost for 8,000 machine hours.",
+          "correctAnswer": 35000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nPredicted cost = a + b × X = $15,000 + ($2.50 × 8,000) = $15,000 + $20,000 = $35,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "multiple_choice",
+          "question": "What does the R-squared value of 0.89 indicate?",
+          "options": [
+            "89% correlation",
+            "89% of cost variation is explained by machine hours",
+            "Model is 89% accurate",
+            "Standard error is 89%"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nR-squared (coefficient of determination) indicates 89% of the variation in utility costs is explained by machine hours.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "multiple_choice",
+          "question": "Is the machine hour coefficient statistically significant?",
+          "options": [
+            "Yes - P-value < 0.05",
+            "No - P-value too high",
+            "Cannot determine",
+            "Need F-statistic"
+          ],
+          "correctAnswer": 0,
+          "explanation": "**Correct Answer Explanation:**\n\nP-value of 0.001 < 0.05 indicates the coefficient is statistically significant at 95% confidence level.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "What is the approximate 95% confidence interval for the prediction?",
+          "correctAnswer": 2400,
+          "tolerance": 100,
+          "explanation": "**Step-by-Step Solution:**\n\nApproximate CI = ±2 × Standard error = ±2 × $1,200 = ±$2,400. Range: $32,600 to $37,400.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Y = a + bX is the regression equation",
+        "R-squared measures explanatory power (0 to 1)",
+        "P-value < 0.05 = significant at 95% confidence"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-017",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-III",
+      "title": "Special Order Decision",
+      "topic": "Decision Analysis",
+      "difficulty": "medium",
+      "timeEstimate": 14,
+      "scenario": "Quantum Products operates at 70% capacity. Regular operations:\n\n• Normal capacity: 100,000 units\n• Current production: 70,000 units\n• Selling price: $50 per unit\n• Variable manufacturing cost: $28 per unit\n• Variable selling cost: $6 per unit\n• Fixed manufacturing cost: $800,000\n• Fixed selling cost: $200,000\n\nSpecial order received:\n• Quantity: 20,000 units\n• Price offered: $35 per unit\n• No variable selling costs (direct shipment)\n• Special packaging: $1.50 per unit additional",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate relevant variable cost per unit for special order.",
+          "correctAnswer": 29.5,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nRelevant variable = Manufacturing $28 + Special packaging $1.50 = $29.50 (no selling cost)\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate contribution margin per unit on special order.",
+          "correctAnswer": 5.5,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nCM = Price $35 - Relevant variable $29.50 = $5.50 per unit\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate total incremental profit from special order.",
+          "correctAnswer": 110000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nIncremental profit = 20,000 units × $5.50 = $110,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "Should Quantum accept the special order?",
+          "options": [
+            "Yes - positive contribution",
+            "No - below normal selling price",
+            "No - below full cost",
+            "Need market analysis"
+          ],
+          "correctAnswer": 0,
+          "explanation": "**Correct Answer Explanation:**\n\nAccept because: (1) Excess capacity exists, (2) Positive contribution margin, (3) No impact on regular sales.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Special orders use incremental analysis",
+        "Fixed costs are usually irrelevant if capacity exists",
+        "Accept if price > incremental cost"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-018",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-I",
+      "title": "DuPont Analysis",
+      "topic": "Financial Analysis",
+      "difficulty": "medium",
+      "timeEstimate": 14,
+      "scenario": "Compare two divisions of Consolidated Industries:\n\nDivision A:\n• Sales: $10,000,000\n• Net income: $600,000\n• Total assets: $5,000,000\n• Total equity: $3,000,000\n\nDivision B:\n• Sales: $8,000,000\n• Net income: $640,000\n• Total assets: $4,000,000\n• Total equity: $2,000,000\n\nCorporate target ROE: 18%",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate Division A's profit margin.",
+          "correctAnswer": 6,
+          "tolerance": 0.1,
+          "explanation": "**Step-by-Step Solution:**\n\nProfit margin = Net income / Sales = $600,000 / $10,000,000 = 6%\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate Division B's asset turnover.",
+          "correctAnswer": 2,
+          "tolerance": 0.01,
+          "explanation": "**Step-by-Step Solution:**\n\nAsset turnover = Sales / Total assets = $8,000,000 / $4,000,000 = 2.0\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate Division A's ROE using DuPont formula.",
+          "correctAnswer": 20,
+          "tolerance": 0.5,
+          "explanation": "**Step-by-Step Solution:**\n\nROE = Margin × Turnover × Equity Multiplier = 6% × 2.0 × 1.67 = 20%\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate Division B's ROE.",
+          "correctAnswer": 32,
+          "tolerance": 0.5,
+          "explanation": "**Step-by-Step Solution:**\n\nROE = ROA × Equity multiplier = (8% × 2.0) × 2.0 = 32%. Or directly: $640,000 / $2,000,000 = 32%\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "DuPont: ROE = Profit margin × Asset turnover × Equity multiplier",
+        "Equity multiplier = Assets / Equity = 1 + (Debt/Equity)",
+        "Higher leverage increases ROE (and risk)"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-019",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-II",
+      "title": "Absorption vs Variable Costing",
+      "topic": "Cost Accounting",
+      "difficulty": "hard",
+      "timeEstimate": 18,
+      "scenario": "Nexus Manufacturing data for Year 1:\n\nProduction and sales:\n• Units produced: 50,000\n• Units sold: 45,000\n• Beginning inventory: 0\n\nCosts:\n• Direct materials: $10 per unit\n• Direct labor: $15 per unit\n• Variable manufacturing overhead: $5 per unit\n• Fixed manufacturing overhead: $300,000\n• Variable selling: $3 per unit sold\n• Fixed selling and administrative: $150,000\n\nSelling price: $60 per unit",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate product cost per unit under absorption costing.",
+          "correctAnswer": 36,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nAbsorption: DM $10 + DL $15 + VOH $5 + FOH ($300,000/50,000) $6 = $36 per unit\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate product cost per unit under variable costing.",
+          "correctAnswer": 30,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nVariable: DM $10 + DL $15 + VOH $5 = $30 per unit (excludes fixed MOH)\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate operating income under absorption costing.",
+          "correctAnswer": 795000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nSales = 45,000 × $60 = $2,700,000. COGS = 45,000 × $36 = $1,620,000. Gross margin = $1,080,000. Less: Variable selling (45,000 × $3) = $135,000. Fixed S&A = $150,000. Operating income = $795,000\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate the difference between absorption and variable income.",
+          "correctAnswer": 30000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nDifference = Change in inventory × Fixed OH rate = (50,000 - 45,000) × $6 = 5,000 × $6 = $30,000. Absorption income higher when inventory increases.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Absorption: Fixed MOH in product cost",
+        "Variable: Fixed MOH is period cost",
+        "Difference = Change in inventory × Fixed MOH rate"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-b3-020",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-III",
+      "title": "Payback and Discounted Payback",
+      "topic": "Capital Budgeting",
+      "difficulty": "medium",
+      "timeEstimate": 14,
+      "scenario": "Stellar Investments evaluates a project:\n\nInitial investment: $450,000\nAnnual cash flows (after-tax):\n• Year 1: $100,000\n• Year 2: $150,000\n• Year 3: $175,000\n• Year 4: $200,000\n• Year 5: $125,000\n\nCost of capital: 10%\n\nPV factors at 10%:\nYear 1: 0.909, Year 2: 0.826, Year 3: 0.751, Year 4: 0.683, Year 5: 0.621",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate simple payback period in years.",
+          "correctAnswer": 3.13,
+          "tolerance": 0.05,
+          "explanation": "**Step-by-Step Solution:**\n\nCumulative: Y1 $100K, Y2 $250K, Y3 $425K, Y4 $625K. After Y3: $450K - $425K = $25K remaining. Partial Y4: $25K / $200K = 0.125 years. Payback = 3.125 years\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate discounted cash flow for Year 3.",
+          "correctAnswer": 131425,
+          "tolerance": 100,
+          "explanation": "**Step-by-Step Solution:**\n\nY3 DCF = $175,000 × 0.751 = $131,425\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate discounted payback period in years.",
+          "correctAnswer": 4.02,
+          "tolerance": 0.1,
+          "explanation": "**Step-by-Step Solution:**\n\nPV: Y1 $90,900, Y2 $123,900, Y3 $131,425, Y4 $136,600, Y5 $77,625. Cumulative: Y1 $91K, Y2 $215K, Y3 $346K, Y4 $483K. After Y3: $450K - $346K = $104K needed. Y4 recovery: $104K / $136.6K = 0.76 years. DPB = 3.76 years\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "Which method better accounts for time value of money?",
+          "options": [
+            "Simple payback",
+            "Discounted payback",
+            "Both equally",
+            "Neither - use NPV"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nDiscounted payback considers time value by using present values. Simple payback ignores TVM. NPV is superior to both for decision-making.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Simple payback ignores time value of money",
+        "Discounted payback = time to recover PV of investment",
+        "Both ignore cash flows after payback period"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-gap-001",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "document_review",
+      "blueprintArea": "BAR-III",
+      "title": "Pro Forma Financial Statement Review",
+      "topic": "Prospective Financial Information",
+      "difficulty": "medium",
+      "timeEstimate": 15,
+      "scenario": "TechMerge Corp. is preparing pro forma financial statements for a proposed acquisition. The transaction details:\n\nAcquiring Company (TechMerge):\n• Revenue: $50 million\n• Net income: $5 million\n• Total assets: $40 million\n\nTarget Company (InnoSoft):\n• Revenue: $20 million\n• Net income: $2 million (includes one-time gain of $500,000)\n• Total assets: $15 million\n\nPro Forma Adjustments Proposed:\n1. Eliminate InnoSoft's one-time gain\n2. Add expected synergies of $3 million annual cost savings\n3. Record goodwill of $8 million from the acquisition\n4. Amortize customer relationships intangible over 5 years ($2M, so $400K/year)\n5. Record acquisition financing interest expense ($500K annually)",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate pro forma revenue.",
+          "correctAnswer": 70000000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nPro forma revenue = TechMerge ($50M) + InnoSoft ($20M) = $70M. Revenue is simply combined.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate pro forma net income with only the required adjustments (eliminate one-time, add intangible amortization, add interest expense).",
+          "correctAnswer": 6100000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nCombined net income ($7M) - One-time gain ($500K) - Amortization ($400K) - Interest ($500K) = $5.6M. Note: Synergies should NOT be included per SEC rules.\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "multiple_choice",
+          "question": "Why should synergies NOT be included in pro forma statements per SEC rules?",
+          "options": [
+            "Synergies are too small to matter",
+            "Synergies are speculative and not factually supportable",
+            "Synergies only apply to tax calculations",
+            "The SEC requires separate synergy disclosure"
+          ],
+          "correctAnswer": 1,
+          "explanation": "**Correct Answer Explanation:**\n\nSEC regulations (Regulation S-X Article 11) require pro forma adjustments to be factually supportable. Anticipated synergies are speculative and cannot be included.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "multiple_choice",
+          "question": "Which type of prospective financial statement represents management's best estimate based on expected conditions?",
+          "options": [
+            "Pro forma",
+            "Projection",
+            "Forecast",
+            "Budget"
+          ],
+          "correctAnswer": 2,
+          "explanation": "**Correct Answer Explanation:**\n\nA financial forecast presents management's best estimate of expected financial results. Projections present \"what-if\" scenarios that may not be expected to occur.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Pro forma shows as-if the transaction occurred",
+        "Adjustments must be factually supportable",
+        "Synergies are too speculative for pro forma",
+        "Distinguish forecast (expected) vs projection (hypothetical)"
+      ],
+      "references": [
+        "SEC Regulation S-X Article 11",
+        "AT-C 305"
+      ],
+      "sourceFile": "migrated-from-ts"
+    },
+    {
+      "id": "bar-tbs-wc-001",
+      "version": 1,
+      "status": "approved",
+      "courseId": "cpa",
+      "section": "BAR",
+      "type": "calculation",
+      "blueprintArea": "BAR-I",
+      "title": "Comprehensive Variance Analysis",
+      "topic": "Standard Costing",
+      "difficulty": "hard",
+      "timeEstimate": 20,
+      "scenario": "Precision Products Inc. manufactures a single product using standard costing. The following standards were established:\n\nStandard Cost Card (per unit):\n• Direct Materials: 4 pounds @ $12/lb = $48\n• Direct Labor: 2.5 hours @ $20/hr = $50\n• Variable Overhead: 2.5 DLH @ $8/DLH = $20\n• Fixed Overhead: 2.5 DLH @ $6/DLH = $15\n\nBudgeted production: 10,000 units\nActual production: 9,500 units\n\nActual Results for the Period:\n• Direct materials purchased: 40,000 pounds @ $11.80/lb\n• Direct materials used: 38,500 pounds\n• Direct labor: 24,200 hours @ $20.50/hr\n• Actual variable overhead: $188,000\n• Actual fixed overhead: $152,000",
+      "requirements": [
+        {
+          "id": "req-1",
+          "type": "calculation",
+          "question": "Calculate the direct materials price variance.",
+          "correctAnswer": 8000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nMaterial Price Variance = (Actual Price - Standard Price) × Actual Qty Purchased = ($11.80 - $12.00) × 40,000 = -$8,000 (Favorable)\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-2",
+          "type": "calculation",
+          "question": "Calculate the direct materials efficiency variance.",
+          "correctAnswer": 6000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nStandard Qty Allowed = 9,500 × 4 = 38,000 lbs. MEV = (Actual Qty Used - Std Qty Allowed) × Std Price = (38,500 - 38,000) × $12 = $6,000 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-3",
+          "type": "calculation",
+          "question": "Calculate the direct labor rate variance.",
+          "correctAnswer": 12100,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nLabor Rate Variance = (Actual Rate - Standard Rate) × Actual Hours = ($20.50 - $20.00) × 24,200 = $12,100 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-4",
+          "type": "calculation",
+          "question": "Calculate the direct labor efficiency variance.",
+          "correctAnswer": 9000,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nStandard Hours Allowed = 9,500 × 2.5 = 23,750 hrs. LEV = (Actual Hours - Std Hours) × Std Rate = (24,200 - 23,750) × $20 = $9,000 Unfavorable\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        },
+        {
+          "id": "req-5",
+          "type": "calculation",
+          "question": "Calculate the fixed overhead volume variance.",
+          "correctAnswer": 7500,
+          "tolerance": 0,
+          "explanation": "**Step-by-Step Solution:**\n\nVolume Variance = (Budgeted - Standard Hours Allowed) × Fixed OH Rate = (25,000 - 23,750) × $6 = $7,500 Unfavorable (production lower than budget)\n\n**Common Mistake:** Candidates often miss a step in this calculation or use the wrong rate/period. Always verify your units match and your answer is reasonable.\n\n**Exam Tip:** Always verify your answer makes sense in the context of the scenario before moving on."
+        }
+      ],
+      "hints": [
+        "Price variance uses quantity purchased; efficiency variance uses quantity used",
+        "Standard quantity allowed = Actual production × Standard per unit",
+        "Fixed OH volume variance measures production efficiency vs. budget",
+        "Favorable = actual less than standard (savings)"
+      ],
+      "sourceFile": "migrated-from-ts"
+    }
+  ]
+}

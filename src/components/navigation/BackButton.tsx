@@ -64,6 +64,7 @@ const getFallbackDestination = (pathname: string): { path: string; label: string
       pathname.startsWith('/leaderboard') ||
       pathname.startsWith('/progress') ||
       pathname.startsWith('/settings') ||
+      pathname.startsWith('/subscription') ||
       pathname.startsWith('/help')) {
     return { path: '/you', label: 'You' };
   }

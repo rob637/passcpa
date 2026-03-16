@@ -1,7 +1,7 @@
 // Mnemonic Flashcards - Memory aids for CPA exam
 // These are proven memory techniques used by successful candidates
 
-import { Flashcard } from './types';
+import type { Flashcard } from './index';
 
 // ==========================================
 // FAR MNEMONICS

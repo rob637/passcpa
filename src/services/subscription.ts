@@ -91,9 +91,9 @@ export interface UserSubscription {
 // Launch Date: Feb 19, 2026 - No longer beta, paid subscriptions active
 const IS_BETA = false;
 
-// Founder pricing deadline - April 30, 2026
+// Founder pricing deadline - August 31, 2026
 // Single source of truth — imported by useCheckout.ts, ExamLandingTemplate.tsx, etc.
-export const FOUNDER_DEADLINE = new Date('2026-04-30T23:59:59Z');
+export const FOUNDER_DEADLINE = new Date('2026-08-31T23:59:59Z');
 
 // Check if founder pricing is active
 export const isFounderPricingActive = (): boolean => new Date() < FOUNDER_DEADLINE;
@@ -105,17 +105,17 @@ export const founderDaysRemaining = (): number => {
 };
 
 // Per-exam pricing — 3 price bands (40%+ annual savings to drive conversions)
-// Band 1 (CPA): $59/mo, $449/yr (37% savings) — Founder: $249/yr, $29/mo (28% savings)
-// Band 2 (CMA, CFP, CISA): $49/mo, $349/yr (41% savings) — Founder: $199/yr, $25/mo (33% savings)
-// Band 3 (EA, CIA): $35/mo, $249/yr (41% savings) — Founder: $149/yr, $19/mo (35% savings)
-// Founder: 300 seats per exam, 2-year rate lock, window closes Apr 30, 2026
+// Band 1 (CPA): $49/mo, $449/yr (37% savings) — Founder: $249/yr, $29/mo (44% savings)
+// Band 2 (CMA, CFP, CISA): $39/mo, $349/yr (43% savings) — Founder: $199/yr, $25/mo (43% savings) / corrected monthly logic
+// Band 3 (EA, CIA): $29/mo, $249/yr (40% savings) — Founder: $149/yr, $19/mo (40% savings)
+// Founder: 300 seats per exam, 2-year rate lock, window closes Aug 31, 2026
 export const EXAM_PRICING = {
-  cpa: { annual: 449, monthly: 59, founderAnnual: 249, founderMonthly: 29 },
-  ea: { annual: 249, monthly: 35, founderAnnual: 149, founderMonthly: 19 },
-  cma: { annual: 349, monthly: 49, founderAnnual: 199, founderMonthly: 25 },
-  cia: { annual: 249, monthly: 35, founderAnnual: 149, founderMonthly: 19 },
-  cfp: { annual: 349, monthly: 49, founderAnnual: 199, founderMonthly: 25 },
-  cisa: { annual: 349, monthly: 49, founderAnnual: 199, founderMonthly: 25 },
+  cpa: { annual: 449, monthly: 49, founderAnnual: 249, founderMonthly: 29 },
+  ea: { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 19 },
+  cma: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 25 },
+  cia: { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 19 },
+  cfp: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 25 },
+  cisa: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 25 },
 } as const;
 
 // Founder seat limits per exam
@@ -325,7 +325,7 @@ class SubscriptionService {
           for (const key of corruptedKeys) {
             fixUpdate[key] = deleteField();
           }
-          updateDoc(doc(db, 'subscriptions', userId), fixUpdate).catch(() => {});
+          updateDoc(doc(db, 'subscriptions', userId), fixUpdate).catch((e) => { logger.warn('Failed to fix corrupted subscription keys:', e); });
         }
 
         // Deserialize per-exam paid subscriptions map
@@ -552,10 +552,15 @@ class SubscriptionService {
 
   /**
    * Check if user has paid access to a specific exam.
-   * Checks paidExams map first, then legacy single-course fields.
+   * Checks lifetime tier first, then paidExams map, then legacy single-course fields.
    */
   hasExamPaidAccess(subscription: UserSubscription | null, courseId: string): boolean {
     if (!subscription) return false;
+    
+    // Lifetime tier grants access to ALL exams
+    if (subscription.tier === 'lifetime' && subscription.status === 'active') {
+      return true;
+    }
     
     // Check per-exam paid subs map
     const paidExam = subscription.paidExams?.[courseId];
@@ -570,39 +575,78 @@ class SubscriptionService {
   }
 
   /**
-   * Check if user is in active trial period
+   * Check if user is in active trial period.
+   * Checks per-exam trials map first, then legacy trialEnd field.
    */
-  async isInTrial(userId: string): Promise<boolean> {
+  async isInTrial(userId: string, courseId?: string): Promise<boolean> {
     const subscription = await this.getUserSubscription(userId);
     if (!subscription) return false;
     
+    const now = new Date();
+    
+    // Check per-exam trials map first
+    if (courseId && subscription.trials?.[courseId]) {
+      return now < subscription.trials[courseId].endDate;
+    }
+    
+    // Check any active per-exam trial if no courseId specified
+    if (!courseId && subscription.trials) {
+      for (const trial of Object.values(subscription.trials)) {
+        if (now < trial.endDate) return true;
+      }
+    }
+    
+    // Legacy fallback
     if (subscription.status !== 'trialing') return false;
     if (!subscription.trialEnd) return false;
-    
-    return new Date() < subscription.trialEnd;
+    return now < subscription.trialEnd;
   }
 
   /**
-   * Get days remaining in trial
+   * Get days remaining in trial.
+   * Checks per-exam trials map first, then legacy trialEnd field.
    */
-  async getTrialDaysRemaining(userId: string): Promise<number> {
+  async getTrialDaysRemaining(userId: string, courseId?: string): Promise<number> {
     const subscription = await this.getUserSubscription(userId);
-    if (!subscription?.trialEnd) return 0;
+    if (!subscription) return 0;
     
     const now = new Date();
+    
+    // Check per-exam trials map first
+    if (courseId && subscription.trials?.[courseId]) {
+      const diff = subscription.trials[courseId].endDate.getTime() - now.getTime();
+      return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+    }
+    
+    // Legacy fallback
+    if (!subscription.trialEnd) return 0;
     const diff = subscription.trialEnd.getTime() - now.getTime();
     return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
   }
 
   /**
-   * Get user's current plan limits
+   * Get user's current plan limits for a specific exam.
+   * Checks per-exam paidExams/trials first, then falls back to legacy fields.
    */
-  async getPlanLimits(userId: string): Promise<PlanLimits> {
+  async getPlanLimits(userId: string, courseId?: string): Promise<PlanLimits> {
     const subscription = await this.getUserSubscription(userId);
-    const tier = subscription?.tier || 'free';
-    
-    // Check if subscription is still valid
-    if (subscription?.status !== 'active' && subscription?.status !== 'trialing') {
+    if (!subscription) return SUBSCRIPTION_PLANS.free.limits;
+
+    // Per-exam check: if courseId provided, check paidExams and trials maps
+    if (courseId) {
+      const paidExam = subscription.paidExams?.[courseId];
+      if (paidExam && paidExam.status === 'active') {
+        return SUBSCRIPTION_PLANS[paidExam.tier].limits;
+      }
+      const trial = subscription.trials?.[courseId];
+      if (trial && new Date() < trial.endDate) {
+        return SUBSCRIPTION_PLANS.free.limits; // Trial = free-tier limits (currently unlimited)
+      }
+    }
+
+    // Legacy fallback: check root tier/status
+    const tier = subscription.tier || 'free';
+    if (subscription.status !== 'active' && subscription.status !== 'trialing') {
       return SUBSCRIPTION_PLANS.free.limits;
     }
 

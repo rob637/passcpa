@@ -87,7 +87,7 @@ html {
   -webkit-touch-callout: none;
   scroll-behavior: smooth;
   text-size-adjust: 100%;
-  overscroll-behavior-y: none; /* Prevent rubber-banding */
+  /* overscroll-behavior-y: none; Disabled for iOS bounce */
 }
 
 body {
@@ -101,7 +101,7 @@ body {
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior-y: none; /* Prevent rubber-banding */
+  /* overscroll-behavior-y: none; Disabled for iOS bounce */
   letter-spacing: -0.011em;
   background-color: var(--bg-primary);
   color: var(--text-primary);

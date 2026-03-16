@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useNavigate, useSearchParams, useLocation, Link } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 import { getHomePathFromLocation } from '../../utils/courseNavigation';
 import {
   ArrowLeft,
@@ -1054,7 +1054,7 @@ const ScenarioRenderer: React.FC<{ text: string }> = ({ text }) => {
             // Parse markdown pipe table: | col1 | col2 | col3 |
             const dataRows = block.lines.filter(l => !isSeparatorRow(l));
             const parseRow = (row: string) => 
-              row.split('|').map(c => c.trim()).filter((c, i, arr) => i > 0 && i < arr.length - 1);
+              row.split('|').map(c => c.trim()).filter((_c, i, arr) => i > 0 && i < arr.length - 1);
             const headerCells = dataRows.length > 0 ? parseRow(dataRows[0]) : [];
             const bodyRows = dataRows.slice(1).map(parseRow);
             return (
@@ -1168,7 +1168,7 @@ const TBSSimulator: React.FC = () => {
 
   // Get all available sections for this course (for section filter)
   const sectionsMap = getSectionsMap(courseId);
-  const availableSections = Object.keys(sectionsMap);
+  const _availableSections = Object.keys(sectionsMap);
   const [selectedSection, setSelectedSection] = useState<string>(currentSection);
 
   // Get current task

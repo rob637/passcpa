@@ -86,7 +86,7 @@ const ResourceCategoryTile: React.FC<ResourceCategoryTileProps> = ({ category, o
  * ResourcesHub - Main component
  */
 const ResourcesHub: React.FC = () => {
-  const { course, courseId } = useCourse();
+  const { course: _course, courseId } = useCourse();
   const navigate = useNavigate();
   const resourceConfig = getResourceConfig(courseId);
 

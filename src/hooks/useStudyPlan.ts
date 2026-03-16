@@ -437,7 +437,33 @@ export function useStudyPlan(): UseStudyPlanReturn {
           currentWeek: existingPlan.currentWeek,
           lessonsCompleted: realProgress.lessonsCompleted,
         });
-      } else {
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // STALE PLAN CHECK:
+        // If the user is "adjusting" a plan but has negligible progress,
+        // treat it as a fresh start (reset start date to today).
+        // This prevents "You are behind schedule" alerts for users who created 
+        // a plan long ago but never started.
+        // ═══════════════════════════════════════════════════════════════════════
+        const hasSignificantProgress = 
+          realProgress.lessonsCompleted > 0 ||
+          realProgress.questionsAnswered > 10 ||
+          realProgress.daysStudied > 3;
+
+        if (!hasSignificantProgress) {
+          logger.info('Resetting stale plan timeline — negligible progress found', {
+            lessons: realProgress.lessonsCompleted,
+            questions: realProgress.questionsAnswered,
+            days: realProgress.daysStudied
+          });
+          // clearing existingPlan forces generateStudyPlan to create a fresh schedule
+          // starting from TODAY, while still preserving the minor progress stats
+          // via the fallback logic below.
+          existingPlan = undefined;
+        }
+      } 
+      
+      if (!existingPlan) {
         // No existing plan — create a synthetic "existingPlan" with just progress
         // so generateStudyPlan can account for already-completed work
         // Check ALL activity types, not just lessons and questions

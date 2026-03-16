@@ -25,7 +25,6 @@ import {
   Map,
   TrendingUp,
   AlertCircle,
-  Info,
 } from 'lucide-react';
 import { Button } from '../common/Button';
 import { useCourse } from '../../providers/CourseProvider';
@@ -51,7 +50,7 @@ const StudyPlanSetup: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { courseId } = useCourse();
-  const { userProfile, updateUserProfile } = useAuth();
+  const { userProfile, updateUserProfile, loading: authLoading } = useAuth();
   const { createPlan, plan: existingPlan, loading: planLoading } = useStudyPlan();
   
   // Form state - will be pre-filled from existing plan if available
@@ -81,8 +80,8 @@ const StudyPlanSetup: React.FC = () => {
   
   // Pre-fill from existing plan or user profile
   useEffect(() => {
-    // Don't initialize while plan is still loading
-    if (planLoading || initialized) return;
+    // Don't initialize while plan or auth is still loading
+    if (planLoading || authLoading || initialized) return;
     
     // Check if returning from diagnostic assessment FIRST
     // This prevents the initialization logic from clobbering the step set by diagnostic return
@@ -131,18 +130,16 @@ const StudyPlanSetup: React.FC = () => {
       setCurrentStep('exam-date');
       setInitialized(true);
     } else if (userProfile?.examSection) {
-      // Validate that stored section belongs to current course
-      // If user switched courses (e.g., CPA → CIA), don't use mismatched section
+      // User has explicitly picked a section - use it and skip section selection
       const storedSection = userProfile.examSection;
+      // Validate it belongs to current course
       const validSection = sections.some((s: ExamSectionConfig) => s.id === storedSection);
       
       if (validSection) {
         setSection(storedSection);
-        // Default to 8 weeks from today
         const defaultDate = new Date();
         defaultDate.setDate(defaultDate.getDate() + 8 * 7);
         setExamDate(defaultDate.toISOString().split('T')[0]);
-        // Skip section selection - user already chose on home page
         setCurrentStep('exam-date');
         setInitialized(true);
       } else {
@@ -151,16 +148,16 @@ const StudyPlanSetup: React.FC = () => {
         defaultDate.setDate(defaultDate.getDate() + 8 * 7);
         setExamDate(defaultDate.toISOString().split('T')[0]);
         setInitialized(true);
-        // Start on first step (section selection)
       }
     } else {
-      // No existing plan - default to 8 weeks from today
+      // No section picked yet - show the section picker
       const defaultDate = new Date();
       defaultDate.setDate(defaultDate.getDate() + 8 * 7);
       setExamDate(defaultDate.toISOString().split('T')[0]);
       setInitialized(true);
+      // currentStep defaults to 'section', so picker will show
     }
-  }, [planLoading, existingPlan, isSingleExamCourse, sections, userProfile, initialized, location.state, examDate]);
+  }, [planLoading, authLoading, existingPlan, isSingleExamCourse, sections, userProfile, initialized, location.state, examDate]);
   
   // Handle return from diagnostic assessment (legacy - now handled in main init effect)
   // Keeping this for safety but it should no longer be the primary handler
@@ -814,7 +811,7 @@ const StudyPlanSetup: React.FC = () => {
                       const now = Date.now();
                       const minDays = 14;
                       const maxDays = 365;
-                      const minDate = new Date(now + minDays * 86400000);
+                      const _minDate = new Date(now + minDays * 86400000);
                       const currentDays = examDate
                         ? Math.round((new Date(examDate + 'T12:00:00').getTime() - now) / 86400000)
                         : 90;
@@ -977,6 +974,18 @@ const StudyPlanSetup: React.FC = () => {
         );
     }
   };
+  
+  // Show loading state while auth/plan is loading
+  if (authLoading || planLoading) {
+    return (
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8 px-4 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-8 h-8 border-2 border-primary-600 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
+          <p className="text-slate-600 dark:text-slate-400 text-sm">Loading...</p>
+        </div>
+      </div>
+    );
+  }
   
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8 px-4">

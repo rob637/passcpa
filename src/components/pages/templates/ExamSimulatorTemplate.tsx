@@ -32,7 +32,6 @@ import {
   Calculator,
   LogOut,
   FileText,
-  XCircle,
 } from 'lucide-react';
 import clsx from 'clsx';
 import feedback from '../../../services/feedback';

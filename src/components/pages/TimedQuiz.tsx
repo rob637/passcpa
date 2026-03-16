@@ -132,7 +132,7 @@ const TimedQuiz: React.FC = () => {
     timerRef.current = setInterval(() => {
       setTimeLeft((t) => {
         if (t <= 1) {
-          clearInterval(timerRef.current);
+          if (timerRef.current) clearInterval(timerRef.current);
           setQuizState('complete');
           feedback.complete();
           return 0;
@@ -145,7 +145,7 @@ const TimedQuiz: React.FC = () => {
       });
     }, 1000);
 
-    return () => clearInterval(timerRef.current);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [quizState, isPaused]);
 
   // Keyboard shortcuts

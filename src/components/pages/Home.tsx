@@ -13,9 +13,7 @@ import {
   Target,
   Brain,
   AlertTriangle,
-  TrendingUp,
   Check,
-  Sparkles,
   ClipboardCheck,
   Rocket,
   ArrowRight,
@@ -36,11 +34,9 @@ import { getSectionContent } from '../../services/contentRegistry';
 import { 
   getCoursePracticePath, 
   getCourseFlashcardPath, 
-  getCourseQuizPath, 
   getCourseExamPath,
   getCourseTBSPath,
   getCourseEssayPath,
-  getCourseCBQPath,
   getCourseCaseStudyPath,
 } from '../../utils/courseNavigation';
 import { CourseId } from '../../types/course';
@@ -108,19 +104,24 @@ const Home = () => {
   const [welcomeDismissed, setWelcomeDismissed] = useState(() =>
     localStorage.getItem('voraprep_welcome_dismissed') === '1'
   );
+  const [studyPlanNudgeDismissed, setStudyPlanNudgeDismissed] = useState(() =>
+    localStorage.getItem('voraprep_studyplan_nudge_dismissed') === '1'
+  );
   
   const [readinessData, setReadinessData] = useState<ReadinessData | null>(null);
   const [weakAreas, setWeakAreas] = useState<{ topic: string; accuracy: number; questions: number }[]>([]);
   const [_loading, setLoading] = useState(true);
   const [showSectionPicker, setShowSectionPicker] = useState(false);
   const [changingSection, setChangingSection] = useState(false);
-  const [hasDiagnosticResult, setHasDiagnosticResult] = useState<boolean | null>(null);
+  const [_hasDiagnosticResult, setHasDiagnosticResult] = useState<boolean | null>(null);
   const showDashboardNudge = useDashboardShareNudge();
 
   // Check for milestone-based share nudges
   // Use section-specific stats for milestones, but weeklyStats for "has user ever practiced" check
   const totalQuestionsAnswered = stats?.totalQuestions || 0;
-  const hasEverPracticed = stats !== null && (totalQuestionsAnswered > 0 || weeklyStats.totalQuestions > 0);
+  // Also check todayLog for immediate feedback (stats refetch is delayed)
+  const hasTodayActivity = (todayLog?.questionsAnswered || 0) > 0 || (todayLog?.earnedPoints || 0) > 0;
+  const hasEverPracticed = (stats !== null && (totalQuestionsAnswered > 0 || weeklyStats.totalQuestions > 0)) || hasTodayActivity;
   const showStreakNudge = shouldShowStreakNudge(currentStreak);
   const showQuestionsNudge = !showStreakNudge && shouldShowQuestionsMilestone(totalQuestionsAnswered);
 
@@ -573,9 +574,8 @@ const Home = () => {
         </div>
       )}
 
-      {/* Welcome Card — shows for new users who haven't practiced yet */}
-      {/* Wait for stats to load (stats !== null) before deciding to show */}
-      {!welcomeDismissed && !hasEverPracticed && stats !== null && (
+      {/* Welcome Card or "What's Next" choices */}
+      {!welcomeDismissed && !hasEverPracticed && stats !== null ? (
         <div className="relative bg-gradient-to-br from-primary-50 to-indigo-50 dark:from-primary-900/20 dark:to-indigo-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-5">
           <button
             onClick={() => {
@@ -612,6 +612,43 @@ const Home = () => {
             </div>
           </div>
         </div>
+      ) : (
+        !hasPlan && !planLoading && !studyPlanNudgeDismissed && (
+          <div className="relative bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
+            <button
+              onClick={() => {
+                setStudyPlanNudgeDismissed(true);
+                localStorage.setItem('voraprep_studyplan_nudge_dismissed', '1');
+              }}
+              className="absolute top-2 right-2 p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+              aria-label="Dismiss"
+            >
+              <XIcon className="w-4 h-4" />
+            </button>
+            <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
+              What would you like to do?
+            </p>
+            <div className="flex flex-col sm:flex-row gap-2">
+              <button
+                onClick={() => {
+                  setStudyPlanNudgeDismissed(true);
+                  localStorage.setItem('voraprep_studyplan_nudge_dismissed', '1');
+                }}
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold rounded-lg transition-colors"
+              >
+                <Rocket className="w-4 h-4" />
+                Start Exploring
+              </button>
+              <Link
+                to="/study-plan/setup"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 text-sm font-medium rounded-lg transition-colors"
+              >
+                <Calendar className="w-4 h-4" />
+                Create a Study Plan
+              </Link>
+            </div>
+          </div>
+        )
       )}
 
       {/* Quick Access Buttons */}
@@ -768,8 +805,13 @@ const Home = () => {
         </div>
       )}
 
-      {/* Today's Plan or Study Plan CTA */}
-      {!planLoading && (hasPlan ? <DailyPlanCard compact /> : <StudyPlanCTA compact />)}
+      {/* Today's Plan */}
+      {!planLoading && hasPlan && <DailyPlanCard compact />}
+
+      {/* Compact Study Plan CTA at bottom for users who dismissed the top card */}
+      {!planLoading && !hasPlan && studyPlanNudgeDismissed && (
+        <StudyPlanCTA compact />
+      )}
 
       {/* Share Nudge - contextual, non-intrusive */}
       {showStreakNudge && (

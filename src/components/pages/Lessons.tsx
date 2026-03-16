@@ -9,9 +9,6 @@ import {
   Clock,
   Search,
   GraduationCap,
-  FileText,
-  ClipboardCheck,
-  Trophy,
   Bookmark,
   StickyNote,
 } from 'lucide-react';
@@ -140,7 +137,7 @@ const Lessons: React.FC = () => {
   const profileSection = userProfile?.examSection;
   // Only use profile section if it's valid for the current course
   const validProfileSection = profileSection && isValidSection(profileSection, courseId) ? profileSection : null;
-  const currentSection = (sectionFromUrl || validProfileSection || getDefaultSection(courseId)) as ExamSection;
+  const currentSection = (sectionFromUrl || validProfileSection || getDefaultSection(courseId)) as ExamSection | 'ALL';
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
   
   // Fetch lessons

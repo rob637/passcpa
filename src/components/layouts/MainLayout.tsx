@@ -73,6 +73,31 @@ const MainLayout = () => {
   const { currentStreak, dailyProgress } = useStudy();
   const { plan: studyPlan, hasPlan } = useStudyPlan();
   const { courseId: providerCourseId } = useCourse();
+
+  // Grace period: Show "on-track" during first 7 days of a new plan
+  const displayHealth = useMemo(() => {
+    if (!studyPlan) return 'on-track';
+    
+    const planCreatedAt = studyPlan.createdAt instanceof Date 
+      ? studyPlan.createdAt 
+      : new Date(studyPlan.createdAt);
+    const daysSinceCreation = Math.floor(
+      (Date.now() - planCreatedAt.getTime()) / (1000 * 60 * 60 * 24)
+    );
+    const planStartDate = studyPlan.startDate instanceof Date
+      ? studyPlan.startDate
+      : new Date(studyPlan.startDate);
+    const daysSinceStart = Math.floor(
+      (Date.now() - planStartDate.getTime()) / (1000 * 60 * 60 * 24)
+    );
+    
+    // Use "on-track" during grace period to avoid alarming new users
+    if (daysSinceCreation < 7 || daysSinceStart < 7) {
+      return 'on-track';
+    }
+    
+    return studyPlan.health;
+  }, [studyPlan]);
   
   // For course-specific URLs (e.g., /cfp/home), use path detection.
   // For shared routes (e.g., /settings), use the CourseProvider's courseId.
@@ -247,9 +272,9 @@ const MainLayout = () => {
                   <span 
                     className={clsx(
                       'w-2 h-2 rounded-full',
-                      HEALTH_DOT_COLORS[studyPlan.health] || 'bg-slate-400'
+                      HEALTH_DOT_COLORS[displayHealth] || 'bg-slate-400'
                     )}
-                    title={`Plan status: ${studyPlan.health.replace('-', ' ')}`}
+                    title={`Plan status: ${displayHealth.replace('-', ' ')}`}
                   />
                 )}
               </NavLink>
@@ -358,7 +383,7 @@ const MainLayout = () => {
                   <span 
                     className={clsx(
                       'absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full ring-2 ring-white dark:ring-slate-800',
-                      HEALTH_DOT_COLORS[studyPlan.health] || 'bg-slate-400'
+                      HEALTH_DOT_COLORS[displayHealth] || 'bg-slate-400'
                     )}
                   />
                 )}

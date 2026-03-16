@@ -12,7 +12,6 @@ import {
   HelpCircle,
   Users,
   CreditCard,
-  Clock,
   Shield,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
@@ -36,14 +35,14 @@ import { isAdminEmail } from '../../config/adminConfig';
 const You: React.FC = () => {
   const { user, userProfile, updateUserProfile, signOut } = useAuth();
   const { currentStreak, getTopicPerformance, getLessonProgress } = useStudy();
-  const { courseId, course } = useCourse();
+  const { courseId, course: _course } = useCourse();
   const { getExamAccess } = useSubscription();
   
   // Single-exam courses should aggregate ALL domains/sections (one exam = one set of stats)
   const singleExamCourses = ['cisa', 'cfp', 'cia'];
   const isSingleExamCourse = singleExamCourses.includes(courseId || '');
   
-  const [overallStats, setOverallStats] = useState({
+  const [_overallStats, setOverallStats] = useState({
     totalQuestions: 0,
     correctAnswers: 0,
     tbsCompleted: 0,
@@ -53,9 +52,9 @@ const You: React.FC = () => {
     accuracy: 0,
   });
   const [_topicPerformance, setTopicPerformance] = useState<{ id: string; topic: string; accuracy: number; questions: number }[]>([]);
-  const [readinessData, setReadinessData] = useState<ReadinessData | null>(null);
+  const [_readinessData, setReadinessData] = useState<ReadinessData | null>(null);
   const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
-  const [isSavingExamDate, setIsSavingExamDate] = useState(false);
+  const [_isSavingExamDate, setIsSavingExamDate] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [_loading, setLoading] = useState(true);
 
@@ -66,10 +65,10 @@ const You: React.FC = () => {
   const examSection = getCurrentSection(userProfile, courseId, getDefaultSection);
   const sectionInfo = getSectionDisplayInfo(examSection, courseId);
   
-  const examDate = getExamDate(userProfile, examSection, courseId);
+  const _examDate = getExamDate(userProfile, examSection, courseId);
 
   // Handle inline exam date save
-  const handleExamDateChange = async (dateStr: string) => {
+  const _handleExamDateChange = async (dateStr: string) => {
     if (!dateStr) return;
     setIsSavingExamDate(true);
     try {
@@ -108,7 +107,7 @@ const You: React.FC = () => {
         let sectionTbs = 0;
         let sectionMinutes = 0;
 
-        const dailyData = await Promise.all(
+        const _dailyData = await Promise.all(
           days.map(async (date) => {
             // Don't query future dates
             if (isAfter(date, new Date())) {

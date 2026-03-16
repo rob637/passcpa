@@ -355,7 +355,7 @@ const _MINUTES_PER_MOCK_EXAM = 240;     // 4-hour mock exam
 // More passes = better retention through spaced repetition.
 // IMPORTANT: This does NOT reduce the time budget — if user commits to 3h/day, they get 3h/day.
 // The adaptive engine decides WHICH questions to show, not how much time to allocate.
-const MCQ_REVIEW_PASSES: Record<string, number> = {
+const _MCQ_REVIEW_PASSES: Record<string, number> = {
   'none': 1.0,     // Single pass through question bank
   'some': 1.0,     // Single pass (was 0.60 — this incorrectly reduced time budget)
   'retake': 1.0,   // Single pass (was 0.45 — focus on time, adaptive handles selection)
@@ -609,7 +609,7 @@ export function generateWeeks(
     const effectiveLessonMinutes = Math.min(weekLessonMinutes, maxLessonMinutes);
     
     // Calculate remaining time for practice activities
-    const remainingMinutes = Math.max(0, weeklyMinutes - effectiveLessonMinutes);
+    const _remainingMinutes = Math.max(0, weeklyMinutes - effectiveLessonMinutes);
     
     // ========================================================================
     // CONTENT-FIRST: Use pre-calculated distributions, not percentages
@@ -637,7 +637,7 @@ export function generateWeeks(
     const mcqMinutes = questionCount * MINUTES_PER_MCQ;
     const flashcardMinutes = flashcardCount * MINUTES_PER_FLASHCARD;
     const tbsMinutes = simulationCount * MINUTES_PER_SIMULATION;
-    const practiceMinutes = mcqMinutes + flashcardMinutes + tbsMinutes;
+    const _practiceMinutes = mcqMinutes + flashcardMinutes + tbsMinutes;
     
     const goals = {
       lessons: weekLessonCount,

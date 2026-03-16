@@ -10,7 +10,6 @@ import {
   XCircle,
   ChevronLeft,
   ChevronRight,
-  ChevronUp,
   ChevronDown,
   Flag,
   // Pause,
@@ -56,7 +55,7 @@ type ExamMode = 'mini' | 'mini-tbs' | 'full' | 'curated';
 const ExamSimulator: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const courseHome = getHomePathFromLocation(location.pathname);
+  const _courseHome = getHomePathFromLocation(location.pathname);
   const { user, userProfile } = useAuth();
   const { completeSimulation } = useStudy();
   const { courseId, course } = useCourse();
@@ -326,7 +325,7 @@ const ExamSimulator: React.FC = () => {
     timerRef.current = setInterval(() => {
       setTimeLeft((t) => {
         if (t <= 1) {
-          clearInterval(timerRef.current);
+          if (timerRef.current) clearInterval(timerRef.current);
           setExamState('complete');
           feedback.complete();
           return 0;
@@ -339,7 +338,7 @@ const ExamSimulator: React.FC = () => {
       });
     }, 1000);
 
-    return () => clearInterval(timerRef.current);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [examState]);
 
   // Prevent accidental navigation away during active exam

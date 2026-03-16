@@ -69,7 +69,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
             window.location.reload();
           });
         } else {
-          window.location.reload();
+          (window as Window).location.reload();
         }
         return;
       }

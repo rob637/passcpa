@@ -1591,6 +1591,26 @@ function AICampaignBuilder() {
       setResult({ success: false, message: 'Please provide a name and generate content first' });
       return;
     }
+
+    // Validate Google Ads constraints before saving
+    const validHeadlines = editedHeadlines.filter(h => h.length > 0 && h.length <= 30);
+    const validDescriptions = editedDescriptions.filter(d => d.length > 0 && d.length <= 90);
+
+    if (validHeadlines.length < 3) {
+      setResult({ 
+        success: false, 
+        message: `Validation Error: Google Ads requires at least 3 headlines (max 30 chars). You have ${validHeadlines.length} valid out of ${editedHeadlines.length}.` 
+      });
+      return;
+    }
+
+    if (validDescriptions.length < 2) {
+      setResult({ 
+        success: false, 
+        message: `Validation Error: Google Ads requires at least 2 descriptions (max 90 chars). You have ${validDescriptions.length} valid out of ${editedDescriptions.length}.` 
+      });
+      return;
+    }
     
     setSaving(true);
     try {

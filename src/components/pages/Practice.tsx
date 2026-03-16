@@ -94,7 +94,7 @@ interface SessionSetupProps {
 }
 
 // Session Setup Component
-const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSavedSession, userProfile, loading, userId }) => {
+const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSavedSession, userProfile, loading, userId: _userId }) => {
   const { course, courseId } = useCourse();
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [config, setConfig] = useState<SessionConfig>({
@@ -1080,7 +1080,7 @@ const Practice: React.FC = () => {
       const section = userProfile?.examSection as string || getDefaultSection(courseId);
       const examDate = getExamDate(userProfile, section, courseId) || new Date();
       const blueprintVersion = getBlueprintForExamDate(examDate);
-      const is2026 = blueprintVersion === '2026';
+      const _is2026 = blueprintVersion === '2026';
 
       if (config.mode === 'weak') {
         // Get questions from weak areas
@@ -1414,7 +1414,7 @@ const Practice: React.FC = () => {
     setShowExplanation(prevAns !== undefined);
     // When navigating to a previously answered question, auto-expand if it was wrong
     setShowWhyWrong(prevAns ? !prevAns.correct : false);
-    setExplanationExpanded(!!prevAnswer);
+    setExplanationExpanded(!!prevAns);
     
     // Blur any focused element first - prevents mobile browsers from auto-scrolling to focused buttons
     if (document.activeElement instanceof HTMLElement) {

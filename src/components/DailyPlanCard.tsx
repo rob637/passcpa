@@ -48,8 +48,6 @@ import { fetchLessonsBySection } from '../services/lessonService';
 import { getTBSHistory, getDueQuestions } from '../services/questionHistoryService';
 import { getCurrentSection, getExamDate } from '../utils/profileHelpers';
 import { getDefaultSection } from '../utils/sectionUtils';
-import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../config/firebase';
 import { 
   getCourseLearnPath,
   getCourseLessonPath,
@@ -778,7 +776,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
               const isComplete = completedActivities.has(activity.id);
               // "Start" button only on first incomplete activity
               const firstIncompleteIndex = allActivities.findIndex(a => !completedActivities.has(a.id));
-              const isNext = index === firstIncompleteIndex && !isComplete;
+              const _isNext = index === firstIncompleteIndex && !isComplete;
               return (
                 <div
                   key={activity.id}

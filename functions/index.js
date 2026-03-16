@@ -4449,7 +4449,9 @@ exports.growthSyncCampaigns = onCall({
             const validDescriptions = (ad.descriptions || []).filter(d => d && d.length > 0 && d.length <= 90).slice(0, 4);
 
             if (validHeadlines.length < 3 || validDescriptions.length < 2) {
-              console.warn(`[GrowthSync]   Skipping RSA ${ad.id}: ${validHeadlines.length} headlines, ${validDescriptions.length} descriptions (need 3/2)`);
+              const msg = `Skipping RSA ${ad.id}: ${validHeadlines.length} valid headlines (need 3), ${validDescriptions.length} valid descriptions (need 2)`;
+              console.warn(`[GrowthSync]   ${msg}`);
+              errors.push({ campaign: campaign.name, error: msg });
               continue;
             }
 
@@ -5700,7 +5702,7 @@ async function shareToDiscord(article) {
  * }
  */
 exports.postScheduledLinkedIn = onSchedule({
-  schedule: 'every monday,wednesday,friday 14:00',  // 9 AM EST = 14:00 UTC
+  schedule: 'every monday,wednesday,friday 09:00',  // 9 AM ET
   timeZone: 'America/New_York',
   timeoutSeconds: 60,
   memory: '256MiB',
@@ -5708,75 +5710,84 @@ exports.postScheduledLinkedIn = onSchedule({
 }, async (context) => {
   console.log('[LinkedInStory] Starting scheduled story post check...');
   
-  // Get LinkedIn credentials from Firestore
-  const configDoc = await db.collection('system_config').doc('linkedin').get();
-  if (!configDoc.exists) {
-    console.log('[LinkedInStory] No LinkedIn config found. Skipping.');
-    return;
-  }
-  
-  const config = configDoc.data();
-  const accessToken = config.accessToken;
-  const personId = config.personId;
-  
-  if (!accessToken || !personId) {
-    console.log('[LinkedInStory] No LinkedIn credentials configured. Skipping.');
-    return;
-  }
-  
-  // Check if token has expired
-  if (config.expiresAt && config.expiresAt.toDate() < new Date()) {
-    console.log('[LinkedInStory] LinkedIn token expired. Re-authorize needed.');
-    return;
-  }
-  
-  // Find the next APPROVED post to publish
-  // Posts must be explicitly approved before they can be auto-posted
-  const now = new Date();
-  
-  // First, check for approved posts scheduled for today or earlier
-  let postQuery = db.collection('linkedin_story_posts')
-    .where('status', '==', 'approved')
-    .where('scheduledFor', '<=', now)
-    .orderBy('scheduledFor', 'asc')
-    .limit(1);
-  
-  let snapshot = await postQuery.get();
-  
-  // If no specifically scheduled posts, pick from the general approved queue
-  if (snapshot.empty) {
-    postQuery = db.collection('linkedin_story_posts')
-      .where('status', '==', 'approved')
-      .where('scheduledFor', '==', null)
-      .orderBy('approvedAt', 'asc')
-      .limit(1);
-    
-    snapshot = await postQuery.get();
-  }
-  
-  // Still nothing? Try approved posts without scheduledFor field (backward compat)
-  if (snapshot.empty) {
-    const allApproved = await db.collection('linkedin_story_posts')
-      .where('status', '==', 'approved')
-      .orderBy('createdAt', 'asc')
-      .limit(1)
-      .get();
-    
-    if (allApproved.empty) {
-      console.log('[LinkedInStory] No approved posts available. Approve posts in Admin > LinkedIn Posts.');
+  try {
+    // Get LinkedIn credentials from Firestore
+    const configDoc = await db.collection('system_config').doc('linkedin').get();
+    if (!configDoc.exists) {
+      console.log('[LinkedInStory] No LinkedIn config found. Skipping.');
       return;
     }
-    snapshot = allApproved;
-  }
-  
-  const postDoc = snapshot.docs[0];
-  const postData = postDoc.data();
-  const postId = postDoc.id;
-  
-  console.log(`[LinkedInStory] Found post to publish: ${postId} (type: ${postData.type})`);
-  
-  // Post to LinkedIn
-  try {
+    
+    const config = configDoc.data();
+    const accessToken = config.accessToken;
+    const personId = config.personId;
+    
+    if (!accessToken || !personId) {
+      console.log('[LinkedInStory] No LinkedIn credentials configured. Skipping.');
+      return;
+    }
+    
+    // Check if token has expired
+    if (config.expiresAt && config.expiresAt.toDate() < new Date()) {
+      console.log('[LinkedInStory] LinkedIn token expired. Re-authorize needed.');
+      return;
+    }
+    
+    // Find the next APPROVED post to publish
+    // Posts must be explicitly approved before they can be auto-posted
+    const now = new Date();
+    
+    // First, check for approved posts scheduled for today or earlier
+    // Requires index: status ASC, scheduledFor ASC
+    let postQuery = db.collection('linkedin_story_posts')
+      .where('status', '==', 'approved')
+      .where('scheduledFor', '<=', now)
+      .orderBy('scheduledFor', 'asc')
+      .limit(1);
+    
+    let snapshot = await postQuery.get();
+    
+    // If no specifically scheduled posts, pick from the general approved queue
+    if (snapshot.empty) {
+      // Logic change: Don't filter by scheduledFor == null, as it excludes undefined/missing fields
+      // Just pick the oldest approved post that DOESN'T have a future scheduledFor date
+      // But simplest is: Status=approved, OrderBy=createdAt ASC
+      // This might pick up a future-scheduled post if we aren't careful, but typically scheduled posts are future
+      // The previous fallback was: status=approved, scheduledFor=null
+      
+      // Better fallback: status=approved, orderBy=createdAt ASC (FIFO)
+      // This covers both "unscheduled" and "scheduled in past but missed"
+      const allApproved = await db.collection('linkedin_story_posts')
+        .where('status', '==', 'approved')
+        .orderBy('createdAt', 'asc') // Requires index: status ASC, createdAt ASC
+        .limit(1)
+        .get();
+      
+      if (allApproved.empty) {
+        console.log('[LinkedInStory] No approved posts available. Approve posts in Admin > LinkedIn Posts.');
+        return;
+      }
+      
+      // Check if the picked post is scheduled for FUTURE (shouldn't be picked if we want strict scheduling)
+      // But for now, let's assumes if it's approved and in the queue, it's ready to go unless scheduled for later
+      const candidate = allApproved.docs[0];
+      const candidateData = candidate.data();
+      
+      if (candidateData.scheduledFor && candidateData.scheduledFor.toDate() > now) {
+        console.log('[LinkedInStory] Next post is scheduled for future. Waiting.');
+        return;
+      }
+      
+      snapshot = allApproved; // Use this snapshot
+    }
+    
+    const postDoc = snapshot.docs[0];
+    const postData = postDoc.data();
+    const postId = postDoc.id;
+    
+    console.log(`[LinkedInStory] Found post to publish: ${postId} (type: ${postData.type})`);
+    
+    // Post to LinkedIn
     const response = await fetch('https://api.linkedin.com/v2/ugcPosts', {
       method: 'POST',
       headers: {
@@ -5856,15 +5867,9 @@ exports.postScheduledLinkedIn = onSchedule({
       console.error('[LinkedInStory] Failed to send notification email:', emailErr);
       // Don't fail the function if email fails
     }
-    
   } catch (err) {
-    console.error('[LinkedInStory] Error posting:', err.message);
-    
-    await db.collection('linkedin_story_posts').doc(postId).update({
-      status: 'failed',
-      error: err.message,
-      failedAt: admin.firestore.FieldValue.serverTimestamp(),
-    });
+    console.error('[LinkedInStory] Error in scheduled function:', err);
+    throw err; // Re-throw to show in logs
   }
 });
 

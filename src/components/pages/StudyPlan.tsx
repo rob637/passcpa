@@ -9,7 +9,7 @@
  * - Alerts and recommendations
  */
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   Calendar,
@@ -18,7 +18,6 @@ import {
   TrendingUp,
   AlertTriangle,
   CheckCircle,
-  Settings,
   BookOpen,
   FileText,
   Zap,
@@ -29,7 +28,6 @@ import {
   ClipboardList,
   Layers,
   GraduationCap,
-  RotateCcw,
 } from 'lucide-react';
 import { Button } from '../common/Button';
 import { StudyPlanCTA } from '../StudyPlanCTA';
@@ -38,7 +36,7 @@ import { useCourse } from '../../providers/CourseProvider';
 import { useAuth } from '../../hooks/useAuth';
 import { fetchAllLessons } from '../../services/lessonService';
 // Rebalance imports removed - now uses setup page
-import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import type { Lesson } from '../../types';
 import { format, isWithinInterval, startOfDay } from 'date-fns';
@@ -91,110 +89,20 @@ const HEALTH_CONFIG: Record<PlanHealth, { color: string; bgColor: string; label:
 };
 
 /**
- * Dropdown menu for plan actions (Edit / Start Fresh)
+ * Simple button for rebalancing the plan
  */
-const PlanActionsMenu: React.FC<{
-  onEdit: () => void;
-  onReset: () => void;
-}> = ({ onEdit, onReset }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [showConfirm, setShowConfirm] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-  
-  // Close menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isOpen]);
-  
+const RebalancePlanButton: React.FC<{
+  onRebalance: () => void;
+}> = ({ onRebalance }) => {
   return (
-    <div className="relative" ref={menuRef}>
-      <Button
-        onClick={() => setIsOpen(!isOpen)}
-        variant="secondary"
-        className="flex items-center gap-2"
-      >
-        <Settings className="w-4 h-4" />
-        Plan Options
-        <ChevronDown className={clsx("w-4 h-4 transition-transform", isOpen && "rotate-180")} />
-      </Button>
-      
-      {isOpen && (
-        <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700 z-50">
-          <div className="py-1">
-            <button
-              onClick={() => {
-                setIsOpen(false);
-                onEdit();
-              }}
-              className="w-full flex items-center gap-3 px-4 py-2.5 text-left text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700"
-            >
-              <Settings className="w-4 h-4" />
-              <div>
-                <div className="font-medium">Edit Plan</div>
-                <div className="text-xs text-slate-500 dark:text-slate-400">Adjust settings, keeps history</div>
-              </div>
-            </button>
-            
-            <hr className="my-1 border-slate-200 dark:border-slate-700" />
-            
-            <button
-              onClick={() => {
-                setIsOpen(false);
-                setShowConfirm(true);
-              }}
-              className="w-full flex items-center gap-3 px-4 py-2.5 text-left text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20"
-            >
-              <RotateCcw className="w-4 h-4" />
-              <div>
-                <div className="font-medium">Start Fresh</div>
-                <div className="text-xs text-red-500 dark:text-red-400">Delete plan, start over</div>
-              </div>
-            </button>
-          </div>
-        </div>
-      )}
-      
-      {/* Confirmation Modal */}
-      {showConfirm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white dark:bg-slate-800 rounded-xl p-6 max-w-md mx-4 shadow-xl">
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-              Start Fresh?
-            </h3>
-            <p className="text-slate-600 dark:text-slate-400 mb-4">
-              This will delete your current plan schedule. Your completed lessons, questions, 
-              and other study progress will <span className="font-medium text-slate-900 dark:text-white">not</span> be affected.
-            </p>
-            <div className="flex gap-3 justify-end">
-              <Button
-                variant="secondary"
-                onClick={() => setShowConfirm(false)}
-              >
-                Cancel
-              </Button>
-              <Button
-                variant="primary"
-                className="bg-red-600 hover:bg-red-700"
-                onClick={() => {
-                  setShowConfirm(false);
-                  onReset();
-                }}
-              >
-                Start Fresh
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+    <Button
+      onClick={onRebalance}
+      variant="secondary"
+      className="flex items-center gap-2"
+    >
+      <RefreshCw className="w-4 h-4" />
+      Rebalance Plan
+    </Button>
   );
 };
 
@@ -215,7 +123,31 @@ const StudyPlan: React.FC = () => {
   const [liveDaysStudied, setLiveDaysStudied] = useState<number | null>(null);
   
   // Check if user is behind and should see rebalance option
-  const shouldShowRebalance = plan && ['behind', 'at-risk', 'critical'].includes(plan.health);
+  // BUT: Don't nag users in the first 7 days of a new plan - give them a full week to start
+  const shouldShowRebalance = (() => {
+    if (!plan) return false;
+    if (!['behind', 'at-risk', 'critical'].includes(plan.health)) return false;
+    
+    // Grace period: Don't show rebalance in the first 7 days after plan creation
+    const planCreatedAt = plan.createdAt instanceof Date 
+      ? plan.createdAt 
+      : new Date(plan.createdAt);
+    const daysSinceCreation = Math.floor(
+      (Date.now() - planCreatedAt.getTime()) / (1000 * 60 * 60 * 24)
+    );
+    if (daysSinceCreation < 7) return false;
+    
+    // Also don't show if less than 7 days into the plan
+    const planStartDate = plan.startDate instanceof Date
+      ? plan.startDate
+      : new Date(plan.startDate);
+    const daysSinceStart = Math.floor(
+      (Date.now() - planStartDate.getTime()) / (1000 * 60 * 60 * 24)
+    );
+    if (daysSinceStart < 7) return false;
+    
+    return true;
+  })();
   
   // Fetch lessons when plan loads
   useEffect(() => {
@@ -518,6 +450,28 @@ const StudyPlan: React.FC = () => {
   const healthConfig = HEALTH_CONFIG[plan.health];
   const currentPhaseConfig = PHASE_CONFIG[plan.currentPhase];
   const today = new Date();
+
+  // Grace period: Show "on-track" status during first 7 days of a new plan
+  const isInGracePeriod = (() => {
+    const planCreatedAt = plan.createdAt instanceof Date 
+      ? plan.createdAt 
+      : new Date(plan.createdAt);
+    const daysSinceCreation = Math.floor(
+      (Date.now() - planCreatedAt.getTime()) / (1000 * 60 * 60 * 24)
+    );
+    const planStartDate = plan.startDate instanceof Date
+      ? plan.startDate
+      : new Date(plan.startDate);
+    const daysSinceStart = Math.floor(
+      (Date.now() - planStartDate.getTime()) / (1000 * 60 * 60 * 24)
+    );
+    return daysSinceCreation < 7 || daysSinceStart < 7;
+  })();
+  
+  // Display health: Use "on-track" during grace period to avoid alarming new users
+  const displayHealth = isInGracePeriod ? 'on-track' : plan.health;
+  const displayHealthConfig = HEALTH_CONFIG[displayHealth];
+  const isDisplayOnTrack = displayHealth === 'on-track' || displayHealth === 'slightly-behind';
   
   // Find current week
   const currentWeek = plan.weeks.find(w => {
@@ -597,22 +551,7 @@ const StudyPlan: React.FC = () => {
           </p>
         </div>
         
-        <PlanActionsMenu 
-          onEdit={() => navigate('/study-plan/setup')}
-          onReset={async () => {
-            // Delete existing plan, then navigate to setup for fresh start
-            if (user && plan) {
-              const normalizedSection = plan.section;
-              const planKey = `${courseId}_${normalizedSection}`;
-              try {
-                await deleteDoc(doc(db, 'users', user.uid, 'studyPlans', planKey));
-              } catch (err) {
-                console.error('Error deleting plan:', err);
-              }
-            }
-            navigate('/study-plan/setup', { state: { resetPlan: true } });
-          }}
-        />
+        <RebalancePlanButton onRebalance={() => navigate('/study-plan/setup')} />
       </div>
       
       {/* Overview Cards */}
@@ -637,11 +576,11 @@ const StudyPlan: React.FC = () => {
           </div>
           <div className={clsx(
             'inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-sm font-medium',
-            healthConfig.bgColor,
-            healthConfig.color
+            displayHealthConfig.bgColor,
+            displayHealthConfig.color
           )}>
-            {isOnTrack ? <CheckCircle className="w-4 h-4" /> : <AlertTriangle className="w-4 h-4" />}
-            {healthConfig.label}
+            {isDisplayOnTrack ? <CheckCircle className="w-4 h-4" /> : <AlertTriangle className="w-4 h-4" />}
+            {displayHealthConfig.label}
           </div>
         </div>
         
@@ -675,12 +614,12 @@ const StudyPlan: React.FC = () => {
       </div>
       
       {/* Alerts */}
-      {/* Filter out stale health alerts if user is now on-track or only slightly behind */}
+      {/* Filter out stale health alerts if user is now on-track or only slightly behind, or in grace period */}
       {plan.alerts && plan.alerts.filter(a => {
         if (a.dismissed) return false;
-        // Don't show "behind schedule" alerts if health is actually fine
+        // Don't show "behind schedule" alerts if health is fine OR we're in grace period
         const isHealthAlert = a.id?.startsWith('health-');
-        if (isHealthAlert && ['on-track', 'slightly-behind'].includes(plan.health)) {
+        if (isHealthAlert && (isInGracePeriod || ['on-track', 'slightly-behind'].includes(plan.health))) {
           return false;
         }
         return true;
@@ -689,7 +628,7 @@ const StudyPlan: React.FC = () => {
           {plan.alerts.filter(a => {
             if (a.dismissed) return false;
             const isHealthAlert = a.id?.startsWith('health-');
-            if (isHealthAlert && ['on-track', 'slightly-behind'].includes(plan.health)) {
+            if (isHealthAlert && (isInGracePeriod || ['on-track', 'slightly-behind'].includes(plan.health))) {
               return false;
             }
             return true;

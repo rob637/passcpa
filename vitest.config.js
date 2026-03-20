@@ -9,6 +9,13 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.js'],
     include: ['src/**/*.{test,spec}.{js,jsx,ts,tsx}'],
+    // Exclude heavy tests that import all 9000+ questions (for local validation only)
+    exclude: [
+      '**/node_modules/**',
+      '**/dist/**',
+      'src/test/audit/**',           // question-quality-audit.test.ts
+      'src/test/data/question*',     // question-integrity.test.ts, questions.test.js
+    ],
     // Use threads for faster execution (forks was causing memory issues)
     pool: 'threads',
     poolOptions: {

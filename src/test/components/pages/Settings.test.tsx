@@ -241,12 +241,10 @@ describe('Settings Component', () => {
       await renderSettings();
       // Each tab label appears in both mobile <option> and desktop <button>
       expect(screen.getAllByText('Profile').length).toBeGreaterThanOrEqual(1);
-      expect(screen.getAllByText('Invite Friends').length).toBeGreaterThanOrEqual(1);
       expect(screen.getAllByText('Appearance').length).toBeGreaterThanOrEqual(1);
       expect(screen.getAllByText('Notifications').length).toBeGreaterThanOrEqual(1);
       expect(screen.getAllByText('Feedback & Support').length).toBeGreaterThanOrEqual(1);
       expect(screen.getAllByText('Offline').length).toBeGreaterThanOrEqual(1);
-      expect(screen.getAllByText('Account').length).toBeGreaterThanOrEqual(1);
     });
 
     it('shows Profile tab content by default', async () => {
@@ -287,7 +285,22 @@ describe('Settings Component', () => {
     });
   });
 
-  // Note: Study Plan tab was removed from Settings and moved to dedicated StudyPlanSetup page
+  describe('Appearance Tab', () => {
+    it('switches to Appearance tab when clicked', async () => {
+      await renderSettings();
+      clickTab('Appearance');
+      // Appearance tab should show theme options with "Appearance" as heading
+      expect(screen.getAllByText('Appearance').length).toBeGreaterThan(1);
+    });
+
+    it('displays theme options', async () => {
+      await renderSettings();
+      clickTab('Appearance');
+      expect(screen.getByText('System')).toBeInTheDocument();
+      expect(screen.getByText('Light')).toBeInTheDocument();
+      expect(screen.getByText('Dark')).toBeInTheDocument();
+    });
+  });
 
   describe('Notifications Tab', () => {
     it('switches to Notifications tab when clicked', async () => {

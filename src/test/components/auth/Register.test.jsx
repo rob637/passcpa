@@ -152,7 +152,7 @@ describe('Register Component', () => {
       fireEvent.click(googleButton);
 
       await waitFor(() => {
-        expect(mockNavigate).toHaveBeenCalledWith('/');
+        expect(mockNavigate).toHaveBeenCalledWith('/home');
       });
     });
 

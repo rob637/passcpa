@@ -71,6 +71,12 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
         logging: false,
       });
       
+      if (!canvas || typeof canvas.toBlob !== 'function') {
+        logger.error('html2canvas did not return a valid canvas');
+        setShareError('Failed to generate image');
+        return null;
+      }
+      
       return new Promise((resolve) => {
         canvas.toBlob((blob) => {
           resolve(blob);

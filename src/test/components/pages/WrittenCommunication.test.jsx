@@ -1,6 +1,6 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { render, screen, fireEvent, waitFor, cleanup } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import WrittenCommunication from '../../../components/pages/WrittenCommunication';
 
 // Mock wcService (Firestore-based service)
@@ -130,12 +130,16 @@ vi.mock('../../../hooks/useStudy', () => ({
 }));
 
 const renderWithRouter = (component) => {
-  return render(<BrowserRouter>{component}</BrowserRouter>);
+  return render(<MemoryRouter>{component}</MemoryRouter>);
 };
 
 describe('WrittenCommunication', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+  });
+
+  afterEach(() => {
+    cleanup();
   });
 
   describe('Task Selection Screen', () => {

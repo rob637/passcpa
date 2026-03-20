@@ -146,7 +146,7 @@ export const functions = getFunctions(app);
 
 // Initialize Analytics (only in browser, only in production)
 // Dev/staging projects may not have Analytics configured which causes console warnings
-export let analytics = null;
+export const analytics = null;
 
 // DISABLE FIREBASE ANALYTICS SDK INITIALIZATION
 // We are using a manual gtag implementation in src/services/analytics.ts to avoid

@@ -54,6 +54,15 @@ vi.mock('../../../services/feedback', () => ({
   },
 }));
 
+vi.mock('../../../components/common/Toast', () => ({
+  useToast: () => ({ showToast: vi.fn() }),
+}));
+
+vi.mock('../../../utils/sectionUtils', () => ({
+  getSectionDisplayInfo: () => ({ name: 'Regulation', shortName: 'REG', color: '#2563EB' }),
+  getCurrentSectionForCourse: () => 'REG',
+}));
+
 vi.mock('../../../providers/CourseProvider', () => ({
   useCourse: () => ({
     courseId: 'cpa',
@@ -92,13 +101,14 @@ describe('Practice Component', () => {
   describe('Session Setup', () => {
     it('renders setup screen by default', () => {
       renderPractice();
-      expect(screen.getByRole('heading', { name: /Practice/i })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /Questions/i })).toBeInTheDocument();
     });
 
-    it('displays exam section select', () => {
+    it('displays exam section info', () => {
       renderPractice();
-      expect(screen.getByText('Section')).toBeInTheDocument();
-      expect(screen.getByRole('combobox')).toBeInTheDocument();
+      // Section badge shows REG, subtitle shows section name
+      expect(screen.getByText('REG')).toBeInTheDocument();
+      expect(screen.getByText(/Regulation/i)).toBeInTheDocument();
     });
 
     it('shows practice mode options', () => {
@@ -110,7 +120,9 @@ describe('Practice Component', () => {
 
     it('shows question count options', () => {
       renderPractice();
-      expect(screen.getByText('Questions')).toBeInTheDocument();
+      // "Questions" appears in heading and label - use getAllByText
+      const questionsElements = screen.getAllByText(/questions/i);
+      expect(questionsElements.length).toBeGreaterThan(0);
       expect(screen.getByRole('button', { name: '10 questions' })).toBeInTheDocument();
       expect(screen.getByRole('button', { name: '25 questions' })).toBeInTheDocument();
       expect(screen.getByRole('button', { name: '50 questions' })).toBeInTheDocument();
@@ -123,9 +135,6 @@ describe('Practice Component', () => {
       fireEvent.click(moreOptionsBtn);
       
       expect(screen.getByText('Difficulty')).toBeInTheDocument();
-      // Difficulty is now a dropdown
-      const dropdowns = screen.getAllByRole('combobox');
-      expect(dropdowns.length).toBeGreaterThan(1);
     });
 
     it('shows start practice button', () => {
@@ -154,15 +163,14 @@ describe('Practice Component', () => {
       const moreOptionsBtn = screen.getByText('More options');
       fireEvent.click(moreOptionsBtn);
       
-      // Difficulty is now a dropdown - just verify it's there
+      // Difficulty options shown in advanced panel
       expect(screen.getByText('Difficulty')).toBeInTheDocument();
     });
 
-    it('allows changing exam section', () => {
+    it('displays current section from provider', () => {
       renderPractice();
-      const select = screen.getByRole('combobox');
-      fireEvent.change(select, { target: { value: 'FAR' } });
-      expect(select.value).toBe('FAR');
+      // Section is determined by provider, displayed as badge
+      expect(screen.getByText('REG')).toBeInTheDocument();
     });
   });
 

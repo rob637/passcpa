@@ -58,6 +58,11 @@ vi.mock('../../hooks/useStudy', () => ({
   }),
 }));
 
+vi.mock('../../utils/sectionUtils', () => ({
+  getSectionDisplayInfo: () => ({ name: 'REG', fullName: 'Regulation' }),
+  getCurrentSectionForCourse: () => 'REG',
+}));
+
 vi.mock('../../services/feedback', () => ({
   default: {
     haptic: vi.fn(),
@@ -67,6 +72,19 @@ vi.mock('../../services/feedback', () => ({
     tap: vi.fn(),
     incorrect: vi.fn(),
   },
+}));
+
+vi.mock('../../providers/CourseProvider', () => ({
+  useCourse: () => ({
+    courseId: 'cpa',
+    course: {
+      id: 'cpa',
+      name: 'CPA',
+      shortName: 'CPA',
+      hasTBS: true,
+      passingScore: 75,
+    },
+  }),
 }));
 
 const renderExamSimulator = () => {
@@ -88,9 +106,9 @@ describe('ExamSimulator', () => {
   });
 
   describe('Intro Screen', () => {
-    it('should display exam simulation title', () => {
+    it('should display exams page title', () => {
       renderExamSimulator();
-      expect(screen.getByText(/Exam Simulation/i)).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /Exams/i })).toBeInTheDocument();
     });
 
     it('should show exam type selection (Mini vs Full)', () => {
@@ -110,10 +128,9 @@ describe('ExamSimulator', () => {
       expect(screen.getAllByText(/50 mins/i).length).toBeGreaterThan(0);
     });
 
-    it('should display exam structure info', () => {
+    it('should display exam type selection', () => {
       renderExamSimulator();
-      expect(screen.getByText(/Strict Timing/i)).toBeInTheDocument();
-      expect(screen.getByText(/Testlet Structure/i)).toBeInTheDocument();
+      expect(screen.getByText(/Select Exam Type/i)).toBeInTheDocument();
     });
 
     it('should show section info', () => {
@@ -126,9 +143,9 @@ describe('ExamSimulator', () => {
       expect(screen.getByRole('button', { name: /Begin Examination/i })).toBeInTheDocument();
     });
 
-    it('should have Back to Home link', () => {
+    it('should display course section name', () => {
       renderExamSimulator();
-      expect(screen.getByText(/Back to Home/i)).toBeInTheDocument();
+      expect(screen.getByText(/Practice exams and simulations/i)).toBeInTheDocument();
     });
   });
 
@@ -196,13 +213,13 @@ describe('ExamSimulator', () => {
   describe('Section Info Display', () => {
     it('should display user section (REG)', () => {
       renderExamSimulator();
-      // Section shows in the header text
-      expect(screen.getByText(/\(REG\)/)).toBeInTheDocument();
+      // Section shows in the subtitle text
+      expect(screen.getByText(/REG/)).toBeInTheDocument();
     });
 
-    it('should show full section name', () => {
+    it('should show section description', () => {
       renderExamSimulator();
-      expect(screen.getByText(/Exam Experience/i)).toBeInTheDocument();
+      expect(screen.getByText(/Practice exams and simulations for/i)).toBeInTheDocument();
     });
   });
 
@@ -216,7 +233,6 @@ describe('ExamSimulator', () => {
     it('should have descriptive button labels', () => {
       renderExamSimulator();
       expect(screen.getByRole('button', { name: /Begin Examination/i })).toBeInTheDocument();
-      expect(screen.getByText(/Back to Home/i)).toBeInTheDocument();
     });
   });
 });

@@ -120,7 +120,7 @@ describe('MainLayout', () => {
     renderMainLayout();
     
     expect(screen.getAllByText('Home').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Learn').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Exams').length).toBeGreaterThan(0);
     expect(screen.getAllByText('You').length).toBeGreaterThan(0);
   });
 
@@ -137,17 +137,19 @@ describe('MainLayout', () => {
     expect(screen.getByText('5')).toBeInTheDocument();
   });
 
-  it('renders daily progress sidebar on desktop', () => {
+  it('renders daily progress ring on desktop', () => {
     renderMainLayout();
     
-    // Daily progress shows 75% from mock
-    expect(screen.getByText('75%')).toBeInTheDocument();
+    // Daily progress is shown via ProgressRing component
+    const circles = document.querySelectorAll('circle');
+    expect(circles.length).toBeGreaterThan(0);
   });
 
-  it('renders streak message in sidebar', () => {
+  it('renders streak with aria-label', () => {
     renderMainLayout();
     
-    expect(screen.getByText('5 day streak!')).toBeInTheDocument();
+    // Streak is displayed with aria-label for accessibility
+    expect(screen.getByLabelText(/5 day streak/i)).toBeInTheDocument();
   });
 
   it('has navigation landmarks', () => {
@@ -184,10 +186,11 @@ describe('MainLayout', () => {
     expect(logos.length > 0 || brandText !== null).toBe(true);
   });
 
-  it('renders daily goal section', () => {
+  it('renders progress indicators in navigation', () => {
     renderMainLayout();
     
-    expect(screen.getByText('Daily Goal')).toBeInTheDocument();
+    // Streak number and progress ring are shown in nav
+    expect(screen.getByText('5')).toBeInTheDocument();
   });
 
   describe('ProgressRing component', () => {
@@ -214,11 +217,11 @@ describe('MainLayout', () => {
       expect(homeLinks.length).toBeGreaterThan(0);
     });
 
-    it('renders Learn link', () => {
+    it('renders Exams link', () => {
       renderMainLayout();
       
-      const learnLinks = screen.getAllByRole('link', { name: /learn/i });
-      expect(learnLinks.length).toBeGreaterThan(0);
+      const examLinks = screen.getAllByRole('link', { name: /exams/i });
+      expect(examLinks.length).toBeGreaterThan(0);
     });
 
     it('renders You link', () => {

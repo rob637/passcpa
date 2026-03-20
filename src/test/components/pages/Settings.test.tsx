@@ -241,11 +241,10 @@ describe('Settings Component', () => {
       await renderSettings();
       // Each tab label appears in both mobile <option> and desktop <button>
       expect(screen.getAllByText('Profile').length).toBeGreaterThanOrEqual(1);
-      expect(screen.getAllByText('Study Plan').length).toBeGreaterThanOrEqual(1);
+      expect(screen.getAllByText('Appearance').length).toBeGreaterThanOrEqual(1);
       expect(screen.getAllByText('Notifications').length).toBeGreaterThanOrEqual(1);
       expect(screen.getAllByText('Feedback & Support').length).toBeGreaterThanOrEqual(1);
       expect(screen.getAllByText('Offline').length).toBeGreaterThanOrEqual(1);
-      expect(screen.getAllByText('Account').length).toBeGreaterThanOrEqual(1);
     });
 
     it('shows Profile tab content by default', async () => {
@@ -286,28 +285,20 @@ describe('Settings Component', () => {
     });
   });
 
-  describe('Study Plan Tab', () => {
-    it('switches to Study Plan tab when clicked', async () => {
+  describe('Appearance Tab', () => {
+    it('switches to Appearance tab when clicked', async () => {
       await renderSettings();
-      clickTab('Study Plan');
-      // The heading shows "{course.name} Settings" which is "CPA Settings" based on mock
-      expect(screen.getByText('CPA Settings')).toBeInTheDocument();
+      clickTab('Appearance');
+      // Appearance tab should show theme options with "Appearance" as heading
+      expect(screen.getAllByText('Appearance').length).toBeGreaterThan(1);
     });
 
-    it('displays exam section options', async () => {
+    it('displays theme options', async () => {
       await renderSettings();
-      clickTab('Study Plan');
-      expect(screen.getByText('Current Exam Section')).toBeInTheDocument();
-    });
-
-    it('displays daily goal presets', async () => {
-      await renderSettings();
-      clickTab('Study Plan');
-      expect(screen.getByText('Daily Point Goal')).toBeInTheDocument();
+      clickTab('Appearance');
+      expect(screen.getByText('System')).toBeInTheDocument();
       expect(screen.getByText('Light')).toBeInTheDocument();
-      expect(screen.getByText('Standard')).toBeInTheDocument();
-      expect(screen.getByText('Intensive')).toBeInTheDocument();
-      expect(screen.getByText('Maximum')).toBeInTheDocument();
+      expect(screen.getByText('Dark')).toBeInTheDocument();
     });
   });
 

@@ -62,6 +62,15 @@ vi.mock('../../services/feedback', () => ({
   },
 }));
 
+vi.mock('../../components/common/Toast', () => ({
+  useToast: () => ({ showToast: vi.fn() }),
+}));
+
+vi.mock('../../utils/sectionUtils', () => ({
+  getSectionDisplayInfo: () => ({ name: 'Regulation', shortName: 'REG', color: '#2563EB' }),
+  getCurrentSectionForCourse: () => 'REG',
+}));
+
 vi.mock('../../providers/CourseProvider', () => ({
   useCourse: () => ({
     courseId: 'cpa',
@@ -97,19 +106,21 @@ describe('Practice Component', () => {
   });
 
   describe('Session Setup Screen', () => {
-    it('should render practice questions title', async () => {
+    it('should render questions title', async () => {
       renderPractice();
 
       await waitFor(() => {
-        expect(screen.getByRole('heading', { name: /Practice/i })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: /Questions/i })).toBeInTheDocument();
       });
     });
 
-    it('should display exam section selector', async () => {
+    it('should display exam section info', async () => {
       renderPractice();
 
       await waitFor(() => {
-        expect(screen.getByText(/Section/i)).toBeInTheDocument();
+        // Section badge shows REG, subtitle shows Regulation
+        const regElements = screen.getAllByText(/REG/);
+        expect(regElements.length).toBeGreaterThan(0);
       });
     });
 
@@ -242,21 +253,23 @@ describe('Practice Component', () => {
   });
 
   describe('Section Selection', () => {
-    it('should have section dropdown with all CPA sections', async () => {
+    it('should display section info from course provider', async () => {
       renderPractice();
 
       await waitFor(() => {
-        const select = screen.getByRole('combobox');
-        expect(select).toBeInTheDocument();
+        // Section badge shows
+        expect(screen.getByText('REG')).toBeInTheDocument();
+        // Section name shows
+        expect(screen.getByText(/Regulation/i)).toBeInTheDocument();
       });
     });
 
-    it('should default to user profile exam section (REG)', async () => {
+    it('should show the current section (REG) from provider', async () => {
       renderPractice();
 
       await waitFor(() => {
-        const select = screen.getByRole('combobox');
-        expect(select).toHaveValue('REG');
+        // The section badge displays the current section shortName
+        expect(screen.getByText('REG')).toBeInTheDocument();
       });
     });
   });
@@ -289,7 +302,8 @@ describe('Practice Component', () => {
       renderPractice();
 
       await waitFor(() => {
-        expect(screen.getByText(/Section/i)).toBeInTheDocument();
+        // Section info shows section name (e.g., "Regulation")
+        expect(screen.getByText(/Regulation/i)).toBeInTheDocument();
         // "Questions" text appears in multiple places, use getAllByText
         const questionsElements = screen.getAllByText(/questions/i);
         expect(questionsElements.length).toBeGreaterThan(0);

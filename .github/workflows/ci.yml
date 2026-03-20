@@ -39,8 +39,13 @@ jobs:
       - name: Type Check
         run: npx tsc --noEmit
 
-      - name: Unit Tests
-        run: npm run test:run -- --pool=forks --poolOptions.forks.singleFork --no-file-parallelism
+      - name: Unit Tests (Shard 1/2)
+        run: npm run test:run -- --pool=forks --poolOptions.forks.singleFork --no-file-parallelism --shard=1/2
+        env:
+          NODE_OPTIONS: '--max-old-space-size=6144'
+
+      - name: Unit Tests (Shard 2/2)
+        run: npm run test:run -- --pool=forks --poolOptions.forks.singleFork --no-file-parallelism --shard=2/2
         env:
           NODE_OPTIONS: '--max-old-space-size=6144'
 

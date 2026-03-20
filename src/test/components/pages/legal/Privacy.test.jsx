@@ -1,13 +1,17 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { describe, it, expect, vi, afterEach } from 'vitest';
+import { render, screen, cleanup } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import Privacy from '../../../../components/pages/legal/Privacy';
 
 const renderWithRouter = (component) => {
-  return render(<BrowserRouter>{component}</BrowserRouter>);
+  return render(<MemoryRouter>{component}</MemoryRouter>);
 };
 
 describe('Privacy Page', () => {
+  afterEach(() => {
+    cleanup();
+  });
+
   it('should render the privacy policy page', () => {
     renderWithRouter(<Privacy />);
     

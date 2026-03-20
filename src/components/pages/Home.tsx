@@ -112,6 +112,11 @@ const Home = () => {
     localStorage.getItem('voraprep_studyplan_nudge_dismissed') === '1'
   );
   
+  // Track "has practiced" in localStorage for instant hydration (no flash for returning users)
+  const [hasEverPracticedLocal, setHasEverPracticedLocal] = useState(() =>
+    localStorage.getItem('voraprep_has_practiced') === '1'
+  );
+  
   const [readinessData, setReadinessData] = useState<ReadinessData | null>(null);
   const [weakAreas, setWeakAreas] = useState<{ topic: string; accuracy: number; questions: number }[]>([]);
   const [_loading, setLoading] = useState(true);
@@ -138,6 +143,18 @@ const Home = () => {
   const hasEverPracticed = (stats !== null && (totalQuestionsAnswered > 0 || weeklyStats.totalQuestions > 0)) || hasTodayActivity;
   const showStreakNudge = shouldShowStreakNudge(currentStreak);
   const showQuestionsNudge = !showStreakNudge && shouldShowQuestionsMilestone(totalQuestionsAnswered);
+
+  // Sync "has practiced" to localStorage when Firestore confirms it (for instant hydration on next visit)
+  useEffect(() => {
+    if (hasEverPracticed && !hasEverPracticedLocal) {
+      localStorage.setItem('voraprep_has_practiced', '1');
+      setHasEverPracticedLocal(true);
+    }
+  }, [hasEverPracticed, hasEverPracticedLocal]);
+
+  // Combined check: use localStorage first (instant), fall back to Firestore check
+  // This ensures: new users see Welcome Card immediately, returning users don't see a flash
+  const hasUserEverPracticed = hasEverPracticedLocal || hasEverPracticed;
 
   // Check for pending checkout on mount (safety net if onboarding didn't catch it)
   // ONLY redirect if pendingCheckout matches current course context
@@ -618,7 +635,8 @@ const Home = () => {
       )}
 
       {/* Welcome Card or "What's Next" choices */}
-      {!welcomeDismissed && !hasEverPracticed && stats !== null ? (
+      {/* Show Welcome Card immediately for new users (no waiting for stats) */}
+      {!welcomeDismissed && !hasUserEverPracticed ? (
         <div className="relative bg-gradient-to-br from-primary-50 to-indigo-50 dark:from-primary-900/20 dark:to-indigo-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-5">
           <button
             onClick={() => {
@@ -669,7 +687,7 @@ const Home = () => {
         </div>
       ) : (
         !hasPlan && !planLoading && !studyPlanNudgeDismissed && (
-          hasEverPracticed ? (
+          hasUserEverPracticed ? (
             // Returning user without study plan - show "Continue Studying" prompt
             <div className="relative bg-gradient-to-r from-emerald-50 to-primary-50 dark:from-emerald-900/20 dark:to-primary-900/20 rounded-xl border border-emerald-200 dark:border-emerald-800 p-4">
               <button

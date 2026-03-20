@@ -24,6 +24,10 @@ vi.mock('react-router-dom', async () => {
   };
 });
 
+vi.mock('../../../services/analytics', () => ({
+  trackEvent: vi.fn(),
+}));
+
 const renderRegister = () => {
   return render(
     <BrowserRouter>

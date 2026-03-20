@@ -4678,6 +4678,13 @@ VoraPrep Team`;
                   <p className="text-purple-100">Deep user funnel analysis, engagement metrics, and quality reports</p>
                 </div>
                 <div className="flex gap-2">
+                  <Link
+                    to="/admin/analytics"
+                    className="px-4 py-2 bg-green-500 hover:bg-green-600 rounded-lg text-white font-medium transition-colors flex items-center gap-2"
+                  >
+                    🎯 Session Tracking
+                    <span className="px-1.5 py-0.5 text-xs bg-white/20 rounded">LIVE</span>
+                  </Link>
                   <button
                     onClick={loadAnalytics}
                     disabled={isLoadingAnalytics}

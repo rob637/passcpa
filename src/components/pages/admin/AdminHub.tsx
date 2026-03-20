@@ -42,11 +42,11 @@ const ADMIN_SECTIONS: AdminSection[] = [
   },
   {
     title: 'User Growth',
-    description: 'Analytics, referrals, and lead generation',
+    description: 'Session tracking, analytics, and lead generation',
     icon: Users,
     color: 'bg-emerald-500',
     links: [
-      { label: 'User Analytics', path: '/admin/analytics', badge: 'NEW' },
+      { label: 'Session Tracking', path: '/admin/analytics', badge: 'LIVE' },
       { label: 'Referral System', path: '/admin/referrals', badge: 'NEW' },
       { label: 'LinkedIn Posts', path: '/admin/linkedin', badge: 'NEW' },
       { label: 'Diagnostic Leads', path: '/admin/diagnostics', badge: 'NEW' },

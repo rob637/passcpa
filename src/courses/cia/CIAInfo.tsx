@@ -11,7 +11,7 @@ export default function CIAInfo() {
   useSEO({
     title: 'CIA Exam Guide 2026 | Certified Internal Auditor',
     description: 'Complete guide to the CIA exam: 3 parts covering internal audit basics, practice, and business knowledge. Learn how to become a Certified Internal Auditor.',
-    canonicalUrl: 'https://voraprep.com/cia-exam-info',
+    canonicalUrl: 'https://voraprep.com/cia/info',
   });
 
   return (

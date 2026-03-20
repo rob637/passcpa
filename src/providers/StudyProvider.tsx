@@ -26,6 +26,7 @@ import { COURSES } from '../courses';
 import { CourseId } from '../types/course';
 import { useCourse } from './CourseProvider';
 import { incrementStudyPlanProgress } from '../services/studyPlanService';
+import sessionRecorder from '../services/sessionRecordingService';
 
 export interface StudyPlan {
   id?: string;
@@ -497,6 +498,19 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         // GA4 analytics — track every question answered
         analytics.answerQuestion(isCorrect, section, topic || 'General');
 
+        // Session recording — track MCQ answer for complete user journey
+        sessionRecorder.trackCustomEvent('question_answer', window.location.pathname, {
+          section: section || 'unknown',
+          courseId: activeCourse,
+          metadata: {
+            questionId,
+            topic: topic || 'General',
+            isCorrect,
+            difficulty,
+            timeSpentSeconds,
+          },
+        });
+
         // If streak is 0 but we just recorded activity, bump to 1
         if (currentStreak === 0) {
           setCurrentStreak(1);
@@ -557,6 +571,18 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
 
         // GA4 analytics — track simulation/exam completion
         analytics.completeExam(section || 'unknown', score, score >= 75);
+
+        // Session recording — track simulation completion for complete user journey
+        sessionRecorder.trackCustomEvent('practice_end', window.location.pathname, {
+          section: section || 'unknown',
+          courseId: activeCourse,
+          metadata: {
+            simulationId: id,
+            score,
+            passed: score >= 75,
+            timeSpentMinutes: timeSpent,
+          },
+        });
 
         // Update study plan progress (non-blocking)
         incrementStudyPlanProgress(user.uid, activeCourse, section || currentSection, {
@@ -637,6 +663,17 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           exam_section: section,
           course_id: activeCourse,
           time_spent_minutes: timeSpent,
+        });
+
+        // Session recording — track lesson completion for complete user journey
+        sessionRecorder.trackCustomEvent('lesson_complete', window.location.pathname, {
+          section,
+          courseId: activeCourse,
+          metadata: {
+            lessonId,
+            timeSpentMinutes: timeSpent,
+            points: earnedPoints,
+          },
         });
 
         logger.log('Lesson completed:', lessonId);

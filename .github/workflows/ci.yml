@@ -40,9 +40,9 @@ jobs:
         run: npx tsc --noEmit
 
       - name: Unit Tests
-        run: npm run test:run -- --pool=forks --poolOptions.forks.singleFork --no-file-parallelism
+        run: npm run test:run
         env:
-          NODE_OPTIONS: '--max-old-space-size=4096'
+          NODE_OPTIONS: '--max-old-space-size=5120'
 
   # ============================================
   # Bundle Size Analysis (on PRs)

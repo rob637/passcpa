@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import logger from '../utils/logger';
 import { analytics } from '../services/analytics';
+import { subscriptionService } from '../services/subscription';
 import {
   User,
   onAuthStateChanged,
@@ -377,6 +378,16 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         logger.info('Applied referral code:', pendingReferral);
       }
 
+      // Auto-start 14-day trial for the course they signed up for
+      // This is critical — without this, new users hit the paywall immediately
+      try {
+        await subscriptionService.startExamTrial(result.user.uid, pendingCourse);
+        logger.info(`[Auth] Auto-started trial for ${pendingCourse} for new user ${result.user.uid}`);
+      } catch (trialErr) {
+        logger.error('[Auth] Failed to auto-start trial:', trialErr);
+        // Don't block signup if trial fails — user can start trial later via CourseSelector
+      }
+
       // Track signup conversion for Google Ads SEM optimization
       analytics.trackSignupConversion(result.user.uid, 'email');
       // Track trial start (14-day trial begins at signup)
@@ -557,9 +568,19 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
           id: user.uid, 
         } as UserProfile);
 
+        // Auto-start 14-day trial for the course they signed up for
+        // This is critical — without this, new users hit the paywall immediately
+        const trialCourse = pendingCourse as CourseId;
+        try {
+          await subscriptionService.startExamTrial(user.uid, trialCourse);
+          logger.info(`[Auth] Auto-started trial for ${trialCourse} for new Google user ${user.uid}`);
+        } catch (trialErr) {
+          logger.error('[Auth] Failed to auto-start trial for Google user:', trialErr);
+        }
+
         // Track Google signup conversion for Google Ads SEM optimization
         analytics.trackSignupConversion(user.uid, 'google');
-        analytics.trackTrialStartConversion(user.uid, 'pending');
+        analytics.trackTrialStartConversion(user.uid, trialCourse);
       } else {
         // Update last login for existing user
         await updateDoc(userRef, { lastLogin: serverTimestamp() });

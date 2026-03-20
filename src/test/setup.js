@@ -7,6 +7,69 @@ afterEach(() => {
   cleanup();
 });
 
+// ─── Mock question data modules to prevent loading 9000+ questions ───
+// This is critical for CI memory - each exam's questions are large arrays
+const SAMPLE_QUESTION = {
+  id: 'mock-q-001',
+  courseId: 'cpa',
+  section: 'FAR',
+  topic: 'Mock Topic',
+  difficulty: 'medium',
+  question: 'Sample question for testing?',
+  options: ['Option A', 'Option B', 'Option C', 'Option D'],
+  correctAnswer: 0,
+  explanation: 'This is a mock explanation for testing purposes.',
+  blueprintArea: 'FAR-I',
+};
+
+vi.mock('../data/cpa/questions', () => ({
+  ALL_QUESTIONS: [SAMPLE_QUESTION],
+  FAR_QUESTIONS: [SAMPLE_QUESTION],
+  AUD_QUESTIONS: [{ ...SAMPLE_QUESTION, section: 'AUD' }],
+  REG_QUESTIONS: [{ ...SAMPLE_QUESTION, section: 'REG' }],
+  BAR_QUESTIONS: [{ ...SAMPLE_QUESTION, section: 'BAR' }],
+  ISC_QUESTIONS: [{ ...SAMPLE_QUESTION, section: 'ISC' }],
+  TCP_QUESTIONS: [{ ...SAMPLE_QUESTION, section: 'TCP' }],
+  default: [SAMPLE_QUESTION],
+}));
+
+vi.mock('../data/ea/questions', () => ({
+  EA_ALL_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'ea', section: 'SEE1' }],
+  SEE1_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'ea', section: 'SEE1' }],
+  SEE2_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'ea', section: 'SEE2' }],
+  SEE3_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'ea', section: 'SEE3' }],
+  default: [],
+}));
+
+vi.mock('../data/cma/questions', () => ({
+  CMA_ALL_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'cma', section: 'CMA1' }],
+  CMA1_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'cma', section: 'CMA1' }],
+  CMA2_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'cma', section: 'CMA2' }],
+  default: [],
+}));
+
+vi.mock('../data/cia/questions', () => ({
+  ALL_CIA1_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'cia', section: 'CIA1' }],
+  ALL_CIA2_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'cia', section: 'CIA2' }],
+  ALL_CIA3_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'cia', section: 'CIA3' }],
+  default: [],
+}));
+
+vi.mock('../data/cisa/questions', () => ({
+  CISA_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'cisa', section: 'CISA1' }],
+  CISA1_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'cisa', section: 'CISA1' }],
+  CISA2_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'cisa', section: 'CISA2' }],
+  CISA3_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'cisa', section: 'CISA3' }],
+  CISA4_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'cisa', section: 'CISA4' }],
+  CISA5_QUESTIONS: [{ ...SAMPLE_QUESTION, courseId: 'cisa', section: 'CISA5' }],
+  default: [],
+}));
+
+vi.mock('../data/cfp/questions', () => ({
+  CFP_QUESTIONS_ALL: [{ ...SAMPLE_QUESTION, courseId: 'cfp', section: 'CFP' }],
+  default: [],
+}));
+
 // Mock Firebase
 vi.mock('../config/firebase', () => ({
   auth: {
@@ -127,46 +190,6 @@ class MockAudioContext {
 }
 window.AudioContext = MockAudioContext;
 window.webkitAudioContext = MockAudioContext;
-
-// Mock HTMLCanvasElement.toBlob for ShareableAchievementCard tests
-HTMLCanvasElement.prototype.toBlob = vi.fn(function(callback, type, quality) {
-  const blob = new Blob(['mock-image-data'], { type: type || 'image/png' });
-  setTimeout(() => callback(blob), 0);
-});
-
-// Mock HTMLCanvasElement.getContext for canvas rendering
-HTMLCanvasElement.prototype.getContext = vi.fn(function(contextType) {
-  if (contextType === '2d') {
-    return {
-      fillRect: vi.fn(),
-      clearRect: vi.fn(),
-      getImageData: vi.fn(() => ({ data: new Array(4) })),
-      putImageData: vi.fn(),
-      createImageData: vi.fn(() => []),
-      setTransform: vi.fn(),
-      drawImage: vi.fn(),
-      save: vi.fn(),
-      restore: vi.fn(),
-      beginPath: vi.fn(),
-      moveTo: vi.fn(),
-      lineTo: vi.fn(),
-      closePath: vi.fn(),
-      stroke: vi.fn(),
-      fill: vi.fn(),
-      translate: vi.fn(),
-      scale: vi.fn(),
-      rotate: vi.fn(),
-      arc: vi.fn(),
-      fillText: vi.fn(),
-      measureText: vi.fn(() => ({ width: 0 })),
-      transform: vi.fn(),
-      rect: vi.fn(),
-      clip: vi.fn(),
-      canvas: { width: 800, height: 600 },
-    };
-  }
-  return null;
-});
 
 // Mock IntersectionObserver
 class IntersectionObserverMock {

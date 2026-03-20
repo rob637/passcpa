@@ -6,14 +6,22 @@
  * - Active trial (14 days)
  * 
  * Shows upgrade prompt when trial expires.
+ * 
+ * Analytics tracked:
+ * - subscription_gate_loading_slow: User waiting >3s for subscription check
+ * - subscription_gate_shown: User sees paywall (no access)
+ * - subscription_gate_trial_started: User started trial from gate
+ * - subscription_gate_passed: User has access, content shown
  */
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useSubscription, isFounderPricingActive, EXAM_PRICING } from '../../services/subscription';
 import { useCourse } from '../../providers/CourseProvider';
 import { useAuth } from '../../hooks/useAuth';
-import { Lock, Clock, Sparkles, ArrowRight, X } from 'lucide-react';
+import { trackEvent } from '../../services/analytics';
+import { Lock, Clock, Sparkles, ArrowRight, X, Loader2 } from 'lucide-react';
+import logger from '../../utils/logger';
 
 interface SubscriptionGateProps {
   children: React.ReactNode;
@@ -28,14 +36,137 @@ export function SubscriptionGate({
   message,
   inline = false,
 }: SubscriptionGateProps) {
-  const { hasFullAccess, trialDaysRemaining, trialExpired, loading } = useSubscription();
+  const { hasFullAccess, trialDaysRemaining, trialExpired, loading, getExamAccess, startExamTrial, refreshSubscription } = useSubscription();
   const { courseId, course } = useCourse();
   const { user } = useAuth();
+  const location = useLocation();
+  const [startingTrial, setStartingTrial] = React.useState(false);
+  const [loadingTooLong, setLoadingTooLong] = React.useState(false);
+  
+  // Track if we've already logged analytics for this render cycle
+  const hasTrackedRef = useRef<string | null>(null);
+  const loadingStartRef = useRef<number>(Date.now());
+  
+  // Check if user can start a trial (safety net for users who slipped through signup)
+  const examAccess = getExamAccess(courseId);
+  const canStartTrial = examAccess.canStartTrial && !trialExpired;
+  
+  // Track loading duration and show retry after 3 seconds
+  useEffect(() => {
+    if (loading) {
+      loadingStartRef.current = Date.now();
+      const timeout = setTimeout(() => {
+        setLoadingTooLong(true);
+        trackEvent('subscription_gate_loading_slow', {
+          page: location.pathname,
+          courseId,
+          userId: user?.uid,
+          loadingMs: Date.now() - loadingStartRef.current,
+        });
+        logger.warn('[SubscriptionGate] Loading taking too long', { page: location.pathname });
+      }, 3000);
+      return () => clearTimeout(timeout);
+    } else {
+      setLoadingTooLong(false);
+    }
+  }, [loading, location.pathname, courseId, user?.uid]);
+  
+  // Track when gate is shown vs passed
+  useEffect(() => {
+    if (loading) return;
+    
+    const trackKey = `${location.pathname}-${hasFullAccess}-${courseId}`;
+    if (hasTrackedRef.current === trackKey) return;
+    hasTrackedRef.current = trackKey;
+    
+    if (hasFullAccess) {
+      trackEvent('subscription_gate_passed', {
+        page: location.pathname,
+        courseId,
+        trialDaysRemaining,
+        loadingMs: Date.now() - loadingStartRef.current,
+      });
+    } else {
+      // User is seeing the paywall - this is critical to track!
+      trackEvent('subscription_gate_shown', {
+        page: location.pathname,
+        courseId,
+        trialExpired,
+        canStartTrial,
+        userId: user?.uid,
+        loadingMs: Date.now() - loadingStartRef.current,
+      });
+      logger.info('[SubscriptionGate] Paywall shown', { 
+        page: location.pathname, 
+        courseId, 
+        trialExpired, 
+        canStartTrial,
+        userId: user?.uid,
+      });
+    }
+  }, [loading, hasFullAccess, location.pathname, courseId, trialExpired, canStartTrial, trialDaysRemaining, user?.uid]);
+  
+  const handleStartTrial = async () => {
+    setStartingTrial(true);
+    trackEvent('subscription_gate_trial_click', {
+      page: location.pathname,
+      courseId,
+    });
+    try {
+      const success = await startExamTrial(courseId);
+      if (success) {
+        trackEvent('subscription_gate_trial_started', {
+          page: location.pathname,
+          courseId,
+        });
+        // Trial started - the hook will re-render with hasFullAccess = true
+        window.location.reload(); // Force reload to ensure clean state
+      } else {
+        trackEvent('subscription_gate_trial_failed', {
+          page: location.pathname,
+          courseId,
+          reason: 'startExamTrial returned false',
+        });
+      }
+    } catch (error) {
+      logger.error('Failed to start trial:', error);
+      trackEvent('subscription_gate_trial_error', {
+        page: location.pathname,
+        courseId,
+        error: String(error),
+      });
+    } finally {
+      setStartingTrial(false);
+    }
+  };
+  
+  const handleRetryLoading = () => {
+    trackEvent('subscription_gate_retry_click', {
+      page: location.pathname,
+      courseId,
+    });
+    refreshSubscription();
+    setLoadingTooLong(false);
+    loadingStartRef.current = Date.now();
+  };
 
-  // Show loading state
+  // Show loading state with retry option if taking too long
   if (loading) {
     return (
-      <div className="animate-pulse bg-gray-100 dark:bg-gray-800 rounded-lg h-48" />
+      <div className="flex flex-col items-center justify-center py-12 px-4">
+        <Loader2 className="w-8 h-8 text-primary-500 animate-spin mb-4" />
+        <p className="text-gray-600 dark:text-gray-400 text-sm">
+          {loadingTooLong ? 'Still loading...' : 'Checking access...'}
+        </p>
+        {loadingTooLong && (
+          <button
+            onClick={handleRetryLoading}
+            className="mt-4 px-4 py-2 text-sm bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+          >
+            Retry
+          </button>
+        )}
+      </div>
     );
   }
 
@@ -74,24 +205,38 @@ export function SubscriptionGate({
               {trialExpired ? `Your ${courseName} trial has ended` : `${courseName} Subscription Required`}
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              {message || `Subscribe to continue studying for the ${courseName} exam.`}
-            </p>
-            <Link
-              to={upgradeUrl}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
-            >
-              {isFounder ? (
-                <>
-                  <Sparkles className="w-4 h-4" />
-                  Subscribe for ${displayPrice}/yr
-                </>
-              ) : (
-                <>
-                  Subscribe Now
-                  <ArrowRight className="w-4 h-4" />
-                </>
+              {message || (canStartTrial 
+                ? `Start your free 14-day trial to access ${courseName} content.`
+                : `Subscribe to continue studying for the ${courseName} exam.`
               )}
-            </Link>
+            </p>
+            {canStartTrial ? (
+              <button
+                onClick={handleStartTrial}
+                disabled={startingTrial}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50"
+              >
+                {startingTrial ? 'Starting...' : 'Start Free Trial'}
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            ) : (
+              <Link
+                to={upgradeUrl}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+              >
+                {isFounder ? (
+                  <>
+                    <Sparkles className="w-4 h-4" />
+                    Subscribe for ${displayPrice}/yr
+                  </>
+                ) : (
+                  <>
+                    Subscribe Now
+                    <ArrowRight className="w-4 h-4" />
+                  </>
+                )}
+              </Link>
+            )}
             {isFounder && displayPrice < originalPrice && (
               <p className="text-sm text-green-600 dark:text-green-400 mt-2">
                 Founder pricing: Save ${originalPrice - displayPrice}/yr for 2 years!
@@ -118,7 +263,9 @@ export function SubscriptionGate({
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
           {trialExpired 
             ? `Your ${courseName} Trial Has Ended`
-            : `Subscribe to ${courseName}`
+            : canStartTrial
+              ? `Start Your Free Trial`
+              : `Subscribe to ${courseName}`
           }
         </h2>
         
@@ -126,45 +273,63 @@ export function SubscriptionGate({
           {message || (
             trialExpired
               ? `Your 14-day free trial of VoraPrep ${courseName} has ended. Subscribe now to continue your exam preparation.`
-              : `Access to ${courseName} content requires an active subscription.`
+              : canStartTrial
+                ? `Get 14 days of full access to ${courseName} exam prep — no credit card required.`
+                : `Access to ${courseName} content requires an active subscription.`
           )}
         </p>
 
-        {isFounder && (
-          <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg p-4 mb-6 border border-amber-200 dark:border-amber-800">
-            <div className="flex items-center justify-center gap-2 text-amber-800 dark:text-amber-300 mb-2">
-              <Sparkles className="w-5 h-5" />
-              <span className="font-semibold">Founding Member Pricing</span>
-            </div>
-            <p className="text-sm text-amber-700 dark:text-amber-400">
-              Lock in your founder rate through April 2028. Subscribe before April 30, 2026.
-            </p>
-          </div>
+        {/* Show Start Trial button if eligible */}
+        {canStartTrial && (
+          <button
+            onClick={handleStartTrial}
+            disabled={startingTrial}
+            className="block w-full py-3 px-6 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors mb-4 disabled:opacity-50"
+          >
+            {startingTrial ? 'Starting Trial...' : 'Start Free 14-Day Trial'}
+          </button>
         )}
 
-        <div className="mb-6">
-          <div className="text-4xl font-bold text-gray-900 dark:text-gray-100">
-            ${displayPrice}
-            <span className="text-lg font-normal text-gray-500">/year</span>
-          </div>
-          <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-            Just ${isFounder ? pricing.founderMonthly : pricing.monthly}/month
-          </div>
-          {isFounder && displayPrice < originalPrice && (
-            <div className="text-gray-500 line-through mt-1">${originalPrice}/year</div>
-          )}
-        </div>
+        {/* Show pricing/subscribe for non-trial-eligible users */}
+        {!canStartTrial && (
+          <>
+            {isFounder && (
+              <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg p-4 mb-6 border border-amber-200 dark:border-amber-800">
+                <div className="flex items-center justify-center gap-2 text-amber-800 dark:text-amber-300 mb-2">
+                  <Sparkles className="w-5 h-5" />
+                  <span className="font-semibold">Founding Member Pricing</span>
+                </div>
+                <p className="text-sm text-amber-700 dark:text-amber-400">
+                  Lock in your founder rate through April 2028. Subscribe before April 30, 2026.
+                </p>
+              </div>
+            )}
 
-        <Link
-          to={upgradeUrl}
-          className="block w-full py-3 px-6 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors mb-4"
-        >
-          Subscribe Now
-        </Link>
+            <div className="mb-6">
+              <div className="text-4xl font-bold text-gray-900 dark:text-gray-100">
+                ${displayPrice}
+                <span className="text-lg font-normal text-gray-500">/year</span>
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                Just ${isFounder ? pricing.founderMonthly : pricing.monthly}/month
+              </div>
+              {isFounder && displayPrice < originalPrice && (
+                <div className="text-gray-500 line-through mt-1">${originalPrice}/year</div>
+              )}
+            </div>
 
-        <p className="text-sm text-gray-500 dark:text-gray-400">
-          14-day free trial included • Cancel anytime • Pass Guarantee
-        </p>
+            <Link
+              to={upgradeUrl}
+              className="block w-full py-3 px-6 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors mb-4"
+            >
+              Subscribe Now
+            </Link>
+
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              14-day free trial included • Cancel anytime • Pass Guarantee
+            </p>
+          </>
+        )}
 
         {trialDaysRemaining > 0 && (
           <p className="text-sm text-green-600 dark:text-green-400 mt-4">

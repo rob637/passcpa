@@ -241,7 +241,8 @@ describe('Settings Component', () => {
       await renderSettings();
       // Each tab label appears in both mobile <option> and desktop <button>
       expect(screen.getAllByText('Profile').length).toBeGreaterThanOrEqual(1);
-      expect(screen.getAllByText('Study Plan').length).toBeGreaterThanOrEqual(1);
+      expect(screen.getAllByText('Invite Friends').length).toBeGreaterThanOrEqual(1);
+      expect(screen.getAllByText('Appearance').length).toBeGreaterThanOrEqual(1);
       expect(screen.getAllByText('Notifications').length).toBeGreaterThanOrEqual(1);
       expect(screen.getAllByText('Feedback & Support').length).toBeGreaterThanOrEqual(1);
       expect(screen.getAllByText('Offline').length).toBeGreaterThanOrEqual(1);
@@ -286,30 +287,7 @@ describe('Settings Component', () => {
     });
   });
 
-  describe('Study Plan Tab', () => {
-    it('switches to Study Plan tab when clicked', async () => {
-      await renderSettings();
-      clickTab('Study Plan');
-      // The heading shows "{course.name} Settings" which is "CPA Settings" based on mock
-      expect(screen.getByText('CPA Settings')).toBeInTheDocument();
-    });
-
-    it('displays exam section options', async () => {
-      await renderSettings();
-      clickTab('Study Plan');
-      expect(screen.getByText('Current Exam Section')).toBeInTheDocument();
-    });
-
-    it('displays daily goal presets', async () => {
-      await renderSettings();
-      clickTab('Study Plan');
-      expect(screen.getByText('Daily Point Goal')).toBeInTheDocument();
-      expect(screen.getByText('Light')).toBeInTheDocument();
-      expect(screen.getByText('Standard')).toBeInTheDocument();
-      expect(screen.getByText('Intensive')).toBeInTheDocument();
-      expect(screen.getByText('Maximum')).toBeInTheDocument();
-    });
-  });
+  // Note: Study Plan tab was removed from Settings and moved to dedicated StudyPlanSetup page
 
   describe('Notifications Tab', () => {
     it('switches to Notifications tab when clicked', async () => {

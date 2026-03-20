@@ -106,7 +106,9 @@ export interface TopicPlanItem {
  */
 export interface RealityCheck {
   isRealistic: boolean;
-  hoursNeeded: number;                // Total hours estimated to prepare (VoraPrep adaptive)
+  hoursNeeded: number;                // *Remaining* hours estimated to prepare (after subtracting completed)
+  hoursCompleted: number;             // Hours already completed (from lessons, etc.)
+  hoursTotalRequired: number;         // Original total hours before subtracting completed
   hoursAvailable: number;             // Total hours based on user's schedule
   hourDeficit: number;                // hoursNeeded - hoursAvailable (0 if deficit)
   hourSurplus: number;                // hoursAvailable - hoursNeeded (0 if deficit)

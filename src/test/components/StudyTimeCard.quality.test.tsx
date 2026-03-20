@@ -87,8 +87,11 @@ describe('StudyTimeCard', () => {
     it('should be a link to progress page', () => {
       renderComponent();
 
-      const link = screen.getByRole('link');
-      expect(link).toHaveAttribute('href', '/progress');
+      // Use getAllByRole since multiple links may exist, then find the progress link
+      const links = screen.getAllByRole('link');
+      const progressLink = links.find(link => link.getAttribute('href') === '/progress');
+      expect(progressLink).toBeDefined();
+      expect(progressLink).toHaveAttribute('href', '/progress');
     });
   });
 

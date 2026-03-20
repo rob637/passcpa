@@ -26,6 +26,13 @@ vi.mock('firebase/firestore', () => ({
     }),
   }),
   setDoc: vi.fn(),
+  collection: vi.fn(),
+  getDocs: vi.fn().mockResolvedValue({
+    docs: [],
+    forEach: vi.fn(),
+  }),
+  query: vi.fn(),
+  where: vi.fn(),
   onSnapshot: vi.fn((ref, callback) => {
     callback({
       exists: () => true,

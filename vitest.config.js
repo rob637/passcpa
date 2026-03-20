@@ -9,14 +9,14 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.js'],
     include: ['src/**/*.{test,spec}.{js,jsx,ts,tsx}'],
-    // Use forks for isolation between test files
-    pool: 'forks',
+    // Use threads for faster execution (forks was causing memory issues)
+    pool: 'threads',
     poolOptions: {
-      forks: {
-        singleFork: false, // Each file gets its own fork
-        isolate: true,     // Isolate each test file
-        maxForks: 2,       // Limit parallel forks to save memory
-        minForks: 1,
+      threads: {
+        singleThread: false,
+        isolate: true,
+        maxThreads: 4,
+        minThreads: 1,
       },
     },
     // Limit concurrent tests within a file
@@ -38,6 +38,9 @@ export default defineConfig({
         'node_modules/',
         'src/test/',
         'src/data/',
+        'blog/',
+        'content_factory/',
+        'functions/',
         '**/*.d.ts',
         '**/*.config.{js,ts}',
         '**/index.js',

@@ -1,0 +1,8 @@
+# Video files - don't commit to git (too large)
+*.mp4
+*.mov
+*.avi
+*.webm
+
+# Keep metadata files
+!*.json

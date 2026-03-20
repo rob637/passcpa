@@ -9,12 +9,15 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.js'],
     include: ['src/**/*.{test,spec}.{js,jsx,ts,tsx}'],
-    // Exclude heavy tests that import all 9000+ questions (for local validation only)
+    // Exclude heavy tests that import question data (9000+ questions)
+    // These can be run locally with: npx vitest run --config vitest.full.config.js
     exclude: [
       '**/node_modules/**',
       '**/dist/**',
-      'src/test/audit/**',           // question-quality-audit.test.ts
-      'src/test/data/question*',     // question-integrity.test.ts, questions.test.js
+      'src/test/audit/**',              // question-quality-audit.test.ts
+      'src/test/data/question*',        // question-integrity.test.ts, questions.test.js
+      '**/ExamSimulator.test.*',        // Import question data via page components
+      '**/cisaExamSimulator.test.*',    // Import CISA questions via service
     ],
     // Use threads for faster execution (forks was causing memory issues)
     pool: 'threads',

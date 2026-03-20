@@ -42,7 +42,7 @@ jobs:
       - name: Unit Tests
         run: npm run test:run -- --pool=forks --poolOptions.forks.singleFork --no-file-parallelism
         env:
-          NODE_OPTIONS: '--max-old-space-size=6144'
+          NODE_OPTIONS: '--max-old-space-size=8192'
 
   # ============================================
   # Bundle Size Analysis (on PRs)

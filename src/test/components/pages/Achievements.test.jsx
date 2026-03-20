@@ -5,6 +5,17 @@ import { BrowserRouter } from 'react-router-dom';
 // Mock Firebase
 vi.mock('firebase/firestore', () => ({
   doc: vi.fn(),
+  collection: vi.fn(),
+  query: vi.fn(),
+  where: vi.fn(),
+  orderBy: vi.fn(),
+  limit: vi.fn(),
+  getDocs: vi.fn().mockResolvedValue({ 
+    docs: [],
+    forEach: vi.fn(),
+    empty: true,
+    size: 0,
+  }),
   getDoc: vi.fn().mockResolvedValue({
     exists: () => true,
     data: () => ({

@@ -28,10 +28,11 @@ import {
 } from 'lucide-react';
 import { Button } from '../common/Button';
 import { useCourse } from '../../providers/CourseProvider';
+import { useStudy } from '../../providers/StudyProvider';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudyPlan } from '../../hooks/useStudyPlan';
 import { generateRealityCheck, validatePlanInput, PlanValidation } from '../../services/studyPlanService';
-import { resolveStudySection } from '../../services/contentRegistry';
+import { resolveStudySection, getSectionContent } from '../../services/contentRegistry';
 import { COURSES } from '../../courses';
 import { CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
 import { getSectionDisplayInfo } from '../../utils/sectionUtils';
@@ -52,6 +53,7 @@ const StudyPlanSetup: React.FC = () => {
   const { courseId } = useCourse();
   const { userProfile, updateUserProfile, loading: authLoading } = useAuth();
   const { createPlan, plan: existingPlan, loading: planLoading } = useStudyPlan();
+  const { getLessonProgress } = useStudy();
   
   // Form state - will be pre-filled from existing plan if available
   const [currentStep, setCurrentStep] = useState<Step>('section');
@@ -177,28 +179,68 @@ const StudyPlanSetup: React.FC = () => {
   useEffect(() => {
     if (currentStep === 'reality-check' && section && examDate) {
       // Reality check now uses contentRegistry internally — no need to fetch lessons
-      try {
-        const input: StudyPlanSetupInput = {
-          courseId,
-          section,
-          examDate: parseLocalDate(examDate),
-          hoursPerDay,
-          studyDaysPerWeek: daysPerWeek,
-          priorExperience,
-        };
-        const check = generateRealityCheck(input);
-        setRealityCheck(check);
-        
-        // Run validation
-        const validationResult = validatePlanInput(input);
-        setValidation(validationResult);
-        // Reset acknowledgment when inputs change
-        setWarningsAcknowledged(false);
-      } catch (err) {
-        logger.error('Error calculating reality check:', err);
-      }
+      const calculateRealityCheck = async () => {
+        try {
+          const input: StudyPlanSetupInput = {
+            courseId,
+            section,
+            examDate: parseLocalDate(examDate),
+            hoursPerDay,
+            studyDaysPerWeek: daysPerWeek,
+            priorExperience,
+          };
+          
+          // Get total lessons from contentRegistry
+          const sectionKey = resolveStudySection(courseId, section);
+          const contentInfo = sectionKey ? getSectionContent(sectionKey) : null;
+          const totalLessons = contentInfo?.counts?.lessons || 0;
+          
+          // Fetch REAL lesson progress from Firestore
+          let lessonsCompleted = 0;
+          try {
+            const lessonProgressData = await getLessonProgress();
+            // Count completed lessons for this section
+            // Lesson IDs follow pattern: {section}-{id} e.g., "far-001", "cisa1-fundamentals"
+            const sectionPrefix = section.toLowerCase() + '-';
+            Object.entries(lessonProgressData).forEach(([lessonId, data]) => {
+              // Check if lesson belongs to this section AND is completed
+              if (lessonId.toLowerCase().startsWith(sectionPrefix)) {
+                const lessonData = data as { completed?: boolean };
+                if (lessonData.completed) {
+                  lessonsCompleted++;
+                }
+              }
+            });
+            logger.info(`[StudyPlanSetup] Real progress: ${lessonsCompleted}/${totalLessons} lessons completed for ${section}`);
+          } catch (err) {
+            logger.warn('Could not fetch real lesson progress, falling back to plan progress:', err);
+            // Fall back to existing plan progress if available
+            if (existingPlan?.progress?.lessonsCompleted) {
+              lessonsCompleted = existingPlan.progress.lessonsCompleted;
+            }
+          }
+          
+          // Build progress data with real completion count
+          const progressData = totalLessons > 0 
+            ? { lessonsCompleted, totalLessons }
+            : undefined;
+          
+          const check = generateRealityCheck(input, progressData);
+          setRealityCheck(check);
+          
+          // Run validation
+          const validationResult = validatePlanInput(input);
+          setValidation(validationResult);
+          // Reset acknowledgment when inputs change
+          setWarningsAcknowledged(false);
+        } catch (err) {
+          logger.error('Error calculating reality check:', err);
+        }
+      };
+      
+      calculateRealityCheck();
     }
-  }, [currentStep, section, examDate, hoursPerDay, daysPerWeek, priorExperience, courseId]);
+  }, [currentStep, section, examDate, hoursPerDay, daysPerWeek, priorExperience, courseId, existingPlan, getLessonProgress]);
   
   const stepIndex = STEPS.indexOf(currentStep);
   
@@ -746,8 +788,19 @@ const StudyPlanSetup: React.FC = () => {
               <div className="max-w-md mx-auto space-y-6">
                 {/* Time breakdown */}
                 <div className="bg-slate-50 dark:bg-slate-800 rounded-xl p-5 space-y-4">
+                  {/* Show completed hours if user has progress */}
+                  {realityCheck.hoursCompleted > 0 && (
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-600 dark:text-slate-400">Hours completed</span>
+                      <span className="font-bold text-green-600">
+                        {realityCheck.hoursCompleted} hours ✓
+                      </span>
+                    </div>
+                  )}
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-600 dark:text-slate-400">Your VoraPrep plan</span>
+                    <span className="text-slate-600 dark:text-slate-400">
+                      {realityCheck.hoursCompleted > 0 ? 'Remaining' : 'Your VoraPrep plan'}
+                    </span>
                     <span className="font-bold text-slate-900 dark:text-white">
                       ~{realityCheck.hoursNeeded} hours
                     </span>

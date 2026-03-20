@@ -8,6 +8,7 @@
  * - Course distribution
  * - Study engagement (questions answered, time spent)
  * - Subscription conversion funnel
+ * - Recent Activity: Session-by-session tracking (NEW)
  */
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
@@ -17,7 +18,7 @@ import {
   ChevronLeft, Users, TrendingUp, Activity,
   RefreshCw, Download, ArrowUpRight, ArrowDownRight,
   Clock, CheckCircle, BookOpen, Zap, Search,
-  ChevronRight,
+  ChevronRight, Eye, MousePointer,
 } from 'lucide-react';
 import { collection, query, getDocs, limit, getCountFromServer } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
@@ -28,6 +29,8 @@ import { Button } from '../../common/Button';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, Legend } from 'recharts';
 import { CourseId } from '../../../types/course';
 import logger from '../../../utils/logger';
+import { SessionRecordingService, Session } from '../../../services/sessionRecordingService';
+import { RecentActivityList, RecentActivityItem, SessionDetailView } from './SessionActivityViewer';
 
 // Types
 interface UserDocument {
@@ -84,6 +87,20 @@ export default function UserAnalyticsDashboard() {
   const { user, userProfile } = useAuth();
   const isAdmin = user && (userProfile?.isAdmin || isAdminEmail(user?.email));
 
+  // Current view: 'overview' | 'activity' | 'session-detail'
+  const [activeTab, setActiveTab] = useState<'overview' | 'activity'>('overview');
+  
+  // Session detail view state
+  const [selectedSession, setSelectedSession] = useState<{
+    userId: string;
+    sessionId: string;
+    session?: Session;
+  } | null>(null);
+
+  // Recent activity state
+  const [recentActivity, setRecentActivity] = useState<RecentActivityItem[]>([]);
+  const [activityLoading, setActivityLoading] = useState(false);
+
   const [state, setState] = useState<AnalyticsState>({
     users: [],
     isLoading: true,
@@ -106,6 +123,25 @@ export default function UserAnalyticsDashboard() {
     activeUsers24h: 0,
     activeUsers7d: 0,
   });
+
+  // Load recent activity (session tracking)
+  const loadRecentActivity = useCallback(async () => {
+    if (!isAdmin) return;
+    setActivityLoading(true);
+    try {
+      const activities = await SessionRecordingService.getRecentActivities(50);
+      setRecentActivity(activities);
+    } catch (error) {
+      logger.error('Failed to load recent activity:', error);
+    } finally {
+      setActivityLoading(false);
+    }
+  }, [isAdmin]);
+
+  // Handle viewing a session detail
+  const handleViewSession = useCallback((userId: string, sessionId: string, session?: Session) => {
+    setSelectedSession({ userId, sessionId, session });
+  }, []);
 
   // Load users
   const loadData = useCallback(async () => {
@@ -175,6 +211,13 @@ export default function UserAnalyticsDashboard() {
   useEffect(() => {
     loadData();
   }, [loadData]);
+
+  // Load recent activity when tab switches to activity
+  useEffect(() => {
+    if (activeTab === 'activity' && recentActivity.length === 0) {
+      loadRecentActivity();
+    }
+  }, [activeTab, recentActivity.length, loadRecentActivity]);
 
   // Compute metrics from user data
   const metrics = useMemo(() => {
@@ -346,6 +389,43 @@ export default function UserAnalyticsDashboard() {
     );
   }
 
+  // If viewing a session detail, show that instead
+  if (selectedSession) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => setSelectedSession(null)}
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+              </button>
+              <div>
+                <h1 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                  <Activity className="w-5 h-5 text-blue-500" />
+                  Session Detail
+                </h1>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Full activity timeline for this session
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-6 py-6">
+          <SessionDetailView
+            userId={selectedSession.userId}
+            sessionId={selectedSession.sessionId}
+            session={selectedSession.session}
+            onClose={() => setSelectedSession(null)}
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
@@ -370,28 +450,64 @@ export default function UserAnalyticsDashboard() {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              {/* Date Range Filter */}
-              <div className="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
-                {(['7d', '30d', '90d'] as const).map(range => (
-                  <button
-                    key={range}
-                    onClick={() => setState(s => ({ ...s, dateRange: range }))}
-                    className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-                      state.dateRange === range
-                        ? 'bg-white dark:bg-gray-600 text-gray-900 dark:text-white shadow-sm'
-                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-                    }`}
-                  >
-                    {range}
-                  </button>
-                ))}
+              {/* Tabs */}
+              <div className="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 rounded-lg p-1 mr-4">
+                <button
+                  onClick={() => setActiveTab('overview')}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                    activeTab === 'overview'
+                      ? 'bg-white dark:bg-gray-600 text-gray-900 dark:text-white shadow-sm'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                  }`}
+                >
+                  <TrendingUp className="w-4 h-4" />
+                  Overview
+                </button>
+                <button
+                  onClick={() => setActiveTab('activity')}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                    activeTab === 'activity'
+                      ? 'bg-white dark:bg-gray-600 text-gray-900 dark:text-white shadow-sm'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                  }`}
+                >
+                  <MousePointer className="w-4 h-4" />
+                  Recent Activity
+                  {recentActivity.filter(a => a.session.isActive).length > 0 && (
+                    <span className="ml-1 px-1.5 py-0.5 text-xs bg-green-500 text-white rounded-full">
+                      {recentActivity.filter(a => a.session.isActive).length}
+                    </span>
+                  )}
+                </button>
               </div>
-              <Button variant="secondary" onClick={loadData} leftIcon={RefreshCw}>
-                Refresh
-              </Button>
-              <Button variant="secondary" onClick={exportToCsv} leftIcon={Download}>
-                Export
-              </Button>
+              {/* Date Range Filter (only for overview) */}
+              {activeTab === 'overview' && (
+                <div className="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
+                  {(['7d', '30d', '90d'] as const).map(range => (
+                    <button
+                      key={range}
+                      onClick={() => setState(s => ({ ...s, dateRange: range }))}
+                      className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                        state.dateRange === range
+                          ? 'bg-white dark:bg-gray-600 text-gray-900 dark:text-white shadow-sm'
+                          : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                      }`}
+                    >
+                      {range}
+                    </button>
+                  ))}
+                </div>
+              )}
+              {activeTab === 'overview' && (
+                <>
+                  <Button variant="secondary" onClick={loadData} leftIcon={RefreshCw}>
+                    Refresh
+                  </Button>
+                  <Button variant="secondary" onClick={exportToCsv} leftIcon={Download}>
+                    Export
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -405,11 +521,33 @@ export default function UserAnalyticsDashboard() {
           </div>
         )}
 
-        {state.isLoading ? (
+        {/* Recent Activity Tab */}
+        {activeTab === 'activity' && (
+          <Card className="p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                <Activity className="w-5 h-5 text-blue-500" />
+                Recent User Sessions
+              </h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Track every click and page view to see exactly where users drop off
+              </p>
+            </div>
+            <RecentActivityList
+              activities={recentActivity}
+              loading={activityLoading}
+              onRefresh={loadRecentActivity}
+              onViewSession={handleViewSession}
+            />
+          </Card>
+        )}
+
+        {/* Overview Tab */}
+        {activeTab === 'overview' && state.isLoading ? (
           <div className="flex items-center justify-center py-20">
             <RefreshCw className="w-8 h-8 text-blue-500 animate-spin" />
           </div>
-        ) : (
+        ) : activeTab === 'overview' ? (
           <>
             {/* Key Metrics */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
@@ -753,7 +891,7 @@ export default function UserAnalyticsDashboard() {
               })()}
             </Card>
           </>
-        )}
+        ) : null}
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ import ErrorBoundary from './components/common/ErrorBoundary';
 import { PageLoader, FullPageLoader } from './components/common/PageLoader';
 import { SubscriptionGate } from './components/common/SubscriptionGate';
 // import InstallPrompt from './components/common/InstallPrompt'; // Assuming this might be migrated or kept as JSX for now, but referenced as needed
-import { ToastProvider } from './components/common/Toast';
+import { ToastProvider, useToast } from './components/common/Toast';
 import { UpdateBanner } from './components/common/UpdateBanner';
 import { getUpdateFunction } from './main';
 import { ThemeProvider } from './providers/ThemeProvider';
@@ -27,6 +27,7 @@ import { TourProvider } from './components/OnboardingTour';
 import { CourseProvider, useCourse } from './providers/CourseProvider';
 import { StudyProvider } from './providers/StudyProvider';
 import { NavigationProvider } from './components/navigation';
+import { SessionRecordingProvider } from './hooks/useSessionRecording';
 // import { EnvironmentIndicator } from './components/common/EnvironmentIndicator';
 
 // ============================================
@@ -274,6 +275,27 @@ const AdminRoute = ({ children }: RouteProps) => {
 const PublicRoute = ({ children }: RouteProps) => {
   const { user, loading } = useAuth();
   const [searchParams] = useSearchParams();
+  const toast = useToast();
+  const hasShownToast = React.useRef(false);
+
+  // Show welcome-back toast when redirecting logged-in users from auth pages
+  // This prevents confusion when users click sign-up links while already logged in
+  React.useEffect(() => {
+    if (user && !loading && !hasShownToast.current) {
+      hasShownToast.current = true;
+      const courseParam = searchParams.get('course')?.toLowerCase();
+      const courseName = courseParam ? courseParam.toUpperCase() : null;
+      
+      // Delay toast slightly so it appears after redirect completes
+      setTimeout(() => {
+        if (courseName) {
+          toast.info(`Welcome back! Here's your ${courseName} dashboard.`);
+        } else {
+          toast.info("You're already signed in. Welcome back!");
+        }
+      }, 100);
+    }
+  }, [user, loading, searchParams, toast]);
 
   if (loading) {
     return <FullPageLoader />;
@@ -385,6 +407,7 @@ function App() {
           <NavigationProvider>
             <TourProvider>
               <ToastProvider>
+              <SessionRecordingProvider>
               <ScrollToTop />
               <GlobalPageTracker />
               {/* <EnvironmentIndicator /> */}
@@ -471,14 +494,25 @@ function App() {
 
                 {/* EA Landing Page (public) */}
                 {ENABLE_EA_COURSE && (
-                  <Route
-                    path="/ea-prep"
-                    element={
-                      <SuspensePage>
-                        <EALanding />
-                      </SuspensePage>
-                    }
-                  />
+                  <>
+                    <Route
+                      path="/ea-prep"
+                      element={
+                        <SuspensePage>
+                          <EALanding />
+                        </SuspensePage>
+                      }
+                    />
+                    {/* EA Info page (public for SEO) */}
+                    <Route
+                      path="/ea/info"
+                      element={
+                        <SuspensePage>
+                          <EAInfo />
+                        </SuspensePage>
+                      }
+                    />
+                  </>
                 )}
 
                 {/* CMA Landing Page (public) */}
@@ -549,14 +583,25 @@ function App() {
 
                 {/* CISA Landing Page (public) */}
                 {ENABLE_CISA_COURSE && (
-                  <Route
-                    path="/cisa"
-                    element={
-                      <SuspensePage>
-                        <CISALanding />
-                      </SuspensePage>
-                    }
-                  />
+                  <>
+                    <Route
+                      path="/cisa"
+                      element={
+                        <SuspensePage>
+                          <CISALanding />
+                        </SuspensePage>
+                      }
+                    />
+                    {/* CISA Info page (public for SEO) */}
+                    <Route
+                      path="/cisa/info"
+                      element={
+                        <SuspensePage>
+                          <CISAInfo />
+                        </SuspensePage>
+                      }
+                    />
+                  </>
                 )}
 
                 {/* Demo Practice - Try 5 Questions Free (public, no auth) */}
@@ -703,10 +748,22 @@ function App() {
                     </SuspensePage>
                   }
                 />
-                {/* About redirect - no dedicated page, redirect to home */}
+                {/* Legacy URL redirects for SEO */}
                 <Route
-                  path="/about"
-                  element={<Navigate to="/" replace />}
+                  path="/cfp-exam-info"
+                  element={<Navigate to="/cfp/info" replace />}
+                />
+                <Route
+                  path="/cpa-exam-info"
+                  element={<Navigate to="/cpa/info" replace />}
+                />
+                <Route
+                  path="/cma-exam-info"
+                  element={<Navigate to="/cma/info" replace />}
+                />
+                <Route
+                  path="/cia-exam-info"
+                  element={<Navigate to="/cia/info" replace />}
                 />
                 
                 {/* Checkout flow pages */}
@@ -1069,14 +1126,7 @@ function App() {
                           </SuspensePage>
                         }
                       />
-                      <Route
-                        path="/ea/info"
-                        element={
-                          <SuspensePage>
-                            <EAInfo />
-                          </SuspensePage>
-                        }
-                      />
+                      {/* Note: /ea/info is a public route defined earlier for SEO */}
                       <Route
                         path="/ea/study-plan"
                         element={<Navigate to="/study-plan/setup" replace />}
@@ -1253,14 +1303,7 @@ function App() {
                           </SuspensePage>
                         }
                       />
-                      <Route
-                        path="/cisa/info"
-                        element={
-                          <SuspensePage>
-                            <CISAInfo />
-                          </SuspensePage>
-                        }
-                      />
+                      {/* Note: /cisa/info is a public route defined earlier for SEO */}
                       <Route
                         path="/cisa/study-plan"
                         element={<Navigate to="/study-plan/setup" replace />}
@@ -1389,6 +1432,7 @@ function App() {
                 <Route path="*" element={<SuspensePage><NotFound /></SuspensePage>} />
               </Routes>
             </Suspense>
+          </SessionRecordingProvider>
           </ToastProvider>
         </TourProvider>
       </NavigationProvider>

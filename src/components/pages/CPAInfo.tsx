@@ -16,7 +16,7 @@ const CPAInfo = () => {
   useSEO({
     title: 'CPA Exam Guide 2026 | Format, Sections & Requirements',
     description: 'Complete guide to the CPA exam: FAR, AUD, REG + discipline sections (BAR, ISC, TCP). Learn about exam format, passing scores, study time, and how to prepare.',
-    canonicalUrl: 'https://voraprep.com/cpa-exam-info',
+    canonicalUrl: 'https://voraprep.com/cpa/info',
   });
 
   return (

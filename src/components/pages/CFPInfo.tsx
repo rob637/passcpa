@@ -16,7 +16,7 @@ const CFPInfo = () => {
   useSEO({
     title: 'CFP Exam Guide 2026 | Certified Financial Planner',
     description: 'Complete guide to the CFP exam: 8 principal knowledge areas, exam format, passing requirements, and how to prepare for the CFP certification.',
-    canonicalUrl: 'https://voraprep.com/cfp-exam-info',
+    canonicalUrl: 'https://voraprep.com/cfp/info',
   });
 
   return (

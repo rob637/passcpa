@@ -16,7 +16,7 @@ export default function CISAInfo() {
   useSEO({
     title: 'CISA Exam Guide 2026 | Information Systems Auditing',
     description: 'Complete guide to the CISA exam: 5 domains covering IS auditing, governance, acquisition, operations, and security. Learn how to prepare and pass.',
-    canonicalUrl: 'https://voraprep.com/cisa-exam-info',
+    canonicalUrl: 'https://voraprep.com/cisa/info',
   });
 
   return (

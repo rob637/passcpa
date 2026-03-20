@@ -7,6 +7,8 @@ interface SEOProps {
   canonicalUrl?: string;
   ogType?: 'website' | 'article';
   ogImage?: string;
+  /** If true, adds noindex meta tag to prevent search engine indexing */
+  noindex?: boolean;
 }
 
 /**
@@ -26,12 +28,27 @@ export const useSEO = ({
   canonicalUrl,
   ogType = 'website',
   ogImage = '/og-image.png',
+  noindex = false,
 }: SEOProps) => {
   useEffect(() => {
     const baseTitle = 'VoraPrep';
     
     // Set document title
     document.title = title ? `${title} | ${baseTitle}` : baseTitle;
+
+    // Handle noindex meta tag for pages that shouldn't be indexed
+    let robotsTag = document.querySelector('meta[name="robots"]');
+    if (noindex) {
+      if (!robotsTag) {
+        robotsTag = document.createElement('meta');
+        robotsTag.setAttribute('name', 'robots');
+        document.head.appendChild(robotsTag);
+      }
+      robotsTag.setAttribute('content', 'noindex, nofollow');
+    } else if (robotsTag) {
+      // Remove noindex if it was set by a previous page
+      robotsTag.remove();
+    }
 
     // Update or create meta description
     if (description) {
@@ -90,7 +107,7 @@ export const useSEO = ({
     return () => {
       document.title = baseTitle;
     };
-  }, [title, description, canonicalUrl, ogType, ogImage]);
+  }, [title, description, canonicalUrl, ogType, ogImage, noindex]);
 };
 
 /**

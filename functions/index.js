@@ -7785,7 +7785,7 @@ exports.findOrphanedUsers = onCall({
  * 4. Move video to shorts/published/
  * 5. Log upload record in Firestore
  * 
- * Secrets required:
+ * Secrets required (set via firebase functions:secrets:set):
  * - YOUTUBE_CLIENT_ID
  * - YOUTUBE_CLIENT_SECRET
  * - YOUTUBE_REFRESH_TOKEN
@@ -7796,7 +7796,7 @@ exports.uploadYouTubeShorts = onSchedule({
   timeZone: 'America/New_York',
   timeoutSeconds: 300,
   memory: '1GiB',
-  secrets: ['YOUTUBE_CLIENT_ID', 'YOUTUBE_CLIENT_SECRET', 'YOUTUBE_REFRESH_TOKEN', 'YOUTUBE_CHANNEL_ID'],
+  // secrets: ['YOUTUBE_CLIENT_ID', 'YOUTUBE_CLIENT_SECRET', 'YOUTUBE_REFRESH_TOKEN', 'YOUTUBE_CHANNEL_ID'],
 }, async () => {
   console.log('[YouTubeShorts] Starting scheduled upload check...');
 
@@ -8001,7 +8001,7 @@ exports.uploadYouTubeShorts = onSchedule({
 exports.uploadYouTubeShortNow = onCall({
   timeoutSeconds: 300,
   memory: '1GiB',
-  secrets: ['YOUTUBE_CLIENT_ID', 'YOUTUBE_CLIENT_SECRET', 'YOUTUBE_REFRESH_TOKEN', 'YOUTUBE_CHANNEL_ID'],
+  // secrets: ['YOUTUBE_CLIENT_ID', 'YOUTUBE_CLIENT_SECRET', 'YOUTUBE_REFRESH_TOKEN', 'YOUTUBE_CHANNEL_ID'],
 }, async (request) => {
   // Check admin
   const uid = request.auth?.uid;

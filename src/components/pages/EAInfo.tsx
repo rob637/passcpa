@@ -14,7 +14,7 @@ const EAInfo = () => {
   useSEO({
     title: 'Enrolled Agent Exam Guide 2026 | IRS SEE Exam',
     description: 'Complete guide to the EA exam (Special Enrollment Examination): 3 parts covering individuals, businesses, and representation. Learn how to become an Enrolled Agent.',
-    canonicalUrl: 'https://voraprep.com/ea-exam-info',
+    canonicalUrl: 'https://voraprep.com/ea/info',
   });
 
   return (

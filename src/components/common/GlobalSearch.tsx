@@ -408,7 +408,9 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
             <SearchIcon className="w-5 h-5 text-slate-600 dark:text-slate-400" />
             <input
               ref={inputRef}
-              type="text"
+              type="search"
+              inputMode="search"
+              enterKeyHint="search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search questions, topics, or ask Vory..."

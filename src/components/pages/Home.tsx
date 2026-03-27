@@ -55,6 +55,7 @@ import { ShareNudge, useDashboardShareNudge, shouldShowStreakNudge, shouldShowQu
 import { useToast } from '../common/Toast';
 import { useSubscription } from '../../services/subscription';
 import { WelcomeVideoCard, shouldShowWelcomeVideo } from '../WelcomeVideoCard';
+import { SharedTransitionCard } from '../common/SharedTransition';
 
 // Derive courseId from exam section name
 const getCourseFromSection = (section: string): CourseId => {
@@ -791,76 +792,83 @@ const Home = () => {
 
       {/* Quick Access Buttons - 48dp minimum touch targets per Material Design */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <Link
+        <SharedTransitionCard
+          id="learn"
           to={activeSection ? `/learn?section=${activeSection}` : '/learn'}
-          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md active:scale-[0.98]"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
           <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
             <BookOpen className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Lessons</span>
-        </Link>
+        </SharedTransitionCard>
         
-        <Link
+        <SharedTransitionCard
+          id="practice"
           to={getCoursePracticePath(courseId)}
-          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md active:scale-[0.98]"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
           <div className="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
             <Target className="w-6 h-6 text-primary-600 dark:text-primary-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Questions</span>
-        </Link>
+        </SharedTransitionCard>
         
-        <Link
+        <SharedTransitionCard
+          id="flashcards"
           to={getCourseFlashcardPath(courseId)}
-          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-all hover:shadow-md active:scale-[0.98]"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-all hover:shadow-md"
         >
           <div className="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
             <Brain className="w-6 h-6 text-amber-500" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Flashcards</span>
-        </Link>
+        </SharedTransitionCard>
 
         {course?.hasTBS ? (
-        <Link
+        <SharedTransitionCard
+          id="tbs"
           to={getCourseTBSPath(courseId)}
-          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md active:scale-[0.98]"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
           <div className="w-12 h-12 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center">
             <FileSpreadsheet className="w-6 h-6 text-teal-600 dark:text-teal-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">TBS</span>
-        </Link>
+        </SharedTransitionCard>
         ) : courseId === 'cma' ? (
-        <Link
+        <SharedTransitionCard
+          id="essays"
           to={getCourseEssayPath(courseId)}
-          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md active:scale-[0.98]"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
           <div className="w-12 h-12 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center">
             <FileText className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Essays</span>
-        </Link>
+        </SharedTransitionCard>
         ) : courseId === 'cfp' ? (
-        <Link
+        <SharedTransitionCard
+          id="casestudies"
           to={getCourseCaseStudyPath(courseId)}
-          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md active:scale-[0.98]"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
           <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
             <ClipboardCheck className="w-6 h-6 text-purple-600 dark:text-purple-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Case Studies</span>
-        </Link>
+        </SharedTransitionCard>
         ) : (
-          <Link
+          <SharedTransitionCard
+            id="exam"
             to={getCourseExamPath(courseId)}
-            className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md active:scale-[0.98]"
+            className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
           >
             <div className="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
               <Target className="w-6 h-6 text-red-500" />
             </div>
             <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Mock Exam</span>
-          </Link>
+          </SharedTransitionCard>
         )}
       </div>
 

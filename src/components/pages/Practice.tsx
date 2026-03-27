@@ -2344,6 +2344,15 @@ const Practice: React.FC = () => {
           </div>
         )}
 
+        {/* Swipe Hint - Show on mobile for first 3 questions */}
+        {currentIndex < 3 && (
+          <div className="md:hidden flex items-center justify-center gap-2 py-2 text-xs text-slate-400 dark:text-slate-500">
+            <ChevronLeft className="w-3 h-3" />
+            <span>Swipe to navigate</span>
+            <ChevronRight className="w-3 h-3" />
+          </div>
+        )}
+
         {/* Navigation */}
         <div className="flex items-center justify-between gap-4">
           <Button

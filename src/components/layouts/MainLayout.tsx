@@ -128,8 +128,8 @@ const MainLayout = () => {
     setTrialBannerVisible(visible);
   }, []);
 
-  // Set document title based on route
-  useRouteTitle();
+  // Set document title based on route and get page title for mobile header
+  const pageTitle = useRouteTitle();
 
   // Track page views for analytics
   usePageTracking();
@@ -312,6 +312,11 @@ const MainLayout = () => {
         <div className="flex items-center justify-between px-4 h-14">
           {/* Left: Exam name with tap-to-switch */}
           <CourseSelector mobileHeader showComingSoon={false} />
+          
+          {/* Center: Page title */}
+          <span className="text-sm font-medium text-slate-600 dark:text-slate-300 truncate max-w-[120px]">
+            {pageTitle}
+          </span>
           
           {/* Right: Streak + Progress (compact) */}
           <div className="flex items-center gap-2">

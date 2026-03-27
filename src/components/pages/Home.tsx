@@ -19,6 +19,7 @@ import {
   Rocket,
   ArrowRight,
   X as XIcon,
+  Play,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -28,6 +29,7 @@ import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUti
 import { getExamDate, getCurrentSection } from '../../utils/profileHelpers';
 import { differenceInDays } from 'date-fns';
 import clsx from 'clsx';
+import { FAB } from '../common/FAB';
 import { calculateExamReadiness, ReadinessData, getStatusText, getStatusColor } from '../../utils/examReadiness';
 import { fetchAllLessons } from '../../services/lessonService';
 import { getTopicsForSection } from '../../services/questionService';
@@ -730,34 +732,34 @@ const Home = () => {
         )
       )}
 
-      {/* Quick Access Buttons */}
+      {/* Quick Access Buttons - 48dp minimum touch targets per Material Design */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <Link
           to={activeSection ? `/learn?section=${activeSection}` : '/learn'}
-          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md active:scale-[0.98]"
         >
-          <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
-            <BookOpen className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+          <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+            <BookOpen className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Lessons</span>
         </Link>
         
         <Link
           to={getCoursePracticePath(courseId)}
-          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md active:scale-[0.98]"
         >
-          <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-            <Target className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+          <div className="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+            <Target className="w-6 h-6 text-primary-600 dark:text-primary-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Questions</span>
         </Link>
         
         <Link
           to={getCourseFlashcardPath(courseId)}
-          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-colors hover:shadow-md"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-all hover:shadow-md active:scale-[0.98]"
         >
-          <div className="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
-            <Brain className="w-5 h-5 text-amber-500" />
+          <div className="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+            <Brain className="w-6 h-6 text-amber-500" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Flashcards</span>
         </Link>
@@ -765,40 +767,40 @@ const Home = () => {
         {course?.hasTBS ? (
         <Link
           to={getCourseTBSPath(courseId)}
-          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md active:scale-[0.98]"
         >
-          <div className="w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center">
-            <FileSpreadsheet className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+          <div className="w-12 h-12 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center">
+            <FileSpreadsheet className="w-6 h-6 text-teal-600 dark:text-teal-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">TBS</span>
         </Link>
         ) : courseId === 'cma' ? (
         <Link
           to={getCourseEssayPath(courseId)}
-          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md active:scale-[0.98]"
         >
-          <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center">
-            <FileText className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+          <div className="w-12 h-12 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center">
+            <FileText className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Essays</span>
         </Link>
         ) : courseId === 'cfp' ? (
         <Link
           to={getCourseCaseStudyPath(courseId)}
-          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md active:scale-[0.98]"
         >
-          <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
-            <ClipboardCheck className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+          <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+            <ClipboardCheck className="w-6 h-6 text-purple-600 dark:text-purple-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Case Studies</span>
         </Link>
         ) : (
           <Link
             to={getCourseExamPath(courseId)}
-            className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+            className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md active:scale-[0.98]"
           >
-            <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
-              <Target className="w-5 h-5 text-red-500" />
+            <div className="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+              <Target className="w-6 h-6 text-red-500" />
             </div>
             <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Mock Exam</span>
           </Link>
@@ -968,6 +970,15 @@ const Home = () => {
         <ShareNudge trigger="dashboard_periodic" />
       )}
 
+      {/* FAB - Primary action for mobile (hidden on desktop where quick actions are visible) */}
+      <div className="md:hidden">
+        <FAB
+          icon={Play}
+          label="Practice"
+          onClick={() => navigate(getCoursePracticePath(courseId))}
+          variant="primary"
+        />
+      </div>
 
       </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import logger from '../../utils/logger';
 import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 import { Button } from '../common/Button';
+import { useSwipe } from '../../hooks/useSwipe';
 import { getHomePathFromLocation } from '../../utils/courseNavigation';
 import {
   RotateCcw,
@@ -366,6 +367,21 @@ const Flashcards: React.FC = () => {
   nextCardRef.current = nextCard;
   prevCardRef.current = prevCard;
 
+  // Swipe navigation for mobile
+  const swipeHandlers = useSwipe({
+    onSwipeLeft: () => {
+      if (currentIndex < cards.length - 1) {
+        nextCard();
+      }
+    },
+    onSwipeRight: () => {
+      if (currentIndex > 0) {
+        prevCard();
+      }
+    },
+    threshold: 50,
+  });
+
   const handleRating = async (rating: 'again' | 'hard' | 'good' | 'easy') => {
     if (!currentCard || !user || selectedRating) return; // Prevent double-tap
 
@@ -564,7 +580,11 @@ const Flashcards: React.FC = () => {
       </div>
 
       {/* Card Area */}
-      <div ref={cardTopRef} className="flex-1 flex items-start justify-center p-4 pt-2 overflow-y-auto scroll-smooth">
+      <div 
+        ref={cardTopRef} 
+        {...swipeHandlers}
+        className="flex-1 flex items-start justify-center p-4 pt-2 overflow-y-auto scroll-smooth touch-pan-y"
+      >
         <div className="w-full max-w-2xl">
           {/* Flashcard */}
           {showBothSides ? (
@@ -806,6 +826,15 @@ const Flashcards: React.FC = () => {
           {/* Navigation hint */}
           {!isFlipped && !showBothSides && (
             <div className="mt-6 flex justify-center gap-4 text-sm text-slate-600 dark:text-slate-400">
+              {/* Mobile: Swipe hint (first 3 cards) */}
+              {currentIndex < 3 && (
+                <span className="sm:hidden flex items-center gap-1">
+                  <ChevronLeft className="w-4 h-4" />
+                  Swipe to navigate
+                  <ChevronRight className="w-4 h-4" />
+                </span>
+              )}
+              {/* Desktop: Keyboard hints */}
               <span className="hidden sm:inline">← → to navigate</span>
               <span className="hidden sm:inline">Space to flip</span>
               <span className="hidden sm:inline">1-4 to rate</span>

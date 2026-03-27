@@ -539,7 +539,7 @@ const Flashcards: React.FC = () => {
             onClick={() => navigate(courseHome)}
             leftIcon={ArrowLeft}
           >
-            <span className="hidden sm:inline">Back</span>
+            <span>Back</span>
           </Button>
 
           <div className="flex items-center gap-2">

@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     
+    <!-- Redirect www to non-www (canonical enforcement) -->
+    <script>
+      if (window.location.hostname === 'www.voraprep.com') {
+        window.location.replace('https://voraprep.com' + window.location.pathname + window.location.search);
+      }
+    </script>
+    
     <!-- Google tag (gtag.js) - Google Ads conversion tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17959793124"></script>
     <script>

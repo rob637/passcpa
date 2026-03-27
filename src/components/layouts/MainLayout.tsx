@@ -4,6 +4,7 @@ import { Flame, WifiOff } from 'lucide-react';
 import { PageTransition } from '../common/PageTransition';
 import { TrialBanner } from '../common/SubscriptionGate';
 import { PWAInstallPrompt, PWAInstallBanner } from '../common/PWAInstallPrompt';
+import { MobileContextBar } from '../navigation';
 import { useStudy } from '../../hooks/useStudy';
 import { useStudyPlan } from '../../hooks/useStudyPlan';
 import { useRouteTitle } from '../../hooks/useDocumentTitle';
@@ -326,6 +327,14 @@ const MainLayout = () => {
         </div>
       </header>
 
+      {/* Mobile Context Bar - Shows current location breadcrumb on mobile */}
+      <div className={clsx(
+        'md:hidden fixed left-0 right-0 z-30',
+        trialBannerVisible ? 'top-[92px]' : 'top-[56px]'
+      )}>
+        <MobileContextBar />
+      </div>
+
       {/* Main Content */}
       <main
         ref={mainRef}
@@ -335,7 +344,8 @@ const MainLayout = () => {
         aria-label="Main content"
         className={clsx(
           'flex-1 min-w-0 p-4 pb-24 md:p-8 md:pb-8 md:pt-6 focus:outline-none',
-          trialBannerVisible ? 'pt-[68px]' : 'pt-[58px]'
+          trialBannerVisible ? 'pt-[100px]' : 'pt-[90px]',
+          'md:pt-6' // Reset to normal on desktop
         )}
       >
         <PageTransition>

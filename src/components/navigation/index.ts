@@ -12,3 +12,6 @@ export type { BreadcrumbsProps } from './Breadcrumbs';
 
 export { PageHeader } from './PageHeader';
 export type { PageHeaderProps } from './PageHeader';
+
+export { MobileContextBar } from './MobileContextBar';
+export type { MobileContextBarProps } from './MobileContextBar';

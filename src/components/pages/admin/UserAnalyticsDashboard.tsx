@@ -164,6 +164,10 @@ export default function UserAnalyticsDashboard() {
       usersSnap.forEach(doc => {
         const data = doc.data();
         if (!data.deletedAt) {
+          // Skip internal test accounts (sagecg.com emails)
+          if (data.email && data.email.toLowerCase().includes('sagecg.com')) {
+            return; // Skip this user
+          }
           users.push({ id: doc.id, ...data } as UserDocument);
         }
       });

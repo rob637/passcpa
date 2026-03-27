@@ -117,6 +117,25 @@ export interface Session {
   isActive: boolean;
 }
 
+// Utility to remove undefined values from objects (Firestore doesn't accept undefined)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const removeUndefined = (obj: any): any => {
+  if (obj === null || obj === undefined) return null;
+  if (Array.isArray(obj)) return obj.map(removeUndefined);
+  if (typeof obj !== 'object') return obj;
+  if (obj instanceof Date || obj instanceof Timestamp) return obj;
+  
+  const cleaned: Record<string, unknown> = {};
+  for (const [key, value] of Object.entries(obj)) {
+    if (value !== undefined) {
+      cleaned[key] = typeof value === 'object' && value !== null 
+        ? removeUndefined(value) 
+        : value;
+    }
+  }
+  return cleaned;
+};
+
 // Generate unique session ID
 const generateSessionId = (): string => {
   return `session_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
@@ -448,14 +467,17 @@ class SessionRecordingService {
         'activities'
       );
 
-      // Batch write activities
+      // Batch write activities (removeUndefined prevents Firestore rejection)
       await Promise.all(
-        activitiesToFlush.map(activity => addDoc(activitiesRef, {
-          ...activity,
-          timestamp: activity.timestamp instanceof Date 
-            ? Timestamp.fromDate(activity.timestamp) 
-            : activity.timestamp,
-        }))
+        activitiesToFlush.map(activity => {
+          const sanitized = removeUndefined({
+            ...activity,
+            timestamp: activity.timestamp instanceof Date 
+              ? Timestamp.fromDate(activity.timestamp) 
+              : activity.timestamp,
+          });
+          return addDoc(activitiesRef, sanitized);
+        })
       );
 
       // Update session stats
@@ -659,6 +681,12 @@ class SessionRecordingService {
       
       for (const userDoc of usersSnapshot.docs) {
         const userData = userDoc.data();
+        
+        // Skip internal test accounts (sagecg.com emails)
+        if (userData.email && userData.email.toLowerCase().includes('sagecg.com')) {
+          continue;
+        }
+        
         const sessionsRef = collection(db, 'users', userDoc.id, 'sessions');
         
         try {

@@ -48,6 +48,7 @@ import { BottomSheet } from '../common/BottomSheet';
 import { ShareNudge, useDashboardShareNudge, shouldShowStreakNudge, shouldShowQuestionsMilestone } from '../common/ShareNudge';
 import { useToast } from '../common/Toast';
 import { useSubscription } from '../../services/subscription';
+import { WelcomeVideoCard, shouldShowWelcomeVideo } from '../WelcomeVideoCard';
 
 // Derive courseId from exam section name
 const getCourseFromSection = (section: string): CourseId => {
@@ -634,57 +635,16 @@ const Home = () => {
         </div>
       )}
 
-      {/* Welcome Card or "What's Next" choices */}
-      {/* Show Welcome Card immediately for new users (no waiting for stats) */}
-      {!welcomeDismissed && !hasUserEverPracticed ? (
-        <div className="relative bg-gradient-to-br from-primary-50 to-indigo-50 dark:from-primary-900/20 dark:to-indigo-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-5">
-          <button
-            onClick={() => {
-              setWelcomeDismissed(true);
-              localStorage.setItem('voraprep_welcome_dismissed', '1');
-            }}
-            className="absolute top-3 right-3 p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 rounded-lg hover:bg-white/50 dark:hover:bg-slate-700/50 transition-colors"
-            aria-label="Dismiss welcome card"
-          >
-            <XIcon className="w-4 h-4" />
-          </button>
-          <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-800 flex items-center justify-center flex-shrink-0">
-              <Rocket className="w-5 h-5 text-primary-600 dark:text-primary-400" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <h2 className="text-lg font-bold text-slate-900 dark:text-white">
-                Welcome to VoraPrep!
-              </h2>
-              <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">
-                {isTrialing
-                  ? `Your 14-day free trial is active — ${trialDaysRemaining} days of unlimited access to all ${course?.shortName || courseId.toUpperCase()} content.`
-                  : isPremium
-                    ? `You have full access to all ${course?.shortName || courseId.toUpperCase()} content.`
-                    : `Start exploring ${course?.shortName || courseId.toUpperCase()} study materials.`}
-              </p>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
-                Choose your study style:
-              </p>
-              <div className="flex flex-col sm:flex-row gap-2 mt-2">
-                <Link
-                  to={activeSection ? `/learn?section=${activeSection}` : '/learn'}
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-lg transition-colors"
-                >
-                  <BookOpen className="w-4 h-4" />
-                  Start with Lessons
-                </Link>
-                <Link
-                  to={getCoursePracticePath(courseId)}
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold rounded-lg transition-colors"
-                >
-                  <Target className="w-4 h-4" />
-                  Jump to Practice
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* Welcome Video Card for first-time users */}
+      {/* Shows 4 clear paths: Lesson, Study Plan, Practice, Resources */}
+      {!welcomeDismissed && !hasUserEverPracticed && shouldShowWelcomeVideo() ? (
+        <WelcomeVideoCard
+          activeSection={activeSection}
+          onDismiss={() => {
+            setWelcomeDismissed(true);
+            localStorage.setItem('voraprep_welcome_dismissed', '1');
+          }}
+        />
       ) : (
         !hasPlan && !planLoading && !studyPlanNudgeDismissed && (
           hasUserEverPracticed ? (

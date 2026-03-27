@@ -90,6 +90,9 @@ const StrategyPage = lazyWithRetry(() => import('./components/pages/resources/St
 const Onboarding = lazyWithRetry(() => import('./components/pages/Onboarding'));
 const DiagnosticQuiz = lazyWithRetry(() => import('./components/pages/DiagnosticQuiz'));
 const DemoPractice = lazyWithRetry(() => import('./components/pages/DemoPractice'));
+const DemoWalkthrough = lazyWithRetry(() => import('./components/pages/DemoWalkthrough'));
+const DemoShowcase = lazyWithRetry(() => import('./components/pages/DemoShowcase'));
+const DemoOnboarding = lazyWithRetry(() => import('./components/pages/DemoOnboarding'));
 const AdminSeed = lazyWithRetry(() => import('./components/pages/AdminSeed'));
 const AdminCMS = lazyWithRetry(() => import('./components/pages/admin/AdminCMS'));
 const GrowthDashboard = lazyWithRetry(() => import('./components/pages/admin/GrowthDashboard'));
@@ -610,6 +613,36 @@ function App() {
                   element={
                     <SuspensePage>
                       <DemoPractice />
+                    </SuspensePage>
+                  }
+                />
+                
+                {/* Demo Walkthrough - For recording welcome video (public) */}
+                <Route
+                  path="/demo-walkthrough"
+                  element={
+                    <SuspensePage>
+                      <DemoWalkthrough />
+                    </SuspensePage>
+                  }
+                />
+                
+                {/* Demo Showcase - Cinematic auto-playing product demo (public) */}
+                <Route
+                  path="/demo-showcase"
+                  element={
+                    <SuspensePage>
+                      <DemoShowcase />
+                    </SuspensePage>
+                  }
+                />
+                
+                {/* Demo Onboarding - For dashboard welcome video (public) */}
+                <Route
+                  path="/demo-onboarding"
+                  element={
+                    <SuspensePage>
+                      <DemoOnboarding />
                     </SuspensePage>
                   }
                 />

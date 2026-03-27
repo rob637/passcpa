@@ -20,6 +20,7 @@ import { PageLoader, FullPageLoader } from './components/common/PageLoader';
 import { SubscriptionGate } from './components/common/SubscriptionGate';
 // import InstallPrompt from './components/common/InstallPrompt'; // Assuming this might be migrated or kept as JSX for now, but referenced as needed
 import { ToastProvider, useToast } from './components/common/Toast';
+import { SnackbarProvider } from './components/common/Snackbar';
 import { UpdateBanner } from './components/common/UpdateBanner';
 import { getUpdateFunction } from './main';
 import { ThemeProvider } from './providers/ThemeProvider';
@@ -410,6 +411,7 @@ function App() {
           <NavigationProvider>
             <TourProvider>
               <ToastProvider>
+              <SnackbarProvider>
               <SessionRecordingProvider>
               <ScrollToTop />
               <GlobalPageTracker />
@@ -1466,6 +1468,7 @@ function App() {
               </Routes>
             </Suspense>
           </SessionRecordingProvider>
+          </SnackbarProvider>
           </ToastProvider>
         </TourProvider>
       </NavigationProvider>

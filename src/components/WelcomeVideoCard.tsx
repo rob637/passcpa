@@ -202,7 +202,7 @@ export const WelcomeVideoCard: React.FC<WelcomeVideoCardProps> = ({
           </div>
         )}
 
-        {/* 4 Paths Grid */}
+        {/* 4 Paths Grid - 48dp minimum touch targets */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {paths.map((path) => {
             const Icon = path.icon;
@@ -210,10 +210,10 @@ export const WelcomeVideoCard: React.FC<WelcomeVideoCardProps> = ({
               <Link
                 key={path.id}
                 to={path.to}
-                className="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-md transition-all group"
+                className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-md transition-all active:scale-[0.98] group"
               >
-                <div className={clsx('w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0', path.bgColor)}>
-                  <Icon className={clsx('w-5 h-5', path.color)} />
+                <div className={clsx('w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0', path.bgColor)}>
+                  <Icon className={clsx('w-6 h-6', path.color)} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1">

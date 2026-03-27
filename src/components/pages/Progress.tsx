@@ -5,7 +5,7 @@
  * Detailed analytics hidden behind "View Details" expansion
  */
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import logger from '../../utils/logger';
 import { Link } from 'react-router-dom';
 import { toLocalDate } from '../../utils/dateHelpers';
@@ -17,12 +17,15 @@ import {
   Play,
   ChevronDown,
   ChevronUp,
+  RefreshCw,
 } from 'lucide-react';
 import { PageHeader } from '../navigation';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { useStudyPlan } from '../../hooks/useStudyPlan';
+import { usePullToRefresh } from '../../hooks/usePullToRefresh';
+import * as feedback from '../../services/feedback';
 import { getCurrentSectionForCourse } from '../../utils/sectionUtils';
 import { getExamDate } from '../../utils/profileHelpers';
 import { doc, getDoc } from 'firebase/firestore';
@@ -82,6 +85,22 @@ const Progress: React.FC = () => {
   });
   const [loading, setLoading] = useState(true);
   const [showDetails, setShowDetails] = useState(false);
+  const [refreshKey, setRefreshKey] = useState(0);
+  
+  // Pull-to-refresh handler
+  const handleRefresh = useCallback(async () => {
+    feedback.haptic('light');
+    setRefreshKey(prev => prev + 1);
+    // Wait for data to reload
+    await new Promise(resolve => setTimeout(resolve, 800));
+    feedback.haptic('success');
+  }, []);
+
+  const { isRefreshing, onTouchStart, onTouchMove, onTouchEnd, indicatorStyle } = usePullToRefresh({
+    onRefresh: handleRefresh,
+    threshold: 80,
+    enabled: !loading,
+  });
   
   // Derived state
   // Note: CISA and CFP are single-exam courses (one comprehensive test)
@@ -280,7 +299,7 @@ const Progress: React.FC = () => {
     };
 
     loadProgressData();
-  }, [user, courseId, currentSection, getTopicPerformance, getLessonProgress]);
+  }, [user, courseId, currentSection, getTopicPerformance, getLessonProgress, refreshKey]);
 
   // Calculate readiness
   const readiness = useMemo<ReadinessData>(() => {
@@ -407,7 +426,22 @@ const Progress: React.FC = () => {
   const style = healthStyles[healthStatus] || healthStyles['on-track'];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-20">
+    <div 
+      className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-20"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
+      {/* Pull-to-refresh indicator */}
+      {isRefreshing && (
+        <div 
+          className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm"
+          style={indicatorStyle}
+        >
+          <RefreshCw className="w-6 h-6 text-primary-600 dark:text-primary-400 animate-spin" />
+        </div>
+      )}
+      
       <PageHeader 
         title="My Progress"
         subtitle={`Track your ${course.shortName} journey`}

@@ -1,11 +1,9 @@
 /**
- * WelcomeVideoCard - First-time user video introduction
+ * WelcomeVideoCard - First-time user onboarding
  * 
- * Shows a welcome video with 4 clear paths forward:
- * 1. Try a Lesson - Learn a topic concept
- * 2. Create Study Plan - Set exam date, get personalized roadmap
- * 3. Practice MCQs - Quick questions with instant feedback
- * 4. Explore Resources - Exam strategy and test day tips
+ * Google's approach: ONE clear primary CTA to reduce choice paralysis.
+ * Primary action: Practice MCQs (fastest path to value)
+ * Secondary actions: De-emphasized alternatives
  */
 
 import React, { useState } from 'react';
@@ -19,6 +17,8 @@ import {
   Compass,
   ChevronRight,
   CheckCircle,
+  Zap,
+  ArrowRight,
 } from 'lucide-react';
 import { useCourse } from '../providers/CourseProvider';
 import { getCoursePracticePath } from '../utils/courseNavigation';

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { LucideIcon } from 'lucide-react';
 import clsx from 'clsx';
+import * as feedback from '../../services/feedback';
 
 export interface FABProps {
   /** Icon to display */
@@ -94,7 +95,10 @@ export const FAB: React.FC<FABProps> = ({
         stiffness: 400, 
         damping: 25 
       }}
-      onClick={onClick}
+      onClick={() => {
+        feedback.tap();
+        onClick();
+      }}
       disabled={disabled}
       aria-label={label}
       className={clsx(

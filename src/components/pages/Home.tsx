@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useSEO } from '../../hooks/useSEO';
 import logger from '../../utils/logger';
 import { Link, useNavigate } from 'react-router-dom';
@@ -20,9 +20,11 @@ import {
   ArrowRight,
   X as XIcon,
   Play,
+  RefreshCw,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
+import { usePullToRefresh } from '../../hooks/usePullToRefresh';
 import { useCourse } from '../../providers/CourseProvider';
 import { CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
 import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
@@ -30,6 +32,8 @@ import { getExamDate, getCurrentSection } from '../../utils/profileHelpers';
 import { differenceInDays } from 'date-fns';
 import clsx from 'clsx';
 import { FAB } from '../common/FAB';
+import { SkeletonDashboard } from '../common/Skeleton';
+import * as feedback from '../../services/feedback';
 import { calculateExamReadiness, ReadinessData, getStatusText, getStatusColor } from '../../utils/examReadiness';
 import { fetchAllLessons } from '../../services/lessonService';
 import { getTopicsForSection } from '../../services/questionService';
@@ -351,6 +355,8 @@ const Home = () => {
   const toast = useToast();
   
   const handleSectionChange = async (newSection: string) => {
+    feedback.tap(); // Haptic feedback on section change
+    
     if (newSection === activeSection) {
       setShowSectionPicker(false);
       return;
@@ -398,8 +404,59 @@ const Home = () => {
     getTimeOfDay()
   );
 
+  // Pull-to-refresh for mobile
+  const handleRefresh = useCallback(async () => {
+    feedback.haptic('light');
+    if (refreshStats) {
+      await refreshStats();
+    }
+    feedback.haptic('success');
+  }, [refreshStats]);
+
+  const {
+    isPulling,
+    isRefreshing,
+    pullDistance,
+    onTouchStart,
+    onTouchMove,
+    onTouchEnd,
+    indicatorStyle,
+  } = usePullToRefresh({
+    onRefresh: handleRefresh,
+    threshold: 80,
+    enabled: true,
+  });
+
+  // Show skeleton while initial data loads
+  const isInitialLoading = !user || (stats === null && !hasEverPracticedLocal);
+
+  if (isInitialLoading) {
+    return <SkeletonDashboard />;
+  }
+
   return (
-    <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-6">
+    <div 
+      className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-6"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
+      {/* Pull-to-refresh indicator */}
+      <div 
+        className="fixed top-16 left-1/2 -translate-x-1/2 z-50 pointer-events-none md:hidden"
+        style={indicatorStyle}
+      >
+        <div className={clsx(
+          'w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center',
+          isRefreshing && 'animate-spin'
+        )}>
+          <RefreshCw className={clsx(
+            'w-5 h-5 text-primary-600',
+            isRefreshing && 'animate-spin'
+          )} />
+        </div>
+      </div>
+
       <div className="max-w-lg mx-auto space-y-4 sm:space-y-6">
       {/* Section Picker Bottom Sheet */}
       <BottomSheet

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useSEO } from '../../hooks/useSEO';
 import logger from '../../utils/logger';
 import { Link, useNavigate } from 'react-router-dom';
@@ -19,15 +19,19 @@ import {
   Rocket,
   ArrowRight,
   X as XIcon,
+  RefreshCw,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
+import { usePullToRefresh } from '../../hooks/usePullToRefresh';
 import { useCourse } from '../../providers/CourseProvider';
 import { CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
 import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
 import { getExamDate, getCurrentSection } from '../../utils/profileHelpers';
 import { differenceInDays } from 'date-fns';
 import clsx from 'clsx';
+import { SkeletonDashboard } from '../common/Skeleton';
+import * as feedback from '../../services/feedback';
 import { calculateExamReadiness, ReadinessData, getStatusText, getStatusColor } from '../../utils/examReadiness';
 import { fetchAllLessons } from '../../services/lessonService';
 import { getTopicsForSection } from '../../services/questionService';
@@ -48,6 +52,8 @@ import { BottomSheet } from '../common/BottomSheet';
 import { ShareNudge, useDashboardShareNudge, shouldShowStreakNudge, shouldShowQuestionsMilestone } from '../common/ShareNudge';
 import { useToast } from '../common/Toast';
 import { useSubscription } from '../../services/subscription';
+import { WelcomeVideoCard, shouldShowWelcomeVideo } from '../WelcomeVideoCard';
+import { SharedTransitionCard } from '../common/SharedTransition';
 
 // Derive courseId from exam section name
 const getCourseFromSection = (section: string): CourseId => {
@@ -348,6 +354,8 @@ const Home = () => {
   const toast = useToast();
   
   const handleSectionChange = async (newSection: string) => {
+    feedback.tap(); // Haptic feedback on section change
+    
     if (newSection === activeSection) {
       setShowSectionPicker(false);
       return;
@@ -395,17 +403,67 @@ const Home = () => {
     getTimeOfDay()
   );
 
+  // Pull-to-refresh for mobile
+  const handleRefresh = useCallback(async () => {
+    feedback.haptic('light');
+    if (refreshStats) {
+      await refreshStats();
+    }
+    feedback.haptic('success');
+  }, [refreshStats]);
+
+  const {
+    isPulling,
+    isRefreshing,
+    pullDistance,
+    onTouchStart,
+    onTouchMove,
+    onTouchEnd,
+    indicatorStyle,
+  } = usePullToRefresh({
+    onRefresh: handleRefresh,
+    threshold: 80,
+    enabled: true,
+  });
+
+  // Show skeleton only while waiting for user authentication
+  // Stats load progressively - don't block page render on them
+  if (!user) {
+    return <SkeletonDashboard />;
+  }
+
   return (
-    <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-6">
+    <div 
+      className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-6 min-h-[200px]"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
+      {/* Pull-to-refresh indicator */}
+      <div 
+        className="fixed top-16 left-1/2 -translate-x-1/2 z-50 pointer-events-none md:hidden"
+        style={indicatorStyle}
+      >
+        <div className={clsx(
+          'w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center',
+          isRefreshing && 'animate-spin'
+        )}>
+          <RefreshCw className={clsx(
+            'w-5 h-5 text-primary-600',
+            isRefreshing && 'animate-spin'
+          )} />
+        </div>
+      </div>
+
       <div className="max-w-lg mx-auto space-y-4 sm:space-y-6">
       {/* Section Picker Bottom Sheet */}
       <BottomSheet
         isOpen={showSectionPicker}
         onClose={() => setShowSectionPicker(false)}
         title="Change Exam Section"
-        maxHeight={75}
+        maxHeight={90}
       >
-        <div className="py-1 space-y-1">
+        <div className="py-1 space-y-1 pb-16">
               {courseId === 'cpa' ? (
                 // CPA-specific section picker with Core/Discipline grouping
                 // Note: BEC was retired December 15, 2023, only BAR/ISC/TCP available
@@ -634,57 +692,16 @@ const Home = () => {
         </div>
       )}
 
-      {/* Welcome Card or "What's Next" choices */}
-      {/* Show Welcome Card immediately for new users (no waiting for stats) */}
-      {!welcomeDismissed && !hasUserEverPracticed ? (
-        <div className="relative bg-gradient-to-br from-primary-50 to-indigo-50 dark:from-primary-900/20 dark:to-indigo-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-5">
-          <button
-            onClick={() => {
-              setWelcomeDismissed(true);
-              localStorage.setItem('voraprep_welcome_dismissed', '1');
-            }}
-            className="absolute top-3 right-3 p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 rounded-lg hover:bg-white/50 dark:hover:bg-slate-700/50 transition-colors"
-            aria-label="Dismiss welcome card"
-          >
-            <XIcon className="w-4 h-4" />
-          </button>
-          <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-800 flex items-center justify-center flex-shrink-0">
-              <Rocket className="w-5 h-5 text-primary-600 dark:text-primary-400" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <h2 className="text-lg font-bold text-slate-900 dark:text-white">
-                Welcome to VoraPrep!
-              </h2>
-              <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">
-                {isTrialing
-                  ? `Your 14-day free trial is active — ${trialDaysRemaining} days of unlimited access to all ${course?.shortName || courseId.toUpperCase()} content.`
-                  : isPremium
-                    ? `You have full access to all ${course?.shortName || courseId.toUpperCase()} content.`
-                    : `Start exploring ${course?.shortName || courseId.toUpperCase()} study materials.`}
-              </p>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
-                Choose your study style:
-              </p>
-              <div className="flex flex-col sm:flex-row gap-2 mt-2">
-                <Link
-                  to={activeSection ? `/learn?section=${activeSection}` : '/learn'}
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-lg transition-colors"
-                >
-                  <BookOpen className="w-4 h-4" />
-                  Start with Lessons
-                </Link>
-                <Link
-                  to={getCoursePracticePath(courseId)}
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold rounded-lg transition-colors"
-                >
-                  <Target className="w-4 h-4" />
-                  Jump to Practice
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* Welcome Video Card for first-time users */}
+      {/* Shows 4 clear paths: Lesson, Study Plan, Practice, Resources */}
+      {!welcomeDismissed && !hasUserEverPracticed && shouldShowWelcomeVideo() ? (
+        <WelcomeVideoCard
+          activeSection={activeSection}
+          onDismiss={() => {
+            setWelcomeDismissed(true);
+            localStorage.setItem('voraprep_welcome_dismissed', '1');
+          }}
+        />
       ) : (
         !hasPlan && !planLoading && !studyPlanNudgeDismissed && (
           hasUserEverPracticed ? (
@@ -770,78 +787,85 @@ const Home = () => {
         )
       )}
 
-      {/* Quick Access Buttons */}
+      {/* Quick Access Buttons - 48dp minimum touch targets per Material Design */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <Link
+        <SharedTransitionCard
+          id="learn"
           to={activeSection ? `/learn?section=${activeSection}` : '/learn'}
-          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
-          <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
-            <BookOpen className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+          <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+            <BookOpen className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Lessons</span>
-        </Link>
+        </SharedTransitionCard>
         
-        <Link
+        <SharedTransitionCard
+          id="practice"
           to={getCoursePracticePath(courseId)}
-          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
-          <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-            <Target className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+          <div className="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+            <Target className="w-6 h-6 text-primary-600 dark:text-primary-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Questions</span>
-        </Link>
+        </SharedTransitionCard>
         
-        <Link
+        <SharedTransitionCard
+          id="flashcards"
           to={getCourseFlashcardPath(courseId)}
-          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-colors hover:shadow-md"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-all hover:shadow-md"
         >
-          <div className="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
-            <Brain className="w-5 h-5 text-amber-500" />
+          <div className="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+            <Brain className="w-6 h-6 text-amber-500" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Flashcards</span>
-        </Link>
+        </SharedTransitionCard>
 
         {course?.hasTBS ? (
-        <Link
+        <SharedTransitionCard
+          id="tbs"
           to={getCourseTBSPath(courseId)}
-          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
-          <div className="w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center">
-            <FileSpreadsheet className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+          <div className="w-12 h-12 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center">
+            <FileSpreadsheet className="w-6 h-6 text-teal-600 dark:text-teal-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">TBS</span>
-        </Link>
+        </SharedTransitionCard>
         ) : courseId === 'cma' ? (
-        <Link
+        <SharedTransitionCard
+          id="essays"
           to={getCourseEssayPath(courseId)}
-          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
-          <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center">
-            <FileText className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+          <div className="w-12 h-12 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center">
+            <FileText className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Essays</span>
-        </Link>
+        </SharedTransitionCard>
         ) : courseId === 'cfp' ? (
-        <Link
+        <SharedTransitionCard
+          id="casestudies"
           to={getCourseCaseStudyPath(courseId)}
-          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+          className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
-          <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
-            <ClipboardCheck className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+          <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+            <ClipboardCheck className="w-6 h-6 text-purple-600 dark:text-purple-400" />
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Case Studies</span>
-        </Link>
+        </SharedTransitionCard>
         ) : (
-          <Link
+          <SharedTransitionCard
+            id="exam"
             to={getCourseExamPath(courseId)}
-            className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+            className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
           >
-            <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
-              <Target className="w-5 h-5 text-red-500" />
+            <div className="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+              <Target className="w-6 h-6 text-red-500" />
             </div>
             <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Mock Exam</span>
-          </Link>
+          </SharedTransitionCard>
         )}
       </div>
 
@@ -1007,7 +1031,6 @@ const Home = () => {
       {showDashboardNudge && !showStreakNudge && !showQuestionsNudge && (
         <ShareNudge trigger="dashboard_periodic" />
       )}
-
 
       </div>
     </div>

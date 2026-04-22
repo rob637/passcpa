@@ -1,34 +1,10 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import { ReactNode } from 'react';
 
 interface PageTransitionProps {
   children: ReactNode;
 }
-
-// Google-style fade + subtle slide transition
-const pageVariants = {
-  initial: {
-    opacity: 0,
-    y: 8,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.2,
-      ease: [0.2, 0, 0, 1] as const, // Google's standard easing
-    },
-  },
-  exit: {
-    opacity: 0,
-    y: -4,
-    transition: {
-      duration: 0.15,
-      ease: [0.4, 0, 1, 1] as const,
-    },
-  },
-};
 
 /**
  * PageTransition - Wraps page content with smooth fade transitions
@@ -46,19 +22,16 @@ const pageVariants = {
 export function PageTransition({ children }: PageTransitionProps) {
   const location = useLocation();
 
+  // Simple fade-in only - no exit animation to prevent blank screens on navigation
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={location.pathname}
-        variants={pageVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        className="h-full"
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <motion.div
+      key={location.pathname}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.15 }}
+    >
+      {children}
+    </motion.div>
   );
 }
 

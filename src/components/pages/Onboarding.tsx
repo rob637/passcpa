@@ -822,7 +822,8 @@ const Onboarding: React.FC = () => {
           localStorage.removeItem('pendingCheckout');
           // Only redirect if checkout is for the same course we just completed onboarding for
           if (pendingCheckout.course === selectedCourse) {
-            navigate(`/start-checkout?course=${pendingCheckout.course}&interval=${pendingCheckout.interval}`);
+            const couponParam = pendingCheckout.coupon ? `&coupon=${encodeURIComponent(pendingCheckout.coupon)}` : '';
+            navigate(`/start-checkout?course=${pendingCheckout.course}&interval=${pendingCheckout.interval}${couponParam}`);
             return;
           }
           // Different course — ignore stale checkout, continue to dashboard

@@ -21,6 +21,8 @@ import {
   Globe,
   Menu,
   X,
+  MessageSquare,
+  Smartphone,
 } from 'lucide-react';
 
 // Course card data for the 6 certification programs
@@ -278,10 +280,20 @@ const VoraPrep = () => {
       >
         Skip to main content
       </a>
+
+      {/* Announcement Bar */}
+      <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-2 px-4">
+        <Link to="/daily-cpa" className="inline-flex items-center gap-2 text-sm font-medium hover:text-blue-100 transition-colors">
+          <MessageSquare className="w-4 h-4" />
+          <span className="hidden sm:inline">NEW: Daily CPA Questions by Text — 3-day free trial</span>
+          <span className="sm:hidden">NEW: Daily CPA by Text — Free trial</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </Link>
+      </div>
       
       {/* Navigation */}
       <nav 
-        className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800"
+        className="fixed top-9 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800"
         aria-label="Main navigation"
       >
         <div className="px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
@@ -350,6 +362,9 @@ const VoraPrep = () => {
                 <Link to="/cia" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">CIA Exam Prep</Link>
                 <Link to="/cfp" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">CFP Exam Prep</Link>
                 <Link to="/cisa" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">CISA Exam Prep</Link>
+                <div className="border-t border-slate-200 dark:border-slate-700 my-2 pt-2">
+                  <Link to="/daily-cpa" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-blue-600 dark:text-blue-400 font-medium hover:bg-blue-50 dark:hover:bg-blue-900/30">📱 Daily CPA by Text</Link>
+                </div>
               </div>
             </div>
           </div>
@@ -358,7 +373,7 @@ const VoraPrep = () => {
 
       {/* Hero Section */}
       <main id="main-content">
-        <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 px-6 overflow-hidden">
+        <section className="relative pt-32 pb-12 md:pt-40 md:pb-20 px-6 overflow-hidden">
           {/* Animated background */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
           
@@ -475,6 +490,34 @@ const VoraPrep = () => {
               ))}
             </div>
 
+            {/* Daily CPA Featured Card */}
+            <div className="mt-6">
+              <Link to="/daily-cpa" className="block group">
+                <div className="relative bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
+                  <div className="relative px-6 py-6 md:px-8 md:py-8 flex flex-col md:flex-row items-center gap-6">
+                    <div className="flex-shrink-0 w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                      <Smartphone className="w-7 h-7 text-white" />
+                    </div>
+                    <div className="flex-1 text-center md:text-left">
+                      <div className="inline-flex items-center gap-1.5 bg-white/20 text-white px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2">
+                        <MessageSquare className="w-3 h-3" />
+                        NEW
+                      </div>
+                      <h3 className="text-xl md:text-2xl font-bold text-white mb-1">Daily CPA Questions by Text</h3>
+                      <p className="text-blue-100 text-sm md:text-base">
+                        CPA practice questions sent to your phone every morning. 5 minutes a day, instant feedback. From $4.99/mo.
+                      </p>
+                    </div>
+                    <div className="flex-shrink-0 flex items-center gap-2 bg-white text-blue-700 px-5 py-2.5 rounded-xl font-semibold text-sm group-hover:shadow-lg transition-all">
+                      Start Free Trial
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
             {/* Competitor pricing callout */}
             <div className="mt-10 text-center">
               <div className="inline-flex items-center gap-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl px-6 py-4 shadow-sm">
@@ -589,6 +632,7 @@ const VoraPrep = () => {
                 <li><Link to="/cia" className="hover:text-white transition-colors">CIA Exam Prep</Link></li>
                 <li><Link to="/cfp" className="hover:text-white transition-colors">CFP Exam Prep</Link></li>
                 <li><Link to="/cisa" className="hover:text-white transition-colors">CISA Exam Prep</Link></li>
+                <li><Link to="/daily-cpa" className="hover:text-white transition-colors text-blue-400 font-medium">Daily CPA by Text</Link></li>
               </ul>
             </div>
             <div>

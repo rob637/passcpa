@@ -43,8 +43,8 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
   {
     id: 'study-guide-section',
     contentType: 'study-guide',
-    titleTemplate: 'Complete {exam} {sectionName} Study Guide ({year})',
-    slugTemplate: 'how-to-pass-{course}-{section}-{year}',
+    titleTemplate: 'Complete {exam} {sectionName} Study Guide {year}',
+    slugTemplate: '{course}-{section}-study-guide-{year}',
     wordCountTarget: 2500,
     ctaType: 'free-trial',
     applicableCourses: 'all',
@@ -90,8 +90,8 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
   {
     id: 'pass-rates',
     contentType: 'pass-rates',
-    titleTemplate: '{exam} Exam Pass Rates {year}: Section-by-Section Breakdown',
-    slugTemplate: '{course}-exam-pass-rates-{year}',
+    titleTemplate: '{exam} Pass Rates {year}: What to Expect',
+    slugTemplate: '{course}-pass-rates-{year}',
     wordCountTarget: 1800,
     ctaType: 'free-trial',
     applicableCourses: 'all',
@@ -127,6 +127,116 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
       { heading: 'Study Tips for Working Professionals', level: 2, keyPoints: ['Morning vs evening study', 'Weekend strategy', 'Burnout prevention'], wordCount: 300 },
       { heading: 'When to Take the Exam', level: 2, keyPoints: ['Exam windows', 'Testing center tips', 'Score release dates'], wordCount: 250 },
       { heading: 'Free Study Tools from VoraPrep', level: 2, keyPoints: ['Adaptive practice', 'AI tutor', 'Score predictor'], wordCount: 200 },
+    ],
+  },
+
+  // ------ 90-Day Study Plan ------
+  {
+    id: '90-day-study-plan',
+    contentType: 'study-schedule',
+    titleTemplate: '90-Day {exam} Study Plan ({year}): Daily Schedule for Busy Candidates',
+    slugTemplate: '90-day-{course}-study-plan-{year}',
+    wordCountTarget: 2200,
+    ctaType: 'register',
+    applicableCourses: 'all',
+    perSection: false,
+    seasonal: true,
+    priority: 1,
+    outlineTemplate: [
+      { heading: 'Is 90 Days Enough to Pass the {exam}?', level: 2, keyPoints: ['Who a 90-day plan works for', 'When to choose a longer schedule', 'Study-hour expectations'], wordCount: 280 },
+      { heading: 'Your 12-Week {exam} Roadmap', level: 2, keyPoints: ['Weeks 1-4 foundation', 'Weeks 5-8 intensive practice', 'Weeks 9-12 final review and exam readiness'], wordCount: 500 },
+      { heading: 'A Realistic Weekly Calendar for Working Professionals', level: 2, keyPoints: ['Weekday study blocks', 'Weekend catch-up sessions', 'Rest and recovery'], wordCount: 350 },
+      { heading: 'Daily MCQ, Lesson, and Review Targets', level: 2, keyPoints: ['Question targets by week', 'When to add simulations/case studies', 'How to use spaced repetition'], wordCount: 350 },
+      { heading: 'What to Do If You Fall Behind', level: 2, keyPoints: ['How to triage weak topics', 'How to use PTO strategically', 'How to compress the final two weeks'], wordCount: 300 },
+      { heading: 'Tools That Make a 90-Day Plan Work', level: 2, keyPoints: ['Adaptive study plans', 'Progress tracking', 'AI tutoring for fast clarification'], wordCount: 220 },
+    ],
+  },
+
+  // ------ Section Cheat Sheet ------
+  {
+    id: 'cheat-sheet-section',
+    contentType: 'cheat-sheet',
+    titleTemplate: '{exam} {sectionName} Cheat Sheet ({year}): Key Formulas, Rules, and Mnemonics',
+    slugTemplate: '{course}-{section}-cheat-sheet-{year}',
+    wordCountTarget: 1800,
+    ctaType: 'free-trial',
+    applicableCourses: 'all',
+    perSection: true,
+    seasonal: true,
+    priority: 1,
+    outlineTemplate: [
+      { heading: '{sectionName} at a Glance', level: 2, keyPoints: ['What the section tests', 'Highest-weight areas', 'What to memorize vs understand'], wordCount: 250 },
+      { heading: 'Must-Know Formulas, Rules, and Frameworks', level: 2, keyPoints: ['Core formulas', 'Thresholds or rules to memorize', 'Shortcuts that save time'], wordCount: 500 },
+      { heading: 'Common Traps and Test-Day Reminders', level: 2, keyPoints: ['Frequent distractors', 'Calculation mistakes', 'Timing pitfalls'], wordCount: 300 },
+      { heading: 'Mnemonics and Memory Aids', level: 2, keyPoints: ['Easy recall techniques', 'How to build your own memory hooks', 'What is worth memorizing'], wordCount: 300 },
+      { heading: 'How to Use This Cheat Sheet in Your Study Routine', level: 2, keyPoints: ['When to review it', 'How to pair it with MCQs', 'How to turn it into flashcards'], wordCount: 250 },
+      { heading: 'More {exam} {sectionName} Help', level: 2, keyPoints: ['Link to study guide', 'Link to practice questions', 'Link to schedule or pass-rate article'], wordCount: 200 },
+    ],
+  },
+
+  // ------ Career Guide ------
+  {
+    id: 'career-guide',
+    contentType: 'career-guide',
+    titleTemplate: 'What Can You Do With a {exam}? Career Paths, Salary, and ROI ({year})',
+    slugTemplate: 'what-can-you-do-with-a-{course}-{year}',
+    wordCountTarget: 2200,
+    ctaType: 'register',
+    applicableCourses: 'all',
+    perSection: false,
+    seasonal: true,
+    priority: 2,
+    outlineTemplate: [
+      { heading: 'What the {exam} Credential Signals to Employers', level: 2, keyPoints: ['Skills employers associate with the credential', 'How it differs from general experience', 'Why it matters in hiring'], wordCount: 320 },
+      { heading: 'Top Career Paths After the {exam}', level: 2, keyPoints: ['Common job titles', 'Public vs private sector roles', 'Leadership paths'], wordCount: 450 },
+      { heading: 'Salary Potential and Long-Term ROI', level: 2, keyPoints: ['Entry-level vs senior pay', 'Certification premium', 'Payback period on exam costs'], wordCount: 400 },
+      { heading: 'Who Should Pursue the {exam}?', level: 2, keyPoints: ['Best fit backgrounds', 'Who may prefer a different certification', 'Career stage considerations'], wordCount: 320 },
+      { heading: 'How to Get Started', level: 2, keyPoints: ['Requirements snapshot', 'Timeline', 'Best first steps for candidates'], wordCount: 300 },
+      { heading: 'Next Resources to Explore', level: 2, keyPoints: ['Study schedule', 'Pass rates', 'Best review course comparison'], wordCount: 220 },
+    ],
+  },
+
+  // ------ News / Changes Update ------
+  {
+    id: 'news-update',
+    contentType: 'news-update',
+    titleTemplate: '{exam} Exam Changes {year}: What Candidates Need to Know',
+    slugTemplate: '{course}-exam-changes-{year}',
+    wordCountTarget: 1800,
+    ctaType: 'free-trial',
+    applicableCourses: 'all',
+    perSection: false,
+    seasonal: true,
+    priority: 1,
+    outlineTemplate: [
+      { heading: 'What Changed for the {exam} in {year}?', level: 2, keyPoints: ['Official updates', 'What stayed the same', 'Who is affected'], wordCount: 300 },
+      { heading: 'Changes to Exam Format, Blueprints, or Timing', level: 2, keyPoints: ['Section structure', 'Question weighting', 'Testing windows or registration changes'], wordCount: 350 },
+      { heading: 'How These Changes Affect Your Study Plan', level: 2, keyPoints: ['What to prioritize now', 'What old advice is outdated', 'Whether you should accelerate or delay your test date'], wordCount: 350 },
+      { heading: 'What Current Candidates Should Do Next', level: 2, keyPoints: ['Checklist for candidates already studying', 'Checklist for new starters', 'When to verify official announcements'], wordCount: 300 },
+      { heading: 'Best Resources to Stay Current', level: 2, keyPoints: ['Official exam body pages', 'Candidate handbooks', 'VoraPrep study schedule and guide articles'], wordCount: 250 },
+      { heading: 'FAQ About {year} {exam} Changes', level: 2, keyPoints: ['Will old materials still work?', 'Will pass rates change?', 'What if you are mid-plan?'], wordCount: 250 },
+    ],
+  },
+
+  // ------ Case Study / Success Plan ------
+  {
+    id: 'case-study',
+    contentType: 'case-study',
+    titleTemplate: 'How to Pass the {exam} While Working Full Time ({year})',
+    slugTemplate: 'pass-{course}-while-working-full-time-{year}',
+    wordCountTarget: 2000,
+    ctaType: 'register',
+    applicableCourses: 'all',
+    perSection: false,
+    seasonal: true,
+    priority: 1,
+    outlineTemplate: [
+      { heading: 'Why Working Professionals Struggle With the {exam}', level: 2, keyPoints: ['Time pressure', 'Energy management', 'Consistency problems'], wordCount: 280 },
+      { heading: 'A Realistic Weekly System That Actually Works', level: 2, keyPoints: ['Weekday routine', 'Weekend structure', 'How to protect study time'], wordCount: 420 },
+      { heading: 'How to Study Efficiently When Time Is Limited', level: 2, keyPoints: ['Prioritizing high-yield topics', 'Using adaptive practice', 'Reviewing mistakes instead of rereading'], wordCount: 380 },
+      { heading: 'What to Do During Busy Season or High-Stress Weeks', level: 2, keyPoints: ['Minimum viable study habit', 'How to bounce back after lost weeks', 'When to move an exam date'], wordCount: 320 },
+      { heading: 'Sample 8-Week and 12-Week Work-Friendly Plans', level: 2, keyPoints: ['Compressed plan', 'Standard plan', 'When each makes sense'], wordCount: 350 },
+      { heading: 'Tools That Save Time', level: 2, keyPoints: ['AI tutor for stuck points', 'Personalized next-step guidance', 'Smart question review'], wordCount: 250 },
     ],
   },
 
@@ -199,21 +309,21 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
   {
     id: 'topic-explainer',
     contentType: 'topic-explainer',
-    titleTemplate: '{topic} Explained: {exam} {sectionName} Study Guide',
-    slugTemplate: '{course}-{section}-{topicSlug}-explained',
-    wordCountTarget: 2000,
+    titleTemplate: 'Understanding {topic}: {exam} {sectionName} Deep Dive',
+    slugTemplate: '{course}-{section}-breakdown-{year}',
+    wordCountTarget: 2400,
     ctaType: 'free-trial',
     applicableCourses: 'all',
     perSection: true, // actually per-topic, but we generate per section and expand
     seasonal: false,
     priority: 3,
     outlineTemplate: [
-      { heading: 'What Is {topic}?', level: 2, keyPoints: ['Clear definition', 'Why it matters', 'How it appears on the exam'], wordCount: 300 },
-      { heading: 'Key Concepts You Need to Know', level: 2, keyPoints: ['Core concepts', 'Rules and exceptions', 'Examples'], wordCount: 500 },
-      { heading: 'How {topic} Is Tested on the {exam}', level: 2, keyPoints: ['Question types', 'Common traps', 'Blueprint weight'], wordCount: 300 },
-      { heading: 'Practice Questions on {topic}', level: 2, keyPoints: ['3-5 sample questions', 'Detailed explanations'], wordCount: 500 },
-      { heading: 'Study Tips for {topic}', level: 2, keyPoints: ['Memory techniques', 'Common mistakes', 'Time allocation'], wordCount: 200 },
-      { heading: 'Master {topic} with VoraPrep', level: 2, keyPoints: ['Adaptive practice', 'AI tutor for explanations'], wordCount: 200 },
+      { heading: 'Why {topic} Feels Hard — and How to Make It Click', level: 2, keyPoints: ['Why candidates get stuck here', 'How it appears on the exam', 'The one big idea to anchor first'], wordCount: 280 },
+      { heading: 'The Core Idea in Plain English', level: 2, keyPoints: ['Clear definition without jargon overload', 'Use an analogy or mental model', 'Show why it matters in real practice'], wordCount: 420 },
+      { heading: 'A Step-by-Step Framework for Solving {topic} Questions', level: 2, keyPoints: ['Decision process', 'Rules and exceptions', 'What to do first under time pressure'], wordCount: 450 },
+      { heading: 'Worked Example: {topic} From Start to Finish', level: 2, keyPoints: ['Realistic exam-style scenario', 'Detailed explanation of each step', 'How to avoid common mistakes'], wordCount: 520 },
+      { heading: 'Common Traps and Quick Self-Check', level: 2, keyPoints: ['Frequent distractors', '3-5 quick self-check prompts', 'Memory aids or mnemonics'], wordCount: 350 },
+      { heading: 'How to Master {topic} with VoraPrep', level: 2, keyPoints: ['Adaptive practice', 'AI tutor for explanations', 'Related guides and cheat sheets'], wordCount: 250 },
     ],
   },
 
@@ -221,8 +331,8 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
   {
     id: 'exam-tips',
     contentType: 'exam-tips',
-    titleTemplate: '{exam} Exam Day Tips: {count} Strategies from Successful Candidates',
-    slugTemplate: '{course}-exam-day-tips-{year}',
+    titleTemplate: '15 Tips to Pass the {exam} Exam in {year}',
+    slugTemplate: '{course}-exam-tips-{year}',
     wordCountTarget: 1800,
     ctaType: 'register',
     applicableCourses: 'all',
@@ -379,6 +489,189 @@ export const EXAM_CONTENT_META: Record<CourseId, ExamContentMeta> = {
   },
 };
 
+const AUTHORITATIVE_SOURCE_LINKS: Record<CourseId, string[]> = {
+  cpa: [
+    'AICPA CPA Exam: https://www.aicpa-cima.com/resources/landing/uniform-cpa-examination',
+    'NASBA CPA Candidate Resources: https://nasba.org/exams/cpaexam/',
+    'BLS Accountants and Auditors: https://www.bls.gov/ooh/business-and-financial/accountants-and-auditors.htm',
+  ],
+  ea: [
+    'IRS Enrolled Agent Information: https://www.irs.gov/tax-professionals/enrolled-agents',
+    'IRS SEE Exam Overview: https://www.prometric.com/test-takers/search/irs',
+    'BLS Tax Examiners and Collectors: https://www.bls.gov/ooh/business-and-financial/tax-examiners-and-collectors-and-revenue-agents.htm',
+  ],
+  cma: [
+    'IMA CMA Certification: https://www.imanet.org/cma-certification',
+    'BLS Financial Managers: https://www.bls.gov/ooh/management/financial-managers.htm',
+  ],
+  cia: [
+    'IIA CIA Certification: https://www.theiia.org/en/certifications/cia/',
+    'BLS Auditors and Compliance Roles: https://www.bls.gov/ooh/business-and-financial/accountants-and-auditors.htm',
+  ],
+  cisa: [
+    'ISACA CISA Certification: https://www.isaca.org/credentialing/cisa',
+    'BLS Information Security Analysts: https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm',
+  ],
+  cfp: [
+    'CFP Board Certification: https://www.cfp.net/get-certified/certification-process',
+    'BLS Personal Financial Advisors: https://www.bls.gov/ooh/business-and-financial/personal-financial-advisors.htm',
+  ],
+};
+
+const CPA_COMPLEX_TOPIC_SERIES: Record<string, string[]> = {
+  FAR: [
+    'Consolidations',
+    'Statement of Cash Flows',
+    'Leases',
+    'Deferred Taxes',
+    'Bonds and Amortization',
+    'Pensions',
+    'Revenue Recognition',
+    'Diluted EPS',
+    'Governmental Funds',
+    'Not-for-Profit Net Assets',
+  ],
+  AUD: [
+    'Audit Sampling',
+    'Transaction Cycles',
+    'Subsequent Events',
+    'Group Audits',
+    'SOC Reports',
+    'Independence Threats',
+    'Internal Control Deficiencies',
+    'Audit Opinions',
+    'Analytical Procedures',
+    'SSARS vs SSAE',
+  ],
+  REG: [
+    'Partnership Basis',
+    'S Corporation Basis',
+    'Book to Tax Differences',
+    'Property Transactions',
+    'Agency and Suretyship',
+    'Circular 230',
+    'Corporate Liquidations',
+    'Estate and Gift Tax',
+    'Tax Research',
+    'Contract Remedies',
+  ],
+  BAR: [
+    'Variance Analysis',
+    'Transfer Pricing',
+    'Activity Based Costing',
+    'Capital Budgeting',
+    'Residual Income and EVA',
+    'Forecasting and Regression',
+    'Cost Behavior',
+    'Business Valuation',
+    'Government-Wide Reconciliations',
+    'Hedging and Risk Management',
+  ],
+  ISC: [
+    'Zero Trust',
+    'SOC 1 vs SOC 2',
+    'Encryption and Key Management',
+    'Identity and Access Management',
+    'RTO vs RPO',
+    'Change Management Controls',
+    'Data Governance',
+    'Cybersecurity Frameworks',
+    'Incident Response',
+    'AI and Automation Controls',
+  ],
+  TCP: [
+    'Advanced Entity Basis',
+    'Property Distributions',
+    'Passive Activity Losses',
+    'Multijurisdictional Taxation',
+    'Stock vs Asset Sales',
+    'Compensation Planning',
+    'Retirement Plan Strategies',
+    'Estate and Gift Planning',
+    'Tax Research Hierarchy',
+    'International Tax and Withholding',
+  ],
+};
+
+const CPA_WOW_VALUE_FORMATS: Array<{
+  slugSuffix: string;
+  titlePattern: string;
+  hook: string;
+  wowElement: string;
+  learnerPromise: string;
+}> = [
+  {
+    slugSuffix: 'trap-guide',
+    titlePattern: 'CPA {section} {topic}: Trap Guide for Easy Points ({year})',
+    hook: 'Show the exact trap pattern that keeps costing candidates points.',
+    wowElement: 'a trap-vs-truth table',
+    learnerPromise: 'teach the clue words that instantly change the answer choice',
+  },
+  {
+    slugSuffix: 'decision-tree',
+    titlePattern: 'CPA {section} {topic}: Decision Tree for Faster Answers ({year})',
+    hook: 'Turn a confusing topic into a faster yes/no path under time pressure.',
+    wowElement: 'a simple decision tree',
+    learnerPromise: 'reduce overthinking and narrow the answer quickly',
+  },
+  {
+    slugSuffix: 'mini-case',
+    titlePattern: 'CPA {section} {topic}: Mini-Case Walkthrough ({year})',
+    hook: 'Make the topic feel real with an exam-style scenario solved step by step.',
+    wowElement: 'a worked mini-case',
+    learnerPromise: 'connect the rule to a concrete scenario they can remember',
+  },
+  {
+    slugSuffix: 'memory-hacks',
+    titlePattern: 'CPA {section} {topic}: Memory Hacks That Actually Stick ({year})',
+    hook: 'Give readers a faster recall system than brute-force rereading.',
+    wowElement: 'a memory hook and pattern summary',
+    learnerPromise: 'make recall easier on exam day',
+  },
+  {
+    slugSuffix: '30-minute-rescue-plan',
+    titlePattern: 'CPA {section} {topic}: 30-Minute Rescue Plan ({year})',
+    hook: 'Help the reader recover fast when a topic still feels shaky late in prep.',
+    wowElement: 'a 30-minute rescue checklist',
+    learnerPromise: 'show exactly what to review when time is short',
+  },
+  {
+    slugSuffix: 'pattern-recognition',
+    titlePattern: 'CPA {section} {topic}: Pattern Recognition Guide ({year})',
+    hook: 'Teach what high scorers notice immediately in this topic.',
+    wowElement: 'a pattern-recognition cheat table',
+    learnerPromise: 'train the reader to spot the tested pattern quickly',
+  },
+  {
+    slugSuffix: 'high-scorer-playbook',
+    titlePattern: 'CPA {section} {topic}: High-Scorer Playbook ({year})',
+    hook: 'Frame the topic the way strong candidates actually attack it.',
+    wowElement: 'a high-scorer playbook',
+    learnerPromise: 'move the reader from memorizing to strategic thinking',
+  },
+  {
+    slugSuffix: 'from-confusing-to-clear',
+    titlePattern: 'CPA {section} {topic}: From Confusing to Clear ({year})',
+    hook: 'Take a topic people hate and make it feel teachable and manageable.',
+    wowElement: 'an aha-moment explanation',
+    learnerPromise: 'give the reader the feeling of “finally, I get it”',
+  },
+  {
+    slugSuffix: 'quick-review-map',
+    titlePattern: 'CPA {section} {topic}: Quick Review Map ({year})',
+    hook: 'Package the topic into a last-week review asset people will bookmark.',
+    wowElement: 'a quick review map',
+    learnerPromise: 'help the reader revise the topic in minutes, not hours',
+  },
+  {
+    slugSuffix: 'mistake-autopsy',
+    titlePattern: 'CPA {section} {topic}: Mistake Autopsy ({year})',
+    hook: 'Break down why smart candidates still miss this topic under pressure.',
+    wowElement: 'a mistake autopsy',
+    learnerPromise: 'turn common misses into repeatable wins',
+  },
+];
+
 // ============================================================================
 // Content Brief Generator
 // ============================================================================
@@ -433,6 +726,7 @@ export function generateBriefsForExam(courseId: CourseId): ContentBrief[] {
           course: meta.course,
           section: section.id,
           sectionName: section.name,
+          topic: section.topics[0] || section.name,
           year: CURRENT_YEAR,
           price: meta.price,
           questions: meta.questionCount,
@@ -530,10 +824,228 @@ export function generateFullContentMatrix(): ContentBrief[] {
   // Add cross-exam comparison briefs
   allBriefs.push(...generateComparisonBriefs());
 
+  // Add 60 CPA hard-topic deep dives (10 per section across all 6 sections)
+  allBriefs.push(...generateCPAComplexTopicBriefs());
+
+  // Add 60 more CPA wow-factor conversion articles with trap guides, decision trees, and mini-cases
+  allBriefs.push(...generateCPAWowFactorBriefs());
+
   // Sort by priority
   allBriefs.sort((a, b) => a.priority - b.priority);
 
   return allBriefs;
+}
+
+function generateCPAComplexTopicBriefs(): ContentBrief[] {
+  const meta = EXAM_CONTENT_META.cpa;
+
+  return meta.sections.flatMap(section => {
+    const topics = CPA_COMPLEX_TOPIC_SERIES[section.id] || [];
+
+    return topics.map((topic, index) => {
+      const topicSlug = slugify(topic);
+      const normalizedTopic = topic.toLowerCase();
+
+      return {
+        id: `cpa-hard-topic-${section.id.toLowerCase()}-${topicSlug}-${CURRENT_YEAR}`,
+        title: `CPA ${section.id} Deep Dive: ${topic} Made Practical (${CURRENT_YEAR})`,
+        slug: `cpa-${section.id.toLowerCase()}-${topicSlug}-deep-dive-${CURRENT_YEAR}`,
+        courseId: 'cpa' as CourseId,
+        section: section.id,
+        contentType: 'topic-explainer' as ContentType,
+        targetKeywords: [
+          `cpa ${section.id.toLowerCase()} ${normalizedTopic}`,
+          `${topic} cpa`,
+          `${section.id.toLowerCase()} ${normalizedTopic} examples`,
+          `how to study ${normalizedTopic} for cpa`,
+          `cpa ${section.id.toLowerCase()} hard topics`,
+        ],
+        primaryKeyword: `cpa ${section.id.toLowerCase()} ${normalizedTopic}`,
+        searchIntent: 'informational' as SearchIntent,
+        estimatedVolume: 250 + (10 - index) * 20,
+        competitorUrls: [],
+        outline: [
+          {
+            heading: `${topic}: Why It Feels So Hard`,
+            level: 2,
+            keyPoints: [
+              `Why ${normalizedTopic} trips candidates up`,
+              `Where ${normalizedTopic} appears in ${section.id} MCQs and simulations`,
+              'The single big idea to anchor before memorizing details',
+            ],
+            wordCount: 260,
+          },
+          {
+            heading: 'The Core Idea in Plain English',
+            level: 2,
+            keyPoints: [
+              `Teach ${normalizedTopic} with an analogy or mental model`,
+              'Translate the technical language into everyday terms',
+              'Call out the vocabulary candidates confuse most often',
+            ],
+            wordCount: 360,
+          },
+          {
+            heading: `A Step-by-Step Framework for ${topic}`,
+            level: 2,
+            keyPoints: [
+              'Use a checklist or decision tree',
+              'Show what to do first, second, and third',
+              'Highlight shortcuts that save time without sacrificing accuracy',
+            ],
+            wordCount: 420,
+          },
+          {
+            heading: `Worked Example: Solving a ${topic} Problem`,
+            level: 2,
+            keyPoints: [
+              'Walk through a realistic exam-style scenario from start to finish',
+              'Explain the reasoning behind each move',
+              'Show how the final answer is reached without skipping steps',
+            ],
+            wordCount: 520,
+          },
+          {
+            heading: 'Common Traps and Exam-Day Mistakes',
+            level: 2,
+            keyPoints: [
+              'Most common distractors and half-right answers',
+              'What students forget under time pressure',
+              'How to recover if you get stuck mid-question',
+            ],
+            wordCount: 340,
+          },
+          {
+            heading: 'Quick Self-Check and 7-Day Reinforcement Plan',
+            level: 2,
+            keyPoints: [
+              'Include 3-5 quick self-check prompts',
+              'Recommend a short weekly review routine',
+              'Point readers to VoraPrep practice questions, study guides, and cheat sheets',
+            ],
+            wordCount: 320,
+          },
+        ],
+        wordCountTarget: 2400,
+        internalLinks: generateInternalLinks('cpa', section.id),
+        ctaType: 'free-trial' as const,
+        ctaUrl: '/cpa',
+        status: 'brief' as ContentStatus,
+        priority: 0,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      };
+    });
+  });
+}
+
+function generateCPAWowFactorBriefs(): ContentBrief[] {
+  const meta = EXAM_CONTENT_META.cpa;
+
+  return meta.sections.flatMap((section, sectionIndex) => {
+    const topics = CPA_COMPLEX_TOPIC_SERIES[section.id] || [];
+
+    return topics.map((topic, topicIndex) => {
+      const topicSlug = slugify(topic);
+      const normalizedTopic = topic.toLowerCase();
+      const format = CPA_WOW_VALUE_FORMATS[(topicIndex + sectionIndex) % CPA_WOW_VALUE_FORMATS.length];
+      const formatKeyword = format.slugSuffix.replace(/-/g, ' ');
+
+      return {
+        id: `cpa-wow-${section.id.toLowerCase()}-${topicSlug}-${format.slugSuffix}-${CURRENT_YEAR}`,
+        title: interpolate(format.titlePattern, {
+          section: section.id,
+          topic,
+          year: CURRENT_YEAR,
+        }),
+        slug: `cpa-${section.id.toLowerCase()}-${topicSlug}-${format.slugSuffix}-${CURRENT_YEAR}`,
+        courseId: 'cpa' as CourseId,
+        section: section.id,
+        contentType: 'topic-explainer' as ContentType,
+        targetKeywords: [
+          `cpa ${section.id.toLowerCase()} ${normalizedTopic} ${formatKeyword}`,
+          `${topic} ${formatKeyword} cpa`,
+          `cpa ${section.id.toLowerCase()} ${normalizedTopic} tricks`,
+          `how to avoid ${normalizedTopic} mistakes on cpa`,
+          `cpa ${section.id.toLowerCase()} ${normalizedTopic} examples`,
+        ],
+        primaryKeyword: `cpa ${section.id.toLowerCase()} ${normalizedTopic} ${formatKeyword}`,
+        searchIntent: 'informational' as SearchIntent,
+        estimatedVolume: 300 + (10 - topicIndex) * 15,
+        competitorUrls: [],
+        outline: [
+          {
+            heading: `${topic}: Why This Topic Costs Smart Candidates Points`,
+            level: 2,
+            keyPoints: [
+              format.hook,
+              `Explain why ${normalizedTopic} feels harder than it should in ${section.id}`,
+              'Name the one misunderstanding that causes the most missed questions',
+            ],
+            wordCount: 250,
+          },
+          {
+            heading: 'The Fastest Way to Think About It',
+            level: 2,
+            keyPoints: [
+              'Teach the concept with a clear analogy and plain-English explanation',
+              `Include ${format.wowElement} for instant clarity`,
+              `Specifically ${format.learnerPromise}`,
+            ],
+            wordCount: 380,
+          },
+          {
+            heading: `Decision Tree, Trap-vs-Truth, and What to Notice First`,
+            level: 2,
+            keyPoints: [
+              'Give the reader a decision tree or if/then checklist',
+              'Add a trap-vs-truth comparison box that separates similar answer choices',
+              'Show the signal words that tell the reader which path to take',
+            ],
+            wordCount: 420,
+          },
+          {
+            heading: `Worked Mini-Case: ${topic} Without the Confusion`,
+            level: 2,
+            keyPoints: [
+              'Walk through a realistic mini-case from start to finish',
+              'Include the intermediate thinking, not just the final answer',
+              'Create a genuine aha moment so the reader feels the topic finally click',
+            ],
+            wordCount: 520,
+          },
+          {
+            heading: 'Common Traps, Quick Self-Check, and Last-Week Review',
+            level: 2,
+            keyPoints: [
+              'Show 3-5 common traps and why they look tempting',
+              'Include a quick self-check list with short prompts',
+              'Add a 15-30 minute review plan for the final week before the exam',
+            ],
+            wordCount: 360,
+          },
+          {
+            heading: 'What to Practice Next in VoraPrep',
+            level: 2,
+            keyPoints: [
+              'Point readers to related VoraPrep practice, study guides, and cheat sheets',
+              'Explain how adaptive drilling helps them lock in the concept faster',
+              'End with a concrete CTA to keep practicing inside VoraPrep',
+            ],
+            wordCount: 250,
+          },
+        ],
+        wordCountTarget: 2300,
+        internalLinks: generateInternalLinks('cpa', section.id),
+        ctaType: 'free-trial' as const,
+        ctaUrl: '/cpa',
+        status: 'brief' as ContentStatus,
+        priority: 0,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      };
+    });
+  });
 }
 
 /**
@@ -599,11 +1111,11 @@ function generatePrimaryKeyword(contentType: ContentType, meta: ExamContentMeta,
     'salary-guide': `${exam} salary`,
     'requirements': `${exam} requirements`,
     'practice-questions': section ? `${exam} ${sec} practice questions` : `${exam} practice questions`,
-    'cheat-sheet': `${exam} cheat sheet`,
+    'cheat-sheet': section ? `${exam} ${sec} cheat sheet` : `${exam} cheat sheet`,
     'exam-tips': `${exam} exam tips`,
-    'career-guide': `${exam} career`,
+    'career-guide': `what can you do with a ${exam}`,
     'news-update': `${exam} exam changes ${CURRENT_YEAR}`,
-    'case-study': `pass ${exam} exam`,
+    'case-study': `how to pass ${exam} while working full time`,
   };
 
   return keywordMap[contentType] || `${exam} exam prep`;
@@ -629,10 +1141,15 @@ function generateKeywordsForBrief(contentType: ContentType, meta: ExamContentMet
   // Add content-type-specific keywords
   const typeKeywords: Record<string, string[]> = {
     'study-guide': [`how to study for ${exam}`, `${exam} study tips`, `${exam} exam prep`],
+    'topic-explainer': [`${exam} difficult topics`, `${exam} ${sec} explained`, `${exam} hard concepts`],
     'pass-rates': [`${exam} pass rate ${CURRENT_YEAR}`, `${exam} difficulty`, `${exam} failure rate`],
     'practice-questions': [`free ${exam} questions`, `${exam} mcq practice`, `${exam} sample questions`],
     'review-comparison': [`${exam} review courses compared`, `cheap ${exam} prep`, `${exam} prep cost`],
     'salary-guide': [`${exam} salary ${CURRENT_YEAR}`, `how much do ${exam}s make`, `${exam} earning potential`],
+    'cheat-sheet': [`${exam} cheat sheet`, `${exam} formula sheet`, `${exam} mnemonics`],
+    'career-guide': [`${exam} jobs`, `${exam} career path`, `is ${exam} worth it`],
+    'news-update': [`${exam} exam changes`, `${exam} blueprint changes`, `${exam} new exam format`],
+    'case-study': [`pass ${exam} while working full time`, `${exam} success story`, `${exam} study plan for busy professionals`],
   };
 
   if (typeKeywords[contentType]) {
@@ -665,22 +1182,38 @@ function getIntentForContentType(contentType: ContentType): SearchIntent {
 function generateInternalLinks(courseId: CourseId, section?: string): string[] {
   const links = [
     `/${courseId}`,
+    `/${courseId}/practice`,
+    `/${courseId}/study`,
     '/blog',
-    '/compare',
+    '/pricing',
     '/register',
+    `/blog/${courseId}-study-schedule-${CURRENT_YEAR}`,
+    `/blog/90-day-${courseId}-study-plan-${CURRENT_YEAR}`,
+    `/blog/${courseId}-pass-rates-${CURRENT_YEAR}`,
+    `/blog/best-${courseId}-review-courses-${CURRENT_YEAR}`,
+    `/blog/${courseId}-exam-tips-${CURRENT_YEAR}`,
+    `/blog/${courseId}-salary-guide-${CURRENT_YEAR}`,
+    `/blog/what-can-you-do-with-a-${courseId}-${CURRENT_YEAR}`,
+    `/blog/${courseId}-exam-changes-${CURRENT_YEAR}`,
+    `/blog/pass-${courseId}-while-working-full-time-${CURRENT_YEAR}`,
   ];
 
   if (section) {
-    // Link to other section guides
+    links.push(
+      `/blog/free-${courseId}-${section.toLowerCase()}-practice-questions-${CURRENT_YEAR}`,
+      `/blog/${courseId}-${section.toLowerCase()}-cheat-sheet-${CURRENT_YEAR}`,
+      `/blog/${courseId}-${section.toLowerCase()}-study-guide-${CURRENT_YEAR}`,
+    );
+
     const meta = EXAM_CONTENT_META[courseId];
     for (const s of meta.sections) {
       if (s.id !== section) {
-        links.push(`/blog/how-to-pass-${courseId}-${s.id.toLowerCase()}-${CURRENT_YEAR}`);
+        links.push(`/blog/${courseId}-${s.id.toLowerCase()}-study-guide-${CURRENT_YEAR}`);
       }
     }
   }
 
-  return links;
+  return [...new Set(links)];
 }
 
 // ============================================================================
@@ -696,13 +1229,14 @@ function generateInternalLinks(courseId: CourseId, section?: string): string[] {
  */
 export function buildContentGenerationPrompt(brief: ContentBrief): string {
   const meta = EXAM_CONTENT_META[brief.courseId];
+  const authorityLinks = AUTHORITATIVE_SOURCE_LINKS[brief.courseId] || [];
 
   return `You are a professional content writer specializing in ${meta.examFull} exam preparation.
 Write a comprehensive, SEO-optimized blog article for VoraPrep (voraprep.com), an AI-powered exam prep platform.
 
 ARTICLE SPECIFICATIONS:
 - Title: ${brief.title}
-- Primary Keyword: "${brief.primaryKeyword}" (use in H1, first paragraph, and 2-3 subheadings)
+- Primary Keyword: "${brief.primaryKeyword}" (use in the title, first paragraph, and 2-3 subheadings naturally)
 - Secondary Keywords: ${brief.targetKeywords.map(k => `"${k}"`).join(', ')}
 - Word Count Target: ${brief.wordCountTarget} words
 - Search Intent: ${brief.searchIntent}
@@ -711,21 +1245,29 @@ ARTICLE SPECIFICATIONS:
 OUTLINE (follow this structure):
 ${brief.outline.map(s => `${'#'.repeat(s.level)} ${s.heading}\n${s.keyPoints.map(kp => `  - ${kp}`).join('\n')}\n  Target: ~${s.wordCount} words`).join('\n\n')}
 
-SEO REQUIREMENTS:
-1. Use the primary keyword naturally in the first 100 words
-2. Include secondary keywords throughout (1-2 times each naturally)
-3. Use H2 and H3 headings with keywords where natural
-4. Write a meta title (60 chars max) and meta description (155 chars max)
-5. Include internal link placeholders: ${brief.internalLinks.map(l => `[${l}]`).join(', ')}
-6. Add a clear CTA to VoraPrep at the end
+SEO & VALUE REQUIREMENTS:
+1. Use the primary keyword naturally in the first 100 words.
+2. Include secondary keywords throughout (1-2 times each, naturally).
+3. Use H2 and H3 headings with keywords where natural.
+4. Write a meta title (60 chars max) and meta description (155 chars max).
+5. Use 2-4 of these internal links naturally in the article body and then add a short "Related VoraPrep resources" section near the end with bullet links and one-line descriptions: ${brief.internalLinks.map(l => `https://voraprep.com${l}`).join(', ')}
+6. Add a short "Official resources and references" section with 2-4 bullet links to authoritative sources when relevant: ${authorityLinks.join(', ')}
+7. Include a table, checklist, comparison box, or trap-vs-truth chart anywhere it helps the reader.
+8. Do not invent statistics, fees, deadlines, or board rules. If something varies by state or changes yearly, say so and direct readers to the official source.
+9. Reference relevant existing VoraPrep posts where helpful (study schedule, pass rates, practice questions, review courses, career guide, or exam changes).
+10. Add a clear CTA to VoraPrep at the end.
+11. Teach like a fantastic coach, not a dry textbook: include at least one analogy, one worked example, one "common traps" callout, and one short "quick self-check" section.
+12. Create at least one genuine aha moment for the reader and, where relevant, include a decision tree or trap-vs-truth box that makes the concept feel much easier than expected.
 
 TONE & STYLE:
 - Professional but approachable (like a knowledgeable study buddy)
-- Data-driven: include specific numbers, pass rates, study hours
+- Data-driven, but only with defensible numbers
 - Actionable: readers should know exactly what to do next
 - Honest: acknowledge exam difficulty, don't oversell
+- Specific and useful, not generic filler
+- Creative and memorable when helpful: use an analogy, mini-case, or vivid comparison to make complex ideas stick
+- Give the reader at least one aha moment, not just more information
 - Use bullet points and numbered lists for scannability
-- Include a comparison table where relevant
 
 ABOUT VORAPREP (for CTA/mentions):
 - AI-powered exam prep for ${meta.exam} and 5 other certifications

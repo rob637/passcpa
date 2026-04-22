@@ -326,6 +326,30 @@ export const analytics = {
     }
   },
 
+  // ============================================
+  // CONVERSION FUNNEL EVENTS
+  // For diagnosing where trial signups drop off
+  // ============================================
+
+  /** Fired when Stripe checkout session is created and we redirect to Stripe */
+  trackCheckoutInitiated: (courseId: string, interval: 'monthly' | 'annual', couponCode?: string) => {
+    trackEvent('checkout_initiated', {
+      course_id: courseId,
+      interval,
+      coupon_code: couponCode || null,
+      has_coupon: !!couponCode,
+    });
+  },
+
+  /** Fired once per session when a user lands via the founder recovery campaign */
+  trackRecoveryLanded: (campaign: string, courseId?: string, couponCode?: string) => {
+    trackEvent('recovery_email_landed', {
+      campaign,
+      course_id: courseId || null,
+      coupon_code: couponCode || null,
+    });
+  },
+
   /**
    * Check if Google Ads tracking is configured (at least signup is configured)
    */

@@ -152,6 +152,12 @@ service cloud.firestore {
       allow read, update, delete: if isAdmin();
     }
 
+    // Diagnostic Leads - diagnostic tool lead captures
+    match /diagnosticLeads/{leadId} {
+      allow create: if true; // Anyone can submit diagnostic form
+      allow read, update, delete: if isAdmin();
+    }
+
     // Testimonials - user-submitted testimonials
     match /testimonials/{testimonialId} {
       allow create: if isAuthenticated(); // Users can submit testimonials
@@ -246,6 +252,44 @@ service cloud.firestore {
 
     // Processed Stripe events - idempotency tracking, server-managed
     match /processed_stripe_events/{eventId} {
+      allow read, write: if false; // Admin SDK only
+    }
+
+    // ============================================================================
+    // COLLECTION GROUP RULES
+    // Required for queries that span across all users' subcollections
+    // ============================================================================
+
+    // Sessions collection group - allows admin to query recent sessions across all users
+    match /{path=**}/sessions/{sessionId} {
+      allow read: if isAdmin();
+    }
+
+    // ============================================================================
+    // DAILY CPA — SMS product collections (server-managed via Admin SDK)
+    // ============================================================================
+
+    match /daily_users/{userId} {
+      allow read, write: if false; // Admin SDK only
+    }
+
+    match /daily_sessions/{sessionId} {
+      allow read, write: if false; // Admin SDK only
+    }
+
+    match /daily_attempts/{attemptId} {
+      allow read, write: if false; // Admin SDK only
+    }
+
+    match /daily_streaks/{userId} {
+      allow read, write: if false; // Admin SDK only
+    }
+
+    match /daily_sms_log/{messageId} {
+      allow read, write: if false; // Admin SDK only
+    }
+
+    match /daily_questions/{section} {
       allow read, write: if false; // Admin SDK only
     }
   }

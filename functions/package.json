@@ -20,6 +20,7 @@
     "firebase-admin": "^13.6.0",
     "firebase-functions": "^7.0.5",
     "resend": "^4.0.0",
-    "stripe": "^20.3.1"
+    "stripe": "^20.3.1",
+    "telnyx": "^6.41.0"
   }
 }

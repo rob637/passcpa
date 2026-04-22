@@ -59,26 +59,48 @@ export const ROUTE_TITLES: Record<string, string> = {
 
 /**
  * Hook that automatically sets title based on current route
+ * Returns the current page title for use in mobile headers
  */
-export const useRouteTitle = () => {
+export const useRouteTitle = (): string => {
   const location = useLocation();
 
+  const title = getPageTitle(location.pathname);
+  
   useEffect(() => {
     const baseTitle = 'VoraPrep';
-    const path = location.pathname;
-
-    // Check for exact match first
-    let title = ROUTE_TITLES[path];
-
-    // Check for dynamic routes
-    if (!title) {
-      if (path.startsWith('/lessons/')) {
-        title = 'Lesson';
-      }
-    }
-
     document.title = title ? `${title} | ${baseTitle}` : baseTitle;
-  }, [location.pathname]);
+  }, [title]);
+  
+  return title;
+};
+
+/**
+ * Get page title from pathname (extracted for reuse)
+ */
+export const getPageTitle = (pathname: string): string => {
+  // Check for exact match first
+  let title = ROUTE_TITLES[pathname];
+
+  // Check for dynamic routes
+  if (!title) {
+    if (pathname.startsWith('/lessons/')) {
+      title = 'Lesson';
+    } else if (pathname.startsWith('/practice')) {
+      title = 'Practice';
+    } else if (pathname.startsWith('/flashcards')) {
+      title = 'Flashcards';
+    } else if (pathname.startsWith('/tbs')) {
+      title = 'TBS';
+    } else if (pathname.startsWith('/study-plan')) {
+      title = 'Study Plan';
+    } else if (pathname.startsWith('/resources')) {
+      title = 'Resources';
+    } else if (pathname.startsWith('/admin')) {
+      title = 'Admin';
+    }
+  }
+
+  return title || '';
 };
 
 export default useDocumentTitle;

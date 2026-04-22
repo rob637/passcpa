@@ -1392,7 +1392,7 @@ const LessonViewer: React.FC = () => {
               leftIcon={ArrowLeft}
               className="text-slate-600 dark:text-slate-300"
             >
-              <span className="hidden sm:inline">{returnTo ? 'Back to Practice' : fromDailyPlan ? 'Back to Daily Plan' : 'Back to Lessons'}</span>
+              <span>{returnTo ? 'Practice' : fromDailyPlan ? 'Home' : 'Lessons'}</span>
             </Button>
 
             <div className="flex items-center gap-2">

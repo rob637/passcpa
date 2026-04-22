@@ -87,7 +87,6 @@ html {
   -webkit-touch-callout: none;
   scroll-behavior: smooth;
   text-size-adjust: 100%;
-  /* overscroll-behavior-y: none; Disabled for iOS bounce */
 }
 
 body {
@@ -101,7 +100,6 @@ body {
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* overscroll-behavior-y: none; Disabled for iOS bounce */
   letter-spacing: -0.011em;
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -1632,4 +1630,66 @@ textarea:focus:not(:focus-visible),
 :root:not(.dark) .bg-white,
 :root:not(.dark) .card {
   background-color: #ffffff !important;
+}
+
+/* ============================================
+   VIEW TRANSITIONS API - Shared Element Transitions
+   Google-style navigation morphing
+   ============================================ */
+
+/* Enable smooth view transitions for the whole app */
+@view-transition {
+  navigation: auto;
+}
+
+/* Default transition animation */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.25s;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Shared element transitions - cards morph into pages */
+::view-transition-old(shared-practice),
+::view-transition-old(shared-learn),
+::view-transition-old(shared-flashcards),
+::view-transition-old(shared-tbs) {
+  animation: morph-out 0.25s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+::view-transition-new(shared-practice),
+::view-transition-new(shared-learn),
+::view-transition-new(shared-flashcards),
+::view-transition-new(shared-tbs) {
+  animation: morph-in 0.25s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+@keyframes morph-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes morph-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
 }

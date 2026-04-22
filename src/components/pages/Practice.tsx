@@ -56,6 +56,7 @@ import { incrementStudyPlanProgress } from '../../services/studyPlanService';
 import analytics from '../../services/analytics';
 import FormattedExplanation from '../common/FormattedExplanation';
 import { useToast } from '../common/Toast';
+import MilestoneTestimonialPrompt from '../common/MilestoneTestimonialPrompt';
 
 // Question status filter options (like Becker)
 type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct';
@@ -869,20 +870,27 @@ const Practice: React.FC = () => {
         return false;
       }
       
+      // Ensure answers is an object (corrupted state protection)
+      const answers = sessionState.answers && typeof sessionState.answers === 'object' 
+        ? sessionState.answers 
+        : {};
+      
       // Restore the state
       setQuestions(sessionState.questions);
-      setCurrentIndex(sessionState.currentIndex);
-      setAnswers(sessionState.answers);
-      setFlagged(new Set(sessionState.flagged));
-      setStartTime(sessionState.startTime);
-      setElapsed(sessionState.elapsed);
+      setCurrentIndex(sessionState.currentIndex ?? 0);
+      setAnswers(answers);
+      setFlagged(new Set(sessionState.flagged || []));
+      setStartTime(sessionState.startTime ?? Date.now());
+      setElapsed(sessionState.elapsed ?? 0);
       setSessionConfig(sessionState.sessionConfig);
       setInSession(true);
       
       // Determine if we need to show explanation for current answer
-      const currentQ = sessionState.questions[sessionState.currentIndex];
-      if (currentQ && sessionState.answers[currentQ.id]) {
-        setSelectedAnswer(sessionState.answers[currentQ.id].selected);
+      const currentIdx = sessionState.currentIndex ?? 0;
+      const currentQ = sessionState.questions[currentIdx];
+      const restoredAnswer = currentQ ? answers[currentQ.id] : undefined;
+      if (restoredAnswer?.selected !== undefined) {
+        setSelectedAnswer(restoredAnswer.selected);
         setShowExplanation(true);
       }
       
@@ -1710,18 +1718,35 @@ const Practice: React.FC = () => {
 
   // Results screen
   if (showResults) {
+    const answeredCount = questions.filter(q => answers[q.id]).length;
+    const correctCount = questions.filter(q => answers[q.id]?.correct).length;
+    const scorePercent = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+    const resultSection = userProfile?.examSection || getDefaultSection(courseId);
     return (
-      <SessionResults
-        questions={questions}
-        answers={answers}
-        elapsed={elapsed}
-        section={userProfile?.examSection || getDefaultSection(courseId)}
-        onContinue={handleContinue}
-        onTryAgain={handleTryAgain}
-        onPracticeWeak={handlePracticeWeak}
-        onBackToDailyPlan={handleBackToDailyPlan}
-        fromDailyPlan={fromDailyPlan}
-      />
+      <>
+        <SessionResults
+          questions={questions}
+          answers={answers}
+          elapsed={elapsed}
+          section={resultSection}
+          onContinue={handleContinue}
+          onTryAgain={handleTryAgain}
+          onPracticeWeak={handlePracticeWeak}
+          onBackToDailyPlan={handleBackToDailyPlan}
+          fromDailyPlan={fromDailyPlan}
+        />
+        {user?.uid && user?.email && (
+          <MilestoneTestimonialPrompt
+            userId={user.uid}
+            userEmail={user.email}
+            userName={userProfile?.displayName || user.displayName || ''}
+            courseId={courseId}
+            section={resultSection}
+            scorePercent={scorePercent}
+            questionCount={answeredCount}
+          />
+        )}
+      </>
     );
   }
 
@@ -2341,6 +2366,15 @@ const Practice: React.FC = () => {
                 Got it
               </Button>
             </div>
+          </div>
+        )}
+
+        {/* Swipe Hint - Show on mobile for first 3 questions */}
+        {currentIndex < 3 && (
+          <div className="md:hidden flex items-center justify-center gap-2 py-2 text-xs text-slate-400 dark:text-slate-500">
+            <ChevronLeft className="w-3 h-3" />
+            <span>Swipe to navigate</span>
+            <ChevronRight className="w-3 h-3" />
           </div>
         )}
 

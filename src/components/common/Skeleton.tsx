@@ -45,6 +45,21 @@ export const SkeletonCard = ({ className }: { className?: string }) => (
   </div>
 );
 
+/** Quick action card skeleton - matches Home.tsx quick action grid */
+export const SkeletonQuickAction = ({ className }: { className?: string }) => (
+  <div 
+    className={clsx(
+      'flex flex-col items-center gap-2 p-4',
+      'bg-white dark:bg-slate-800 rounded-xl',
+      'border border-slate-200 dark:border-slate-700',
+      className
+    )}
+  >
+    <Skeleton className="w-12 h-12 rounded-full" />
+    <Skeleton className="h-4 w-16" />
+  </div>
+);
+
 export const SkeletonQuestion = () => (
   <div className="card p-5">
     <Skeleton className="h-5 w-24 mb-4" />

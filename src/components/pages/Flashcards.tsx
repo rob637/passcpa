@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import logger from '../../utils/logger';
 import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 import { Button } from '../common/Button';
+import { useSwipe } from '../../hooks/useSwipe';
+import { usePullToRefresh } from '../../hooks/usePullToRefresh';
 import { getHomePathFromLocation } from '../../utils/courseNavigation';
 import {
   RotateCcw,
@@ -15,6 +17,7 @@ import {
   Sparkles,
   ArrowLeft,
   Calculator,
+  RefreshCw,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
@@ -95,6 +98,22 @@ const Flashcards: React.FC = () => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [selectedRating, setSelectedRating] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [refreshKey, setRefreshKey] = useState(0);
+  
+  // Pull-to-refresh handler
+  const handlePullRefresh = useCallback(async () => {
+    feedback.haptic('light');
+    setRefreshKey(prev => prev + 1);
+    await new Promise(resolve => setTimeout(resolve, 800));
+    feedback.haptic('success');
+  }, []);
+
+  const { isRefreshing, onTouchStart, onTouchMove, onTouchEnd, indicatorStyle } = usePullToRefresh({
+    onRefresh: handlePullRefresh,
+    threshold: 80,
+    enabled: !loading,
+  });
+  
   const [sessionStats, setSessionStats] = useState<SessionStats>({
     reviewed: 0,
     again: 0,
@@ -267,7 +286,7 @@ const Flashcards: React.FC = () => {
     };
 
     loadCards();
-  }, [user, courseId, currentSection, mode, topic, cardType, typeParam, sessionCardLimit]);
+  }, [user, courseId, currentSection, mode, topic, cardType, typeParam, sessionCardLimit, refreshKey]);
 
   // Helper function to format dedicated card backs with formula/mnemonic/example
   const formatDedicatedCardBack = (card: DedicatedFlashcard): string => {
@@ -365,6 +384,21 @@ const Flashcards: React.FC = () => {
   // Update keyboard handler refs now that callbacks are defined
   nextCardRef.current = nextCard;
   prevCardRef.current = prevCard;
+
+  // Swipe navigation for mobile
+  const swipeHandlers = useSwipe({
+    onSwipeLeft: () => {
+      if (currentIndex < cards.length - 1) {
+        nextCard();
+      }
+    },
+    onSwipeRight: () => {
+      if (currentIndex > 0) {
+        prevCard();
+      }
+    },
+    threshold: 50,
+  });
 
   const handleRating = async (rating: 'again' | 'hard' | 'good' | 'easy') => {
     if (!currentCard || !user || selectedRating) return; // Prevent double-tap
@@ -530,7 +564,22 @@ const Flashcards: React.FC = () => {
   }
 
   return (
-    <div className="h-[calc(100vh-8rem)] md:min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col overflow-hidden">
+    <div 
+      className="h-[calc(100vh-8rem)] md:min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col overflow-hidden"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
+      {/* Pull-to-refresh indicator */}
+      {isRefreshing && (
+        <div 
+          className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm"
+          style={indicatorStyle}
+        >
+          <RefreshCw className="w-6 h-6 text-primary-600 dark:text-primary-400 animate-spin" />
+        </div>
+      )}
+      
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700 px-4 py-3">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
@@ -539,7 +588,7 @@ const Flashcards: React.FC = () => {
             onClick={() => navigate(courseHome)}
             leftIcon={ArrowLeft}
           >
-            <span className="hidden sm:inline">Back</span>
+            <span>Back</span>
           </Button>
 
           <div className="flex items-center gap-2">
@@ -564,7 +613,11 @@ const Flashcards: React.FC = () => {
       </div>
 
       {/* Card Area */}
-      <div ref={cardTopRef} className="flex-1 flex items-start justify-center p-4 pt-2 overflow-y-auto scroll-smooth">
+      <div 
+        ref={cardTopRef} 
+        {...swipeHandlers}
+        className="flex-1 flex items-start justify-center p-4 pt-2 overflow-y-auto scroll-smooth touch-pan-y"
+      >
         <div className="w-full max-w-2xl">
           {/* Flashcard */}
           {showBothSides ? (
@@ -806,6 +859,15 @@ const Flashcards: React.FC = () => {
           {/* Navigation hint */}
           {!isFlipped && !showBothSides && (
             <div className="mt-6 flex justify-center gap-4 text-sm text-slate-600 dark:text-slate-400">
+              {/* Mobile: Swipe hint (first 3 cards) */}
+              {currentIndex < 3 && (
+                <span className="sm:hidden flex items-center gap-1">
+                  <ChevronLeft className="w-4 h-4" />
+                  Swipe to navigate
+                  <ChevronRight className="w-4 h-4" />
+                </span>
+              )}
+              {/* Desktop: Keyboard hints */}
               <span className="hidden sm:inline">← → to navigate</span>
               <span className="hidden sm:inline">Space to flip</span>
               <span className="hidden sm:inline">1-4 to rate</span>

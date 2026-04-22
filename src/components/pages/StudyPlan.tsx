@@ -429,15 +429,12 @@ const StudyPlan: React.FC = () => {
   // Show CTA if no plan exists
   if (!hasPlan || !plan) {
     return (
-      <div className="max-w-2xl mx-auto py-8 px-4">
-        <div className="text-center mb-8">
-          <div className="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Map className="w-10 h-10 text-slate-400" />
-          </div>
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+      <div className="max-w-2xl mx-auto pt-2 pb-4 px-4">
+        <div className="text-center mb-4">
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
             No Study Plan Yet
           </h1>
-          <p className="text-slate-600 dark:text-slate-400">
+          <p className="text-slate-600 dark:text-slate-400 text-sm">
             Create a personalized roadmap to pass your {course?.shortName || 'exam'}
           </p>
         </div>

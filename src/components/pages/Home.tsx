@@ -19,7 +19,6 @@ import {
   Rocket,
   ArrowRight,
   X as XIcon,
-  Play,
   RefreshCw,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
@@ -31,7 +30,6 @@ import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUti
 import { getExamDate, getCurrentSection } from '../../utils/profileHelpers';
 import { differenceInDays } from 'date-fns';
 import clsx from 'clsx';
-import { FAB } from '../common/FAB';
 import { SkeletonDashboard } from '../common/Skeleton';
 import * as feedback from '../../services/feedback';
 import { calculateExamReadiness, ReadinessData, getStatusText, getStatusColor } from '../../utils/examReadiness';
@@ -428,16 +426,15 @@ const Home = () => {
     enabled: true,
   });
 
-  // Show skeleton while initial data loads
-  const isInitialLoading = !user || (stats === null && !hasEverPracticedLocal);
-
-  if (isInitialLoading) {
+  // Show skeleton only while waiting for user authentication
+  // Stats load progressively - don't block page render on them
+  if (!user) {
     return <SkeletonDashboard />;
   }
 
   return (
     <div 
-      className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-6"
+      className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-6 min-h-[200px]"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -464,9 +461,9 @@ const Home = () => {
         isOpen={showSectionPicker}
         onClose={() => setShowSectionPicker(false)}
         title="Change Exam Section"
-        maxHeight={75}
+        maxHeight={90}
       >
-        <div className="py-1 space-y-1">
+        <div className="py-1 space-y-1 pb-16">
               {courseId === 'cpa' ? (
                 // CPA-specific section picker with Core/Discipline grouping
                 // Note: BEC was retired December 15, 2023, only BAR/ISC/TCP available
@@ -1034,16 +1031,6 @@ const Home = () => {
       {showDashboardNudge && !showStreakNudge && !showQuestionsNudge && (
         <ShareNudge trigger="dashboard_periodic" />
       )}
-
-      {/* FAB - Primary action for mobile (hidden on desktop where quick actions are visible) */}
-      <div className="md:hidden">
-        <FAB
-          icon={Play}
-          label="Practice"
-          onClick={() => navigate(getCoursePracticePath(courseId))}
-          variant="primary"
-        />
-      </div>
 
       </div>
     </div>

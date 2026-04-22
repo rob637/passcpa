@@ -7,7 +7,7 @@
  * Results are saved to Firestore and feed the adaptive learning engine.
  */
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { useAuth } from '../../hooks/useAuth';
@@ -17,6 +17,9 @@ import { trackEvent } from '../../services/analytics';
 import { Button } from '../common/Button';
 import logger from '../../utils/logger';
 import clsx from 'clsx';
+import { calculateHoursNeeded } from '../../services/studyPlanService';
+import { getExamDate } from '../../utils/profileHelpers';
+import { differenceInDays } from 'date-fns';
 import {
   Clock,
   ChevronLeft,
@@ -34,9 +37,12 @@ import {
   Sparkles,
   Brain,
   FileText,
+  Calendar,
+  TrendingUp,
+  Lock,
 } from 'lucide-react';
 
-import type { CourseId } from '../../types/course';
+import type { CourseId, UserProfile } from '../../types';
 import type { DiagnosticQuiz as DiagnosticQuizType, DiagnosticResult } from '../../types/diagnostic';
 import { scoreDiagnosticQuiz } from '../../types/diagnostic';
 
@@ -225,9 +231,11 @@ interface DiagnosticResultsProps {
   answers: (number | null)[];
   onContinue: () => void;
   onRetake: () => void;
+  userProfile?: UserProfile | null;
+  courseId: CourseId;
 }
 
-function DiagnosticResults({ result, quiz, answers, onContinue, onRetake }: DiagnosticResultsProps) {
+function DiagnosticResults({ result, quiz, answers, onContinue, onRetake, userProfile, courseId }: DiagnosticResultsProps) {
   const answeredCount = answers.filter((a) => a !== null).length;
   const scoreColor = result.percentage >= 80 ? 'text-green-600' : result.percentage >= 65 ? 'text-blue-600' : result.percentage >= 50 ? 'text-amber-600' : 'text-red-600';
   const scoreBg = result.percentage >= 80 ? 'bg-green-50 dark:bg-green-900/20' : result.percentage >= 65 ? 'bg-blue-50 dark:bg-blue-900/20' : result.percentage >= 50 ? 'bg-amber-50 dark:bg-amber-900/20' : 'bg-red-50 dark:bg-red-900/20';
@@ -377,13 +385,21 @@ function DiagnosticResults({ result, quiz, answers, onContinue, onRetake }: Diag
         {/* Review Answers Section */}
         <AnswerReview quiz={quiz} answers={answers} />
 
+        {/* Commitment Hook — personalized projection + study plan */}
+        <CommitmentHook
+          result={result}
+          quiz={quiz}
+          userProfile={userProfile}
+          courseId={courseId}
+        />
+
         {/* Actions */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mt-6">
           <Button variant="outline" onClick={onRetake} leftIcon={Brain}>
             Retake Quiz
           </Button>
           <Button variant="primary" onClick={onContinue} rightIcon={ArrowRight}>
-            Start Studying
+            Go to Dashboard
           </Button>
         </div>
       </div>
@@ -549,6 +565,164 @@ function AnswerReview({ quiz, answers }: AnswerReviewProps) {
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+// ============================================
+// Commitment Hook
+// Personalized study plan + projected exam-readiness based on diagnostic.
+// Displayed on the Results screen to convert insight into commitment.
+// ============================================
+interface CommitmentHookProps {
+  result: DiagnosticResult;
+  quiz: DiagnosticQuizType;
+  userProfile?: UserProfile | null;
+  courseId: CourseId;
+}
+
+function CommitmentHook({ result, quiz, userProfile, courseId }: CommitmentHookProps) {
+  // Compute personalized study hours based on diagnostic score
+  const hoursNeeded = useMemo(() => {
+    try {
+      return calculateHoursNeeded(quiz.section, 'some', result.percentage);
+    } catch {
+      return 0;
+    }
+  }, [quiz.section, result.percentage]);
+
+  // Exam date + days remaining
+  const examDate = useMemo(
+    () => getExamDate(userProfile ?? null, quiz.section, courseId),
+    [userProfile, quiz.section, courseId]
+  );
+  const daysToExam = useMemo(() => {
+    if (!examDate) return null;
+    const days = differenceInDays(examDate, new Date());
+    return days > 0 ? days : null;
+  }, [examDate]);
+  const weeksToExam = daysToExam ? Math.max(1, Math.round(daysToExam / 7)) : null;
+  const hoursPerWeek = weeksToExam && hoursNeeded ? Math.ceil(hoursNeeded / weeksToExam) : null;
+
+  // Pass-readiness projection (heuristic):
+  //   Diagnostic % maps roughly to exam-readiness, but we cap projection at the
+  //   diagnostic + 25 pts max for users who actually study consistently.
+  // We surface this as a target, not a guarantee.
+  const readinessFloor = result.percentage;
+  const readinessProjection = Math.min(95, readinessFloor + 25);
+
+  const hasExamDate = examDate !== null && daysToExam !== null;
+  const planRoute = hasExamDate ? '/study-plan' : '/study-plan/setup';
+
+  return (
+    <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-blue-950/40 dark:via-gray-900 dark:to-indigo-950/40 rounded-2xl border-2 border-blue-200 dark:border-blue-800 p-6 mt-6 shadow-lg">
+      <div className="flex items-center gap-2 mb-1">
+        <Sparkles className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+        <h3 className="font-bold text-lg text-gray-900 dark:text-white">
+          Your Personalized Path to {quiz.section}
+        </h3>
+      </div>
+      <p className="text-sm text-gray-600 dark:text-gray-400 mb-5">
+        Here's what your diagnostic tells us — and exactly what to do next.
+      </p>
+
+      {/* Top-line projection */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
+        <div className="bg-white dark:bg-gray-800/50 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+          <div className="flex items-center gap-1.5 text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">
+            <TrendingUp className="w-3.5 h-3.5" />
+            Today
+          </div>
+          <div className="text-2xl font-bold text-gray-900 dark:text-white">
+            {readinessFloor}%
+          </div>
+          <div className="text-xs text-gray-500 dark:text-gray-400">readiness</div>
+        </div>
+        <div className="bg-white dark:bg-gray-800/50 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+          <div className="flex items-center gap-1.5 text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">
+            <Target className="w-3.5 h-3.5" />
+            Projected
+          </div>
+          <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+            {readinessProjection}%
+          </div>
+          <div className="text-xs text-gray-500 dark:text-gray-400">with our plan</div>
+        </div>
+        <div className="bg-white dark:bg-gray-800/50 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+          <div className="flex items-center gap-1.5 text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">
+            <Clock className="w-3.5 h-3.5" />
+            Hours
+          </div>
+          <div className="text-2xl font-bold text-gray-900 dark:text-white">
+            {hoursNeeded || '—'}
+          </div>
+          <div className="text-xs text-gray-500 dark:text-gray-400">to be ready</div>
+        </div>
+      </div>
+
+      {/* Plan summary */}
+      <div className="bg-white dark:bg-gray-800/30 rounded-xl p-4 mb-5 border border-gray-200 dark:border-gray-700">
+        <div className="flex items-start gap-3">
+          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
+            <Calendar className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+          </div>
+          <div className="flex-1">
+            {hasExamDate && weeksToExam && hoursPerWeek ? (
+              <>
+                <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                  {weeksToExam} weeks until your exam — {hoursPerWeek} hrs/week
+                </p>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
+                  Based on your diagnostic, we'll prioritize your weakest areas first.
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                  Set your exam date to get a week-by-week plan
+                </p>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
+                  We'll calculate exactly how many hours per week to hit your target.
+                </p>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Weak areas — first 3 */}
+      {result.weakAreas.length > 0 && (
+        <div className="mb-5">
+          <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 font-semibold mb-2">
+            Your plan starts with
+          </p>
+          <ul className="space-y-1.5">
+            {result.weakAreas.slice(0, 3).map((wa) => (
+              <li key={wa.area} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                <span className="font-medium">{wa.areaName}</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">— currently {wa.percentage}%</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Primary CTA */}
+      <Link
+        to={planRoute}
+        onClick={() => trackEvent('diagnostic_commitment_cta_click', { course: courseId, section: quiz.section, score: result.percentage })}
+        className="group block w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-center px-6 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+      >
+        <span className="inline-flex items-center gap-2">
+          <Lock className="w-4 h-4" />
+          {hasExamDate ? 'Lock in my study plan' : 'Build my study plan'}
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </span>
+      </Link>
+      <p className="text-center text-xs text-gray-500 dark:text-gray-400 mt-2">
+        Free during your trial. Cancel anytime.
+      </p>
     </div>
   );
 }
@@ -926,6 +1100,8 @@ export default function DiagnosticQuizPage() {
         answers={answers}
         onContinue={goToDashboard}
         onRetake={handleRetake}
+        userProfile={userProfile}
+        courseId={courseId}
       />
     );
   }

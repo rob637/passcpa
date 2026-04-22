@@ -18,6 +18,7 @@ import AuthLayout from './components/layouts/AuthLayout';
 import ErrorBoundary from './components/common/ErrorBoundary';
 import { PageLoader, FullPageLoader } from './components/common/PageLoader';
 import { SubscriptionGate } from './components/common/SubscriptionGate';
+import { DailyCpaPreviewGate } from './components/common/DailyCpaPreviewGate';
 // import InstallPrompt from './components/common/InstallPrompt'; // Assuming this might be migrated or kept as JSX for now, but referenced as needed
 import { ToastProvider, useToast } from './components/common/Toast';
 import { SnackbarProvider } from './components/common/Snackbar';
@@ -138,6 +139,7 @@ const StartCheckout = lazyWithRetry(() => import('./components/pages/StartChecko
 const VoraPrep = lazyWithRetry(() => import('./components/pages/VoraPrep'));
 const About = lazyWithRetry(() => import('./components/pages/About'));
 const Compare = lazyWithRetry(() => import('./components/pages/Compare'));
+const FAQ = lazyWithRetry(() => import('./components/pages/FAQ'));
 const Pricing = lazyWithRetry(() => import('./components/pages/PricingOverview'));
 // Unified Landing Pages (new template system)
 const CPALanding = lazyWithRetry(() => import('./components/pages/landing/CPALandingNew'));
@@ -146,6 +148,9 @@ const CMALanding = lazyWithRetry(() => import('./components/pages/landing/CMALan
 const CIALanding = lazyWithRetry(() => import('./components/pages/landing/CIALandingNew'));
 const CFPLanding = lazyWithRetry(() => import('./components/pages/landing/CFPLandingNew'));
 const CISALanding = lazyWithRetry(() => import('./components/pages/landing/CISALandingNew'));
+const DailyCPA = lazyWithRetry(() => import('./components/pages/landing/DailyCPA'));
+const DailyCPAUpgrade = lazyWithRetry(() => import('./components/pages/landing/DailyCPAUpgrade'));
+const DailyCPASuccess = lazyWithRetry(() => import('./components/pages/landing/DailyCPASuccess'));
 // Info pages (keep original)
 const CMAInfo = lazyWithRetry(() => import('./components/pages/CMAInfo'));
 const CIAInfo = lazyWithRetry(() => import('./courses/cia/CIAInfo'));
@@ -184,6 +189,20 @@ const GlobalPageTracker = () => {
         localStorage.setItem(param, value);
       }
     });
+
+    // Recovery campaign attribution — fire once per session when user lands via founder recovery email
+    const utmSource = searchParams.get('utm_source');
+    const utmCampaign = searchParams.get('utm_campaign');
+    if (utmSource === 'recovery' && utmCampaign && !sessionStorage.getItem('recovery_landed_fired')) {
+      sessionStorage.setItem('recovery_landed_fired', '1');
+      import('./services/analytics').then(({ default: analytics }) => {
+        analytics.trackRecoveryLanded(
+          utmCampaign,
+          searchParams.get('course') || undefined,
+          searchParams.get('coupon') || undefined,
+        );
+      });
+    }
   }, [searchParams]);
 
   useEffect(() => {
@@ -497,6 +516,38 @@ function App() {
                   </>
                 )}
 
+                {/* Daily CPA — SMS-based daily MCQ product (gated until Telnyx is live) */}
+                <Route
+                  path="/daily-cpa"
+                  element={
+                    <SuspensePage>
+                      <DailyCpaPreviewGate>
+                        <DailyCPA />
+                      </DailyCpaPreviewGate>
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/daily-cpa/upgrade"
+                  element={
+                    <SuspensePage>
+                      <DailyCpaPreviewGate>
+                        <DailyCPAUpgrade />
+                      </DailyCpaPreviewGate>
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/daily-cpa/success"
+                  element={
+                    <SuspensePage>
+                      <DailyCpaPreviewGate>
+                        <DailyCPASuccess />
+                      </DailyCpaPreviewGate>
+                    </SuspensePage>
+                  }
+                />
+
                 {/* EA Landing Page (public) */}
                 {ENABLE_EA_COURSE && (
                   <>
@@ -780,6 +831,15 @@ function App() {
                   element={
                     <SuspensePage>
                       <About />
+                    </SuspensePage>
+                  }
+                />
+                {/* FAQ page */}
+                <Route
+                  path="/faq"
+                  element={
+                    <SuspensePage>
+                      <FAQ />
                     </SuspensePage>
                   }
                 />

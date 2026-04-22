@@ -1,6 +1,6 @@
 ---
 import BlogLayout from '../layouts/BlogLayout.astro';
-import { getPublishedArticles, getArticleBySlug, getExamName, getExamColor } from '../lib/articles';
+import { getPublishedArticles, getArticleBySlug, getExamName, getExamColor, getRelatedArticles } from '../lib/articles';
 
 // For static site generation, we need to define all paths
 export async function getStaticPaths() {
@@ -29,6 +29,8 @@ const formatDate = (date: Date) => {
     day: 'numeric' 
   });
 };
+
+const relatedArticles = await getRelatedArticles(article, 3);
 
 // Parse markdown content to HTML (simple version)
 const renderMarkdown = (content: string) => {
@@ -155,6 +157,29 @@ const articleSchema = {
         Start Free Trial →
       </a>
     </div>
+
+    {relatedArticles.length > 0 && (
+      <section class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Keep reading</h2>
+        <div class="grid gap-4 md:grid-cols-3">
+          {relatedArticles.map((related) => (
+            <a href={`/blog/${related.slug}`} class="block rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:border-primary-400 hover:shadow-sm transition-all">
+              <div class="text-xs font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400 mb-2">
+                {getExamName(related.courseId)}
+              </div>
+              <h3 class="font-semibold text-gray-900 dark:text-white leading-snug mb-2">
+                {related.title}
+              </h3>
+              {related.metaDescription && (
+                <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-3">
+                  {related.metaDescription}
+                </p>
+              )}
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
 
     <!-- Related Articles / Back to Blog -->
     <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">

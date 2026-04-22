@@ -100,8 +100,8 @@ const getContextFromPath = (pathname: string, searchParams: URLSearchParams): Co
   return context;
 };
 
-// Pages where we should hide the context bar
-const HIDDEN_ON_PAGES = [
+// Pages where we should show simplified breadcrumb (just "Dashboard" or current context)
+const HOME_PAGES = [
   '/home',
   '/cpa',
   '/ea', 
@@ -109,6 +109,10 @@ const HIDDEN_ON_PAGES = [
   '/cia',
   '/cfp',
   '/cisa',
+];
+
+// Pages where we hide breadcrumbs completely
+const HIDDEN_ON_PAGES = [
   '/login',
   '/signup',
   '/onboarding',
@@ -122,12 +126,36 @@ export const MobileContextBar: React.FC<MobileContextBarProps> = ({ className })
   const location = useLocation();
   const [searchParams] = useSearchParams();
   
-  // Don't show on home/landing pages
+  // Completely hide on login/signup/onboarding
   const shouldHide = HIDDEN_ON_PAGES.some(page => 
     location.pathname === page || location.pathname === `${page}/`
   );
   
   if (shouldHide) return null;
+  
+  // Check if on home/landing page - show simplified version
+  const isHomePage = HOME_PAGES.some(page => 
+    location.pathname === page || location.pathname === `${page}/`
+  );
+  
+  // For home pages, show just "Dashboard" for consistent spacing
+  if (isHomePage) {
+    return (
+      <nav
+        aria-label="Page location"
+        className={clsx(
+          'md:hidden bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-700',
+          'px-4 py-2',
+          className
+        )}
+      >
+        <span className="flex items-center gap-1.5 px-2 py-0.5 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full font-medium text-xs w-fit">
+          <Home className="w-3 h-3" />
+          Dashboard
+        </span>
+      </nav>
+    );
+  }
   
   const contextItems = getContextFromPath(location.pathname, searchParams);
   

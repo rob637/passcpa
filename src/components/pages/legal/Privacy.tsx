@@ -72,6 +72,20 @@ const Privacy: React.FC = () => {
               <li>Performance analytics by topic</li>
             </ul>
 
+            <h3>SMS / Text Messaging Data</h3>
+            <p>If you enroll in VoraPrep Daily CPA (our SMS-based practice product), we additionally collect:</p>
+            <ul>
+              <li>Mobile phone number (US numbers only)</li>
+              <li>SMS opt-in consent and timestamp</li>
+              <li>Inbound and outbound message logs (retained for 90 days)</li>
+              <li>Preferred daily send time and timezone</li>
+            </ul>
+            <p>
+              <strong>Message frequency:</strong> 1–3 messages per day. Message and data rates may apply.
+              Reply <strong>STOP</strong> at any time to unsubscribe. Reply <strong>HELP</strong> for help.
+              Your phone number is never shared with third parties for marketing purposes.
+            </p>
+
             <h3>Technical Data</h3>
             <p>We automatically collect:</p>
             <ul>
@@ -96,10 +110,15 @@ const Privacy: React.FC = () => {
               We do <strong>not</strong> sell your personal information. We may share data with:
             </p>
             <ul>
-              <li><strong>Service Providers:</strong> Firebase (authentication, database), OpenAI (AI tutoring)</li>
+              <li><strong>Service Providers:</strong> Firebase (authentication, database), Telnyx (SMS delivery), Stripe (payments), Resend (email)</li>
               <li><strong>Analytics:</strong> Aggregated, anonymized usage data</li>
               <li><strong>Legal Requirements:</strong> When required by law or to protect rights</li>
             </ul>
+            <p>
+              <strong>SMS:</strong> No mobile information (phone numbers or message content) is shared with third
+              parties or affiliates for marketing or promotional purposes. This data is used solely to deliver
+              the Daily CPA practice question service you opted into.
+            </p>
 
             <h2>4. AI and Your Data</h2>
             <p>
@@ -127,7 +146,7 @@ const Privacy: React.FC = () => {
               <li><strong>Correct:</strong> Update inaccurate information</li>
               <li><strong>Delete:</strong> Request deletion of your account and data</li>
               <li><strong>Export:</strong> Download your study progress data</li>
-              <li><strong>Opt-out:</strong> Disable notifications and reminders</li>
+              <li><strong>Opt-out:</strong> Disable notifications and reminders. For SMS, reply STOP to immediately unsubscribe.</li>
             </ul>
 
             <h2>7. Data Retention</h2>

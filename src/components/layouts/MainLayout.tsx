@@ -307,6 +307,7 @@ const MainLayout = () => {
           scrolled && 'shadow-md',
           trialBannerVisible ? 'top-[36px]' : 'top-0'
         )}
+        style={{ transform: 'translate3d(0,0,0)' }} // GPU layer keeps header stable during iOS bounce
         role="banner"
       >
         <div className="flex items-center justify-between px-4 h-14">
@@ -330,15 +331,9 @@ const MainLayout = () => {
             <ProgressRing progress={dailyProgress} size={28} />
           </div>
         </div>
-      </header>
-
-      {/* Mobile Context Bar - Shows current location breadcrumb on mobile */}
-      <div className={clsx(
-        'md:hidden fixed left-0 right-0 z-30',
-        trialBannerVisible ? 'top-[92px]' : 'top-[56px]'
-      )}>
+        {/* Context Bar - Inside header to avoid safe-area positioning issues */}
         <MobileContextBar />
-      </div>
+      </header>
 
       {/* Main Content */}
       <main
@@ -349,7 +344,8 @@ const MainLayout = () => {
         aria-label="Main content"
         className={clsx(
           'flex-1 min-w-0 p-4 pb-24 md:p-8 md:pb-8 md:pt-6 focus:outline-none',
-          trialBannerVisible ? 'pt-[100px]' : 'pt-[90px]',
+          // Mobile top padding: header (56px) + context bar (~32px) + safe-area (~16-47px) + gap
+          trialBannerVisible ? 'pt-[140px]' : 'pt-[108px]',
           'md:pt-6' // Reset to normal on desktop
         )}
       >
@@ -363,6 +359,7 @@ const MainLayout = () => {
       <nav
         ref={navRef}
         className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur dark:bg-slate-800/95 border-t border-slate-200 dark:border-slate-700 pb-safe z-50 safe-bottom"
+        style={{ transform: 'translate3d(0,0,0)' }} // GPU layer keeps nav stable during iOS bounce
         role="navigation"
         aria-label="Mobile navigation"
       >

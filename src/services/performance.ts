@@ -97,10 +97,28 @@ const reportWebVital = async (metric: any) => {
 };
 
 /**
+ * Check if browser supports features required by web-vitals 5.x
+ * web-vitals uses Array.prototype.at() which is not available in older browsers
+ */
+const supportsWebVitals = (): boolean => {
+  // Check for Array.prototype.at (Safari < 15.4, Chrome < 92 don't have it).
+  // Cast through unknown to avoid TS lib-version constraints.
+  return typeof (Array.prototype as unknown as { at?: unknown }).at === 'function';
+};
+
+/**
  * Initialize Core Web Vitals monitoring using web-vitals library
  * This dynamically imports the library to avoid blocking
  */
 export const initWebVitals = async (): Promise<void> => {
+  // Skip on older browsers that don't support required features
+  if (!supportsWebVitals()) {
+    if (import.meta.env.DEV) {
+      logger.warn('[Performance] Browser does not support web-vitals 5.x features, skipping');
+    }
+    return;
+  }
+
   try {
     // Dynamically import web-vitals to avoid bundling issues
     const { onCLS, onFCP, onLCP, onTTFB, onINP } = await import('web-vitals');
@@ -111,8 +129,6 @@ export const initWebVitals = async (): Promise<void> => {
     onINP(reportWebVital); // Replaces FID
     onLCP(reportWebVital);
     onTTFB(reportWebVital);
-    onTTFB(reportWebVital);
-    onINP(reportWebVital);
 
     if (import.meta.env.DEV) {
       logger.log('[Performance] Web Vitals monitoring initialized');

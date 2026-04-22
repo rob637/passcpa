@@ -59,6 +59,41 @@ const Login = () => {
   }, [courseParam, isValidCourse]);
   const courseName = COURSE_NAMES[courseParam || ''] || 'exam prep';
 
+  // Persist any incoming pendingCheckout intent (course + interval + coupon).
+  // This handles the case where a user clicks /start-checkout, gets redirected
+  // to /register, then clicks "Sign in instead" — we must not lose the coupon.
+  useEffect(() => {
+    const redirect = searchParams.get('redirect');
+    const course = searchParams.get('course');
+    const interval = searchParams.get('interval');
+    const coupon = searchParams.get('coupon');
+    if (redirect === 'checkout' && course && interval) {
+      localStorage.setItem(
+        'pendingCheckout',
+        JSON.stringify({ course, interval, ...(coupon ? { coupon } : {}) }),
+      );
+    }
+  }, [searchParams]);
+
+  // After successful auth, if there's a pendingCheckout, route to /start-checkout
+  // with the coupon preserved — otherwise fall back to the dashboard.
+  const resolvePostAuthDestination = (): string => {
+    try {
+      const raw = localStorage.getItem('pendingCheckout');
+      if (raw) {
+        const pc = JSON.parse(raw);
+        if (pc?.course && pc?.interval) {
+          localStorage.removeItem('pendingCheckout');
+          const couponParam = pc.coupon ? `&coupon=${encodeURIComponent(pc.coupon)}` : '';
+          return `/start-checkout?course=${pc.course}&interval=${pc.interval}${couponParam}`;
+        }
+      }
+    } catch {
+      // ignore malformed pendingCheckout
+    }
+    return targetDashboard;
+  };
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -76,7 +111,7 @@ const Login = () => {
       if (isValidCourse) {
         await updateUserProfile({ activeCourse: courseParam as CourseId });
       }
-      navigate(targetDashboard);
+      navigate(resolvePostAuthDestination());
     } catch (err: any) {
       logger.error('Login error:', err);
       if (err.code === 'auth/invalid-credential') {
@@ -104,7 +139,7 @@ const Login = () => {
         await updateUserProfile({ activeCourse: courseParam as CourseId });
       }
       // The AuthProvider handles creating profile, we just navigate
-      navigate(targetDashboard);
+      navigate(resolvePostAuthDestination());
     } catch (err: any) {
       logger.error('Google sign-in error:', err);
       if (err.code === 'auth/popup-closed-by-user') {

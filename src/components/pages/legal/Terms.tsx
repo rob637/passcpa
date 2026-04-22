@@ -274,7 +274,29 @@ const Terms: React.FC = () => {
               use of the Service after changes constitutes acceptance of the new terms.
             </p>
 
-            <h2>16. Contact</h2>
+            <h2>16. SMS Messaging Terms (Daily CPA)</h2>
+            <p>
+              VoraPrep Daily CPA is an optional SMS-based service that delivers daily CPA practice questions
+              to your mobile phone. By providing your phone number and completing signup, you expressly
+              consent to receive recurring automated text messages from VoraPrep at the number provided.
+            </p>
+            <ul>
+              <li><strong>Message frequency:</strong> 1–3 messages per day based on your selected session size.</li>
+              <li><strong>Message &amp; data rates may apply</strong> depending on your carrier plan.</li>
+              <li><strong>To opt out:</strong> Reply <strong>STOP</strong> at any time. You will receive one confirmation message and no further messages will be sent.</li>
+              <li><strong>To get help:</strong> Reply <strong>HELP</strong> or email support@voraprep.com.</li>
+              <li>Consent to receive SMS messages is <strong>not</strong> a condition of purchase.</li>
+              <li>Supported carriers include all major US carriers. Carrier support may vary.</li>
+              <li>VoraPrep is solely responsible for the content of messages sent through this service.</li>
+              <li>Your phone number will not be shared with third parties for their marketing purposes.</li>
+            </ul>
+            <p>
+              This SMS service is available to US phone numbers only. For questions about SMS billing or
+              to report unwanted messages, contact us at{' '}
+              <a href="mailto:support@voraprep.com" className="text-primary-600 hover:underline">support@voraprep.com</a>.
+            </p>
+
+            <h2>17. Contact</h2>
             <p>
               For questions about these Terms, please contact us at{' '}
               <a href="mailto:legal@voraprep.com" className="text-primary-600 hover:underline">

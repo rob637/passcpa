@@ -50,6 +50,30 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
 }
 
 /**
+ * Get related articles for internal-linking blocks.
+ */
+export async function getRelatedArticles(currentArticle: Article, limit = 3): Promise<Article[]> {
+  const articles = await getPublishedArticles();
+
+  return articles
+    .filter(article => article.slug !== currentArticle.slug)
+    .sort((a, b) => {
+      const score = (article: Article) => {
+        let value = 0;
+        if (article.courseId === currentArticle.courseId) value += 2;
+        if (article.section && currentArticle.section && article.section === currentArticle.section) value += 1;
+        return value;
+      };
+
+      const scoreDiff = score(b) - score(a);
+      if (scoreDiff !== 0) return scoreDiff;
+
+      return b.publishedAt.getTime() - a.publishedAt.getTime();
+    })
+    .slice(0, limit);
+}
+
+/**
  * Get all article slugs (for static path generation)
  */
 export async function getAllSlugs(): Promise<string[]> {

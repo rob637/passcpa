@@ -4,6 +4,7 @@
  * - Weekly progress report emails (Resend)
  * - Custom branded password reset emails
  * - Stripe subscription management
+ * - Daily CPA SMS product (daily-cpa.js)
  */
 
 const { onSchedule } = require('firebase-functions/v2/scheduler');
@@ -1047,6 +1048,91 @@ exports.sendOnboardingReminders = onSchedule({
 });
 
 // ============================================================================
+// ONBOARDING ABANDONMENT — SECOND TOUCH
+// Runs daily at 10:30am — last attempt to recover users who signed up
+// 4-5 days ago but never completed onboarding. Single, founder-voiced email.
+// We mark `secondOnboardingReminderSentAt` to guarantee one-and-done.
+// ============================================================================
+
+exports.sendOnboardingAbandonmentReminders = onSchedule({
+  schedule: 'every day 10:30',
+  timeZone: 'America/New_York',
+  memory: '256MiB',
+  timeoutSeconds: 120,
+  secrets: ['RESEND_API_KEY'],
+}, async () => {
+  if (!resend) {
+    console.error('Email not configured (set RESEND_API_KEY)');
+    return;
+  }
+
+  console.log('Checking for day 4-5 onboarding abandonment...');
+
+  try {
+    const now = new Date();
+    const fourDaysAgo = new Date(now.getTime() - 4 * 24 * 60 * 60 * 1000);
+    const fiveDaysAgo = new Date(now.getTime() - 5 * 24 * 60 * 60 * 1000);
+
+    // Users who signed up 4-5 days ago and still haven't finished onboarding
+    const usersSnapshot = await db.collection('users')
+      .where('onboardingComplete', '==', false)
+      .where('createdAt', '<=', fourDaysAgo)
+      .where('createdAt', '>=', fiveDaysAgo)
+      .get();
+
+    console.log(`Found ${usersSnapshot.size} users in day 4-5 abandonment window`);
+
+    let sentCount = 0;
+    let skippedCount = 0;
+    let errorCount = 0;
+
+    for (const userDoc of usersSnapshot.docs) {
+      const userData = userDoc.data();
+
+      // One-and-done guard
+      if (userData.secondOnboardingReminderSentAt) { skippedCount++; continue; }
+      if (userData.emailUnsubscribed) { skippedCount++; continue; }
+
+      try {
+        const authUser = await admin.auth().getUser(userDoc.id);
+        if (!authUser.emailVerified) { skippedCount++; continue; }
+
+        const userEmail = authUser.email;
+        const displayName = userData.displayName || authUser.displayName || 'there';
+        if (!userEmail) { skippedCount++; continue; }
+
+        const courseConfig = getCourseConfig(userData.activeCourse);
+        const firstName = (displayName || 'there').split(' ')[0];
+
+        const { error } = await resend.emails.send({
+          from: FROM_EMAIL,
+          to: userEmail,
+          subject: `${firstName} — quick question about your ${courseConfig.name.replace(' Exam', '')} prep`,
+          html: generateOnboardingAbandonmentEmail(firstName, courseConfig),
+          headers: getMarketingEmailHeaders(userEmail),
+        });
+        if (error) throw new Error(error.message);
+
+        await userDoc.ref.update({
+          secondOnboardingReminderSentAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
+
+        console.log(`Sent abandonment reminder to ${userEmail}`);
+        sentCount++;
+      } catch (err) {
+        console.error(`Error processing user ${userDoc.id}:`, err.message);
+        errorCount++;
+      }
+    }
+
+    console.log(`Onboarding abandonment: ${sentCount} sent, ${skippedCount} skipped, ${errorCount} errors`);
+  } catch (error) {
+    console.error('Error sending onboarding abandonment reminders:', error);
+    throw error;
+  }
+});
+
+// ============================================================================
 // DIAGNOSTIC QUIZ REMINDER EMAIL
 // Runs daily at 11am - sends reminder to users who completed onboarding but skipped diagnostic
 // ============================================================================
@@ -1536,6 +1622,67 @@ function generateOnboardingReminderEmail(displayName, courseConfig = getCourseCo
     
   </div>
   
+</body>
+</html>
+  `;
+}
+
+// ============================================================================
+// ONBOARDING ABANDONMENT EMAIL TEMPLATE (Day 4-5 second touch)
+// Founder-voiced, plain-text feel, single CTA, no AI mention.
+// ============================================================================
+
+function generateOnboardingAbandonmentEmail(firstName, courseConfig = getCourseConfig('cpa')) {
+  const examName = courseConfig.name.replace(' Exam', '');
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One quick question</title>
+</head>
+<body style="margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background-color:#f8fafc;color:#0f172a;">
+  <div style="max-width:560px;margin:0 auto;padding:40px 20px;">
+    <div style="background:white;border-radius:14px;padding:36px 32px;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+
+      <p style="font-size:16px;line-height:1.6;margin:0 0 18px 0;">Hey ${firstName},</p>
+
+      <p style="font-size:16px;line-height:1.6;margin:0 0 18px 0;">
+        I noticed you signed up for VoraPrep a few days ago for the ${examName} exam, but never finished setting up your study plan.
+      </p>
+
+      <p style="font-size:16px;line-height:1.6;margin:0 0 18px 0;">
+        I get it — life happens. But I want to ask: <strong>was something missing?</strong>
+        Wrong fit? Too much to set up? Couldn't find what you needed?
+      </p>
+
+      <p style="font-size:16px;line-height:1.6;margin:0 0 24px 0;">
+        Just hit reply and tell me. I read every email personally, and your answer will help us build something better.
+      </p>
+
+      <p style="font-size:16px;line-height:1.6;margin:0 0 24px 0;">
+        And if you want to give it another shot — your account is still active, your 14-day free trial hasn't started, and setup takes about 2 minutes:
+      </p>
+
+      <div style="text-align:center;margin:28px 0;">
+        <a href="${APP_BASE_URL}/onboarding" style="display:inline-block;background:#1d4ed8;color:white;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:16px;">
+          Finish setup &amp; start studying
+        </a>
+      </div>
+
+      <p style="font-size:15px;line-height:1.6;margin:24px 0 0 0;color:#475569;">
+        Either way — thanks for trying us out.<br>
+        Rob<br>
+        <span style="color:#94a3b8;font-size:13px;">Founder, VoraPrep</span>
+      </p>
+
+    </div>
+
+    <div style="text-align:center;color:#94a3b8;font-size:11px;margin-top:24px;">
+      <a href="${APP_BASE_URL}/unsubscribe" style="color:#94a3b8;">Unsubscribe</a>
+    </div>
+  </div>
 </body>
 </html>
   `;
@@ -2966,13 +3113,24 @@ exports.createCheckoutSession = onCall({
     throw new HttpsError('unauthenticated', 'You must be logged in to subscribe.');
   }
 
-  const { courseId, interval, origin } = request.data; // courseId: 'cpa', interval: 'annual' or 'monthly'
+  const { courseId, interval, origin, couponCode } = request.data; // couponCode: optional Stripe promotion code (e.g. 'FOUNDER220')
   const baseUrl = getBaseUrl(origin);
   const userId = request.auth.uid;
   const userEmail = request.auth.token.email;
 
   if (!courseId || !interval) {
     throw new HttpsError('invalid-argument', 'Missing courseId or interval');
+  }
+
+  // Validate couponCode format defensively (Stripe codes are alphanumeric, max ~50 chars)
+  let validatedCouponCode = null;
+  if (couponCode && typeof couponCode === 'string') {
+    const trimmed = couponCode.trim().toUpperCase();
+    if (/^[A-Z0-9_-]{3,50}$/.test(trimmed)) {
+      validatedCouponCode = trimmed;
+    } else {
+      console.warn(`Rejected malformed couponCode for user ${userId}: ${couponCode}`);
+    }
   }
 
   // Get Stripe client (lazy-initialized with runtime secret)
@@ -3046,9 +3204,11 @@ exports.createCheckoutSession = onCall({
       created: { gte: Math.floor(fiveMinutesAgo.getTime() / 1000) },
     });
     
-    // Check if there's already an open checkout for the same course
-    const existingSession = pendingCheckouts.data.find(s => 
-      s.metadata?.courseId === courseId && s.status === 'open'
+    // Check if there's already an open checkout for the same course AND same coupon state
+    const existingSession = pendingCheckouts.data.find(s =>
+      s.metadata?.courseId === courseId &&
+      s.status === 'open' &&
+      (s.metadata?.couponCode || '') === (validatedCouponCode || '')
     );
     
     if (existingSession) {
@@ -3060,8 +3220,29 @@ exports.createCheckoutSession = onCall({
       };
     }
 
+    // Resolve coupon code → promotion code ID (only if user supplied one)
+    let promotionCodeId = null;
+    if (validatedCouponCode) {
+      try {
+        const promos = await stripeClient.promotionCodes.list({
+          code: validatedCouponCode,
+          active: true,
+          limit: 1,
+        });
+        if (promos.data.length > 0) {
+          promotionCodeId = promos.data[0].id;
+          console.log(`Applying promotion code ${validatedCouponCode} (${promotionCodeId}) for user ${userId}`);
+        } else {
+          console.warn(`Promotion code ${validatedCouponCode} not found or inactive — proceeding without discount`);
+        }
+      } catch (promoErr) {
+        console.error(`Promotion code lookup failed for ${validatedCouponCode}:`, promoErr.message);
+        // Non-fatal: proceed without coupon rather than block checkout
+      }
+    }
+
     // Create checkout session with idempotency key
-    const idempotencyKey = `checkout_${userId}_${courseId}_${interval}_${Math.floor(Date.now() / 60000)}`; // Changes every minute
+    const idempotencyKey = `checkout_${userId}_${courseId}_${interval}_${promotionCodeId || 'nocoupon'}_${Math.floor(Date.now() / 60000)}`; // Changes every minute
     const session = await stripeClient.checkout.sessions.create({
       customer: stripeCustomerId,
       payment_method_types: ['card'],
@@ -3074,16 +3255,22 @@ exports.createCheckoutSession = onCall({
       ],
       success_url: `${baseUrl}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${baseUrl}/${courseId}#pricing`,
+      // Apply promotion code if user supplied one; otherwise allow them to enter one in Stripe-hosted UI
+      ...(promotionCodeId
+        ? { discounts: [{ promotion_code: promotionCodeId }] }
+        : { allow_promotion_codes: true }),
       subscription_data: {
         metadata: {
           firebaseUserId: userId,
           courseId: courseId,
           isFounder: isFounderWindow.toString(),
+          ...(validatedCouponCode ? { couponCode: validatedCouponCode } : {}),
         },
       },
       metadata: {
         firebaseUserId: userId,
         courseId: courseId,
+        ...(validatedCouponCode ? { couponCode: validatedCouponCode } : {}),
       },
     }, {
       idempotencyKey: idempotencyKey,
@@ -5048,6 +5235,35 @@ exports.growthGenerateArticle = onCall({
   };
 
   const exam = examData[brief.courseId] || examData.cpa;
+  const authoritativeSources = {
+    cpa: [
+      'https://www.aicpa-cima.com/resources/landing/uniform-cpa-examination',
+      'https://nasba.org/exams/cpaexam/',
+      'https://www.bls.gov/ooh/business-and-financial/accountants-and-auditors.htm',
+    ],
+    ea: [
+      'https://www.irs.gov/tax-professionals/enrolled-agents',
+      'https://www.prometric.com/test-takers/search/irs',
+      'https://www.bls.gov/ooh/business-and-financial/tax-examiners-and-collectors-and-revenue-agents.htm',
+    ],
+    cma: [
+      'https://www.imanet.org/cma-certification',
+      'https://www.bls.gov/ooh/management/financial-managers.htm',
+    ],
+    cia: [
+      'https://www.theiia.org/en/certifications/cia/',
+      'https://www.bls.gov/ooh/business-and-financial/accountants-and-auditors.htm',
+    ],
+    cisa: [
+      'https://www.isaca.org/credentialing/cisa',
+      'https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm',
+    ],
+    cfp: [
+      'https://www.cfp.net/get-certified/certification-process',
+      'https://www.bls.gov/ooh/business-and-financial/personal-financial-advisors.htm',
+    ],
+  };
+  const sourceLinks = authoritativeSources[brief.courseId] || [];
 
   const systemPrompt = `You are an expert SEO content writer with deep expertise in ${exam.fullName} exam preparation.
 You write for VoraPrep (voraprep.com), an AI-powered exam prep platform.
@@ -5066,14 +5282,22 @@ ${exam.name.split(' ')[0]} EXAM FACTS:
 - Salary: ${exam.avgSalary}
 
 CRITICAL RULES:
-- Write genuinely helpful, comprehensive content
-- Include specific facts from the data above
-- Natural language — no keyword stuffing
+- Write genuinely helpful, comprehensive content that deserves to rank
+- Be specific, practical, and accurate — no fluff, no filler, no vague generic advice
+- Never leave placeholder text like {exam}, {year}, or {sectionName} in the final article
+- If a rule, fee, deadline, or requirement varies by state or year, say so clearly and tell readers to confirm with the official source
+- Include one checklist, comparison table, or quick-reference box where it helps the reader
 - Start with "Meta Description: ..." (155 chars max), then a blank line
 - DO NOT include a title or H1 heading — the title is stored separately and will be rendered by the app
 - Start the body content directly with an introductory paragraph, then use H2/H3 headings for sections
 - Target word count: ${brief.wordCountTarget || 2000} words
 - Write in Markdown format
+
+INTERNAL LINKING AND REFERENCES:
+- Use 2-4 of the supplied VoraPrep internal links naturally in the body
+- Add a short "## Related VoraPrep resources" section near the end with bullet links and one-sentence descriptions
+- Add a short "## Official resources and references" section with 2-4 markdown links to authoritative sources
+- Prefer official sources such as ${exam.officialBody}, candidate handbooks, licensing boards, and BLS salary pages when relevant
 
 CTA PLACEMENT (CRITICAL - ALL CTAs MUST BE CLICKABLE LINKS):
 - Every CTA MUST use markdown link format: [text](https://voraprep.com/path)
@@ -5099,10 +5323,19 @@ TARGET KEYWORDS: ${(brief.targetKeywords || []).join(', ')}
 TARGET WORD COUNT: ${brief.wordCountTarget || 2000}
 
 OUTLINE:
-${(brief.outline || []).map((s, i) => `## ${s.heading}\n~${s.wordCount} words\n${(s.keyPoints || []).map(kp => `• ${kp}`).join('\n')}`).join('\n\n')}
+${(brief.outline || []).map((s) => `## ${s.heading}\n~${s.wordCount} words\n${(s.keyPoints || []).map(kp => `• ${kp}`).join('\n')}`).join('\n\n')}
 
-INTERNAL LINKS:
+INTERNAL LINKS TO WEAVE IN:
 ${(brief.internalLinks || []).map(l => `- https://voraprep.com${l}`).join('\n')}
+
+AUTHORITATIVE SOURCES TO CITE IF RELEVANT:
+${sourceLinks.map(link => `- ${link}`).join('\n')}
+
+EXTRA QUALITY BAR:
+- Link to related VoraPrep posts where they genuinely help the reader
+- Include specific next steps a busy candidate can follow this week
+- Avoid generic advice that could apply to any exam
+- Use markdown links for every CTA and every cited resource
 
 Write the complete article. Start with "Meta Description: ..." then full Markdown.`;
 
@@ -6220,6 +6453,36 @@ exports.growthSeedBriefs = onCall({
     },
   ];
 
+  const buildSeedInternalLinks = (courseId, sectionId) => {
+    const links = [
+      `/${courseId}`,
+      `/${courseId}/practice`,
+      `/${courseId}/study`,
+      '/blog',
+      '/pricing',
+      '/register',
+      `/blog/${courseId}-study-schedule-${CURRENT_YEAR}`,
+      `/blog/90-day-${courseId}-study-plan-${CURRENT_YEAR}`,
+      `/blog/${courseId}-pass-rates-${CURRENT_YEAR}`,
+      `/blog/best-${courseId}-review-courses-${CURRENT_YEAR}`,
+      `/blog/${courseId}-exam-tips-${CURRENT_YEAR}`,
+      `/blog/${courseId}-salary-guide-${CURRENT_YEAR}`,
+      `/blog/what-can-you-do-with-a-${courseId}-${CURRENT_YEAR}`,
+      `/blog/${courseId}-exam-changes-${CURRENT_YEAR}`,
+      `/blog/pass-${courseId}-while-working-full-time-${CURRENT_YEAR}`,
+    ];
+
+    if (sectionId) {
+      links.push(
+        `/blog/free-${courseId}-${sectionId.toLowerCase()}-practice-questions-${CURRENT_YEAR}`,
+        `/blog/${courseId}-${sectionId.toLowerCase()}-study-guide-${CURRENT_YEAR}`,
+        `/blog/${courseId}-${sectionId.toLowerCase()}-cheat-sheet-${CURRENT_YEAR}`,
+      );
+    }
+
+    return [...new Set(links)];
+  };
+
   // Template types to generate with FULL OUTLINES for quality content
   const templates = [
     { 
@@ -6288,6 +6551,91 @@ exports.growthSeedBriefs = onCall({
         { heading: '{exam} vs Non-{exam} Salary Gap', level: 2, keyPoints: ['Percentage premium', 'Career advancement difference', 'Lifetime earnings impact', 'ROI of certification'], wordCount: 300 },
         { heading: 'How to Maximize Your {exam} Salary', level: 2, keyPoints: ['Negotiate with credential', 'Target high-paying industries', 'Specialize in hot areas', 'Build complementary skills'], wordCount: 250 },
         { heading: 'Is the {exam} Worth It Financially?', level: 2, keyPoints: ['Cost of exam and prep', 'Time investment', 'Payback period', 'Long-term value', 'Opportunity cost'], wordCount: 200 },
+      ],
+    },
+    { 
+      id: '90-day-study-plan',
+      contentType: 'study-schedule',
+      title: '90-Day {exam} Study Plan {year}: Daily Schedule for Busy Candidates',
+      slug: '90-day-{course}-study-plan-{year}',
+      perSection: false,
+      wordCount: 2200,
+      priority: 1,
+      outline: [
+        { heading: 'Is 90 Days Enough to Pass the {exam}?', level: 2, keyPoints: ['Who this plan fits', 'When to choose a longer timeline', 'Study-hour reality check'], wordCount: 280 },
+        { heading: 'Your 12-Week {exam} Roadmap', level: 2, keyPoints: ['Weeks 1-4 foundation', 'Weeks 5-8 intensive practice', 'Weeks 9-12 final review'], wordCount: 500 },
+        { heading: 'A Realistic Weekly Calendar for Working Professionals', level: 2, keyPoints: ['Weekday study blocks', 'Weekend structure', 'Rest and recovery'], wordCount: 350 },
+        { heading: 'Daily MCQ, Lesson, and Review Targets', level: 2, keyPoints: ['Question targets', 'When to add simulations', 'How to use spaced repetition'], wordCount: 350 },
+        { heading: 'What to Do If You Fall Behind', level: 2, keyPoints: ['How to triage weak topics', 'How to use PTO strategically', 'How to compress the last two weeks'], wordCount: 320 },
+        { heading: 'Tools That Make a 90-Day Plan Work', level: 2, keyPoints: ['Adaptive study plans', 'Progress tracking', 'AI tutoring for fast clarification'], wordCount: 220 },
+      ],
+    },
+    { 
+      id: 'cheat-sheet',
+      contentType: 'cheat-sheet',
+      title: '{exam} {sectionName} Cheat Sheet {year}: Key Formulas, Rules, and Mnemonics',
+      slug: '{course}-{sectionLower}-cheat-sheet-{year}',
+      perSection: true,
+      wordCount: 1800,
+      priority: 1,
+      outline: [
+        { heading: '{sectionName} at a Glance', level: 2, keyPoints: ['What the section tests', 'Highest-weight areas', 'What to memorize vs understand'], wordCount: 250 },
+        { heading: 'Must-Know Formulas, Rules, and Frameworks', level: 2, keyPoints: ['Core formulas', 'Thresholds or rules to memorize', 'Shortcuts that save time'], wordCount: 500 },
+        { heading: 'Common Traps and Test-Day Reminders', level: 2, keyPoints: ['Frequent distractors', 'Calculation mistakes', 'Timing pitfalls'], wordCount: 300 },
+        { heading: 'Mnemonics and Memory Aids', level: 2, keyPoints: ['Easy recall techniques', 'How to build your own memory hooks', 'What is worth memorizing'], wordCount: 300 },
+        { heading: 'How to Use This Cheat Sheet in Your Study Routine', level: 2, keyPoints: ['When to review it', 'How to pair it with MCQs', 'How to turn it into flashcards'], wordCount: 250 },
+        { heading: 'More {exam} {sectionName} Help', level: 2, keyPoints: ['Link to study guide', 'Link to practice questions', 'Link to schedule or pass-rate article'], wordCount: 200 },
+      ],
+    },
+    { 
+      id: 'career-guide',
+      contentType: 'career-guide',
+      title: 'What Can You Do With a {exam}? Career Paths, Salary, and ROI {year}',
+      slug: 'what-can-you-do-with-a-{course}-{year}',
+      perSection: false,
+      wordCount: 2200,
+      priority: 2,
+      outline: [
+        { heading: 'What the {exam} Credential Signals to Employers', level: 2, keyPoints: ['Skills employers associate with the credential', 'How it differs from general experience', 'Why it matters in hiring'], wordCount: 320 },
+        { heading: 'Top Career Paths After the {exam}', level: 2, keyPoints: ['Common job titles', 'Public vs private sector roles', 'Leadership paths'], wordCount: 450 },
+        { heading: 'Salary Potential and Long-Term ROI', level: 2, keyPoints: ['Entry-level vs senior pay', 'Certification premium', 'Payback period on exam costs'], wordCount: 400 },
+        { heading: 'Who Should Pursue the {exam}?', level: 2, keyPoints: ['Best fit backgrounds', 'Who may prefer a different certification', 'Career stage considerations'], wordCount: 320 },
+        { heading: 'How to Get Started', level: 2, keyPoints: ['Requirements snapshot', 'Timeline', 'Best first steps for candidates'], wordCount: 300 },
+        { heading: 'Next Resources to Explore', level: 2, keyPoints: ['Study schedule', 'Pass rates', 'Best review course comparison'], wordCount: 220 },
+      ],
+    },
+    { 
+      id: 'news-update',
+      contentType: 'news-update',
+      title: '{exam} Exam Changes {year}: What Candidates Need to Know',
+      slug: '{course}-exam-changes-{year}',
+      perSection: false,
+      wordCount: 1800,
+      priority: 1,
+      outline: [
+        { heading: 'What Changed for the {exam} in {year}?', level: 2, keyPoints: ['Official updates', 'What stayed the same', 'Who is affected'], wordCount: 300 },
+        { heading: 'Changes to Exam Format, Blueprints, or Timing', level: 2, keyPoints: ['Section structure', 'Question weighting', 'Testing windows or registration changes'], wordCount: 350 },
+        { heading: 'How These Changes Affect Your Study Plan', level: 2, keyPoints: ['What to prioritize now', 'What old advice is outdated', 'Whether you should accelerate or delay your test date'], wordCount: 350 },
+        { heading: 'What Current Candidates Should Do Next', level: 2, keyPoints: ['Checklist for candidates already studying', 'Checklist for new starters', 'When to verify official announcements'], wordCount: 300 },
+        { heading: 'Best Resources to Stay Current', level: 2, keyPoints: ['Official exam body pages', 'Candidate handbooks', 'VoraPrep study schedule and guide articles'], wordCount: 250 },
+        { heading: 'FAQ About {year} {exam} Changes', level: 2, keyPoints: ['Will old materials still work?', 'Will pass rates change?', 'What if you are mid-plan?'], wordCount: 250 },
+      ],
+    },
+    { 
+      id: 'case-study',
+      contentType: 'case-study',
+      title: 'How to Pass the {exam} While Working Full Time {year}',
+      slug: 'pass-{course}-while-working-full-time-{year}',
+      perSection: false,
+      wordCount: 2000,
+      priority: 1,
+      outline: [
+        { heading: 'Why Working Professionals Struggle With the {exam}', level: 2, keyPoints: ['Time pressure', 'Energy management', 'Consistency problems'], wordCount: 280 },
+        { heading: 'A Realistic Weekly System That Actually Works', level: 2, keyPoints: ['Weekday routine', 'Weekend structure', 'How to protect study time'], wordCount: 420 },
+        { heading: 'How to Study Efficiently When Time Is Limited', level: 2, keyPoints: ['Prioritizing high-yield topics', 'Using adaptive practice', 'Reviewing mistakes instead of rereading'], wordCount: 380 },
+        { heading: 'What to Do During Busy Season or High-Stress Weeks', level: 2, keyPoints: ['Minimum viable study habit', 'How to bounce back after lost weeks', 'When to move an exam date'], wordCount: 320 },
+        { heading: 'Sample 8-Week and 12-Week Work-Friendly Plans', level: 2, keyPoints: ['Compressed plan', 'Standard plan', 'When each makes sense'], wordCount: 350 },
+        { heading: 'Tools That Save Time', level: 2, keyPoints: ['AI tutor for stuck points', 'Personalized next-step guidance', 'Smart question review'], wordCount: 250 },
       ],
     },
     { 
@@ -6428,11 +6776,11 @@ exports.growthSeedBriefs = onCall({
             title, slug,
             courseId: exam.courseId,
             section: section.id,
-            contentType: template.id,
+            contentType: template.contentType || template.id,
             targetKeywords: [`${exam.exam.toLowerCase()} ${section.id.toLowerCase()}`, `${exam.exam.toLowerCase()} ${section.name.toLowerCase()}`],
             primaryKeyword: `${exam.exam.toLowerCase()} ${section.id.toLowerCase()} study guide`,
             wordCountTarget: template.wordCount,
-            internalLinks: [`/${exam.courseId}`, `/${exam.courseId}/practice`, `/${exam.courseId}/study`],
+            internalLinks: buildSeedInternalLinks(exam.courseId, section.id),
             ctaType: 'register',
             ctaUrl: `/${exam.courseId}`,
             status: 'brief',
@@ -6481,11 +6829,11 @@ exports.growthSeedBriefs = onCall({
         batch.set(ref, {
           title, slug,
           courseId: exam.courseId,
-          contentType: template.id,
+          contentType: template.contentType || template.id,
           targetKeywords: [`${exam.exam.toLowerCase()} prep`, `${exam.exam.toLowerCase()} exam`, `${exam.exam.toLowerCase()} ${template.id.replace(/-/g, ' ')}`],
           primaryKeyword: `${exam.exam.toLowerCase()} ${template.id.replace(/-/g, ' ')}`,
           wordCountTarget: template.wordCount,
-          internalLinks: [`/${exam.courseId}`, `/${exam.courseId}/practice`, '/pricing'],
+          internalLinks: buildSeedInternalLinks(exam.courseId),
           ctaType: 'register',
           ctaUrl: `/${exam.courseId}`,
           status: 'brief',
@@ -6537,7 +6885,7 @@ exports.growthSeedBriefs = onCall({
       targetKeywords: [`${course1} vs ${course2}`, label.toLowerCase(), `${exam1} or ${exam2}`],
       primaryKeyword: `${course1} vs ${course2}`,
       wordCountTarget: 2500,
-      internalLinks: [`/${course1}`, `/${course2}`, '/pricing'],
+      internalLinks: [...new Set([...buildSeedInternalLinks(course1), ...buildSeedInternalLinks(course2)])],
       ctaType: 'register',
       ctaUrl: '/',
       status: 'brief',
@@ -6595,7 +6943,7 @@ exports.growthSeedBriefs = onCall({
       targetKeywords: [`cpa requirements ${state.toLowerCase()}`, `how to become a cpa in ${state.toLowerCase()}`, `cpa license ${state.toLowerCase()}`, `${state.toLowerCase()} cpa exam`],
       primaryKeyword: `cpa requirements ${state.toLowerCase()}`,
       wordCountTarget: 2000,
-      internalLinks: ['/cpa', '/cpa/info', '/pricing'],
+      internalLinks: buildSeedInternalLinks('cpa'),
       ctaType: 'register',
       ctaUrl: '/cpa',
       status: 'brief',
@@ -6668,15 +7016,51 @@ exports.dynamicSitemap = onRequest({
     { loc: '/pricing', priority: '0.8', changefreq: 'monthly' },
     { loc: '/pass-guarantee', priority: '0.6', changefreq: 'monthly' },
     { loc: '/blog', priority: '0.8', changefreq: 'weekly' },
-    // Static blog articles
+    // Static blog articles (kept in sync with blog/src/data/articles.json)
     { loc: '/blog/cpa-exam-study-schedule-2026', priority: '0.7', changefreq: 'monthly' },
     { loc: '/blog/ea-vs-cpa-which-certification', priority: '0.7', changefreq: 'monthly' },
     { loc: '/blog/how-to-pass-far-first-try', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cpa-bar-cheat-sheet-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cisa-cisa4-cheat-sheet-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cfp-cfp4-study-guide-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cisa-cisa3-study-guide-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cfp-cfp2-cheat-sheet-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cpa-pass-rates-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cfp-exam-tips-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cisa-cisa1-study-guide-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cfp-vs-cpa-comparison-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/free-cpa-far-practice-questions-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cpa-requirements-nevada-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/free-cia-cia3-practice-questions-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cpa-requirements-minnesota-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/free-cpa-aud-practice-questions-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/free-cfp-cfp1-practice-questions-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cia-salary-guide-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/free-cia-cia1-practice-questions-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/free-cfp-cfp4-practice-questions-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cfp-cfp7-breakdown-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cpa-requirements-kansas-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cpa-bar-study-guide-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/free-cisa-cisa3-practice-questions-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/free-cfp-cfp3-practice-questions-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cpa-requirements-ohio-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cpa-requirements-virgin-islands-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cfp-cfp1-breakdown-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/ea-see1-breakdown-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cpa-requirements-district-of-columbia-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cfp-cfp4-breakdown-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cma-study-schedule-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cisa-cisa2-breakdown-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cpa-requirements-alabama-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cisa-cisa5-study-guide-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cfp-cfp3-study-guide-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cpa-vs-cma-comparison-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/free-cfp-cfp5-practice-questions-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/ea-see3-breakdown-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cpa-bar-breakdown-2026', priority: '0.7', changefreq: 'monthly' },
     { loc: '/terms', priority: '0.3', changefreq: 'yearly' },
     { loc: '/privacy', priority: '0.3', changefreq: 'yearly' },
     { loc: '/help', priority: '0.4', changefreq: 'monthly' },
-    { loc: '/login', priority: '0.5', changefreq: 'monthly' },
-    { loc: '/register', priority: '0.6', changefreq: 'monthly' },
     { loc: '/demo-practice', priority: '0.7', changefreq: 'monthly' },
   ];
 
@@ -8082,3 +8466,34 @@ exports.listPendingYouTubeShorts = onCall({
     throw new HttpsError('internal', 'Failed to list videos');
   }
 });
+
+// ============================================================================
+// DAILY CPA — SMS-based daily MCQ product
+// Separate module: functions/daily-cpa.js
+//
+// Only export when explicitly enabled. This lets us deploy to a project that
+// hasn't set TELNYX_API_KEY / TELNYX_PHONE_NUMBER yet without the deploy
+// aborting on missing secrets.
+//
+// To enable in a project:
+//   1. firebase functions:secrets:set TELNYX_API_KEY -P <project>
+//   2. firebase functions:secrets:set TELNYX_PHONE_NUMBER -P <project>
+//   3. Deploy with ENABLE_DAILY_CPA=1, e.g.:
+//      ENABLE_DAILY_CPA=1 firebase deploy --only functions -P <project>
+// ============================================================================
+const ENABLE_DAILY_CPA = process.env.ENABLE_DAILY_CPA === '1' || process.env.FUNCTIONS_EMULATOR === 'true';
+if (ENABLE_DAILY_CPA) {
+  const dailyCpa = require('./daily-cpa');
+  exports.dailyCpa_morningKickoff = dailyCpa.dailyCpa_morningKickoff;
+  exports.dailyCpa_nudgeCheck = dailyCpa.dailyCpa_nudgeCheck;
+  exports.dailyCpa_trialExpiration = dailyCpa.dailyCpa_trialExpiration;
+  exports.dailyCpa_weeklyRecap = dailyCpa.dailyCpa_weeklyRecap;
+  exports.dailyCpa_smsInbound = dailyCpa.dailyCpa_smsInbound;
+  exports.dailyCpa_signup = dailyCpa.dailyCpa_signup;
+  exports.dailyCpa_createCheckout = dailyCpa.dailyCpa_createCheckout;
+  exports.dailyCpa_stripeWebhook = dailyCpa.dailyCpa_stripeWebhook;
+  exports.dailyCpa_dailyReset = dailyCpa.dailyCpa_dailyReset;
+} else {
+  // eslint-disable-next-line no-console
+  console.warn('[daily-cpa] ENABLE_DAILY_CPA != 1 — skipping dailyCpa_* exports.');
+}

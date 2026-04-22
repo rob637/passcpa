@@ -68,6 +68,13 @@ export interface ExamLandingConfig {
   fullName: string;
   tagline: string;
   description: string;
+
+  // Optional outcome-first hero overrides (per-exam tuning)
+  // When provided, these replace the default "Become a [fullName]" + description treatment.
+  heroHeadlineLine1?: string;          // e.g., "Pass the CPA Exam"
+  heroHeadlineLine2?: string;          // e.g., "on Your First Try" (rendered in gradient color)
+  heroSubheadline?: string;            // Replaces description in hero only
+  heroPassGuaranteeBadge?: boolean;    // Show "Pass Guarantee" trust pill in hero
   
   // Colors
   primaryColor: string;           // e.g., 'blue', 'emerald', 'purple'
@@ -188,6 +195,12 @@ export const CPA_CONFIG: ExamLandingConfig = {
   fullName: 'Certified Public Accountant',
   tagline: 'Pass Your CPA Exam Without Breaking the Bank',
   description: 'The gold standard for accountants. Master financial reporting, auditing, taxation, and business concepts.',
+
+  // Outcome-first hero (replaces "Become a Certified Public Accountant")
+  heroHeadlineLine1: 'Pass the CPA Exam',
+  heroHeadlineLine2: 'on Your First Try',
+  heroSubheadline: '9,000+ exam-realistic questions. A study plan that adapts to your weak spots. Pass — or study free until you do.',
+  heroPassGuaranteeBadge: true,
   
   primaryColor: 'blue',
   gradientFrom: 'from-blue-600',

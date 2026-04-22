@@ -199,7 +199,7 @@ export const CPA_CONFIG: ExamLandingConfig = {
   // Outcome-first hero (replaces "Become a Certified Public Accountant")
   heroHeadlineLine1: 'Pass the CPA Exam',
   heroHeadlineLine2: 'on Your First Try',
-  heroSubheadline: '9,000+ exam-realistic questions. A study plan that adapts to your weak spots. Pass — or study free until you do.',
+  heroSubheadline: `${COURSE_DISPLAY_STATS.cpa.questions} exam-realistic questions. A study plan that adapts to your weak spots. Pass — or study free until you do.`,
   heroPassGuaranteeBadge: true,
   
   primaryColor: 'blue',
@@ -247,7 +247,7 @@ export const CPA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Becker', 'Roger', 'Surgent'],
     data: [
-      { feature: 'Price', voraprep: '$249/yr*', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
+      { feature: 'Price', voraprep: '$249/yr*', competitor1: '$2,499–$3,499', competitor2: '$1,899–$2,095', competitor3: '$1,599–$1,799', highlight: true },
       { feature: 'Practice Questions (MCQ)', voraprep: COURSE_DISPLAY_STATS.cpa.questions, competitor1: '6,500+', competitor2: '4,200+', competitor3: '6,800+', highlight: true },
       { feature: 'Study Assistant 24/7', voraprep: true, competitor1: 'Extra $$$', competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Extra $$$', competitor2: false, competitor3: 'Basic', highlight: true },

@@ -4,6 +4,7 @@ import { Flame, WifiOff } from 'lucide-react';
 import { PageTransition } from '../common/PageTransition';
 import { TrialBanner } from '../common/SubscriptionGate';
 import { PWAInstallPrompt, PWAInstallBanner } from '../common/PWAInstallPrompt';
+import { MobileContextBar } from '../navigation';
 import { useStudy } from '../../hooks/useStudy';
 import { useStudyPlan } from '../../hooks/useStudyPlan';
 import { useRouteTitle } from '../../hooks/useDocumentTitle';
@@ -127,8 +128,8 @@ const MainLayout = () => {
     setTrialBannerVisible(visible);
   }, []);
 
-  // Set document title based on route
-  useRouteTitle();
+  // Set document title based on route and get page title for mobile header
+  const pageTitle = useRouteTitle();
 
   // Track page views for analytics
   usePageTracking();
@@ -306,11 +307,17 @@ const MainLayout = () => {
           scrolled && 'shadow-md',
           trialBannerVisible ? 'top-[36px]' : 'top-0'
         )}
+        style={{ transform: 'translate3d(0,0,0)' }} // GPU layer keeps header stable during iOS bounce
         role="banner"
       >
         <div className="flex items-center justify-between px-4 h-14">
           {/* Left: Exam name with tap-to-switch */}
           <CourseSelector mobileHeader showComingSoon={false} />
+          
+          {/* Center: Page title */}
+          <span className="text-sm font-medium text-slate-600 dark:text-slate-300 truncate max-w-[120px]">
+            {pageTitle}
+          </span>
           
           {/* Right: Streak + Progress (compact) */}
           <div className="flex items-center gap-2">
@@ -324,6 +331,8 @@ const MainLayout = () => {
             <ProgressRing progress={dailyProgress} size={28} />
           </div>
         </div>
+        {/* Context Bar - Inside header to avoid safe-area positioning issues */}
+        <MobileContextBar />
       </header>
 
       {/* Main Content */}
@@ -335,7 +344,9 @@ const MainLayout = () => {
         aria-label="Main content"
         className={clsx(
           'flex-1 min-w-0 p-4 pb-24 md:p-8 md:pb-8 md:pt-6 focus:outline-none',
-          trialBannerVisible ? 'pt-[68px]' : 'pt-[58px]'
+          // Mobile top padding: header (56px) + context bar (~32px) + safe-area (~16-47px) + gap
+          trialBannerVisible ? 'pt-[140px]' : 'pt-[108px]',
+          'md:pt-6' // Reset to normal on desktop
         )}
       >
         <PageTransition>
@@ -348,6 +359,7 @@ const MainLayout = () => {
       <nav
         ref={navRef}
         className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur dark:bg-slate-800/95 border-t border-slate-200 dark:border-slate-700 pb-safe z-50 safe-bottom"
+        style={{ transform: 'translate3d(0,0,0)' }} // GPU layer keeps nav stable during iOS bounce
         role="navigation"
         aria-label="Mobile navigation"
       >

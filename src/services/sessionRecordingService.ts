@@ -12,6 +12,7 @@
 
 import { 
   collection, 
+  collectionGroup,
   doc, 
   setDoc, 
   addDoc, 
@@ -116,6 +117,52 @@ export interface Session {
   courseId?: string;
   isActive: boolean;
 }
+
+// Utility to remove undefined values from objects (Firestore doesn't accept undefined)
+// This is critical - Firestore will reject ANY undefined value at any nesting level
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const removeUndefined = (obj: any): any => {
+  // Handle null/undefined at top level
+  if (obj === null || obj === undefined) return null;
+  
+  // Arrays: recursively clean each element
+  if (Array.isArray(obj)) {
+    return obj.map(item => removeUndefined(item)).filter(item => item !== undefined);
+  }
+  
+  // Non-objects pass through (strings, numbers, booleans)
+  if (typeof obj !== 'object') return obj;
+  
+  // Preserve Date and Timestamp instances
+  if (obj instanceof Date || obj instanceof Timestamp) return obj;
+  
+  // For plain objects, recursively clean and filter out undefined
+  const cleaned: Record<string, unknown> = {};
+  const keys = Object.keys(obj);
+  
+  for (const key of keys) {
+    const value = obj[key];
+    
+    // Skip undefined values entirely
+    if (value === undefined) {
+      continue;
+    }
+    
+    // Recursively clean nested objects
+    if (typeof value === 'object' && value !== null) {
+      const cleanedValue = removeUndefined(value);
+      // Only include if the cleaned value is not undefined
+      if (cleanedValue !== undefined) {
+        cleaned[key] = cleanedValue;
+      }
+    } else {
+      // Primitive values (and null) pass through
+      cleaned[key] = value;
+    }
+  }
+  
+  return cleaned;
+};
 
 // Generate unique session ID
 const generateSessionId = (): string => {
@@ -344,13 +391,18 @@ class SessionRecordingService {
       console.log('[SessionRecording] 🖱️ Click:', activity.details?.element, '(total:', this.clickCount, ')');
     }
 
+    // Sanitize activity before buffering (remove undefined values that Firestore rejects)
+    const sanitizedActivity = removeUndefined(activity) as Activity;
+
     // Add to buffer for batch writing
-    this.activityBuffer.push(activity as Activity);
+    this.activityBuffer.push(sanitizedActivity);
 
     // Flush immediately for important events AND page views
     const immediateFlushEvents: ActivityType[] = [
       'session_start', 'session_end', 'signup', 'login', 'logout',
       'checkout_start', 'checkout_complete', 'error', 'page_view',
+      // Include clicks for better tracking reliability
+      'click', 'button_click', 'link_click',
     ];
     if (immediateFlushEvents.includes(activity.type)) {
       await this.flushActivities();
@@ -359,6 +411,9 @@ class SessionRecordingService {
 
   // Convenience methods for common activities
   async trackPageView(path: string, additionalDetails?: Record<string, unknown>): Promise<void> {
+    // Sanitize additionalDetails to prevent undefined values from being spread in
+    const safeDetails = additionalDetails ? removeUndefined(additionalDetails) : {};
+    
     await this.trackActivity({
       type: 'page_view',
       timestamp: new Date(),
@@ -370,7 +425,7 @@ class SessionRecordingService {
           height: window.innerHeight,
         },
         duration: Date.now() - this.lastActivityTime,
-        ...additionalDetails,
+        ...safeDetails,
       },
     });
   }
@@ -386,30 +441,44 @@ class SessionRecordingService {
       elementType === 'button' ? 'button_click' :
       elementType === 'a' || elementType === 'link' ? 'link_click' : 'click';
 
+    // Build details object without undefined values
+    const details: Activity['details'] = {
+      element: element.substring(0, 200), // Truncate long text
+      elementType,
+    };
+    if (target) {
+      details.target = target.substring(0, 500);
+    }
+    if (metadata) {
+      // Sanitize metadata to prevent undefined values
+      details.metadata = removeUndefined(metadata);
+    }
+
     await this.trackActivity({
       type: activityType,
       timestamp: new Date(),
       page,
       pageName: getPageName(page),
-      details: {
-        element: element.substring(0, 200), // Truncate long text
-        elementType,
-        target: target?.substring(0, 500),
-        metadata,
-      },
+      details,
     });
   }
 
   async trackError(errorMessage: string, page: string, metadata?: Record<string, unknown>): Promise<void> {
+    // Build details object without undefined values
+    const details: Activity['details'] = {
+      errorMessage: errorMessage.substring(0, 1000),
+    };
+    if (metadata) {
+      // Sanitize metadata to prevent undefined values
+      details.metadata = removeUndefined(metadata);
+    }
+
     await this.trackActivity({
       type: 'error',
       timestamp: new Date(),
       page,
       pageName: getPageName(page),
-      details: {
-        errorMessage: errorMessage.substring(0, 1000),
-        metadata,
-      },
+      details,
     });
   }
 
@@ -418,12 +487,15 @@ class SessionRecordingService {
     page: string,
     details: Activity['details']
   ): Promise<void> {
+    // Sanitize details to prevent undefined values from caller
+    const safeDetails = removeUndefined(details) || {};
+    
     await this.trackActivity({
       type,
       timestamp: new Date(),
       page,
       pageName: getPageName(page),
-      details,
+      details: safeDetails,
     });
   }
 
@@ -448,14 +520,22 @@ class SessionRecordingService {
         'activities'
       );
 
-      // Batch write activities
+      // Batch write activities (removeUndefined prevents Firestore rejection)
       await Promise.all(
-        activitiesToFlush.map(activity => addDoc(activitiesRef, {
-          ...activity,
-          timestamp: activity.timestamp instanceof Date 
-            ? Timestamp.fromDate(activity.timestamp) 
-            : activity.timestamp,
-        }))
+        activitiesToFlush.map(activity => {
+          // Convert timestamp first (before sanitization)
+          const activityWithTimestamp = {
+            ...activity,
+            timestamp: activity.timestamp instanceof Date 
+              ? Timestamp.fromDate(activity.timestamp) 
+              : activity.timestamp,
+          };
+          
+          // Triple-sanitize: activities should already be clean, but ensure nothing slips through
+          const sanitized = removeUndefined(activityWithTimestamp);
+          
+          return addDoc(activitiesRef, sanitized);
+        })
       );
 
       // Update session stats
@@ -620,6 +700,7 @@ class SessionRecordingService {
   }
 
   // Get recent activities across all users (for admin)
+  // OPTIMIZED: Uses collection group query instead of N+1 queries
   static async getRecentActivities(limitCount = 50): Promise<Array<{
     userId: string;
     userEmail?: string;
@@ -628,18 +709,65 @@ class SessionRecordingService {
     activities: Activity[];
   }>> {
     try {
-      console.log('[SessionRecording] getRecentActivities called, fetching users...');
+      console.log('[SessionRecording] getRecentActivities using optimized collection group query...');
       
-      // Get ALL users (we only have ~180)
-      const usersRef = collection(db, 'users');
-      const usersSnapshot = await getDocs(usersRef);
+      // Step 1: Use collection group query to get recent sessions across ALL users
+      // This is a single query instead of 180+ individual queries
+      const sessionsQuery = query(
+        collectionGroup(db, 'sessions'),
+        orderBy('lastActivityAt', 'desc'),
+        firestoreLimit(limitCount)
+      );
       
-      console.log('[SessionRecording] Found', usersSnapshot.size, 'users');
+      const sessionsSnapshot = await getDocs(sessionsQuery);
+      console.log('[SessionRecording] Found', sessionsSnapshot.size, 'recent sessions');
       
-      // Debug: Log first few user IDs
-      const userIds = usersSnapshot.docs.slice(0, 10).map(d => d.id);
-      console.log('[SessionRecording] First 10 user IDs:', userIds);
+      if (sessionsSnapshot.empty) {
+        return [];
+      }
       
+      // Step 2: Extract user IDs from session paths and fetch user data
+      const userIds = new Set<string>();
+      const sessionsByUser: Map<string, Array<{ session: Session; sessionRef: string }>> = new Map();
+      
+      for (const sessionDoc of sessionsSnapshot.docs) {
+        // Path format: users/{userId}/sessions/{sessionId}
+        const pathParts = sessionDoc.ref.path.split('/');
+        const userId = pathParts[1]; // users/[userId]/sessions/sessionId
+        
+        userIds.add(userId);
+        
+        const existing = sessionsByUser.get(userId) || [];
+        existing.push({
+          session: { id: sessionDoc.id, ...sessionDoc.data() } as Session,
+          sessionRef: sessionDoc.ref.path,
+        });
+        sessionsByUser.set(userId, existing);
+      }
+      
+      // Step 3: Batch fetch user data for display names/emails
+      const userDataMap: Map<string, { email?: string; displayName?: string }> = new Map();
+      const userFetchPromises = Array.from(userIds).map(async (userId) => {
+        try {
+          const userDoc = await getDoc(doc(db, 'users', userId));
+          if (userDoc.exists()) {
+            const data = userDoc.data();
+            // Skip internal test accounts
+            if (data.email && data.email.toLowerCase().includes('sagecg.com')) {
+              return; // Will filter out below
+            }
+            userDataMap.set(userId, {
+              email: data.email,
+              displayName: data.displayName,
+            });
+          }
+        } catch {
+          // User may have been deleted
+        }
+      });
+      await Promise.all(userFetchPromises);
+      
+      // Step 4: Fetch activities for each session (parallelized)
       const results: Array<{
         userId: string;
         userEmail?: string;
@@ -647,71 +775,39 @@ class SessionRecordingService {
         session: Session;
         activities: Activity[];
       }> = [];
-
-      // Get recent sessions from each user
-      let usersWithSessions = 0;
-      let totalSessionsChecked = 0;
       
-      // Debug: Check specifically for known test user
-      const testUserId = 'vkWZuv4tEDhN4M3ANZXP0PNhP6I3';
-      const testUserInList = usersSnapshot.docs.some(d => d.id === testUserId);
-      console.log('[SessionRecording] Test user', testUserId, 'in user list:', testUserInList);
-      
-      for (const userDoc of usersSnapshot.docs) {
-        const userData = userDoc.data();
-        const sessionsRef = collection(db, 'users', userDoc.id, 'sessions');
+      const activityFetchPromises = Array.from(sessionsByUser.entries()).flatMap(([userId, sessionsData]) => {
+        const userData = userDataMap.get(userId);
+        if (!userData) return []; // Skip if user was filtered (e.g., sagecg.com)
         
-        try {
-          // Simple query without orderBy (avoids index requirement)
-          const sessionsQuery = query(
-            sessionsRef,
-            firestoreLimit(5)
-          );
-          const sessionsSnapshot = await getDocs(sessionsQuery);
-          totalSessionsChecked++;
-          
-          if (sessionsSnapshot.size > 0) {
-            usersWithSessions++;
-            console.log('[SessionRecording] User', userDoc.id, 'has', sessionsSnapshot.size, 'sessions');
-          }
-
-          for (const sessionDoc of sessionsSnapshot.docs) {
-            const session = { id: sessionDoc.id, ...sessionDoc.data() } as Session;
-            
-            // Get activities for this session (simple query)
-            const activitiesRef = collection(
-              db,
-              'users',
-              userDoc.id,
-              'sessions',
-              sessionDoc.id,
-              'activities'
-            );
-            const activitiesQuery = query(
-              activitiesRef,
-              firestoreLimit(20)
-            );
+        return sessionsData.map(async ({ session, sessionRef }) => {
+          try {
+            // Fetch activities for this session
+            const activitiesRef = collection(db, sessionRef, 'activities');
+            const activitiesQuery = query(activitiesRef, firestoreLimit(20));
             const activitiesSnapshot = await getDocs(activitiesQuery);
+            
             const activities = activitiesSnapshot.docs.map(doc => ({
               id: doc.id,
               ...doc.data(),
             })) as Activity[];
-
+            
             results.push({
-              userId: userDoc.id,
+              userId,
               userEmail: userData.email,
               userName: userData.displayName,
               session,
               activities,
             });
+          } catch (error) {
+            console.warn('[SessionRecording] Failed to fetch activities for session:', sessionRef, error);
           }
-        } catch (userError) {
-          // Skip users with query errors (e.g., missing index)
-          console.warn('[SessionRecording] Error fetching sessions for user', userDoc.id, ':', userError);
-        }
-      }
-
-      // Sort by most recent activity (newest first)
+        });
+      });
+      
+      await Promise.all(activityFetchPromises);
+      
+      // Sort by most recent activity (newest first) - already sorted by query but re-sort after parallel fetch
       results.sort((a, b) => {
         let aTime = 0;
         let bTime = 0;
@@ -731,17 +827,7 @@ class SessionRecordingService {
         return bTime - aTime;
       });
 
-      // Debug: Log first few results with timestamps
-      if (results.length > 0) {
-        console.log('[SessionRecording] First 3 results after sort:');
-        results.slice(0, 3).forEach((r, i) => {
-          const ts = r.session.lastActivityAt;
-          const time = ts instanceof Timestamp ? ts.toDate() : ts;
-          console.log(`  ${i + 1}. User ${r.userId} session ${r.session.id} - lastActivity: ${time}`);
-        });
-      }
-
-      console.log('[SessionRecording] getRecentActivities returning', results.length, 'sessions from', usersWithSessions, 'users');
+      console.log('[SessionRecording] getRecentActivities returning', results.length, 'sessions');
       return results.slice(0, limitCount);
     } catch (error) {
       console.error('[SessionRecording] ❌ Failed to get recent activities:', error);

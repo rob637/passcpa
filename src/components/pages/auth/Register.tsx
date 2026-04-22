@@ -33,6 +33,7 @@ const Register = () => {
     const redirect = searchParams.get('redirect');
     const interval = searchParams.get('interval');
     const fast = searchParams.get('fast');
+    const coupon = searchParams.get('coupon');
     
     // Capture referral code from ?ref=CODE
     captureReferralFromUrl();
@@ -49,9 +50,9 @@ const Register = () => {
     if (fast === '1') {
       localStorage.setItem('onboardingFastTrack', '1');
     }
-    // Store checkout params for post-onboarding redirect
+    // Store checkout params for post-onboarding redirect (incl. coupon if present)
     if (redirect === 'checkout' && course && interval) {
-      localStorage.setItem('pendingCheckout', JSON.stringify({ course, interval }));
+      localStorage.setItem('pendingCheckout', JSON.stringify({ course, interval, ...(coupon ? { coupon } : {}) }));
     }
   }, [searchParams]);
 
@@ -361,7 +362,10 @@ const Register = () => {
       {/* Sign In Link */}
       <p className="mt-8 text-center text-slate-600 dark:text-slate-300">
         Already have an account?{' '}
-        <Link to="/login" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-semibold">
+        <Link
+          to={`/login${searchParams.toString() ? `?${searchParams.toString()}` : ''}`}
+          className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-semibold"
+        >
           Sign in
         </Link>
       </p>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import logger from '../../utils/logger';
 import { Link, useSearchParams } from 'react-router-dom';
 import {
@@ -11,10 +11,13 @@ import {
   GraduationCap,
   Bookmark,
   StickyNote,
+  RefreshCw,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
+import { usePullToRefresh } from '../../hooks/usePullToRefresh';
+import * as feedback from '../../services/feedback';
 import { getSectionDisplayInfo, getDefaultSection, isValidSection } from '../../utils/sectionUtils';
 import { fetchLessonsBySection } from '../../services/lessonService';
 import { useBookmarks } from '../common/Bookmarks';
@@ -139,6 +142,43 @@ const Lessons: React.FC = () => {
   const validProfileSection = profileSection && isValidSection(profileSection, courseId) ? profileSection : null;
   const currentSection = (sectionFromUrl || validProfileSection || getDefaultSection(courseId)) as ExamSection | 'ALL';
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
+
+  // Pull-to-refresh handler
+  const handleRefresh = useCallback(async () => {
+    feedback.haptic('light');
+    try {
+      // Re-fetch lessons
+      const lessons = await fetchLessonsBySection(currentSection, courseId);
+      setRawLessons(lessons);
+      
+      // Re-fetch progress
+      if (getLessonProgress) {
+        const progress = await getLessonProgress();
+        const completed = new Set(
+          Object.entries(progress || {})
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            .filter(([, data]: [string, any]) => data.status === 'completed' || data.completedAt)
+            .map(([lessonId]) => lessonId)
+        );
+        setCompletedLessons(completed);
+      }
+      feedback.haptic('success');
+    } catch (error) {
+      logger.error('Error refreshing lessons:', error);
+    }
+  }, [currentSection, courseId, getLessonProgress]);
+
+  const {
+    isRefreshing,
+    onTouchStart,
+    onTouchMove,
+    onTouchEnd,
+    indicatorStyle,
+  } = usePullToRefresh({
+    onRefresh: handleRefresh,
+    threshold: 80,
+    enabled: true,
+  });
   
   // Fetch lessons
   useEffect(() => {
@@ -244,7 +284,28 @@ const Lessons: React.FC = () => {
   }
 
   return (
-    <div className="px-2 py-1 sm:p-6 lg:p-8 max-w-4xl mx-auto">
+    <div 
+      className="px-2 py-1 sm:p-6 lg:p-8 max-w-4xl mx-auto"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
+      {/* Pull-to-refresh indicator */}
+      <div 
+        className="fixed top-16 left-1/2 -translate-x-1/2 z-50 pointer-events-none md:hidden"
+        style={indicatorStyle}
+      >
+        <div className={clsx(
+          'w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center',
+          isRefreshing && 'animate-spin'
+        )}>
+          <RefreshCw className={clsx(
+            'w-5 h-5 text-emerald-600',
+            isRefreshing && 'animate-spin'
+          )} />
+        </div>
+      </div>
+
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-4">
@@ -284,7 +345,9 @@ const Lessons: React.FC = () => {
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-600" />
             <input
-              type="text"
+              type="search"
+              inputMode="search"
+              enterKeyHint="search"
               placeholder="Search lessons..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}

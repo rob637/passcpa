@@ -372,21 +372,28 @@ export function TrialBanner({ onVisibilityChange }: { onVisibilityChange?: (visi
   };
   
   // Determine visibility
+  // Show throughout the entire trial (day 1 onward) so new users always know
+  // they're on a trial. Tone changes by remaining days (handled below).
   const isVisible = !loading && !isPremium && (
-    trialExpired || (isTrialing && trialDaysRemaining <= 7 && !dismissed)
+    trialExpired || (isTrialing && trialDaysRemaining > 0 && !dismissed)
   );
-  
+
   // Notify parent of visibility changes
   React.useEffect(() => {
     onVisibilityChange?.(isVisible);
   }, [isVisible, onVisibilityChange]);
-  
+
   // Hide if user has paid access to current course
   if (loading || isPremium) return null;
-  
+
   const courseName = course?.name || courseId.toUpperCase();
   const annualUrl = `/start-checkout?course=${courseId}&interval=annual`;
   const monthlyUrl = `/start-checkout?course=${courseId}&interval=monthly`;
+
+  // Show price in CTA for stronger conversion signal
+  const exam = EXAM_PRICING[courseId as keyof typeof EXAM_PRICING];
+  const founderActive = isFounderPricingActive();
+  const annualPrice = exam ? (founderActive ? exam.founderAnnual : exam.annual) : undefined;
 
   if (trialExpired) {
     // Always show expired banner (not dismissible)
@@ -398,13 +405,13 @@ export function TrialBanner({ onVisibilityChange }: { onVisibilityChange?: (visi
             <span className="font-medium text-sm">Your {courseName} trial has ended.</span>
           </div>
           <div className="flex items-center gap-2">
-            <Link 
+            <Link
               to={annualUrl}
               className="text-sm bg-white text-red-600 px-3 py-1 rounded-full font-medium hover:bg-gray-100 transition-colors"
             >
               Annual
             </Link>
-            <Link 
+            <Link
               to={monthlyUrl}
               className="text-sm bg-red-700 text-white px-3 py-1 rounded-full font-medium hover:bg-red-800 transition-colors"
             >
@@ -416,31 +423,56 @@ export function TrialBanner({ onVisibilityChange }: { onVisibilityChange?: (visi
     );
   }
 
-  // Only show during last 7 days of trial, and respect dismissal
-  if (isTrialing && trialDaysRemaining <= 7 && !dismissed) {
+  // Show throughout the trial; tone scales with urgency.
+  if (isTrialing && trialDaysRemaining > 0 && !dismissed) {
     const isUrgent = trialDaysRemaining <= 3;
+    const isReminder = trialDaysRemaining <= 10 && !isUrgent; // 4–10 days
+    // 11+ days = friendly welcome tone
+    const bgClass = isUrgent
+      ? 'bg-amber-500'
+      : isReminder
+        ? 'bg-blue-600'
+        : 'bg-emerald-600';
+    const ctaTextClass = isUrgent
+      ? 'text-amber-600'
+      : isReminder
+        ? 'text-blue-600'
+        : 'text-emerald-700';
+    const monthlyBgClass = isUrgent
+      ? 'bg-amber-600'
+      : isReminder
+        ? 'bg-blue-700'
+        : 'bg-emerald-700';
+
+    let message: string;
+    if (trialDaysRemaining === 1) {
+      message = 'Last day of your trial!';
+    } else if (isUrgent) {
+      message = `Only ${trialDaysRemaining} days left in your free trial`;
+    } else if (isReminder) {
+      message = `${trialDaysRemaining} days left in your free trial`;
+    } else {
+      message = `Free trial active — ${trialDaysRemaining} days of full access`;
+    }
+
+    const annualLabel = annualPrice ? `Get Annual — $${annualPrice}/yr` : 'Annual';
     return (
-      <div className={`${isUrgent ? 'bg-amber-500' : 'bg-blue-600'} text-white py-2 px-4 fixed top-0 left-0 right-0 z-[60]`}>
+      <div className={`${bgClass} text-white py-2 px-4 fixed top-0 left-0 right-0 z-[60]`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4" />
-            <span className="font-medium text-sm">
-              {trialDaysRemaining === 1 
-                ? 'Last day of your trial!' 
-                : `${trialDaysRemaining} days left in your free trial`
-              }
-            </span>
+            <span className="font-medium text-sm">{message}</span>
           </div>
           <div className="flex items-center gap-2">
-            <Link 
+            <Link
               to={annualUrl}
-              className={`text-sm bg-white ${isUrgent ? 'text-amber-600' : 'text-blue-600'} px-3 py-1 rounded-full font-medium hover:bg-gray-100 transition-colors`}
+              className={`text-sm bg-white ${ctaTextClass} px-3 py-1 rounded-full font-medium hover:bg-gray-100 transition-colors whitespace-nowrap`}
             >
-              Annual
+              {annualLabel}
             </Link>
-            <Link 
+            <Link
               to={monthlyUrl}
-              className={`text-sm ${isUrgent ? 'bg-amber-600' : 'bg-blue-700'} text-white px-3 py-1 rounded-full font-medium hover:opacity-90 transition-colors`}
+              className={`hidden sm:inline-flex text-sm ${monthlyBgClass} text-white px-3 py-1 rounded-full font-medium hover:opacity-90 transition-colors`}
             >
               Monthly
             </Link>

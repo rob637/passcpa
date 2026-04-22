@@ -11,6 +11,7 @@ import { httpsCallable } from 'firebase/functions';
 import { functions } from '../../config/firebase';
 import { useAuth } from '../../hooks/useAuth';
 import logger from '../../utils/logger';
+import analytics from '../../services/analytics';
 
 type CourseId = 'cpa' | 'ea' | 'cma' | 'cia' | 'cfp' | 'cisa';
 type PricingInterval = 'annual' | 'monthly';
@@ -28,6 +29,7 @@ const StartCheckout = () => {
 
   const courseId = searchParams.get('course') as CourseId | null;
   const interval = searchParams.get('interval') as PricingInterval | null;
+  const couponCode = searchParams.get('coupon');
 
   useEffect(() => {
     const initCheckout = async () => {
@@ -53,15 +55,16 @@ const StartCheckout = () => {
         return;
       }
 
-      // If not logged in, redirect to register with validated params
+      // If not logged in, redirect to register with validated params (preserve coupon)
       if (!user) {
-        navigate(`/register?course=${courseId}&redirect=checkout&interval=${interval}`);
+        const couponParam = couponCode ? `&coupon=${encodeURIComponent(couponCode)}` : '';
+        navigate(`/register?course=${courseId}&redirect=checkout&interval=${interval}${couponParam}`);
         return;
       }
 
       try {
         const createCheckoutSession = httpsCallable<
-          { courseId: string; interval: string; origin: string },
+          { courseId: string; interval: string; origin: string; couponCode?: string },
           CheckoutSessionResponse
         >(functions, 'createCheckoutSession');
 
@@ -69,7 +72,11 @@ const StartCheckout = () => {
           courseId,
           interval,
           origin: window.location.origin,
+          ...(couponCode ? { couponCode } : {}),
         });
+
+        // Funnel event — fired right before Stripe redirect
+        analytics.trackCheckoutInitiated(courseId, interval, couponCode || undefined);
 
         // Redirect to Stripe Checkout
         if (result.data.url) {
@@ -92,7 +99,7 @@ const StartCheckout = () => {
     };
 
     initCheckout();
-  }, [user, authLoading, courseId, interval, navigate]);
+  }, [user, authLoading, courseId, interval, couponCode, navigate]);
 
   if (error) {
     return (

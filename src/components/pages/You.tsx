@@ -500,7 +500,7 @@ const You: React.FC = () => {
 
         {/* Version */}
         <div className="text-center text-xs text-slate-400 dark:text-slate-500 pt-2">
-          <p>VoraPrep v1.1</p>
+          <p>VoraPrep v{__APP_VERSION__}</p>
         </div>
       </div>
     </div>

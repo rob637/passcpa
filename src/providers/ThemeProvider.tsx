@@ -39,8 +39,8 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       if (oldStored === 'true') return 'dark';
       if (oldStored === 'false') return 'light';
     }
-    // Default to 'auto' (time-based) for new users
-    return 'auto';
+    // Default to 'light' for new users
+    return 'light';
   });
 
   // System prefers dark (for 'system' mode)

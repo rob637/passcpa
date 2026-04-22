@@ -22,7 +22,8 @@ import {
   X,
   Menu,
   Users,
-  Quote
+  Quote,
+  MessageSquare
 } from 'lucide-react';
 import { ExamLandingConfig, SHARED_WHY_VORAPREP, SHARED_TESTIMONIALS } from './ExamLandingData';
 import { isFounderPricingActive, SOCIAL_PROOF, getSocialProofText } from '../../../services/subscription';
@@ -30,6 +31,7 @@ import { useAuth } from '../../../hooks/useAuth';
 import { useExitIntent } from '../../../hooks/useExitIntent';
 import ExitIntentModal from '../../common/ExitIntentModal';
 import FounderCountdown from '../../common/FounderCountdown';
+import LandingSampleQuestion from './LandingSampleQuestion';
 
 interface ExamLandingTemplateProps {
   config: ExamLandingConfig;
@@ -92,8 +94,20 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         Skip to main content
       </a>
 
+      {/* Announcement Bar — CPA only */}
+      {config.id === 'cpa' && (
+        <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-2 px-4">
+          <Link to="/daily-cpa" className="inline-flex items-center gap-2 text-sm font-medium hover:text-blue-100 transition-colors">
+            <MessageSquare className="w-4 h-4" />
+            <span className="hidden sm:inline">NEW: Daily CPA Questions by Text — 3-day free trial</span>
+            <span className="sm:hidden">NEW: Daily CPA by Text — Free trial</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      )}
+
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800" aria-label="Main navigation">
+      <nav className={`fixed left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 ${config.id === 'cpa' ? 'top-9' : 'top-0'}`} aria-label="Main navigation">
         <div className="px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center gap-2 sm:gap-3">
             <Link to="/">
@@ -130,6 +144,12 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
               <a href="#comparison" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Compare</a>
             )}
             <a href="#pricing" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Pricing</a>
+            {config.id === 'cpa' && (
+              <Link to="/daily-cpa" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors font-semibold flex items-center gap-1">
+                <MessageSquare className="w-4 h-4" />
+                Daily CPA
+              </Link>
+            )}
           </div>
           <div className="flex items-center gap-2 md:gap-3">
             <Link to={config.loginPath} className="hidden md:block text-slate-600 dark:text-slate-300 hover:text-slate-900 px-4 py-2 transition-colors">
@@ -223,7 +243,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         {/* ================================================================
             HERO SECTION
             ================================================================ */}
-        <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 px-6 overflow-hidden">
+        <section className={`relative pb-12 md:pb-16 px-6 overflow-hidden ${config.id === 'cpa' ? 'pt-32 md:pt-40' : 'pt-24 md:pt-32'}`}>
           {/* Background */}
           <div className={`absolute inset-0 bg-gradient-to-br ${colors.light} via-slate-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950`} />
           
@@ -254,18 +274,24 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             {/* Headline */}
             <h1 className="text-4xl md:text-6xl font-extrabold text-center mb-4 leading-tight">
               <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
-                Become a
+                {config.heroHeadlineLine1 ?? 'Become a'}
               </span>
               <br />
               <span className={`bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} bg-clip-text text-transparent`}>
-                {config.fullName}
+                {config.heroHeadlineLine2 ?? config.fullName}
               </span>
             </h1>
-            
+
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
-              {config.description}
-              <br className="hidden md:block" />
-              <span className={`font-semibold ${colors.text}`}>Pass on your first try</span> — start your free trial today.
+              {config.heroSubheadline ? (
+                <>{config.heroSubheadline}</>
+              ) : (
+                <>
+                  {config.description}
+                  <br className="hidden md:block" />
+                  <span className={`font-semibold ${colors.text}`}>Pass on your first try</span> — start your free trial today.
+                </>
+              )}
             </p>
 
             {/* CTA Buttons */}
@@ -300,6 +326,17 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 </div>
                 <span>14-day free trial</span>
               </div>
+              {config.heroPassGuaranteeBadge && (
+                <Link
+                  to="/pass-guarantee"
+                  className="flex items-center gap-2 text-slate-700 dark:text-slate-200 text-sm hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                >
+                  <div className="w-5 h-5 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                    <CheckCircle className="w-3 h-3 text-blue-600" />
+                  </div>
+                  <span className="font-semibold">Pass Guarantee</span>
+                </Link>
+              )}
               {isFounderPricingActive() && SOCIAL_PROOF.showOnPricing && SOCIAL_PROOF.foundersJoined >= 50 && (
                 <div className="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-sm">
                   <div className="w-5 h-5 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center">
@@ -335,6 +372,47 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             </div>
           </div>
         </section>
+
+        {/* ================================================================
+            DAILY CPA PROMO — after hero (CPA only)
+            ================================================================ */}
+        {config.id === 'cpa' && (
+          <section className="py-10 px-6 bg-gradient-to-r from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 border-y border-slate-200 dark:border-slate-700">
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+              <div className="flex-1">
+                <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-semibold mb-3">
+                  <MessageSquare className="w-3.5 h-3.5" />
+                  NEW
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Daily CPA Questions by Text</h3>
+                <p className="text-slate-600 dark:text-slate-300 mb-4">
+                  Get CPA practice questions sent to your phone every morning. Answer by text, get instant feedback, build a streak. From $4.99/mo.
+                </p>
+                <Link
+                  to="/daily-cpa"
+                  className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-blue-700 transition-colors"
+                >
+                  Start 3-Day Free Trial
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              <div className="bg-slate-900 rounded-2xl p-4 text-white font-mono text-xs max-w-[240px] shadow-xl shrink-0">
+                <p className="text-blue-300 text-[10px] mb-1">VoraPrep Daily CPA — AUD</p>
+                <p className="text-slate-300 text-[10px] mb-2">Q3/10 · 🔥 12-day streak</p>
+                <p className="text-white text-xs mb-2">Which audit evidence is most reliable?</p>
+                <p className="text-slate-400 text-xs">Reply A, B, C, or D</p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ================================================================
+            SAMPLE QUESTION (zero-friction product taste)
+            CPA only for now — expand to other exams as we curate samples.
+            ================================================================ */}
+        {config.id === 'cpa' && (
+          <LandingSampleQuestion courseId="cpa" registerPath={config.registerPath} />
+        )}
 
         {/* ================================================================
             WHY BECOME A [CERTIFICATION] SECTION
@@ -529,10 +607,10 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
           <div className="max-w-7xl mx-auto">
              <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
-                Candidates Love VoraPrep
+                Early Beta Users Are Telling Us It's Working
               </h2>
               <p className="text-slate-600 dark:text-slate-300">
-                Join the early adopters switching from legacy review courses.
+                We're new — these are real, unedited quotes from our first beta testers.
               </p>
             </div>
             
@@ -561,6 +639,20 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 </div>
               ))}
             </div>
+
+            {/* Honesty footer + invitation */}
+            <div className="text-center mt-8">
+              <p className="text-sm text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
+                Are you using VoraPrep?{' '}
+                <a
+                  href="mailto:hello@voraprep.com?subject=My%20VoraPrep%20experience"
+                  className={`font-semibold ${colors.text} hover:underline`}
+                >
+                  Share your story
+                </a>
+                {' '}— we'll add it here (with your permission) and send you a free month.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -583,7 +675,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                       "When we were studying for our exams, we had two choices: pay $3,000 for a 'big name' course or use cheap, outdated materials that didn't work."
                     </p>
                     <p>
-                      "We built VoraPrep to be the third option: <strong className={colors.text}>Premium, AI-powered prep that's actually affordable.</strong>"
+                      "We built VoraPrep to be the third option: <strong className={colors.text}>Premium prep that adapts to how you learn — at a price that actually makes sense.</strong>"
                     </p>
                     <p>
                       "We don't have thousands of reviews yet because we're brand new. That's your advantage — join as a <strong>Founding Member</strong> today, lock in our lowest price forever, and get direct access to shape the platform."
@@ -675,7 +767,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
               <img src="/logo-white.svg" alt="VoraPrep" width="120" height="32" className="h-8 mb-4" />
               <p className="text-slate-400 text-sm mb-4 leading-relaxed">
                 Expert-crafted exam prep for accounting and finance professionals. 
-                Built by practitioners, powered by AI.
+                Built by practitioners. Adaptive to every learner.
               </p>
               <p className="text-slate-500 text-xs">
                 {config.disclaimer}

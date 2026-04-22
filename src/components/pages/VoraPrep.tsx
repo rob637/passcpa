@@ -4,6 +4,7 @@ import { useSEO, LANDING_SEO } from '../../hooks/useSEO';
 import { useOrganizationSchema } from '../../hooks/useStructuredData';
 import { getFormattedCount, getFormattedTotal, LESSON_COUNTS, FLASHCARD_COUNTS } from '../../utils/courseStats';
 import { EXAM_PRICING, isFounderPricingActive } from '../../services/subscription';
+import { useDailyCpaVisible } from '../../hooks/useDailyCpaVisible';
 import { 
   BookOpen, 
   Brain, 
@@ -256,6 +257,7 @@ const CourseCard = ({ course }: { course: CourseInfo }) => {
 const VoraPrep = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const showDailyCpa = useDailyCpaVisible();
 
   // SEO meta tags
   useSEO({
@@ -281,19 +283,21 @@ const VoraPrep = () => {
         Skip to main content
       </a>
 
-      {/* Announcement Bar */}
-      <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-2 px-4">
-        <Link to="/daily-cpa" className="inline-flex items-center gap-2 text-sm font-medium hover:text-blue-100 transition-colors">
-          <MessageSquare className="w-4 h-4" />
-          <span className="hidden sm:inline">NEW: Daily CPA Questions by Text — 3-day free trial</span>
-          <span className="sm:hidden">NEW: Daily CPA by Text — Free trial</span>
-          <ArrowRight className="w-3.5 h-3.5" />
-        </Link>
-      </div>
+      {/* Announcement Bar — gated until Daily CPA SMS is live */}
+      {showDailyCpa && (
+        <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-2 px-4">
+          <Link to="/daily-cpa" className="inline-flex items-center gap-2 text-sm font-medium hover:text-blue-100 transition-colors">
+            <MessageSquare className="w-4 h-4" />
+            <span className="hidden sm:inline">NEW: Daily CPA Questions by Text — 3-day free trial</span>
+            <span className="sm:hidden">NEW: Daily CPA by Text — Free trial</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      )}
       
       {/* Navigation */}
       <nav 
-        className="fixed top-9 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800"
+        className={`fixed left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 ${showDailyCpa ? 'top-9' : 'top-0'}`}
         aria-label="Main navigation"
       >
         <div className="px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
@@ -363,7 +367,9 @@ const VoraPrep = () => {
                 <Link to="/cfp" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">CFP Exam Prep</Link>
                 <Link to="/cisa" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">CISA Exam Prep</Link>
                 <div className="border-t border-slate-200 dark:border-slate-700 my-2 pt-2">
-                  <Link to="/daily-cpa" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-blue-600 dark:text-blue-400 font-medium hover:bg-blue-50 dark:hover:bg-blue-900/30">📱 Daily CPA by Text</Link>
+                  {showDailyCpa && (
+                    <Link to="/daily-cpa" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-blue-600 dark:text-blue-400 font-medium hover:bg-blue-50 dark:hover:bg-blue-900/30">📱 Daily CPA by Text</Link>
+                  )}
                 </div>
               </div>
             </div>
@@ -373,7 +379,7 @@ const VoraPrep = () => {
 
       {/* Hero Section */}
       <main id="main-content">
-        <section className="relative pt-32 pb-12 md:pt-40 md:pb-20 px-6 overflow-hidden">
+        <section className={`relative pb-12 md:pb-20 px-6 overflow-hidden ${showDailyCpa ? 'pt-32 md:pt-40' : 'pt-24 md:pt-32'}`}>
           {/* Animated background */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
           
@@ -490,7 +496,8 @@ const VoraPrep = () => {
               ))}
             </div>
 
-            {/* Daily CPA Featured Card */}
+            {/* Daily CPA Featured Card — gated until SMS is live */}
+            {showDailyCpa && (
             <div className="mt-6">
               <Link to="/daily-cpa" className="block group">
                 <div className="relative bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
@@ -517,6 +524,7 @@ const VoraPrep = () => {
                 </div>
               </Link>
             </div>
+            )}
 
             {/* Competitor pricing callout */}
             <div className="mt-10 text-center">
@@ -632,7 +640,9 @@ const VoraPrep = () => {
                 <li><Link to="/cia" className="hover:text-white transition-colors">CIA Exam Prep</Link></li>
                 <li><Link to="/cfp" className="hover:text-white transition-colors">CFP Exam Prep</Link></li>
                 <li><Link to="/cisa" className="hover:text-white transition-colors">CISA Exam Prep</Link></li>
-                <li><Link to="/daily-cpa" className="hover:text-white transition-colors text-blue-400 font-medium">Daily CPA by Text</Link></li>
+                {showDailyCpa && (
+                  <li><Link to="/daily-cpa" className="hover:text-white transition-colors text-blue-400 font-medium">Daily CPA by Text</Link></li>
+                )}
               </ul>
             </div>
             <div>

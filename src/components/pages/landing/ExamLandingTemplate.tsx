@@ -609,10 +609,10 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
           <div className="max-w-7xl mx-auto">
              <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
-                Early Beta Users Are Telling Us It's Working
+                What Our First Users Are Saying
               </h2>
               <p className="text-slate-600 dark:text-slate-300">
-                We're new — these are real, unedited quotes from our first beta testers.
+                We're new — and we're not going to fake it. Here are unedited quotes from real beta users.
               </p>
             </div>
             

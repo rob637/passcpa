@@ -28,6 +28,7 @@ import {
 import { ExamLandingConfig, SHARED_WHY_VORAPREP, SHARED_TESTIMONIALS } from './ExamLandingData';
 import { isFounderPricingActive, SOCIAL_PROOF, getSocialProofText } from '../../../services/subscription';
 import { useAuth } from '../../../hooks/useAuth';
+import { useDailyCpaVisible } from '../../../hooks/useDailyCpaVisible';
 import { useExitIntent } from '../../../hooks/useExitIntent';
 import ExitIntentModal from '../../common/ExitIntentModal';
 import FounderCountdown from '../../common/FounderCountdown';
@@ -43,6 +44,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showExitModal, setShowExitModal] = useState(false);
   const { user } = useAuth();
+  const showDailyCpa = useDailyCpaVisible();
 
   // Exit intent detection - only for non-authenticated users
   const { markAsShown } = useExitIntent(
@@ -94,8 +96,8 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         Skip to main content
       </a>
 
-      {/* Announcement Bar — CPA only */}
-      {config.id === 'cpa' && (
+      {/* Announcement Bar — CPA only, gated until Daily CPA SMS is live */}
+      {config.id === 'cpa' && showDailyCpa && (
         <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-2 px-4">
           <Link to="/daily-cpa" className="inline-flex items-center gap-2 text-sm font-medium hover:text-blue-100 transition-colors">
             <MessageSquare className="w-4 h-4" />
@@ -107,7 +109,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
       )}
 
       {/* Navigation */}
-      <nav className={`fixed left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 ${config.id === 'cpa' ? 'top-9' : 'top-0'}`} aria-label="Main navigation">
+      <nav className={`fixed left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 ${config.id === 'cpa' && showDailyCpa ? 'top-9' : 'top-0'}`} aria-label="Main navigation">
         <div className="px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center gap-2 sm:gap-3">
             <Link to="/">
@@ -144,7 +146,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
               <a href="#comparison" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Compare</a>
             )}
             <a href="#pricing" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Pricing</a>
-            {config.id === 'cpa' && (
+            {config.id === 'cpa' && showDailyCpa && (
               <Link to="/daily-cpa" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors font-semibold flex items-center gap-1">
                 <MessageSquare className="w-4 h-4" />
                 Daily CPA
@@ -243,7 +245,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         {/* ================================================================
             HERO SECTION
             ================================================================ */}
-        <section className={`relative pb-12 md:pb-16 px-6 overflow-hidden ${config.id === 'cpa' ? 'pt-32 md:pt-40' : 'pt-24 md:pt-32'}`}>
+        <section className={`relative pb-12 md:pb-16 px-6 overflow-hidden ${config.id === 'cpa' && showDailyCpa ? 'pt-32 md:pt-40' : 'pt-24 md:pt-32'}`}>
           {/* Background */}
           <div className={`absolute inset-0 bg-gradient-to-br ${colors.light} via-slate-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950`} />
           
@@ -374,9 +376,9 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         </section>
 
         {/* ================================================================
-            DAILY CPA PROMO — after hero (CPA only)
+            DAILY CPA PROMO — after hero (CPA only, gated until SMS is live)
             ================================================================ */}
-        {config.id === 'cpa' && (
+        {config.id === 'cpa' && showDailyCpa && (
           <section className="py-10 px-6 bg-gradient-to-r from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 border-y border-slate-200 dark:border-slate-700">
             <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
               <div className="flex-1">

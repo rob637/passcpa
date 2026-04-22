@@ -55,10 +55,17 @@ const StartCheckout = () => {
         return;
       }
 
-      // If not logged in, redirect to register with validated params (preserve coupon)
+      // If not logged in, redirect to login with validated params (preserve coupon).
+      // For recovery campaigns (utm_source=recovery), recipients always have an
+      // existing account — sending them to /register would force a duplicate
+      // signup or a confusing "email already in use" error. Default to /login.
+      // Users with no account will see a "Create account" link there.
       if (!user) {
         const couponParam = couponCode ? `&coupon=${encodeURIComponent(couponCode)}` : '';
-        navigate(`/register?course=${courseId}&redirect=checkout&interval=${interval}${couponParam}`);
+        const utmSource = searchParams.get('utm_source');
+        const isRecoveryFlow = utmSource === 'recovery';
+        const authRoute = isRecoveryFlow ? '/login' : '/register';
+        navigate(`${authRoute}?course=${courseId}&redirect=checkout&interval=${interval}${couponParam}`);
         return;
       }
 

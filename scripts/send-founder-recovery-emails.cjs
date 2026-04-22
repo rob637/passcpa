@@ -62,7 +62,7 @@ const CAMPAIGN_ID = 'founder220-recovery-2026-04';
 const COUPON_CODE = 'FOUNDER220';
 const FROM_EMAIL = 'Rob from VoraPrep <rob@voraprep.com>';
 const REPLY_TO = 'rob@voraprep.com';
-const BASE_URL = process.env.RECOVERY_BASE_URL || 'https://app.voraprep.com';
+const BASE_URL = process.env.RECOVERY_BASE_URL || 'https://voraprep.com';
 
 // Throttle to be safe (Resend free = 2 req/s; paid up to 10)
 const THROTTLE_MS = 600;

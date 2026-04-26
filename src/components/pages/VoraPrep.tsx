@@ -399,20 +399,32 @@ const VoraPrep = () => {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-extrabold text-center mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
-                Your Path to
+              <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+                AI-Powered Exam Prep
               </span>
               <br />
-              <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-                Professional Certification
+              <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
+                for CPA, EA, CMA, CIA, CFP, and CISA
               </span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
-              <span className="font-semibold">Pass your exam on the first try</span> for accounting and finance professionals.
+              VoraPrep is a complete exam prep platform with <span className="font-semibold">practice questions, lessons, flashcards, study plans, and an AI tutor</span>.
               <br className="hidden md:block" />
-              CPA, EA, CMA, CIA, CFP, and CISA — all on one platform.
+              Built for working professionals who want to pass on the first try without paying Becker-level prices.
             </p>
+
+            <div className="flex flex-wrap justify-center gap-3 mb-10 text-sm font-medium text-slate-600 dark:text-slate-300">
+              <div className="rounded-full border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 px-4 py-2 shadow-sm">
+                Covers all 6 certifications
+              </div>
+              <div className="rounded-full border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 px-4 py-2 shadow-sm">
+                {getFormattedTotal()} practice questions
+              </div>
+              <div className="rounded-full border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 px-4 py-2 shadow-sm">
+                Adaptive plans + AI explanations
+              </div>
+            </div>
 
             {/* QUICK COURSE PICKER - Prominent near top */}
             <div className="mb-10">

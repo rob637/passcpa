@@ -5704,10 +5704,46 @@ exports.growthAutoPublish = onSchedule({
     .get();
 
   if (!approvedSnapshot.empty) {
-    // Pick a random approved article to publish
-    const approvedDocs = approvedSnapshot.docs;
-    const randomIndex = Math.floor(Math.random() * approvedDocs.length);
-    const docToPublish = approvedDocs[randomIndex];
+    // Prioritize CPA-first publishing so the schedule matches current growth focus.
+    const getApprovedPublishScore = (doc) => {
+      const data = doc.data() || {};
+      const title = String(data.title || '').toLowerCase();
+      const courseId = String(data.courseId || '').toLowerCase();
+      const contentType = String(data.contentType || '').toLowerCase();
+      const slug = String(data.slug || '').toLowerCase();
+      const priority = Number.isFinite(data.priority) ? Number(data.priority) : 99;
+      const estimatedVolume = Number.isFinite(data.estimatedVolume) ? Number(data.estimatedVolume) : 0;
+      const generatedAt = data.generatedAt?.toMillis?.() || 0;
+
+      let score = 0;
+
+      if (courseId === 'cpa') score += 10000;
+
+      if (contentType === 'review-comparison') score += 2500;
+      if (contentType === 'practice-questions') score += 1200;
+      if (contentType === 'cheat-sheet') score += 900;
+      if (contentType === 'study-guide') score += 700;
+
+      if (title.includes('best cpa review course') || slug.includes('best-cpa-review-course')) score += 5000;
+      if (title.includes('becker vs gleim cpa') || slug.includes('becker-vs-gleim-cpa')) score += 4500;
+      if (title.includes('voraprep vs becker cpa') || slug.includes('voraprep-vs-becker-cpa')) score += 4200;
+      if (title.includes('cheapest cpa review course') || slug.includes('cheapest-cpa-review-course')) score += 3800;
+      if (title.includes('switched from becker') && courseId === 'cpa') score += 3500;
+
+      score += Math.max(0, 100 - priority) * 20;
+      score += Math.min(estimatedVolume, 10000);
+
+      // Older approved content wins ties so the queue drains cleanly.
+      score -= Math.floor(generatedAt / 1000 / 60 / 60);
+
+      return score;
+    };
+
+    const approvedDocs = approvedSnapshot.docs
+      .slice()
+      .sort((a, b) => getApprovedPublishScore(b) - getApprovedPublishScore(a));
+
+    const docToPublish = approvedDocs[0];
     const articleData = docToPublish.data();
 
     // Publish it with distribution tracking
@@ -5738,7 +5774,7 @@ exports.growthAutoPublish = onSchedule({
       distribution: distribution,
     });
 
-    console.log(`[AutoPublish] ✅ Published from queue: "${articleData.title}" (${docToPublish.id})`);
+    console.log(`[AutoPublish] ✅ Published from queue: "${articleData.title}" (${docToPublish.id}) [course=${articleData.courseId || 'unknown'}]`);
 
     // DISABLED: LinkedIn auto-share from blog posts
     // We've shifted to standalone story posts via postScheduledLinkedIn (Mon/Wed/Fri 9 AM)

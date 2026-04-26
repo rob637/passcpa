@@ -1,6 +1,79 @@
 # VoraPrep robots.txt
 # https://voraprep.com
 
+# ---------------------------------------------------------------------------
+# LLM / AI crawlers — explicitly allowed for public marketing content.
+# We want VoraPrep to be discoverable through AI search and answer engines
+# (ChatGPT, Perplexity, Claude, Gemini/Google AI Overviews, etc.).
+# Authenticated app routes remain disallowed via the global User-agent: * rules.
+# ---------------------------------------------------------------------------
+
+# OpenAI (ChatGPT browse + training)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google AI / Gemini / AI Overviews opt-in
+User-agent: Google-Extended
+Allow: /
+
+# Common Crawl (used by many LLM training pipelines)
+User-agent: CCBot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Bytedance / Doubao
+User-agent: Bytespider
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# DuckDuckGo Assist
+User-agent: DuckAssistBot
+Allow: /
+
+# ---------------------------------------------------------------------------
+# Default rules for all other crawlers (Googlebot, Bingbot, etc.)
+# ---------------------------------------------------------------------------
+
 User-agent: *
 
 # Allow public pages

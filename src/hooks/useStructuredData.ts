@@ -333,7 +333,9 @@ export const useBreadcrumbs = (breadcrumbs: Array<{ name: string; url: string }>
 };
 
 /**
- * Inject Article structured data (for blog posts)
+ * Inject BlogPosting structured data (for blog posts).
+ * Uses BlogPosting (more specific than Article) + speakable spec for AI assistants.
+ * Speakable marks the direct-answer paragraph so voice/AI search can read it aloud.
  */
 export const useArticleSchema = (article: {
   headline: string;
@@ -351,16 +353,18 @@ export const useArticleSchema = (article: {
     script.type = 'application/ld+json';
     script.textContent = JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'Article',
+      '@type': 'BlogPosting',
       headline: article.headline,
       description: article.description,
       author: {
         '@type': 'Person',
         name: article.author,
+        url: 'https://voraprep.com/about',
       },
       publisher: {
         '@type': 'Organization',
         name: 'VoraPrep',
+        url: 'https://voraprep.com',
         logo: {
           '@type': 'ImageObject',
           url: 'https://voraprep.com/logo.svg',
@@ -373,6 +377,20 @@ export const useArticleSchema = (article: {
         '@type': 'WebPage',
         '@id': article.url,
       },
+      // speakable — marks the direct-answer section for AI assistants / voice search
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['article p:first-of-type', '.direct-answer'],
+      },
+      // inLanguage so LLMs know content language
+      inLanguage: 'en-US',
+      // isPartOf points to the blog/collection
+      isPartOf: {
+        '@type': 'Blog',
+        '@id': 'https://voraprep.com/blog',
+        name: 'VoraPrep Exam Prep Blog',
+        publisher: { '@type': 'Organization', name: 'VoraPrep' },
+      },
     });
     document.head.appendChild(script);
 
@@ -384,35 +402,58 @@ export const useArticleSchema = (article: {
 
 /**
  * Extract FAQ items from markdown content.
- * Looks for H2/H3 headings that end with "?" followed by content.
+ *
+ * Catches:
+ * 1. H2/H3 headings ending with "?"
+ * 2. H2/H3 headings starting with How/What/Why/When/Which/Can/Do/Is/Are (implicit questions)
+ * 3. Bold lines ending with "?" followed by answer text
+ *
+ * Becker and Gleim content doesn't do this — we win by having richer FAQ coverage.
  */
 export function extractFAQsFromMarkdown(content: string): Array<{ question: string; answer: string }> {
   const faqs: Array<{ question: string; answer: string }> = [];
-  
-  // Split by headings (## or ###)
+  const seen = new Set<string>();
+
+  const IMPLICIT_QUESTION_PATTERN = /^(How|What|Why|When|Which|Can|Do|Is|Are|Will|Should|Does|Who|Where)/i;
+
+  const cleanAnswer = (raw: string) =>
+    raw
+      .split(/\n\n|(?=^#{2,3}\s)/m)[0]
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // strip links, keep text
+      .replace(/\*\*([^*]+)\*\*/g, '$1')        // strip bold
+      .replace(/\*([^*]+)\*/g, '$1')            // strip italic
+      .replace(/^[-*]\s+/gm, '')               // strip list bullets
+      .trim();
+
+  const addFaq = (question: string, answerRaw: string) => {
+    const answer = cleanAnswer(answerRaw);
+    if (answer.length > 20 && answer.length < 1200 && !seen.has(question)) {
+      seen.add(question);
+      faqs.push({ question, answer });
+    }
+  };
+
+  // Strategy 1: headings ending with "?" OR implicit question headings
   const sections = content.split(/(?=^#{2,3}\s)/m);
-  
   for (const section of sections) {
-    // Check if heading ends with ?
-    const headingMatch = section.match(/^#{2,3}\s+(.+\?)\s*\n/);
-    if (headingMatch) {
-      const question = headingMatch[1].trim();
-      // Get the content after the heading (first paragraph)
+    const headingMatch = section.match(/^#{2,3}\s+(.+?)\s*\n/);
+    if (!headingMatch) continue;
+    const heading = headingMatch[1].trim();
+    if (heading.endsWith('?') || IMPLICIT_QUESTION_PATTERN.test(heading)) {
+      const question = heading.endsWith('?') ? heading : heading + '?';
       const answerContent = section.slice(headingMatch[0].length).trim();
-      // Take first paragraph as answer (up to next heading or double newline)
-      const answer = answerContent.split(/\n\n|^#{2,3}/m)[0]
-        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Remove markdown links, keep text
-        .replace(/\*\*([^*]+)\*\*/g, '$1') // Remove bold
-        .replace(/\*([^*]+)\*/g, '$1') // Remove italic
-        .trim();
-      
-      if (answer.length > 20 && answer.length < 1000) {
-        faqs.push({ question, answer });
-      }
+      addFaq(question, answerContent);
     }
   }
-  
-  // Limit to 10 FAQs (Google typically shows up to 10)
+
+  // Strategy 2: bold question lines (**Question text?**) followed by answer text
+  const boldQRegex = /\*\*([^*]+\?)\*\*\s*\n([^\n#][^#]+)/gm;
+  let match: RegExpExecArray | null;
+  while ((match = boldQRegex.exec(content)) !== null) {
+    addFaq(match[1].trim(), match[2].trim());
+  }
+
+  // Limit to 10 (Google typically shows up to 10)
   return faqs.slice(0, 10);
 }
 

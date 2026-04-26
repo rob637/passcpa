@@ -859,6 +859,9 @@ export function generateFullContentMatrix(): ContentBrief[] {
   // Add 50 high-ROI topic briefs across all exams
   allBriefs.push(...generateHighRoiTopicBriefs());
 
+  // Competitor comparison + "best review course" articles — HIGH CONVERSION / high AEO intent
+  allBriefs.push(...generateCompetitorBattleBriefs());
+
   // Add 60 CPA hard-topic deep dives (10 per section across all 6 sections)
   allBriefs.push(...generateCPAComplexTopicBriefs());
 
@@ -869,6 +872,144 @@ export function generateFullContentMatrix(): ContentBrief[] {
   allBriefs.sort((a, b) => a.priority - b.priority);
 
   return allBriefs;
+}
+
+// ============================================================================
+// Competitor Battle Briefs — target "best review course" + "vs Becker/Gleim" searches
+// These are the highest-conversion AEO targets in the exam-prep space.
+// Becker has huge domain authority but their content is stale; we beat them with
+// answer-first, direct, opinionated content that AI engines love to cite.
+// ============================================================================
+
+const COMPETITORS: Record<string, string[]> = {
+  cpa:  ['Becker', 'Gleim', 'Roger CPA Review', 'Wiley CPAexcel', 'Surgent CPA'],
+  ea:   ['Gleim EA', 'Fast Forward Academy', 'Surgent EA'],
+  cma:  ['Gleim CMA', 'Wiley CMA', 'IMA Learning'],
+  cia:  ['Gleim CIA', 'IIA Learning Solutions'],
+  cfp:  ['Kaplan Financial', 'the American College', 'Dalton Education'],
+  cisa: ['ISACA QAE', 'Steer CPA', 'IT Governance'],
+};
+
+const COMPETITOR_ANGLES = [
+  { type: 'best-course', titleTemplate: 'Best {exam} Review Course in {year}: Honest Rankings', slug: 'best-{course}-review-course-{year}', volume: 5400 },
+  { type: 'voraprep-vs', titleTemplate: 'VoraPrep vs Becker {exam}: Which One Actually Gets You to {score}?', slug: 'voraprep-vs-becker-{course}-review-{year}', volume: 1200 },
+  { type: 'becker-vs-gleim', titleTemplate: 'Becker vs Gleim {exam}: Side-by-Side Comparison ({year})', slug: 'becker-vs-gleim-{exam-lower}-review-{year}', volume: 3200 },
+  { type: 'affordable', titleTemplate: 'Cheapest {exam} Review Course That Still Gets You to {score} ({year})', slug: 'cheapest-{course}-review-course-{year}', volume: 2100 },
+  { type: 'switch', titleTemplate: 'I Switched from Becker to VoraPrep: Here\'s What Happened', slug: 'switched-from-becker-to-voraprep-{course}-{year}', volume: 600 },
+];
+
+function generateCompetitorBattleBriefs(): ContentBrief[] {
+  const briefs: ContentBrief[] = [];
+  const allCourses: CourseId[] = ['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'];
+
+  for (const courseId of allCourses) {
+    const meta = EXAM_CONTENT_META[courseId];
+    const competitors = COMPETITORS[courseId] || ['Becker'];
+    const passScore = courseId === 'cpa' ? '75' : courseId === 'cisa' ? '450' : '75';
+
+    for (const angle of COMPETITOR_ANGLES) {
+      const title = angle.titleTemplate
+        .replace('{exam}', meta.exam)
+        .replace('{course}', meta.course)
+        .replace('{year}', String(CURRENT_YEAR))
+        .replace('{score}', `${passScore}+`);
+
+      const slug = angle.slug
+        .replace('{exam}', meta.exam)
+        .replace('{exam-lower}', meta.exam.toLowerCase())
+        .replace('{course}', meta.course)
+        .replace('{year}', String(CURRENT_YEAR));
+
+      briefs.push({
+        id: `competitor-${courseId}-${angle.type}-${CURRENT_YEAR}`,
+        title,
+        slug,
+        courseId,
+        contentType: 'review-comparison' as ContentType,
+        targetKeywords: [
+          `best ${meta.exam.toLowerCase()} review course`,
+          `${meta.exam.toLowerCase()} review course comparison`,
+          `voraprep vs becker ${meta.course}`,
+          `becker vs gleim ${meta.exam.toLowerCase()}`,
+          `cheapest ${meta.exam.toLowerCase()} review course`,
+          `${meta.exam.toLowerCase()} review course ${CURRENT_YEAR}`,
+        ],
+        primaryKeyword: `best ${meta.exam.toLowerCase()} review course`,
+        searchIntent: 'commercial' as SearchIntent,
+        estimatedVolume: angle.volume,
+        competitorUrls: [
+          `https://www.becker.com/cpa-review`,
+          `https://www.gleim.com/cpa-review`,
+        ],
+        outline: [
+          {
+            heading: `The short answer: which ${meta.exam} review course is best in ${CURRENT_YEAR}?`,
+            level: 2 as const,
+            keyPoints: [
+              `Direct answer paragraph naming the best option for each candidate type`,
+              `Key comparison table: VoraPrep vs Becker vs Gleim (price, questions, pass rates, AI features)`,
+              `Who each course is best for (one sentence each)`,
+            ],
+            wordCount: 300,
+          },
+          {
+            heading: `${meta.exam} Review Course Comparison: Full Breakdown`,
+            level: 2 as const,
+            keyPoints: [
+              `Price comparison (VoraPrep: $19/mo vs Becker: $1,500+ vs Gleim: $1,000+)`,
+              `Question bank size and quality`,
+              `AI / adaptive features`,
+              `Pass guarantee and support`,
+            ],
+            wordCount: 500,
+          },
+          {
+            heading: `Why VoraPrep Beats ${competitors[0]} on Price (Without Sacrificing Quality)`,
+            level: 2 as const,
+            keyPoints: [
+              `${meta.questionCount} practice questions at $19/mo`,
+              `AI tutor (Vory) included — competitors charge $300+ for similar`,
+              `Adaptive learning engine included`,
+              `No hidden fees, no 18-month expiration`,
+            ],
+            wordCount: 350,
+          },
+          {
+            heading: `What ${meta.exam} Candidates Complain About With Becker and Gleim`,
+            level: 2 as const,
+            keyPoints: [
+              `Price shock (upfront $1,500+ for Becker)`,
+              `Content that feels like a textbook (passive reading)`,
+              `No real AI explanations — just static answer keys`,
+              `Real candidate frustrations from Reddit/forums`,
+            ],
+            wordCount: 350,
+          },
+          {
+            heading: `Our Verdict: Best ${meta.exam} Review Course by Candidate Type`,
+            level: 2 as const,
+            keyPoints: [
+              `Best for budget-conscious candidates: VoraPrep`,
+              `Best for candidates who want brand recognition: Becker (with caveats)`,
+              `Best for question-volume drilling: VoraPrep or Gleim`,
+              `Clear CTA to try VoraPrep free`,
+            ],
+            wordCount: 300,
+          },
+        ],
+        wordCountTarget: 1800,
+        internalLinks: [`/${meta.course}`, `/${meta.course}/practice`, `/pricing`, `/blog`],
+        ctaType: 'free-trial' as const,
+        ctaUrl: `/register?course=${courseId}`,
+        status: 'brief' as ContentStatus,
+        priority: 1, // highest priority — highest conversion potential
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+    }
+  }
+
+  return briefs;
 }
 
 function generateHighRoiTopicBriefs(): ContentBrief[] {

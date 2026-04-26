@@ -89,6 +89,134 @@
     }
     </script>
 
+    <!-- WebSite JSON-LD with SearchAction (sitelinks searchbox eligibility) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "VoraPrep",
+      "alternateName": "Vora Prep",
+      "url": "https://voraprep.com",
+      "description": "AI-powered exam prep for CPA, EA, CMA, CIA, CFP, and CISA certifications.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "VoraPrep",
+        "url": "https://voraprep.com"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://voraprep.com/blog?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- ItemList of certification exam prep courses (static fallback for non-JS crawlers) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Professional Certification Exam Prep Courses",
+      "description": "AI-powered exam prep for the six major professional accounting and audit certifications.",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Course",
+            "name": "CPA Exam Prep",
+            "description": "AI-powered Certified Public Accountant (CPA) exam preparation covering FAR, AUD, REG, BAR, ISC, and TCP — aligned to the 2025 and 2026 AICPA blueprints.",
+            "url": "https://voraprep.com/cpa",
+            "provider": {
+              "@type": "Organization",
+              "name": "VoraPrep",
+              "url": "https://voraprep.com"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Course",
+            "name": "EA (Enrolled Agent) Exam Prep",
+            "description": "AI-powered IRS Enrolled Agent (SEE) exam preparation for SEE Part 1 (Individuals), Part 2 (Businesses), and Part 3 (Representation, Practices and Procedures).",
+            "url": "https://voraprep.com/ea-prep",
+            "provider": {
+              "@type": "Organization",
+              "name": "VoraPrep",
+              "url": "https://voraprep.com"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Course",
+            "name": "CMA Exam Prep",
+            "description": "AI-powered Certified Management Accountant (CMA) exam preparation for IMA Part 1 and Part 2, including the September 2026 essay-to-CBQ format transition.",
+            "url": "https://voraprep.com/cma",
+            "provider": {
+              "@type": "Organization",
+              "name": "VoraPrep",
+              "url": "https://voraprep.com"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Course",
+            "name": "CIA Exam Prep",
+            "description": "AI-powered Certified Internal Auditor (CIA) exam preparation for all three IIA parts: Essentials of Internal Auditing, Practice of Internal Auditing, and Business Knowledge for Internal Auditing.",
+            "url": "https://voraprep.com/cia",
+            "provider": {
+              "@type": "Organization",
+              "name": "VoraPrep",
+              "url": "https://voraprep.com"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Course",
+            "name": "CFP Exam Prep",
+            "description": "AI-powered Certified Financial Planner (CFP) exam preparation covering all eight principal knowledge topics required by the CFP Board.",
+            "url": "https://voraprep.com/cfp",
+            "provider": {
+              "@type": "Organization",
+              "name": "VoraPrep",
+              "url": "https://voraprep.com"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Course",
+            "name": "CISA Exam Prep",
+            "description": "AI-powered Certified Information Systems Auditor (CISA) exam preparation for all five ISACA domains: IS Auditing Process, Governance and Management of IT, IS Acquisition Development and Implementation, IS Operations and Business Resilience, and Protection of Information Assets.",
+            "url": "https://voraprep.com/cisa",
+            "provider": {
+              "@type": "Organization",
+              "name": "VoraPrep",
+              "url": "https://voraprep.com"
+            }
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Google Search Console verification (replace with your code from GSC) -->
     <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
 

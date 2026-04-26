@@ -407,4 +407,72 @@ export const useFAQSchema = (faqs: Array<{ question: string; answer: string }>) 
   }, [faqs]);
 };
 
+/**
+ * Inject Product structured data with monthly + annual Offers.
+ * Used on the pricing overview page so search engines and LLMs
+ * can read pricing as a real product catalog.
+ */
+export interface ProductSchemaInput {
+  name: string;
+  description: string;
+  url: string;
+  monthlyPrice: number;
+  annualPrice: number;
+  priceCurrency?: string;
+  brand?: string;
+}
+
+export const useProductSchema = (products: ProductSchemaInput[]) => {
+  useEffect(() => {
+    if (!products || products.length === 0) return;
+
+    const scripts: HTMLScriptElement[] = [];
+    const addJsonLd = (data: object) => {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(data);
+      document.head.appendChild(script);
+      scripts.push(script);
+    };
+
+    products.forEach((product) => {
+      addJsonLd({
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: product.name,
+        description: product.description,
+        url: product.url,
+        brand: {
+          '@type': 'Brand',
+          name: product.brand || 'VoraPrep',
+        },
+        offers: [
+          {
+            '@type': 'Offer',
+            name: 'Monthly Subscription',
+            price: product.monthlyPrice,
+            priceCurrency: product.priceCurrency || 'USD',
+            availability: 'https://schema.org/InStock',
+            url: product.url,
+            category: 'Subscription',
+          },
+          {
+            '@type': 'Offer',
+            name: 'Annual Subscription',
+            price: product.annualPrice,
+            priceCurrency: product.priceCurrency || 'USD',
+            availability: 'https://schema.org/InStock',
+            url: product.url,
+            category: 'Subscription',
+          },
+        ],
+      });
+    });
+
+    return () => {
+      scripts.forEach((s) => s.remove());
+    };
+  }, [products]);
+};
+
 export default useCourseSchema;

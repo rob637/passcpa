@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
+import { useMemo } from 'react';
 import { useSEO } from '../../hooks/useSEO';
-import { useBreadcrumbs } from '../../hooks/useStructuredData';
+import { useBreadcrumbs, useProductSchema } from '../../hooks/useStructuredData';
 import {
   CheckCircle,
   X,
@@ -152,6 +153,21 @@ const PricingOverview = () => {
     { name: 'Home', url: 'https://voraprep.com/' },
     { name: 'Pricing', url: 'https://voraprep.com/pricing' },
   ]);
+
+  // Product/Offer JSON-LD so AI engines and search engines see pricing
+  // as a real product catalog (one Product per exam, monthly + annual Offer).
+  const productSchemas = useMemo(
+    () =>
+      EXAM_PRICING.map((exam) => ({
+        name: `${exam.fullName} (${exam.name}) Exam Prep`,
+        description: `AI-powered ${exam.fullName} (${exam.name}) certification exam preparation with ${exam.questionCount} practice questions, ${exam.lessonCount} lessons, and ${exam.flashcardCount} flashcards.`,
+        url: `https://voraprep.com${exam.path}`,
+        monthlyPrice: exam.monthlyPrice,
+        annualPrice: exam.yearlyPrice,
+      })),
+    []
+  );
+  useProductSchema(productSchemas);
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950">

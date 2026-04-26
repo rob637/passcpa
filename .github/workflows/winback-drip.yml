@@ -1,0 +1,114 @@
+name: Win-back drip campaign
+
+# Daily 3-step drip for past users.
+#   Step 1 — launch (changes since last visit + pass guarantee + WELCOMEBACK)
+#   Step 2 — pass guarantee / proof          (only fires ≥ 4 days after step 1)
+#   Step 3 — final deadline                  (only fires ≥ 7 days after step 1)
+#
+# Pacing:
+#   - One step per day, staggered by hour so we never blast all 3 at once.
+#   - Per-run cap (--limit) keeps daily volume under 30 by default — this
+#     protects sender reputation on rob@voraprep.com (fresh sending domain).
+#   - The script itself paces sends (1.2s/send + 90s pause every 20 sends).
+#   - Always BCCs rob@sagecg.com (script default).
+#
+# Manual:  gh workflow run winback-drip.yml -f step=1 -f limit=10 -f live=true
+# Cron:    runs daily UTC; step 1 at 14:00, step 2 at 15:00, step 3 at 16:00.
+#          (10am / 11am / noon ET)
+
+on:
+  workflow_dispatch:
+    inputs:
+      step:
+        description: 'Drip step (1=launch, 2=proof, 3=deadline)'
+        required: true
+        type: choice
+        default: '1'
+        options: ['1', '2', '3']
+      limit:
+        description: 'Max recipients this run (warmup cap; default 30)'
+        required: false
+        type: string
+        default: '30'
+      course:
+        description: 'Restrict to one course (blank = all)'
+        required: false
+        type: string
+        default: ''
+      live:
+        description: 'Actually send? (false = dry run preview)'
+        required: true
+        type: boolean
+        default: false
+  schedule:
+    # All times UTC. Stagger so steps never overlap.
+    - cron: '0 14 * * *'   # 10:00 ET — step 1 launch
+    - cron: '0 15 * * *'   # 11:00 ET — step 2 proof
+    - cron: '0 16 * * *'   # 12:00 ET — step 3 deadline
+
+permissions:
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Install functions deps (resend + firebase-admin)
+        working-directory: functions
+        run: npm ci
+
+      # Map cron schedule → step. Manual dispatch overrides via inputs.step.
+      - name: Resolve step from trigger
+        id: resolve
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "step=${{ github.event.inputs.step }}"   >> "$GITHUB_OUTPUT"
+            echo "limit=${{ github.event.inputs.limit }}" >> "$GITHUB_OUTPUT"
+            echo "course=${{ github.event.inputs.course }}" >> "$GITHUB_OUTPUT"
+            echo "live=${{ github.event.inputs.live }}"   >> "$GITHUB_OUTPUT"
+          else
+            case "${{ github.event.schedule }}" in
+              "0 14 * * *") echo "step=1" >> "$GITHUB_OUTPUT" ;;
+              "0 15 * * *") echo "step=2" >> "$GITHUB_OUTPUT" ;;
+              "0 16 * * *") echo "step=3" >> "$GITHUB_OUTPUT" ;;
+              *)            echo "step=1" >> "$GITHUB_OUTPUT" ;;
+            esac
+            echo "limit=30"  >> "$GITHUB_OUTPUT"
+            echo "course="   >> "$GITHUB_OUTPUT"
+            echo "live=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Write service account
+        run: |
+          echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROD }}' > /tmp/sa.json
+          chmod 600 /tmp/sa.json
+        # FIREBASE_SERVICE_ACCOUNT_PROD is the same secret used by deploy.yml.
+
+      - name: Run win-back drip
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          GOOGLE_APPLICATION_CREDENTIALS: /tmp/sa.json
+        run: |
+          STEP="${{ steps.resolve.outputs.step }}"
+          LIMIT="${{ steps.resolve.outputs.limit }}"
+          COURSE="${{ steps.resolve.outputs.course }}"
+          LIVE="${{ steps.resolve.outputs.live }}"
+
+          ARGS="--step $STEP --limit $LIMIT"
+          [ -n "$COURSE" ] && ARGS="$ARGS --course $COURSE"
+          [ "$LIVE" = "true" ] && ARGS="$ARGS --send"
+
+          echo "→ node scripts/send-winback-emails.cjs $ARGS"
+          node scripts/send-winback-emails.cjs $ARGS
+
+      - name: Cleanup credentials
+        if: always()
+        run: rm -f /tmp/sa.json

@@ -678,6 +678,38 @@ const CPA_WOW_VALUE_FORMATS: Array<{
 
 const CURRENT_YEAR = new Date().getFullYear().toString();
 
+const HIGH_ROI_TOPIC_LIMITS: Record<CourseId, number> = {
+  cpa: 10,
+  ea: 8,
+  cma: 6,
+  cia: 8,
+  cfp: 10,
+  cisa: 8,
+};
+
+const HIGH_ROI_TOPIC_FORMATS = [
+  {
+    slugSuffix: 'cheat-sheet',
+    title: '{exam} {section} {topic} Cheat Sheet ({year})',
+    keywordModifier: 'cheat sheet',
+  },
+  {
+    slugSuffix: 'mistakes-guide',
+    title: '{exam} {section} {topic}: Common Mistakes and How to Avoid Them ({year})',
+    keywordModifier: 'common mistakes',
+  },
+  {
+    slugSuffix: 'study-guide',
+    title: '{exam} {section} {topic} Study Guide for Busy Candidates ({year})',
+    keywordModifier: 'study guide',
+  },
+  {
+    slugSuffix: 'practice-questions',
+    title: '{exam} {section} {topic} Practice Questions Explained ({year})',
+    keywordModifier: 'practice questions',
+  },
+] as const;
+
 /**
  * Interpolate template variables in a string
  */
@@ -824,6 +856,9 @@ export function generateFullContentMatrix(): ContentBrief[] {
   // Add cross-exam comparison briefs
   allBriefs.push(...generateComparisonBriefs());
 
+  // Add 50 high-ROI topic briefs across all exams
+  allBriefs.push(...generateHighRoiTopicBriefs());
+
   // Add 60 CPA hard-topic deep dives (10 per section across all 6 sections)
   allBriefs.push(...generateCPAComplexTopicBriefs());
 
@@ -834,6 +869,140 @@ export function generateFullContentMatrix(): ContentBrief[] {
   allBriefs.sort((a, b) => a.priority - b.priority);
 
   return allBriefs;
+}
+
+function generateHighRoiTopicBriefs(): ContentBrief[] {
+  const briefs: ContentBrief[] = [];
+
+  for (const [courseId, limit] of Object.entries(HIGH_ROI_TOPIC_LIMITS) as Array<[CourseId, number]>) {
+    const meta = EXAM_CONTENT_META[courseId];
+    const selectedTopics = selectHighRoiTopics(meta, limit);
+
+    selectedTopics.forEach(({ section, topic }, index) => {
+      const format = HIGH_ROI_TOPIC_FORMATS[index % HIGH_ROI_TOPIC_FORMATS.length];
+      const topicSlug = slugify(topic);
+      const topicKeyword = topic.toLowerCase();
+      const title = interpolate(format.title, {
+        exam: meta.exam,
+        section: section.id,
+        topic,
+        year: CURRENT_YEAR,
+      });
+
+      briefs.push({
+        id: `${courseId}-high-roi-${section.id.toLowerCase()}-${topicSlug}-${format.slugSuffix}-${CURRENT_YEAR}`,
+        title,
+        slug: `${courseId}-${section.id.toLowerCase()}-${topicSlug}-${format.slugSuffix}-${CURRENT_YEAR}`,
+        courseId,
+        section: section.id,
+        contentType: 'topic-explainer' as ContentType,
+        targetKeywords: [
+          `${meta.exam.toLowerCase()} ${section.id.toLowerCase()} ${topicKeyword} ${format.keywordModifier}`,
+          `${topicKeyword} ${meta.exam.toLowerCase()}`,
+          `${meta.exam.toLowerCase()} ${topicKeyword}`,
+          `how to study ${topicKeyword} for ${meta.exam.toLowerCase()}`,
+          `${topicKeyword} ${format.keywordModifier} ${meta.exam.toLowerCase()}`,
+        ],
+        primaryKeyword: `${meta.exam.toLowerCase()} ${section.id.toLowerCase()} ${topicKeyword} ${format.keywordModifier}`,
+        searchIntent: 'informational' as SearchIntent,
+        estimatedVolume: 260 + (limit - index) * 12,
+        competitorUrls: AUTHORITATIVE_SOURCE_LINKS[courseId],
+        outline: [
+          {
+            heading: `${topic}: What You Actually Need to Know for ${section.id}`,
+            level: 2,
+            keyPoints: [
+              `Explain why ${topicKeyword} matters on ${meta.exam} ${section.id}`,
+              'Call out where candidates usually overcomplicate it',
+              'Set up the one mental model that makes the topic easier',
+            ],
+            wordCount: 260,
+          },
+          {
+            heading: 'The Core Rule in Plain English',
+            level: 2,
+            keyPoints: [
+              'Translate technical wording into practical language',
+              'Show the key rule, threshold, or framework candidates must remember',
+              'Differentiate look-alike concepts that create wrong answers',
+            ],
+            wordCount: 360,
+          },
+          {
+            heading: `Worked Example: ${topic} Under Exam Conditions`,
+            level: 2,
+            keyPoints: [
+              'Use an exam-style example with a fully explained solution path',
+              'Show where time pressure leads to mistakes',
+              'Highlight the fastest reliable way to reach the answer',
+            ],
+            wordCount: 520,
+          },
+          {
+            heading: 'Common Mistakes, Traps, and Memory Hooks',
+            level: 2,
+            keyPoints: [
+              'List the most common candidate errors',
+              'Add one mnemonic, checklist, or memory hook',
+              'Explain how to recognize trap answer choices quickly',
+            ],
+            wordCount: 340,
+          },
+          {
+            heading: `How to Lock In ${topic} This Week`,
+            level: 2,
+            keyPoints: [
+              'Recommend a 7-day reinforcement routine',
+              'Point readers to related VoraPrep lessons, flashcards, or questions',
+              'End with a strong free-trial CTA',
+            ],
+            wordCount: 260,
+          },
+        ],
+        wordCountTarget: 2100,
+        internalLinks: generateInternalLinks(courseId, section.id),
+        ctaType: 'free-trial' as const,
+        ctaUrl: `/${meta.course}`,
+        status: 'brief' as ContentStatus,
+        priority: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+    });
+  }
+
+  return briefs;
+}
+
+function selectHighRoiTopics(meta: ExamContentMeta, limit: number): Array<{ section: ExamSectionMeta; topic: string }> {
+  const selected: Array<{ section: ExamSectionMeta; topic: string }> = [];
+  let topicIndex = 0;
+
+  while (selected.length < limit) {
+    let addedThisRound = false;
+
+    for (const section of meta.sections) {
+      const topic = section.topics[topicIndex];
+      if (!topic) {
+        continue;
+      }
+
+      selected.push({ section, topic });
+      addedThisRound = true;
+
+      if (selected.length >= limit) {
+        break;
+      }
+    }
+
+    if (!addedThisRound) {
+      break;
+    }
+
+    topicIndex += 1;
+  }
+
+  return selected;
 }
 
 function generateCPAComplexTopicBriefs(): ContentBrief[] {

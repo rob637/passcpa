@@ -14,7 +14,7 @@ import {
   AlertTriangle, CheckCircle, Target, DollarSign, Eye, MousePointer,
   Globe, Layers, Settings, RefreshCw, ArrowUpRight,
   ArrowDownRight, ChevronDown, ChevronRight, ChevronLeft,
-  Lightbulb, BookOpen, PenTool, Award,
+  Lightbulb, BookOpen, PenTool, Award, ExternalLink,
   Shield, Pause, Save, Sliders, Newspaper, Trash2, Radio, Sparkles, Plus, Loader2,
 } from 'lucide-react';
 import { Card } from '../../common/Card';
@@ -53,7 +53,7 @@ import { generateAIResponse } from '../../../services/aiService';
 // Types
 // ============================================================================
 
-type DashboardTab = 'overview' | 'keywords' | 'content' | 'sem' | 'technical' | 'seo-status' | 'settings';
+type DashboardTab = 'overview' | 'keywords' | 'content' | 'aeo' | 'sem' | 'technical' | 'seo-status' | 'settings';
 
 const EXAM_COLORS: Record<CourseId, string> = {
   cpa: 'bg-blue-500',
@@ -132,6 +132,7 @@ export default function GrowthDashboard() {
     { id: 'overview', label: 'Overview', icon: BarChart3 },
     { id: 'keywords', label: 'Keywords', icon: Search },
     { id: 'content', label: 'Content', icon: FileText },
+    { id: 'aeo', label: 'AEO', icon: Sparkles },
     { id: 'sem', label: 'Paid Search', icon: Megaphone },
     { id: 'technical', label: 'Technical SEO', icon: Settings },
     { id: 'seo-status', label: 'SEO Status', icon: Radio },
@@ -209,6 +210,7 @@ export default function GrowthDashboard() {
             {activeTab === 'overview' && <OverviewTab status={engineStatus} />}
             {activeTab === 'keywords' && <KeywordsTab status={engineStatus} />}
             {activeTab === 'content' && <ContentTab status={engineStatus} />}
+            {activeTab === 'aeo' && <AEOTab />}
             {activeTab === 'sem' && <SEMTab status={engineStatus} />}
             {activeTab === 'technical' && <TechnicalTab />}
             {activeTab === 'seo-status' && <SEOStatusTab />}
@@ -1182,6 +1184,199 @@ function ContentTab({ status }: { status: ReturnType<typeof getGrowthEngineStatu
             <p className="text-sm mt-1">~{content.totalBriefs} briefs across all 6 exams + 54 state pages</p>
           </div>
         )}
+      </Card>
+    </div>
+  );
+}
+
+// ============================================================================
+// AEO Tab — Answer Engine Optimization tracking
+// ============================================================================
+
+function AEOTab() {
+  const [stats, setStats] = useState<{
+    approved: number;
+    published: number;
+    brief: number;
+    withAnswerBlock: number;
+    recentPublished: Array<{ id: string; title: string; publishedAt: string; slug: string }>;
+  } | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const { collection, query, where, orderBy, limit, getDocs } = await import('firebase/firestore');
+        const { db: firestoreDb } = await import('../../../config/firebase');
+
+        const [approvedSnap, publishedSnap, briefSnap] = await Promise.all([
+          getDocs(query(collection(firestoreDb, 'growth_content'), where('status', '==', 'approved'))),
+          getDocs(query(collection(firestoreDb, 'growth_content'), where('status', '==', 'published'), orderBy('publishedAt', 'desc'), limit(10))),
+          getDocs(query(collection(firestoreDb, 'growth_content'), where('status', '==', 'brief'))),
+        ]);
+
+        const withAnswerBlock = approvedSnap.docs.filter(d => {
+          const content = d.data().generatedContent || '';
+          return content.includes('Direct Answer') || content.includes('Key Facts') || content.includes('key-facts');
+        }).length;
+
+        const recentPublished = publishedSnap.docs.map(d => ({
+          id: d.id,
+          title: d.data().title || d.id,
+          slug: d.data().slug || d.id,
+          publishedAt: d.data().publishedAt?.toDate?.()?.toLocaleDateString() || 'Unknown',
+        }));
+
+        setStats({
+          approved: approvedSnap.size,
+          published: publishedSnap.size,
+          brief: briefSnap.size,
+          withAnswerBlock,
+          recentPublished,
+        });
+      } catch (err) {
+        logger.error('AEO tab load failed', err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    load();
+  }, []);
+
+  const AEO_SETUP_CHECKLIST = [
+    { id: 'gsc', label: 'Google Search Console verified', description: 'voraprep.com confirmed, sitemap submitted', docsUrl: 'https://search.google.com/search-console/' },
+    { id: 'sitemap', label: 'Dynamic sitemap live', description: '/sitemap.xml returns all blog slugs', docsUrl: 'https://voraprep.com/sitemap.xml' },
+    { id: 'schema', label: 'Article schema on blog posts', description: 'BlogPosting structured data on each article', docsUrl: null },
+    { id: 'answer-blocks', label: 'Answer-first blocks in prompt', description: 'Direct Answer + Key Facts table at article top', docsUrl: null },
+    { id: 'internal-links', label: 'Internal linking improved', description: 'Each article links to exam landing + practice + blog', docsUrl: null },
+    { id: 'weekly-review', label: 'Weekly GSC review scheduled', description: 'Check impressions/clicks for new slugs every Monday', docsUrl: 'https://search.google.com/search-console/performance/search-analytics' },
+  ];
+
+  const WEEKLY_AEO_METRICS = [
+    { label: 'New GSC impressions (new slugs)', target: '500+/week after 4 weeks' },
+    { label: 'Answer box appearances', target: 'Track via GSC Position < 1' },
+    { label: 'Featured snippet captures', target: '3+ per month after 60 days' },
+    { label: 'Click-through rate (informational)', target: '3-6% baseline' },
+    { label: 'Indexed pages (GSC → Pages)', target: 'Growing weekly' },
+  ];
+
+  return (
+    <div className="space-y-6">
+      {/* Stats Row */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { label: 'Published', value: loading ? '…' : stats?.published ?? 0, color: 'text-green-600' },
+          { label: 'Approved (queued)', value: loading ? '…' : stats?.approved ?? 0, color: 'text-blue-600' },
+          { label: 'Briefs remaining', value: loading ? '…' : stats?.brief ?? 0, color: 'text-amber-600' },
+          { label: 'With answer-first block', value: loading ? '…' : stats?.withAnswerBlock ?? 0, color: 'text-purple-600' },
+        ].map(s => (
+          <Card key={s.label} className="p-4 text-center">
+            <div className={`text-2xl font-bold ${s.color}`}>{String(s.value)}</div>
+            <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">{s.label}</div>
+          </Card>
+        ))}
+      </div>
+
+      {/* Setup Checklist */}
+      <Card className="p-6">
+        <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+          <CheckCircle className="w-5 h-5 text-green-500" />
+          AEO Setup Checklist
+        </h3>
+        <div className="space-y-3">
+          {AEO_SETUP_CHECKLIST.map(item => (
+            <div key={item.id} className="flex items-start gap-3">
+              <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-gray-900 dark:text-white">{item.label}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">{item.description}</div>
+              </div>
+              {item.docsUrl && (
+                <a href={item.docsUrl} target="_blank" rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-700 shrink-0">
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      </Card>
+
+      {/* Weekly Metrics to Watch */}
+      <Card className="p-6">
+        <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+          <BarChart3 className="w-5 h-5 text-blue-500" />
+          Weekly Metrics to Track (Google Search Console)
+        </h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-gray-200 dark:border-gray-700">
+                <th className="text-left py-2 text-gray-600 dark:text-gray-400 font-medium">Metric</th>
+                <th className="text-left py-2 text-gray-600 dark:text-gray-400 font-medium">Target</th>
+              </tr>
+            </thead>
+            <tbody>
+              {WEEKLY_AEO_METRICS.map(m => (
+                <tr key={m.label} className="border-b border-gray-100 dark:border-gray-800">
+                  <td className="py-2 text-gray-900 dark:text-white">{m.label}</td>
+                  <td className="py-2 text-gray-500 dark:text-gray-400">{m.target}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <a
+          href="https://search.google.com/search-console/performance/search-analytics"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 mt-4 text-sm text-blue-500 hover:text-blue-700"
+        >
+          Open Search Console <ExternalLink className="w-3.5 h-3.5" />
+        </a>
+      </Card>
+
+      {/* Recently Published */}
+      <Card className="p-6">
+        <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+          <Newspaper className="w-5 h-5 text-amber-500" />
+          Recently Published Articles
+        </h3>
+        {loading ? (
+          <div className="text-sm text-gray-500">Loading…</div>
+        ) : (stats?.recentPublished?.length ?? 0) === 0 ? (
+          <div className="text-sm text-gray-500">No published articles yet.</div>
+        ) : (
+          <ul className="space-y-2">
+            {stats?.recentPublished.map(a => (
+              <li key={a.id} className="flex items-center justify-between text-sm">
+                <span className="text-gray-900 dark:text-white truncate max-w-xs">{a.title}</span>
+                <div className="flex items-center gap-3 shrink-0 ml-4">
+                  <span className="text-gray-400 text-xs">{a.publishedAt}</span>
+                  <a
+                    href={`https://voraprep.com/blog/${a.slug}`}
+                    target="_blank" rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-700"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </Card>
+
+      {/* Next Actions */}
+      <Card className="p-6 bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
+        <h3 className="text-base font-semibold text-blue-900 dark:text-blue-200 mb-3">Next AEO Actions</h3>
+        <ol className="space-y-2 text-sm text-blue-800 dark:text-blue-300 list-decimal list-inside">
+          <li>Approve + publish 5 high-ROI drafts from the <strong>Articles</strong> tab</li>
+          <li>Open GSC → check Indexing → Pages → confirm new articles are being crawled</li>
+          <li>Check GSC Performance for query impressions on new slugs after 7 days</li>
+          <li>Generate next 10 briefs: <code className="bg-blue-100 dark:bg-blue-900 px-1 rounded text-xs">node scripts/generate-highroi-batch.mjs --limit 10</code></li>
+          <li>At 90 days: compare position data for &quot;cheat sheet&quot; / &quot;study guide&quot; queries</li>
+        </ol>
       </Card>
     </div>
   );

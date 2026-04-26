@@ -70,9 +70,11 @@ function getTelnyxClient() {
  * Send an SMS message via Telnyx.
  * @param {string} to - E.164 phone number
  * @param {string} body - Message body
+ * @param {object} [options] - Optional MMS settings
+ * @param {string[]} [options.mediaUrls] - URLs of media to attach (turns SMS into MMS)
  * @returns {Promise<object>} Telnyx message data
  */
-async function sendSMS(to, body) {
+async function sendSMS(to, body, options = {}) {
   const client = getTelnyxClient();
   if (!client) {
     throw new Error('Telnyx client not available');
@@ -83,45 +85,132 @@ async function sendSMS(to, body) {
     throw new Error('TELNYX_PHONE_NUMBER not configured');
   }
 
-  const response = await client.messages.create({
-    from,
-    to,
-    text: body,
-  });
+  const payload = { from, to, text: body };
+  if (options.mediaUrls && options.mediaUrls.length > 0) {
+    payload.media_urls = options.mediaUrls;
+    payload.type = 'MMS';
+  } else if (body.length > 320) {
+    // Long messages: promote to MMS so carriers don't truncate at segment caps.
+    // Question SMS routinely exceed 400 chars; UCS-2 (any emoji/em-dash) drops
+    // capacity to 70 chars/segment → carriers cap concatenation at 6-7 segments.
+    // MMS has no length limit and renders as a single bubble.
+    payload.type = 'MMS';
+    payload.subject = 'VoraPrep';
+  }
+
+  const response = await client.messages.send(payload);
 
   const messageData = response.data;
 
-  // Log outbound message
-  await db.collection('daily_sms_log').add({
-    uid: null, // Will be set by caller if known
+  // Log outbound message — fire-and-forget. Logging is observability, not on the
+  // critical path. Awaiting it added ~150ms to every NEXT round-trip.
+  db.collection('daily_sms_log').add({
+    uid: options.uid || null,
     direction: 'outbound',
     to,
     telnyxMessageId: messageData?.id || '',
     body: body.substring(0, 500), // Truncate for storage
     status: messageData?.to?.[0]?.status || 'queued',
     sentAt: admin.firestore.FieldValue.serverTimestamp(),
-  });
+  }).catch(err => console.warn('[DailyCPA] sms_log write failed:', err.message));
 
   return messageData;
 }
 
 /**
- * Send SMS and associate with a user.
+ * Send SMS and associate with a user. Pre-tags the log with uid so we don't
+ * need a follow-up query+update (was 2 extra round-trips per send).
  */
-async function sendUserSMS(uid, phone, body) {
-  const message = await sendSMS(phone, body);
+async function sendUserSMS(uid, phone, body, options = {}) {
+  return sendSMS(phone, body, { ...options, uid });
+}
 
-  // Update the log entry with uid
-  const logQuery = await db.collection('daily_sms_log')
-    .where('telnyxMessageId', '==', message.id)
-    .limit(1)
-    .get();
+// ============================================================================
+// FUNNEL ANALYTICS
+// ============================================================================
 
-  if (!logQuery.empty) {
-    await logQuery.docs[0].ref.update({ uid });
+/**
+ * Log a funnel/lifecycle event for conversion analysis.
+ * Sparse by design — only call at transitions, not per-answer.
+ * @param {string} uid - User id
+ * @param {string} event - Event name (e.g. 'signup', 'first_answer', 'day_completed')
+ * @param {object} [metadata] - Optional event metadata
+ */
+async function logFunnelEvent(uid, event, metadata = {}) {
+  try {
+    await db.collection('daily_funnel_events').add({
+      uid,
+      event,
+      metadata,
+      timestamp: admin.firestore.FieldValue.serverTimestamp(),
+    });
+  } catch (err) {
+    // Funnel logging is best-effort — never fail the user flow on it.
+    console.error(`[DailyCPA] Funnel log failed (${event}):`, err.message);
+  }
+}
+
+// ============================================================================
+// TELNYX WEBHOOK SIGNATURE VERIFICATION
+// ============================================================================
+
+/**
+ * Verify a Telnyx webhook signature using Ed25519.
+ * Returns true if valid OR if no public key is configured (graceful dev mode).
+ * Returns false only when a key IS configured and the signature is invalid.
+ */
+function verifyTelnyxSignature(req) {
+  const publicKeyB64 = process.env.TELNYX_PUBLIC_KEY?.trim();
+  if (!publicKeyB64) {
+    console.warn('[DailyCPA] TELNYX_PUBLIC_KEY not set — skipping signature verification (DEV ONLY)');
+    return true;
   }
 
-  return message;
+  // Treat malformed / placeholder keys as "not configured" rather than rejecting
+  // every webhook. Only enforce when the key decodes to a valid 32-byte Ed25519 key.
+  let rawKey;
+  try {
+    rawKey = Buffer.from(publicKeyB64, 'base64');
+  } catch {
+    rawKey = Buffer.alloc(0);
+  }
+  if (rawKey.length !== 32) {
+    console.warn(`[DailyCPA] TELNYX_PUBLIC_KEY is not a valid 32-byte key (len=${rawKey.length}) — skipping verification`);
+    return true;
+  }
+
+  const sigB64 = req.get('Telnyx-Signature-Ed25519');
+  const timestamp = req.get('Telnyx-Timestamp');
+  if (!sigB64 || !timestamp) {
+    console.warn('[DailyCPA] Missing Telnyx signature headers');
+    return false;
+  }
+
+  // Reject events older than 5 minutes (replay protection)
+  const ageSec = Math.abs(Date.now() / 1000 - Number(timestamp));
+  if (!Number.isFinite(ageSec) || ageSec > 300) {
+    console.warn(`[DailyCPA] Telnyx timestamp out of range: ${ageSec}s`);
+    return false;
+  }
+
+  const rawBody = req.rawBody ? req.rawBody.toString('utf8') : JSON.stringify(req.body);
+  const message = Buffer.from(`${timestamp}|${rawBody}`, 'utf8');
+  const signature = Buffer.from(sigB64, 'base64');
+
+  // Wrap raw 32-byte Ed25519 key in DER SubjectPublicKeyInfo for crypto.verify
+  const crypto = require('crypto');
+  try {
+    const spkiPrefix = Buffer.from('302a300506032b6570032100', 'hex');
+    const pubKey = crypto.createPublicKey({
+      key: Buffer.concat([spkiPrefix, rawKey]),
+      format: 'der',
+      type: 'spki',
+    });
+    return crypto.verify(null, message, pubKey, signature);
+  } catch (e) {
+    console.error('[DailyCPA] Signature verification error:', e.message);
+    return false;
+  }
 }
 
 // ============================================================================
@@ -132,8 +221,16 @@ async function sendUserSMS(uid, phone, body) {
 const _questionCache = {};
 
 /**
- * Load questions for a CPA section from Firestore or JSON file.
- * Questions are cached in memory for the lifetime of the function instance.
+ * Load questions for a CPA section from disk.
+ *
+ * Question files are bundled into the Cloud Functions deploy via the
+ * `scripts/sync-daily-cpa-content.cjs` predeploy hook, which copies
+ * `content/cpa/{section}/questions.json` -> `functions/content-cpa/{section}/questions.json`.
+ *
+ * Sections (e.g. FAR ~3MB) exceed Firestore's 1MB doc limit, so we do not
+ * cache the full payload in Firestore. In-memory cache survives for the
+ * lifetime of the function instance, which is plenty for hot paths.
+ *
  * @param {string} section - CPA section: 'FAR', 'AUD', etc.
  * @returns {Promise<Array>} Array of question objects
  */
@@ -143,49 +240,57 @@ async function loadQuestions(section) {
     return _questionCache[sectionUpper];
   }
 
-  // Try Firestore cache first
-  const cacheDoc = await db.collection('daily_questions').doc(sectionUpper).get();
-  if (cacheDoc.exists) {
-    const data = cacheDoc.data();
-    _questionCache[sectionUpper] = data.questions;
-    return data.questions;
-  }
-
-  // Fallback: load from JSON file (content/cpa/{section}/questions.json)
   const fs = require('fs');
   const path = require('path');
-  const filePath = path.join(__dirname, '..', 'content', 'cpa', sectionUpper.toLowerCase(), 'questions.json');
+  const sectionLower = sectionUpper.toLowerCase();
 
-  if (!fs.existsSync(filePath)) {
-    throw new Error(`Question file not found: ${filePath}`);
+  // Search candidates in priority order:
+  //   1. Bundled with the function (production deploy via predeploy hook)
+  //   2. Repo `content/cpa/...` (emulator / local dev)
+  const candidates = [
+    path.join(__dirname, 'content-cpa', sectionLower, 'questions.json'),
+    path.join(__dirname, '..', 'content', 'cpa', sectionLower, 'questions.json'),
+  ];
+
+  const filePath = candidates.find(p => fs.existsSync(p));
+  if (!filePath) {
+    throw new Error(`Question file not found for section ${sectionUpper}. Looked in: ${candidates.join(', ')}`);
   }
 
   const raw = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  const questions = (raw.questions || []).map(q => ({
-    id: q.id,
-    blueprintArea: q.blueprintArea || '',
-    topic: q.topic || '',
-    subtopic: q.subtopic || '',
-    difficulty: q.difficulty || 'medium',
-    question: q.question,
-    options: q.options,
-    correctAnswer: q.correctAnswer,
-    explanation: q.explanation || '',
-    examTip: q.examTip || '',
-    memoryAid: q.memoryAid || '',
-    whyWrong: q.whyWrong || {},
-    bottomLine: q.bottomLine || '',
-  }));
+  const questions = (raw.questions || [])
+    // Skip retired/broken questions so they never reach learners.
+    .filter(q => q.status !== 'retired')
+    .map(q => ({
+      id: q.id,
+      blueprintArea: q.blueprintArea || '',
+      topic: q.topic || '',
+      subtopic: q.subtopic || '',
+      difficulty: q.difficulty || 'medium',
+      question: q.question,
+      options: q.options,
+      correctAnswer: q.correctAnswer,
+      explanation: q.explanation || '',
+      examTip: q.examTip || '',
+      memoryAid: q.memoryAid || '',
+      whyWrong: q.whyWrong || {},
+      bottomLine: q.bottomLine || '',
+    }));
 
   _questionCache[sectionUpper] = questions;
 
-  // Cache to Firestore for faster subsequent loads
-  await db.collection('daily_questions').doc(sectionUpper).set({
-    section: sectionUpper,
-    questions,
-    loadedAt: admin.firestore.FieldValue.serverTimestamp(),
-    questionCount: questions.length,
-  });
+  // Record a lightweight metadata doc (no question payload) for ops visibility.
+  // Best-effort: don't fail loadQuestions if this write fails.
+  try {
+    await db.collection('daily_questions').doc(sectionUpper).set({
+      section: sectionUpper,
+      questionCount: questions.length,
+      source: filePath.includes('content-cpa') ? 'bundled' : 'repo',
+      loadedAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+  } catch (err) {
+    console.warn(`[DailyCPA] Could not write daily_questions/${sectionUpper} metadata:`, err.message);
+  }
 
   return questions;
 }
@@ -378,12 +483,12 @@ function formatQuestionSMS(question, questionNum, dailyCap, section, streakDays,
 
   // Header
   if (isTrial) {
-    lines.push(`VoraPrep Daily CPA — ${section}`);
+    lines.push(`VoraPrep Daily CPA - ${section}`);
     lines.push(`Day ${trialDay} of ${TRIAL_DAYS} free trial`);
     lines.push('');
   } else {
-    const streakEmoji = streakDays >= 3 ? ` 🔥 ${streakDays}-day streak` : '';
-    lines.push(`VoraPrep Daily CPA — ${section}`);
+    const streakEmoji = streakDays >= 3 ? ` (${streakDays}-day streak)` : '';
+    lines.push(`VoraPrep Daily CPA - ${section}`);
     lines.push(`Q${questionNum}/${dailyCap}${streakEmoji}`);
     lines.push('');
   }
@@ -392,9 +497,10 @@ function formatQuestionSMS(question, questionNum, dailyCap, section, streakDays,
   lines.push(`Topic: ${question.topic}`);
   lines.push('');
 
-  // Question text (truncate if needed for SMS)
-  const qText = question.question.length > 400
-    ? question.question.substring(0, 397) + '...'
+  // Question text — full text. sendSMS auto-promotes to MMS for long messages
+  // so carriers don't truncate. Only fall back to truncation as a hard safety net.
+  const qText = question.question.length > 1200
+    ? question.question.substring(0, 1197) + '...'
     : question.question;
   lines.push(qText);
   lines.push('');
@@ -402,7 +508,7 @@ function formatQuestionSMS(question, questionNum, dailyCap, section, streakDays,
   // Options
   const optionLabels = ['A', 'B', 'C', 'D'];
   question.options.forEach((opt, i) => {
-    const optText = opt.length > 100 ? opt.substring(0, 97) + '...' : opt;
+    const optText = opt.length > 250 ? opt.substring(0, 247) + '...' : opt;
     lines.push(`${optionLabels[i]}) ${optText}`);
   });
   lines.push('');
@@ -412,7 +518,7 @@ function formatQuestionSMS(question, questionNum, dailyCap, section, streakDays,
 }
 
 /**
- * Format a correct answer response.
+ * Format a correct answer response. Tight: answer letter + concise explanation + NEXT cue.
  */
 function formatCorrectSMS(question, questionNum, dailyCap, isLastQuestion) {
   const optionLabels = ['A', 'B', 'C', 'D'];
@@ -422,31 +528,24 @@ function formatCorrectSMS(question, questionNum, dailyCap, isLastQuestion) {
   lines.push(`✅ Correct! Answer: ${correctLetter}`);
   lines.push('');
 
-  // Explanation (truncate for SMS)
-  const explanation = question.explanation.length > 250
-    ? question.explanation.substring(0, 247) + '...'
+  // Allow longer explanations — sendSMS auto-promotes to MMS past 320 chars,
+  // so multi-step REG/FAR math can land intact. 600 is a hard safety net only.
+  const explanation = question.explanation.length > 600
+    ? question.explanation.substring(0, 597) + '...'
     : question.explanation;
   lines.push(explanation);
 
-  // Exam tip if available
-  if (question.examTip) {
-    const tip = question.examTip.length > 120
-      ? question.examTip.substring(0, 117) + '...'
-      : question.examTip;
-    lines.push('');
-    lines.push(`💡 ${tip}`);
-  }
-
   if (!isLastQuestion) {
     lines.push('');
-    lines.push(`Q${questionNum + 1}/${dailyCap} incoming...`);
+    lines.push(`Reply NEXT for Q${questionNum + 1}/${dailyCap}`);
   }
 
   return lines.join('\n');
 }
 
 /**
- * Format an incorrect answer response.
+ * Format an incorrect answer response. Tight: one targeted insight (whyWrong if available,
+ * else the explanation) + NEXT cue. Avoids piling on.
  */
 function formatIncorrectSMS(question, userAnswer, questionNum, dailyCap, isLastQuestion) {
   const optionLabels = ['A', 'B', 'C', 'D'];
@@ -454,42 +553,28 @@ function formatIncorrectSMS(question, userAnswer, questionNum, dailyCap, isLastQ
   const userLetter = optionLabels[userAnswer];
   const lines = [];
 
-  lines.push(`❌ Not quite. Correct: ${correctLetter}`);
+  lines.push(`❌ Not quite. Correct: ${correctLetter} (you picked ${userLetter})`);
   lines.push('');
-  lines.push(`You picked: ${userLetter}`);
 
-  // Why wrong for the user's specific answer
+  // Prefer the targeted whyWrong for the user's specific answer; otherwise fall back
+  // to the general explanation. Show ONE thing well rather than three things partially.
   const whyWrongKey = String(userAnswer);
+  let insight = null;
   if (question.whyWrong && question.whyWrong[whyWrongKey]) {
-    let whyWrong = question.whyWrong[whyWrongKey];
-    // Strip "Why option X is WRONG - " prefix if present
-    whyWrong = whyWrong.replace(/^Why option [A-D] is (?:WRONG|CORRECT) [-–] /i, '');
-    if (whyWrong.length > 200) {
-      whyWrong = whyWrong.substring(0, 197) + '...';
-    }
-    lines.push(whyWrong);
+    insight = question.whyWrong[whyWrongKey]
+      .replace(/^Why option [A-D] is (?:WRONG|CORRECT) [-–] /i, '');
   }
-
-  lines.push('');
-
-  // Short explanation
-  const explanation = question.explanation.length > 200
-    ? question.explanation.substring(0, 197) + '...'
-    : question.explanation;
-  lines.push(explanation);
-
-  // Bottom line or memory aid
-  if (question.bottomLine) {
-    const bl = question.bottomLine.length > 120
-      ? question.bottomLine.substring(0, 117) + '...'
-      : question.bottomLine;
-    lines.push('');
-    lines.push(`⚠️ ${bl}`);
+  if (!insight) {
+    insight = question.explanation;
   }
+  if (insight && insight.length > 240) {
+    insight = insight.substring(0, 237) + '...';
+  }
+  lines.push(insight);
 
   if (!isLastQuestion) {
     lines.push('');
-    lines.push(`Q${questionNum + 1}/${dailyCap} incoming...`);
+    lines.push(`Reply NEXT for Q${questionNum + 1}/${dailyCap}`);
   }
 
   return lines.join('\n');
@@ -498,7 +583,7 @@ function formatIncorrectSMS(question, userAnswer, questionNum, dailyCap, isLastQ
 /**
  * Format daily summary.
  */
-function formatDailySummary(section, answered, correct, streak, weakTopics, strongTopics) {
+function formatDailySummary(section, answered, correct, streak, weakTopics, strongTopics, resultPattern) {
   const accuracy = answered > 0 ? Math.round((correct / answered) * 100) : 0;
   const lines = [];
 
@@ -506,6 +591,12 @@ function formatDailySummary(section, answered, correct, streak, weakTopics, stro
   lines.push('');
   lines.push(`Today: ${correct}/${answered} correct (${accuracy}%)`);
   lines.push(`Streak: 🔥 ${streak} day${streak !== 1 ? 's' : ''}`);
+
+  // Wordle-style grid — a copyable signal of "I did it today."
+  if (resultPattern && resultPattern.length > 0) {
+    lines.push('');
+    lines.push(resultPattern);
+  }
 
   if (strongTopics.length > 0) {
     lines.push(`Strong: ${strongTopics.slice(0, 3).join(', ')}`);
@@ -516,6 +607,9 @@ function formatDailySummary(section, answered, correct, streak, weakTopics, stro
 
   lines.push('');
   lines.push('See you tomorrow!');
+  if (streak >= 2) {
+    lines.push(`Share your streak: 🔥 ${streak}-day VoraPrep ${section} streak — voraprep.com/daily-cpa`);
+  }
 
   return lines.join('\n');
 }
@@ -523,7 +617,7 @@ function formatDailySummary(section, answered, correct, streak, weakTopics, stro
 /**
  * Format trial completion / conversion CTA.
  */
-function formatTrialEndCTA(section, totalAnswered, totalCorrect, streak) {
+function formatTrialEndCTA(uid, section, totalAnswered, totalCorrect, streak, resultPattern) {
   const accuracy = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
   const lines = [];
 
@@ -531,6 +625,10 @@ function formatTrialEndCTA(section, totalAnswered, totalCorrect, streak) {
   lines.push('');
   lines.push(`3-day results: ${totalCorrect}/${totalAnswered} correct (${accuracy}%)`);
   lines.push(`Streak: 🔥 ${streak} day${streak !== 1 ? 's' : ''}`);
+  if (resultPattern && resultPattern.length > 0) {
+    lines.push('');
+    lines.push(resultPattern);
+  }
   lines.push('');
   lines.push('Your trial ends today. Keep your streak and progress:');
   lines.push('');
@@ -538,7 +636,8 @@ function formatTrialEndCTA(section, totalAnswered, totalCorrect, streak) {
   lines.push('Core (25/day): $9.99/mo');
   lines.push('Pro (50/day): $14.99/mo');
   lines.push('');
-  lines.push('Upgrade: https://voraprep.com/daily-cpa/upgrade');
+  // Embed uid so the upgrade page can skip the phone-lookup step entirely.
+  lines.push(`Upgrade: https://voraprep.com/daily-cpa/upgrade?uid=${uid}&utm_source=daily_cpa_sms`);
   lines.push('');
   lines.push('Reply STOP to unsubscribe.');
 
@@ -612,9 +711,12 @@ async function getOrCreateSession(uid, date, section, dailyCap) {
 
 /**
  * Send the next question in a session.
+ * @param {object} [preloadedUser] - Pass the user doc data if you already have it
+ *   (the inbound handler does) to avoid a redundant Firestore read.
  */
-async function sendNextQuestion(uid, session, sessionRef) {
-  const user = (await db.collection('daily_users').doc(uid).get()).data();
+async function sendNextQuestion(uid, session, sessionRef, preloadedUser = null) {
+  const user = preloadedUser
+    || (await db.collection('daily_users').doc(uid).get()).data();
   if (!user) {
     console.error(`User not found: ${uid}`);
     return;
@@ -687,6 +789,14 @@ async function processAnswer(uid, answerIndex) {
   const user = (await db.collection('daily_users').doc(uid).get()).data();
   if (!user) {
     throw new Error(`User not found: ${uid}`);
+  }
+
+  // Funnel: first answer ever — the activation event.
+  if (!user.firstAnswerAt) {
+    await db.collection('daily_users').doc(uid).update({
+      firstAnswerAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+    await logFunnelEvent(uid, 'first_answer', { section: user.section });
   }
 
   const today = getTodayString(user.timezone);
@@ -780,12 +890,9 @@ async function processAnswer(uid, answerIndex) {
     // Re-read session to get updated counts
     const updatedSession = (await sessionRef.get()).data();
     await completeSession(uid, updatedSession, sessionRef);
-  } else {
-    // Short delay, then send next question (10 seconds handled by caller)
-    // In practice, the next question is sent immediately since SMS is async
-    const updatedSession = (await sessionRef.get()).data();
-    await sendNextQuestion(uid, updatedSession, sessionRef);
   }
+  // Otherwise the user must reply NEXT to advance — gives them time to absorb
+  // the explanation and turns each question into a deliberate engagement.
 }
 
 /**
@@ -802,14 +909,29 @@ async function completeSession(uid, session, sessionRef) {
     .get();
 
   const topicStats = {};
-  todayAttempts.forEach(doc => {
-    const a = doc.data();
+  // Sort attempts by time so the emoji grid reflects answer order, not Firestore order.
+  const orderedAttempts = todayAttempts.docs
+    .map(d => d.data())
+    .sort((a, b) => {
+      const ta = a.attemptedAt?.toMillis?.() || 0;
+      const tb = b.attemptedAt?.toMillis?.() || 0;
+      return ta - tb;
+    });
+
+  orderedAttempts.forEach(a => {
     if (!topicStats[a.topic]) {
       topicStats[a.topic] = { correct: 0, total: 0 };
     }
     topicStats[a.topic].total++;
     if (a.isCorrect) topicStats[a.topic].correct++;
   });
+
+  // Build a Wordle-style result grid: 🟩 correct, ⬜ incorrect.
+  // Cap at 50 to keep SMS under length limits even on the Pro tier.
+  const resultPattern = orderedAttempts
+    .slice(0, 50)
+    .map(a => (a.isCorrect ? '🟩' : '⬜'))
+    .join('');
 
   const strongTopics = [];
   const weakTopics = [];
@@ -841,7 +963,7 @@ async function completeSession(uid, session, sessionRef) {
       if (doc.data().isCorrect) totalCorrect++;
     });
 
-    const ctaBody = formatTrialEndCTA(session.section, totalAnswered, totalCorrect, streak);
+    const ctaBody = formatTrialEndCTA(uid, session.section, totalAnswered, totalCorrect, streak, resultPattern);
     await sendUserSMS(uid, user.phone, ctaBody);
   } else {
     // Send daily summary
@@ -851,7 +973,8 @@ async function completeSession(uid, session, sessionRef) {
       session.questionsCorrect,
       streak,
       weakTopics,
-      strongTopics
+      strongTopics,
+      resultPattern
     );
     await sendUserSMS(uid, user.phone, summaryBody);
   }
@@ -859,6 +982,32 @@ async function completeSession(uid, session, sessionRef) {
   await sessionRef.update({
     state: 'completed',
     completedAt: admin.firestore.FieldValue.serverTimestamp(),
+  });
+
+  // After Day 1 only: send the contact card so tomorrow's text shows up as "VoraPrep"
+  // instead of an unrecognized number. Day 1 = first completed session for this user.
+  // We send after the summary (not at signup) to keep the welcome flow lightweight.
+  if (isTrial && trialDay === 1) {
+    try {
+      const vcardUrl = process.env.DAILY_CPA_VCARD_URL?.trim()
+        || 'https://us-central1-passcpa-dev.cloudfunctions.net/dailyCpa_vcard';
+      await sendUserSMS(uid, user.phone,
+        'Nice work today! Save this contact so tomorrow\'s question shows up as VoraPrep 👇',
+        { mediaUrls: [vcardUrl] }
+      );
+    } catch (vcardErr) {
+      console.error(`[DailyCPA] Day-1 vCard send failed for ${uid}:`, vcardErr.message);
+    }
+  }
+
+  // Funnel: day completed (one of the most predictive engagement signals).
+  await logFunnelEvent(uid, 'day_completed', {
+    section: session.section,
+    answered: session.questionsAnswered,
+    correct: session.questionsCorrect,
+    isTrial,
+    trialDay: isTrial ? trialDay : null,
+    streak,
   });
 }
 
@@ -1067,20 +1216,10 @@ exports.dailyCpa_morningKickoff = onSchedule({
         }
       }
 
-      // Proactive CTA: "trial ends tomorrow" on penultimate day
-      if (user.status === 'trialing' && user.trialStart) {
-        const trialDay = getTrialDay(user.trialStart.toDate(), user.timezone);
-        if (trialDay === TRIAL_DAYS) {
-          // Last day of trial — prepend a heads-up to today's session
-          try {
-            await sendUserSMS(uid, user.phone,
-              `⏰ Heads up! Your VoraPrep Daily CPA trial ends today.\n\nKeep your streak going — upgrade anytime:\nhttps://voraprep.com/daily-cpa/upgrade\n\nStarter: $4.99/mo · Core: $9.99/mo · Pro: $14.99/mo`
-            );
-          } catch (e) {
-            console.error(`[DailyCPA] Trial-ending CTA failed for ${uid}:`, e.message);
-          }
-        }
-      }
+      // NOTE: penultimate-day CTA intentionally NOT sent here — it's delivered
+      // post-session via formatTrialEndCTA in completeSession() when trialDay >= TRIAL_DAYS.
+      // Catching the user at peak engagement (right after they finish) converts better
+      // than nagging them before they've even started today's questions.
 
       const today = getTodayString(user.timezone);
       const sessionId = `${uid}_${today}`;
@@ -1213,6 +1352,7 @@ exports.dailyCpa_trialExpiration = onSchedule({
           dailyCap: (TIER_CONFIG[user.tier] || TIER_CONFIG.starter).dailyCap,
         });
         convertedCount++;
+        await logFunnelEvent(uid, 'trial_ended_converted', { section: user.section, tier: user.tier });
         console.log(`[DailyCPA] Trial converted to paid: ${uid}`);
       } else {
         // No payment — pause
@@ -1221,6 +1361,7 @@ exports.dailyCpa_trialExpiration = onSchedule({
           `Your VoraPrep Daily CPA trial has ended.\n\nUpgrade to continue your ${user.section} practice:\nhttps://voraprep.com/daily-cpa/upgrade\n\nYour progress is saved.`
         );
         pausedCount++;
+        await logFunnelEvent(uid, 'trial_ended_paused', { section: user.section });
         console.log(`[DailyCPA] Trial expired, no payment: ${uid}`);
       }
     }
@@ -1323,12 +1464,24 @@ exports.dailyCpa_weeklyRecap = onSchedule({
 exports.dailyCpa_smsInbound = onRequest({
   cors: false,
   invoker: 'public',
-  secrets: ['TELNYX_API_KEY', 'TELNYX_PHONE_NUMBER'],
+  secrets: ['TELNYX_API_KEY', 'TELNYX_PHONE_NUMBER', 'TELNYX_PUBLIC_KEY'],
   memory: '512MiB',
   timeoutSeconds: 60,
+  // Keep one warm instance so NEXT/answer round-trips don't pay cold-start cost
+  // (~2-5s on Node 22). Costs ~$5/mo at idle but is the single biggest perceived
+  // latency win for SMS users.
+  minInstances: 1,
 }, async (req, res) => {
   if (req.method !== 'POST') {
     res.status(405).send('Method not allowed');
+    return;
+  }
+
+  // Verify the request actually came from Telnyx (Ed25519 signature).
+  // When TELNYX_PUBLIC_KEY is unset, this is a no-op for dev convenience.
+  if (!verifyTelnyxSignature(req)) {
+    console.warn('[DailyCPA] Inbound rejected: bad Telnyx signature');
+    res.status(401).send('Invalid signature');
     return;
   }
 
@@ -1352,15 +1505,16 @@ exports.dailyCpa_smsInbound = onRequest({
       return;
     }
 
-    // Log inbound message
-    await db.collection('daily_sms_log').add({
+    // Log inbound message — fire-and-forget. Pure observability; blocking the
+    // user's NEXT on this added ~150ms with no functional benefit.
+    db.collection('daily_sms_log').add({
       direction: 'inbound',
       from: From,
       telnyxMessageId: MessageId || '',
       body: Body.substring(0, 500),
       status: 'received',
       sentAt: admin.firestore.FieldValue.serverTimestamp(),
-    });
+    }).catch(err => console.warn('[DailyCPA] inbound log write failed:', err.message));
 
     // Look up user by phone number
     const usersSnap = await db.collection('daily_users')
@@ -1389,6 +1543,45 @@ exports.dailyCpa_smsInbound = onRequest({
         await processAnswer(uid, answerIndex);
         break;
       }
+      case 'NEXT':
+      case 'N': {
+        const today = getTodayString(user.timezone);
+        const sessionId = `${uid}_${today}`;
+        const sessionRef = db.collection('daily_sessions').doc(sessionId);
+        const sessionDoc = await sessionRef.get();
+
+        if (!sessionDoc.exists) {
+          await sendUserSMS(uid, user.phone,
+            'No active session. Your next questions arrive at your scheduled time.'
+          );
+          break;
+        }
+        const session = sessionDoc.data();
+        if (session.state === 'waiting_answer') {
+          await sendUserSMS(uid, user.phone,
+            'Answer the current question first — reply A, B, C, or D.'
+          );
+          break;
+        }
+        if (session.state === 'completed') {
+          await sendUserSMS(uid, user.phone,
+            "You're done for today! Great work — see you tomorrow. 🎯"
+          );
+          break;
+        }
+        if (session.state === 'paused') {
+          await sendUserSMS(uid, user.phone,
+            'Session is paused. Reply RESUME to continue.'
+          );
+          break;
+        }
+        if (session.questionsAnswered >= session.dailyCap) {
+          await completeSession(uid, session, sessionRef);
+          break;
+        }
+        await sendNextQuestion(uid, session, sessionRef, user);
+        break;
+      }
       case 'STOP': {
         await userDoc.ref.update({ smsOptIn: false });
         await sendUserSMS(uid, user.phone,
@@ -1398,7 +1591,7 @@ exports.dailyCpa_smsInbound = onRequest({
       }
       case 'HELP': {
         await sendUserSMS(uid, user.phone,
-          'VoraPrep Daily CPA\n- Reply A/B/C/D to answer\n- RESUME to continue a paused session\n- DONE to end today\'s session\n- STOP to unsubscribe\n\nQuestions? support@voraprep.com'
+          'VoraPrep Daily CPA\n- Reply A/B/C/D to answer\n- NEXT for the next question\n- RESUME to continue a paused session\n- DONE to end today\'s session\n- STOP to unsubscribe\n\nQuestions? support@voraprep.com'
         );
         break;
       }
@@ -1444,7 +1637,7 @@ exports.dailyCpa_smsInbound = onRequest({
       }
       default: {
         await sendUserSMS(uid, user.phone,
-          'Reply with A, B, C, or D to answer.\n\nOr text DONE to wrap up, RESUME to continue, HELP for options.'
+          'Reply A, B, C, or D to answer — or NEXT for the next question.\n\nOther: DONE to wrap up, RESUME to continue, HELP for options.'
         );
         break;
       }
@@ -1542,14 +1735,49 @@ exports.dailyCpa_signup = onCall({
     totalCorrect: 0,
   });
 
+  // Funnel: signup is the top of the funnel.
+  await logFunnelEvent(uid, 'signup', {
+    section: sectionUpper,
+    tier: validTier,
+    timezone: userTz,
+    utm_source: request.data.utm_source || null,
+  });
+
+  // Decide whether to send Q1 immediately or defer to morningKickoff.
+  // Skip immediate send during quiet hours — let the user wake up to it.
+  const sendImmediately = !isQuietHours(userTz);
+
   // Send welcome SMS (non-blocking — user is created even if SMS fails)
   try {
-    await sendUserSMS(uid, phone,
-      `Welcome to VoraPrep Daily CPA — ${sectionUpper}! 🎯\n\nYou have a ${TRIAL_DAYS}-day free trial with ${TIER_CONFIG.trial.dailyCap} questions/day.\n\nYour first questions arrive tomorrow at ${sendTime || '7:00 AM'}.\n\nReply HELP anytime for options.\nReply STOP to unsubscribe.`
-    );
+    const welcomeBody = sendImmediately
+      ? `Welcome to VoraPrep Daily CPA - ${sectionUpper}!\n\n${TRIAL_DAYS}-day free trial, ${TIER_CONFIG.trial.dailyCap} questions/day.\n\nYour first question is on its way. Reply A/B/C/D to answer, NEXT to advance, HELP for options, STOP to unsubscribe.`
+      : `Welcome to VoraPrep Daily CPA - ${sectionUpper}!\n\nYou have a ${TRIAL_DAYS}-day free trial with ${TIER_CONFIG.trial.dailyCap} questions/day.\n\nYour first questions arrive at ${sendTime || '7:00 AM'} (${userTz}).\n\nReply HELP anytime for options.\nReply STOP to unsubscribe.`;
+    await sendUserSMS(uid, phone, welcomeBody);
   } catch (smsErr) {
     console.error(`[DailyCPA] Welcome SMS failed for ${uid}:`, smsErr.message);
     // Don't throw — user is created, they'll get questions tomorrow via morningKickoff
+  }
+
+  // NOTE: vCard contact card is sent after Day 1 completion (see completeSession),
+  // not at signup — keeps the welcome flow to two messages (welcome + Q1) instead of four.
+
+  // Kick off the first session immediately if outside quiet hours.
+  if (sendImmediately) {
+    try {
+      const today = getTodayString(userTz);
+      const { ref, data } = await getOrCreateSession(
+        uid,
+        today,
+        sectionUpper,
+        TIER_CONFIG.trial.dailyCap
+      );
+      await sendNextQuestion(uid, data, ref);
+    } catch (kickErr) {
+      console.error(`[DailyCPA] Immediate Q1 failed for ${uid}:`, kickErr.message, kickErr.stack);
+      // Non-fatal — morningKickoff will catch them tomorrow.
+      // Surface to funnel so we can detect repeated failures.
+      logFunnelEvent(uid, 'immediate_q1_failed', { error: kickErr.message }).catch(() => {});
+    }
   }
 
   console.log(`[DailyCPA] New signup: ${uid}, section: ${sectionUpper}, phone: ${phone.substring(0, 6)}****`);
@@ -1560,6 +1788,60 @@ exports.dailyCpa_signup = onCall({
     tier: validTier,
     trialEnd: trialEnd.toISOString(),
     message: 'Welcome! Your trial has started.',
+  };
+});
+
+/**
+ * Look up a Daily CPA user's uid by phone number.
+ *
+ * Used by the upgrade page when the SMS link arrives without `?uid=...`
+ * (e.g. user typed the URL manually). Returns 404 for unknown numbers
+ * \u2014 we deliberately do NOT differentiate "not signed up" from any other
+ * miss to avoid leaking which numbers are subscribers.
+ *
+ * Privacy note: returning a uid for a known phone is acceptable here because
+ * the uid alone unlocks no PII \u2014 createCheckout still validates the user
+ * and Stripe Checkout handles payment auth.
+ */
+exports.dailyCpa_lookupUid = onCall({
+  cors: true,
+  invoker: 'public',
+  enforceAppCheck: false,
+  memory: '256MiB',
+}, async (request) => {
+  const raw = String(request.data?.phone || '').trim();
+  if (!raw) {
+    throw new HttpsError('invalid-argument', 'Missing phone');
+  }
+
+  // Normalize to E.164 (US default)
+  const digits = raw.replace(/\D/g, '');
+  let e164;
+  if (raw.startsWith('+')) {
+    e164 = '+' + digits;
+  } else if (digits.length === 10) {
+    e164 = '+1' + digits;
+  } else if (digits.length === 11 && digits.startsWith('1')) {
+    e164 = '+' + digits;
+  } else {
+    throw new HttpsError('invalid-argument', 'Invalid phone format');
+  }
+
+  const snap = await db.collection('daily_users')
+    .where('phone', '==', e164)
+    .limit(1)
+    .get();
+
+  if (snap.empty) {
+    throw new HttpsError('not-found', 'No account found for that number.');
+  }
+
+  const userDoc = snap.docs[0];
+  const user = userDoc.data();
+  return {
+    uid: userDoc.id,
+    section: user.section,
+    status: user.status,
   };
 });
 
@@ -1627,7 +1909,7 @@ exports.dailyCpa_createCheckout = onCall({
     await userDoc.ref.update({ stripeCustomerId: customerId });
   }
 
-  const baseUrl = origin || 'https://voraprep.com/daily-cpa';
+  const baseUrl = origin || 'https://voraprep.com';
 
   // Create checkout session
   const session = await stripe.checkout.sessions.create({
@@ -1635,8 +1917,8 @@ exports.dailyCpa_createCheckout = onCall({
     payment_method_types: ['card'],
     mode: 'subscription',
     line_items: [{ price: priceId, quantity: 1 }],
-    success_url: `${baseUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${baseUrl}/upgrade`,
+    success_url: `${baseUrl}/daily-cpa/success?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${baseUrl}/daily-cpa/upgrade`,
     subscription_data: {
       trial_period_days: user.status === 'trialing' ? undefined : 0,
       metadata: {
@@ -1664,7 +1946,7 @@ exports.dailyCpa_createCheckout = onCall({
 exports.dailyCpa_stripeWebhook = onRequest({
   cors: false,
   invoker: 'public',
-  secrets: ['STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET'],
+  secrets: ['STRIPE_SECRET_KEY', 'DAILY_CPA_STRIPE_WEBHOOK_SECRET', 'STRIPE_WEBHOOK_SECRET'],
   memory: '256MiB',
 }, async (req, res) => {
   if (req.method !== 'POST') {
@@ -1673,7 +1955,8 @@ exports.dailyCpa_stripeWebhook = onRequest({
   }
 
   const stripeKey = process.env.STRIPE_SECRET_KEY?.trim();
-  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET?.trim();
+  // Prefer Daily-CPA-specific webhook secret; fall back to shared STRIPE_WEBHOOK_SECRET for backward compat
+  const webhookSecret = process.env.DAILY_CPA_STRIPE_WEBHOOK_SECRET?.trim() || process.env.STRIPE_WEBHOOK_SECRET?.trim();
   if (!stripeKey || !webhookSecret) {
     res.status(500).send('Stripe not configured');
     return;
@@ -1702,6 +1985,40 @@ exports.dailyCpa_stripeWebhook = onRequest({
 
   try {
     switch (event.type) {
+      case 'checkout.session.completed': {
+        const session = event.data.object;
+        const metadata = session.metadata || {};
+        if (metadata.product !== 'daily_cpa') break;
+
+        const uid = metadata.dailyCpaUserId;
+        if (!uid) break;
+
+        // Retrieve the subscription to get tier from its metadata
+        let tier = 'starter';
+        let subscriptionId = session.subscription;
+        let subStatus = 'active';
+        if (subscriptionId) {
+          try {
+            const sub = await stripe.subscriptions.retrieve(subscriptionId);
+            tier = sub.metadata?.tier || 'starter';
+            subStatus = sub.status === 'active' ? 'active' : sub.status;
+          } catch (e) {
+            console.error('[DailyCPA] Failed to retrieve subscription:', e.message);
+          }
+        }
+
+        await db.collection('daily_users').doc(uid).update({
+          status: subStatus,
+          stripeSubscriptionId: subscriptionId,
+          stripeCustomerId: session.customer,
+          dailyCap: (TIER_CONFIG[tier] || TIER_CONFIG.starter).dailyCap,
+          tier,
+        });
+
+        console.log(`[DailyCPA] Checkout completed for user ${uid}, tier=${tier}`);
+        break;
+      }
+
       case 'customer.subscription.created':
       case 'customer.subscription.updated': {
         const subscription = event.data.object;
@@ -1810,4 +2127,39 @@ exports.dailyCpa_dailyReset = onSchedule({
     await batch.commit();
     console.log(`[DailyCPA] Cleaned up ${oldSessions.size} old sessions`);
   }
+});
+
+/**
+ * vCard endpoint — Serves a contact card so users can save "VoraPrep" with the
+ * sending phone number on their device. Used as the media attachment in the
+ * post-signup MMS. Public by design.
+ */
+exports.dailyCpa_vcard = onRequest({
+  cors: false,
+  invoker: 'public',
+  secrets: ['TELNYX_PHONE_NUMBER'],
+  memory: '128MiB',
+  timeoutSeconds: 10,
+}, async (req, res) => {
+  const phone = process.env.TELNYX_PHONE_NUMBER?.trim() || '+14348370040';
+  // CRLF line endings are required by RFC 2426 for maximum carrier compatibility.
+  const vcf = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'FN:VoraPrep',
+    'N:VoraPrep;;;;',
+    'ORG:VoraPrep',
+    'TITLE:Daily CPA Coach',
+    `TEL;TYPE=CELL,VOICE:${phone}`,
+    'EMAIL;TYPE=INTERNET:support@voraprep.com',
+    'URL:https://voraprep.com',
+    'NOTE:Reply A/B/C/D to answer · NEXT to advance · HELP for options',
+    'END:VCARD',
+    '',
+  ].join('\r\n');
+
+  res.set('Content-Type', 'text/vcard; charset=utf-8');
+  res.set('Content-Disposition', 'attachment; filename="voraprep.vcf"');
+  res.set('Cache-Control', 'public, max-age=3600');
+  res.status(200).send(vcf);
 });

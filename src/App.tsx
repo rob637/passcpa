@@ -18,7 +18,6 @@ import AuthLayout from './components/layouts/AuthLayout';
 import ErrorBoundary from './components/common/ErrorBoundary';
 import { PageLoader, FullPageLoader } from './components/common/PageLoader';
 import { SubscriptionGate } from './components/common/SubscriptionGate';
-import { DailyCpaPreviewGate } from './components/common/DailyCpaPreviewGate';
 // import InstallPrompt from './components/common/InstallPrompt'; // Assuming this might be migrated or kept as JSX for now, but referenced as needed
 import { ToastProvider, useToast } from './components/common/Toast';
 import { SnackbarProvider } from './components/common/Snackbar';
@@ -516,14 +515,15 @@ function App() {
                   </>
                 )}
 
-                {/* Daily CPA — SMS-based daily MCQ product (gated until Telnyx is live) */}
+                {/* Daily CPA — SMS-based daily MCQ product
+                    Pages are PUBLIC so carriers (Telnyx 10DLC) can verify the
+                    opt-in URL renders consent disclosures. The signup callable
+                    enforces a server-side phone allow-list during beta. */}
                 <Route
                   path="/daily-cpa"
                   element={
                     <SuspensePage>
-                      <DailyCpaPreviewGate>
-                        <DailyCPA />
-                      </DailyCpaPreviewGate>
+                      <DailyCPA />
                     </SuspensePage>
                   }
                 />
@@ -531,9 +531,7 @@ function App() {
                   path="/daily-cpa/upgrade"
                   element={
                     <SuspensePage>
-                      <DailyCpaPreviewGate>
-                        <DailyCPAUpgrade />
-                      </DailyCpaPreviewGate>
+                      <DailyCPAUpgrade />
                     </SuspensePage>
                   }
                 />
@@ -541,9 +539,7 @@ function App() {
                   path="/daily-cpa/success"
                   element={
                     <SuspensePage>
-                      <DailyCpaPreviewGate>
-                        <DailyCPASuccess />
-                      </DailyCpaPreviewGate>
+                      <DailyCPASuccess />
                     </SuspensePage>
                   }
                 />

@@ -79,7 +79,7 @@ export const DailyCPAUpgrade = () => {
   const [error, setError] = useState('');
 
   const handlePhoneLookup = async () => {
-    if (!phone || phone.length < 10) {
+    if (!phone || phone.replace(/\D/g, '').length < 10) {
       setError('Please enter your phone number.');
       return;
     }
@@ -90,18 +90,22 @@ export const DailyCPAUpgrade = () => {
     try {
       const { httpsCallable } = await import('firebase/functions');
       const { functions } = await import('../../../config/firebase');
-      const lookupFn = httpsCallable(functions, 'dailyCpa_createCheckout');
+      const lookupFn = httpsCallable(functions, 'dailyCpa_lookupUid');
 
-      // Format phone to E.164
-      const e164 = phone.startsWith('+1') ? phone : `+1${phone.replace(/\D/g, '')}`;
-
-      // We need the uid — try creating checkout directly with phone lookup
-      // The createCheckout function needs uid, so we need an alternative approach
-      // For now, show an error guiding them
-      setError('Please use the link from your SMS to upgrade, or contact support@voraprep.com');
-      setLookupLoading(false);
-    } catch {
-      setError('Something went wrong. Please try again.');
+      const result = await lookupFn({ phone });
+      const data = result.data as { uid?: string };
+      if (data.uid) {
+        setUid(data.uid);
+      } else {
+        setError("We couldn't find that number. Use the link from your SMS, or contact support@voraprep.com.");
+      }
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Lookup failed';
+      // Firebase callable wraps "not-found" as a friendly message we can show as-is.
+      setError(message.includes('not-found') || message.includes('No account')
+        ? "We couldn't find that number. Use the link from your SMS, or contact support@voraprep.com."
+        : 'Lookup failed. Please try again or contact support@voraprep.com.');
+    } finally {
       setLookupLoading(false);
     }
   };

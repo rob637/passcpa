@@ -1414,19 +1414,32 @@ ARTICLE SPECIFICATIONS:
 OUTLINE (follow this structure):
 ${brief.outline.map(s => `${'#'.repeat(s.level)} ${s.heading}\n${s.keyPoints.map(kp => `  - ${kp}`).join('\n')}\n  Target: ~${s.wordCount} words`).join('\n\n')}
 
+ANSWER-FIRST BLOCK (required — place this BEFORE any H2 headings):
+A. Write a "Direct Answer" paragraph: 2-4 sentences that directly and completely answer the search query.
+   - This must stand alone and satisfy the reader even if they read nothing else.
+   - Use plain language, no jargon. Lead with the most important fact.
+B. Immediately after the Direct Answer, add a "Key Facts" table (no heading required):
+   | Fact | Detail |
+   |------|--------|
+   (3-5 rows with the most important numbers, rules, or thresholds on this topic)
+
 SEO & VALUE REQUIREMENTS:
-1. Use the primary keyword naturally in the first 100 words.
+1. Use the primary keyword naturally in the first 100 words (within the Direct Answer block).
 2. Include secondary keywords throughout (1-2 times each, naturally).
 3. Use H2 and H3 headings with keywords where natural.
 4. Write a meta title (60 chars max) and meta description (155 chars max).
-5. Use 2-4 of these internal links naturally in the article body and then add a short "Related VoraPrep resources" section near the end with bullet links and one-line descriptions: ${brief.internalLinks.map(l => `https://voraprep.com${l}`).join(', ')}
+5. INTERNAL LINKING — use ALL of these in the article body (2-3 in-line, rest in a "Related resources" section near the end):
+   - Exam landing page: https://voraprep.com/${brief.courseId}
+   - Practice questions page: https://voraprep.com/${brief.courseId}/practice
+   - Blog index: https://voraprep.com/blog
+   - Any of these section-specific internal links where genuinely relevant: ${brief.internalLinks.map(l => `https://voraprep.com${l}`).join(', ')}
+   End the article with a "Related VoraPrep resources" section (bullet list with one-line descriptions for each link).
 6. Add a short "Official resources and references" section with 2-4 bullet links to authoritative sources when relevant: ${authorityLinks.join(', ')}
 7. Include a table, checklist, comparison box, or trap-vs-truth chart anywhere it helps the reader.
 8. Do not invent statistics, fees, deadlines, or board rules. If something varies by state or changes yearly, say so and direct readers to the official source.
-9. Reference relevant existing VoraPrep posts where helpful (study schedule, pass rates, practice questions, review courses, career guide, or exam changes).
-10. Add a clear CTA to VoraPrep at the end.
-11. Teach like a fantastic coach, not a dry textbook: include at least one analogy, one worked example, one "common traps" callout, and one short "quick self-check" section.
-12. Create at least one genuine aha moment for the reader and, where relevant, include a decision tree or trap-vs-truth box that makes the concept feel much easier than expected.
+9. Add a clear CTA to VoraPrep at the end.
+10. Teach like a fantastic coach, not a dry textbook: include at least one analogy, one worked example, one "common traps" callout, and one short "quick self-check" section.
+11. Create at least one genuine aha moment for the reader and, where relevant, include a decision tree or trap-vs-truth box that makes the concept feel much easier than expected.
 
 TONE & STYLE:
 - Professional but approachable (like a knowledgeable study buddy)

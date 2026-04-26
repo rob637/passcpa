@@ -7185,6 +7185,8 @@ exports.dynamicSitemap = onRequest({
     { loc: '/blog/free-cfp-cfp5-practice-questions-2026', priority: '0.7', changefreq: 'monthly' },
     { loc: '/blog/ea-see3-breakdown-2026', priority: '0.7', changefreq: 'monthly' },
     { loc: '/blog/cpa-bar-breakdown-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/best-cisa-review-courses-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/cfp-cfp5-cheat-sheet-2026', priority: '0.7', changefreq: 'monthly' },
     { loc: '/terms', priority: '0.3', changefreq: 'yearly' },
     { loc: '/privacy', priority: '0.3', changefreq: 'yearly' },
     { loc: '/help', priority: '0.4', changefreq: 'monthly' },

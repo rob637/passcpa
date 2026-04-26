@@ -21,9 +21,18 @@ const ORGANIZATION_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'VoraPrep',
+  alternateName: ['Vora Prep', 'voraprep', 'vora prep'],
   url: 'https://voraprep.com',
   logo: 'https://voraprep.com/logo.svg',
   description: 'AI-powered professional exam prep for CPA, EA, CMA, CIA, CFP, and CISA certifications.',
+  knowsAbout: [
+    'CPA exam prep',
+    'EA exam prep',
+    'CMA exam prep',
+    'CIA exam prep',
+    'CFP exam prep',
+    'CISA exam prep',
+  ],
   sameAs: [
     'https://www.youtube.com/@VoraPrep',
     'https://www.linkedin.com/in/robpfleghardt/',
@@ -45,10 +54,38 @@ const ORGANIZATION_SCHEMA = {
   },
 };
 
+const FOUNDER_PERSON_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': 'https://voraprep.com/#rob-pfleghardt',
+  name: 'Rob Pfleghardt',
+  url: 'https://www.linkedin.com/in/robpfleghardt/',
+  jobTitle: 'Founder',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'VoraPrep',
+    url: 'https://voraprep.com',
+  },
+  knowsAbout: [
+    'CPA exam prep',
+    'EA exam prep',
+    'CMA exam prep',
+    'CIA exam prep',
+    'CFP exam prep',
+    'CISA exam prep',
+    'Professional certification study systems',
+  ],
+  sameAs: [
+    'https://www.linkedin.com/in/robpfleghardt/',
+    'https://github.com/rob637',
+  ],
+};
+
 const WEBSITE_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'VoraPrep',
+  alternateName: 'Vora Prep',
   url: 'https://voraprep.com',
   description: 'AI-powered professional exam prep for CPA, EA, CMA, CIA, CFP, and CISA certifications.',
   publisher: {
@@ -176,6 +213,7 @@ export const useOrganizationSchema = () => {
     };
 
     addJsonLd(ORGANIZATION_SCHEMA);
+  addJsonLd(FOUNDER_PERSON_SCHEMA);
     addJsonLd(WEBSITE_SCHEMA);
 
     return () => {

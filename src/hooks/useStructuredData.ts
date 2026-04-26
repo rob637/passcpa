@@ -24,7 +24,20 @@ const ORGANIZATION_SCHEMA = {
   url: 'https://voraprep.com',
   logo: 'https://voraprep.com/logo.svg',
   description: 'AI-powered professional exam prep for CPA, EA, CMA, CIA, CFP, and CISA certifications.',
-  sameAs: [],
+  sameAs: [
+    'https://www.youtube.com/@VoraPrep',
+    'https://www.linkedin.com/in/robpfleghardt/',
+    'https://github.com/rob637',
+  ],
+  founder: {
+    '@type': 'Person',
+    name: 'Rob Pfleghardt',
+    url: 'https://www.linkedin.com/in/robpfleghardt/',
+    sameAs: [
+      'https://www.linkedin.com/in/robpfleghardt/',
+      'https://github.com/rob637',
+    ],
+  },
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',

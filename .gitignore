@@ -74,3 +74,5 @@ scripts/ux-audit/screenshots/
 firebase-debug.log
 **/firebase-debug.log
 serviceAccountKey.json
+serviceAccountKey.prod.json
+serviceAccountKey.*.json

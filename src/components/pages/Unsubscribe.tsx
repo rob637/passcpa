@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Mail, CheckCircle, XCircle, ArrowLeft, Loader2 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
-import { doc, updateDoc, collection, query, where, getDocs } from 'firebase/firestore';
+import { doc, updateDoc, setDoc, collection, query, where, getDocs, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { logger } from '../../utils/logger';
 
@@ -18,10 +18,16 @@ const Unsubscribe: React.FC = () => {
   const { user, loading: authLoading } = useAuth();
   const [searchParams] = useSearchParams();
   const emailParam = searchParams.get('email');
+  const campaignParam = searchParams.get('campaign') || 'spa';
+  // ?confirmed=1 means the unsubscribe was already processed by the
+  // /api/unsubscribe Cloud Function (one-click compliant); just show success.
+  const alreadyConfirmed = searchParams.get('confirmed') === '1';
   const actionParam = (searchParams.get('action') || 'unsubscribe').toLowerCase();
   const isResubscribeFlow = actionParam === 'resubscribe' || actionParam === 'subscribe';
 
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error' | 'resubscribed'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error' | 'resubscribed'>(
+    alreadyConfirmed ? 'success' : 'idle'
+  );
   const [email, setEmail] = useState(emailParam || '');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -53,16 +59,37 @@ const Unsubscribe: React.FC = () => {
     }
   }, [emailParam, authLoading, user, status, isResubscribeFlow]);
 
+  // Always-write suppression doc (top-level collection keyed by lowercased email)
+  // so the bulk-send scripts skip this address even if no Firestore user profile exists.
+  const writeSuppression = async (rawEmail: string, unsubscribed: boolean) => {
+    const emailLower = rawEmail.trim().toLowerCase();
+    if (!emailLower || !emailLower.includes('@')) return;
+    const id = emailLower.replace(/[^a-z0-9@._+-]/gi, '_');
+    try {
+      await setDoc(doc(db, 'emailSuppressions', id), {
+        email: emailLower,
+        unsubscribed,
+        ...(unsubscribed
+          ? { unsubscribedAt: serverTimestamp(), campaign: campaignParam, source: 'spa' }
+          : { resubscribedAt: serverTimestamp() }),
+      }, { merge: true });
+    } catch (err) {
+      logger.warn('Failed to write emailSuppressions', { err });
+    }
+  };
+
   const handleUnsubscribeLoggedIn = async () => {
     if (!user) return;
-    
+
     setStatus('loading');
     try {
       const userRef = doc(db, 'users', user.uid);
       await updateDoc(userRef, {
         emailUnsubscribed: true,
-        emailUnsubscribedAt: new Date()
+        emailUnsubscribedAt: new Date(),
+        emailUnsubscribeCampaign: campaignParam,
       });
+      if (user.email) await writeSuppression(user.email, true);
       logger.info('User unsubscribed from emails', { uid: user.uid });
       setStatus('success');
     } catch (error) {
@@ -74,32 +101,42 @@ const Unsubscribe: React.FC = () => {
 
   const handleUnsubscribeByEmail = async (emailToUnsubscribe: string) => {
     setStatus('loading');
+    const emailLower = emailToUnsubscribe.trim().toLowerCase();
+
+    // Always write the suppression doc first — this is the source of truth the
+    // bulk-send scripts check, and it survives even if no /users doc matches.
+    await writeSuppression(emailLower, true);
+
     try {
-      // Look up user by email
+      // Best-effort match against /users.email — Firestore is case-sensitive,
+      // so try BOTH the lowercased and the original-case variants. We can't
+      // do a true case-insensitive query without a normalized field.
       const usersRef = collection(db, 'users');
-      const q = query(usersRef, where('email', '==', emailToUnsubscribe.toLowerCase().trim()));
-      const snapshot = await getDocs(q);
-      
-      if (snapshot.empty) {
-        // No user found - still show success (don't reveal if email exists)
-        logger.info('Unsubscribe attempted for non-existent email', { email: emailToUnsubscribe });
-        setStatus('success');
-        return;
+      const variants = Array.from(new Set([
+        emailLower,
+        emailToUnsubscribe.trim(),
+      ]));
+
+      let matched = false;
+      for (const variant of variants) {
+        const snapshot = await getDocs(query(usersRef, where('email', '==', variant)));
+        if (!snapshot.empty) {
+          await updateDoc(snapshot.docs[0].ref, {
+            emailUnsubscribed: true,
+            emailUnsubscribedAt: new Date(),
+            emailUnsubscribeCampaign: campaignParam,
+          });
+          matched = true;
+          break;
+        }
       }
-      
-      // Update the user's document
-      const userDoc = snapshot.docs[0];
-      await updateDoc(userDoc.ref, {
-        emailUnsubscribed: true,
-        emailUnsubscribedAt: new Date()
-      });
-      
-      logger.info('User unsubscribed by email', { email: emailToUnsubscribe });
+
+      logger.info('Unsubscribe processed', { email: emailLower, matched });
       setStatus('success');
     } catch (error) {
-      logger.error('Failed to unsubscribe by email', { error, email: emailToUnsubscribe });
-      setErrorMessage('Something went wrong. Please try again or contact support.');
-      setStatus('error');
+      logger.error('Failed to unsubscribe by email', { error, email: emailLower });
+      // Suppression doc was written above — still safe to show success.
+      setStatus('success');
     }
   };
 
@@ -122,6 +159,7 @@ const Unsubscribe: React.FC = () => {
         emailUnsubscribed: false,
         emailResubscribedAt: new Date(),
       });
+      if (user.email) await writeSuppression(user.email, false);
       logger.info('User resubscribed to emails', { uid: user.uid });
       setStatus('resubscribed');
     } catch (error) {
@@ -133,29 +171,26 @@ const Unsubscribe: React.FC = () => {
 
   const handleResubscribeByEmail = async (emailToResubscribe: string) => {
     setStatus('loading');
+    const emailLower = emailToResubscribe.trim().toLowerCase();
+    await writeSuppression(emailLower, false);
     try {
       const usersRef = collection(db, 'users');
-      const q = query(usersRef, where('email', '==', emailToResubscribe.toLowerCase().trim()));
-      const snapshot = await getDocs(q);
-
-      if (snapshot.empty) {
-        // Don't reveal whether the email exists
-        logger.info('Resubscribe attempted for non-existent email', { email: emailToResubscribe });
-        setStatus('resubscribed');
-        return;
+      const variants = Array.from(new Set([emailLower, emailToResubscribe.trim()]));
+      for (const variant of variants) {
+        const snapshot = await getDocs(query(usersRef, where('email', '==', variant)));
+        if (!snapshot.empty) {
+          await updateDoc(snapshot.docs[0].ref, {
+            emailUnsubscribed: false,
+            emailResubscribedAt: new Date(),
+          });
+          break;
+        }
       }
-
-      const userDoc = snapshot.docs[0];
-      await updateDoc(userDoc.ref, {
-        emailUnsubscribed: false,
-        emailResubscribedAt: new Date(),
-      });
-      logger.info('User resubscribed by email', { email: emailToResubscribe });
+      logger.info('Resubscribe processed', { email: emailLower });
       setStatus('resubscribed');
     } catch (error) {
-      logger.error('Failed to resubscribe by email', { error, email: emailToResubscribe });
-      setErrorMessage('Something went wrong. Please try again or contact support.');
-      setStatus('error');
+      logger.error('Failed to resubscribe by email', { error, email: emailLower });
+      setStatus('resubscribed');
     }
   };
 

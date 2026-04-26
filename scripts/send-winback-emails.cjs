@@ -239,12 +239,12 @@ function buildCheckoutUrl(ctx) {
 }
 
 function buildMonthlyCheckoutUrl(ctx) {
-  // Monthly checkout — no coupon (the coupon is "first invoice only" so on monthly
-  // it'd just give ~$6 off one month, which isn't worth the cognitive cost).
-  // The pitch on monthly is "$X/mo, cancel anytime" — low commitment to get them moving.
+  // Monthly checkout WITH coupon pre-applied for consistency with the annual CTA.
+  // Stripe coupon is duration:once → ~$6 off month 1, then full price.
+  // Small dollar amount but matches the email's "WELCOMEBACK 20% off" promise.
   const courseId = ctx.course || 'cpa';
   return utm(
-    `/start-checkout?course=${courseId}&interval=monthly`,
+    `/start-checkout?course=${courseId}&interval=monthly&coupon=${COUPON_CODE}`,
     { ...ctx, variant: `${ctx.variant}_m` }   // tag clicks differently for attribution
   );
 }

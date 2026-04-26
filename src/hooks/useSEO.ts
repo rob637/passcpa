@@ -115,8 +115,8 @@ export const useSEO = ({
  */
 export const LANDING_SEO = {
   home: {
-    title: 'Free AI-Powered Exam Prep',
-    description: `VoraPrep offers free AI-powered exam prep for CPA, EA, CMA, CIA, CFP, and CISA certifications. ${TOTAL_DISPLAY.questions} practice questions with adaptive learning.`,
+    title: 'AI-Powered CPA, EA, CMA, CIA, CFP & CISA Exam Prep',
+    description: `VoraPrep is an AI-powered exam prep platform for CPA, EA, CMA, CIA, CFP, and CISA candidates. ${TOTAL_DISPLAY.questions} practice questions, adaptive study plans, and detailed explanations in one place.`,
   },
   cpa: {
     title: 'CPA Exam Prep',

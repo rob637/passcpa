@@ -900,8 +900,14 @@ exports.sendWeeklyReports = onSchedule({
       if (userData.emailUnsubscribed) continue;
       
       // Aggregate last 7 days of activity
-      const weeklyStats = await getWeeklyStats(userDoc.id, weekAgo);
-      
+      const weeklyStats = await getWeeklyStats(userDoc.id, weekAgo, userData.activeCourse);
+
+      // Skip users with no activity in the past week — sending a "0 questions / 0 minutes"
+      // report is misleading and a bad experience.
+      if (weeklyStats.totalQuestions === 0 && weeklyStats.totalMinutes === 0) {
+        continue;
+      }
+
       // Get course-specific content
       const courseConfig = getCourseConfig(userData.activeCourse);
       
@@ -2282,6 +2288,110 @@ exports.sendWelcomeEmail = onDocumentCreated({
 });
 
 // ============================================================================
+// EMAIL UNSUBSCRIBE
+// HTTP endpoint that handles both:
+//   - GET (browser link click) — sets unsubscribe + redirects to /unsubscribe?confirmed=1
+//   - POST (RFC 8058 one-click, required by Gmail/Yahoo bulk-sender rules)
+//
+// Looks up the user via Firebase Auth (case-insensitive) so it works regardless
+// of how the email is cased in the user's Firestore profile. Always writes a
+// suppression doc keyed by the lowercased email so we never re-send even when
+// no Firestore profile exists.
+//
+// Exposed via firebase.json rewrite at /api/unsubscribe.
+// ============================================================================
+
+exports.unsubscribeEmail = onRequest({
+  cors: true,
+  invoker: 'public',
+  memory: '256MiB',
+  timeoutSeconds: 30,
+}, async (req, res) => {
+  // CORS for cross-origin POST (mailbox providers)
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.set('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') { res.status(204).send(''); return; }
+
+  // Read email + campaign from query (GET) or body (POST)
+  const emailRaw =
+    (req.query?.email && String(req.query.email)) ||
+    (req.body?.email && String(req.body.email)) ||
+    '';
+  const campaign =
+    (req.query?.campaign && String(req.query.campaign)) ||
+    (req.body?.campaign && String(req.body.campaign)) ||
+    'unspecified';
+
+  const email = emailRaw.trim();
+  const emailLower = email.toLowerCase();
+
+  // Always respond success even if the email is empty/invalid — never reveal
+  // whether an address is in our database.
+  const respondOk = () => {
+    if (req.method === 'POST') {
+      res.status(200).type('text/plain').send('OK');
+    } else {
+      const target = `${APP_BASE_URL}/unsubscribe?confirmed=1${
+        emailLower ? `&email=${encodeURIComponent(emailLower)}` : ''
+      }&campaign=${encodeURIComponent(campaign)}`;
+      res.redirect(302, target);
+    }
+  };
+
+  if (!emailLower || !emailLower.includes('@')) {
+    console.log('Unsubscribe: missing/invalid email param');
+    respondOk();
+    return;
+  }
+
+  const db = admin.firestore();
+
+  try {
+    // 1. Always write a top-level suppression record. This survives even when
+    //    we can't find a user — the bulk sender script checks this collection.
+    const suppressionId = emailLower.replace(/[^a-z0-9@._+-]/gi, '_');
+    await db.collection('emailSuppressions').doc(suppressionId).set({
+      email: emailLower,
+      unsubscribedAt: admin.firestore.FieldValue.serverTimestamp(),
+      campaign,
+      source: req.method === 'POST' ? 'one-click' : 'link',
+      userAgent: req.get('user-agent') || null,
+    }, { merge: true });
+
+    // 2. Find the user via Auth (case-insensitive) and flag the profile.
+    let uid = null;
+    try {
+      const authUser = await admin.auth().getUserByEmail(emailLower);
+      uid = authUser.uid;
+    } catch (err) {
+      if (err.code !== 'auth/user-not-found') {
+        console.warn('Unsubscribe: Auth lookup error', err.message);
+      }
+    }
+
+    if (uid) {
+      await db.collection('users').doc(uid).set({
+        emailUnsubscribed: true,
+        emailUnsubscribedAt: admin.firestore.FieldValue.serverTimestamp(),
+        emailUnsubscribeSource: req.method === 'POST' ? 'one-click' : 'link',
+        emailUnsubscribeCampaign: campaign,
+      }, { merge: true });
+      console.log(`Unsubscribe: ${emailLower} (uid=${uid}, campaign=${campaign}, method=${req.method})`);
+    } else {
+      console.log(`Unsubscribe: ${emailLower} (no user; suppression only, campaign=${campaign})`);
+    }
+
+    respondOk();
+  } catch (err) {
+    console.error('Unsubscribe error:', err);
+    // Still respond 200 — never expose internal errors and never punish the user
+    // for our mistake; the suppression list write is best-effort.
+    respondOk();
+  }
+});
+
+// ============================================================================
 // WELCOME DRIP EMAIL SEQUENCE
 // Scheduled function that sends follow-up emails to new users
 // Day 1: First practice tip | Day 3: Study plan intro | Day 5: AI Tutor | Day 7: Progress check
@@ -2736,29 +2846,46 @@ function getContextualReminder(now) {
   return categoryMessages[Math.floor(Math.random() * categoryMessages.length)];
 }
 
-async function getWeeklyStats(userId, startDate) {
+async function getWeeklyStats(userId, startDate, activeCourse) {
   const logsRef = db.collection('users').doc(userId).collection('daily_log');
   const startDateStr = startDate.toISOString().split('T')[0];
-  
-  const snapshot = await logsRef
-    .where('__name__', '>=', startDateStr)
-    .get();
-  
+
+  // Daily log doc IDs are formatted as `{courseId}_{YYYY-MM-DD}` (e.g. `cpa_2026-04-19`).
+  // The previous query used `where('__name__', '>=', startDateStr)`, which compared
+  // course-prefixed IDs against a bare date string and matched ALL historical logs
+  // (because any lowercase letter sorts after any digit in lexical order). That caused
+  // weekly emails to report lifetime totals instead of the past 7 days.
+  //
+  // Fix: query on the `date` field (set when the log is written) and, when we know the
+  // user's active course, restrict to that course's logs only.
+  let q = logsRef.where('date', '>=', startDateStr);
+  if (activeCourse) {
+    q = q.where('courseId', '==', activeCourse);
+  }
+  const snapshot = await q.get();
+
   let totalQuestions = 0;
   let correctQuestions = 0;
   let totalMinutes = 0;
   let totalPoints = 0;
   let daysStudied = 0;
   const topicBreakdown = {};
-  
+
   snapshot.forEach(doc => {
     const data = doc.data();
+    // Defensive: if the `date` field is missing on legacy docs, fall back to parsing
+    // the doc id (`{course}_{YYYY-MM-DD}` or `{YYYY-MM-DD}`) and skip anything older
+    // than the cutoff or from a different course.
+    const docDate = data.date || (doc.id.includes('_') ? doc.id.split('_').slice(1).join('_') : doc.id);
+    if (!docDate || docDate < startDateStr) return;
+    if (activeCourse && data.courseId && data.courseId !== activeCourse) return;
+
     totalQuestions += data.questionsAttempted || 0;
     correctQuestions += data.questionsCorrect || 0;
     totalMinutes += data.studyTimeMinutes || 0;
     totalPoints += data.earnedPoints || 0;
     if ((data.earnedPoints || 0) > 0) daysStudied++;
-    
+
     // Topic breakdown from activities
     (data.activities || []).forEach(activity => {
       if (activity.type === 'mcq' && activity.topic) {
@@ -8471,29 +8598,19 @@ exports.listPendingYouTubeShorts = onCall({
 // DAILY CPA — SMS-based daily MCQ product
 // Separate module: functions/daily-cpa.js
 //
-// Only export when explicitly enabled. This lets us deploy to a project that
-// hasn't set TELNYX_API_KEY / TELNYX_PHONE_NUMBER yet without the deploy
-// aborting on missing secrets.
-//
-// To enable in a project:
-//   1. firebase functions:secrets:set TELNYX_API_KEY -P <project>
-//   2. firebase functions:secrets:set TELNYX_PHONE_NUMBER -P <project>
-//   3. Deploy with ENABLE_DAILY_CPA=1, e.g.:
-//      ENABLE_DAILY_CPA=1 firebase deploy --only functions -P <project>
+// Required secrets (must be set per project before first deploy):
+//   firebase functions:secrets:set TELNYX_API_KEY -P <project>
+//   firebase functions:secrets:set TELNYX_PHONE_NUMBER -P <project>
 // ============================================================================
-const ENABLE_DAILY_CPA = process.env.ENABLE_DAILY_CPA === '1' || process.env.FUNCTIONS_EMULATOR === 'true';
-if (ENABLE_DAILY_CPA) {
-  const dailyCpa = require('./daily-cpa');
-  exports.dailyCpa_morningKickoff = dailyCpa.dailyCpa_morningKickoff;
-  exports.dailyCpa_nudgeCheck = dailyCpa.dailyCpa_nudgeCheck;
-  exports.dailyCpa_trialExpiration = dailyCpa.dailyCpa_trialExpiration;
-  exports.dailyCpa_weeklyRecap = dailyCpa.dailyCpa_weeklyRecap;
-  exports.dailyCpa_smsInbound = dailyCpa.dailyCpa_smsInbound;
-  exports.dailyCpa_signup = dailyCpa.dailyCpa_signup;
-  exports.dailyCpa_createCheckout = dailyCpa.dailyCpa_createCheckout;
-  exports.dailyCpa_stripeWebhook = dailyCpa.dailyCpa_stripeWebhook;
-  exports.dailyCpa_dailyReset = dailyCpa.dailyCpa_dailyReset;
-} else {
-  // eslint-disable-next-line no-console
-  console.warn('[daily-cpa] ENABLE_DAILY_CPA != 1 — skipping dailyCpa_* exports.');
-}
+const dailyCpa = require('./daily-cpa');
+exports.dailyCpa_morningKickoff = dailyCpa.dailyCpa_morningKickoff;
+exports.dailyCpa_nudgeCheck = dailyCpa.dailyCpa_nudgeCheck;
+exports.dailyCpa_trialExpiration = dailyCpa.dailyCpa_trialExpiration;
+exports.dailyCpa_weeklyRecap = dailyCpa.dailyCpa_weeklyRecap;
+exports.dailyCpa_smsInbound = dailyCpa.dailyCpa_smsInbound;
+exports.dailyCpa_signup = dailyCpa.dailyCpa_signup;
+exports.dailyCpa_lookupUid = dailyCpa.dailyCpa_lookupUid;
+exports.dailyCpa_createCheckout = dailyCpa.dailyCpa_createCheckout;
+exports.dailyCpa_stripeWebhook = dailyCpa.dailyCpa_stripeWebhook;
+exports.dailyCpa_dailyReset = dailyCpa.dailyCpa_dailyReset;
+exports.dailyCpa_vcard = dailyCpa.dailyCpa_vcard;

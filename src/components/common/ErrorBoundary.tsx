@@ -58,19 +58,28 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
         // Auto-reload to get fresh chunks
         logger.warn('Chunk load error detected, auto-reloading...');
         sessionStorage.setItem('chunk-reload-attempted', Date.now().toString());
-        
-        // Clear caches and reload
-        if ('caches' in window) {
-          caches.keys().then(names => {
-            Promise.all(names.map(name => caches.delete(name))).then(() => {
-              window.location.reload();
-            });
-          }).catch(() => {
-            window.location.reload();
-          });
-        } else {
-          (window as Window).location.reload();
-        }
+
+        const cleanupAndReload = async () => {
+          // Unregister SW so it stops serving stale index.html
+          if ('serviceWorker' in navigator) {
+            try {
+              const regs = await navigator.serviceWorker.getRegistrations();
+              await Promise.all(regs.map(r => r.unregister()));
+            } catch {
+              // ignore
+            }
+          }
+          if ('caches' in window) {
+            try {
+              const names = await caches.keys();
+              await Promise.all(names.map(n => caches.delete(n)));
+            } catch {
+              // ignore
+            }
+          }
+          window.location.reload();
+        };
+        void cleanupAndReload();
         return;
       }
     }
@@ -102,6 +111,15 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   };
 
   handleHardReload = async () => {
+    // Unregister service workers so they stop serving stale index.html / chunks
+    if ('serviceWorker' in navigator) {
+      try {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map(r => r.unregister()));
+      } catch {
+        // Ignore SW unregister errors
+      }
+    }
     // Clear all caches before reloading
     if ('caches' in window) {
       try {
@@ -111,10 +129,16 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
         // Ignore cache clear errors
       }
     }
-    // Clear the reload attempt flag
-    sessionStorage.removeItem('chunk-reload-attempted');
-    // Force reload
-    window.location.reload();
+    // Clear the reload attempt flag (and any other transient SW/update flags)
+    try {
+      sessionStorage.removeItem('chunk-reload-attempted');
+    } catch {
+      // Ignore storage errors (private mode, etc.)
+    }
+    // Force reload bypassing HTTP cache
+    window.location.replace(
+      window.location.pathname + '?_=' + Date.now() + window.location.hash
+    );
   };
 
   handleGoHome = () => {

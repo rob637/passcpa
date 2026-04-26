@@ -5683,17 +5683,16 @@ exports.growthAutoPublish = onSchedule({
     .where('generatedAt', '>=', admin.firestore.Timestamp.fromDate(weekAgo))
     .get();
 
-  const maxPerWeek = config.maxArticlesPerWeek || 5;
+  const maxPerWeek = config.maxArticlesPerWeek || 10;
   if (recentArticles.size >= maxPerWeek) {
     console.log(`[AutoPublish] Weekly limit reached (${recentArticles.size}/${maxPerWeek}). Skipping.`);
     return;
   }
 
-  // 3. Random skip for natural cadence (~40% chance to skip)
-  //    This makes posting unpredictable: some days 0, some 1
-  //    Avg ~4 articles/week (7 days × 60% = 4.2)
+  // 3. Random skip for natural cadence (~20% chance to skip)
+  //    Avg ~5.6 articles/week (7 days × 80% = 5.6) — drains backlog faster
   const skipRoll = Math.random();
-  if (skipRoll < 0.40) {
+  if (skipRoll < 0.20) {
     console.log(`[AutoPublish] Random skip (roll=${skipRoll.toFixed(2)}). Will try again tomorrow.`);
     return;
   }
@@ -5772,10 +5771,11 @@ exports.growthAutoPublish = onSchedule({
     }
 
     // Send notification email with distribution summary
+    // NOTE: LinkedIn auto-share from blog posts is disabled (see above) — we use
+    // standalone story posts instead, so no linkedInResult to reference.
     const resendKey = process.env.RESEND_API_KEY?.trim();
     if (resendKey) {
       try {
-        const linkedInUrl = linkedInResult?.url;
         const discordStatus = discordResult ? '✅ Posted' : '⏭️ Skipped';
         await fetch('https://api.resend.com/emails', {
           method: 'POST',
@@ -5791,7 +5791,7 @@ exports.growthAutoPublish = onSchedule({
               <ul>
                 <li>📰 Blog: <a href="${articleUrl}">${articleUrl}</a></li>
                 <li>📡 RSS: Included in feed</li>
-                <li>💼 LinkedIn: ${linkedInUrl ? `<a href="${linkedInUrl}">Posted</a>` : 'Skipped (no token)'}</li>
+                <li>💼 LinkedIn: Disabled (using standalone story posts)</li>
                 <li>💬 Discord: ${discordStatus}</li>
               </ul>
             `,
@@ -5803,9 +5803,9 @@ exports.growthAutoPublish = onSchedule({
       }
     }
 
-    await updateFunctionStatus('growthAutoPublish', 'success', { 
+    await updateFunctionStatus('growthAutoPublish', 'success', {
       published: articleData.title,
-      linkedIn: linkedInResult ? 'posted' : 'skipped',
+      linkedIn: 'disabled',
       discord: discordResult ? 'posted' : 'skipped',
     });
     return;

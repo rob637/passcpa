@@ -83,6 +83,13 @@ service cloud.firestore {
       allow read, update, delete: if isAdmin(); // Only admin can view/manage
     }
 
+    // Email suppressions - public write so unsubscribe works for logged-out users.
+    // Admin-only read so we don't leak the suppression list.
+    match /emailSuppressions/{emailId} {
+      allow create, update: if true;
+      allow read, delete: if isAdmin();
+    }
+
     // Announcements - admin write, authenticated read
     match /announcements/{announcementId} {
       allow read: if isAuthenticated();

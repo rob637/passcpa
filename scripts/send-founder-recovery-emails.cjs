@@ -90,6 +90,10 @@ const courseFilter = (() => {
   return i >= 0 ? args[i + 1].toLowerCase() : null;
 })();
 const skipTracking = args.includes('--no-track');
+const bccAddress = (() => {
+  const i = args.indexOf('--bcc');
+  return i >= 0 ? args[i + 1] : null;
+})();
 
 // ============================================================================
 // COURSE LABELS
@@ -193,12 +197,20 @@ You're receiving this because you signed up at voraprep.com. Unsubscribe: ${unsu
 // ============================================================================
 
 function initFirebase() {
-  const serviceAccountPath = path.join(__dirname, '../serviceAccountKey.json');
+  // Prefer explicit GOOGLE_APPLICATION_CREDENTIALS (e.g., serviceAccountKey.prod.json)
+  // Fall back to repo-root serviceAccountKey.json (dev default)
+  const envPath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
+  const serviceAccountPath = envPath && fs.existsSync(envPath)
+    ? envPath
+    : path.join(__dirname, '../serviceAccountKey.json');
+
   if (fs.existsSync(serviceAccountPath)) {
     const serviceAccount = require(serviceAccountPath);
     admin.initializeApp({ credential: admin.credential.cert(serviceAccount) });
+    console.log(`Firebase project: ${serviceAccount.project_id}  (${path.basename(serviceAccountPath)})`);
   } else {
     admin.initializeApp();
+    console.log('Firebase: using application default credentials');
   }
 }
 
@@ -286,6 +298,7 @@ async function main() {
       from: FROM_EMAIL,
       reply_to: REPLY_TO,
       to: testEmail,
+      ...(bccAddress ? { bcc: bccAddress } : {}),
       subject,
       html,
       text,
@@ -306,52 +319,75 @@ async function main() {
     return;
   }
 
-  // ---- BULK MODE: query Firestore for eligible users ----
+  // ---- BULK MODE: iterate Firebase Auth (source of truth for signups) ----
+  // Firestore /users docs are only created during onboarding — many trial signups
+  // never complete it, so they exist in Auth but not Firestore. We must walk Auth.
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - sinceDays);
 
-  console.log('Querying users...');
-  const usersSnap = await db.collection('users')
-    .where('createdAt', '>=', admin.firestore.Timestamp.fromDate(cutoff))
-    .get();
+  console.log('Listing Firebase Auth users...');
+  const authUsers = [];
+  let pageToken;
+  do {
+    const page = await admin.auth().listUsers(1000, pageToken);
+    authUsers.push(...page.users);
+    pageToken = page.pageToken;
+  } while (pageToken);
 
-  console.log(`Found ${usersSnap.size} users created in last ${sinceDays} days. Filtering...`);
+  // Filter by creation time
+  const recent = authUsers.filter((u) => {
+    const ts = u.metadata?.creationTime ? new Date(u.metadata.creationTime) : null;
+    return ts && ts >= cutoff;
+  });
+
+  console.log(`Total Auth users: ${authUsers.length} | Created in last ${sinceDays} days: ${recent.length}`);
+  console.log('Filtering eligible recipients...');
   console.log('');
 
   const eligible = [];
-  const skipped = { unsubscribed: 0, alreadySent: 0, activeSub: 0, courseFilter: 0, noEmail: 0, noData: 0 };
+  const skipped = { unsubscribed: 0, alreadySent: 0, activeSub: 0, courseFilter: 0, noEmail: 0, noVerified: 0, junkAddress: 0 };
 
-  for (const doc of usersSnap.docs) {
-    const result = await isEligible(doc, db);
-    if (!result.ok) {
-      const key = result.reason.includes('active sub') ? 'activeSub'
-        : result.reason.includes('course') ? 'courseFilter'
-        : result.reason === 'unsubscribed' ? 'unsubscribed'
-        : result.reason === 'already sent' ? 'alreadySent'
-        : 'noData';
-      skipped[key] = (skipped[key] || 0) + 1;
-      continue;
-    }
+  // Heuristic junk patterns: test domains, internal aliases, obvious typos
+  const JUNK_PATTERNS = [
+    /@example\.(com|net|org)$/i,
+    /@test\./i,
+    /@(jddj|jdj|asdf|qwerty|test)\.(com|net|org)$/i,
+    /^rob\+.*@sagecg\.com$/i,   // your test aliases
+    /^testuser/i,
+    /@gmaio\.com$/i,             // 'gmaio' typo
+    /@(yopmail|mailinator|guerrillamail|10minutemail|tempmail)\./i,
+  ];
+  const isJunk = (email) => JUNK_PATTERNS.some((p) => p.test(email));
 
-    // Need an email — try Firestore field first, then Auth
-    const data = doc.data();
-    let email = data.email;
-    if (!email) {
-      try {
-        const authUser = await admin.auth().getUser(doc.id);
-        email = authUser.email;
-      } catch {
-        skipped.noEmail++;
-        continue;
+
+  for (const authUser of recent) {
+    if (!authUser.email) { skipped.noEmail++; continue; }
+    if (isJunk(authUser.email)) { skipped.junkAddress++; continue; }
+
+    // Pull profile if it exists (may not — that's OK)
+    const profileSnap = await db.collection('users').doc(authUser.uid).get();
+    const profile = profileSnap.exists ? profileSnap.data() : {};
+
+    if (profile.emailUnsubscribed) { skipped.unsubscribed++; continue; }
+    if (profile.recoveryEmail?.[CAMPAIGN_ID]?.sentAt) { skipped.alreadySent++; continue; }
+
+    const activeCourse = (profile.activeCourse || 'cpa').toLowerCase();
+    if (courseFilter && activeCourse !== courseFilter) { skipped.courseFilter++; continue; }
+
+    // Active subscription check
+    const subDoc = await db.collection('subscriptions').doc(authUser.uid).get();
+    if (subDoc.exists) {
+      const status = subDoc.data()?.status;
+      if (['active', 'trialing', 'past_due'].includes(status)) {
+        skipped.activeSub++; continue;
       }
     }
-    if (!email) { skipped.noEmail++; continue; }
 
     eligible.push({
-      uid: doc.id,
-      email,
-      firstName: data.firstName || (data.displayName ? data.displayName.split(' ')[0] : null),
-      activeCourse: (data.activeCourse || 'cpa').toLowerCase(),
+      uid: authUser.uid,
+      email: authUser.email,
+      firstName: profile.firstName || (profile.displayName ? profile.displayName.split(' ')[0] : null) || (authUser.displayName ? authUser.displayName.split(' ')[0] : null),
+      activeCourse,
     });
 
     if (limit && eligible.length >= limit) break;
@@ -393,6 +429,7 @@ async function main() {
         from: FROM_EMAIL,
         reply_to: REPLY_TO,
         to: user.email,
+        ...(bccAddress ? { bcc: bccAddress } : {}),
         subject,
         html,
         text,

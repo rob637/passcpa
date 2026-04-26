@@ -83,8 +83,10 @@ export default function ArticleReview() {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [filterStatus, setFilterStatus] = useState<FilterStatus>('review');
   const [actionLoading, setActionLoading] = useState<string | null>(null);
+  const loadRequestRef = useRef(0);
 
   const loadArticles = useCallback(async () => {
+    const requestId = ++loadRequestRef.current;
     setLoading(true);
     try {
       let q;
@@ -98,7 +100,6 @@ export default function ArticleReview() {
         q = query(
           collection(db, 'growth_content'),
           where('status', '==', filterStatus),
-          orderBy('generatedAt', 'desc'),
           limit(100),
         );
       }
@@ -109,11 +110,26 @@ export default function ArticleReview() {
         ...doc.data(),
       } as Article));
 
+      // Keep newest items first without requiring a composite index.
+      items.sort((a, b) => {
+        const aTs = a.generatedAt?.toMillis?.() || a.publishedAt?.toMillis?.() || 0;
+        const bTs = b.generatedAt?.toMillis?.() || b.publishedAt?.toMillis?.() || 0;
+        return bTs - aTs;
+      });
+
+      // Ignore stale responses if the user switched tabs mid-request.
+      if (requestId !== loadRequestRef.current) return;
       setArticles(items);
     } catch (err) {
       logger.error('[ArticleReview] Failed to load articles:', err);
+      // Clear stale list when current tab query fails so tabs don't show old results.
+      if (requestId === loadRequestRef.current) {
+        setArticles([]);
+      }
     } finally {
-      setLoading(false);
+      if (requestId === loadRequestRef.current) {
+        setLoading(false);
+      }
     }
   }, [filterStatus]);
 

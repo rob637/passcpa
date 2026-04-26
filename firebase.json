@@ -5,7 +5,8 @@
   },
   "functions": {
     "source": "functions",
-    "runtime": "nodejs20"
+    "runtime": "nodejs22",
+    "predeploy": ["node scripts/sync-daily-cpa-content.cjs"]
   },
   "hosting": {
     "public": "dist",
@@ -68,6 +69,10 @@
       }
     ],
     "rewrites": [
+      {
+        "source": "/api/unsubscribe",
+        "function": "unsubscribeEmail"
+      },
       {
         "source": "/sitemap.xml",
         "function": "dynamicSitemap"

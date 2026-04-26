@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom';
 import {
   MessageSquare,
   CheckCircle,
-  Clock,
   Zap,
   TrendingUp,
   Shield,
@@ -111,7 +110,8 @@ const SampleQuestion = () => (
     <div className="space-y-3">
       <div className="bg-blue-600/20 border border-blue-500/30 rounded-xl p-3">
         <p className="text-blue-300 text-xs font-semibold mb-1">VoraPrep Daily CPA — AUD</p>
-        <p className="text-slate-300 text-xs mb-2">Q3/25 · 🔥 8-day streak</p>
+        <p className="text-slate-300 text-xs mb-2">Day 1 of 3 free trial</p>
+        <p className="text-slate-400 text-xs mb-2">Topic: Audit Evidence</p>
         <p className="text-white text-sm mb-3">Which provides the MOST reliable audit evidence?</p>
         <div className="space-y-1 text-slate-300 text-xs">
           <p>A) Oral representation from management</p>
@@ -129,8 +129,7 @@ const SampleQuestion = () => (
       <div className="bg-green-600/20 border border-green-500/30 rounded-xl p-3">
         <p className="text-green-400 text-sm font-semibold">✅ Correct! Answer: C</p>
         <p className="text-slate-300 text-xs mt-2">Bank confirmations sent directly to the auditor are the most reliable — external source, no client involvement.</p>
-        <p className="text-yellow-300 text-xs mt-2">💡 External + direct to auditor = highest reliability.</p>
-        <p className="text-slate-400 text-xs mt-2">Q4/25 incoming...</p>
+        <p className="text-slate-400 text-xs mt-2">Reply NEXT for Q4/5</p>
       </div>
     </div>
   </div>
@@ -147,14 +146,14 @@ const steps = [
     description: 'Choose AUD, FAR, REG, BAR, ISC, or TCP. One section, total focus.',
   },
   {
-    icon: Clock,
-    title: 'Set your morning time',
-    description: 'Your first question arrives at the time you choose. Study on your schedule.',
+    icon: Zap,
+    title: 'Get your first question now',
+    description: 'Q1 arrives within seconds of signup. Tomorrow onward, questions land at the time you choose.',
   },
   {
     icon: Brain,
     title: 'Answer & learn instantly',
-    description: 'Reply A/B/C/D. Get instant feedback with clear explanations and exam tips.',
+    description: 'Reply A/B/C/D. Get the right answer with a clear explanation. Reply NEXT when you\'re ready for the next one.',
   },
   {
     icon: TrendingUp,
@@ -220,7 +219,6 @@ const DailyCPA = () => {
       await fn({
         phone: e164,
         section: form.section,
-        tier: form.tier,
         sendTime: form.sendTime,
         timezone: form.timezone,
         email: form.email || undefined,
@@ -235,8 +233,6 @@ const DailyCPA = () => {
     }
   };
 
-  const selectedTier = TIERS.find(t => t.id === form.tier);
-
   if (isSubmitted) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-slate-950 dark:to-slate-900 flex items-center justify-center px-4">
@@ -249,13 +245,12 @@ const DailyCPA = () => {
             Your 3-day free trial for <span className="font-semibold text-blue-600">{form.section}</span> starts now.
           </p>
           <p className="text-slate-500 dark:text-slate-400 mb-8">
-            Your first 5 questions arrive tomorrow at {form.sendTime} your time.
+            Check your phone — your first question is on its way. Reply A/B/C/D to answer, NEXT to advance.
           </p>
           <div className="bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700 text-left text-sm space-y-2 mb-8">
             <p className="text-slate-600 dark:text-slate-300"><span className="font-medium">Section:</span> {form.section}</p>
-            <p className="text-slate-600 dark:text-slate-300"><span className="font-medium">Trial:</span> 3 days · 5 questions/day</p>
-            <p className="text-slate-600 dark:text-slate-300"><span className="font-medium">After trial:</span> {selectedTier?.name} — ${selectedTier?.price}/mo</p>
-            <p className="text-slate-600 dark:text-slate-300"><span className="font-medium">Send time:</span> {form.sendTime}</p>
+            <p className="text-slate-600 dark:text-slate-300"><span className="font-medium">Trial:</span> 3 days · 5 questions/day · no credit card</p>
+            <p className="text-slate-600 dark:text-slate-300"><span className="font-medium">Daily start:</span> {form.sendTime} (after day 1)</p>
           </div>
           <Link
             to="/cpa"
@@ -351,15 +346,15 @@ const DailyCPA = () => {
               <div className="flex items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
                 <div className="flex items-center gap-1.5">
                   <Shield className="w-4 h-4 text-green-500" />
-                  3-day free trial
+                  No credit card
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Zap className="w-4 h-4 text-amber-500" />
-                  Cancel anytime
+                  First question in seconds
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Star className="w-4 h-4 text-blue-500" />
-                  From $4.99/mo
+                  Cancel by text
                 </div>
               </div>
             </div>
@@ -396,7 +391,7 @@ const DailyCPA = () => {
       <section className="bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800 py-8">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div>
-            <p className="text-2xl sm:text-3xl font-bold text-blue-600">8,990+</p>
+            <p className="text-2xl sm:text-3xl font-bold text-blue-600">9,150+</p>
             <p className="text-sm text-slate-500 dark:text-slate-400">CPA MCQs</p>
           </div>
           <div>
@@ -408,7 +403,7 @@ const DailyCPA = () => {
             <p className="text-sm text-slate-500 dark:text-slate-400">Per Session</p>
           </div>
           <div>
-            <p className="text-2xl sm:text-3xl font-bold text-blue-600">$4.99</p>
+            <p className="text-2xl sm:text-3xl font-bold text-blue-600">$4.99<span className="text-base font-medium text-slate-500">/mo</span></p>
             <p className="text-sm text-slate-500 dark:text-slate-400">Starting Price</p>
           </div>
         </div>
@@ -531,7 +526,7 @@ const DailyCPA = () => {
             ))}
           </div>
           <p className="text-center text-sm text-slate-500 dark:text-slate-400 mt-8">
-            All plans include a 3-day free trial with 5 questions/day. Cancel anytime via text.
+            All plans include a 3-day free trial with 5 questions/day. No credit card to start — only choose a plan if you keep going.
           </p>
         </div>
       </section>
@@ -627,29 +622,28 @@ const DailyCPA = () => {
               </select>
             </div>
 
-            {/* Plan Selection */}
+            {/* Pricing reference — informational only, no selection required.
+                Trial is no-credit-card; users pick a plan post-trial via the upgrade page. */}
             <div>
               <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                Plan after trial
+                After your free trial
               </label>
               <div className="grid grid-cols-3 gap-2">
                 {TIERS.map(tier => (
-                  <button
+                  <div
                     key={tier.id}
-                    type="button"
-                    onClick={() => setForm(prev => ({ ...prev, tier: tier.id }))}
-                    className={clsx(
-                      'px-3 py-2.5 rounded-xl border-2 text-center transition-all',
-                      form.tier === tier.id
-                        ? 'border-blue-600 bg-blue-50 dark:bg-blue-900/30'
-                        : 'border-slate-200 dark:border-slate-600 hover:border-slate-300'
-                    )}
+                    className="px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/30 text-center"
                   >
-                    <span className="block text-sm font-bold text-slate-900 dark:text-white">${tier.price}</span>
-                    <span className="block text-[10px] text-slate-500 dark:text-slate-400">{tier.daily}/day</span>
-                  </button>
+                    <span className="block text-sm font-bold text-slate-900 dark:text-white">
+                      ${tier.price}<span className="text-[10px] font-normal text-slate-500 dark:text-slate-400">/mo</span>
+                    </span>
+                    <span className="block text-[10px] text-slate-500 dark:text-slate-400">{tier.daily} questions/day</span>
+                  </div>
                 ))}
               </div>
+              <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+                No credit card required to start. Choose a plan only if you keep going after day 3.
+              </p>
             </div>
 
             {error && (
@@ -714,7 +708,7 @@ const DailyCPA = () => {
               },
               {
                 q: 'How do I cancel?',
-                a: 'Reply STOP to any message and you\'re immediately unsubscribed. No hoops, no calls, no retention offers.',
+                a: 'Reply STOP to any message to stop SMS immediately. If you\'re on a paid plan, email support@voraprep.com to end billing — no calls, no retention offers.',
               },
               {
                 q: 'How are questions selected?',
@@ -722,7 +716,7 @@ const DailyCPA = () => {
               },
               {
                 q: 'Is this different from the full VoraPrep app?',
-                a: 'Yes. Daily CPA is a standalone SMS service for quick daily practice. The full VoraPrep app includes simulations, study plans, lessons, analytics, and 8,990+ questions across all formats. Daily CPA users can upgrade to full VoraPrep anytime.',
+                a: 'Yes. Daily CPA is a standalone SMS service for quick daily practice. The full VoraPrep app includes simulations, study plans, lessons, analytics, and 9,150+ questions across all formats. Daily CPA users can upgrade to full VoraPrep anytime.',
               },
               {
                 q: 'What time do questions arrive?',

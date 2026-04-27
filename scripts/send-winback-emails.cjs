@@ -56,7 +56,13 @@
 const path = require('path');
 const fs = require('fs');
 const crypto = require('crypto');
-const admin = require('firebase-admin');
+
+let admin;
+try {
+  admin = require('firebase-admin');
+} catch {
+  admin = require('../functions/node_modules/firebase-admin');
+}
 
 let Resend;
 try {

@@ -1,6 +1,7 @@
 /**
  * VoraPrep Daily CPA — SMS-based daily MCQ practice
- * 
+ * v2026.04.27 - Telnyx credentials migrated to Firestore (system_config/telnyx)
+ *
  * Cloud Functions for the Daily CPA add-on product.
  * Handles: question delivery, answer processing, streaks, billing, trial management.
  * 
@@ -53,17 +54,47 @@ const DAILY_CPA_PRICE_KEYS = {
 // ============================================================================
 
 let _telnyxClient = null;
+let _telnyxCredentials = null;
 
-function getTelnyxClient() {
-  if (_telnyxClient) return _telnyxClient;
-  const apiKey = process.env.TELNYX_API_KEY?.trim();
-  if (!apiKey) {
-    console.error('Telnyx credentials not configured');
-    return null;
+async function getTelnyxCredentials() {
+  if (_telnyxCredentials) return _telnyxCredentials;
+  
+  // Try environment variables first (Firebase Secrets)
+  const envApiKey = process.env.TELNYX_API_KEY?.trim();
+  if (envApiKey) {
+    _telnyxCredentials = {
+      apiKey: envApiKey,
+      phoneNumber: process.env.TELNYX_PHONE_NUMBER?.trim() || '+1-434-837-0040'
+    };
+    return _telnyxCredentials;
   }
-  const telnyx = require('telnyx')(apiKey);
-  _telnyxClient = telnyx;
-  return _telnyxClient;
+  
+  // Fallback: read from Firestore system_config
+  try {
+    const doc = await db.collection('system_config').doc('telnyx').get();
+    if (doc.exists) {
+      const data = doc.data();
+      _telnyxCredentials = {
+        apiKey: data.apiKey,
+        phoneNumber: data.phoneNumber
+      };
+      console.log('[DailyCPA] Loaded Telnyx credentials from Firestore');
+      return _telnyxCredentials;
+    }
+  } catch (e) {
+    console.error('[DailyCPA] Failed to read from Firestore:', e.message);
+  }
+  
+  console.error('Telnyx credentials not configured');
+  return null;
+}
+
+function getTelnyxClient(apiKey) {
+  if (!apiKey) return null;
+  // Telnyx SDK v6.x: use `new Telnyx({apiKey})`. The v1.x `require('telnyx')(apiKey)`
+  // pattern silently created a broken client that returned 401 on every request.
+  const Telnyx = require('telnyx').default;
+  return new Telnyx({ apiKey });
 }
 
 /**
@@ -75,12 +106,17 @@ function getTelnyxClient() {
  * @returns {Promise<object>} Telnyx message data
  */
 async function sendSMS(to, body, options = {}) {
-  const client = getTelnyxClient();
-  if (!client) {
-    throw new Error('Telnyx client not available');
+  const creds = await getTelnyxCredentials();
+  if (!creds || !creds.apiKey) {
+    throw new Error('Telnyx credentials not available');
   }
 
-  const from = process.env.TELNYX_PHONE_NUMBER?.trim();
+  const client = getTelnyxClient(creds.apiKey);
+  if (!client) {
+    throw new Error('Telnyx client initialization failed');
+  }
+
+  const from = creds.phoneNumber;
   if (!from) {
     throw new Error('TELNYX_PHONE_NUMBER not configured');
   }
@@ -89,13 +125,12 @@ async function sendSMS(to, body, options = {}) {
   if (options.mediaUrls && options.mediaUrls.length > 0) {
     payload.media_urls = options.mediaUrls;
     payload.type = 'MMS';
-  } else if (body.length > 320) {
-    // Long messages: promote to MMS so carriers don't truncate at segment caps.
-    // Question SMS routinely exceed 400 chars; UCS-2 (any emoji/em-dash) drops
-    // capacity to 70 chars/segment → carriers cap concatenation at 6-7 segments.
-    // MMS has no length limit and renders as a single bubble.
-    payload.type = 'MMS';
-    payload.subject = 'VoraPrep';
+  } else {
+    // Force plain SMS — let Telnyx auto-segment long messages.
+    // MMS without media is filtered/blocked by major US carriers (AT&T verified
+    // 4/27/26 — MMS messages show 'delivered' at Telnyx but never arrive on
+    // device). Multi-segment SMS arrives reliably.
+    payload.type = 'SMS';
   }
 
   const response = await client.messages.send(payload);
@@ -1175,7 +1210,6 @@ function isKickoffTime(sendTime, timezone) {
 exports.dailyCpa_morningKickoff = onSchedule({
   schedule: 'every 15 minutes',
   timeZone: 'UTC',
-  secrets: ['TELNYX_API_KEY', 'TELNYX_PHONE_NUMBER'],
   memory: '512MiB',
   timeoutSeconds: 300,
 }, async () => {

@@ -8,7 +8,13 @@ const sa = require(path.join(__dirname, '..', 'serviceAccountKey.prod.json'));
 admin.initializeApp({ credential: admin.credential.cert(sa) });
 const db = admin.firestore();
 
-const phone = process.argv[2] || '+17036238835';
+const phone = process.argv[2];
+
+if (!phone) {
+  console.error('Usage: node resend-trial-end-cta-prod.cjs <phone>');
+  console.error('Example: node resend-trial-end-cta-prod.cjs +17036238835');
+  process.exit(1);
+}
 
 (async () => {
   const userSnap = await db.collection('daily_users').where('phone', '==', phone).limit(1).get();

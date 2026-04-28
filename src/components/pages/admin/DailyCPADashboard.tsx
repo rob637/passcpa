@@ -11,8 +11,8 @@ import {
   Activity, AlertCircle, RefreshCw, Download,
 } from 'lucide-react';
 import {
-  BarChart, Bar, LineChart, Line, PieChart, Pie, Cell,
-  XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
+  BarChart, Bar, PieChart, Pie, Cell,
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts';
 import { db } from '../../../config/firebase';
 import { useAuth } from '../../../hooks/useAuth';
@@ -72,11 +72,13 @@ export default function DailyCPADashboard() {
   const [statusDistribution, setStatusDistribution] = useState<Record<string, number>>({});
   const [tierDistribution, setTierDistribution] = useState<Record<string, number>>({});
 
-  // Load data
+  // Load data — dateRange only affects chart presentation, not Firestore queries,
+  // so it's intentionally excluded from deps to avoid extra reads on toggle.
   useEffect(() => {
     if (!isAdmin) return;
     loadData();
-  }, [isAdmin, dateRange]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAdmin]);
 
   const loadData = async () => {
     setIsLoading(true);

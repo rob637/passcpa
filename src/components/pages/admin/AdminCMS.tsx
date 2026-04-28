@@ -1,10 +1,12 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, lazy, Suspense } from 'react';
 import { format } from 'date-fns';
 import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
 import { Navigate, Link } from 'react-router-dom';
+
+const DailyCPADashboard = lazy(() => import('./DailyCPADashboard'));
 import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer, getDoc, Timestamp, serverTimestamp, addDoc } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
 import { ADMIN_EMAILS, isAdminEmail } from '../../../config/adminConfig';
@@ -236,7 +238,7 @@ const getCourseIcon = (courseId: CourseId): string => {
 // Types
 // ============================================================================
 
-type TabType = 'overview' | 'users' | 'revenue' | 'analytics' | 'content' | 'growth' | 'operations' | 'settings';
+type TabType = 'overview' | 'users' | 'revenue' | 'analytics' | 'content' | 'growth' | 'sms' | 'operations' | 'settings';
 type LogType = 'info' | 'success' | 'error' | 'warning';
 
 interface UserDocument {
@@ -3046,7 +3048,7 @@ VoraPrep Team`;
       {/* Tabs */}
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex gap-1 sm:gap-2 border-b border-gray-200 dark:border-slate-700 overflow-x-auto scrollbar-hide pb-px -mb-px">
-          {(['overview', 'users', 'revenue', 'analytics', 'content', 'growth', 'operations', 'settings'] as TabType[]).map((tab) => (
+          {(['overview', 'users', 'revenue', 'analytics', 'content', 'growth', 'sms', 'operations', 'settings'] as TabType[]).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -3063,6 +3065,7 @@ VoraPrep Team`;
                 {tab === 'analytics' && '📈 Analytics'}
                 {tab === 'content' && '📦 Content'}
                 {tab === 'growth' && '🚀 Marketing'}
+                {tab === 'sms' && '📱 Daily SMS'}
                 {tab === 'operations' && '🔧 Operations'}
                 {tab === 'settings' && '⚙️ Settings'}
               </span>
@@ -3073,6 +3076,7 @@ VoraPrep Team`;
                 {tab === 'analytics' && '📈'}
                 {tab === 'content' && '📦'}
                 {tab === 'growth' && '🚀'}
+                {tab === 'sms' && '📱'}
                 {tab === 'operations' && '🔧'}
                 {tab === 'settings' && '⚙️'}
               </span>
@@ -5382,6 +5386,13 @@ VoraPrep Team`;
               </div>
             </Card>
           </div>
+        )}
+
+        {/* Daily SMS Tab — Daily CPA SMS subscribers, sessions, deliveries */}
+        {activeTab === 'sms' && (
+          <Suspense fallback={<div className="py-12 text-center text-gray-500">Loading Daily SMS dashboard…</div>}>
+            <DailyCPADashboard />
+          </Suspense>
         )}
 
         {/* Operations Tab - Announcements & System Logs */}

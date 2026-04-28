@@ -53,18 +53,18 @@ const DAILY_CPA_PRICE_KEYS = {
 // TELNYX UTILITY
 // ============================================================================
 
-let _telnyxClient = null;
 let _telnyxCredentials = null;
 
 async function getTelnyxCredentials() {
   if (_telnyxCredentials) return _telnyxCredentials;
-  
+
   // Try environment variables first (Firebase Secrets)
   const envApiKey = process.env.TELNYX_API_KEY?.trim();
-  if (envApiKey) {
+  const envPhone = process.env.TELNYX_PHONE_NUMBER?.trim();
+  if (envApiKey && envPhone) {
     _telnyxCredentials = {
       apiKey: envApiKey,
-      phoneNumber: process.env.TELNYX_PHONE_NUMBER?.trim() || '+1-434-837-0040'
+      phoneNumber: envPhone,
     };
     return _telnyxCredentials;
   }
@@ -118,7 +118,7 @@ async function sendSMS(to, body, options = {}) {
 
   const from = creds.phoneNumber;
   if (!from) {
-    throw new Error('TELNYX_PHONE_NUMBER not configured');
+    throw new Error('Telnyx phoneNumber not configured');
   }
 
   const payload = { from, to, text: body };

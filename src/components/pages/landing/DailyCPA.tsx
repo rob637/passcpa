@@ -19,6 +19,7 @@ import {
   Target,
   ChevronDown,
   Star,
+  Sparkles,
   Menu,
   X,
 } from 'lucide-react';
@@ -265,8 +266,18 @@ const DailyCPA = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 overflow-hidden">
+      {/* SAVE20 promo bar — universal, monthly + annual */}
+      <div className="fixed top-0 left-0 right-0 z-[70] bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 text-white text-center py-2 px-4 shadow-md">
+        <Link to="/cpa#pricing" className="inline-flex items-center gap-2 text-sm font-bold hover:text-amber-100 transition-colors">
+          <Sparkles className="w-4 h-4" />
+          <span className="hidden sm:inline">LIMITED: 20% off the full CPA prep — monthly or annual — code SAVE20 at checkout</span>
+          <span className="sm:hidden">20% Off CPA Prep — Code SAVE20</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </Link>
+      </div>
+
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
+      <nav className="fixed top-9 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
         <div className="px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center gap-2 sm:gap-3">
             <Link to="/">

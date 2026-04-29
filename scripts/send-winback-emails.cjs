@@ -77,8 +77,13 @@ try {
 // ============================================================================
 
 const CAMPAIGN_ID = 'winback-2026-04';
-const COUPON_CODE = 'WELCOMEBACK';                    // 20% off first invoice — see scripts/create-welcomeback-coupon.cjs
+// SAVE20 supersedes WELCOMEBACK as of 2026-04-29: 20% off works on BOTH monthly (repeating 3 mo)
+// AND annual (20% off year 1). Same expiry. See scripts/create-save20-coupon.cjs.
+// Drip dedup key (CAMPAIGN_ID) is unchanged so already-sent recipients are NOT re-emailed.
+const COUPON_CODE = 'SAVE20';
 const COUPON_PERCENT_OFF = 20;
+const MONTHLY_PROMO_CODE = 'START9';                  // $20 off first month → $9 first month, then $29/mo — see scripts/create-start9-coupon.cjs
+const MONTHLY_PROMO_FIRST_MONTH = 9;                  // dollars
 // Pulled live from Stripe (promo_1TQUpBPqkAyq1xlwSABx8Bcd, expires_at = 1779032545).
 // If we extend the coupon, update this value AND re-run --samples-to to QA the new copy.
 const COUPON_EXPIRES_ISO = '2026-05-26';
@@ -136,19 +141,22 @@ const bccAddress = args.includes('--no-bcc')
   ? null
   : (flag('--bcc') || DEFAULT_BCC);
 const forcedVariant = flag('--variant');              // 'a' or 'b'
-// Drip step: 1 = launch (changes), 2 = pass-guarantee, 3 = deadline.
+// Drip step: 1 = launch (changes), 2 = pass-guarantee, 3 = deadline,
+//            4 = SMS pitch (CPA only), 5 = free sample MCQ, 6 = founder ask.
 // Each step writes its own Firestore sentAt key so dedup is per-step.
 const stepArg = flag('--step');
 const STEP = stepArg ? parseInt(stepArg, 10) : 1;
-if (![1, 2, 3].includes(STEP)) {
-  console.error(`Error: --step must be 1, 2, or 3 (got "${stepArg}")`);
+if (![1, 2, 3, 4, 5, 6].includes(STEP)) {
+  console.error(`Error: --step must be 1–6 (got "${stepArg}")`);
   process.exit(1);
 }
+// CPA-only steps (SMS engine doesn't exist for other exams yet)
+const CPA_ONLY_STEPS = new Set([4]);
 // Send-all-steps is a samples-only convenience: render all 3 steps × 2 variants × 3 cohorts = 18 emails to one address.
 const allSteps = args.includes('--all-steps');
 // Drip-step gap enforcement: step 2 only fires after N days since step 1; step 3 after M days.
 // Defaults are conservative for inbox-reputation reasons; can override per-run if needed.
-const DEFAULT_GAP_DAYS = { 2: 4, 3: 7 };
+const DEFAULT_GAP_DAYS = { 2: 4, 3: 7, 4: 10, 5: 14, 6: 18 };
 const minGapDays = flag('--min-gap-days')
   ? parseInt(flag('--min-gap-days'), 10)
   : (DEFAULT_GAP_DAYS[STEP] || 0);
@@ -245,12 +253,13 @@ function buildCheckoutUrl(ctx) {
 }
 
 function buildMonthlyCheckoutUrl(ctx) {
-  // Monthly checkout WITH coupon pre-applied for consistency with the annual CTA.
-  // Stripe coupon is duration:once → ~$6 off month 1, then full price.
-  // Small dollar amount but matches the email's "WELCOMEBACK 20% off" promise.
+  // Monthly checkout WITH the START9 monthly promo code pre-applied. Gives
+  // first month for $9 instead of $29 — a real, visible discount that converts.
+  // (We used to pre-apply WELCOMEBACK here for ~$6 off month 1, but $9 first
+  // month is a much stronger headline and matches the email's promise.)
   const courseId = ctx.course || 'cpa';
   return utm(
-    `/start-checkout?course=${courseId}&interval=monthly&coupon=${COUPON_CODE}`,
+    `/start-checkout?course=${courseId}&interval=monthly&coupon=${MONTHLY_PROMO_CODE}`,
     { ...ctx, variant: `${ctx.variant}_m` }   // tag clicks differently for attribution
   );
 }
@@ -319,7 +328,7 @@ ${preheader}
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:8px 0 18px;">
 <tr><td style="padding:12px 14px;background:#f4f7fb;border-left:4px solid #2563eb;border-radius:4px;font-size:15px;">
-<strong>1. Founder pricing is still locked in.</strong> ${courseInfo.name} prep is <strong>$${monthlyPrice}/mo</strong> (cancel anytime) or <strong>$${fullPrice}/yr</strong> at the founder rate. With code <code style="background:#eef2f7;padding:2px 5px;border-radius:3px;font-weight:600;">${COUPON_CODE}</code> the annual plan is <strong>$${dealPrice} for the year</strong> — about <strong>$${annualPerMo}/mo</strong>. <span style="color:#b91c1c;font-weight:600;">Code expires ${expiry}.</span>
+<strong>1. Founder pricing is still locked in.</strong> ${courseInfo.name} prep is <strong>$${monthlyPrice}/mo</strong> (cancel anytime) or <strong>$${fullPrice}/yr</strong> at the founder rate. With code <code style="background:#eef2f7;padding:2px 5px;border-radius:3px;font-weight:600;">${COUPON_CODE}</code> the annual plan is <strong>$${dealPrice} for the year</strong> — about <strong>$${annualPerMo}/mo</strong>. Or use code <code style="background:#eef2f7;padding:2px 5px;border-radius:3px;font-weight:600;">${MONTHLY_PROMO_CODE}</code> for <strong>$${MONTHLY_PROMO_FIRST_MONTH} your first month</strong>, then $${monthlyPrice}/mo. <span style="color:#b91c1c;font-weight:600;">Codes expire ${expiry}.</span>
 </td></tr>
 <tr><td style="height:8px;line-height:8px;font-size:0;">&nbsp;</td></tr>
 <tr><td style="padding:12px 14px;background:#f4f7fb;border-left:4px solid #7c3aed;border-radius:4px;font-size:15px;">
@@ -748,6 +757,260 @@ Unsubscribe (one click): ${unsubUrl}
 }
 
 // ============================================================================
+// EMAIL 4 — Day +10 — Daily CPA by text (zero-friction SMS pitch)
+// CPA-only — the SMS engine doesn't exist for other exams yet.
+// ============================================================================
+
+const SUBJECT_VARIANTS_STEP4 = {
+  a: () => `One CPA question a day. By text. Free for 3 days.`,
+  b: () => `5 minutes a day to keep your CPA momentum`,
+};
+
+function buildPreheader4(courseInfo) {
+  return `${courseInfo.name} questions to your phone. Reply A/B/C/D. No app, no card.`;
+}
+
+function buildHtml4(ctx) {
+  const { firstName, courseInfo, cohort, smsUrl, unsubUrl, preheader } = ctx;
+  const greeting = firstName && firstName !== 'there' ? firstName : 'there';
+  return `<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Daily CPA by text</title></head>
+<body style="margin:0;padding:0;background:#f6f8fb;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">${preheader}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f6f8fb;">
+<tr><td align="center" style="padding:24px 12px;">
+  <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#fff;border-radius:12px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#1a1a1a;line-height:1.55;">
+    <tr><td style="padding:28px 28px 8px;">
+      <p style="margin:0 0 16px;font-size:16px;">Hey ${greeting},</p>
+      <p style="margin:0 0 16px;font-size:16px;">Honest read on why most ${courseInfo.name} candidates stall: it's not motivation, it's friction. Logging into a course at 9pm after work feels like another job.</p>
+      <p style="margin:0 0 16px;font-size:16px;">So we built the lowest-friction version of CPA practice we could think of: <strong>one real question, by text, every morning.</strong></p>
+
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 18px 0;border:1px solid #e5e7eb;border-radius:10px;background:#f9fafb;">
+        <tr><td style="padding:18px 20px;">
+          <div style="font-size:15px;color:#444;line-height:1.65;">
+            <strong>You:</strong> get a real CPA MCQ at the time you pick.<br>
+            <strong>Reply:</strong> A, B, C, or D.<br>
+            <strong>Get back:</strong> the answer, and exactly why each wrong choice is wrong.<br>
+            <strong>Done.</strong> 3–5 minutes. No app to install. No password to remember.
+          </div>
+        </td></tr>
+      </table>
+
+      <p style="margin:0 0 8px;font-size:16px;font-weight:600;">Try it free for 3 days:</p>
+      <ul style="margin:0 0 18px;padding-left:22px;font-size:15px;color:#444;line-height:1.7;">
+        <li>5 questions/day during the trial</li>
+        <li>No credit card</li>
+        <li>Reply STOP any time and you're done</li>
+      </ul>
+
+      <p style="margin:18px 0 8px;text-align:center;">
+        <a href="${smsUrl}" style="display:inline-block;background:#16a34a;color:#fff;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px;">Start the free SMS trial →</a>
+      </p>
+      <p style="margin:0 0 18px;text-align:center;font-size:13px;color:#666;">Continue from $4.99/mo after the trial. Cancel by text.</p>
+
+      <p style="margin:18px 0 4px;font-size:15px;color:#444;">If you're already deep in study mode and the full prep is what you need, the SAVE20 code from last week still works for a few more days too.</p>
+
+      <p style="margin:18px 0 4px;font-size:15px;">— Rob</p>
+      <p style="margin:0;font-size:13px;color:#666;">Founder, VoraPrep</p>
+    </td></tr>
+    <tr><td style="padding:24px 28px;border-top:1px solid #eef0f4;">
+      <p style="margin:0;font-size:12px;color:#888;line-height:1.5;">You're getting this because you signed up at voraprep.com. <a href="${unsubUrl}" style="color:#888;">Unsubscribe</a> — one click.</p>
+    </td></tr>
+  </table>
+</td></tr></table>
+<!-- cohort:${cohort} step:4 -->
+</body></html>`;
+}
+
+function buildText4(ctx) {
+  const { firstName, courseInfo, smsUrl, unsubUrl } = ctx;
+  const greeting = firstName && firstName !== 'there' ? firstName : 'there';
+  return `Hey ${greeting},
+
+Honest read on why most ${courseInfo.name} candidates stall: it's not
+motivation, it's friction. Logging into a course at 9pm after work
+feels like another job.
+
+So we built the lowest-friction version of CPA practice we could think
+of: ONE REAL QUESTION, BY TEXT, EVERY MORNING.
+
+  You:        get a real CPA MCQ at the time you pick.
+  Reply:      A, B, C, or D.
+  Get back:   the answer, and exactly why each wrong choice is wrong.
+  Done:       3–5 minutes. No app. No password.
+
+Try it free for 3 days:
+  • 5 questions/day during the trial
+  • No credit card
+  • Reply STOP any time
+
+Start: ${smsUrl}
+
+Continue from $4.99/mo after the trial. Cancel by text.
+
+If you're already deep in study mode and the full prep is what you need,
+the SAVE20 code from last week still works for a few more days.
+
+— Rob
+Founder, VoraPrep
+
+---
+Unsubscribe: ${unsubUrl}
+`;
+}
+
+// ============================================================================
+// EMAIL 5 — Day +14 — Try a real CPA question right now (zero-signup)
+// ============================================================================
+
+const SUBJECT_VARIANTS_STEP5 = {
+  a: (c) => `Try one real ${c.name} question right now`,
+  b: () => `Want to see what a 75-pass FAR question looks like?`,
+};
+
+function buildPreheader5(courseInfo) {
+  return `One ${courseInfo.name} MCQ, full explanation, no signup. 60 seconds.`;
+}
+
+function buildHtml5(ctx) {
+  const { firstName, courseInfo, cohort, smsUrl, unsubUrl, preheader, courseId } = ctx;
+  const greeting = firstName && firstName !== 'there' ? firstName : 'there';
+  // Sample question landing — anchors to the live "Sample Question" widget on /cpa
+  const sampleUrl = `${BASE_URL}/${courseId}#sample?utm_source=email&utm_medium=winback&utm_campaign=${campaignIdForStep(5)}&utm_content=sample-mcq`;
+  return `<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Try a real ${courseInfo.name} question</title></head>
+<body style="margin:0;padding:0;background:#f6f8fb;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">${preheader}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f6f8fb;">
+<tr><td align="center" style="padding:24px 12px;">
+  <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#fff;border-radius:12px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#1a1a1a;line-height:1.55;">
+    <tr><td style="padding:28px 28px 8px;">
+      <p style="margin:0 0 16px;font-size:16px;">Hey ${greeting},</p>
+      <p style="margin:0 0 16px;font-size:16px;">Easier than reading another marketing email about how good our questions are: just try one.</p>
+
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 18px 0;border:1px solid #2563eb;border-radius:10px;background:#eff6ff;">
+        <tr><td style="padding:18px 20px;">
+          <div style="font-size:14px;font-weight:700;color:#1e40af;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Live sample</div>
+          <div style="font-size:16px;font-weight:600;color:#111;margin-bottom:8px;">One real ${courseInfo.name} MCQ. Full explanation. No signup. No card.</div>
+          <div style="font-size:14px;color:#444;margin-bottom:14px;">If our explanation makes the concept click in 60 seconds, you'll get the same treatment on 9,000+ more.</div>
+          <a href="${sampleUrl}" style="display:inline-block;background:#2563eb;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px;">Try a sample question →</a>
+        </td></tr>
+      </table>
+
+      <p style="margin:14px 0 14px;font-size:15px;color:#444;">If 60 seconds is still more time than you want to spend at a desk, here's the same thing by text: <a href="${smsUrl}" style="color:#16a34a;font-weight:600;">3-day SMS trial, free</a>.</p>
+
+      <p style="margin:18px 0 4px;font-size:15px;">— Rob</p>
+      <p style="margin:0;font-size:13px;color:#666;">Founder, VoraPrep</p>
+    </td></tr>
+    <tr><td style="padding:24px 28px;border-top:1px solid #eef0f4;">
+      <p style="margin:0;font-size:12px;color:#888;line-height:1.5;">You're getting this because you signed up at voraprep.com. <a href="${unsubUrl}" style="color:#888;">Unsubscribe</a> — one click.</p>
+    </td></tr>
+  </table>
+</td></tr></table>
+<!-- cohort:${cohort} step:5 -->
+</body></html>`;
+}
+
+function buildText5(ctx) {
+  const { firstName, courseInfo, smsUrl, unsubUrl, courseId } = ctx;
+  const greeting = firstName && firstName !== 'there' ? firstName : 'there';
+  const sampleUrl = `${BASE_URL}/${courseId}#sample?utm_source=email&utm_medium=winback&utm_campaign=${campaignIdForStep(5)}&utm_content=sample-mcq`;
+  return `Hey ${greeting},
+
+Easier than reading another marketing email about how good our questions
+are: just try one.
+
+  One real ${courseInfo.name} MCQ.
+  Full explanation.
+  No signup. No card.
+
+  ${sampleUrl}
+
+If our explanation makes the concept click in 60 seconds, you'll get
+the same treatment on 9,000+ more.
+
+If 60 seconds is still more time than you want to spend at a desk,
+here's the same thing by text — 3-day SMS trial, free:
+  ${smsUrl}
+
+— Rob
+Founder, VoraPrep
+
+---
+Unsubscribe: ${unsubUrl}
+`;
+}
+
+// ============================================================================
+// EMAIL 6 — Day +18 — Founder ask (no offer, just a question)
+// ============================================================================
+
+const SUBJECT_VARIANTS_STEP6 = {
+  a: () => `One last question from me`,
+  b: () => `What would have made VoraPrep work for you?`,
+};
+
+function buildPreheader6(courseInfo) {
+  return `One sentence, no offer. I read every reply. — Rob, founder of VoraPrep`;
+}
+
+function buildHtml6(ctx) {
+  const { firstName, courseInfo, cohort, unsubUrl, preheader } = ctx;
+  const greeting = firstName && firstName !== 'there' ? firstName : 'there';
+  return `<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>One question from me</title></head>
+<body style="margin:0;padding:0;background:#fff;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">${preheader}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff;">
+<tr><td align="center" style="padding:32px 16px;">
+  <table role="presentation" width="540" cellpadding="0" cellspacing="0" style="max-width:540px;width:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#1a1a1a;line-height:1.65;">
+    <tr><td style="padding:0 8px;">
+      <p style="margin:0 0 18px;font-size:16px;">Hey ${greeting},</p>
+      <p style="margin:0 0 18px;font-size:16px;">I've sent you a few emails over the last couple of weeks. Pricing, the pass guarantee, the SMS thing, a free question. None of them seem to have been the right thing for you, and that's fine.</p>
+      <p style="margin:0 0 18px;font-size:16px;">Before I stop emailing you, can I ask one thing?</p>
+      <p style="margin:0 0 18px;font-size:18px;font-weight:700;color:#111;">What would have made ${courseInfo.name} prep with VoraPrep actually work for you?</p>
+      <p style="margin:0 0 18px;font-size:16px;">One sentence is enough. There's no offer attached and no follow-up. I just want to know what we missed — wrong price, wrong format, wrong timing, wrong content, something else I haven't thought of.</p>
+      <p style="margin:0 0 18px;font-size:16px;">Hit reply. I read every single one.</p>
+      <p style="margin:0 0 4px;font-size:16px;">— Rob</p>
+      <p style="margin:0;font-size:14px;color:#666;">Founder, VoraPrep</p>
+      <p style="margin:24px 0 0;font-size:12px;color:#aaa;line-height:1.5;">This is the last email in this sequence. <a href="${unsubUrl}" style="color:#aaa;">Unsubscribe</a> any time.</p>
+    </td></tr>
+  </table>
+</td></tr></table>
+<!-- cohort:${cohort} step:6 -->
+</body></html>`;
+}
+
+function buildText6(ctx) {
+  const { firstName, courseInfo, unsubUrl } = ctx;
+  const greeting = firstName && firstName !== 'there' ? firstName : 'there';
+  return `Hey ${greeting},
+
+I've sent you a few emails over the last couple of weeks. Pricing, the
+pass guarantee, the SMS thing, a free question. None of them seem to
+have been the right thing for you, and that's fine.
+
+Before I stop emailing you, can I ask one thing?
+
+  WHAT WOULD HAVE MADE ${courseInfo.name.toUpperCase()} PREP WITH VORAPREP ACTUALLY
+  WORK FOR YOU?
+
+One sentence is enough. There's no offer attached and no follow-up. I
+just want to know what we missed — wrong price, wrong format, wrong
+timing, wrong content, something else I haven't thought of.
+
+Hit reply. I read every single one.
+
+— Rob
+Founder, VoraPrep
+
+---
+This is the last email in this sequence.
+Unsubscribe: ${unsubUrl}
+`;
+}
+
+// ============================================================================
 // STEP ROUTER — picks the right subject/preheader/HTML/text for the active step
 // ============================================================================
 
@@ -772,6 +1035,27 @@ const STEPS = {
     html: buildHtml3,
     text: buildText3,
     type: 'winback-final-deadline',
+  },
+  4: {
+    subjects: SUBJECT_VARIANTS_STEP4,
+    preheader: buildPreheader4,
+    html: buildHtml4,
+    text: buildText4,
+    type: 'winback-sms-pitch',
+  },
+  5: {
+    subjects: SUBJECT_VARIANTS_STEP5,
+    preheader: buildPreheader5,
+    html: buildHtml5,
+    text: buildText5,
+    type: 'winback-sample-mcq',
+  },
+  6: {
+    subjects: SUBJECT_VARIANTS_STEP6,
+    preheader: buildPreheader6,
+    html: buildHtml6,
+    text: buildText6,
+    type: 'winback-founder-ask',
   },
 };
 
@@ -1071,6 +1355,8 @@ async function main() {
 
     const activeCourse = (profile.activeCourse || 'cpa').toLowerCase();
     if (courseFilter && activeCourse !== courseFilter) { skipped.courseFilter++; continue; }
+    // CPA-only steps (SMS) — silently skip non-CPA users
+    if (CPA_ONLY_STEPS.has(STEP) && activeCourse !== 'cpa') { skipped.courseFilter++; continue; }
 
     // Subscription state
     const subDoc = await db.collection('subscriptions').doc(authUser.uid).get();

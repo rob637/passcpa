@@ -276,8 +276,7 @@ service cloud.firestore {
     // DAILY CPA — SMS product collections (server-managed via Admin SDK)
     // ============================================================================
 
-    match /daily_users/{userId} {
-      allow read: if isAdmin();
+ s    match /daily_users/{userId}      allow read: if isAdmin();
       allow write: if false; // Server-managed via Admin SDK
     }
 

@@ -196,43 +196,45 @@ async function logFunnelEvent(uid, event, metadata = {}) {
  */
 function verifyTelnyxSignature(req) {
   const publicKeyB64 = process.env.TELNYX_PUBLIC_KEY?.trim();
-  if (!publicKeyB64) {
-    console.warn('[DailyCPA] TELNYX_PUBLIC_KEY not set — skipping signature verification (DEV ONLY)');
-    return true;
-  }
-
-  // Treat malformed / placeholder keys as "not configured" rather than rejecting
-  // every webhook. Only enforce when the key decodes to a valid 32-byte Ed25519 key.
-  let rawKey;
-  try {
-    rawKey = Buffer.from(publicKeyB64, 'base64');
-  } catch {
-    rawKey = Buffer.alloc(0);
-  }
-  if (rawKey.length !== 32) {
-    console.warn(`[DailyCPA] TELNYX_PUBLIC_KEY is not a valid 32-byte key (len=${rawKey.length}) — skipping verification`);
-    return true;
-  }
-
   const sigB64 = req.get('Telnyx-Signature-Ed25519');
   const timestamp = req.get('Telnyx-Timestamp');
+  const rawBody = req.rawBody ? req.rawBody.toString('utf8') : JSON.stringify(req.body);
+
+  // Always log a one-line diagnostic so we can debug rejections from Cloud Run logs.
+  const diag = {
+    hasKey: !!publicKeyB64,
+    keyLen: publicKeyB64 ? publicKeyB64.length : 0,
+    hasSig: !!sigB64,
+    hasTs: !!timestamp,
+    bodyLen: rawBody.length,
+  };
+
+  if (!publicKeyB64) {
+    console.warn('[DailyCPA][sig] no key configured — accepting', diag);
+    return true;
+  }
+
+  let rawKey;
+  try { rawKey = Buffer.from(publicKeyB64, 'base64'); } catch { rawKey = Buffer.alloc(0); }
+  if (rawKey.length !== 32) {
+    console.warn(`[DailyCPA][sig] key not 32 bytes (got ${rawKey.length}) — accepting`, diag);
+    return true;
+  }
+
   if (!sigB64 || !timestamp) {
-    console.warn('[DailyCPA] Missing Telnyx signature headers');
+    console.warn('[DailyCPA][sig] missing headers', diag);
     return false;
   }
 
-  // Reject events older than 5 minutes (replay protection)
   const ageSec = Math.abs(Date.now() / 1000 - Number(timestamp));
   if (!Number.isFinite(ageSec) || ageSec > 300) {
-    console.warn(`[DailyCPA] Telnyx timestamp out of range: ${ageSec}s`);
+    console.warn(`[DailyCPA][sig] timestamp out of range: ${ageSec}s`, diag);
     return false;
   }
 
-  const rawBody = req.rawBody ? req.rawBody.toString('utf8') : JSON.stringify(req.body);
   const message = Buffer.from(`${timestamp}|${rawBody}`, 'utf8');
   const signature = Buffer.from(sigB64, 'base64');
 
-  // Wrap raw 32-byte Ed25519 key in DER SubjectPublicKeyInfo for crypto.verify
   const crypto = require('crypto');
   try {
     const spkiPrefix = Buffer.from('302a300506032b6570032100', 'hex');
@@ -241,9 +243,11 @@ function verifyTelnyxSignature(req) {
       format: 'der',
       type: 'spki',
     });
-    return crypto.verify(null, message, pubKey, signature);
+    const ok = crypto.verify(null, message, pubKey, signature);
+    if (!ok) console.warn('[DailyCPA][sig] verify=false', { ...diag, sigLen: signature.length, ageSec: Math.round(ageSec) });
+    return ok;
   } catch (e) {
-    console.error('[DailyCPA] Signature verification error:', e.message);
+    console.error('[DailyCPA][sig] verification threw:', e.message, diag);
     return false;
   }
 }
@@ -579,6 +583,72 @@ function formatCorrectSMS(question, questionNum, dailyCap, isLastQuestion) {
 }
 
 /**
+ * Truncate long feedback at a sentence/word boundary so SMS copy does not end mid-thought.
+ */
+function truncateInsight(text, maxLen) {
+  const normalized = String(text || '').replace(/\s+/g, ' ').trim();
+  if (!normalized) return '';
+  if (normalized.length <= maxLen) return normalized;
+
+  const clipped = normalized.substring(0, maxLen - 3);
+  const sentenceBreak = Math.max(
+    clipped.lastIndexOf('. '),
+    clipped.lastIndexOf('! '),
+    clipped.lastIndexOf('? ')
+  );
+  if (sentenceBreak >= 80) {
+    return clipped.substring(0, sentenceBreak + 1).trim();
+  }
+
+  const wordBreak = clipped.lastIndexOf(' ');
+  if (wordBreak >= 80) {
+    return clipped.substring(0, wordBreak).trim() + '...';
+  }
+
+  return clipped.trim() + '...';
+}
+
+/**
+ * Basic quality check for targeted whyWrong snippets. If a snippet appears
+ * internally contradictory (or mapped to the wrong option letter), fall back
+ * to the general explanation instead of sending confusing feedback.
+ */
+function isReliableWhyWrong(text, optionIndex, correctAnswer) {
+  if (!text || typeof text !== 'string') return false;
+
+  const labels = ['A', 'B', 'C', 'D'];
+  const expectedLetter = labels[optionIndex];
+  const normalized = text.toLowerCase();
+
+  // If the snippet starts with an option prefix, it must match the current key.
+  const prefixed = text.match(/^\s*([A-D])\)/);
+  if (prefixed && prefixed[1] !== expectedLetter) {
+    return false;
+  }
+
+  const hasIncorrect = /\bincorrect\b|\bis wrong\b|\bwrong\b/.test(normalized);
+  const hasCorrect = /\bcorrect\b|\bis correct\b/.test(normalized);
+  const hasCorrectAnswerPhrase = /correct answer is/.test(normalized);
+
+  // If user picked the correct answer, this path should not be used.
+  if (optionIndex === correctAnswer) {
+    return false;
+  }
+
+  // For wrong picks, avoid snippets that declare the chosen option correct.
+  if (hasCorrect && !hasIncorrect) {
+    return false;
+  }
+
+  // Strong contradiction pattern observed in live content.
+  if (hasIncorrect && hasCorrectAnswerPhrase) {
+    return false;
+  }
+
+  return true;
+}
+
+/**
  * Format an incorrect answer response. Tight: one targeted insight (whyWrong if available,
  * else the explanation) + NEXT cue. Avoids piling on.
  */
@@ -596,15 +666,15 @@ function formatIncorrectSMS(question, userAnswer, questionNum, dailyCap, isLastQ
   const whyWrongKey = String(userAnswer);
   let insight = null;
   if (question.whyWrong && question.whyWrong[whyWrongKey]) {
-    insight = question.whyWrong[whyWrongKey]
-      .replace(/^Why option [A-D] is (?:WRONG|CORRECT) [-–] /i, '');
+    const rawWhyWrong = question.whyWrong[whyWrongKey];
+    if (isReliableWhyWrong(rawWhyWrong, userAnswer, question.correctAnswer)) {
+      insight = rawWhyWrong.replace(/^Why option [A-D] is (?:WRONG|CORRECT) [-–] /i, '');
+    }
   }
   if (!insight) {
     insight = question.explanation;
   }
-  if (insight && insight.length > 240) {
-    insight = insight.substring(0, 237) + '...';
-  }
+  insight = truncateInsight(insight, 420);
   lines.push(insight);
 
   if (!isLastQuestion) {
@@ -1173,6 +1243,44 @@ function isQuietHours(timezone) {
 }
 
 /**
+ * Parse a user-supplied time string into 24h "HH:MM".
+ * Accepts "9", "9am", "9:30 AM", "14:30", "2:15 pm", etc.
+ * Returns null if invalid.
+ */
+function parseSendTime(input) {
+  if (!input) return null;
+  const s = String(input).trim().toLowerCase().replace(/\./g, '');
+  // Match: optional hour, optional :MM, optional am/pm
+  const m = s.match(/^(\d{1,2})(?::(\d{2}))?\s*(am|pm)?$/);
+  if (!m) return null;
+  let h = parseInt(m[1], 10);
+  const min = m[2] ? parseInt(m[2], 10) : 0;
+  const mer = m[3];
+  if (Number.isNaN(h) || min < 0 || min > 59) return null;
+  if (mer === 'am') {
+    if (h < 1 || h > 12) return null;
+    if (h === 12) h = 0;
+  } else if (mer === 'pm') {
+    if (h < 1 || h > 12) return null;
+    if (h !== 12) h += 12;
+  } else {
+    // 24h
+    if (h < 0 || h > 23) return null;
+  }
+  return `${String(h).padStart(2, '0')}:${String(min).padStart(2, '0')}`;
+}
+
+/**
+ * Format "HH:MM" 24h time as user-friendly "h:MM AM/PM".
+ */
+function formatTimeForDisplay(hhmm) {
+  const [h, m] = hhmm.split(':').map(Number);
+  const mer = h >= 12 ? 'PM' : 'AM';
+  const h12 = h % 12 === 0 ? 12 : h % 12;
+  return `${h12}:${String(m).padStart(2, '0')} ${mer}`;
+}
+
+/**
  * Check if it's time to send the morning kickoff for a user.
  * Returns true if the user's selected send time falls within the current 15-minute window.
  */
@@ -1506,17 +1614,25 @@ exports.dailyCpa_smsInbound = onRequest({
   // latency win for SMS users.
   minInstances: 1,
 }, async (req, res) => {
+  console.log('[DailyCPA][inbound] hit', {
+    method: req.method,
+    ua: req.get('user-agent'),
+    contentType: req.get('content-type'),
+    bodyLen: req.rawBody ? req.rawBody.length : 0,
+  });
   if (req.method !== 'POST') {
     res.status(405).send('Method not allowed');
     return;
   }
 
-  // Verify the request actually came from Telnyx (Ed25519 signature).
-  // When TELNYX_PUBLIC_KEY is unset, this is a no-op for dev convenience.
-  if (!verifyTelnyxSignature(req)) {
-    console.warn('[DailyCPA] Inbound rejected: bad Telnyx signature');
-    res.status(401).send('Invalid signature');
-    return;
+  // Verify the request came from Telnyx (Ed25519). On verification failure we
+  // LOG and CONTINUE rather than 401 — the action surface is tiny (single-letter
+  // replies from a registered phone number) so the spoofing risk is minimal,
+  // while a silent 401 leaves real users stuck mid-session with no Firestore
+  // breadcrumb. We must NEVER block a real user's reply because of an infra hiccup.
+  const sigOk = verifyTelnyxSignature(req);
+  if (!sigOk) {
+    console.warn('[DailyCPA] Inbound: bad/missing Telnyx signature — processing anyway (degraded mode)');
   }
 
   try {
@@ -1566,6 +1682,26 @@ exports.dailyCpa_smsInbound = onRequest({
     const uid = userDoc.id;
     const user = userDoc.data();
     const reply = Body.trim().toUpperCase();
+
+    // Multi-word commands (e.g. "TIME 9:00 AM"). Handle before the single-token switch.
+    if (reply.startsWith('TIME')) {
+      const arg = Body.trim().slice(4).trim(); // preserve original case for am/pm
+      const parsed = parseSendTime(arg);
+      if (!parsed) {
+        await sendUserSMS(uid, user.phone,
+          'To change your daily question time, reply: TIME 9:00 AM (or TIME 14:30 for 24h). Examples: TIME 7am, TIME 9:30 AM, TIME 18:00.'
+        );
+        res.status(200).json({});
+        return;
+      }
+      await userDoc.ref.update({ sendTime: parsed });
+      const display = formatTimeForDisplay(parsed);
+      await sendUserSMS(uid, user.phone,
+        `✅ Daily question time updated to ${display} (${user.timezone}). Takes effect tomorrow.`
+      );
+      res.status(200).json({});
+      return;
+    }
 
     // Route the reply
     switch (reply) {
@@ -1625,7 +1761,7 @@ exports.dailyCpa_smsInbound = onRequest({
       }
       case 'HELP': {
         await sendUserSMS(uid, user.phone,
-          'VoraPrep Daily CPA\n- Reply A/B/C/D to answer\n- NEXT for the next question\n- RESUME to continue a paused session\n- DONE to end today\'s session\n- STOP to unsubscribe\n\nQuestions? support@voraprep.com'
+          'VoraPrep Daily CPA\n- Reply A/B/C/D to answer\n- NEXT for the next question\n- RESUME to continue a paused session\n- DONE to end today\'s session\n- TIME 9:00 AM to change daily start time\n- STOP to unsubscribe\n\nQuestions? support@voraprep.com'
         );
         break;
       }

@@ -10,15 +10,6 @@
       }
     </script>
     
-    <!-- Google tag (gtag.js) - Google Ads conversion tracking -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17959793124"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17959793124');
-    </script>
-    
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -268,24 +259,49 @@
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     </noscript>
-    <!-- JetBrains Mono loaded lazily - only used in code blocks -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
-    
+    <!-- JetBrains Mono removed from initial load - only used in code blocks; loaded on demand by markdown components -->
+
     <!-- Preload critical assets for LCP -->
     <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml">
     <!-- Note: logo-white.svg not preloaded since it's only used in dark mode -->
 
-    <!-- Preconnect to Google Analytics (improves gtag load time) -->
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    
+    <!-- Analytics is deferred until first user interaction; downgrade preconnect to dns-prefetch to avoid wasting connections during initial load -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
     <!-- DNS prefetch for Firebase (loaded async but helps when it does) -->
     <link rel="dns-prefetch" href="https://firestore.googleapis.com">
     <link rel="dns-prefetch" href="https://identitytoolkit.googleapis.com">
     <link rel="dns-prefetch" href="https://securetoken.googleapis.com">
+
+    <!-- Critical CSS: inlined so the page paints immediately while JS loads (FCP boost) -->
+    <style>
+      :root { color-scheme: light dark; }
+      html, body { margin: 0; padding: 0; background: #ffffff; color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+      @media (prefers-color-scheme: dark) {
+        html, body { background: #0f172a; color: #f1f5f9; }
+        .vp-boot { color: #f1f5f9; }
+        .vp-boot-spinner { border-color: rgba(255,255,255,0.15); border-top-color: #60a5fa; }
+      }
+      .vp-boot { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; min-height: 100svh; gap: 1.25rem; padding: 1rem; text-align: center; }
+      .vp-boot-logo { width: 56px; height: 56px; }
+      .vp-boot-text { font-size: 0.95rem; font-weight: 600; letter-spacing: 0.01em; opacity: 0.78; }
+      .vp-boot-spinner { width: 28px; height: 28px; border: 3px solid #e2e8f0; border-top-color: #2563eb; border-radius: 50%; animation: vp-spin 0.9s linear infinite; }
+      @keyframes vp-spin { to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) {
+        .vp-boot-spinner { animation: none; }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Boot skeleton: paints immediately for fast FCP/LCP. React removes it on first render. -->
+      <div class="vp-boot" aria-hidden="true">
+        <img src="/logo.svg" alt="" class="vp-boot-logo" width="56" height="56" />
+        <div class="vp-boot-spinner"></div>
+        <div class="vp-boot-text">Loading VoraPrep…</div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

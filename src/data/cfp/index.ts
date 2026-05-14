@@ -8,8 +8,8 @@
 
 import type { CourseData } from '../../types/courseData';
 
-// Questions
-import { CFP_QUESTIONS_ALL } from './questions';
+// NOTE: Questions are NOT eagerly imported — see CPA index.ts for rationale.
+// Use `loadSectionQuestions('cfp', 'CFP-GEN')` from courseDataLoader at runtime.
 
 // Flashcards (from JSON)
 import { CFP_FLASHCARDS } from './flashcards';
@@ -35,7 +35,6 @@ import { CFP_MOCK_EXAMS } from './mock-exams';
 /** Standard course data export */
 export const COURSE_DATA: CourseData = {
   courseId: 'cfp',
-  questions: CFP_QUESTIONS_ALL,
   flashcards: CFP_FLASHCARDS,
   lessons: ALL_CFP_LESSONS,
   caseStudies: CFP_CASE_STUDIES,
@@ -45,8 +44,8 @@ export const COURSE_DATA: CourseData = {
   mockExams: CFP_MOCK_EXAMS,
 };
 
-// Re-export sub-modules for backward compatibility
-export * from './questions';
+// Re-export sub-modules for backward compatibility.
+// `./questions` intentionally NOT re-exported (would defeat lazy loading).
 export * from './flashcards';
 export * from './lessons';
 export * from './case-studies';

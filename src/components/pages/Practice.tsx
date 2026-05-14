@@ -581,6 +581,26 @@ const SessionResults: React.FC<SessionResultsProps> = ({
                               </div>
                             </div>
                           )}
+
+                          {/* Ask Vory about this question */}
+                          <button
+                            onClick={() => {
+                              const correctText = q.options[q.correctAnswer] || '';
+                              const yourText = userAnswer !== undefined ? q.options[userAnswer] : '';
+                              const ctx = encodeURIComponent(
+                                `I got this ${course.shortName} question wrong and want to understand why.\n\n` +
+                                `Question: ${q.question}\n\n` +
+                                (yourText ? `My answer: ${yourText}\n` : '') +
+                                `Correct answer: ${correctText}\n\n` +
+                                `Please explain the underlying concept simply, then give me one analogous mini-example.`
+                              );
+                              navigate(`/ai-tutor?context=${ctx}&returnTo=/practice`);
+                            }}
+                            className="w-full mt-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-r from-primary-500 to-primary-600 text-white text-sm font-medium hover:from-primary-600 hover:to-primary-700 transition-colors shadow-sm"
+                          >
+                            <Sparkles className="w-4 h-4" />
+                            Ask Vory about this
+                          </button>
                         </div>
                       )}
                     </div>

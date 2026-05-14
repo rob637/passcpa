@@ -7433,11 +7433,37 @@ exports.adminSendBulkEmail = onCall({
   
   console.log(`Admin ${callerEmail} sending bulk email to ${recipients.length} users. Subject: ${subject}`);
   
-  const results = { sent: 0, failed: 0, errors: [] };
+  const results = { sent: 0, failed: 0, skippedUnsubscribed: 0, errors: [] };
   
   for (const recipient of recipients) {
     if (!recipient.email) {
       results.failed++;
+      continue;
+    }
+
+    // Respect user-level unsubscribe and top-level suppression records.
+    let isUnsubscribed = false;
+    try {
+      if (recipient.uid) {
+        const userSnap = await db.collection('users').doc(recipient.uid).get();
+        if (userSnap.exists && userSnap.data()?.emailUnsubscribed) {
+          isUnsubscribed = true;
+        }
+      }
+
+      if (!isUnsubscribed) {
+        const suppressionId = String(recipient.email).trim().toLowerCase().replace(/[^a-z0-9@._+-]/gi, '_');
+        const suppressionSnap = await db.collection('emailSuppressions').doc(suppressionId).get();
+        if (suppressionSnap.exists && suppressionSnap.data()?.unsubscribed === true) {
+          isUnsubscribed = true;
+        }
+      }
+    } catch (suppressionCheckErr) {
+      console.warn(`Failed unsubscribe check for ${recipient.email}:`, suppressionCheckErr.message || suppressionCheckErr);
+    }
+
+    if (isUnsubscribed) {
+      results.skippedUnsubscribed++;
       continue;
     }
     
@@ -7462,7 +7488,7 @@ exports.adminSendBulkEmail = onCall({
     }
   }
   
-  console.log(`Bulk email complete: ${results.sent} sent, ${results.failed} failed`);
+  console.log(`Bulk email complete: ${results.sent} sent, ${results.failed} failed, ${results.skippedUnsubscribed} unsubscribed skipped`);
   
   // Log email to history collection
   try {
@@ -7474,6 +7500,7 @@ exports.adminSendBulkEmail = onCall({
       recipientCount: recipients.length,
       sentCount: results.sent,
       failedCount: results.failed,
+      skippedUnsubscribedCount: results.skippedUnsubscribed,
       recipients: recipients.map(r => ({
         email: r.email,
         name: r.name || 'User',
@@ -7493,6 +7520,7 @@ exports.adminSendBulkEmail = onCall({
     success: true, 
     sent: results.sent, 
     failed: results.failed,
+    skippedUnsubscribed: results.skippedUnsubscribed,
     errors: results.errors.slice(0, 5) // Only return first 5 errors
   };
 });

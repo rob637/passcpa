@@ -24,8 +24,17 @@ export interface CourseData {
 
   // ── Required (every course) ────────────────────────────────────────
 
-  /** All MCQ questions */
-  questions: unknown[];
+  /**
+   * All MCQ questions for the course.
+   *
+   * @deprecated Prefer `loadSectionQuestions(courseId, section)` from
+   * `services/courseDataLoader` for runtime use — populating this field
+   * statically forces every section's JSON into one bundle, which is a
+   * 30+ MB mobile blocker for CPA. Per-course `COURSE_DATA` modules now
+   * leave this empty; admin/audit code that truly needs the entire bank
+   * should call `loadAllCourseQuestions(courseId)` instead.
+   */
+  questions?: unknown[];
 
   /** All flashcards */
   flashcards: unknown[];

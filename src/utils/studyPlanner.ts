@@ -56,6 +56,12 @@ export const calculatePaceStatus = (
   let status: PaceStatus;
   let message: string;
   
+  // Extended grace period: first 14 days, never show 'behind' — show
+  // encouraging "getting started" messaging instead. Working professionals
+  // need ramp-up time, and a "you're already failing" badge in week 1
+  // is the #1 churn trigger we identified.
+  const inGracePeriod = daysElapsed <= 14;
+
   if (daysElapsed <= 1 && lessonsExpected === 0) {
     // Too early to judge pace — any completed work is just a good start
     if (lessonsCompleted > 0) {
@@ -73,7 +79,13 @@ export const calculatePaceStatus = (
     message = 'On pace';
   } else if (lessonsDiff >= -5) {
     status = 'slightly-behind';
-    message = `${Math.abs(lessonsDiff)} lessons to catch up`;
+    message = inGracePeriod
+      ? 'Building momentum — keep going'
+      : `${Math.abs(lessonsDiff)} lessons to catch up`;
+  } else if (inGracePeriod) {
+    // Even significantly behind, show recovery framing in first 2 weeks
+    status = 'slightly-behind';
+    message = `Recover with ${adjustedPace} lessons/day`;
   } else {
     status = 'behind';
     message = `${adjustedPace} lessons/day to finish on time`;

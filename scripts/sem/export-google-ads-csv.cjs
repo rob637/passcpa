@@ -36,11 +36,16 @@ function parseArgs() {
     const i = args.indexOf(flag);
     return i >= 0 && args[i + 1] ? Number(args[i + 1]) : dflt;
   };
+  const getStr = (flag, dflt) => {
+    const i = args.indexOf(flag);
+    return i >= 0 && args[i + 1] ? String(args[i + 1]) : dflt;
+  };
   return {
     cpaBudget: get('--cpa-budget', 30),
     dailyBudget: get('--daily-budget', 20),
     cpaCpa: get('--cpa-cpa', 12),
     dailyCpa: get('--daily-cpa', 6),
+    prefix: getStr('--prefix', ''),
   };
 }
 
@@ -236,7 +241,8 @@ function main() {
   const date = new Date().toISOString().slice(0, 10);
   const outDir = path.join(__dirname, 'output');
   fs.mkdirSync(outDir, { recursive: true });
-  const outPath = path.join(outDir, `voraprep-flagship-${date}.csv`);
+  const prefix = opts.prefix ? `${opts.prefix}-` : '';
+  const outPath = path.join(outDir, `${prefix}voraprep-flagship-${date}.csv`);
   fs.writeFileSync(outPath, csv);
 
   console.log('\nSummary:');

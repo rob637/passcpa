@@ -76,3 +76,9 @@ firebase-debug.log
 serviceAccountKey.json
 serviceAccountKey.prod.json
 serviceAccountKey.*.json
+
+# Build artifacts
+/dist-manifest/
+
+# SEM output (generated CSVs)
+/scripts/sem/output/

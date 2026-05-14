@@ -11,8 +11,8 @@
 
 import type { CourseData } from '../../types/courseData';
 
-// Questions
-import { CISA_QUESTIONS } from './questions';
+// NOTE: Questions are NOT eagerly imported — see CPA index.ts for rationale.
+// Use `loadSectionQuestions('cisa', 'CISA1')` from courseDataLoader at runtime.
 
 // Flashcards (from JSON)
 import { allCisaFlashcards } from './flashcards';
@@ -26,7 +26,6 @@ import { cisaCheatsheets } from './cheatsheets';
 /** Standard course data export */
 export const COURSE_DATA: CourseData = {
   courseId: 'cisa',
-  questions: CISA_QUESTIONS,
   flashcards: allCisaFlashcards,
   lessons: allCisaLessons,
   cheatsheets: Object.values(cisaCheatsheets),

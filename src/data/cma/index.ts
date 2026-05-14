@@ -8,8 +8,8 @@
 
 import type { CourseData } from '../../types/courseData';
 
-// Questions
-import { CMA_ALL_QUESTIONS } from './questions';
+// NOTE: Questions are NOT eagerly imported — see CPA index.ts for rationale.
+// Use `loadSectionQuestions('cma', 'CMA1')` from courseDataLoader at runtime.
 
 // Flashcards (from JSON)
 import { ALL_CMA_FLASHCARDS } from './flashcards';
@@ -35,7 +35,6 @@ import { ALL_CMA_MOCK_EXAMS } from './mock-exams';
 /** Standard course data export */
 export const COURSE_DATA: CourseData = {
   courseId: 'cma',
-  questions: CMA_ALL_QUESTIONS,
   flashcards: ALL_CMA_FLASHCARDS,
   lessons: cmaLessons,
   essays: CMA_ESSAYS,
@@ -45,8 +44,8 @@ export const COURSE_DATA: CourseData = {
   mockExams: ALL_CMA_MOCK_EXAMS,
 };
 
-// Re-export sub-modules for backward compatibility
-export * from './questions';
+// Re-export sub-modules for backward compatibility.
+// `./questions` intentionally NOT re-exported (would defeat lazy loading).
 export * from './flashcards';
 export * from './lessons';
 export { CMA1_ALL_ESSAYS, CMA2_ALL_ESSAYS, CMA_ESSAYS, getEssaysByPart } from './essays/index';

@@ -64,6 +64,8 @@ fi
 if [[ "$TARGET" == "dev" ]]; then
   echo -e "${GREEN}→ Building and deploying to development...${NC}"
   npm run build:dev
+  echo -e "${GREEN}→ Prerendering CPA marketing routes...${NC}"
+  npm run prerender
   firebase deploy --only hosting -P development
   echo ""
   echo -e "${GREEN}✅ Deployed to development${NC}"
@@ -86,7 +88,10 @@ if [[ "$TARGET" == "staging" ]]; then
   echo ""
   echo -e "${GREEN}→ Building for staging...${NC}"
   npm run build:staging
-  
+
+  echo -e "${GREEN}→ Prerendering CPA marketing routes...${NC}"
+  npm run prerender
+
   echo -e "${GREEN}→ Deploying hosting to voraprep-staging...${NC}"
   firebase deploy --only hosting -P staging
   
@@ -137,6 +142,9 @@ if [[ "$TARGET" == "production" ]]; then
     echo -e "${GREEN}→ Building for production (full: hosting + blog)...${NC}"
     npm run build:all
   fi
+
+  echo -e "${GREEN}→ Prerendering CPA marketing routes...${NC}"
+  npm run prerender
 
   echo -e "${GREEN}→ Deploying hosting to voraprep-prod...${NC}"
   firebase deploy --only hosting -P production

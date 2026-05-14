@@ -27,8 +27,8 @@ import {
   allEALessons as lessonsAllEA,
 } from './lessons';
 
-// Questions
-import { EA_ALL_QUESTIONS } from './questions';
+// NOTE: Questions are NOT eagerly imported — see CPA index.ts for rationale.
+// Use `loadSectionQuestions('ea', 'SEE1')` from courseDataLoader at runtime.
 
 // Flashcards (from JSON)
 import { ALL_EA_FLASHCARDS } from './flashcards';
@@ -168,7 +168,6 @@ export const EA_EXAM_WEIGHTS = {
 /** Standard course data export — required by courseDataLoader */
 export const COURSE_DATA: CourseData = {
   courseId: 'ea',
-  questions: EA_ALL_QUESTIONS,
   flashcards: ALL_EA_FLASHCARDS,
   lessons: allEALessons,
   cheatsheets: EA_CHEATSHEETS,

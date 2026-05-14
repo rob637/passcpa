@@ -9,21 +9,21 @@
     "passcpa-dev": {
       "hosting": {
         "voraprep": [
-          "passcpa-dev"
+          "voraprep-dev"
         ]
       }
     },
     "voraprep-staging": {
       "hosting": {
         "voraprep": [
-          "voraprep"
+          "voraprep-staging"
         ]
       }
     },
     "voraprep-prod": {
       "hosting": {
         "voraprep": [
-          "voraprep-de523"
+          "voraprep-prod"
         ]
       }
     }

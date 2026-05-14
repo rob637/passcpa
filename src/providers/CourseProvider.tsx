@@ -18,7 +18,15 @@ import { useLocation } from 'react-router-dom';
 import { CourseId, Course } from '../types/course';
 import { getCourse, getDefaultCourseId, ACTIVE_COURSES } from '../courses';
 import { detectCourse, saveCoursePreference } from '../utils/courseDetection';
-import { clearQuestionCache } from '../services/questionService';
+
+async function clearQuestionCacheSafely(): Promise<void> {
+  try {
+    const { clearQuestionCache } = await import('../services/questionService');
+    clearQuestionCache();
+  } catch {
+    // Cache clear is best-effort. Ignore failures to avoid interrupting course switches.
+  }
+}
 
 export interface CourseContextType {
   /** Current course ID */
@@ -110,7 +118,7 @@ export const CourseProvider: React.FC<CourseProviderProps> = ({
       if (['path', 'subdomain', 'domain'].includes(detected.source)) {
          if (detected.courseId !== courseId) {
            // Clear question cache to prevent memory leaks when switching courses via URL
-           clearQuestionCache();
+           void clearQuestionCacheSafely();
            setCourseId(detected.courseId);
            setDetectionSource(detected.source);
            // Persist the URL-detected course so it survives page reloads
@@ -137,7 +145,7 @@ export const CourseProvider: React.FC<CourseProviderProps> = ({
       // Clear question cache to prevent memory leaks when switching courses
       // Each course's questions can be 1-3MB, so keeping all courses cached
       // would consume excessive memory on mobile devices
-      clearQuestionCache();
+      void clearQuestionCacheSafely();
       
       // Clear stale checkout intents to prevent cross-course contamination
       // (e.g., user started CFP checkout but switched to CISA)

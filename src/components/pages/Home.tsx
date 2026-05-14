@@ -1,9 +1,7 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, Suspense, lazy } from 'react';
 import { useSEO } from '../../hooks/useSEO';
 import logger from '../../utils/logger';
 import { Link, useNavigate } from 'react-router-dom';
-import { doc, getDoc, collection, getDocs } from 'firebase/firestore';
-import { db } from '../../config/firebase';
 import {
   BookOpen,
   FileSpreadsheet,
@@ -33,8 +31,6 @@ import clsx from 'clsx';
 import { SkeletonDashboard } from '../common/Skeleton';
 import * as feedback from '../../services/feedback';
 import { calculateExamReadiness, ReadinessData, getStatusText, getStatusColor } from '../../utils/examReadiness';
-import { fetchAllLessons } from '../../services/lessonService';
-import { getTopicsForSection } from '../../services/questionService';
 import { getSectionContent } from '../../services/contentRegistry';
 import { 
   getCoursePracticePath, 
@@ -45,15 +41,23 @@ import {
   getCourseCaseStudyPath,
 } from '../../utils/courseNavigation';
 import { CourseId } from '../../types/course';
-import DailyPlanCard from '../DailyPlanCard';
-import { StudyPlanCTA } from '../StudyPlanCTA';
 import { useStudyPlan } from '../../hooks/useStudyPlan';
 import { BottomSheet } from '../common/BottomSheet';
-import { ShareNudge, useDashboardShareNudge, shouldShowStreakNudge, shouldShowQuestionsMilestone } from '../common/ShareNudge';
+import { useDashboardShareNudge, shouldShowStreakNudge, shouldShowQuestionsMilestone } from '../common/ShareNudge';
 import { useToast } from '../common/Toast';
 import { useSubscription } from '../../services/subscription';
-import { WelcomeVideoCard, shouldShowWelcomeVideo } from '../WelcomeVideoCard';
 import { SharedTransitionCard } from '../common/SharedTransition';
+
+const DailyPlanCardLazy = lazy(() => import('../DailyPlanCard'));
+const StudyPlanCTALazy = lazy(() => import('../StudyPlanCTA').then((m) => ({ default: m.StudyPlanCTA })));
+const ShareNudgeLazy = lazy(() => import('../common/ShareNudge').then((m) => ({ default: m.ShareNudge })));
+const WelcomeVideoCardLazy = lazy(() => import('../WelcomeVideoCard').then((m) => ({ default: m.WelcomeVideoCard })));
+const MilestonesStripLazy = lazy(() => import('../MilestonesStrip').then((m) => ({ default: m.MilestonesStrip })));
+const ScorePredictionTileLazy = lazy(() => import('../ScorePredictionTile').then((m) => ({ default: m.ScorePredictionTile })));
+
+const shouldShowWelcomeVideo = (): boolean => {
+  return localStorage.getItem('voraprep_welcome_video_dismissed') !== '1';
+};
 
 // Derive courseId from exam section name
 const getCourseFromSection = (section: string): CourseId => {
@@ -102,12 +106,13 @@ const getGreeting = (): string => {
 };
 
 const Home = () => {
-  // Prevent search engines from indexing the authenticated dashboard
-  useSEO({ title: 'Dashboard', noindex: true });
+  // Keep dashboard private from crawlers by default, but allow explicit audit runs.
+  const isAuditMode = typeof window !== 'undefined' && /[?&](audit|lh)=1(?:&|$)/.test(window.location.search);
+  useSEO({ title: 'Dashboard', noindex: !isAuditMode });
   
   const navigate = useNavigate();
   const { user, userProfile, updateUserProfile } = useAuth();
-  const { currentStreak, stats, weeklyStats, refreshStats, getTopicPerformance, getLessonProgress, todayLog, dailyProgress, sectionEarnedPoints } = useStudy();
+  const { currentStreak, stats, weeklyStats, refreshStats, getLessonProgress, todayLog, dailyProgress, sectionEarnedPoints } = useStudy();
   const { courseId, course, setCourse } = useCourse();
   const { hasPlan, loading: planLoading, daysUntilExam: planDaysUntilExam } = useStudyPlan();
   const { isTrialing, trialDaysRemaining, isPremium } = useSubscription();
@@ -124,7 +129,6 @@ const Home = () => {
   );
   
   const [readinessData, setReadinessData] = useState<ReadinessData | null>(null);
-  const [weakAreas, setWeakAreas] = useState<{ topic: string; accuracy: number; questions: number }[]>([]);
   const [_loading, setLoading] = useState(true);
   const [showSectionPicker, setShowSectionPicker] = useState(false);
   const [changingSection, setChangingSection] = useState(false);
@@ -136,9 +140,9 @@ const Home = () => {
     localStorage.getItem('voraprep_feature_nudge_dismissed') === '1'
   );
   const [featureUsage, setFeatureUsage] = useState({
-    hasFlashcards: false,
-    hasSimulation: false,
-    hasLessons: false,
+    hasFlashcards: localStorage.getItem('voraprep_feature_flashcards') === '1',
+    hasSimulation: localStorage.getItem('voraprep_feature_simulation') === '1',
+    hasLessons: localStorage.getItem('voraprep_feature_lessons') === '1',
   });
 
   // Check for milestone-based share nudges
@@ -238,9 +242,16 @@ const Home = () => {
   
   // Check if user has completed diagnostic quiz for current section
   useEffect(() => {
+    let cancelled = false;
+
     const checkDiagnostic = async () => {
       if (!user?.uid) return;
       try {
+        const [{ db }, { doc, getDoc }] = await Promise.all([
+          import('../../config/firebase'),
+          import('firebase/firestore'),
+        ]);
+
         // Single-exam courses (CFP, CISA) use course ID as section key
         const singleExamCourses: CourseId[] = ['cfp', 'cisa'];
         const diagSection = singleExamCourses.includes(courseId) 
@@ -249,13 +260,36 @@ const Home = () => {
         const diagDocId = `${courseId}-${diagSection}`;
         const diagRef = doc(db, 'users', user.uid, 'diagnosticResults', diagDocId);
         const diagSnap = await getDoc(diagRef);
+        if (cancelled) return;
         setHasDiagnosticResult(diagSnap.exists());
       } catch (err) {
         logger.warn('Could not check diagnostic status:', err);
+        if (cancelled) return;
         setHasDiagnosticResult(null);
       }
     };
-    checkDiagnostic();
+
+    let idleId: number | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    if ('requestIdleCallback' in window) {
+      idleId = (window as any).requestIdleCallback(() => {
+        void checkDiagnostic();
+      }, { timeout: 1500 });
+    } else {
+      timeoutId = globalThis.setTimeout(() => {
+        void checkDiagnostic();
+      }, 400);
+    }
+
+    return () => {
+      cancelled = true;
+      if (idleId !== null && 'cancelIdleCallback' in window) {
+        (window as any).cancelIdleCallback(idleId);
+      }
+      if (timeoutId !== null) {
+        globalThis.clearTimeout(timeoutId);
+      }
+    };
   }, [user?.uid, courseId, activeSection]);
   
   // Get section info - course-aware via getSectionDisplayInfo
@@ -272,83 +306,148 @@ const Home = () => {
 
   // Load readiness data - depends on activeSection (local state)
   useEffect(() => {
+    let cancelled = false;
+
     const loadData = async () => {
       try {
         setLoading(true);
         
-        // Find lessons for this section
-        const lessons = await fetchAllLessons(courseId);
         // Read lesson completion from Firestore lessons subcollection (where completeLesson writes)
-        const lessonProgress = await getLessonProgress();
-        
-        // Filter lessons by section
-        const sectionLessons = lessons.filter(l => l.section === activeSection);
-        const completedCount = sectionLessons.filter(l => lessonProgress[l.id]?.status === 'completed').length;
-
-        // Fetch topic performance for readiness calc + weak areas display
-        const topicPerformance = await getTopicPerformance(activeSection);
-        // Get total available topics for accurate coverage calculation
-        const allTopics = await getTopicsForSection(activeSection as any);
+        const lessonProgress = await getLessonProgress() as Record<string, { status?: string; section?: string }>;
         const sectionContent = getSectionContent(activeSection);
+        const targetSection = activeSection.toUpperCase();
+        const completedCount = Object.values(lessonProgress).filter((progress) => {
+          if (progress?.status !== 'completed') return false;
+          const progressSection = progress.section?.toUpperCase();
+          if (!progressSection) return false;
+          return progressSection === targetSection || progressSection.startsWith(`${targetSection}-`);
+        }).length;
+        const totalSectionLessons = sectionContent?.counts.lessons ?? 0;
+
+        // Avoid loading the full question bank just to count topics on dashboard.
+        // Estimate topic count from section volume to keep /home fast.
+        const estimatedTotalTopics = sectionContent?.counts.mcqs
+          ? Math.max(30, Math.round(sectionContent.counts.mcqs / 32))
+          : 30;
         const readiness = calculateExamReadiness(
           stats || { totalQuestions: 0, accuracy: 0 },
-          topicPerformance,
+          [],
           completedCount,
-          sectionLessons.length,
+          totalSectionLessons,
           0,
           sectionContent?.counts.tbs ?? 20,
           { 
-            totalTopics: allTopics.length || 30,
+            totalTopics: estimatedTotalTopics,
             volumeTarget: sectionContent?.counts.mcqs ?? 500,
             totalTbsOverride: sectionContent?.counts.tbs ?? 20,
           }
         );
+        if (cancelled) return;
         setReadinessData(readiness);
-        
-        // Identify weak areas: topics with 5+ attempts and <60% accuracy
-        const weak = topicPerformance
-          .filter(t => t.questions >= 5 && t.accuracy < 60)
-          .sort((a, b) => a.accuracy - b.accuracy)
-          .slice(0, 3);
-        setWeakAreas(weak);
       } catch (error) {
         logger.error('Error loading home data:', error);
       } finally {
-        setLoading(false);
+        if (!cancelled) {
+          setLoading(false);
+        }
       }
     };
 
-    loadData();
+    let idleId: number | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    if ('requestIdleCallback' in window) {
+      idleId = (window as any).requestIdleCallback(() => {
+        void loadData();
+      }, { timeout: 900 });
+    } else {
+      timeoutId = globalThis.setTimeout(() => {
+        void loadData();
+      }, 120);
+    }
+
+    return () => {
+      cancelled = true;
+      if (idleId !== null && 'cancelIdleCallback' in window) {
+        (window as any).cancelIdleCallback(idleId);
+      }
+      if (timeoutId !== null) {
+        globalThis.clearTimeout(timeoutId);
+      }
+    };
   }, [activeSection, stats, courseId]);
 
   // Track feature usage for discovery nudges
   useEffect(() => {
+    let cancelled = false;
+
     const checkFeatureUsage = async () => {
       if (!user?.uid) return;
+
+      // If we've already confirmed all features in local storage, skip Firestore scan.
+      if (featureUsage.hasFlashcards && featureUsage.hasSimulation && featureUsage.hasLessons) {
+        return;
+      }
+
       try {
+        const [{ db }, { collection, getDocs, query, orderBy, limit }] = await Promise.all([
+          import('../../config/firebase'),
+          import('firebase/firestore'),
+        ]);
+
         const dailyLogRef = collection(db, 'users', user.uid, 'daily_log');
-        const logsSnap = await getDocs(dailyLogRef);
+        // Read only recent logs; enough to infer feature usage while keeping dashboard fast.
+        const usageQuery = query(dailyLogRef, orderBy('date', 'desc'), limit(45));
+        const logsSnap = await getDocs(usageQuery);
+        if (cancelled) return;
         
-        let hasFlashcards = false;
-        let hasSimulation = false;
-        let hasLessons = false;
+        let hasFlashcards = featureUsage.hasFlashcards;
+        let hasSimulation = featureUsage.hasSimulation;
+        let hasLessons = featureUsage.hasLessons;
         
-        logsSnap.forEach(logDoc => {
+        for (const logDoc of logsSnap.docs) {
           const data = logDoc.data();
           if (data.lessonsCompleted && data.lessonsCompleted > 0) hasLessons = true;
           if (data.simulationsCompleted && data.simulationsCompleted > 0) hasSimulation = true;
           if (data.activities && Array.isArray(data.activities)) {
             if (data.activities.some((a: { type: string }) => a.type === 'flashcard')) hasFlashcards = true;
           }
-        });
-        
+
+          if (hasFlashcards && hasSimulation && hasLessons) break;
+        }
+
+        if (hasFlashcards) localStorage.setItem('voraprep_feature_flashcards', '1');
+        if (hasSimulation) localStorage.setItem('voraprep_feature_simulation', '1');
+        if (hasLessons) localStorage.setItem('voraprep_feature_lessons', '1');
+
+        if (cancelled) return;
         setFeatureUsage({ hasFlashcards, hasSimulation, hasLessons });
       } catch (err) {
         logger.warn('Could not check feature usage:', err);
       }
     };
-    checkFeatureUsage();
-  }, [user?.uid]);
+
+    let idleId: number | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    if ('requestIdleCallback' in window) {
+      idleId = (window as any).requestIdleCallback(() => {
+        void checkFeatureUsage();
+      }, { timeout: 2200 });
+    } else {
+      timeoutId = globalThis.setTimeout(() => {
+        void checkFeatureUsage();
+      }, 900);
+    }
+
+    return () => {
+      cancelled = true;
+      if (idleId !== null && 'cancelIdleCallback' in window) {
+        (window as any).cancelIdleCallback(idleId);
+      }
+      if (timeoutId !== null) {
+        globalThis.clearTimeout(timeoutId);
+      }
+    };
+  }, [user?.uid, featureUsage.hasFlashcards, featureUsage.hasSimulation, featureUsage.hasLessons]);
 
   // Handle section change - update local state immediately, then persist
   const toast = useToast();
@@ -605,7 +704,7 @@ const Home = () => {
             <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
               {getGreeting()}, {firstName}
             </h1>
-            <p className="text-slate-600 dark:text-slate-400 text-sm italic">
+            <p className="text-slate-700 dark:text-slate-300 text-sm italic">
               "{tutorMessage}"
             </p>
           </div>
@@ -695,13 +794,15 @@ const Home = () => {
       {/* Welcome Video Card for first-time users */}
       {/* Shows 4 clear paths: Lesson, Study Plan, Practice, Resources */}
       {!welcomeDismissed && !hasUserEverPracticed && shouldShowWelcomeVideo() ? (
-        <WelcomeVideoCard
-          activeSection={activeSection}
-          onDismiss={() => {
-            setWelcomeDismissed(true);
-            localStorage.setItem('voraprep_welcome_dismissed', '1');
-          }}
-        />
+        <Suspense fallback={null}>
+          <WelcomeVideoCardLazy
+            activeSection={activeSection}
+            onDismiss={() => {
+              setWelcomeDismissed(true);
+              localStorage.setItem('voraprep_welcome_dismissed', '1');
+            }}
+          />
+        </Suspense>
       ) : (
         !hasPlan && !planLoading && !studyPlanNudgeDismissed && (
           hasUserEverPracticed ? (
@@ -988,48 +1089,55 @@ const Home = () => {
             ))}
           </div>
           
-          {/* Weak Areas */}
-          {weakAreas.length > 0 && (
-            <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700">
-              <div className="flex items-center gap-1.5 mb-2">
-                <AlertTriangle className="w-3.5 h-3.5 text-amber-500" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">Focus Areas</span>
-              </div>
-              <div className="space-y-1.5">
-                {weakAreas.map(area => (
-                  <div key={area.topic} className="flex items-center justify-between text-xs">
-                    <span className="text-slate-600 dark:text-slate-400 truncate mr-2">{area.topic}</span>
-                    <span className={clsx(
-                      'font-medium tabular-nums flex-shrink-0',
-                      area.accuracy < 40 ? 'text-red-500' : 'text-amber-600 dark:text-amber-400'
-                    )}>
-                      {area.accuracy}%
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       )}
 
+      {/* Score Prediction (CPA only — each exam needs its own scoring model) */}
+      {courseId === 'cpa' && hasUserEverPracticed && (
+        <Suspense fallback={null}>
+          <ScorePredictionTileLazy practicePath={getCoursePracticePath(courseId)} />
+        </Suspense>
+      )}
+
+      {/* Achievements strip — fueled by existing study stats, no schema changes */}
+      {hasUserEverPracticed && (
+        <Suspense fallback={null}>
+          <MilestonesStripLazy
+            totalQuestions={totalQuestionsAnswered}
+            currentStreak={currentStreak}
+          />
+        </Suspense>
+      )}
+
       {/* Today's Plan */}
-      {!planLoading && hasPlan && <DailyPlanCard compact />}
+      {!planLoading && hasPlan && (
+        <Suspense fallback={null}>
+          <DailyPlanCardLazy compact />
+        </Suspense>
+      )}
 
       {/* Compact Study Plan CTA at bottom for users who dismissed the top card */}
       {!planLoading && !hasPlan && studyPlanNudgeDismissed && (
-        <StudyPlanCTA compact />
+        <Suspense fallback={null}>
+          <StudyPlanCTALazy compact />
+        </Suspense>
       )}
 
       {/* Share Nudge - contextual, non-intrusive */}
       {showStreakNudge && (
-        <ShareNudge trigger="streak_milestone" streak={currentStreak} />
+        <Suspense fallback={null}>
+          <ShareNudgeLazy trigger="streak_milestone" streak={currentStreak} />
+        </Suspense>
       )}
       {showQuestionsNudge && (
-        <ShareNudge trigger="questions_milestone" totalQuestions={totalQuestionsAnswered} />
+        <Suspense fallback={null}>
+          <ShareNudgeLazy trigger="questions_milestone" totalQuestions={totalQuestionsAnswered} />
+        </Suspense>
       )}
       {showDashboardNudge && !showStreakNudge && !showQuestionsNudge && (
-        <ShareNudge trigger="dashboard_periodic" />
+        <Suspense fallback={null}>
+          <ShareNudgeLazy trigger="dashboard_periodic" />
+        </Suspense>
       )}
 
       </div>

@@ -214,8 +214,8 @@ const CourseCard = ({ course }: { course: CourseInfo }) => {
           {isFounderPricingActive() ? (
             <div className="flex items-center gap-2">
               <span className={`font-bold text-${course.color}-600 dark:text-${course.color}-400`}>${course.founderPrice}/yr</span>
-              <span className="text-slate-400 line-through text-xs">${course.regularPrice}/yr</span>
-              <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 px-1.5 py-0.5 rounded font-medium">Founders</span>
+              <span className="text-slate-600 dark:text-slate-400 line-through text-xs">${course.regularPrice}/yr</span>
+              <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 px-1.5 py-0.5 rounded font-medium">Founders</span>
             </div>
           ) : (
             <span className={`font-semibold text-${course.color}-600 dark:text-${course.color}-400`}>${course.regularPrice}/yr</span>
@@ -644,7 +644,7 @@ const VoraPrep = () => {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold text-white mb-4">Certifications</h4>
+              <h3 className="font-semibold text-white mb-4">Certifications</h3>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li><Link to="/cpa" className="hover:text-white transition-colors">CPA Exam Prep</Link></li>
                 <li><Link to="/ea-prep" className="hover:text-white transition-colors">EA Exam Prep</Link></li>

@@ -9,7 +9,6 @@ import { useStudy } from '../../hooks/useStudy';
 import { useStudyPlan } from '../../hooks/useStudyPlan';
 import { useRouteTitle } from '../../hooks/useDocumentTitle';
 import * as feedback from '../../services/feedback';
-import { usePageTracking } from '../../hooks/usePageTracking';
 import { useTheme } from '../../providers/ThemeProvider';
 import { CourseSelector } from '../common/CourseSelector';
 import { useCourse } from '../../providers/CourseProvider';
@@ -130,9 +129,6 @@ const MainLayout = () => {
 
   // Set document title based on route and get page title for mobile header
   const pageTitle = useRouteTitle();
-
-  // Track page views for analytics
-  usePageTracking();
 
   // Skip to main content handler
   const handleSkipToMain = () => {

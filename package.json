@@ -10,6 +10,7 @@
     "build:dev": "vite build --mode development",
     "build:staging": "vite build --mode staging",
     "build:prod": "vite build --mode production",
+    "prerender": "node scripts/prerender.cjs",
     "build:blog": "node scripts/export-articles.cjs --from-api && cd blog && npm run build",
     "build:blog:mock": "node scripts/export-articles.cjs --mock && cd blog && npm run build",
     "build:all": "npm run build:prod && npm run build:blog && npm run merge:blog",
@@ -44,8 +45,18 @@
     "qbank:validate": "node scripts/qbank-validate.cjs",
     "qbank:enhance": "node scripts/qbank-enhance.cjs",
     "qbank:build": "node scripts/qbank-build.cjs",
+    "validate:questions": "node scripts/validate-questions.cjs",
+    "validate:whywrong": "python3 scripts/fix-whywrong-contradictions.py",
+    "validate:whywrong:fix": "python3 scripts/fix-whywrong-contradictions.py --apply",
     "format:check": "prettier --check \"src/**/*.{js,jsx,json,css}\"",
-    "build:analyze": "ANALYZE=true vite build && echo 'Bundle stats written to dist/stats.html'"
+    "build:analyze": "ANALYZE=true vite build && echo 'Bundle stats written to dist/stats.html'",
+    "perf:budget": "npm run build && node scripts/check-bundle-budgets.mjs",
+    "perf:budget:dist": "node scripts/check-bundle-budgets.mjs",
+    "perf:budget:strict": "npm run build && PERF_BUDGET_PROFILE=strict node scripts/check-bundle-budgets.mjs",
+    "perf:budget:dist:strict": "PERF_BUDGET_PROFILE=strict node scripts/check-bundle-budgets.mjs",
+    "perf:budget:dist:json": "PERF_BUDGET_PROFILE=standard PERF_BUDGET_JSON_OUT=dist/bundle-budget-report.json node scripts/check-bundle-budgets.mjs",
+    "perf:baseline:update": "node scripts/update-bundle-budget-baseline.mjs",
+    "perf:baseline:update:from-dist": "npm run perf:budget:dist:json && npm run perf:baseline:update"
   },
   "dependencies": {
     "@capacitor-firebase/authentication": "^8.0.1",

@@ -1,0 +1,15 @@
+{
+  "profile": "standard",
+  "generatedAt": "2026-05-07T18:41:21.191Z",
+  "source": "dist/bundle-budget-report.json",
+  "chunks": {
+    "Home-": 32099,
+    "DailyPlanCard-": null,
+    "StudyPlanCTA-": 3708,
+    "ShareNudge-": 6142,
+    "WelcomeVideoCard-": 3784,
+    "vendor-react-": 164895,
+    "vendor-firebase-": 780800,
+    "vendor-ui-": 81579
+  }
+}

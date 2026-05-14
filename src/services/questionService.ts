@@ -84,9 +84,11 @@ async function loadSectionQuestions(section: string): Promise<Question[]> {
     }
 
     if (targetCourseId) {
-      const { loadCourseData } = await import('./courseDataLoader');
-      const courseData = await loadCourseData(targetCourseId);
-      questions = (courseData.questions as Question[]).filter(q => q.section === section);
+      // Use the per-section lazy loader so we only download THIS section's
+      // JSON instead of pulling every section in the course (which used to
+      // be a 30+ MB chunk for CPA on first load).
+      const { loadSectionQuestions } = await import('./courseDataLoader');
+      questions = (await loadSectionQuestions(targetCourseId, section)) as Question[];
     } else {
       logger.warn(`Could not find a registered course containing section ${section}`);
     }

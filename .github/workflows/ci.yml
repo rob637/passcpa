@@ -3,12 +3,10 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [main, develop]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
-  pull-requests: write
   id-token: write
   checks: write
 
@@ -45,11 +43,11 @@ jobs:
           NODE_OPTIONS: '--max-old-space-size=7168'
 
   # ============================================
-  # Bundle Size Analysis (on PRs)
+  # Bundle Size Analysis (on pushes)
   # ============================================
   bundle-analysis:
     needs: lint-and-test
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -73,6 +71,21 @@ jobs:
           VITE_FIREBASE_MESSAGING_SENDER_ID: 000000000000
           VITE_FIREBASE_APP_ID: placeholder
 
+      - name: Enforce bundle budgets
+        run: npm run perf:budget:dist
+        env:
+          PERF_BUDGET_PROFILE: standard
+
+      - name: Generate budget report JSON
+        run: PERF_BUDGET_PROFILE=standard PERF_BUDGET_JSON_OUT=dist/bundle-budget-report.json node scripts/check-bundle-budgets.mjs
+
+      - name: Upload bundle budget report
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-budget-report
+          path: dist/bundle-budget-report.json
+          retention-days: 14
+
       - name: Upload bundle stats
         uses: actions/upload-artifact@v4
         with:
@@ -80,54 +93,8 @@ jobs:
           path: dist/stats.html
           retention-days: 14
 
-      - name: Comment bundle size on PR
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            const path = require('path');
-            
-            // Get list of JS files in dist
-            const distDir = 'dist/assets';
-            let totalSize = 0;
-            let fileList = [];
-            
-            if (fs.existsSync(distDir)) {
-              const files = fs.readdirSync(distDir);
-              for (const file of files) {
-                if (file.endsWith('.js')) {
-                  const stats = fs.statSync(path.join(distDir, file));
-                  const sizeKB = (stats.size / 1024).toFixed(1);
-                  totalSize += stats.size;
-                  fileList.push(`| ${file.substring(0, 40)}... | ${sizeKB} KB |`);
-                }
-              }
-            }
-            
-            const totalKB = (totalSize / 1024).toFixed(1);
-            const totalMB = (totalSize / (1024 * 1024)).toFixed(2);
-            
-            const body = `## 📦 Bundle Size Report
-            
-            **Total JS Size:** ${totalKB} KB (${totalMB} MB)
-            
-            <details>
-            <summary>View all chunks</summary>
-            
-            | File | Size |
-            |------|------|
-            ${fileList.slice(0, 15).join('\n')}
-            
-            </details>
-            
-            📊 [Download full bundle analysis](../actions/runs/${context.runId})`;
-            
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: body
-            });
+      - name: Write bundle summary
+        run: node scripts/write-bundle-summary.mjs --out="$GITHUB_STEP_SUMMARY"
 
   # ============================================
   # Build for Staging (develop branch → staging)
@@ -172,7 +139,7 @@ jobs:
   # ============================================
   build-production:
     needs: lint-and-test
-    if: github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.base_ref == 'main')
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -199,6 +166,19 @@ jobs:
           VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY_PROD }}
           VITE_GA_MEASUREMENT_ID: ${{ secrets.VITE_GA_MEASUREMENT_ID_PROD }}
 
+      - name: Enforce strict bundle budgets
+        run: npm run perf:budget:dist:strict
+
+      - name: Generate strict budget report JSON
+        run: PERF_BUDGET_PROFILE=strict PERF_BUDGET_JSON_OUT=dist/bundle-budget-report-strict.json node scripts/check-bundle-budgets.mjs
+
+      - name: Upload strict bundle budget report
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-budget-report-strict
+          path: dist/bundle-budget-report-strict.json
+          retention-days: 14
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
@@ -207,76 +187,7 @@ jobs:
           retention-days: 7
 
   # ============================================
-  # Build for PR Previews (to dev environment)
-  # ============================================
-  build-preview:
-    needs: lint-and-test
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build for Preview (Dev Environment)
-        run: npm run build:dev
-        env:
-          VITE_ENVIRONMENT: development
-          VITE_ENABLE_CPA_COURSE: 'true'
-          VITE_ENABLE_EA_COURSE: 'true'
-          VITE_ENABLE_CMA_COURSE: 'true'
-          VITE_ENABLE_CIA_COURSE: 'true'
-          VITE_ENABLE_CFP_COURSE: 'true'
-          VITE_ENABLE_CISA_COURSE: 'true'
-          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY_DEV }}
-          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN_DEV }}
-          VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID_DEV }}
-          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET_DEV }}
-          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID_DEV }}
-          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID_DEV }}
-          VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY_DEV }}
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist-preview
-          path: dist/
-          retention-days: 7
-
-  # ============================================
   # Auto-deploy REMOVED — use deploy.yml workflow
   # To deploy: Actions → "Deploy to Environment" → Run workflow
   # Type "DEPLOY STAGING" or "DEPLOY PRODUCTION" to confirm
   # ============================================
-
-  # ============================================
-  # PR Preview Deployments
-  # ============================================
-  deploy-preview:
-    needs: build-preview
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: dist-preview
-          path: dist/
-
-      - name: Deploy Preview
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}
-          projectId: passcpa-dev
-          # Auto-generates unique preview URL for each PR

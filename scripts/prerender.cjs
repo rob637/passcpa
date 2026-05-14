@@ -17,7 +17,7 @@
  * Also runs automatically via `npm run build` postbuild.
  */
 
-const puppeteer = require('puppeteer');
+const { chromium } = require('playwright');
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -25,27 +25,12 @@ const path = require('path');
 const DIST_DIR = path.join(__dirname, '..', 'dist');
 const PORT = 4173;
 
-// Static pages to pre-render (public-facing, SEO-critical)
+// Static pages to pre-render (public-facing, SEO-critical).
+// Scoped to CPA conversion path — add other certs back as we focus on them.
 const STATIC_ROUTES = [
   '/',
   '/cpa',
-  '/ea-prep',
-  '/cma',
-  '/cia',
-  '/cfp',
-  '/cisa',
   '/cpa/info',
-  '/ea/info',
-  '/cma/info',
-  '/cia/info',
-  '/cfp/info',
-  '/cisa/info',
-  '/about',
-  '/faq',
-  '/compare',
-  '/pricing',
-  '/pass-guarantee',
-  '/blog',
 ];
 
 // Hardcoded blog articles (fallback if Firestore fetch fails)
@@ -136,12 +121,17 @@ async function prerender() {
     process.exit(1);
   }
 
-  // Build dynamic routes: static pages + published blog articles
-  console.log('  Fetching published articles...');
-  const dynamicBlogRoutes = await fetchPublishedArticles();
-  const blogRoutes = dynamicBlogRoutes.length > 0 ? dynamicBlogRoutes : FALLBACK_BLOG_ROUTES;
+  // Build dynamic routes: static pages + published blog articles.
+  // Blog routes are skipped on focused (CPA-only) runs to keep the
+  // deploy fast; set PRERENDER_BLOG=1 to include them.
+  let blogRoutes = [];
+  if (process.env.PRERENDER_BLOG === '1') {
+    console.log('  Fetching published articles...');
+    const dynamicBlogRoutes = await fetchPublishedArticles();
+    blogRoutes = dynamicBlogRoutes.length > 0 ? dynamicBlogRoutes : FALLBACK_BLOG_ROUTES;
+  }
   const ROUTES = [...STATIC_ROUTES, ...blogRoutes];
-  
+
   console.log(`  📄 ${STATIC_ROUTES.length} static pages + ${blogRoutes.length} blog articles = ${ROUTES.length} total`);
 
   // Start local server
@@ -149,10 +139,21 @@ async function prerender() {
   await new Promise(resolve => server.listen(PORT, resolve));
   console.log(`  Server running on http://localhost:${PORT}`);
 
-  // Launch Puppeteer
-  const browser = await puppeteer.launch({
-    headless: 'new',
+  // Launch Playwright Chromium
+  const browser = await chromium.launch({
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+  });
+  const context = await browser.newContext({
+    viewport: { width: 1280, height: 800 },
+    userAgent: 'Mozilla/5.0 (compatible; VoraPrep-Prerender/1.0)',
+  });
+  // Block unnecessary resource types for speed.
+  await context.route('**/*', (route) => {
+    const type = route.request().resourceType();
+    if (['image', 'font', 'media'].includes(type)) {
+      return route.abort();
+    }
+    return route.continue();
   });
 
   let rendered = 0;
@@ -160,29 +161,39 @@ async function prerender() {
 
   for (const route of ROUTES) {
     try {
-      const page = await browser.newPage();
-      
-      // Block unnecessary resources for speed
-      await page.setRequestInterception(true);
-      page.on('request', req => {
-        const type = req.resourceType();
-        if (['image', 'font', 'media'].includes(type)) {
-          req.abort();
-        } else {
-          req.continue();
-        }
-      });
+      const page = await context.newPage();
+      page.on('pageerror', (err) =>
+        console.warn(`  … ${route} pageerror: ${err.message}`)
+      );
 
-      await page.goto(`http://localhost:${PORT}${route}`, {
-        waitUntil: 'networkidle0',
-        timeout: 15000,
-      });
+      try {
+        await page.goto(`http://localhost:${PORT}${route}`, {
+          waitUntil: 'networkidle',
+          timeout: 20000,
+        });
+      } catch {
+        // networkidle can time out if Firebase keeps long-poll connections open
+        // — we capture the current DOM regardless.
+      }
 
-      // Wait for React to render content
-      await page.waitForSelector('#root > *', { timeout: 10000 });
-      
+      // Wait for React to actually render real content (not just the boot skeleton).
+      await page
+        .waitForFunction(
+          () => {
+            const r = document.getElementById('root');
+            return (
+              r &&
+              r.children.length > 0 &&
+              !r.querySelector('.vp-boot') &&
+              (r.innerText || '').length > 200
+            );
+          },
+          { timeout: 15000 }
+        )
+        .catch(() => {});
+
       // Small extra wait for any async data
-      await new Promise(r => setTimeout(r, 500));
+      await page.waitForTimeout(600);
 
       // Get the full rendered HTML
       const html = await page.content();

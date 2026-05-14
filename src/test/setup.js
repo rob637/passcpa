@@ -109,22 +109,44 @@ vi.mock('firebase/auth', () => ({
   updateProfile: vi.fn(),
 }));
 
-// Mock Firestore
+// Mock Firestore — keep this list synced with production firestore imports.
+// Missing exports cause `ERR_WORKER_OUT_OF_MEMORY` cascades, not normal test
+// failures, so they're easy to overlook.
 vi.mock('firebase/firestore', () => ({
+  // Reads
   doc: vi.fn(),
   getDoc: vi.fn(),
+  getDocs: vi.fn(),
+  getCountFromServer: vi.fn(() => ({ data: () => ({ count: 0 }) })),
+  // Writes
   setDoc: vi.fn(),
+  addDoc: vi.fn(),
   updateDoc: vi.fn(),
+  deleteDoc: vi.fn(),
+  writeBatch: vi.fn(() => ({
+    set: vi.fn(),
+    update: vi.fn(),
+    delete: vi.fn(),
+    commit: vi.fn().mockResolvedValue(undefined),
+  })),
+  // Field operators
+  deleteField: vi.fn(),
+  arrayUnion: vi.fn((...args) => ({ __type: 'arrayUnion', args })),
+  arrayRemove: vi.fn((...args) => ({ __type: 'arrayRemove', args })),
+  increment: vi.fn((n) => ({ __type: 'increment', n })),
+  // Query building
   collection: vi.fn(),
   query: vi.fn(),
   where: vi.fn(),
   orderBy: vi.fn(),
   limit: vi.fn(),
-  getDocs: vi.fn(),
-  onSnapshot: vi.fn(),
+  // Realtime
+  onSnapshot: vi.fn(() => () => {}),
+  // Timestamps
   serverTimestamp: vi.fn(() => new Date()),
   Timestamp: {
     now: vi.fn(() => ({ toDate: () => new Date() })),
+    fromDate: vi.fn((d) => ({ toDate: () => d })),
   },
 }));
 

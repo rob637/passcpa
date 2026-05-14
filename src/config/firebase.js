@@ -91,9 +91,15 @@ validateEnvironmentMatch();
 if (typeof window !== 'undefined') {
   const hostname = window.location.hostname;
   const isCapacitorNative = window.Capacitor?.isNativePlatform?.() || window.Capacitor?.getPlatform?.() !== 'web';
-  const isDevUrl = hostname.includes('passcpa-dev') || 
-    (hostname.includes('localhost') && !isCapacitorNative) || 
-    (hostname.includes('127.0.0.1') && !isCapacitorNative);
+  const userAgent = (typeof navigator !== 'undefined' && navigator.userAgent) || '';
+  // Build-time prerender uses vite preview on localhost with the prod build.
+  // Skip the guard for this user-agent so the prerendered HTML can be captured.
+  const isPrerender = userAgent.includes('VoraPrep-Prerender');
+  const isDevUrl = !isPrerender && (
+    hostname.includes('passcpa-dev') ||
+    (hostname.includes('localhost') && !isCapacitorNative) ||
+    (hostname.includes('127.0.0.1') && !isCapacitorNative)
+  );
   const isProdConfig = firebaseConfig.projectId === 'voraprep-prod';
 
   if (isDevUrl && isProdConfig) {

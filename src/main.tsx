@@ -7,20 +7,37 @@ import App from './App';
 import './styles/globals.css';
 import { AuthProvider } from './providers/AuthProvider';
 // StudyProvider moved inside App.tsx (inside CourseProvider) for course-aware study tracking
-import { initWebVitals } from './services/performance';
-import { initErrorTracking } from './services/errorTracking';
+// NOTE: performance + errorTracking are intentionally dynamic-imported below (post-load)
+// to keep them out of the entry chunk's static graph and trim initial JS.
 import { initSkipLinks } from './utils/accessibility';
 import { triggerUpdateBanner } from './components/common/UpdateBanner';
 
-// Initialize performance monitoring
-initWebVitals();
+const scheduleNonCritical = (work: () => void, timeout = 1200) => {
+  if (typeof window === 'undefined') {
+    work();
+    return;
+  }
 
-// Initialize error tracking for production-grade monitoring
-initErrorTracking();
+  if ('requestIdleCallback' in window) {
+    (window as any).requestIdleCallback(work, { timeout });
+  } else {
+    globalThis.setTimeout(work, 0);
+  }
+};
 
 // Initialize accessibility helpers after DOM is ready
 if (typeof window !== 'undefined') {
-  window.addEventListener('DOMContentLoaded', initSkipLinks);
+  window.addEventListener('DOMContentLoaded', initSkipLinks, { once: true });
+
+  // Move metrics and global error observers off the critical render path.
+  window.addEventListener('load', () => {
+    scheduleNonCritical(() => {
+      void import('./services/performance').then((mod) => mod.initWebVitals()).catch(() => {});
+    }, 1500);
+    scheduleNonCritical(() => {
+      void import('./services/errorTracking').then((mod) => mod.initErrorTracking()).catch(() => {});
+    }, 2000);
+  }, { once: true });
 }
 
 // Store the update function globally so UpdateBanner can access it

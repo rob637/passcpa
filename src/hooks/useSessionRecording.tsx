@@ -124,36 +124,25 @@ export function SessionRecordingProvider({ children }: { children: ReactNode }) 
   const lastPathRef = useRef<string>('');
   const isSetupRef = useRef(false);
 
-  // Debug: Log provider mount with timestamp
-  useEffect(() => {
-    console.log('🔴🔴🔴 [SessionRecording] NEW CODE LOADED AT', new Date().toISOString());
-    console.log('[SessionRecording] Provider mounted, user:', user?.uid ? 'logged in as ' + user.uid : 'not logged in');
-  }, []);
-
   // Start session when user logs in
   useEffect(() => {
-    console.log('[SessionRecording] Effect triggered, user.uid:', user?.uid, 'isSetup:', isSetupRef.current);
-    
     const initSession = async () => {
       if (!user?.uid) {
-        console.log('[SessionRecording] No user, skipping session start');
         return;
       }
       if (isSetupRef.current) {
-        console.log('[SessionRecording] Already setup, skipping');
         return;
       }
       
       isSetupRef.current = true;
-      console.log('[SessionRecording] Starting session for user:', user.uid);
       
       sessionIdRef.current = await sessionRecorder.startSession(
         user.uid,
         user.email || undefined,
         userProfile?.displayName || user.displayName || undefined
       );
-      
-      console.log('[SessionRecording] Provider initialized, session:', sessionIdRef.current);
+
+      logger.debug('[SessionRecording] Session initialized');
     };
 
     initSession();
@@ -168,11 +157,8 @@ export function SessionRecordingProvider({ children }: { children: ReactNode }) 
 
   // Track page views on route changes
   useEffect(() => {
-    console.log('[SessionRecording] Route effect - path:', location.pathname, 'user:', user?.uid, 'lastPath:', lastPathRef.current);
-    
     if (!user?.uid || location.pathname === lastPathRef.current) return;
-    
-    console.log('[SessionRecording] 🚀 Tracking page view:', location.pathname);
+
     lastPathRef.current = location.pathname;
     sessionRecorder.trackPageView(location.pathname, {
       search: location.search,

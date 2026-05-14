@@ -246,6 +246,8 @@ interface UserDocument {
   email?: string;
   displayName?: string;
   isAdmin?: boolean;
+  emailUnsubscribed?: boolean;
+  emailUnsubscribedAt?: { seconds: number; nanoseconds?: number } | string | null;
   createdAt?: { seconds: number; nanoseconds: number };
   deletedAt?: { seconds: number; nanoseconds: number }; // Soft-deleted users
   examSection?: string;
@@ -740,10 +742,10 @@ const AdminCMS: React.FC = () => {
   const [usersList, setUsersList] = useState<UserDocument[]>([]);
   const [filteredUsers, setFilteredUsers] = useState<UserDocument[]>([]);
   const [userSearch, setUserSearch] = useState('');
-  const [userFilter, setUserFilter] = useState<'all' | 'admin' | 'premium' | 'free' | 'trial'>('all');
+  const [userFilter, setUserFilter] = useState<'all' | 'admin' | 'premium' | 'free' | 'trial' | 'optedOut' | 'subscribed'>('all');
   const [editingTrialUserId, setEditingTrialUserId] = useState<string | null>(null);
   const [userCourseFilter, setUserCourseFilter] = useState<CourseId | 'all'>('all');
-  const [userSortColumn, setUserSortColumn] = useState<'email' | 'course' | 'section' | 'subscription' | 'trials' | 'role' | 'joined'>('joined');
+  const [userSortColumn, setUserSortColumn] = useState<'email' | 'course' | 'section' | 'subscription' | 'trials' | 'emailStatus' | 'role' | 'joined'>('joined');
   const [userSortDirection, setUserSortDirection] = useState<'asc' | 'desc'>('desc');
   const [usersPage, setUsersPage] = useState(1);
   const usersPerPage = 50;
@@ -1292,6 +1294,10 @@ const AdminCMS: React.FC = () => {
       result = result.filter(u => !u.subscription?.tier || u.subscription.tier === 'free');
     } else if (userFilter === 'trial') {
       result = result.filter(u => u.subscription?.status === 'trialing');
+    } else if (userFilter === 'optedOut') {
+      result = result.filter(u => u.emailUnsubscribed === true);
+    } else if (userFilter === 'subscribed') {
+      result = result.filter(u => u.emailUnsubscribed !== true);
     }
     
     // Apply course filter
@@ -1343,6 +1349,10 @@ const AdminCMS: React.FC = () => {
         case 'role':
           aVal = a.isAdmin ? 1 : 0;
           bVal = b.isAdmin ? 1 : 0;
+          break;
+        case 'emailStatus':
+          aVal = a.emailUnsubscribed ? 1 : 0;
+          bVal = b.emailUnsubscribed ? 1 : 0;
           break;
         case 'joined':
           aVal = a.createdAt && typeof a.createdAt === 'object' && 'seconds' in a.createdAt
@@ -1904,6 +1914,31 @@ const AdminCMS: React.FC = () => {
     } catch (error) {
       logger.error('Error toggling admin status:', error);
       addLog('Failed to toggle admin: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    }
+  };
+
+  // Toggle whether a user receives future emails
+  const toggleEmailUnsubscribe = async (userId: string, currentEmailUnsubscribed: boolean) => {
+    if (!isAdmin) return;
+
+    const nextUnsubscribed = !currentEmailUnsubscribed;
+    const confirmMsg = nextUnsubscribed
+      ? 'Turn OFF future emails for this user? They will be excluded from campaigns and admin bulk sends.'
+      : 'Turn ON future emails for this user?';
+    if (!window.confirm(confirmMsg)) return;
+
+    try {
+      const userRef = doc(db, 'users', userId);
+      await updateDoc(userRef, {
+        emailUnsubscribed: nextUnsubscribed,
+        emailUnsubscribedAt: nextUnsubscribed ? serverTimestamp() : null,
+        emailUnsubscribeSource: nextUnsubscribed ? 'admin' : 'admin-resubscribe',
+      });
+      addLog(`${nextUnsubscribed ? 'Disabled' : 'Enabled'} future emails for user ${userId}`, 'success');
+      loadUsers();
+    } catch (error) {
+      logger.error('Error toggling email subscription status:', error);
+      addLog('Failed to update email status: ' + (error instanceof Error ? error.message : String(error)), 'error');
     }
   };
 
@@ -3920,7 +3955,8 @@ VoraPrep Team`;
                         Course: {getUserCourse(lookupResult).toUpperCase()} • 
                         Section: {lookupResult.examSection || 'Not set'} • 
                         Tier: {lookupResult.subscription?.tier || 'free'} • 
-                        Status: {lookupResult.subscription?.status || 'N/A'}
+                        Status: {lookupResult.subscription?.status || 'N/A'} • 
+                        Email: {lookupResult.emailUnsubscribed ? 'opted out' : 'subscribed'}
                       </p>
                     </div>
                     <div className="flex gap-2">
@@ -3941,6 +3977,12 @@ VoraPrep Team`;
                         className={`px-3 py-1 text-xs rounded ${lookupResult.subscription?.tier === 'lifetime' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'} hover:opacity-80`}
                       >
                         {lookupResult.subscription?.tier === 'lifetime' ? 'Revoke Premium' : 'Grant Lifetime'}
+                      </button>
+                      <button
+                        onClick={() => toggleEmailUnsubscribe(lookupResult.id, !!lookupResult.emailUnsubscribed)}
+                        className={`px-3 py-1 text-xs rounded ${lookupResult.emailUnsubscribed ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300' : 'bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300'} hover:opacity-80`}
+                      >
+                        {lookupResult.emailUnsubscribed ? 'Enable Emails' : 'Disable Emails'}
                       </button>
                     </div>
                   </div>
@@ -3972,6 +4014,8 @@ VoraPrep Team`;
                     <option value="premium">Premium Only</option>
                     <option value="free">Free Only</option>
                     <option value="trial">Trial Only</option>
+                    <option value="optedOut">Email Opted Out</option>
+                    <option value="subscribed">Email Subscribed</option>
                   </select>
                   {/* Course Filter */}
                   <select
@@ -4117,6 +4161,7 @@ VoraPrep Team`;
                           { key: 'section', label: 'Section' },
                           { key: 'subscription', label: 'Subscription' },
                           { key: 'trials', label: 'Trials' },
+                          { key: 'emailStatus', label: 'Email Status' },
                           { key: 'role', label: 'Role' },
                           { key: 'joined', label: 'Joined' },
                         ].map(col => (
@@ -4149,7 +4194,7 @@ VoraPrep Team`;
                     <tbody className="divide-y divide-gray-100 dark:divide-slate-700">
                       {filteredUsers.length === 0 ? (
                         <tr>
-                          <td colSpan={9} className="p-4 text-center text-gray-600 dark:text-gray-400">
+                          <td colSpan={10} className="p-4 text-center text-gray-600 dark:text-gray-400">
                             {usersError ? (
                               <div className="inline-flex items-center gap-2 px-4 py-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-400 text-sm">
                                 <span className="text-red-500">⚠</span>
@@ -4347,6 +4392,18 @@ VoraPrep Team`;
                             <td className="p-3">
                               <span
                                 className={`px-2 py-1 rounded text-xs font-semibold ${
+                                  u.emailUnsubscribed
+                                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+                                    : 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300'
+                                }`}
+                                title={u.emailUnsubscribed ? 'User has opted out of receiving emails' : 'User is eligible to receive emails'}
+                              >
+                                {u.emailUnsubscribed ? 'Opted Out' : 'Subscribed'}
+                              </span>
+                            </td>
+                            <td className="p-3">
+                              <span
+                                className={`px-2 py-1 rounded text-xs font-semibold ${
                                   u.isAdmin
                                     ? 'bg-primary-100 text-primary-700'
                                     : 'bg-gray-100 dark:bg-slate-700 text-gray-600'
@@ -4382,6 +4439,17 @@ VoraPrep Team`;
                                   title={u.subscription?.tier === 'lifetime' ? 'Revoke premium' : 'Grant lifetime'}
                                 >
                                   {u.subscription?.tier === 'lifetime' ? '⬇️' : '⬆️'}
+                                </button>
+                                <button
+                                  onClick={() => toggleEmailUnsubscribe(u.id, !!u.emailUnsubscribed)}
+                                  className={`px-2 py-1 text-xs rounded hover:opacity-80 ${
+                                    u.emailUnsubscribed
+                                      ? 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400'
+                                      : 'bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400'
+                                  }`}
+                                  title={u.emailUnsubscribed ? 'Enable future emails' : 'Disable future emails'}
+                                >
+                                  {u.emailUnsubscribed ? '🔔' : '🔕'}
                                 </button>
                                 <button
                                   onClick={() => setDeleteConfirmUserId(u.id)}
@@ -4493,7 +4561,7 @@ VoraPrep Team`;
             {showEmailModal && (
               <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
                 <div className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl w-full max-w-2xl p-6">
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">✉️ Send Email to {selectedUserIds.size} Users</h3>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">✉️ Send Email to Selected Users</h3>
                   <div className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Subject</label>
@@ -4519,6 +4587,9 @@ VoraPrep Team`;
                       <strong>Recipients:</strong> {Array.from(selectedUserIds).slice(0, 5).map(id => usersList.find(u => u.id === id)?.email || id).join(', ')}
                       {selectedUserIds.size > 5 && ` and ${selectedUserIds.size - 5} more...`}
                     </div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
+                      Users with email opt-out enabled are automatically excluded from send.
+                    </div>
                   </div>
                   <div className="flex gap-3 justify-end mt-6">
                     <button
@@ -4539,10 +4610,22 @@ VoraPrep Team`;
                         }
                         setIsSendingEmail(true);
                         try {
-                          const recipients = Array.from(selectedUserIds).map(id => {
+                          const selectedRecipients = Array.from(selectedUserIds).map(id => {
                             const u = usersList.find(user => user.id === id);
                             return { uid: id, email: u?.email || '', name: u?.displayName || u?.email?.split('@')[0] || 'User' };
                           }).filter(r => r.email);
+
+                          const recipients = selectedRecipients.filter(r => {
+                            const selectedUser = usersList.find(user => user.id === r.uid);
+                            return !selectedUser?.emailUnsubscribed;
+                          });
+
+                          const skippedOptOut = selectedRecipients.length - recipients.length;
+
+                          if (recipients.length === 0) {
+                            alert('No eligible recipients. All selected users are opted out or missing email.');
+                            return;
+                          }
                           
                           const sendAdminEmail = httpsCallable(functions, 'adminSendBulkEmail');
                           await sendAdminEmail({
@@ -4551,7 +4634,9 @@ VoraPrep Team`;
                             recipients,
                           });
                           
-                          alert(`Email sent to ${recipients.length} users!`);
+                          const skippedText = skippedOptOut > 0 ? ` (${skippedOptOut} opted out skipped)` : '';
+                          alert(`Email sent to ${recipients.length} users${skippedText}!`);
+                          addLog(`Bulk email sent to ${recipients.length} users${skippedText}`, 'success');
                           setShowEmailModal(false);
                           setEmailSubject('');
                           setEmailBody('');
@@ -4571,7 +4656,7 @@ VoraPrep Team`;
                           : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                       }`}
                     >
-                      {isSendingEmail ? 'Sending...' : `Send to ${selectedUserIds.size} Users`}
+                      {isSendingEmail ? 'Sending...' : 'Send Email'}
                     </button>
                   </div>
                 </div>

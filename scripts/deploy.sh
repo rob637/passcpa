@@ -68,7 +68,7 @@ if [[ "$TARGET" == "dev" ]]; then
   npm run prerender
   firebase deploy --only hosting -P development
   echo ""
-  echo -e "${GREEN}✅ Deployed to development${NC}"
+  echo -e "${GREEN}✅ Deployed to development → https://voraprep-dev.web.app${NC}"
   exit 0
 fi
 

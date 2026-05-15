@@ -277,6 +277,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
   const [useRealisticTheme, setUseRealisticTheme] = useState(false);
   const [showCalculator, setShowCalculator] = useState(false);
   const [showExitConfirm, setShowExitConfirm] = useState(false);
+  const [showQuestionNav, setShowQuestionNav] = useState(false);
   
   // Calculator state
   const [calcDisplay, setCalcDisplay] = useState('0');
@@ -1389,12 +1390,27 @@ export function ExamSimulatorTemplate<SectionId extends string>({
             </button>
           </div>
 
-          {/* Question Grid */}
-          <div className="prometric-question-grid">
+          {/* Question Grid — hidden on mobile by default; toggled via button */}
+          <button
+            type="button"
+            onClick={() => setShowQuestionNav((v) => !v)}
+            className="prometric-nav-btn md:hidden"
+            aria-expanded={showQuestionNav}
+            aria-controls="prometric-question-grid"
+          >
+            {showQuestionNav ? 'Hide ▲' : `Navigator (${currentIndex + 1}/${exam.questions.length}) ▼`}
+          </button>
+          <div
+            id="prometric-question-grid"
+            className={clsx('prometric-question-grid', !showQuestionNav && 'hidden md:flex')}
+          >
             {exam.questions.map((q, i) => (
               <button
                 key={i}
-                onClick={() => handleJumpToQuestion(i)}
+                onClick={() => {
+                  handleJumpToQuestion(i);
+                  setShowQuestionNav(false);
+                }}
                 className={clsx(
                   'prometric-grid-btn',
                   currentIndex === i && 'current',

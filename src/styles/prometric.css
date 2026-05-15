@@ -304,6 +304,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 767px) {
+  .prometric-nav {
+    justify-content: center;
+  }
+  .prometric-nav-buttons {
+    flex: 1;
+    justify-content: center;
+  }
+  .prometric-question-grid {
+    order: 99;
+    flex-basis: 100%;
+    max-width: 100%;
+    max-height: 40vh;
+    overflow-y: auto;
+  }
 }
 
 .prometric-nav-buttons {

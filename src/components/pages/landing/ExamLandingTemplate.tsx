@@ -96,30 +96,17 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         Skip to main content
       </a>
 
-      {/* SAVE20 promo bar — universal, all exams, monthly + annual */}
-      <div className="fixed top-0 left-0 right-0 z-[70] bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 text-white text-center py-2 px-4 shadow-md">
-        <Link to="#pricing" className="inline-flex items-center gap-2 text-sm font-bold hover:text-amber-100 transition-colors">
-          <Sparkles className="w-4 h-4" />
-          <span className="hidden sm:inline">LIMITED: 20% off everything — monthly or annual — code SAVE20 at checkout</span>
-          <span className="sm:hidden">20% Off Everything — Code SAVE20</span>
-          <ArrowRight className="w-3.5 h-3.5" />
+      {/* Single promo bar — SAVE20 (universal). Daily CPA link lives in the nav for CPA. */}
+      <div className="fixed top-0 left-0 right-0 z-[70] bg-slate-900 text-white text-center py-1.5 px-4 border-b border-slate-800">
+        <Link to="#pricing" className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium hover:text-amber-300 transition-colors">
+          <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+          <span>20% off with code <span className="font-bold text-amber-300">SAVE20</span></span>
+          <ArrowRight className="w-3 h-3 opacity-70" />
         </Link>
       </div>
 
-      {/* Announcement Bar — CPA only, gated until Daily CPA SMS is live */}
-      {config.id === 'cpa' && showDailyCpa && (
-        <div className="fixed top-9 left-0 right-0 z-[60] bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-2 px-4">
-          <Link to="/daily-cpa" className="inline-flex items-center gap-2 text-sm font-medium hover:text-blue-100 transition-colors">
-            <MessageSquare className="w-4 h-4" />
-            <span className="hidden sm:inline">NEW: Daily CPA Questions by Text — 3-day free trial</span>
-            <span className="sm:hidden">NEW: Daily CPA by Text — Free trial</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
-      )}
-
       {/* Navigation */}
-      <nav className={`fixed left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 ${config.id === 'cpa' && showDailyCpa ? 'top-[72px]' : 'top-9'}`} aria-label="Main navigation">
+      <nav className="fixed left-0 right-0 top-8 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800" aria-label="Main navigation">
         <div className="px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center gap-2 sm:gap-3">
             <Link to="/">
@@ -255,7 +242,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         {/* ================================================================
             HERO SECTION
             ================================================================ */}
-        <section className={`relative pb-12 md:pb-16 px-6 overflow-hidden ${config.id === 'cpa' && showDailyCpa ? 'pt-32 md:pt-40' : 'pt-24 md:pt-32'}`}>
+        <section className="relative pb-12 md:pb-16 px-6 overflow-hidden pt-24 md:pt-32">
           {/* Background */}
           <div className={`absolute inset-0 bg-gradient-to-br ${colors.light} via-slate-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950`} />
           
@@ -266,10 +253,9 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
           <div className={`max-w-7xl mx-auto relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {/* Trial Badge */}
             <div className="flex justify-center mb-5">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-emerald-500/25">
-                <Sparkles className="w-4 h-4" />
-                14-Day Free Trial — Full Access, No Credit Card
-                <Sparkles className="w-4 h-4" />
+              <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold">
+                <Sparkles className="w-3.5 h-3.5" />
+                14-day free trial — no credit card
               </div>
             </div>
 

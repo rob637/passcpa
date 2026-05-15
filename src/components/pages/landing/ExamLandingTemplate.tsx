@@ -96,17 +96,8 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         Skip to main content
       </a>
 
-      {/* Single promo bar — SAVE20 (universal). Daily CPA link lives in the nav for CPA. */}
-      <div className="fixed top-0 left-0 right-0 z-[70] bg-slate-900 text-white text-center py-1.5 px-4 border-b border-slate-800">
-        <Link to="#pricing" className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium hover:text-amber-300 transition-colors">
-          <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-          <span>20% off with code <span className="font-bold text-amber-300">SAVE20</span></span>
-          <ArrowRight className="w-3 h-3 opacity-70" />
-        </Link>
-      </div>
-
       {/* Navigation */}
-      <nav className="fixed left-0 right-0 top-8 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800" aria-label="Main navigation">
+      <nav className="fixed left-0 right-0 top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800" aria-label="Main navigation">
         <div className="px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center gap-2 sm:gap-3">
             <Link to="/">

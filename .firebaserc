@@ -1,18 +1,10 @@
 {
   "projects": {
-    "default": "passcpa-dev",
-    "development": "passcpa-dev",
+    "default": "voraprep-staging",
     "staging": "voraprep-staging",
     "production": "voraprep-prod"
   },
   "targets": {
-    "passcpa-dev": {
-      "hosting": {
-        "voraprep": [
-          "voraprep-dev"
-        ]
-      }
-    },
     "voraprep-staging": {
       "hosting": {
         "voraprep": [

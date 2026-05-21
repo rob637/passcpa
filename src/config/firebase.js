@@ -16,7 +16,7 @@ import logger from '../utils/logger';
 
 const isDevelopment = import.meta.env.DEV;
 const useEmulators = import.meta.env.VITE_USE_EMULATORS === 'true';
-const declaredEnvironment = import.meta.env.VITE_ENVIRONMENT || 'development';
+const declaredEnvironment = import.meta.env.VITE_ENVIRONMENT || 'staging';
 
 // Required environment variables
 const requiredEnvVars = [
@@ -62,17 +62,15 @@ const firebaseConfig = {
 // This catches misconfiguration during builds
 const validateEnvironmentMatch = () => {
   const projectId = firebaseConfig.projectId;
-  
+
   // Expected project ID patterns for each environment
-  const isDevProject = projectId?.includes('-dev');
   const isStagingProject = projectId?.includes('staging');
-  const isProdProject = projectId?.includes('prod') && !projectId?.includes('-dev');
-  
+  const isProdProject = projectId?.includes('prod');
+
   let expectedEnv = null;
-  if (isDevProject) expectedEnv = 'development';
-  else if (isStagingProject) expectedEnv = 'staging';
+  if (isStagingProject) expectedEnv = 'staging';
   else if (isProdProject) expectedEnv = 'production';
-  
+
   if (expectedEnv && expectedEnv !== declaredEnvironment) {
     console.warn(
       `⚠️ Environment mismatch detected!\n` +
@@ -85,8 +83,8 @@ const validateEnvironmentMatch = () => {
 
 validateEnvironmentMatch();
 
-// SAFETY CHECK: Prevent Production Config on Development URLs
-// This prevents "npm run build" (prod default) from being accidentally deployed to dev
+// SAFETY CHECK: Prevent Production Config on Non-Production URLs
+// This prevents "npm run build" (prod default) from being accidentally deployed to staging
 // Note: Capacitor native apps run on localhost but should use production config
 if (typeof window !== 'undefined') {
   const hostname = window.location.hostname;
@@ -95,17 +93,17 @@ if (typeof window !== 'undefined') {
   // Build-time prerender uses vite preview on localhost with the prod build.
   // Skip the guard for this user-agent so the prerendered HTML can be captured.
   const isPrerender = userAgent.includes('VoraPrep-Prerender');
-  const isDevUrl = !isPrerender && (
-    hostname.includes('passcpa-dev') ||
+  const isNonProdUrl = !isPrerender && (
+    hostname.includes('voraprep-staging') ||
     (hostname.includes('localhost') && !isCapacitorNative) ||
     (hostname.includes('127.0.0.1') && !isCapacitorNative)
   );
   const isProdConfig = firebaseConfig.projectId === 'voraprep-prod';
 
-  if (isDevUrl && isProdConfig) {
-    const errorMsg = 'CRITICAL CONFIG ERROR: Production database connection detected on Development URL. \n\n' +
-      'This usually happens when you run "npm run build" (defaults to Prod) instead of "npm run build:dev".\n\n' +
-      'Please rebuild with: npm run build:dev';
+  if (isNonProdUrl && isProdConfig) {
+    const errorMsg = 'CRITICAL CONFIG ERROR: Production database connection detected on Non-Production URL. \n\n' +
+      'This usually happens when you run "npm run build" (defaults to Prod) instead of "npm run build:staging".\n\n' +
+      'Please rebuild with: npm run build:staging';
     
     // Stop execution and alert user
     alert(errorMsg);

@@ -305,7 +305,7 @@ VITE_ENABLE_ANALYTICS=true|false
 - **`develop`** — Active development branch (daily work).
 - **`main`** — Production/default branch.
 - PR flow: feature branches → `develop` → `main` for releases.
-- Deployment: `npm run deploy:dev|staging|prod` (Firebase Hosting).
+- Deployment: `npm run deploy:staging|prod` (Firebase Hosting).
 
 ---
 
@@ -420,7 +420,6 @@ All question files must follow these conventions for consistency across the 6 ex
 ## Deployment
 
 ```bash
-npm run deploy:dev      # Dev environment
 npm run deploy:staging  # Staging environment
 npm run deploy:prod     # Production environment
 ```

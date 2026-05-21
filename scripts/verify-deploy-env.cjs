@@ -25,8 +25,7 @@ if (process.env.CI || process.env.GITHUB_ACTIONS) {
 
 // Project ID patterns to detect from build
 const PROJECT_PATTERNS = {
-  'passcpa-dev': 'development',
-  'voraprep-staging': 'staging', 
+  'voraprep-staging': 'staging',
   'voraprep-prod': 'production',
   'passcpa': 'production', // Legacy prod project name
 };
@@ -89,8 +88,8 @@ function detectBuildTarget() {
     const jsFiles = fs.readdirSync(assetsPath).filter(f => f.endsWith('.js'));
     
     // Count occurrences to determine the PRIMARY environment
-    // Some admin components may have hardcoded prod URLs even in dev builds
-    let devCount = 0, prodCount = 0, stagingCount = 0;
+    // Some admin components may have hardcoded prod URLs even in staging builds
+    let prodCount = 0, stagingCount = 0;
     
     for (const jsFile of jsFiles) {
       try {
@@ -98,9 +97,6 @@ function detectBuildTarget() {
         
         // Check for Firebase config patterns in the firebase config file specifically
         // (look for auth domain patterns which are more reliable)
-        if (content.includes('passcpa-dev.firebaseapp.com')) {
-          devCount += 10; // Strong signal
-        }
         if (content.includes('voraprep-prod.firebaseapp.com')) {
           prodCount += 10; // Strong signal
         }
@@ -109,17 +105,13 @@ function detectBuildTarget() {
         }
         
         // Weak signals (could be hardcoded URLs in UI)
-        if (content.includes('passcpa-dev')) devCount++;
         if (content.includes('voraprep-prod')) prodCount++;
         if (content.includes('voraprep-staging')) stagingCount++;
       } catch {}
     }
     
     // Return based on highest count
-    if (devCount >= prodCount && devCount >= stagingCount && devCount > 0) {
-      return { projectId: 'passcpa-dev', envName: 'development' };
-    }
-    if (stagingCount >= prodCount && stagingCount >= devCount && stagingCount > 0) {
+    if (stagingCount >= prodCount && stagingCount > 0) {
       return { projectId: 'voraprep-staging', envName: 'staging' };
     }
     if (prodCount > 0) {
@@ -156,7 +148,6 @@ function main() {
     console.error(`   You're trying to deploy a ${buildTarget.envName.toUpperCase()} build`);
     console.error(`   to the ${targetEnv?.toUpperCase() || currentProject} Firebase project.`);
     console.error('\n   To fix, run the correct deploy command:');
-    console.error(`   npm run deploy:dev     # For development`);
     console.error(`   npm run deploy:staging # For staging`);
     console.error(`   npm run deploy:prod    # For production`);
     console.error('');

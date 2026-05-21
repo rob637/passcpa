@@ -257,7 +257,6 @@ function detectAppBaseUrl() {
   // Auto-detect environment from Firebase project ID
   const projectId = process.env.GCLOUD_PROJECT || process.env.GCP_PROJECT ||
     (process.env.FIREBASE_CONFIG ? JSON.parse(process.env.FIREBASE_CONFIG).projectId : null);
-  if (projectId === 'passcpa-dev') return 'https://passcpa-dev.web.app';
   if (projectId === 'voraprep-staging') return 'https://voraprep-staging.web.app';
   return 'https://voraprep.com'; // production default
 }
@@ -271,8 +270,6 @@ const ALLOWED_ORIGINS = [
   'https://voraprep-prod.firebaseapp.com',
   'https://voraprep-staging.web.app',
   'https://voraprep-staging.firebaseapp.com',
-  'https://passcpa-dev.web.app',
-  'https://passcpa-dev.firebaseapp.com',
   'http://localhost:5173',
   'http://localhost:3000',
 ];

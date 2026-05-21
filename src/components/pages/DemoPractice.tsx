@@ -209,6 +209,12 @@ const DemoPractice = () => {
                 >
                   Learn More
                 </Link>
+                <Link
+                  to="/"
+                  className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm"
+                >
+                  Exit
+                </Link>
               </div>
             </div>
           </div>
@@ -234,6 +240,13 @@ const DemoPractice = () => {
             className="text-white/80 hover:text-white text-sm font-medium"
           >
             Sign Up Free →
+          </Link>
+          <Link
+            to="/"
+            className="text-white/60 hover:text-white text-sm font-medium"
+            aria-label="Exit demo"
+          >
+            Exit
           </Link>
         </div>
       </header>

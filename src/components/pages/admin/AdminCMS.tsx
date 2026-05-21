@@ -1965,6 +1965,40 @@ const AdminCMS: React.FC = () => {
     }
   };
 
+  // Grant/revoke SMS Daily CPA lifetime (separate system, keyed by phone)
+  const grantSmsLifetime = async (userEmail?: string) => {
+    if (!isAdmin) return;
+    const phone = window.prompt(
+      `Enter the user's SMS phone number to grant Daily CPA lifetime${userEmail ? ` (${userEmail})` : ''}.\n\nFormat: +15551234567 or 5551234567 (US)`
+    );
+    if (!phone || !phone.trim()) return;
+    const revoke = window.confirm(
+      `GRANT lifetime SMS Pro access to ${phone.trim()}?\n\n(Click Cancel to REVOKE instead.)`
+    ) ? false : true;
+    if (revoke && !window.confirm(`Confirm: REVOKE SMS lifetime for ${phone.trim()}?`)) return;
+
+    try {
+      const grant = httpsCallable(functions, 'dailyCpa_grantLifetime');
+      const result = await grant({ phone: phone.trim(), revoke });
+      const data = result.data as {
+        success: boolean;
+        uid: string;
+        phone: string;
+        previousTier: string;
+        previousStatus: string;
+        newTier: string;
+        newStatus: string;
+      };
+      addLog(
+        `SMS ${revoke ? 'revoked' : 'granted lifetime'} for ${data.phone} (uid=${data.uid}): ${data.previousTier}/${data.previousStatus} → ${data.newTier}/${data.newStatus}`,
+        'success'
+      );
+    } catch (error) {
+      logger.error('Error granting SMS lifetime', error);
+      addLog('Failed to grant SMS lifetime: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    }
+  };
+
   // Set a user's trial end date for a specific exam (admin only)
   const setTrialEndDate = async (userId: string, newDate: Date, examId?: string) => {
     if (!isAdmin) return;
@@ -4394,6 +4428,13 @@ VoraPrep Team`;
                                   title={u.subscription?.tier === 'lifetime' ? 'Revoke premium' : 'Grant lifetime'}
                                 >
                                   {u.subscription?.tier === 'lifetime' ? '⬇️' : '⬆️'}
+                                </button>
+                                <button
+                                  onClick={() => grantSmsLifetime(u.email)}
+                                  className="px-2 py-1 text-xs bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded hover:bg-purple-100"
+                                  title="Grant/revoke SMS Daily CPA lifetime (prompts for phone)"
+                                >
+                                  📱
                                 </button>
                                 <button
                                   onClick={() => toggleEmailUnsubscribe(u.id, !!u.emailUnsubscribed)}

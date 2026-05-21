@@ -2016,6 +2016,105 @@ exports.dailyCpa_lookupUid = onCall({
 });
 
 /**
+ * Grant SMS Lifetime — Admin-only. Upgrades a daily_users doc (looked up by phone)
+ * to a permanent Pro tier with active status and far-future trialEnd. Also supports revoke.
+ *
+ * Input:  { phone: string, revoke?: boolean }
+ * Output: { success, uid, phone, previousTier, previousStatus, newTier, newStatus }
+ */
+exports.dailyCpa_grantLifetime = onCall({
+  cors: true,
+  invoker: 'public',
+  enforceAppCheck: false,
+  memory: '256MiB',
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Authentication required.');
+  }
+  const callerDoc = await db.collection('users').doc(request.auth.uid).get();
+  if (!callerDoc.exists || !callerDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin access required.');
+  }
+
+  const raw = String(request.data?.phone || '').trim();
+  if (!raw) {
+    throw new HttpsError('invalid-argument', 'Missing phone');
+  }
+  const revoke = !!request.data?.revoke;
+
+  // Normalize to E.164 (US default), same logic as dailyCpa_lookupUid
+  const digits = raw.replace(/\D/g, '');
+  let e164;
+  if (raw.startsWith('+')) {
+    e164 = '+' + digits;
+  } else if (digits.length === 10) {
+    e164 = '+1' + digits;
+  } else if (digits.length === 11 && digits.startsWith('1')) {
+    e164 = '+' + digits;
+  } else {
+    throw new HttpsError('invalid-argument', 'Invalid phone format. Use E.164 (+15551234567) or 10-digit US.');
+  }
+
+  const snap = await db.collection('daily_users')
+    .where('phone', '==', e164)
+    .limit(1)
+    .get();
+
+  if (snap.empty) {
+    throw new HttpsError('not-found', `No Daily CPA SMS account found for ${e164}.`);
+  }
+
+  const userDoc = snap.docs[0];
+  const user = userDoc.data();
+  const callerEmail = request.auth.token.email || 'admin';
+
+  if (revoke) {
+    await userDoc.ref.update({
+      tier: 'starter',
+      status: 'canceled',
+      lifetimeGrantedBy: admin.firestore.FieldValue.delete(),
+      lifetimeGrantedAt: admin.firestore.FieldValue.delete(),
+      lifetimeRevokedBy: callerEmail,
+      lifetimeRevokedAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+    console.log(`[DailyCPA] Lifetime REVOKED for ${e164} by ${callerEmail}`);
+    return {
+      success: true,
+      uid: userDoc.id,
+      phone: e164,
+      previousTier: user.tier,
+      previousStatus: user.status,
+      newTier: 'starter',
+      newStatus: 'canceled',
+    };
+  }
+
+  // Far-future trialEnd (year 2099) so trial-expiration jobs never touch this user
+  const farFuture = admin.firestore.Timestamp.fromDate(new Date('2099-12-31T23:59:59Z'));
+
+  await userDoc.ref.update({
+    tier: 'pro',
+    status: 'active',
+    dailyCap: TIER_CONFIG.pro.dailyCap,
+    trialEnd: farFuture,
+    lifetimeGrantedBy: callerEmail,
+    lifetimeGrantedAt: admin.firestore.FieldValue.serverTimestamp(),
+  });
+
+  console.log(`[DailyCPA] Lifetime GRANTED to ${e164} (uid=${userDoc.id}) by ${callerEmail}`);
+
+  return {
+    success: true,
+    uid: userDoc.id,
+    phone: e164,
+    previousTier: user.tier,
+    previousStatus: user.status,
+    newTier: 'pro',
+    newStatus: 'active',
+  };
+});
+
+/**
  * Create Checkout Session — For Daily CPA subscription.
  */
 exports.dailyCpa_createCheckout = onCall({

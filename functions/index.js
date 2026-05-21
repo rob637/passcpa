@@ -8673,6 +8673,7 @@ exports.dailyCpa_weeklyRecap = dailyCpa.dailyCpa_weeklyRecap;
 exports.dailyCpa_smsInbound = dailyCpa.dailyCpa_smsInbound;
 exports.dailyCpa_signup = dailyCpa.dailyCpa_signup;
 exports.dailyCpa_lookupUid = dailyCpa.dailyCpa_lookupUid;
+exports.dailyCpa_grantLifetime = dailyCpa.dailyCpa_grantLifetime;
 exports.dailyCpa_createCheckout = dailyCpa.dailyCpa_createCheckout;
 exports.dailyCpa_stripeWebhook = dailyCpa.dailyCpa_stripeWebhook;
 exports.dailyCpa_dailyReset = dailyCpa.dailyCpa_dailyReset;

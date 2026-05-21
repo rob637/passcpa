@@ -17,79 +17,34 @@ import { EXAM_PRICING, isFounderPricingActive, founderDaysRemaining, FOUNDER_DEA
 import { functions } from '../../../config/firebase';
 import { httpsCallable } from 'firebase/functions';
 
-// Dynamic imports for course-specific question data
-// Returns { questions: array, stats: { total, bySection, byDifficulty, topics } }
+// Course-specific question data loader. Fetches the full question bank from
+// /public/data/ via courseDataLoader (NOT statically imported — would bloat
+// every admin chunk by tens of MB). Derives per-section/difficulty counts
+// from the questions themselves so we don't need to import per-course helpers.
 const loadCourseQuestionData = async (courseId: CourseId): Promise<{
   questions: unknown[];
   stats?: { total: number; bySection?: Record<string, number>; byDifficulty?: { easy: number; medium: number; hard: number }; topics?: number };
 } | null> => {
   try {
-    switch (courseId) {
-      case 'cpa': {
-        const m = await import('../../../data/cpa/questions');
-        const stats = m.getQuestionStats?.();
-        return { questions: m.ALL_QUESTIONS || [], stats };
+    const { loadAllCourseQuestions } = await import('../../../services/courseDataLoader');
+    const questions = (await loadAllCourseQuestions(courseId)) as Array<{ section?: string; difficulty?: string; topic?: string }>;
+    if (!questions || questions.length === 0) return null;
+
+    const bySection: Record<string, number> = {};
+    const byDifficulty = { easy: 0, medium: 0, hard: 0 };
+    const topics = new Set<string>();
+    for (const q of questions) {
+      const sec = q.section || 'Unknown';
+      bySection[sec] = (bySection[sec] || 0) + 1;
+      if (q.difficulty === 'easy' || q.difficulty === 'medium' || q.difficulty === 'hard') {
+        byDifficulty[q.difficulty]++;
       }
-      case 'ea': {
-        const m = await import('../../../data/ea/questions');
-        const questions = m.EA_ALL_QUESTIONS || [];
-        const bySection: Record<string, number> = {
-          'SEE1': m.SEE1_ALL?.length || 0,
-          'SEE2': m.SEE2_ALL?.length || 0,
-          'SEE3': m.SEE3_ALL?.length || 0,
-        };
-        return { questions, stats: { total: questions.length, bySection } };
-      }
-      case 'cma': {
-        const m = await import('../../../data/cma/questions');
-        const stats = m.getQuestionStats?.();
-        // Flatten to bySection for display (Part 1 and Part 2)
-        const bySection: Record<string, number> = {
-          'Part 1': stats?.part1?.total || 0,
-          'Part 2': stats?.part2?.total || 0,
-        };
-        return { questions: m.CMA_ALL_QUESTIONS || [], stats: { total: stats?.total || 0, bySection, byDifficulty: stats?.byDifficulty } };
-      }
-      case 'cia': {
-        const m = await import('../../../data/cia/questions');
-        const cia1 = m.ALL_CIA1_QUESTIONS || [];
-        const cia2 = m.ALL_CIA2_QUESTIONS || [];
-        const cia3 = m.ALL_CIA3_QUESTIONS || [];
-        const questions = [...cia1, ...cia2, ...cia3];
-        const bySection: Record<string, number> = {
-          'Part 1': cia1.length,
-          'Part 2': cia2.length,
-          'Part 3': cia3.length,
-        };
-        return { questions, stats: { total: questions.length, bySection } };
-      }
-      case 'cisa': {
-        const m = await import('../../../data/cisa/questions');
-        const questions = m.CISA_QUESTIONS || [];
-        // Count by section field in questions
-        const bySection: Record<string, number> = {};
-        questions.forEach((q: { section?: string }) => {
-          const section = q.section || 'Unknown';
-          bySection[section] = (bySection[section] || 0) + 1;
-        });
-        return { questions, stats: { total: questions.length, bySection } };
-      }
-      case 'cfp': {
-        const m = await import('../../../data/cfp/questions');
-        const stats = m.CFP_QUESTION_STATS;
-        // Convert byDomain to bySection for consistent display
-        const bySection: Record<string, number> = {};
-        if (stats?.byDomain) {
-          Object.entries(stats.byDomain).forEach(([domain, count]) => {
-            // Convert CFP-PRO to PRO, etc. for cleaner display
-            const shortName = domain.replace('CFP-', '');
-            bySection[shortName] = count as number;
-          });
-        }
-        return { questions: m.CFP_QUESTIONS_ALL || [], stats: { total: stats?.total || 0, bySection, byDifficulty: stats?.byDifficulty } };
-      }
-      default: return null;
+      if (q.topic) topics.add(q.topic);
     }
+    return {
+      questions,
+      stats: { total: questions.length, bySection, byDifficulty, topics: topics.size },
+    };
   } catch {
     return null;
   }
@@ -587,7 +542,7 @@ const StripeStatusSection: React.FC = () => {
     loadSubStats();
   }, [checkStripe, loadSubStats]);
 
-  const projectId = import.meta.env.VITE_FIREBASE_PROJECT_ID || 'passcpa-dev';
+  const projectId = import.meta.env.VITE_FIREBASE_PROJECT_ID || 'voraprep-staging';
   const webhookUrl = `https://us-central1-${projectId}.cloudfunctions.net/stripeWebhook`;
 
   return (
@@ -6031,7 +5986,7 @@ VoraPrep Team`;
               </div>
               <div className="mt-4 p-3 bg-gray-50 dark:bg-slate-900 rounded-lg text-sm text-gray-600 dark:text-gray-400">
                 <div className="grid grid-cols-2 gap-2">
-                  <div><strong>Environment:</strong> {import.meta.env.VITE_ENVIRONMENT || 'development'}</div>
+                  <div><strong>Environment:</strong> {import.meta.env.VITE_ENVIRONMENT || 'staging'}</div>
                   <div><strong>Project:</strong> {import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Unknown'}</div>
                   <div><strong>Build:</strong> {import.meta.env.VITE_BUILD_TIME || 'Local'}</div>
                   <div><strong>Version:</strong> {import.meta.env.VITE_APP_VERSION || '1.0.0'}</div>
@@ -6742,7 +6697,7 @@ VoraPrep Team`;
               <div className="p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
                 <h4 className="font-medium text-gray-900 dark:text-white mb-2">Firebase Project</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Project: {import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Unknown'}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Environment: {import.meta.env.VITE_ENVIRONMENT || 'development'}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Environment: {import.meta.env.VITE_ENVIRONMENT || 'staging'}</p>
               </div>
               
               {/* Reset Account Section */}

@@ -6,7 +6,6 @@
 #   ./scripts/deploy.sh staging          # Deploy to staging
 #   ./scripts/deploy.sh production       # Deploy to production
 #   ./scripts/deploy.sh production app   # Deploy hosting only (no functions)
-#   ./scripts/deploy.sh dev              # Deploy to dev (no gate)
 #
 # Requires typing "DEPLOY STAGING" or "DEPLOY PRODUCTION" to confirm.
 # =============================================================================
@@ -23,11 +22,10 @@ TARGET="${1:-}"
 SCOPE="${2:-full}"  # "full" or "app" (app = hosting only, no functions)
 
 if [[ -z "$TARGET" ]]; then
-  echo -e "${RED}Usage: ./scripts/deploy.sh <staging|production|dev> [app]${NC}"
+  echo -e "${RED}Usage: ./scripts/deploy.sh <staging|production> [app]${NC}"
   echo ""
   echo "  staging     → voraprep-staging.web.app"
   echo "  production  → voraprep.com (hosting + functions)"
-  echo "  dev         → passcpa-dev (development)"
   echo ""
   echo "  Optional: add 'app' to skip Cloud Functions deployment"
   echo "            e.g., ./scripts/deploy.sh production app"
@@ -60,17 +58,9 @@ if [[ "$UNCOMMITTED" -gt 0 ]]; then
   echo ""
 fi
 
-# ─── Dev environment (low risk, no gate) ─────────────────────────────────────
-if [[ "$TARGET" == "dev" ]]; then
-  echo -e "${GREEN}→ Building and deploying to development...${NC}"
-  npm run build:dev
-  echo -e "${GREEN}→ Prerendering CPA marketing routes...${NC}"
-  npm run prerender
-  firebase deploy --only hosting -P development
-  echo ""
-  echo -e "${GREEN}✅ Deployed to development${NC}"
-  exit 0
-fi
+# ─── Dev environment removed ─────────────────────────────────────────────────
+# The legacy `dev` target (passcpa-dev / voraprep-dev.web.app) has been
+# retired. Use `staging` for pre-production testing.
 
 # ─── Staging gate ────────────────────────────────────────────────────────────
 if [[ "$TARGET" == "staging" ]]; then
@@ -164,5 +154,5 @@ if [[ "$TARGET" == "production" ]]; then
 fi
 
 # ─── Unknown target ──────────────────────────────────────────────────────────
-echo -e "${RED}Unknown target: '$TARGET'. Use: staging, production, or dev${NC}"
+echo -e "${RED}Unknown target: '$TARGET'. Use: staging or production${NC}"
 exit 1

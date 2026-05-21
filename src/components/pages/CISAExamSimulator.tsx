@@ -5,6 +5,7 @@
  * This wrapper provides CISA-specific configuration with domain multi-select.
  */
 
+import { useMemo } from 'react';
 import { 
   ExamSimulatorTemplate, 
   ExamSimulatorConfig,
@@ -13,7 +14,8 @@ import {
   GeneratedExam,
 } from './templates/ExamSimulatorTemplate';
 import { CISASectionId } from '../../courses/cisa';
-import { CISA_QUESTIONS } from '../../data/cisa/questions';
+import { useExamQuestionsBySection } from '../../hooks/useExamQuestionsBySection';
+import { PageLoader } from '../common/PageLoader';
 
 // ============================================
 // Configuration
@@ -79,21 +81,9 @@ const CISA_EXAM_MODES: ExamMode[] = [
 ];
 
 // ============================================
-// Question Pool
+// Question Pool — built at runtime from useExamQuestionsBySection.
+// Question banks are NOT statically imported (keeps ~5 MB out of JS bundle).
 // ============================================
-
-function getQuestionPool(section: CISASectionId): ExamQuestion[] {
-  const filtered = CISA_QUESTIONS.filter(q => q.section === section);
-  
-  return filtered.map(q => ({
-    id: q.id,
-    question: q.question,
-    options: q.options,
-    correctAnswer: q.correctAnswer,
-    explanation: q.explanation,
-    section: section,
-  }));
-}
 
 // ============================================
 // Exam Generator
@@ -119,7 +109,7 @@ function generateExam(
 // Component
 // ============================================
 
-const config: ExamSimulatorConfig<CISASectionId> = {
+const baseConfig: Omit<ExamSimulatorConfig<CISASectionId>, 'getQuestionPool'> = {
   courseId: 'cisa',
   courseName: 'CISA',
   courseDescription: 'Practice with realistic exam conditions for the ISACA Certified Information Systems Auditor exam',
@@ -129,12 +119,25 @@ const config: ExamSimulatorConfig<CISASectionId> = {
   defaultSection: 'CISA1',
   modes: CISA_EXAM_MODES,
   defaultModeIndex: 2, // Quick Practice
-  getQuestionPool,
   generateExam,
   passingScore: 70,
   allowMultiSectionSelect: true,
 };
 
 export default function CISAExamSimulatorNew() {
+  const { questionsBySection, loading } = useExamQuestionsBySection<CISASectionId>('cisa');
+
+  const getQuestionPool = useMemo(() => {
+    return (section: CISASectionId): ExamQuestion[] =>
+      (questionsBySection?.[section] ?? []);
+  }, [questionsBySection]);
+
+  const config: ExamSimulatorConfig<CISASectionId> = useMemo(
+    () => ({ ...baseConfig, getQuestionPool }),
+    [getQuestionPool]
+  );
+
+  if (loading || !questionsBySection) return <PageLoader />;
+
   return <ExamSimulatorTemplate<CISASectionId> config={config} />;
 }

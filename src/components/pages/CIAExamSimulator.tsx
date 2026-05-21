@@ -5,6 +5,7 @@
  * This wrapper provides CIA-specific configuration.
  */
 
+import { useMemo } from 'react';
 import { 
   ExamSimulatorTemplate, 
   ExamSimulatorConfig,
@@ -12,13 +13,9 @@ import {
   ExamQuestion,
   GeneratedExam,
 } from './templates/ExamSimulatorTemplate';
-import { Question } from '../../types';
 import { CIASectionId } from '../../courses/cia/config';
-import { 
-  ALL_CIA1_QUESTIONS as CIA1_QUESTIONS, 
-  ALL_CIA2_QUESTIONS as CIA2_QUESTIONS, 
-  ALL_CIA3_QUESTIONS as CIA3_QUESTIONS 
-} from '../../data/cia/questions';
+import { useExamQuestionsBySection } from '../../hooks/useExamQuestionsBySection';
+import { PageLoader } from '../common/PageLoader';
 
 // ============================================
 // Configuration
@@ -85,34 +82,9 @@ const CIA_EXAM_MODES = getExamModes('CIA1');
 
 // ============================================
 // Question Pool
+// Built at runtime from questions fetched via useExamQuestionsBySection.
+// Question banks are NOT statically imported (would bundle ~10 MB per course).
 // ============================================
-
-function getQuestionPool(section: CIASectionId): ExamQuestion[] {
-  let questions: Question[];
-  
-  switch (section) {
-    case 'CIA1':
-      questions = CIA1_QUESTIONS as Question[];
-      break;
-    case 'CIA2':
-      questions = CIA2_QUESTIONS as Question[];
-      break;
-    case 'CIA3':
-      questions = CIA3_QUESTIONS as Question[];
-      break;
-    default:
-      questions = [];
-  }
-  
-  return questions.map(q => ({
-    id: q.id,
-    question: q.question,
-    options: q.options,
-    correctAnswer: q.correctAnswer,
-    explanation: q.explanation,
-    section: section,
-  }));
-}
 
 // ============================================
 // Exam Generator
@@ -140,7 +112,7 @@ function generateExam(
 
 import { useAuth } from '../../hooks/useAuth';
 
-const baseConfig: Omit<ExamSimulatorConfig<CIASectionId>, 'defaultSection'> = {
+const baseConfig: Omit<ExamSimulatorConfig<CIASectionId>, 'defaultSection' | 'getQuestionPool'> = {
   courseId: 'cia',
   courseName: 'CIA',
   courseDescription: 'Practice with realistic exam conditions for the IIA Certified Internal Auditor exam',
@@ -150,25 +122,33 @@ const baseConfig: Omit<ExamSimulatorConfig<CIASectionId>, 'defaultSection'> = {
   modes: CIA_EXAM_MODES,
   defaultModeIndex: 2, // Quick Practice
   getModes: getExamModes, // Dynamic modes per part (Part 1: 125Q, Parts 2&3: 100Q)
-  getQuestionPool,
   generateExam,
   passingScore: 60, // CIA uses scaled scoring, ~60% raw approximation
 };
 
 export default function CIAExamSimulatorNew() {
   const { userProfile } = useAuth();
+  const { questionsBySection, loading } = useExamQuestionsBySection<CIASectionId>('cia');
   
   // Use user's selected section, default to CIA1 if not set or invalid
   const userSection = userProfile?.examSection;
   const isValidSection = userSection === 'CIA1' || userSection === 'CIA2' || userSection === 'CIA3';
   const defaultSection: CIASectionId = isValidSection ? userSection : 'CIA1';
-  
-  const config: ExamSimulatorConfig<CIASectionId> = {
+
+  const getQuestionPool = useMemo(() => {
+    return (section: CIASectionId): ExamQuestion[] =>
+      (questionsBySection?.[section] ?? []);
+  }, [questionsBySection]);
+
+  const config: ExamSimulatorConfig<CIASectionId> = useMemo(() => ({
     ...baseConfig,
     defaultSection,
+    getQuestionPool,
     // Always hide - user picks their part on dashboard, not in simulator (matches CPA behavior)
     hideSectionSelector: true,
-  };
+  }), [defaultSection, getQuestionPool]);
+
+  if (loading || !questionsBySection) return <PageLoader />;
   
   return <ExamSimulatorTemplate<CIASectionId> config={config} />;
 }

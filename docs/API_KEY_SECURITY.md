@@ -1,169 +1,130 @@
-# API Key Security - Action Required
+# API Key & Secret Management
 
-## Current Status: ⚠️ PROTOTYPE RISK
+> Single source of truth for every credential VoraPrep uses. If you add a new
+> integration, update this doc in the same PR.
 
-The Gemini AI API key is currently exposed in the client-side bundle via `VITE_GEMINI_API_KEY`.
+---
 
-### The Problem
+## 1. Storage Tiers
 
-All `VITE_*` environment variables are embedded into the client-side JavaScript bundle during build. Anyone who inspects the source code in browser DevTools can extract the API key and:
-- Use your API quota
-- Incur charges on your Google Cloud account
-- Make unlimited requests as your application
+| Tier | Where it lives | Examples | Committed? |
+|------|----------------|----------|------------|
+| **Public client config** | `.env.development`, `.env.staging`, `.env.production` | `VITE_FIREBASE_*`, `VITE_GA_*`, `VITE_GOOGLE_ADS_*`, `VITE_FIREBASE_VAPID_KEY` | ✅ Yes — public by design, locked down with GCP API-key restrictions |
+| **Local dev secrets** | `.env`, `.env.local` (root); `scripts/**/.env` | Dev `VITE_GEMINI_API_KEY`, `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `HEYGEN_API_KEY`, `DISCORD_BOT_TOKEN`, `RESEND_API_KEY` (scripts) | ❌ Never — gitignored |
+| **Cloud Functions secrets** | Google Secret Manager | `RESEND_API_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `GEMINI_API_KEY`, `DATAFORSEO_*`, `TELNYX_*` | ❌ Never — managed via `firebase functions:secrets:set` |
+| **Firebase Admin SDK** | `serviceAccountKey.json`, `serviceAccountKey.prod.json` | JSON private keys with full admin scope | ❌ Never — gitignored; treat as root-equivalent |
 
-### Current Mitigation
+---
 
-The app has robust **offline fallback responses** that work when:
-- No API key is configured
-- API key is invalid/expired
-- API service is unreachable
+## 2. Complete Inventory
 
-This means the app still functions without the AI feature, but authenticated AI tutoring is exposed.
+### 2.1 Client-side (`VITE_*`, embedded in browser bundle)
 
-## Solution: Firebase Cloud Functions Proxy
+| Variable | Sensitivity | Rotate? | Notes |
+|----------|------------|---------|-------|
+| `VITE_FIREBASE_API_KEY` | Public | Never | Identifies the GCP project. Restrict via GCP Console → APIs & Services → Credentials → HTTP referrers (web) + package name + SHA-1 (Android/iOS). |
+| `VITE_FIREBASE_AUTH_DOMAIN` | Public | Never | |
+| `VITE_FIREBASE_PROJECT_ID` | Public | Never | |
+| `VITE_FIREBASE_STORAGE_BUCKET` | Public | Never | |
+| `VITE_FIREBASE_MESSAGING_SENDER_ID` | Public | Never | |
+| `VITE_FIREBASE_APP_ID` | Public | Never | |
+| `VITE_FIREBASE_MEASUREMENT_ID` | Public | Never | GA4 measurement ID. |
+| `VITE_FIREBASE_VAPID_KEY` | Public | Never | FCM web-push *public* key. |
+| `VITE_GA_MEASUREMENT_ID` | Public | Never | |
+| `VITE_GOOGLE_ADS_*` | Public | Never | Conversion action IDs. |
+| `VITE_GEMINI_API_KEY` | **Semi-sensitive** | If exposed | Dev/test fallback + admin CourseFactory only; production AI tutor goes through `geminiProxy` Cloud Function. Restrict via GCP Console → API restrictions → Generative Language API only + HTTP referrer allow-list. |
 
-### Architecture
+### 2.2 Server-only secrets in local `.env` (used by Node scripts only)
 
-```
-Current (INSECURE):
-[Browser] --> [Gemini API] (API key exposed in JS)
+| Variable | Used by | Rotation cadence | Rotate at |
+|----------|---------|------------------|-----------|
+| `ANTHROPIC_API_KEY` | `scripts/ux-audit`, content tooling | 12 months | https://console.anthropic.com/settings/keys |
+| `OPENAI_API_KEY` | content generation | 12 months | https://platform.openai.com/api-keys |
+| `HEYGEN_API_KEY` | `content_factory/*` | 12 months | https://app.heygen.com/settings/api |
+| `RESEND_API_KEY` (scripts/reddit_monitor) | reddit notifier | 12 months | https://resend.com/api-keys |
+| `DISCORD_BOT_TOKEN` (scripts/discord_bots, scripts/reddit_monitor) | Discord bots | On suspicion | https://discord.com/developers/applications → Bot → Reset Token |
 
-Target (SECURE):
-[Browser] --> [Firebase Function] --> [Gemini API]
-                  (API key in server environment)
-```
+### 2.3 Cloud Functions secrets (Google Secret Manager, per project)
 
-### Implementation Steps
-
-#### 1. Create a Firebase Cloud Function
-
-Create `functions/aiTutor.js`:
-
-```javascript
-const functions = require('firebase-functions');
-const { GoogleGenerativeAI } = require('@google/generative-ai');
-
-// API key stored securely in Firebase environment
-const genAI = new GoogleGenerativeAI(functions.config().gemini.apikey);
-
-exports.chatWithTutor = functions.https.onCall(async (data, context) => {
-  // Verify user is authenticated
-  if (!context.auth) {
-    throw new functions.https.HttpsError('unauthenticated', 'User must be logged in');
-  }
-
-  const { message, mode, section, conversationHistory, courseId, contextText } = data;
-
-  try {
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
-    
-    // Build the prompt with system instructions and context
-    // (Move prompt building logic from aiService.ts to here)
-    
-    const result = await model.generateContent(message);
-    return { response: result.response.text() };
-  } catch (error) {
-    console.error('Gemini API error:', error);
-    throw new functions.https.HttpsError('internal', 'AI service error');
-  }
-});
-```
-
-#### 2. Set the API Key in Firebase Environment
+Set in dev/staging/prod independently:
 
 ```bash
-firebase functions:config:set gemini.apikey="YOUR_GEMINI_API_KEY"
+firebase functions:secrets:set RESEND_API_KEY --project passcpa-dev
+firebase functions:secrets:set RESEND_API_KEY --project voraprep-staging
+firebase functions:secrets:set RESEND_API_KEY --project voraprep-prod
 ```
 
-#### 3. Update the Client Service
+| Secret | Used by | Rotation cadence | Rotate at |
+|--------|---------|------------------|-----------|
+| `RESEND_API_KEY` | All transactional email (~19 functions in `functions/index.js`) | 12 months | https://resend.com/api-keys |
+| `STRIPE_SECRET_KEY` | Checkout, webhook, customer portal | 6–12 months, or immediately on contractor offboarding | https://dashboard.stripe.com/apikeys |
+| `STRIPE_WEBHOOK_SECRET` | Stripe webhook signature verification | When endpoint URL changes | Stripe Dashboard → Developers → Webhooks |
+| `DAILY_CPA_STRIPE_WEBHOOK_SECRET` | daily-cpa subdomain webhook | Same as above | Same |
+| `GEMINI_API_KEY` | `geminiProxy` Cloud Function, content jobs | 12 months | https://aistudio.google.com/apikey |
+| `DATAFORSEO_LOGIN` / `DATAFORSEO_PASSWORD` | keyword research | 12 months | https://app.dataforseo.com/api-access |
+| `TELNYX_API_KEY` / `TELNYX_PHONE_NUMBER` / `TELNYX_PUBLIC_KEY` | daily-cpa SMS | 12 months | https://portal.telnyx.com/#/app/api-keys |
 
-Update `src/services/aiService.ts`:
+### 2.4 Firebase Admin SDK service accounts
 
-```typescript
-import { getFunctions, httpsCallable } from 'firebase/functions';
+| File | Project | Risk if leaked |
+|------|---------|----------------|
+| `serviceAccountKey.json` | `passcpa-dev` | Full admin on dev project |
+| `serviceAccountKey.prod.json` | `voraprep-prod` | **Full admin on production — equivalent to losing the database** |
 
-export const generateAIResponse = async (
-  userMessage: string,
-  mode = 'explain',
-  weakAreas: WeakArea[] = [],
-  section = 'REG',
-  conversationHistory: ChatMessage[] = [],
-  courseId: CourseId = 'cpa',
-  contextText?: string
-): Promise<string> => {
-  try {
-    const functions = getFunctions();
-    const chatWithTutor = httpsCallable(functions, 'chatWithTutor');
-    
-    const result = await chatWithTutor({
-      message: userMessage,
-      mode,
-      section,
-      conversationHistory,
-      courseId,
-      contextText,
-    });
-    
-    return (result.data as { response: string }).response;
-  } catch (error) {
-    // Fallback to offline responses
-    return generateFallbackResponse(userMessage, mode, section, conversationHistory, true, courseId);
-  }
-};
-```
+**Rules:**
+- Never on a developer laptop or Codespace unless actively in use.
+- Rotate every **90 days** or immediately after any laptop/Codespace exposure: GCP Console → IAM & Admin → Service Accounts → select → Keys → Add/Delete.
+- Prefer `GOOGLE_APPLICATION_CREDENTIALS` env var pointing to a path outside the repo, or workload identity federation in CI.
 
-#### 4. Remove Client-Side API Key
+---
 
-Delete from `.env`:
-```diff
-- VITE_GEMINI_API_KEY=your-key-here
-```
+## 3. Operational Procedures
 
-#### 5. Deploy
+### 3.1 Adding a new server secret
 
-```bash
-firebase deploy --only functions
-```
+1. Decide tier: local script secret (root `.env`) vs Cloud Functions secret (Secret Manager).
+2. If Cloud Functions:
+   ```bash
+   firebase functions:secrets:set NEW_SECRET --project passcpa-dev
+   firebase functions:secrets:set NEW_SECRET --project voraprep-staging
+   firebase functions:secrets:set NEW_SECRET --project voraprep-prod
+   ```
+3. Reference it in the function: `defineSecret('NEW_SECRET')` and add to the `secrets: [...]` array of the function options.
+4. Update §2.3 of this doc and `.env.example` (in the "Cloud Functions secrets" reference block).
+5. Deploy: `npm run deploy:dev` first, then staging, then prod.
 
-### Rate Limiting (Recommended)
+### 3.2 Rotating a secret
 
-Add rate limiting to the Cloud Function to prevent abuse:
+1. Generate the new value at the provider.
+2. **Cloud Functions secrets**: `firebase functions:secrets:set NAME --project <id>` then `firebase deploy --only functions --project <id>`. Old version is automatically destroyed after a 7-day grace by Secret Manager unless pinned.
+3. **Local `.env` secrets**: replace value in your local `.env` / `.env.local`. Notify other devs out-of-band.
+4. Revoke the old value at the provider.
+5. Record the rotation in §4 below.
 
-```javascript
-const rateLimit = require('firebase-functions-rate-limiter');
+### 3.3 If a secret is leaked
 
-const limiter = rateLimit.FirestoreRateLimiter.buildLimiter({
-  keyPrefix: 'ai-tutor',
-  document: db.collection('rate_limits').doc('ai'),
-  maxCalls: 50, // 50 requests
-  periodSeconds: 3600, // per hour
-});
+1. **Revoke first, investigate second.** Rotate at the provider immediately.
+2. Push a new value via the procedure above.
+3. If committed to git: rotate, then scrub history with `git filter-repo` and force-push (coordinate with team).
+4. Audit usage logs at the provider (Stripe Events, OpenAI usage, Resend logs, GCP Audit Logs) for the leak window.
+5. Open a post-mortem.
 
-exports.chatWithTutor = functions.https.onCall(async (data, context) => {
-  // Check rate limit
-  const limited = await limiter.isQuotaExceeded(context.auth.uid);
-  if (limited) {
-    throw new functions.https.HttpsError('resource-exhausted', 'Rate limit exceeded');
-  }
-  // ... rest of function
-});
-```
+---
 
-## Timeline
+## 4. Rotation Log
 
-- **Before public launch**: MUST implement Firebase Functions proxy
-- **Current status**: Acceptable for development/beta testing with limited users
-- **Estimated effort**: 2-4 hours
+| Date | Secret | Reason | Done by |
+|------|--------|--------|---------|
+| _add entries here_ | | | |
 
-## Related Files
+---
 
-- `src/services/aiService.ts` - Current client-side implementation
-- `functions/index.js` - Firebase Functions entry point
-- `.env` - Environment variables (do NOT commit to git)
+## 5. Hardening Checklist
 
-## Monitoring
-
-If you notice unexpected Gemini API usage:
-1. Check `localStorage.getItem('ai_api_failures')` in browser console
-2. Review Google Cloud Console for API usage spikes
-3. Rotate the API key immediately if compromised
+- [ ] Every `VITE_FIREBASE_API_KEY` has GCP API-key restrictions (HTTP referrer for web, package + SHA-1 for Android/iOS).
+- [ ] `VITE_GEMINI_API_KEY` is restricted to the Generative Language API and an allow-list of referrers.
+- [ ] Firestore + Storage rules enforce owner-only access (see `firestore.rules`, `storage.rules`).
+- [ ] App Check is enabled on all production traffic.
+- [ ] CI uses dedicated service accounts (not the same JSON developers have locally).
+- [ ] No secret appears in CI logs (`firebase deploy --only functions` masks secrets automatically; custom scripts must not `echo $SECRET`).
+- [ ] `serviceAccountKey*.json` only exists on machines that actively need it.

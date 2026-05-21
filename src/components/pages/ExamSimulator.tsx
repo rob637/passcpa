@@ -63,6 +63,7 @@ const ExamSimulator: React.FC = () => {
   const [examState, setExamState] = useState<ExamState>('intro');
   const [examMode, setExamMode] = useState<ExamMode>('mini');
   const [usePrometricTheme, setUsePrometricTheme] = useState(false);
+  const [showQuestionNav, setShowQuestionNav] = useState(false);
   const [selectedMockExam, setSelectedMockExam] = useState<MockExamConfig | null>(null);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [tbsItems, setTbsItems] = useState<TBS[]>([]);
@@ -1956,13 +1957,30 @@ const ExamSimulator: React.FC = () => {
             </button>
           </div>
 
-          {/* Question Grid */}
-          <div className="prometric-question-grid">
+          {/* Question Grid — collapsible on mobile */}
+          <button
+            type="button"
+            onClick={() => setShowQuestionNav((v) => !v)}
+            className="prometric-nav-btn md:hidden"
+            aria-expanded={showQuestionNav}
+            aria-controls="prometric-question-grid"
+          >
+            {showQuestionNav
+              ? 'Hide ▲'
+              : `Navigator (${currentIndex + 1}/${currentTestletType === 'tbs' ? testletTBS.length : testletQuestions.length}) ▼`}
+          </button>
+          <div
+            id="prometric-question-grid"
+            className={clsx('prometric-question-grid', !showQuestionNav && 'hidden md:flex')}
+          >
             {currentTestletType === 'tbs' ? (
               testletTBS.map((tbs, i) => (
                 <button
                   key={i}
-                  onClick={() => goToQuestion(i)}
+                  onClick={() => {
+                    goToQuestion(i);
+                    setShowQuestionNav(false);
+                  }}
                   className={clsx(
                     'prometric-grid-btn',
                     currentIndex === i && 'current',
@@ -1977,7 +1995,10 @@ const ExamSimulator: React.FC = () => {
               testletQuestions.map((q, i) => (
                 <button
                   key={i}
-                  onClick={() => goToQuestion(i)}
+                  onClick={() => {
+                    goToQuestion(i);
+                    setShowQuestionNav(false);
+                  }}
                   className={clsx(
                     'prometric-grid-btn',
                     currentIndex === i && 'current',

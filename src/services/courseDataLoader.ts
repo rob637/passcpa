@@ -24,23 +24,50 @@ const courseModules = import.meta.glob<{ COURSE_DATA: CourseData }>(
 );
 
 /**
- * Per-section question JSON discovered at build time. Each becomes its own
- * lazily-loaded chunk so users only download the section they're studying
- * instead of the entire 6-section, 30+ MB course bundle.
+ * Per-section question banks are served as STATIC JSON from /public/data/
+ * (synced from content/ via scripts/sync-content-to-public.cjs at build time).
+ *
+ * They are intentionally NOT bundled — at ~70 MB across all courses, inlining
+ * them as JS chunks would bloat the build by 60+ MB. Fetching plain JSON lets
+ * Firebase Hosting gzip + cache them, and skips V8 parse cost.
  */
-interface SectionQuestionFile {
-  default: { questions?: unknown[] } | unknown[];
+interface SectionManifestEntry {
+  section: string;
+  bytes: number;
 }
-const sectionQuestionModules = import.meta.glob<SectionQuestionFile>(
-  '../../content/*/*/questions.json',
-  { eager: false }
-);
+interface QuestionsManifest {
+  courses: Record<string, { sections: SectionManifestEntry[] }>;
+  generatedAt?: string;
+}
+
+const QUESTIONS_BASE = '/data/questions';
+const MANIFEST_URL = `${QUESTIONS_BASE}/manifest.json`;
+
+let manifestPromise: Promise<QuestionsManifest> | null = null;
+async function loadManifest(): Promise<QuestionsManifest> {
+  if (!manifestPromise) {
+    manifestPromise = fetch(MANIFEST_URL, { credentials: 'same-origin' })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Manifest fetch failed: ${res.status} ${res.statusText}`);
+        }
+        return res.json() as Promise<QuestionsManifest>;
+      })
+      .catch((err) => {
+        manifestPromise = null;
+        throw err;
+      });
+  }
+  return manifestPromise;
+}
 
 /** Cache for loaded course data */
 const dataCache = new Map<CourseId, CourseData>();
 
 /** Cache for loaded per-section question arrays. */
 const sectionQuestionsCache = new Map<string, unknown[]>();
+/** In-flight fetches deduped by cacheKey. */
+const sectionQuestionsInFlight = new Map<string, Promise<unknown[]>>();
 
 /**
  * Load course data by courseId. Returns cached data if available.
@@ -109,11 +136,9 @@ export function clearCourseDataCache(courseId?: CourseId): void {
 }
 
 /**
- * Lazily load questions for a single section. Each section's JSON file is its
- * own dynamically-imported chunk — opening "FAR" no longer drags AUD/REG/BAR/
- * ISC/TCP into the same bundle.
- *
- * Section is matched case-insensitively against the on-disk content directory.
+ * Lazily load questions for a single section. Each section's JSON file is
+ * fetched once from /public/data/questions/{course}/{section}.json and cached
+ * in memory. Section matching is case-insensitive against the manifest.
  *
  * @example
  *   const farQuestions = await loadSectionQuestions('cpa', 'FAR');
@@ -126,35 +151,57 @@ export async function loadSectionQuestions(
   const cached = sectionQuestionsCache.get(cacheKey);
   if (cached) return cached;
 
-  const sectionLower = section.toLowerCase();
-  // Find the matching file path; section directory may be lowercase ("cisa1")
-  // or mixed case ("CFP-RET"), so compare case-insensitively.
-  const matchedKey = Object.keys(sectionQuestionModules).find(key => {
-    const m = key.match(/\.\.\/\.\.\/content\/([^/]+)\/([^/]+)\/questions\.json$/);
-    if (!m) return false;
-    const [, course, sec] = m;
-    return course === courseId && sec.toLowerCase() === sectionLower;
-  });
+  const inFlight = sectionQuestionsInFlight.get(cacheKey);
+  if (inFlight) return inFlight;
 
-  if (!matchedKey) {
-    logger.warn(`No questions.json found for ${courseId}/${section}`);
-    sectionQuestionsCache.set(cacheKey, []);
-    return [];
-  }
-
-  try {
-    const mod = await sectionQuestionModules[matchedKey]();
-    const raw = mod.default;
-    let items: unknown[] = [];
-    if (Array.isArray(raw)) items = raw;
-    else if (raw && typeof raw === 'object' && Array.isArray((raw as { questions?: unknown[] }).questions)) {
-      items = (raw as { questions: unknown[] }).questions;
+  const promise = (async () => {
+    let canonicalSection: string | undefined;
+    try {
+      const manifest = await loadManifest();
+      const courseEntry = manifest.courses[courseId];
+      if (!courseEntry) {
+        logger.warn(`No manifest entry for course ${courseId}`);
+        return [];
+      }
+      const sectionLower = section.toLowerCase();
+      const match = courseEntry.sections.find(
+        (s) => s.section.toLowerCase() === sectionLower
+      );
+      if (!match) {
+        logger.warn(`No questions.json for ${courseId}/${section}`);
+        return [];
+      }
+      canonicalSection = match.section;
+    } catch (error) {
+      logger.error(`Failed to load questions manifest:`, error);
+      return [];
     }
-    sectionQuestionsCache.set(cacheKey, items);
-    return items;
-  } catch (error) {
-    logger.error(`Failed to load section questions for ${courseId}/${section}:`, error);
-    return [];
+
+    try {
+      const url = `${QUESTIONS_BASE}/${courseId}/${canonicalSection}.json`;
+      const res = await fetch(url, { credentials: 'same-origin' });
+      if (!res.ok) {
+        throw new Error(`Fetch ${url} -> ${res.status} ${res.statusText}`);
+      }
+      const raw: unknown = await res.json();
+      let items: unknown[] = [];
+      if (Array.isArray(raw)) items = raw;
+      else if (raw && typeof raw === 'object' && Array.isArray((raw as { questions?: unknown[] }).questions)) {
+        items = (raw as { questions: unknown[] }).questions;
+      }
+      sectionQuestionsCache.set(cacheKey, items);
+      return items;
+    } catch (error) {
+      logger.error(`Failed to load section questions for ${courseId}/${section}:`, error);
+      return [];
+    }
+  })();
+
+  sectionQuestionsInFlight.set(cacheKey, promise);
+  try {
+    return await promise;
+  } finally {
+    sectionQuestionsInFlight.delete(cacheKey);
   }
 }
 
@@ -164,15 +211,17 @@ export async function loadSectionQuestions(
  * truly need the entire bank.
  */
 export async function loadAllCourseQuestions(courseId: CourseId): Promise<unknown[]> {
-  const sectionKeys = Object.keys(sectionQuestionModules)
-    .map(key => {
-      const m = key.match(/\.\.\/\.\.\/content\/([^/]+)\/([^/]+)\/questions\.json$/);
-      return m && m[1] === courseId ? m[2] : null;
-    })
-    .filter((s): s is string => !!s);
+  let sections: string[] = [];
+  try {
+    const manifest = await loadManifest();
+    sections = manifest.courses[courseId]?.sections.map((s) => s.section) ?? [];
+  } catch (error) {
+    logger.error(`Failed to load manifest for ${courseId}:`, error);
+    return [];
+  }
 
   const results = await Promise.all(
-    sectionKeys.map(s => loadSectionQuestions(courseId, s))
+    sections.map((s) => loadSectionQuestions(courseId, s))
   );
   return results.flat();
 }

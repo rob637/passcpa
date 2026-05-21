@@ -20,7 +20,6 @@ const ADMIN_EMAILS = [
 ];
 
 const PROJECT_MAP = {
-  development: 'passcpa-dev',
   staging: 'voraprep-staging',
   production: 'voraprep-prod',
 };

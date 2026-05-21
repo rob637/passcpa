@@ -542,7 +542,7 @@ const StripeStatusSection: React.FC = () => {
     loadSubStats();
   }, [checkStripe, loadSubStats]);
 
-  const projectId = import.meta.env.VITE_FIREBASE_PROJECT_ID || 'passcpa-dev';
+  const projectId = import.meta.env.VITE_FIREBASE_PROJECT_ID || 'voraprep-staging';
   const webhookUrl = `https://us-central1-${projectId}.cloudfunctions.net/stripeWebhook`;
 
   return (
@@ -5986,7 +5986,7 @@ VoraPrep Team`;
               </div>
               <div className="mt-4 p-3 bg-gray-50 dark:bg-slate-900 rounded-lg text-sm text-gray-600 dark:text-gray-400">
                 <div className="grid grid-cols-2 gap-2">
-                  <div><strong>Environment:</strong> {import.meta.env.VITE_ENVIRONMENT || 'development'}</div>
+                  <div><strong>Environment:</strong> {import.meta.env.VITE_ENVIRONMENT || 'staging'}</div>
                   <div><strong>Project:</strong> {import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Unknown'}</div>
                   <div><strong>Build:</strong> {import.meta.env.VITE_BUILD_TIME || 'Local'}</div>
                   <div><strong>Version:</strong> {import.meta.env.VITE_APP_VERSION || '1.0.0'}</div>
@@ -6697,7 +6697,7 @@ VoraPrep Team`;
               <div className="p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
                 <h4 className="font-medium text-gray-900 dark:text-white mb-2">Firebase Project</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Project: {import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Unknown'}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Environment: {import.meta.env.VITE_ENVIRONMENT || 'development'}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Environment: {import.meta.env.VITE_ENVIRONMENT || 'staging'}</p>
               </div>
               
               {/* Reset Account Section */}

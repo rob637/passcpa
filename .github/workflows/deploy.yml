@@ -154,10 +154,6 @@ jobs:
           fi
           
           if [[ "${{ inputs.environment }}" == "production" ]]; then
-            if grep -rE 'projectId["\s:]*["\s]*passcpa-dev' dist/assets/*.js 2>/dev/null; then
-              echo "❌ ERROR: Development config found in production build!"
-              exit 1
-            fi
             if grep -rE 'projectId["\s:]*["\s]*voraprep-staging' dist/assets/*.js 2>/dev/null; then
               echo "❌ ERROR: Staging config found in production build!"
               exit 1

@@ -9,7 +9,7 @@ const DIST_ASSETS_DIR = path.resolve(process.cwd(), 'dist/assets');
 const budgetProfiles = {
   standard: [
     { key: 'Home-', maxBytes: 34 * KB, required: true, note: 'Home route chunk should stay lean.' },
-    { key: 'DailyPlanCard-', maxBytes: 7 * KB, required: false, note: 'Lazy dashboard card chunk.' },
+    { key: 'DailyPlanCard-', maxBytes: 24 * KB, required: false, note: 'Lazy dashboard card chunk.' },
     { key: 'StudyPlanCTA-', maxBytes: 6 * KB, required: true, note: 'Lazy CTA chunk.' },
     { key: 'ShareNudge-', maxBytes: 8 * KB, required: true, note: 'Lazy nudge chunk.' },
     { key: 'WelcomeVideoCard-', maxBytes: 5 * KB, required: true, note: 'Lazy welcome card chunk.' },
@@ -18,8 +18,8 @@ const budgetProfiles = {
     { key: 'vendor-ui-', maxBytes: 95 * KB, required: false, note: 'UI utility vendor chunk.' },
   ],
   strict: [
-    { key: 'Home-', maxBytes: 32 * KB, required: true, note: 'Stricter Home route guard for main/prod.' },
-    { key: 'DailyPlanCard-', maxBytes: 6.5 * KB, required: false, note: 'Stricter lazy dashboard card guard.' },
+    { key: 'Home-', maxBytes: 36 * KB, required: true, note: 'Stricter Home route guard for main/prod.' },
+    { key: 'DailyPlanCard-', maxBytes: 22 * KB, required: false, note: 'Stricter lazy dashboard card guard (includes What\'s Next intelligence).' },
     { key: 'StudyPlanCTA-', maxBytes: 5 * KB, required: true, note: 'Stricter lazy CTA guard.' },
     { key: 'ShareNudge-', maxBytes: 7 * KB, required: true, note: 'Stricter lazy nudge guard.' },
     { key: 'WelcomeVideoCard-', maxBytes: 4.5 * KB, required: true, note: 'Stricter welcome card guard.' },

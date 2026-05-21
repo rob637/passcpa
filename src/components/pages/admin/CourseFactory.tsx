@@ -19,7 +19,8 @@ import {
   RotateCcw, Download,
 } from 'lucide-react';
 import { collection, doc, setDoc, onSnapshot, query, orderBy, getDocs, deleteDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from '../../../config/firebase';
+import { httpsCallable } from 'firebase/functions';
+import { db, functions } from '../../../config/firebase';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
 import { useAuth } from '../../../hooks/useAuth';
@@ -245,10 +246,7 @@ export default function CourseFactory() {
 
       setActiveJob(job);
 
-      // Call Gemini directly for research
-      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-      if (!apiKey) throw new Error('VITE_GEMINI_API_KEY not configured');
-
+      // Call Gemini via the geminiProxy Cloud Function (API key stays server-side).
       const researchPrompt = `You are an expert on professional certification exams. Research the ${exam} exam thoroughly.
 
 Return a JSON object (no markdown fences) with this EXACT structure:
@@ -285,25 +283,26 @@ IMPORTANT:
 - Use the MOST CURRENT exam blueprint (2024-2026).
 - Section IDs: ${exam}-D1, ${exam}-D2, etc.`;
 
-      const geminiResp = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+      const geminiProxy = httpsCallable<
         {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: [{ parts: [{ text: researchPrompt }] }],
-            generationConfig: { temperature: 0.3 },
-          }),
-        }
-      );
+          messages: Array<{ role: string; parts: Array<{ text: string }> }>;
+          systemPrompt: string;
+          generationConfig?: Record<string, unknown>;
+        },
+        { text: string }
+      >(functions, 'geminiProxy');
 
-      if (!geminiResp.ok) {
-        const errText = await geminiResp.text();
-        throw new Error(`Gemini API error: ${geminiResp.status} ${errText.slice(0, 200)}`);
-      }
+      const proxyResult = await geminiProxy({
+        messages: [{ role: 'user', parts: [{ text: researchPrompt }] }],
+        systemPrompt:
+          'You are an expert on professional certification exams. Return only valid JSON matching the requested schema; do not wrap in markdown fences.',
+        generationConfig: {
+          temperature: 0.3,
+          maxOutputTokens: 4096,
+        },
+      });
 
-      const geminiData = await geminiResp.json();
-      const rawText = geminiData?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+      const rawText = proxyResult.data?.text || '';
 
       // Parse JSON from response (strip markdown fences if present)
       const cleaned = rawText.replace(/^```(?:json)?\s*\n?/m, '').replace(/\n?```\s*$/m, '');

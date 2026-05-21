@@ -14,7 +14,7 @@ import { initializeApp, FirebaseApp } from 'firebase/app';
 import { getFirestore, Firestore } from 'firebase/firestore';
 import * as readline from 'readline';
 
-type Environment = 'development' | 'staging' | 'production';
+type Environment = 'staging' | 'production';
 
 // Environment configurations - NO FALLBACKS
 const ENVIRONMENTS: Record<Environment, {
@@ -23,12 +23,6 @@ const ENVIRONMENTS: Record<Environment, {
   color: string;
   requiresConfirmation: boolean;
 }> = {
-  development: {
-    projectId: 'passcpa-dev',
-    description: 'Development (passcpa-dev)',
-    color: '\x1b[32m', // Green
-    requiresConfirmation: false,
-  },
   staging: {
     projectId: 'voraprep-staging',
     description: 'Staging (voraprep-staging)',

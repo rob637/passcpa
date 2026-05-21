@@ -4,7 +4,7 @@
  * Usage:
  *   node scripts/set-admin.cjs --project staging
  *   node scripts/set-admin.cjs --project production
- *   node scripts/set-admin.cjs --project development
+ *   node scripts/set-admin.cjs --project staging
  *
  * Looks up each ADMIN_EMAIL by email in the users collection and sets isAdmin: true.
  * Uses Firebase Admin SDK with Application Default Credentials (from `firebase login`).
@@ -19,7 +19,6 @@ const ADMIN_EMAILS = [
 ];
 
 const PROJECT_MAP = {
-  development: 'passcpa-dev',
   staging: 'voraprep-staging',
   production: 'voraprep-prod',
 };

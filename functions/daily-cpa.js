@@ -1095,7 +1095,7 @@ async function completeSession(uid, session, sessionRef) {
   if (isTrial && trialDay === 1) {
     try {
       const vcardUrl = process.env.DAILY_CPA_VCARD_URL?.trim()
-        || 'https://us-central1-passcpa-dev.cloudfunctions.net/dailyCpa_vcard';
+        || 'https://us-central1-voraprep-prod.cloudfunctions.net/dailyCpa_vcard';
       await sendUserSMS(uid, user.phone,
         'Nice work today! Save this contact so tomorrow\'s question shows up as VoraPrep 👇',
         { mediaUrls: [vcardUrl] }

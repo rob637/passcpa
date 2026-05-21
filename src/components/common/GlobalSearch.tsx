@@ -23,13 +23,14 @@ import { db } from '../../config/firebase.js';
 import clsx from 'clsx';
 import type { Question, ExamSection } from '../../types';
 
-// Lazy load questions only when search is actually used
+// Lazy load questions only when search is actually used. Fetches the entire
+// CPA bank as JSON from /public/data/ — keeps it out of the JS bundle.
 let cachedQuestions: Question[] | null = null;
 const loadQuestions = async (): Promise<Question[]> => {
   if (cachedQuestions) return cachedQuestions;
-  const { ALL_QUESTIONS } = await import('../../data/cpa/questions');
-  cachedQuestions = ALL_QUESTIONS;
-  return ALL_QUESTIONS;
+  const { loadAllCourseQuestions } = await import('../../services/courseDataLoader');
+  cachedQuestions = (await loadAllCourseQuestions('cpa')) as Question[];
+  return cachedQuestions;
 };
 
 // ============================================================================

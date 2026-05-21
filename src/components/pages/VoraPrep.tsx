@@ -283,21 +283,9 @@ const VoraPrep = () => {
         Skip to main content
       </a>
 
-      {/* Announcement Bar — gated until Daily CPA SMS is live */}
-      {showDailyCpa && (
-        <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-2 px-4">
-          <Link to="/daily-cpa" className="inline-flex items-center gap-2 text-sm font-medium hover:text-blue-100 transition-colors">
-            <MessageSquare className="w-4 h-4" />
-            <span className="hidden sm:inline">NEW: Daily CPA Questions by Text — 3-day free trial</span>
-            <span className="sm:hidden">NEW: Daily CPA by Text — Free trial</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
-      )}
-      
       {/* Navigation */}
       <nav 
-        className={`fixed left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 ${showDailyCpa ? 'top-9' : 'top-0'}`}
+        className="fixed left-0 right-0 top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800"
         aria-label="Main navigation"
       >
         <div className="px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
@@ -379,7 +367,7 @@ const VoraPrep = () => {
 
       {/* Hero Section */}
       <main id="main-content">
-        <section className={`relative pb-12 md:pb-20 px-6 overflow-hidden ${showDailyCpa ? 'pt-32 md:pt-40' : 'pt-24 md:pt-32'}`}>
+        <section className="relative pb-12 md:pb-20 px-6 overflow-hidden pt-24 md:pt-32">
           {/* Animated background */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
           

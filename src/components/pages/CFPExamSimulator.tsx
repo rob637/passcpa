@@ -5,6 +5,7 @@
  * This wrapper provides CFP-specific configuration with domain multi-select.
  */
 
+import { useMemo } from 'react';
 import { 
   ExamSimulatorTemplate, 
   ExamSimulatorConfig,
@@ -12,7 +13,8 @@ import {
   ExamQuestion,
   GeneratedExam,
 } from './templates/ExamSimulatorTemplate';
-import { CFP_QUESTIONS_ALL } from '../../data/cfp/questions';
+import { useExamQuestionsBySection } from '../../hooks/useExamQuestionsBySection';
+import { PageLoader } from '../common/PageLoader';
 
 // ============================================
 // Types
@@ -99,25 +101,9 @@ const CFP_EXAM_MODES: ExamMode[] = [
 ];
 
 // ============================================
-// Question Pool  
+// Question Pool — built at runtime from useExamQuestionsBySection.
+// Question banks are NOT statically imported (keeps ~8 MB out of JS bundle).
 // ============================================
-
-function getQuestionPool(domain: CFPDomain): ExamQuestion[] {
-  // Filter questions by section
-  const filtered = CFP_QUESTIONS_ALL.filter(q => {
-    const section = q.section || '';
-    return section.includes(domain) || section.includes(domain.replace('CFP-', ''));
-  });
-  
-  return filtered.map((q, idx) => ({
-    id: q.id || `cfp-q-${idx}`,
-    question: q.question || '',
-    options: q.options || [],
-    correctAnswer: typeof q.correctAnswer === 'number' ? q.correctAnswer : 0,
-    explanation: q.explanation || '',
-    section: domain,
-  }));
-}
 
 // ============================================
 // Exam Generator
@@ -143,7 +129,7 @@ function generateExam(
 // Component
 // ============================================
 
-const config: ExamSimulatorConfig<CFPDomain> = {
+const baseConfig: Omit<ExamSimulatorConfig<CFPDomain>, 'getQuestionPool'> = {
   courseId: 'cfp',
   courseName: 'CFP',
   courseDescription: 'Practice with realistic exam conditions for the CFP Board certification exam',
@@ -153,12 +139,34 @@ const config: ExamSimulatorConfig<CFPDomain> = {
   defaultSection: 'CFP-GEN',
   modes: CFP_EXAM_MODES,
   defaultModeIndex: 2, // Quick Practice
-  getQuestionPool,
   generateExam,
   passingScore: 70,
   allowMultiSectionSelect: true,
 };
 
 export default function CFPExamSimulatorNew() {
+  // CFP sections in question data may use either 'CFP-GEN' or just 'GEN'; the
+  // hook keys by raw `question.section`, so we look up under both shapes.
+  const { questionsBySection, loading } = useExamQuestionsBySection<string>('cfp');
+
+  const getQuestionPool = useMemo(() => {
+    return (domain: CFPDomain): ExamQuestion[] => {
+      if (!questionsBySection) return [];
+      const short = domain.replace('CFP-', '');
+      const full = questionsBySection[domain] ?? [];
+      const shortKey = questionsBySection[short] ?? [];
+      const combined = [...full, ...shortKey];
+      // Re-tag the section to the canonical domain id for downstream filters.
+      return combined.map(q => ({ ...q, section: domain }));
+    };
+  }, [questionsBySection]);
+
+  const config: ExamSimulatorConfig<CFPDomain> = useMemo(
+    () => ({ ...baseConfig, getQuestionPool }),
+    [getQuestionPool]
+  );
+
+  if (loading || !questionsBySection) return <PageLoader />;
+
   return <ExamSimulatorTemplate<CFPDomain> config={config} />;
 }

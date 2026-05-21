@@ -5,6 +5,12 @@
   "type": "module",
   "description": "VoraPrep - AI-powered CPA exam prep that gets you to 75+",
   "scripts": {
+    "sync:content": "node scripts/sync-content-to-public.cjs",
+    "predev": "npm run sync:content",
+    "prebuild": "npm run sync:content",
+    "prebuild:dev": "npm run sync:content",
+    "prebuild:staging": "npm run sync:content",
+    "prebuild:prod": "npm run sync:content",
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",

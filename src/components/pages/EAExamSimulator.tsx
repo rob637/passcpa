@@ -5,6 +5,7 @@
  * This wrapper provides EA-specific configuration.
  */
 
+import { useMemo } from 'react';
 import { 
   ExamSimulatorTemplate, 
   ExamSimulatorConfig,
@@ -12,8 +13,9 @@ import {
   ExamQuestion,
   GeneratedExam,
 } from './templates/ExamSimulatorTemplate';
-import { Question, EASection } from '../../types';
-import { SEE1_ALL, SEE2_ALL, SEE3_ALL } from '../../data/ea/questions';
+import { EASection } from '../../types';
+import { useExamQuestionsBySection } from '../../hooks/useExamQuestionsBySection';
+import { PageLoader } from '../common/PageLoader';
 
 // ============================================
 // Configuration
@@ -69,36 +71,9 @@ const EA_EXAM_MODES: ExamMode[] = [
 ];
 
 // ============================================
-// Question Pool
+// Question Pool — built at runtime from useExamQuestionsBySection.
+// Question banks are NOT statically imported (keeps ~10 MB out of JS bundle).
 // ============================================
-
-function getQuestionPool(section: EASection): ExamQuestion[] {
-  let questions: Question[];
-  
-  switch (section) {
-    case 'SEE1':
-      questions = SEE1_ALL;
-      break;
-    case 'SEE2':
-      questions = SEE2_ALL;
-      break;
-    case 'SEE3':
-      questions = SEE3_ALL;
-      break;
-    default:
-      questions = [];
-  }
-  
-  // Map to ExamQuestion format
-  return questions.map(q => ({
-    id: q.id,
-    question: q.question,
-    options: q.options,
-    correctAnswer: q.correctAnswer,
-    explanation: q.explanation,
-    section: section,
-  }));
-}
 
 // ============================================
 // Exam Generator
@@ -129,7 +104,7 @@ function generateExam(
 
 import { useAuth } from '../../hooks/useAuth';
 
-const baseConfig: Omit<ExamSimulatorConfig<EASection>, 'defaultSection'> = {
+const baseConfig: Omit<ExamSimulatorConfig<EASection>, 'defaultSection' | 'getQuestionPool'> = {
   courseId: 'ea',
   courseName: 'EA',
   courseDescription: 'Practice with realistic exam conditions for the IRS Special Enrollment Examination',
@@ -138,25 +113,33 @@ const baseConfig: Omit<ExamSimulatorConfig<EASection>, 'defaultSection'> = {
   sections: EA_SECTIONS,
   modes: EA_EXAM_MODES,
   defaultModeIndex: 1, // Half Exam
-  getQuestionPool,
   generateExam,
   passingScore: 70,
 };
 
 export default function EAExamSimulatorNew() {
   const { userProfile } = useAuth();
+  const { questionsBySection, loading } = useExamQuestionsBySection<EASection>('ea');
   
   // Use user's selected section, default to SEE1 if not set or invalid
   const userSection = userProfile?.examSection;
   const isValidSection = userSection === 'SEE1' || userSection === 'SEE2' || userSection === 'SEE3';
   const defaultSection: EASection = isValidSection ? userSection : 'SEE1';
-  
-  const config: ExamSimulatorConfig<EASection> = {
+
+  const getQuestionPool = useMemo(() => {
+    return (section: EASection): ExamQuestion[] =>
+      (questionsBySection?.[section] ?? []);
+  }, [questionsBySection]);
+
+  const config: ExamSimulatorConfig<EASection> = useMemo(() => ({
     ...baseConfig,
     defaultSection,
+    getQuestionPool,
     // Always hide - user picks their part on dashboard, not in simulator (matches CPA behavior)
     hideSectionSelector: true,
-  };
+  }), [defaultSection, getQuestionPool]);
+
+  if (loading || !questionsBySection) return <PageLoader />;
   
   return <ExamSimulatorTemplate<EASection> config={config} />;
 }

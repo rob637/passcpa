@@ -111,7 +111,7 @@ export default defineConfig(({ mode }) => {
         // Exclude large data chunks from precache - they cache on-demand via runtimeCaching
         // This reduces initial SW install from ~25MB to ~3MB for faster first load
         globPatterns: ['**/*.{css,html,ico,png,svg,woff2}', 'assets/vendor-*.js', 'assets/app-*.js'],
-        globIgnores: ['**/data-*.js', '**/feature-*.js', '**/blog/**'],
+        globIgnores: ['**/data-*.js', '**/feature-*.js', '**/blog/**', 'data/**'],
         maximumFileSizeToCacheInBytes: 25 * 1024 * 1024, // 25 MiB - main bundle grew with 9K questions
         skipWaiting: true, // Force SW update - temporarily enabled to fix stale cache issue
         clientsClaim: true, // Take control immediately after activation (when user clicks Update)
@@ -126,6 +126,24 @@ export default defineConfig(({ mode }) => {
           /^\/robots\.txt$/,     // Robots file
         ],
         runtimeCaching: [
+          // Cache question banks served as static JSON from /public/data/.
+          // These replaced the bundled question chunks — fetched on demand by
+          // services/courseDataLoader. Cache aggressively (content is hashed
+          // per-deploy via Firebase Hosting cache headers).
+          {
+            urlPattern: /\/data\/(questions|flashcards)\/.*\.json$/,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'content-json-cache',
+              expiration: {
+                maxEntries: 100,
+                maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
           // Cache question/lesson/content data chunks (Vite hashes them as data-*)
           {
             urlPattern: /\/assets\/data-.*\.js$/,

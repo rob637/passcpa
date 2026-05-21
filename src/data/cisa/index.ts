@@ -31,8 +31,11 @@ export const COURSE_DATA: CourseData = {
   cheatsheets: Object.values(cisaCheatsheets),
 };
 
-// Re-export sub-modules for backward compatibility
-export * from './questions';
+// Re-export sub-modules for backward compatibility.
+// NOTE: `./questions` intentionally NOT re-exported — re-exporting it would
+// pull all 5 CISA question JSON files (~5 MB) into the CISA course chunk and
+// defeat the runtime-fetch architecture in courseDataLoader.loadSectionQuestions.
+// Admin/test code that needs the bank can `import('./questions')` directly.
 export * from './flashcards';
 export * from './lessons';
 export * from './cheatsheets';

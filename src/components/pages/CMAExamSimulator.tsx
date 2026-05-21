@@ -5,6 +5,7 @@
  * This wrapper provides CMA-specific configuration.
  */
 
+import { useMemo } from 'react';
 import { 
   ExamSimulatorTemplate, 
   ExamSimulatorConfig,
@@ -12,8 +13,8 @@ import {
   ExamQuestion,
   GeneratedExam,
 } from './templates/ExamSimulatorTemplate';
-import { Question } from '../../types';
-import { CMA_PART1_QUESTIONS, CMA_PART2_QUESTIONS } from '../../data/cma/questions';
+import { useExamQuestionsBySection } from '../../hooks/useExamQuestionsBySection';
+import { PageLoader } from '../common/PageLoader';
 
 // ============================================
 // Types
@@ -70,32 +71,9 @@ const CMA_EXAM_MODES: ExamMode[] = [
 ];
 
 // ============================================
-// Question Pool
+// Question Pool — built at runtime from useExamQuestionsBySection.
+// Question banks are NOT statically imported (keeps ~5 MB out of JS bundle).
 // ============================================
-
-function getQuestionPool(section: CMASection): ExamQuestion[] {
-  let questions: Question[];
-  
-  switch (section) {
-    case 'CMA1':
-      questions = CMA_PART1_QUESTIONS as Question[];
-      break;
-    case 'CMA2':
-      questions = CMA_PART2_QUESTIONS as Question[];
-      break;
-    default:
-      questions = [];
-  }
-  
-  return questions.map(q => ({
-    id: q.id,
-    question: q.question,
-    options: q.options,
-    correctAnswer: q.correctAnswer,
-    explanation: q.explanation,
-    section: section,
-  }));
-}
 
 // ============================================
 // Exam Generator
@@ -123,7 +101,7 @@ function generateExam(
 
 import { useAuth } from '../../hooks/useAuth';
 
-const baseConfig: Omit<ExamSimulatorConfig<CMASection>, 'defaultSection'> = {
+const baseConfig: Omit<ExamSimulatorConfig<CMASection>, 'defaultSection' | 'getQuestionPool'> = {
   courseId: 'cma',
   courseName: 'CMA',
   courseDescription: 'Practice with realistic exam conditions for the IMA Certified Management Accountant exam',
@@ -132,25 +110,33 @@ const baseConfig: Omit<ExamSimulatorConfig<CMASection>, 'defaultSection'> = {
   sections: CMA_SECTIONS,
   modes: CMA_EXAM_MODES,
   defaultModeIndex: 1,
-  getQuestionPool,
   generateExam,
   passingScore: 72, // CMA passing score is 360/500 = 72%
 };
 
 export default function CMAExamSimulatorNew() {
   const { userProfile } = useAuth();
+  const { questionsBySection, loading } = useExamQuestionsBySection<CMASection>('cma');
   
   // Use user's selected section, default to CMA1 if not set or invalid
   const userSection = userProfile?.examSection;
   const isValidSection = userSection === 'CMA1' || userSection === 'CMA2';
   const defaultSection: CMASection = isValidSection ? userSection : 'CMA1';
-  
-  const config: ExamSimulatorConfig<CMASection> = {
+
+  const getQuestionPool = useMemo(() => {
+    return (section: CMASection): ExamQuestion[] =>
+      (questionsBySection?.[section] ?? []);
+  }, [questionsBySection]);
+
+  const config: ExamSimulatorConfig<CMASection> = useMemo(() => ({
     ...baseConfig,
     defaultSection,
+    getQuestionPool,
     // Always hide - user picks their part on dashboard, not in simulator (matches CPA behavior)
     hideSectionSelector: true,
-  };
+  }), [defaultSection, getQuestionPool]);
+
+  if (loading || !questionsBySection) return <PageLoader />;
   
   return <ExamSimulatorTemplate<CMASection> config={config} />;
 }

@@ -25,6 +25,11 @@ on:
         required: false
         type: string
         default: ''
+      clear_cache:
+        description: 'Clear seen_posts cache before running (forces re-discovery of recent posts — useful for verifying the email pipeline)'
+        required: false
+        type: boolean
+        default: false
   schedule:
     # Every hour, on the hour. Matches the prior Railway daemon cadence
     # (runner.py launched the monitor with --interval 60).
@@ -62,6 +67,12 @@ jobs:
           key: opportunity-monitor-seen-${{ github.run_id }}
           restore-keys: |
             opportunity-monitor-seen-
+
+      - name: Clear seen-posts cache (if requested)
+        if: github.event.inputs.clear_cache == 'true'
+        run: |
+          echo "⚠️  Clearing seen_posts.json — next run will re-discover recent posts"
+          echo '{}' > scripts/reddit_monitor/seen_posts.json
 
       - name: Run opportunity finder
         working-directory: scripts/reddit_monitor

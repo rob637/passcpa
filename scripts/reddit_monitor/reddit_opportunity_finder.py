@@ -1000,8 +1000,61 @@ def generate_suggested_response(opportunity: Opportunity) -> str:
     }
     
     tone = platform_guidance.get(opportunity.platform, "Be helpful and professional.")
-    
-    prompt = f"""You are helping craft a {opportunity.platform.title()} response for someone asking about exam prep.
+
+    is_cpa = "cpa" in [e.lower() for e in opportunity.exams]
+
+    # ------------------------------------------------------------------
+    # CPA-tuned prompt: two products, two URLs, rock-star copy.
+    # ------------------------------------------------------------------
+    if is_cpa:
+        char_limit = "280 characters" if opportunity.platform == "twitter" else "120 words"
+        prompt = f"""You are a CPA exam prep expert writing a {opportunity.platform.title()} reply
+to a real candidate. Your goal: be the most useful comment in the thread AND
+quietly point them to one (or both) of VoraPrep's two CPA products.
+
+THE POST
+- Platform: {opportunity.platform.title()}
+- Title: {opportunity.title}
+- Body: {opportunity.text}
+
+PLATFORM TONE: {tone}
+
+OUR TWO CPA PRODUCTS (pick whichever fits — or recommend BOTH if both fit):
+
+1. Full CPA Exam Course → https://voraprep.com/cpa
+   - For: anyone studying for FAR, AUD, REG, BAR, ISC, or TCP
+   - 9,000+ MCQs, lessons, TBSs, adaptive engine, score predictor, pass guarantee
+   - Best fit when: they're picking a review course, frustrated with Becker/Roger/Gleim
+     pricing, asking how to study, asking about a specific section, scoring under 75,
+     or planning their study schedule.
+
+2. Daily CPA MCQs (texted to your phone) → https://voraprep.com/daily-cpa
+   - For: candidates who want a no-friction daily habit
+   - One MCQ + explanation per day via SMS — zero apps, zero login
+   - Best fit when: they're feeling burned out, can't stay consistent, hate logging in,
+     studying while working full-time, want to keep skills sharp between sittings, or
+     just retook and waiting on scores.
+
+VOICE
+- Builder/observer ("we see candidates struggle with...", "the data shows...").
+- No hype, no "I highly recommend", no "check out", no emojis unless platform is Discord.
+- Answer their actual question FIRST with 2-3 concrete, expert tips. Then drop the link(s).
+- If both products genuinely fit, mention both in one tight sentence. Otherwise pick one.
+
+FORMAT
+- Under {char_limit}. Tight. Every sentence earns its place.
+- The link line should feel like a P.S., not a CTA. Example:
+  "We built voraprep.com/cpa for the full course, or voraprep.com/daily-cpa if you
+   just want one question a day texted to you."
+- Never say "Visit", "Sign up", "Click here", or "Try our".
+
+Write the reply now (raw text only — no headers, no markdown fences):"""
+    else:
+        # ------------------------------------------------------------------
+        # Default prompt for non-CPA exams (EA, CMA, CIA, CISA, CFP, etc.)
+        # ------------------------------------------------------------------
+        char_limit = "280 characters" if opportunity.platform == "twitter" else "150 words"
+        prompt = f"""You are helping craft a {opportunity.platform.title()} response for someone asking about exam prep.
 
 CONTEXT:
 - Platform: {opportunity.platform.title()}
@@ -1025,7 +1078,7 @@ CRITICAL:
 - Do NOT use phrases like "I highly recommend" or "Check out".
 
 IMPORTANT:
-- Keep it under {"280 characters" if opportunity.platform == "twitter" else "150 words"}
+- Keep it under {char_limit}
 - Be helpful first. If they don't click the link, they should still get value from your answer.
 
 Write the response:"""

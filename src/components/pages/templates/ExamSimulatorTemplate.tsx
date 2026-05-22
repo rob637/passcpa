@@ -377,6 +377,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
 
   // Refs
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const currentGridBtnRef = useRef<HTMLButtonElement | null>(null);
 
   // Computed values
   const currentQuestion = useMemo(() => {
@@ -478,6 +479,14 @@ export function ExamSimulatorTemplate<SectionId extends string>({
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, [examState]);
+
+  // Keep the current question button visible in the horizontal navigator strip
+  useEffect(() => {
+    if (examState !== 'running') return;
+    const btn = currentGridBtnRef.current;
+    if (!btn) return;
+    btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }, [examState, currentIndex]);
 
   // ============================================
   // Exam Controls
@@ -1250,7 +1259,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
   // ============================================
   if (useRealisticTheme && testingProvider === 'prometric') {
     return (
-      <div className="prometric-theme h-screen flex flex-col overflow-hidden">
+      <div className="prometric-theme prometric-shell flex flex-col overflow-hidden">
         {/* Prometric Header */}
         <div className="prometric-header">
           <div className="prometric-header-title">
@@ -1407,6 +1416,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
             {exam.questions.map((q, i) => (
               <button
                 key={i}
+                ref={currentIndex === i ? currentGridBtnRef : undefined}
                 onClick={() => {
                   handleJumpToQuestion(i);
                   setShowQuestionNav(false);

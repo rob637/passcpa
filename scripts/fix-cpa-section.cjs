@@ -20,7 +20,11 @@ if (!SECTION_ARG || (!['AUD', 'REG', 'BAR', 'ISC', 'TCP', 'ALL'].includes(SECTIO
   process.exit(1);
 }
 
-const API_KEY = 'REDACTED_GEMINI_KEY_2';
+const API_KEY = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
+if (!API_KEY) {
+  console.error('❌ GEMINI_API_KEY (or VITE_GEMINI_API_KEY) is required. Set it in .env.local or export it before running.');
+  process.exit(1);
+}
 const MODEL = 'gemini-2.0-flash';
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
 const RESUME = process.argv.includes('--resume');

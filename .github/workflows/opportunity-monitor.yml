@@ -1,0 +1,84 @@
+name: Opportunity monitor (Reddit / HN / SE / Discord)
+
+# Replaces the Railway-hosted daemon that stopped running ~Feb 19, 2026.
+#
+# Scans social platforms for people asking about exam prep and emails
+# rob@voraprep.com via Resend when matches are found.
+#
+# Runs hourly on the free GitHub Actions tier (~30 sec/run = ~360 min/month).
+# Persists seen_posts.json across runs via actions/cache so we don't re-email
+# the same posts.
+#
+# Manual run:  gh workflow run opportunity-monitor.yml
+# Test (no email): gh workflow run opportunity-monitor.yml -f test=true
+
+on:
+  workflow_dispatch:
+    inputs:
+      test:
+        description: 'Test mode (print to logs, do not send email)'
+        required: false
+        type: boolean
+        default: false
+      platform:
+        description: 'Single platform (blank = all configured)'
+        required: false
+        type: string
+        default: ''
+  schedule:
+    # Every hour, on the hour. Matches the prior Railway daemon cadence
+    # (runner.py launched the monitor with --interval 60).
+    - cron: '0 * * * *'
+
+concurrency:
+  group: opportunity-monitor
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: scripts/reddit_monitor/requirements.txt
+
+      - name: Install dependencies
+        working-directory: scripts/reddit_monitor
+        run: pip install -r requirements.txt
+
+      # Persist seen_posts.json across runs so we never email the same post
+      # twice. Key rotates daily; restore-keys fall back to the most recent.
+      - name: Restore seen-posts cache
+        uses: actions/cache@v4
+        with:
+          path: scripts/reddit_monitor/seen_posts.json
+          key: opportunity-monitor-seen-${{ github.run_id }}
+          restore-keys: |
+            opportunity-monitor-seen-
+
+      - name: Run opportunity finder
+        working-directory: scripts/reddit_monitor
+        env:
+          # Reddit/HN/SE need no credentials (public RSS).
+          # Discord/Gemini/Resend pulled from repo secrets.
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFICATION_EMAIL: ${{ secrets.NOTIFICATION_EMAIL }}
+        run: |
+          ARGS=""
+          if [ "${{ github.event.inputs.test }}" = "true" ]; then
+            ARGS="$ARGS --test"
+          fi
+          if [ -n "${{ github.event.inputs.platform }}" ]; then
+            ARGS="$ARGS --platform ${{ github.event.inputs.platform }}"
+          fi
+          echo "→ python reddit_opportunity_finder.py $ARGS"
+          python reddit_opportunity_finder.py $ARGS

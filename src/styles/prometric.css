@@ -318,11 +318,9 @@
     flex: 1;
     justify-content: center;
   }
-  /* Hide the question-number grid entirely on mobile —
-     Previous / Next + the "Question X / N" header are enough. */
-  .prometric-question-grid {
-    display: none !important;
-  }
+  /* The question-number grid is hidden by default on mobile via the JSX
+     `hidden md:flex` classes. Tapping the "Navigator" toggle button reveals it.
+     Do NOT add `display: none !important` here — that breaks the toggle. */
 }
 
 /* Exam shell sizing — use dynamic viewport height when available,

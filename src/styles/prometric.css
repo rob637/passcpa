@@ -318,9 +318,17 @@
     flex: 1;
     justify-content: center;
   }
-  /* The question-number grid is hidden by default on mobile via the JSX
-     `hidden md:flex` classes. Tapping the "Navigator" toggle button reveals it.
-     Do NOT add `display: none !important` here — that breaks the toggle. */
+  /* Hide the question-number grid entirely on mobile.
+     Previous / Next + "Question X of N" in the header are enough.
+     !important is required because `.prometric-question-grid { display: flex }`
+     below has the same specificity as Tailwind's `.hidden` and loads after it. */
+  .prometric-question-grid {
+    display: none !important;
+  }
+  /* Hide the now-useless mobile Navigator toggle button too. */
+  button[aria-controls='prometric-question-grid'] {
+    display: none !important;
+  }
 }
 
 /* Exam shell sizing — use dynamic viewport height when available,

@@ -74,7 +74,8 @@ class Opportunity:
     score: int              # upvotes, likes, etc.
     exams: List[str]        # Detected exam types
     extra: Dict = None      # Platform-specific data
-    
+    intent_score: int = 0   # 0-10, higher = hotter lead
+
     def to_dict(self) -> dict:
         return asdict(self)
 
@@ -159,6 +160,23 @@ EXCLUDE_KEYWORDS = [
     "i work for",
     "i'm a rep",
     "selling my",
+    # Unrelated school-exam spam that slipped through generic keywords.
+    "wgu ",
+    "wgu c",
+    "wgu d",
+    "nursing",
+    "sat school day",
+    "sat exam",
+    "act exam",
+    "gre exam",
+    "gmat ",
+    "mcat",
+    "lsat",
+    "nclex",
+    "medical assignment",
+    "homework help",
+    "do my exam",
+    "pay someone to take",
 ]
 
 # Exam-specific context for response generation
@@ -170,6 +188,67 @@ EXAM_CONTEXT = {
     "cisa": "CISA (Certified Information Systems Auditor) exam - IS audit and security",
     "cfp": "CFP (Certified Financial Planner) exam - comprehensive financial planning",
 }
+
+# Intent signals — the higher the score, the hotter the lead.
+# Anyone who FAILED, is RETAKING, or is panicking about an upcoming exam is
+# already convinced they need a better tool. Anyone complaining about a
+# competitor's price is one click away from switching.
+INTENT_SIGNALS = {
+    # Highest intent (4 pts each)
+    4: [
+        "failed the exam", "failed my", "keep failing", "failed again",
+        "retaking", "retake", "third attempt", "fourth attempt",
+        "can't pass", "cant pass", "struggling to pass", "need to pass",
+        "score release", "score dropped", "got a 74", "scored a 7",
+    ],
+    # High intent (3 pts each)
+    3: [
+        "too expensive", "can't afford", "cant afford", "cheaper than",
+        "alternative to becker", "switching from", "hate becker",
+        "becker not working", "looking for something else",
+        "any other options", "what else is there",
+        "first time candidate", "just starting", "where do i start",
+    ],
+    # Medium intent (2 pts each)
+    2: [
+        "recommend a course", "course recommendation", "best course",
+        "which course", "becker vs", "roger vs", "gleim vs", "surgent vs",
+        "uworld vs", "wiley vs", "ninja vs",
+        "how to study", "how to pass", "study plan", "study schedule",
+        "practice questions", "mcq practice", "flashcards",
+    ],
+    # Low intent (1 pt each) — still worth replying, but not urgent
+    1: [
+        "study material", "study guide", "exam prep", "exam preparation",
+        "free resources", "affordable", "budget",
+    ],
+}
+
+# Subreddits where ANY post matching opportunity keywords is exam-relevant
+# even if the body doesn't explicitly say the exam name. Used as a fallback
+# when detect_exam_type() returns ['general'].
+SUBREDDIT_EXAM_HINT = {
+    "CPA": "cpa", "CPAExamAdvice": "cpa", "cpa_exam": "cpa",
+    "Big4": "cpa", "PublicAccounting": "cpa",
+    "AccountingPH": "cpa", "IndianCPAs": "cpa",
+    "AccountingStudents": "cpa",
+    "CFP": "cfp", "FinancialPlanning": "cfp",
+    "InternalAudit": "cia",
+    "cybersecurity": "cisa",
+    "taxpros": "ea",
+}
+
+
+def score_intent(text: str) -> int:
+    """Score 0-10 — higher = hotter lead (failed/retake/competitor frustration)."""
+    text_lower = text.lower()
+    score = 0
+    for weight, phrases in INTENT_SIGNALS.items():
+        for phrase in phrases:
+            if phrase in text_lower:
+                score += weight
+                break  # one hit per weight tier is enough
+    return min(score, 10)
 
 # File to track already-seen posts (shared across platforms)
 SEEN_POSTS_FILE = Path(__file__).parent / "seen_posts.json"
@@ -355,6 +434,10 @@ class RedditAdapter(PlatformAdapter):
                 full_text = f"{title} {summary}"
                 
                 if self.matches_opportunity(full_text):
+                    detected = self.detect_exam_type(full_text)
+                    # If detection failed, fall back to subreddit hint.
+                    if detected == ["general"] and subreddit_name in SUBREDDIT_EXAM_HINT:
+                        detected = [SUBREDDIT_EXAM_HINT[subreddit_name]]
                     opportunities.append(Opportunity(
                         id=post_key,
                         platform="reddit",
@@ -365,8 +448,9 @@ class RedditAdapter(PlatformAdapter):
                         author=entry.get('author', 'unknown'),
                         created=entry.get('published', datetime.now().isoformat()),
                         score=0,  # RSS doesn't include score
-                        exams=self.detect_exam_type(full_text),
-                        extra={"subreddit": subreddit_name}
+                        exams=detected,
+                        extra={"subreddit": subreddit_name},
+                        intent_score=score_intent(full_text),
                     ))
             
             # Small delay between subreddits to be nice to Reddit
@@ -405,6 +489,15 @@ class RedditAdapter(PlatformAdapter):
                         except Exception:
                             pass
 
+                    # Search-path exam tagging: trust the query first, then
+                    # body detection, then subreddit hint.
+                    detected = self.detect_exam_type(full_text)
+                    if detected == ["general"]:
+                        if "cpa" in query.lower():
+                            detected = ["cpa"]
+                        elif sub in SUBREDDIT_EXAM_HINT:
+                            detected = [SUBREDDIT_EXAM_HINT[sub]]
+
                     opportunities.append(Opportunity(
                         id=post_key,
                         platform="reddit",
@@ -415,8 +508,9 @@ class RedditAdapter(PlatformAdapter):
                         author=entry.get('author', 'unknown'),
                         created=entry.get('published', datetime.now().isoformat()),
                         score=0,
-                        exams=self.detect_exam_type(full_text),
+                        exams=detected,
                         extra={"subreddit": sub, "matched_query": query},
+                        intent_score=score_intent(full_text),
                     ))
 
             time.sleep(0.5)
@@ -1213,20 +1307,30 @@ def send_email_notification(opportunities: List[Opportunity]):
     for i, opp in enumerate(opportunities, 1):
         suggested = generate_suggested_response(opp)
         emoji = get_platform_emoji(opp.platform)
-        
+
+        # Heat tier based on intent score.
+        if opp.intent_score >= 7:
+            heat = "🔥🔥🔥 HOT"
+        elif opp.intent_score >= 4:
+            heat = "🔥🔥 WARM"
+        elif opp.intent_score >= 2:
+            heat = "🔥 LUKEWARM"
+        else:
+            heat = "💬 COLD"
+
         extra_info = ""
         if opp.extra:
             if opp.platform == "reddit":
                 extra_info = f"r/{opp.extra.get('subreddit', 'unknown')}"
             elif opp.platform == "twitter":
                 extra_info = f"❤️ {opp.extra.get('likes', 0)} | 🔁 {opp.extra.get('retweets', 0)}"
-        
+
         html_parts.append(f"""
         <div style="margin-bottom: 30px; padding: 15px; border: 1px solid #ddd; border-radius: 8px;">
             <h2>{emoji} #{i}: {opp.title[:80]}</h2>
-            <p><strong>Platform:</strong> {opp.platform.title()} | 
-               <strong>Type:</strong> {opp.type} | 
-               <strong>Score:</strong> {opp.score} |
+            <p><strong>{heat}</strong> (intent {opp.intent_score}/10) |
+               <strong>Platform:</strong> {opp.platform.title()} |
+               <strong>Type:</strong> {opp.type} |
                <strong>Exams:</strong> {', '.join(opp.exams).upper()}
                {f' | {extra_info}' if extra_info else ''}</p>
             <p><strong>Posted by:</strong> {opp.author} on {opp.created[:10]}</p>
@@ -1287,7 +1391,13 @@ def print_opportunities(opportunities: List[Opportunity]):
     
     for i, opp in enumerate(opportunities, 1):
         emoji = get_platform_emoji(opp.platform)
-        print(f"#{i} {emoji} [{opp.type.upper()}] {opp.platform.title()}")
+        heat = (
+            "🔥🔥🔥 HOT" if opp.intent_score >= 7
+            else "🔥🔥 WARM" if opp.intent_score >= 4
+            else "🔥 LUKEWARM" if opp.intent_score >= 2
+            else "💬 COLD"
+        )
+        print(f"#{i} {emoji} [{opp.type.upper()}] {opp.platform.title()} — {heat} (intent {opp.intent_score}/10)")
         print(f"   Title: {opp.title[:60]}...")
         print(f"   Exams: {', '.join(opp.exams).upper()}")
         print(f"   URL: {opp.url}")
@@ -1347,22 +1457,41 @@ def run_once(test_mode: bool = False, platforms: List[str] = None):
             print(f"  ❌ Error: {e}")
     
     print(f"\n{'='*50}")
-    
+
     if not all_opportunities:
         print("No new opportunities found across all platforms.")
         return
-    
-    print(f"📊 Total: {len(all_opportunities)} opportunities")
-    
+
+    # Spam filter: drop anything we can't tie to one of our actual exams.
+    # If exam detection only returned ["general"], the post didn't mention
+    # CPA/EA/CMA/CIA/CISA/CFP at all — not a lead for us.
+    before_filter = len(all_opportunities)
+    filtered = [opp for opp in all_opportunities if opp.exams != ["general"]]
+    dropped = before_filter - len(filtered)
+    if dropped:
+        print(f"🧹 Dropped {dropped} off-topic posts (no exam match)")
+
+    if not filtered:
+        print("No qualifying opportunities after filter.")
+        # Still mark the original set as seen so we don't keep reprocessing them.
+        for opp in all_opportunities:
+            save_seen_post(opp.id, seen_posts)
+        return
+
+    # Sort by intent_score DESC — hottest leads first in the email.
+    filtered.sort(key=lambda o: o.intent_score, reverse=True)
+
+    print(f"📊 Total: {len(filtered)} opportunities (top intent: {filtered[0].intent_score}/10)")
+
     if test_mode:
-        print_opportunities(all_opportunities)
+        print_opportunities(filtered)
     else:
-        send_email_notification(all_opportunities)
-    
-    # Mark all as seen
+        send_email_notification(filtered)
+
+    # Mark ALL (including filtered-out) as seen so we don't re-evaluate them.
     for opp in all_opportunities:
         save_seen_post(opp.id, seen_posts)
-    
+
     print(f"✅ Done. Marked {len(all_opportunities)} posts as seen.")
 
 def run_daemon(interval_minutes: int = 30, platforms: List[str] = None):

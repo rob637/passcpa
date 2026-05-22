@@ -1030,7 +1030,7 @@ OUR TWO CPA PRODUCTS (pick whichever fits — or recommend BOTH if both fit):
 
 2. Daily CPA MCQs (texted to your phone) → https://voraprep.com/daily-cpa
    - For: candidates who want a no-friction daily habit
-   - One MCQ + explanation per day via SMS — zero apps, zero login
+   - 1 to 25 MCQs per day via SMS depending on package — zero apps, zero login
    - Best fit when: they're feeling burned out, can't stay consistent, hate logging in,
      studying while working full-time, want to keep skills sharp between sittings, or
      just retook and waiting on scores.
@@ -1045,7 +1045,7 @@ FORMAT
 - Under {char_limit}. Tight. Every sentence earns its place.
 - The link line should feel like a P.S., not a CTA. Example:
   "We built voraprep.com/cpa for the full course, or voraprep.com/daily-cpa if you
-   just want one question a day texted to you."
+   want 1-25 MCQs a day texted to your phone."
 - Never say "Visit", "Sign up", "Click here", or "Try our".
 
 Write the reply now (raw text only — no headers, no markdown fences):"""

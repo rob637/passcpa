@@ -318,25 +318,10 @@
     flex: 1;
     justify-content: center;
   }
-  /* Single-row, horizontally scrollable navigator — only a few numbers visible at a time */
+  /* Hide the question-number grid entirely on mobile —
+     Previous / Next + the "Question X / N" header are enough. */
   .prometric-question-grid {
-    order: 99;
-    flex-basis: 100%;
-    max-width: 100%;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding: 4px 6px;
-    gap: 4px;
-  }
-  .prometric-question-grid .prometric-grid-btn {
-    flex: 0 0 auto;
-    width: 34px;
-    height: 34px;
-    font-size: 12px;
-    scroll-snap-align: center;
+    display: none !important;
   }
 }
 

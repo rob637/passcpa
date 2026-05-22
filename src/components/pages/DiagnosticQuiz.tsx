@@ -46,46 +46,54 @@ import type { CourseId, UserProfile } from '../../types';
 import type { DiagnosticQuiz as DiagnosticQuizType, DiagnosticResult } from '../../types/diagnostic';
 import { scoreDiagnosticQuiz } from '../../types/diagnostic';
 
-// Data imports — lazy-loaded per course
-import { CPA_DIAGNOSTIC_QUIZZES, CPA_AREA_NAMES } from '../../data/cpa/diagnostic-quizzes';
-import { EA_DIAGNOSTIC_QUIZZES, EA_AREA_NAMES } from '../../data/ea/reference/diagnostic-quizzes';
-import { CMA_DIAGNOSTIC_QUIZZES, CMA_AREA_NAMES } from '../../data/cma/diagnostic-quizzes';
-import { CIA_DIAGNOSTIC_QUIZZES, CIA_AREA_NAMES } from '../../data/cia/diagnostic-quizzes';
-import { CISA_DIAGNOSTIC_QUIZZES, CISA_AREA_NAMES } from '../../data/cisa/diagnostic-quizzes';
-import { CFP_DIAGNOSTIC_QUIZZES, CFP_AREA_NAMES } from '../../data/cfp/diagnostic-quizzes';
-
 // ============================================
-// Data access helpers
+// Per-course diagnostic data — dynamically loaded so we ship
+// only the bundle for the course the user is actually on (~115 KB)
+// instead of all six (~687 KB).
 // ============================================
-const ALL_DIAGNOSTIC_QUIZZES: Record<CourseId, Record<string, DiagnosticQuizType>> = {
-  cpa: CPA_DIAGNOSTIC_QUIZZES,
-  ea: EA_DIAGNOSTIC_QUIZZES,
-  cma: CMA_DIAGNOSTIC_QUIZZES,
-  cia: CIA_DIAGNOSTIC_QUIZZES,
-  cisa: CISA_DIAGNOSTIC_QUIZZES,
-  cfp: CFP_DIAGNOSTIC_QUIZZES,
+type DiagnosticData = {
+  quizzes: Record<string, DiagnosticQuizType>;
+  areaNames: Record<string, string>;
 };
 
-const ALL_AREA_NAMES: Record<CourseId, Record<string, string>> = {
-  cpa: CPA_AREA_NAMES,
-  ea: EA_AREA_NAMES,
-  cma: CMA_AREA_NAMES,
-  cia: CIA_AREA_NAMES,
-  cisa: CISA_AREA_NAMES,
-  cfp: CFP_AREA_NAMES,
+const diagnosticLoaders: Record<CourseId, () => Promise<DiagnosticData>> = {
+  cpa: async () => {
+    const m = await import('../../data/cpa/diagnostic-quizzes');
+    return { quizzes: m.CPA_DIAGNOSTIC_QUIZZES, areaNames: m.CPA_AREA_NAMES };
+  },
+  ea: async () => {
+    const m = await import('../../data/ea/reference/diagnostic-quizzes');
+    return { quizzes: m.EA_DIAGNOSTIC_QUIZZES, areaNames: m.EA_AREA_NAMES };
+  },
+  cma: async () => {
+    const m = await import('../../data/cma/diagnostic-quizzes');
+    return { quizzes: m.CMA_DIAGNOSTIC_QUIZZES, areaNames: m.CMA_AREA_NAMES };
+  },
+  cia: async () => {
+    const m = await import('../../data/cia/diagnostic-quizzes');
+    return { quizzes: m.CIA_DIAGNOSTIC_QUIZZES, areaNames: m.CIA_AREA_NAMES };
+  },
+  cisa: async () => {
+    const m = await import('../../data/cisa/diagnostic-quizzes');
+    return { quizzes: m.CISA_DIAGNOSTIC_QUIZZES, areaNames: m.CISA_AREA_NAMES };
+  },
+  cfp: async () => {
+    const m = await import('../../data/cfp/diagnostic-quizzes');
+    return { quizzes: m.CFP_DIAGNOSTIC_QUIZZES, areaNames: m.CFP_AREA_NAMES };
+  },
 };
+
+const diagnosticCache = new Map<CourseId, DiagnosticData>();
+async function loadDiagnosticData(courseId: CourseId): Promise<DiagnosticData> {
+  const cached = diagnosticCache.get(courseId);
+  if (cached) return cached;
+  const data = await diagnosticLoaders[courseId]();
+  diagnosticCache.set(courseId, data);
+  return data;
+}
 
 // Single-exam courses have one diagnostic quiz for the whole exam
 const SINGLE_EXAM_COURSES: CourseId[] = ['cfp', 'cisa'];
-
-function getQuizForSection(courseId: CourseId, section: string): DiagnosticQuizType | null {
-  const quizzes = ALL_DIAGNOSTIC_QUIZZES[courseId];
-  return quizzes?.[section] || null;
-}
-
-function getAvailableSections(courseId: CourseId): string[] {
-  return Object.keys(ALL_DIAGNOSTIC_QUIZZES[courseId] || {});
-}
 
 // ============================================
 // Timer Component
@@ -885,7 +893,28 @@ export default function DiagnosticQuizPage() {
   const { courseId } = useCourse();
 
   const isSingleExam = SINGLE_EXAM_COURSES.includes(courseId);
-  const availableSections = useMemo(() => getAvailableSections(courseId), [courseId]);
+
+  // Per-course diagnostic data (quizzes + area names) — loaded lazily
+  const [diagnosticData, setDiagnosticData] = useState<DiagnosticData | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    setDiagnosticData(null);
+    loadDiagnosticData(courseId)
+      .then((data) => {
+        if (!cancelled) setDiagnosticData(data);
+      })
+      .catch((err) => {
+        logger.error('Failed to load diagnostic data for course', courseId, err);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [courseId]);
+
+  const availableSections = useMemo(
+    () => (diagnosticData ? Object.keys(diagnosticData.quizzes) : []),
+    [diagnosticData]
+  );
 
   // Use section from router state (passed directly from onboarding) as primary source,
   // fall back to userProfile.examSection (for "take diagnostic later" from Home page)
@@ -918,9 +947,17 @@ export default function DiagnosticQuizPage() {
     }
   }, [phase, hasValidOnboardingSection, onboardingSection]);
 
+  // Single-exam courses (CFP, CISA): once diagnostic data finishes loading
+  // asynchronously, auto-pick the only available section.
+  useEffect(() => {
+    if (isSingleExam && !selectedSection && availableSections.length > 0) {
+      setSelectedSection(availableSections[0]);
+    }
+  }, [isSingleExam, selectedSection, availableSections]);
+
   const quiz = useMemo(
-    () => (selectedSection ? getQuizForSection(courseId, selectedSection) : null),
-    [courseId, selectedSection]
+    () => (selectedSection && diagnosticData ? diagnosticData.quizzes[selectedSection] || null : null),
+    [diagnosticData, selectedSection]
   );
 
   // Timer
@@ -1009,7 +1046,7 @@ export default function DiagnosticQuizPage() {
     if (timerRef.current) clearInterval(timerRef.current);
 
     const timeSpent = Math.round((Date.now() - startTime) / 1000);
-    const areaNames = ALL_AREA_NAMES[courseId] || {};
+    const areaNames = diagnosticData?.areaNames || {};
     const scored = scoreDiagnosticQuiz(quiz, answers, timeSpent, areaNames);
 
     setResult(scored);

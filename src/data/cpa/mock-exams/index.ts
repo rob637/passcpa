@@ -3,8 +3,11 @@
 // with proper blueprint coverage and difficulty distribution
 
 import { ExamSection, Question, TBS } from '../../../types';
-import { getQuestionsBySection } from '../questions';
-import { getTBSBySection } from '../tbs';
+// NOTE: Question bank (~3.9 MB) and TBS bank (~743 KB) are NOT statically
+// imported here. They are dynamically loaded inside loadTestletQuestions /
+// loadTestletTBS so that simply importing this module's blueprint configs
+// (BLUEPRINT_WEIGHTS, ALL_MOCK_EXAMS, getMockExamsBySection) does not pull
+// the entire CPA question/TBS bundle into the importing chunk.
 
 export interface MockExamConfig {
   id: string;
@@ -548,10 +551,11 @@ export const getMockExamById = (examId: string): MockExamConfig | undefined => {
 };
 
 // Load questions for a mock exam testlet
-export const loadTestletQuestions = (
+export const loadTestletQuestions = async (
   testlet: MockExamTestlet,
   section: ExamSection
-): Question[] => {
+): Promise<Question[]> => {
+  const { getQuestionsBySection } = await import('../questions');
   const allQuestions = getQuestionsBySection(section);
   
   if (testlet.questionIds && testlet.questionIds.length > 0) {
@@ -588,10 +592,11 @@ export const loadTestletQuestions = (
 };
 
 // Load TBS for a mock exam testlet
-export const loadTestletTBS = (
+export const loadTestletTBS = async (
   testlet: MockExamTestlet,
   section: ExamSection
-): TBS[] => {
+): Promise<TBS[]> => {
+  const { getTBSBySection } = await import('../tbs');
   const allTBS = getTBSBySection(section);
   
   if (testlet.tbsIds && testlet.tbsIds.length > 0) {

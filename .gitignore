@@ -96,3 +96,8 @@ scripts/ux-audit/screenshots/
 # Source of truth lives in content/.
 /public/data/questions/
 /public/data/flashcards/
+
+
+# Beta invite audience snapshots and logs (contain PII)
+scripts/.beta-invite-*.json
+

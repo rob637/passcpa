@@ -20,13 +20,16 @@ import { CPA_FLASHCARDS } from './flashcards';
 // Lessons
 import { getAllLessons } from './lessons';
 
-// TBS
-import { ALL_TBS } from './tbs';
+// NOTE: TBS bank (~743 KB) is NOT eagerly imported here. It loads on demand
+// via `tbsService.fetchTBSBySection()` / dynamic `import('./tbs')`. Pulling
+// ALL_TBS into COURSE_DATA would inflate every CPA data load by ~743 KB even
+// for users on lesson/flashcard routes that don't touch TBS.
 
 // Cheat sheets
 import { CPA_CHEATSHEETS } from './cheatsheets';
 
-// Mock exams
+// Mock exam blueprint configs only (heavy data deps inside mock-exams are now
+// dynamically imported by the loader helpers \u2014 see ./mock-exams/index.ts).
 import { ALL_MOCK_EXAMS } from './mock-exams';
 
 /** Standard course data export */
@@ -34,17 +37,16 @@ export const COURSE_DATA: CourseData = {
   courseId: 'cpa',
   flashcards: CPA_FLASHCARDS,
   lessons: getAllLessons(),
-  tbs: ALL_TBS,
   cheatsheets: CPA_CHEATSHEETS,
   mockExams: Object.values(ALL_MOCK_EXAMS).flat(),
 };
 
 // Re-export sub-modules for backward compatibility.
-// `./questions` is NOT re-exported here — re-exporting it would pull all
-// section JSONs into this module's chunk, defeating per-section lazy loading.
-// Importers that need the legacy ALL_QUESTIONS / FAR_ALL etc. should
-// `import` from './questions' directly (it stays a separate dynamic chunk).
+// `./questions` and `./tbs` are NOT re-exported here \u2014 re-exporting them
+// would pull all section JSONs / TBS data into this module's chunk,
+// defeating per-section lazy loading. Importers that need the legacy
+// ALL_QUESTIONS / FAR_ALL / ALL_TBS exports should `import` from
+// './questions' or './tbs' directly (each stays a separate dynamic chunk).
 export * from './flashcards';
 export * from './lessons';
-export * from './tbs';
 export * from './cheatsheets';

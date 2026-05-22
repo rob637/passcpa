@@ -43,9 +43,10 @@ import {
   ExamConfig,
 } from '../../services/examService';
 import analytics from '../../services/analytics';
-// Keep mock exam imports for blueprint weights and configurations
+// Keep mock exam imports for blueprint weights and configurations.
+// `loadTestletTBS` is now async — the TBS bank (~743 KB) is loaded on demand.
 import { getMockExamsBySection, MockExamConfig, loadTestletTBS, BLUEPRINT_WEIGHTS } from '../../data/cpa/mock-exams';
-import { getTBSBySection } from '../../data/cpa/tbs';
+import { fetchTBSBySection } from '../../services/tbsService';
 import { saveExamSession } from '../../services/examSessionService';
 import ExamHistory from '../exam/ExamHistory';
 
@@ -272,14 +273,14 @@ const ExamSimulator: React.FC = () => {
 
       // Load TBS items if exam includes TBS testlets
       if (totalTbsQuestions > 0) {
-        const allTbs = getTBSBySection(currentSection);
+        const allTbs = await fetchTBSBySection(currentSection);
         
         // If curated exam with specific TBS IDs, use those
         if (examMode === 'curated' && selectedMockExam) {
           const curatedTbs: TBS[] = [];
           for (const testlet of selectedMockExam.testlets) {
             if (testlet.type === 'tbs' && testlet.tbsIds) {
-              const tbs = loadTestletTBS(testlet, currentSection);
+              const tbs = await loadTestletTBS(testlet, currentSection);
               curatedTbs.push(...tbs);
             } else if (testlet.type === 'tbs') {
               // Random selection for non-curated TBS testlets

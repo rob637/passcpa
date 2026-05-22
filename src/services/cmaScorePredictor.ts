@@ -96,6 +96,14 @@ function rawToScaledScore(rawPercentage: number): number {
 }
 
 /**
+ * Convert scaled IMA score (0-500) back to raw percentage (0-100)
+ */
+function scaledToRawPercentage(scaledScore: number): number {
+  const pct = (scaledScore / MAX_SCORE) * 100;
+  return Math.max(0, Math.min(100, pct));
+}
+
+/**
  * Calculate pass probability from scaled score
  */
 function scaledToPassProbability(scaledScore: number, variance: number): number {
@@ -244,8 +252,10 @@ export function predictScore(input: PredictionInput): ScorePrediction {
   let adjustedAccuracy = rawAccuracy;
   if (mockExamScores.length > 0) {
     const avgMockScore = mockExamScores.reduce((a, b) => a + b, 0) / mockExamScores.length;
+    // Convert mock score (0-500 scale) to a raw percentage before mixing
+    const avgMockPercentage = scaledToRawPercentage(avgMockScore);
     // Weight mock exams more heavily
-    adjustedAccuracy = rawAccuracy * 0.6 + avgMockScore * 0.4;
+    adjustedAccuracy = rawAccuracy * 0.6 + avgMockPercentage * 0.4;
   }
   
   // Apply trend adjustment

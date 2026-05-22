@@ -95,6 +95,20 @@ function rawToScaledScore(rawPercentage: number): number {
 }
 
 /**
+ * Convert scaled ISACA score (200-800) back to raw percentage (0-100)
+ */
+function scaledToRawPercentage(scaledScore: number): number {
+  const passingRaw = 0.65;
+  let pct: number;
+  if (scaledScore <= PASSING_SCORE) {
+    pct = ((scaledScore - MIN_SCORE) / (PASSING_SCORE - MIN_SCORE)) * passingRaw * 100;
+  } else {
+    pct = (passingRaw + ((scaledScore - PASSING_SCORE) / (MAX_SCORE - PASSING_SCORE)) * (1 - passingRaw)) * 100;
+  }
+  return Math.max(0, Math.min(100, pct));
+}
+
+/**
  * Calculate confidence interval based on sample size and variance
  */
 function calculateConfidenceInterval(
@@ -236,8 +250,10 @@ export function predictScore(input: PredictionInput): ScorePrediction {
   let adjustedAccuracy = baseAccuracy;
   if (input.mockExamScores.length > 0) {
     const mockAvg = input.mockExamScores.reduce((a, b) => a + b, 0) / input.mockExamScores.length;
+    // Convert mock score (200-800 scale) to a raw percentage before mixing
+    const mockPercentage = scaledToRawPercentage(mockAvg);
     // Weight mock exams more heavily as they're more realistic
-    adjustedAccuracy = baseAccuracy * 0.4 + mockAvg * 0.6;
+    adjustedAccuracy = baseAccuracy * 0.4 + mockPercentage * 0.6;
   }
   
   // Trend adjustment

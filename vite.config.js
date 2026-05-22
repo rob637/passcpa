@@ -56,7 +56,7 @@ export default defineConfig(({ mode }) => {
     react(),
     firebaseMessagingSWPlugin(),
     VitePWA({
-      registerType: 'prompt', // Don't auto-refresh - let user decide when to update
+      registerType: 'autoUpdate', // Silent background updates (Google-style) — main.tsx defers reload until safe page
       devOptions: {
         enabled: false // Disable PWA in development to avoid IndexedDB issues
       },

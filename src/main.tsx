@@ -10,7 +10,9 @@ import { AuthProvider } from './providers/AuthProvider';
 // NOTE: performance + errorTracking are intentionally dynamic-imported below (post-load)
 // to keep them out of the entry chunk's static graph and trim initial JS.
 import { initSkipLinks } from './utils/accessibility';
-import { triggerUpdateBanner } from './components/common/UpdateBanner';
+// UpdateBanner is kept available for manual triggering but no longer auto-shown.
+// Auto-update is silent (Google-style): new SW activates in background, page reloads
+// on next safe navigation (defined by isSafePath below).
 
 const scheduleNonCritical = (work: () => void, timeout = 1200) => {
   if (typeof window === 'undefined') {
@@ -41,44 +43,39 @@ if (typeof window !== 'undefined') {
 }
 
 // Store the update function globally so UpdateBanner can access it
+// (kept for backwards-compat; banner is no longer triggered automatically)
 let performUpdate: (() => void) | null = null;
 
 export const getUpdateFunction = () => performUpdate;
 
-// Register service worker for PWA
+// Helper: is current route safe to silently reload on?
+const SAFE_PATH_PREFIXES = ['/', '/login', '/register', '/dashboard', '/you', '/settings', '/pricing', '/home'];
+const isSafePath = () => {
+  const path = window.location.pathname;
+  return SAFE_PATH_PREFIXES.some((safe) => path === safe || path.startsWith(safe + '/'));
+};
+
+// Register service worker for PWA — Google-style silent auto-update.
+// New SW activates in background (skipWaiting + clientsClaim in workbox config).
+// We reload the page automatically on safe routes, defer on unsafe ones (mid-exam, etc).
 const updateSW = registerSW({
   onNeedRefresh() {
-    // Check if we just updated - skip banner to prevent loop
-    // Use localStorage for persistence across reloads (sessionStorage can be unreliable)
-    const justUpdated = localStorage.getItem('pwa-just-updated');
-    if (justUpdated) {
-      const updateTime = parseInt(justUpdated, 10);
-      const elapsed = Date.now() - updateTime;
-      // If update was within last 30 seconds, skip showing banner
-      if (elapsed < 30000) {
-        logger.log('PWA: Skipping update banner (just updated ' + Math.round(elapsed/1000) + 's ago)');
-        return;
-      }
-      // Clean up old flag
-      localStorage.removeItem('pwa-just-updated');
-    }
-    
-    // Store the update function
     performUpdate = () => updateSW(true);
-    
-    // Only show update banner on safe pages - NOT during any study activity
-    const path = window.location.pathname;
-    const safePages = ['/', '/login', '/register', '/dashboard', '/you', '/settings', '/pricing'];
-    const isSafePage = safePages.some(safe => path === safe || path.startsWith('/you/'));
-    
-    if (isSafePage) {
-      // Show the update banner immediately on safe pages
-      triggerUpdateBanner();
-      logger.log('PWA update available, showing banner (safe page)');
+
+    // Prevent reload loops — don't reload again if we just did within 30s.
+    const justUpdated = localStorage.getItem('pwa-just-updated');
+    if (justUpdated && Date.now() - parseInt(justUpdated, 10) < 30000) {
+      logger.log('PWA: Skipping auto-reload (just updated)');
+      return;
+    }
+
+    if (isSafePath()) {
+      logger.log('PWA: New version detected — reloading silently');
+      localStorage.setItem('pwa-just-updated', String(Date.now()));
+      updateSW(true);
     } else {
-      // Store update pending flag - will prompt when user navigates to safe page
+      logger.log('PWA: New version detected — deferring reload until safe page');
       sessionStorage.setItem('pwa-update-pending', 'true');
-      logger.log('PWA update available, deferred until safe page');
     }
   },
   onOfflineReady() {
@@ -93,14 +90,11 @@ if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible') {
       // Check for pending updates when returning to a safe page
-      const path = window.location.pathname;
-      const safePages = ['/', '/login', '/register', '/dashboard', '/you', '/settings', '/pricing'];
-      const isSafePage = safePages.some(safe => path === safe || path.startsWith('/you/'));
-      
-      if (isSafePage && sessionStorage.getItem('pwa-update-pending') === 'true') {
+      if (isSafePath() && sessionStorage.getItem('pwa-update-pending') === 'true') {
         sessionStorage.removeItem('pwa-update-pending');
-        triggerUpdateBanner();
-        logger.log('PWA: Showing pending update banner on safe page');
+        logger.log('PWA: Applying deferred update on visibility change');
+        localStorage.setItem('pwa-just-updated', String(Date.now()));
+        updateSW(true);
       }
       
       // Also check for new updates
@@ -115,19 +109,16 @@ if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
     }
   });
   
-  // Check for pending updates on route changes (SPA navigation)
-  // This catches when user navigates from practice → dashboard
+  // Check for pending updates on route changes (SPA navigation).
+  // When user navigates from an exam → dashboard, silently apply the queued update.
   const checkPendingOnNavigation = () => {
-    const path = window.location.pathname;
-    const safePages = ['/', '/login', '/register', '/dashboard', '/you', '/settings', '/pricing'];
-    const isSafePage = safePages.some(safe => path === safe || path.startsWith('/you/'));
-    
-    if (isSafePage && sessionStorage.getItem('pwa-update-pending') === 'true') {
+    if (isSafePath() && sessionStorage.getItem('pwa-update-pending') === 'true') {
       sessionStorage.removeItem('pwa-update-pending');
       // Small delay to let the page render first
       setTimeout(() => {
-        triggerUpdateBanner();
-        logger.log('PWA: Showing pending update banner after navigation to safe page');
+        logger.log('PWA: Applying deferred update after navigation to safe page');
+        localStorage.setItem('pwa-just-updated', String(Date.now()));
+        updateSW(true);
       }, 500);
     }
   };

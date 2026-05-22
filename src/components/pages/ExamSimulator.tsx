@@ -65,6 +65,19 @@ const ExamSimulator: React.FC = () => {
   const [examMode, setExamMode] = useState<ExamMode>('mini');
   const [usePrometricTheme, setUsePrometricTheme] = useState(false);
   const [showQuestionNav, setShowQuestionNav] = useState(false);
+  // Robust mobile detection — used to fully unmount the question-number grid on phones.
+  // CSS media queries kept getting beaten by `.prometric-question-grid { display: flex }`,
+  // so we just don't render the grid in the DOM at all on mobile.
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches
+  );
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const mq = window.matchMedia('(max-width: 767px)');
+    const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener?.('change', onChange);
+    return () => mq.removeEventListener?.('change', onChange);
+  }, []);
   const [selectedMockExam, setSelectedMockExam] = useState<MockExamConfig | null>(null);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [tbsItems, setTbsItems] = useState<TBS[]>([]);
@@ -1958,60 +1971,66 @@ const ExamSimulator: React.FC = () => {
             </button>
           </div>
 
-          {/* Question Grid — collapsible on mobile */}
-          <button
-            type="button"
-            onClick={() => setShowQuestionNav((v) => !v)}
-            className="prometric-nav-btn md:hidden"
-            aria-expanded={showQuestionNav}
-            aria-controls="prometric-question-grid"
-          >
-            {showQuestionNav
-              ? 'Hide ▲'
-              : `Navigator (${currentIndex + 1}/${currentTestletType === 'tbs' ? testletTBS.length : testletQuestions.length}) ▼`}
-          </button>
-          <div
-            id="prometric-question-grid"
-            className={clsx('prometric-question-grid', !showQuestionNav && 'hidden md:flex')}
-          >
-            {currentTestletType === 'tbs' ? (
-              testletTBS.map((tbs, i) => (
-                <button
-                  key={i}
-                  onClick={() => {
-                    goToQuestion(i);
-                    setShowQuestionNav(false);
-                  }}
-                  className={clsx(
-                    'prometric-grid-btn',
-                    currentIndex === i && 'current',
-                    Object.keys(tbsAnswers[tbs.id] || {}).length > 0 && 'answered',
-                    flagged.has(tbs.id) && 'flagged'
-                  )}
-                >
-                  {i + 1}
-                </button>
-              ))
-            ) : (
-              testletQuestions.map((q, i) => (
-                <button
-                  key={i}
-                  onClick={() => {
-                    goToQuestion(i);
-                    setShowQuestionNav(false);
-                  }}
-                  className={clsx(
-                    'prometric-grid-btn',
-                    currentIndex === i && 'current',
-                    answers[q.id] !== undefined && 'answered',
-                    flagged.has(q.id) && 'flagged'
-                  )}
-                >
-                  {i + 1}
-                </button>
-              ))
-            )}
-          </div>
+          {/* Question Grid — desktop only. On mobile, Previous/Next + the
+              "Question X of N" in the header are enough, and the giant numbered
+              grid was hiding the answer options. */}
+          {!isMobile && (
+            <>
+              <button
+                type="button"
+                onClick={() => setShowQuestionNav((v) => !v)}
+                className="prometric-nav-btn md:hidden"
+                aria-expanded={showQuestionNav}
+                aria-controls="prometric-question-grid"
+              >
+                {showQuestionNav
+                  ? 'Hide ▲'
+                  : `Navigator (${currentIndex + 1}/${currentTestletType === 'tbs' ? testletTBS.length : testletQuestions.length}) ▼`}
+              </button>
+              <div
+                id="prometric-question-grid"
+                className={clsx('prometric-question-grid', !showQuestionNav && 'hidden md:flex')}
+              >
+                {currentTestletType === 'tbs' ? (
+                  testletTBS.map((tbs, i) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        goToQuestion(i);
+                        setShowQuestionNav(false);
+                      }}
+                      className={clsx(
+                        'prometric-grid-btn',
+                        currentIndex === i && 'current',
+                        Object.keys(tbsAnswers[tbs.id] || {}).length > 0 && 'answered',
+                        flagged.has(tbs.id) && 'flagged'
+                      )}
+                    >
+                      {i + 1}
+                    </button>
+                  ))
+                ) : (
+                  testletQuestions.map((q, i) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        goToQuestion(i);
+                        setShowQuestionNav(false);
+                      }}
+                      className={clsx(
+                        'prometric-grid-btn',
+                        currentIndex === i && 'current',
+                        answers[q.id] !== undefined && 'answered',
+                        flagged.has(q.id) && 'flagged'
+                      )}
+                    >
+                      {i + 1}
+                    </button>
+                  ))
+                )}
+              </div>
+            </>
+          )}
 
           <div className="prometric-nav-buttons">
             {currentIndex === (currentTestletType === 'tbs' ? testletTBS.length - 1 : testletQuestions.length - 1) ? (

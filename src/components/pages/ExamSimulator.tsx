@@ -1791,7 +1791,7 @@ const ExamSimulator: React.FC = () => {
   // Prometric Theme Interface
   if (usePrometricTheme) {
     return (
-      <div className="prometric-theme h-screen flex flex-col overflow-hidden">
+      <div className="prometric-theme prometric-shell flex flex-col overflow-hidden">
         {/* Prometric Header - Windows-style title bar */}
         <div className="prometric-header">
           <div className="prometric-header-title">

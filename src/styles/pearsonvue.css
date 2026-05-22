@@ -819,8 +819,25 @@
   
   .pvue-nav {
     padding: 8px 12px;
+    /* Reserve space for the app's fixed mobile bottom tab bar (h-14 = 56px + safe-area) */
+    padding-bottom: calc(8px + 56px + env(safe-area-inset-bottom, 0px));
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
   }
-  
+
+  .pvue-nav-buttons {
+    flex: 1;
+    justify-content: center;
+  }
+
+  /* Hide the question-number grid entirely on mobile —
+     Previous / Next + the "X of N answered" status are enough.
+     The grid was rendering huge and covering the question on small screens. */
+  .pvue-question-grid {
+    display: none !important;
+  }
+
   .pvue-results {
     padding: 12px;
     padding-top: 24px;

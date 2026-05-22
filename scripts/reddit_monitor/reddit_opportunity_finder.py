@@ -238,18 +238,41 @@ class RedditAdapter(PlatformAdapter):
     """
     
     name = "reddit"
-    
-    # Subreddits to monitor
+
+    # Subreddits to monitor.
+    # CPA-heavy first (our primary product focus), then adjacent exams.
     SUBREDDITS = [
+        # --- CPA-focused ---
         "CPA",
-        "Accounting", 
+        "CPAExamAdvice",
+        "cpa_exam",
+        "Big4",            # auditors prepping for CPA
+        "PublicAccounting",
+        "AccountingPH",    # Philippines — huge CPA candidate pool
+        "IndianCPAs",
+        "Accounting",
+        "AccountingStudents",
+        "AskAccounting",
+        "Bookkeeping",
+        # --- Adjacent exams ---
         "CFP",
         "FinancialPlanning",
-        "InternalAudit",
-        "cybersecurity",      # For CISA
-        "taxpros",            # For EA
-        "cpa_exam",
-        "AccountingStudents",
+        "InternalAudit",   # CIA
+        "cybersecurity",   # CISA
+        "taxpros",         # EA
+    ]
+
+    # Reddit site-wide search queries (catch posts OUTSIDE the subs above,
+    # including high-intent users complaining about competitors).
+    SEARCH_QUERIES = [
+        "CPA exam failed",
+        "CPA exam help",
+        "CPA score release",
+        "Becker CPA",      # competitor frustration
+        "Roger CPA",
+        "Gleim CPA",
+        "UWorld CPA",
+        "Wiley CPA",
     ]
     
     def __init__(self):
@@ -348,7 +371,56 @@ class RedditAdapter(PlatformAdapter):
             
             # Small delay between subreddits to be nice to Reddit
             time.sleep(0.5)
-        
+
+        # Reddit site-wide search — catches posts OUTSIDE our sub list,
+        # especially people complaining about competitors or asking generic
+        # CPA-exam questions in unrelated subs.
+        for query in self.SEARCH_QUERIES:
+            search_url = (
+                "https://www.reddit.com/search.rss"
+                f"?q={requests.utils.quote(query)}&sort=new&t=day&limit=25"
+            )
+            entries = self._fetch_rss(search_url)
+
+            for entry in entries:
+                post_id = self._extract_post_id(entry)
+                post_key = f"reddit_{post_id}"
+
+                if post_key in seen_posts:
+                    continue
+
+                title = entry.get('title', '')
+                summary = self._clean_html(entry.get('summary', ''))
+                full_text = f"{title} {summary}"
+
+                # For search results, trust the query match — still run our
+                # opportunity filter to drop obvious noise ("hiring" etc.).
+                if self.matches_opportunity(full_text):
+                    # Try to extract the subreddit the post came from.
+                    link = entry.get('link', '')
+                    sub = "search"
+                    if "/r/" in link:
+                        try:
+                            sub = link.split("/r/", 1)[1].split("/", 1)[0]
+                        except Exception:
+                            pass
+
+                    opportunities.append(Opportunity(
+                        id=post_key,
+                        platform="reddit",
+                        type="post",
+                        title=title,
+                        text=summary[:500] + "..." if len(summary) > 500 else summary,
+                        url=link,
+                        author=entry.get('author', 'unknown'),
+                        created=entry.get('published', datetime.now().isoformat()),
+                        score=0,
+                        exams=self.detect_exam_type(full_text),
+                        extra={"subreddit": sub, "matched_query": query},
+                    ))
+
+            time.sleep(0.5)
+
         return opportunities
 
 # ============================================================================

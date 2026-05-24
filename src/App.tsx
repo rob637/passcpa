@@ -1,7 +1,15 @@
 import React, { Suspense, ReactNode, useEffect, useCallback } from 'react';
 import { Routes, Route, Navigate, useLocation, useSearchParams, useParams } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
-import { ENABLE_CPA_COURSE, ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
+import { 
+  isCourseEnabled, 
+  ENABLE_CPA_COURSE, 
+  ENABLE_EA_COURSE, 
+  ENABLE_CMA_COURSE, 
+  ENABLE_CIA_COURSE, 
+  ENABLE_CFP_COURSE, 
+  ENABLE_CISA_COURSE 
+} from './config/featureFlags';
 import { lazyWithRetry } from './utils/lazyWithRetry';
 import { scrollToTop } from './utils/scroll';
 import { saveCoursePreference } from './utils/courseDetection';

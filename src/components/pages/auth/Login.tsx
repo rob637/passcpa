@@ -8,7 +8,8 @@ import { isCourseEnabled } from '../../../config/featureFlags';
 import { Button } from '../../common/Button';
 import { Card } from '../../common/Card';
 import { saveCoursePreference } from '../../../utils/courseDetection';
-import type { CourseId } from '../../../types/course';
+import { getCourseHomePath } from '../../../utils/courseNavigation';
+import { CourseId, isValidCourseId } from '../../../types/course';
 
 // Valid course IDs
 const VALID_COURSES: CourseId[] = ['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'];

@@ -365,6 +365,17 @@ export function ExamSimulatorTemplate<SectionId extends string>({
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [startTime, setStartTime] = useState<Date | null>(null);
 
+  // Mobile detection for unmounting the navigator grid
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== 'undefined' && window.innerWidth < 768
+  );
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Results state
   const [examResult, setExamResult] = useState<ExamResult | null>(null);
 
@@ -1263,7 +1274,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
         {/* Prometric Header */}
         <div className="prometric-header">
           <div className="prometric-header-title">
-            <span className="prometric-header-section">{courseName} — {sections[selectedSection]?.name || selectedSection}</span>
+            <span className="prometric-header-section">{courseName} — {sections[selectedSection]?.name || selectedSection} <span className="text-[10px] opacity-40 ml-1">v2.1.16</span></span>
             <div className="prometric-header-divider" />
             <span className="prometric-header-info">
               Question {currentIndex + 1} of {exam.questions.length}
@@ -1399,39 +1410,43 @@ export function ExamSimulatorTemplate<SectionId extends string>({
             </button>
           </div>
 
-          {/* Question Grid — hidden on mobile by default; toggled via button */}
-          <button
-            type="button"
-            onClick={() => setShowQuestionNav((v) => !v)}
-            className="prometric-nav-btn md:hidden"
-            aria-expanded={showQuestionNav}
-            aria-controls="prometric-question-grid"
-          >
-            {showQuestionNav ? 'Hide ▲' : `Navigator (${currentIndex + 1}/${exam.questions.length}) ▼`}
-          </button>
-          <div
-            id="prometric-question-grid"
-            className={clsx('prometric-question-grid', !showQuestionNav && 'hidden md:flex')}
-          >
-            {exam.questions.map((q, i) => (
+          {/* Question Grid — hidden on mobile to prevent blocking answer options */}
+          {!isMobile && (
+            <>
               <button
-                key={i}
-                ref={currentIndex === i ? currentGridBtnRef : undefined}
-                onClick={() => {
-                  handleJumpToQuestion(i);
-                  setShowQuestionNav(false);
-                }}
-                className={clsx(
-                  'prometric-grid-btn',
-                  currentIndex === i && 'current',
-                  exam.answers[q.id] !== undefined && 'answered',
-                  exam.flagged.has(q.id) && 'flagged'
-                )}
+                type="button"
+                onClick={() => setShowQuestionNav((v) => !v)}
+                className="prometric-nav-btn md:hidden"
+                aria-expanded={showQuestionNav}
+                aria-controls="prometric-question-grid"
               >
-                {i + 1}
+                {showQuestionNav ? 'Hide ▲' : `Navigator (${currentIndex + 1}/${exam.questions.length}) ▼`}
               </button>
-            ))}
-          </div>
+              <div
+                id="prometric-question-grid"
+                className={clsx('prometric-question-grid', !showQuestionNav && 'hidden md:flex')}
+              >
+                {exam.questions.map((q, i) => (
+                  <button
+                    key={i}
+                    ref={currentIndex === i ? currentGridBtnRef : undefined}
+                    onClick={() => {
+                      handleJumpToQuestion(i);
+                      setShowQuestionNav(false);
+                    }}
+                    className={clsx(
+                      'prometric-grid-btn',
+                      currentIndex === i && 'current',
+                      exam.answers[q.id] !== undefined && 'answered',
+                      exam.flagged.has(q.id) && 'flagged'
+                    )}
+                  >
+                    {i + 1}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
 
           <div className="prometric-nav-buttons">
             {currentIndex === exam.questions.length - 1 ? (
@@ -1512,7 +1527,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
           <div className="pvue-header-left">
             <span className="pvue-header-logo">{courseName} Examination</span>
             <div className="pvue-header-divider" />
-            <span className="pvue-header-section">{sections[selectedSection]?.name || selectedSection}</span>
+            <span className="pvue-header-section">{sections[selectedSection]?.name || selectedSection} <span className="text-[10px] opacity-40 ml-1">v2.1.16</span></span>
           </div>
           <div className="pvue-header-right">
             <div className={clsx('pvue-timer', timeRemaining < 300 && 'warning')}>
@@ -1638,23 +1653,25 @@ export function ExamSimulatorTemplate<SectionId extends string>({
             </button>
           </div>
 
-          {/* Question Grid */}
-          <div className="pvue-question-grid">
-            {exam.questions.map((q, i) => (
-              <button
-                key={i}
-                onClick={() => handleJumpToQuestion(i)}
-                className={clsx(
-                  'pvue-grid-btn',
-                  currentIndex === i && 'current',
-                  exam.answers[q.id] !== undefined && 'answered',
-                  exam.flagged.has(q.id) && 'flagged'
-                )}
-              >
-                {i + 1}
-              </button>
-            ))}
-          </div>
+          {/* Question Grid — hidden on mobile */}
+          {!isMobile && (
+            <div className="pvue-question-grid">
+              {exam.questions.map((q, i) => (
+                <button
+                  key={i}
+                  onClick={() => handleJumpToQuestion(i)}
+                  className={clsx(
+                    'pvue-grid-btn',
+                    currentIndex === i && 'current',
+                    exam.answers[q.id] !== undefined && 'answered',
+                    exam.flagged.has(q.id) && 'flagged'
+                  )}
+                >
+                  {i + 1}
+                </button>
+              ))}
+            </div>
+          )}
 
           <div className="pvue-nav-buttons">
             {currentIndex === exam.questions.length - 1 ? (

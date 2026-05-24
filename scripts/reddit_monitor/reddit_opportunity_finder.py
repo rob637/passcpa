@@ -110,10 +110,14 @@ OPPORTUNITY_KEYWORDS = [
     "roger vs",
     "wiley vs",
     "ninja vs",
+    "uworld vs",
     "alternative to becker",
+    "alternative to uworld",
     "cheaper than becker",
+    "cheaper than uworld",
     "instead of becker",
     "switching from becker",
+    "switching from uworld",
     "can't afford becker",
     "too expensive",
     
@@ -199,28 +203,31 @@ INTENT_SIGNALS = {
         "failed the exam", "failed my", "keep failing", "failed again",
         "retaking", "retake", "third attempt", "fourth attempt",
         "can't pass", "cant pass", "struggling to pass", "need to pass",
-        "score release", "score dropped", "got a 74", "scored a 7",
+        "score release", "score dropped", "got a 74", "got a 73", "got a 72", "got a 71", "got a 70",
+        "failed far", "failed aud", "failed reg", "failed bec", "failed bar", "failed isc", "failed tcp",
     ],
     # High intent (3 pts each)
     3: [
         "too expensive", "can't afford", "cant afford", "cheaper than",
-        "alternative to becker", "switching from", "hate becker",
-        "becker not working", "looking for something else",
+        "alternative to becker", "alternative to uworld", "switching from", "hate becker",
+        "becker not working", "uworld not working", "looking for something else",
         "any other options", "what else is there",
         "first time candidate", "just starting", "where do i start",
+        "becker vs", "roger vs", "gleim vs", "surgent vs", "uworld vs", "ninja vs",
     ],
     # Medium intent (2 pts each)
     2: [
         "recommend a course", "course recommendation", "best course",
-        "which course", "becker vs", "roger vs", "gleim vs", "surgent vs",
-        "uworld vs", "wiley vs", "ninja vs",
+        "which course", "uworld vs", "wiley vs", "ninja vs",
         "how to study", "how to pass", "study plan", "study schedule",
         "practice questions", "mcq practice", "flashcards",
+        "far study", "aud study", "reg study", "bec study",
+        "far exam", "aud exam", "reg exam", "bec exam",
     ],
     # Low intent (1 pt each) — still worth replying, but not urgent
     1: [
         "study material", "study guide", "exam prep", "exam preparation",
-        "free resources", "affordable", "budget",
+        "free resources", "affordable", "budget", "cpa exam", "ea exam",
     ],
 }
 
@@ -285,22 +292,29 @@ class PlatformAdapter(ABC):
     
     def detect_exam_type(self, text: str) -> List[str]:
         """Detect which exam(s) the text is about."""
+        import re
         text_lower = text.lower()
         exams = []
         
         exam_indicators = {
-            "cpa": ["cpa", "far ", "aud ", "reg ", "bec ", "bar ", "isc ", "tcp ", 
-                    "certified public accountant"],
-            "ea": ["enrolled agent", " ea ", "see1", "see2", "see3", "irs exam"],
-            "cma": ["cma", "certified management accountant", "management accounting"],
-            "cia": ["cia", "internal audit", "certified internal auditor"],
-            "cisa": ["cisa", "information systems audit", "isaca"],
-            "cfp": ["cfp", "financial planner", "certified financial planner"],
+            "cpa": [
+                r"cpa", r"certified public accountant",
+                r"far", r"aud", r"reg", r"bec", r"bar", r"isc", r"tcp",
+                r"financial accounting", r"auditing", r"regulation"
+            ],
+            "ea": [r"enrolled agent", r" ea ", r"see1", r"see2", r"see3", r"irs exam"],
+            "cma": [r"cma", r"certified management accountant", r"management accounting"],
+            "cia": [r"cia", r"internal audit", r"certified internal auditor"],
+            "cisa": [r"cisa", r"information systems audit", r"isaca"],
+            "cfp": [r"cfp", r"financial planner", r"certified financial planner"],
         }
         
         for exam, indicators in exam_indicators.items():
-            if any(ind in text_lower for ind in indicators):
-                exams.append(exam)
+            for ind in indicators:
+                pattern = rf"\b{ind.strip()}\b" if " " not in ind else ind
+                if re.search(pattern, text_lower):
+                    exams.append(exam)
+                    break
         
         return exams if exams else ["general"]
 
@@ -1465,11 +1479,15 @@ def run_once(test_mode: bool = False, platforms: List[str] = None):
     # Spam filter: drop anything we can't tie to one of our actual exams.
     # If exam detection only returned ["general"], the post didn't mention
     # CPA/EA/CMA/CIA/CISA/CFP at all — not a lead for us.
+    # TIGHTEN: Only keep posts with intent score 5 or higher.
     before_filter = len(all_opportunities)
-    filtered = [opp for opp in all_opportunities if opp.exams != ["general"]]
+    filtered = [
+        opp for opp in all_opportunities 
+        if opp.exams != ["general"] and opp.intent_score >= 5
+    ]
     dropped = before_filter - len(filtered)
     if dropped:
-        print(f"🧹 Dropped {dropped} off-topic posts (no exam match)")
+        print(f"🧹 Dropped {dropped} low-intent or off-topic posts (intent < 5 or no exam match)")
 
     if not filtered:
         print("No qualifying opportunities after filter.")

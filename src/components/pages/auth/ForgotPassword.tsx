@@ -61,11 +61,16 @@ const ForgotPassword = () => {
             <h2 className="text-lg font-semibold text-slate-900 mb-2">Check your email</h2>
             <p className="text-slate-600 mb-6">
               If an account exists with <span className="font-medium">{email}</span>, you'll receive
-              a password reset link shortly.
+              a password reset link (or login instructions) shortly.
             </p>
             <div className="space-y-3">
+              <Link to="/login" className="block">
+                <Button variant="primary" fullWidth>
+                  Return to Login
+                </Button>
+              </Link>
               <Button
-                variant="secondary"
+                variant="ghost"
                 fullWidth
                 onClick={() => {
                   setSuccess(false);
@@ -74,11 +79,6 @@ const ForgotPassword = () => {
               >
                 Try another email
               </Button>
-              <Link to="/login" className="block">
-                <Button variant="primary" fullWidth>
-                  Back to Sign In
-                </Button>
-              </Link>
             </div>
           </div>
         ) : (

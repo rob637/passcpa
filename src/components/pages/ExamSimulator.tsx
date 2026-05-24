@@ -1808,7 +1808,7 @@ const ExamSimulator: React.FC = () => {
         {/* Prometric Header - Windows-style title bar */}
         <div className="prometric-header">
           <div className="prometric-header-title">
-            <span className="prometric-header-section">{currentSection} - {sectionInfo?.name}</span>
+            <span className="prometric-header-section">{currentSection} - {sectionInfo?.name} <span className="text-[10px] opacity-40 ml-1">v2.1.16</span></span>
             <div className="prometric-header-divider" />
             <span className="prometric-header-info">
               Testlet {currentTestlet + 1} of {examConfig.testlets.length} ({currentTestletType === 'tbs' ? 'Task-Based Simulation' : 'Multiple Choice'})
@@ -2079,7 +2079,7 @@ const ExamSimulator: React.FC = () => {
 
   // Modern Theme Interface (existing)
   return (
-    <div className="h-screen bg-slate-100 flex flex-col overflow-hidden">
+    <div className="flex-1 min-h-0 md:h-screen bg-slate-100 flex flex-col overflow-hidden">
       {/* Exam Header */}
       <div className="bg-slate-900 text-white px-4 py-2 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-4">
@@ -2097,6 +2097,7 @@ const ExamSimulator: React.FC = () => {
               ? `Task ${currentIndex + 1} of ${testletTBS.length}`
               : `Question ${currentIndex + 1} of ${testletQuestions.length}`
             }
+            <span className="text-[10px] opacity-20 ml-2">v2.1.16</span>
           </div>
         </div>
 
@@ -2168,7 +2169,7 @@ const ExamSimulator: React.FC = () => {
           )}
 
           {/* Question Area */}
-          <div ref={!usePrometricTheme ? questionTopRef : undefined} className="flex-1 overflow-y-auto p-6 min-h-0">
+          <div ref={!usePrometricTheme ? questionTopRef : undefined} className="flex-1 overflow-y-auto p-6 min-h-0 overscroll-contain">
             <div className="max-w-4xl mx-auto pb-4">
               {currentTestletType === 'tbs' && currentTBS ? (
                 /* TBS Rendering */
@@ -2261,47 +2262,49 @@ const ExamSimulator: React.FC = () => {
                 Previous
               </button>
 
-              <div className="flex gap-1 flex-wrap max-w-[400px] justify-center">
-                {currentTestletType === 'tbs' ? (
-                  /* TBS Navigation */
-                  testletTBS.map((tbs, i) => (
-                    <button
-                      key={i}
-                      onClick={() => goToQuestion(i)}
-                      className={clsx(
-                        'w-8 h-8 rounded flex items-center justify-center text-xs font-medium transition-all',
-                        currentIndex === i
-                          ? 'bg-slate-800 text-white ring-2 ring-slate-800 ring-offset-2 dark:ring-offset-slate-800'
-                          : Object.keys(tbsAnswers[tbs.id] || {}).length > 0
-                            ? 'bg-primary-100 text-primary-700 hover:bg-primary-200'
-                            : 'bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-500',
-                        flagged.has(tbs.id) && 'ring-2 ring-warning-400 z-10'
-                      )}
-                    >
-                      {i + 1}
-                    </button>
-                  ))
-                ) : (
-                  /* MCQ Navigation */
-                  testletQuestions.map((q, i) => (
-                    <button
-                      key={i}
-                      onClick={() => goToQuestion(i)}
-                      className={clsx(
-                        'w-8 h-8 rounded flex items-center justify-center text-xs font-medium transition-all',
-                        currentIndex === i
-                          ? 'bg-slate-800 text-white ring-2 ring-slate-800 ring-offset-2 dark:ring-offset-slate-800'
-                          : answers[q.id] !== undefined
-                            ? 'bg-primary-100 text-primary-700 hover:bg-primary-200'
-                            : 'bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-500',
-                        flagged.has(q.id) && 'ring-2 ring-warning-400 z-10'
-                      )}
-                    >
-                      {i + 1}
-                    </button>
-                  ))
-                )}
-              </div>
+              {!isMobile && (
+                <div className="flex gap-1 flex-wrap max-w-[400px] justify-center">
+                  {currentTestletType === 'tbs' ? (
+                    /* TBS Navigation */
+                    testletTBS.map((tbs, i) => (
+                      <button
+                        key={i}
+                        onClick={() => goToQuestion(i)}
+                        className={clsx(
+                          'w-8 h-8 rounded flex items-center justify-center text-xs font-medium transition-all',
+                          currentIndex === i
+                            ? 'bg-slate-800 text-white ring-2 ring-slate-800 ring-offset-2 dark:ring-offset-slate-800'
+                            : Object.keys(tbsAnswers[tbs.id] || {}).length > 0
+                              ? 'bg-primary-100 text-primary-700 hover:bg-primary-200'
+                              : 'bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-500',
+                          flagged.has(tbs.id) && 'ring-2 ring-warning-400 z-10'
+                        )}
+                      >
+                        {i + 1}
+                      </button>
+                    ))
+                  ) : (
+                    /* MCQ Navigation */
+                    testletQuestions.map((q, i) => (
+                      <button
+                        key={i}
+                        onClick={() => goToQuestion(i)}
+                        className={clsx(
+                          'w-8 h-8 rounded flex items-center justify-center text-xs font-medium transition-all',
+                          currentIndex === i
+                            ? 'bg-slate-800 text-white ring-2 ring-slate-800 ring-offset-2 dark:ring-offset-slate-800'
+                            : answers[q.id] !== undefined
+                              ? 'bg-primary-100 text-primary-700 hover:bg-primary-200'
+                              : 'bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-500',
+                          flagged.has(q.id) && 'ring-2 ring-warning-400 z-10'
+                        )}
+                      >
+                        {i + 1}
+                      </button>
+                    ))
+                  )}
+                </div>
+              )}
 
               {currentIndex === (currentTestletType === 'tbs' ? testletTBS.length - 1 : testletQuestions.length - 1) ? (
                 <button

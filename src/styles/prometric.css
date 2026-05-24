@@ -228,6 +228,7 @@
   flex: 1;
   padding: 16px;
   overflow-y: auto;
+  overscroll-behavior-y: contain;
   font-size: 13px;
   line-height: 1.6;
 }
@@ -311,8 +312,8 @@
 @media (max-width: 767px) {
   .prometric-nav {
     justify-content: center;
-    /* Reserve space for the app's fixed mobile bottom tab bar (h-14 = 56px + safe-area) */
-    padding-bottom: calc(8px + 56px + env(safe-area-inset-bottom, 0px));
+    /* Only small padding for mobile, anchored right above the bottom nav */
+    padding-bottom: 8px;
   }
   .prometric-nav-buttons {
     flex: 1;
@@ -331,16 +332,18 @@
   }
 }
 
-/* Exam shell sizing — use dynamic viewport height when available,
-   subtract mobile bottom nav so it doesn't get covered. */
+/* Exam shell sizing — use flex-1 to fill available space within MainLayout. 
+   On mobile, we avoid h-screen to prevent the "scroll hitch" caused by 
+   the app's header and bottom nav. */
 .prometric-shell {
   height: 100vh;
   height: 100dvh;
 }
 @media (max-width: 767px) {
   .prometric-shell {
-    height: calc(100vh - 56px - env(safe-area-inset-bottom, 0px));
-    height: calc(100dvh - 56px - env(safe-area-inset-bottom, 0px));
+    height: auto;
+    flex: 1;
+    min-height: 0;
   }
 }
 

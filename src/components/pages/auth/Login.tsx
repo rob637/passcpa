@@ -4,6 +4,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, AlertCircle } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
 import { useSEO } from '../../../hooks/useSEO';
+import { isCourseEnabled } from '../../../config/featureFlags';
 import { Button } from '../../common/Button';
 import { Card } from '../../common/Card';
 import { saveCoursePreference } from '../../../utils/courseDetection';
@@ -91,7 +92,24 @@ const Login = () => {
     } catch {
       // ignore malformed pendingCheckout
     }
-    return targetDashboard;
+
+    // New logic: If there was a pendingCourse from the URL, use that if enabled
+    const pendingCourse = localStorage.getItem('pendingCourse');
+    if (pendingCourse && isValidCourseId(pendingCourse)) {
+      localStorage.removeItem('pendingCourse');
+      // Only redirect to courses that are actually enabled in this environment
+      // to avoid triggering a 404.
+      if (isCourseEnabled(pendingCourse as CourseId)) {
+        return getCourseHomePath(pendingCourse as CourseId);
+      }
+    }
+
+    // Check if the current course context is enabled
+    if (isValidCourse && isCourseEnabled(courseParam as CourseId)) {
+      return targetDashboard;
+    }
+
+    return '/home';
   };
 
   const [email, setEmail] = useState('');
@@ -115,11 +133,11 @@ const Login = () => {
     } catch (err: any) {
       logger.error('Login error:', err);
       if (err.code === 'auth/invalid-credential') {
-        setError('Invalid email or password. Please try again.');
+        setError('Invalid email or password. If you originally joined with Google, try clicking the Google button below.');
       } else if (err.code === 'auth/user-not-found') {
-        setError('No account found with this email.');
+        setError('No account found with this email. Did you sign up with Google?');
       } else if (err.code === 'auth/wrong-password') {
-        setError('Incorrect password. Please try again.');
+        setError('Incorrect password. If you originally joined with Google, try clicking the Google button below.');
       } else if (err.code === 'auth/too-many-requests') {
         setError('Too many failed attempts. Please try again later.');
       } else {

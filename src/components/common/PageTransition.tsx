@@ -29,6 +29,7 @@ export function PageTransition({ children }: PageTransitionProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.15 }}
+      className="flex-1"
     >
       {children}
     </motion.div>

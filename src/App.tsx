@@ -367,7 +367,11 @@ const PublicRoute = ({ children }: RouteProps) => {
       // Save course preference so CourseProvider picks it up
       saveCoursePreference(courseParam as CourseId);
       localStorage.setItem('pendingCourse', courseParam);
-      return <Navigate to={getCourseHomePath(courseParam as CourseId)} replace />;
+      
+      // ONLY redirect to enabled courses!
+      if (isCourseEnabled(courseParam)) {
+        return <Navigate to={getCourseHomePath(courseParam as CourseId)} replace />;
+      }
     }
     return <Navigate to="/home" replace />;
   }

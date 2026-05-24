@@ -472,6 +472,37 @@ exports.sendCustomPasswordReset = onCall({
   const resendClient = new Resend(apiKey);
 
   try {
+    // Check if user has a password provider
+    let hasPassword = true;
+    let hasGoogle = false;
+    
+    try {
+      const userRecord = await admin.auth().getUserByEmail(email);
+      const providers = userRecord.providerData.map(p => p.providerId);
+      hasPassword = providers.includes('password');
+      hasGoogle = providers.includes('google.com');
+    } catch (e) {
+      // If user not found, we'll let generatePasswordResetLink handle the error
+    }
+
+    if (!hasPassword && hasGoogle) {
+      // Send Google Sign-In notice instead of reset link
+      const { error } = await resendClient.emails.send({
+        from: FROM_EMAIL,
+        to: email,
+        subject: '🔐 VoraPrep Login Help',
+        html: getGoogleAccountNoticeHTML(email),
+      });
+
+      if (error) {
+        console.error('Resend error:', error);
+        throw new Error(error.message);
+      }
+
+      console.log(`Google account notice email sent to ${email}`);
+      return { success: true };
+    }
+
     // Generate Firebase password reset link
     const resetLink = await admin.auth().generatePasswordResetLink(email, {
       url: `${APP_BASE_URL}/login`,
@@ -580,6 +611,56 @@ function getPasswordResetEmailHTML(email, resetLink) {
     
   </div>
   
+</body>
+</html>
+  `;
+}
+
+/**
+ * Notice for users who try to reset password but use Google Sign-In
+ */
+function getGoogleAccountNoticeHTML(email) {
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoraPrep Login Help</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    <div style="text-align: center; margin-bottom: 30px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
+    </div>
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 15px 0; text-align: center;">Login Help</h1>
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0; text-align: center;">
+        Hi there! 👋 We received a password reset request for your account, but you originally joined VoraPrep using your <strong>Google account</strong>.
+      </p>
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0; text-align: center;">
+        Because your account is linked to Google, you don't have a separate password for VoraPrep and don't need to reset anything.
+      </p>
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="${APP_BASE_URL}/login" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+          Log In with Google
+        </a>
+      </div>
+      <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
+        Simply click the "Sign in with Google" button on the login page to access your account.
+      </p>
+    </div>
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
+      <p style="margin: 0;">This email was sent to ${email}</p>
+      <p style="margin: 15px 0 0 0;"><strong>VoraPrep</strong> - Your AI-Powered Exam Prep Partner</p>
+      <p style="margin: 15px 0 0 0;"><a href="${APP_BASE_URL}" style="color: #3b82f6; text-decoration: none;">voraprep.com</a></p>
+    </div>
+  </div>
 </body>
 </html>
   `;

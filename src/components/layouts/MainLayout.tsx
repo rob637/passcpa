@@ -187,7 +187,7 @@ const MainLayout = () => {
   }, [location.pathname, navItems, currentCourseId, searchParams]);
 
   return (
-    <div className="min-h-app bg-slate-50 dark:bg-slate-900">
+    <div className="min-h-app bg-[#0f172a]">
       {/* Skip Navigation Link - Accessibility */}
       <a
         href="#main-content"
@@ -339,10 +339,15 @@ const MainLayout = () => {
         role="main"
         aria-label="Main content"
         className={clsx(
-          'flex-1 min-w-0 p-4 pb-24 md:p-8 md:pb-8 md:pt-6 focus:outline-none',
-          // Mobile top padding: header (56px) + context bar (~32px) + safe-area (~16-47px) + gap
+          'flex-1 w-full min-w-0 focus:outline-none',
+          location.pathname.includes('/exam') ? 'flex flex-col' : 'p-4 md:p-8',
+          // Mobile bottom padding
+          location.pathname.includes('/exam') 
+            ? 'pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))]' 
+            : 'pb-24',
+          // Mobile top padding
           trialBannerVisible ? 'pt-[140px]' : 'pt-[108px]',
-          'md:pt-6' // Reset to normal on desktop
+          'md:pt-6'
         )}
       >
         <PageTransition>

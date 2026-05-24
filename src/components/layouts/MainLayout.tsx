@@ -187,7 +187,7 @@ const MainLayout = () => {
   }, [location.pathname, navItems, currentCourseId, searchParams]);
 
   return (
-    <div className="min-h-app bg-[#0f172a]">
+    <div className="min-h-app bg-slate-50 dark:bg-slate-900">
       {/* Skip Navigation Link - Accessibility */}
       <a
         href="#main-content"

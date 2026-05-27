@@ -14,6 +14,64 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#1a73e8" />
+
+    <!--
+      Boot guard: self-heal stale-bundle MIME errors.
+      If a JS module fails to load (e.g., 404 falls back to index.html and
+      browser refuses the wrong MIME), unregister any service worker, clear
+      caches, and hard-reload with a cache-buster. Prevents the "Loading..."
+      spinner-of-death after a deploy if a stale SW is still around.
+      Kept inline so it runs even when the main bundle never executes.
+    -->
+    <script>
+      (function () {
+        var healed = false;
+        function selfHeal(reason) {
+          if (healed) return;
+          healed = true;
+          try { console.warn('[boot-guard] self-healing stale bundle:', reason); } catch (e) {}
+          var done = function () {
+            var url = window.location.pathname + window.location.search;
+            url += (url.indexOf('?') === -1 ? '?' : '&') + '_h=' + Date.now();
+            window.location.replace(url);
+          };
+          var tasks = [];
+          if ('serviceWorker' in navigator) {
+            tasks.push(navigator.serviceWorker.getRegistrations().then(function (regs) {
+              return Promise.all(regs.map(function (r) { return r.unregister().catch(function(){}); }));
+            }).catch(function () {}));
+          }
+          if (typeof caches !== 'undefined' && caches.keys) {
+            tasks.push(caches.keys().then(function (keys) {
+              return Promise.all(keys.map(function (k) { return caches.delete(k).catch(function(){}); }));
+            }).catch(function () {}));
+          }
+          Promise.all(tasks).then(done, done);
+          setTimeout(done, 2500);
+        }
+        window.addEventListener('error', function (ev) {
+          var msg = (ev && ev.message) || '';
+          var tgt = ev && ev.target;
+          var isModuleScript = tgt && tgt.tagName === 'SCRIPT' && (tgt.type === 'module' || /\/assets\/index-.*\.js/.test(tgt.src || ''));
+          if (
+            /module script/i.test(msg) ||
+            /MIME type/i.test(msg) ||
+            /Failed to fetch dynamically imported module/i.test(msg) ||
+            (isModuleScript && !healed)
+          ) {
+            selfHeal(msg || 'module-script-load-failed');
+          }
+        }, true);
+        window.addEventListener('unhandledrejection', function (ev) {
+          var r = ev && ev.reason;
+          var msg = (r && (r.message || r.toString())) || '';
+          if (/Failed to fetch dynamically imported module/i.test(msg) || /ChunkLoadError/i.test(msg)) {
+            selfHeal(msg);
+          }
+        });
+      })();
+    </script>
+
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="VoraPrep" />

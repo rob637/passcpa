@@ -45,6 +45,31 @@
         ]
       },
       {
+        "source": "/sw.js",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+          { "key": "Service-Worker-Allowed", "value": "/" }
+        ]
+      },
+      {
+        "source": "/registerSW.js",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        ]
+      },
+      {
+        "source": "/workbox-*.js",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        ]
+      },
+      {
+        "source": "/firebase-messaging-sw.js",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        ]
+      },
+      {
         "source": "{/home,/dashboard,/study,/practice,/flashcards,/quiz,/exam,/tbs,/lessons,/progress,/achievements,/tutor,/ai-tutor,/settings,/onboarding,/admin,/journey,/resources,/community,/you,/learn,/checkout-success,/checkout-cancel}/**",
         "headers": [
           { "key": "X-Robots-Tag", "value": "noindex, nofollow" }

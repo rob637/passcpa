@@ -88,10 +88,14 @@ regexes = [
   '''AIzaSy-your-web-api-key''',                    # template placeholder
 ]
 
-# Specific file allowlists
-[[allowlist.regexTarget]]
+# Specific file allowlists — allow generic public Firebase web API keys, but
+# only when found inside tracked .env.{production,staging,development,example}
+# files. Uses gitleaks 8.18+ `[[allowlists]]` (plural) so it composes with the
+# global `[allowlist]` above instead of replacing it.
+[[allowlists]]
 description = "Tracked public Firebase web API keys (referrer-restricted)"
-target = "match"
+condition = "AND"
+regexTarget = "match"
 regexes = ['''AIzaSy[A-Za-z0-9_-]{33}''']
 paths = [
   '''(^|/)\.env\.(production|staging|development|example)$''',

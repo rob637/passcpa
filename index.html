@@ -26,9 +26,28 @@
     <script>
       (function () {
         var healed = false;
+        // Cap self-heals per browser-tab session to avoid an infinite reload
+        // loop ("blinking" splash) if the underlying chunk really is missing.
+        // After this many attempts we let the error surface to the user /
+        // ErrorBoundary instead of reloading again.
+        var SELF_HEAL_KEY = 'boot-guard-heal-count';
+        var MAX_HEALS = 2;
+        function getHealCount() {
+          try { return parseInt(sessionStorage.getItem(SELF_HEAL_KEY) || '0', 10) || 0; }
+          catch (e) { return 0; }
+        }
+        function bumpHealCount() {
+          try { sessionStorage.setItem(SELF_HEAL_KEY, String(getHealCount() + 1)); }
+          catch (e) { /* storage unavailable */ }
+        }
         function selfHeal(reason) {
           if (healed) return;
+          if (getHealCount() >= MAX_HEALS) {
+            try { console.warn('[boot-guard] max self-heals reached, surfacing error:', reason); } catch (e) {}
+            return;
+          }
           healed = true;
+          bumpHealCount();
           try { console.warn('[boot-guard] self-healing stale bundle:', reason); } catch (e) {}
           var done = function () {
             var url = window.location.pathname + window.location.search;
@@ -68,6 +87,17 @@
           if (/Failed to fetch dynamically imported module/i.test(msg) || /ChunkLoadError/i.test(msg)) {
             selfHeal(msg);
           }
+        });
+        // Clear the counter once the app has clearly booted successfully
+        // (give it a few seconds to mount). This way the next time the user
+        // legitimately needs self-heal after a future deploy, they get the
+        // full budget again instead of a one-time-per-tab limit.
+        window.addEventListener('load', function () {
+          setTimeout(function () {
+            if (!healed) {
+              try { sessionStorage.removeItem(SELF_HEAL_KEY); } catch (e) {}
+            }
+          }, 8000);
         });
       })();
     </script>

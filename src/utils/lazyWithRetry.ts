@@ -17,32 +17,43 @@ export function lazyWithRetry<T extends ComponentType<any>>(
   importFn: () => Promise<{ default: T }>
 ): React.LazyExoticComponent<T> {
   return lazy(async () => {
-    // Check if we've already tried reloading for this error
-    const hasReloadedKey = 'chunk-reload-attempted';
-    const hasReloaded = sessionStorage.getItem(hasReloadedKey);
-    
-    try {
-      const component = await importFn();
-      // Success - clear the reload flag if it was set
-      if (hasReloaded) {
-        sessionStorage.removeItem(hasReloadedKey);
+    // One-shot retry per session. We use a *count* (not a clear-on-success
+    // flag) because a single page load can resolve many lazy chunks: if any
+    // of them succeed first they would have cleared the flag and let a
+    // subsequent failing chunk trigger a second reload, producing an
+    // infinite reload loop ("blinking" splash). Count never decreases for
+    // the life of the tab session.
+    const reloadCountKey = 'chunk-reload-count';
+    const reloadCount = (() => {
+      try {
+        return parseInt(sessionStorage.getItem(reloadCountKey) || '0', 10) || 0;
+      } catch {
+        return 0;
       }
-      return component;
+    })();
+    const MAX_RELOADS = 1;
+
+    try {
+      return await importFn();
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : String(error);
-      
+
       // Check if this is a chunk loading error
-      const isChunkError = 
+      const isChunkError =
         errorMessage.includes('Failed to fetch dynamically imported module') ||
         errorMessage.includes('Loading chunk') ||
         errorMessage.includes('Loading CSS chunk') ||
         errorMessage.includes('ChunkLoadError');
-      
-      if (isChunkError && !hasReloaded) {
+
+      if (isChunkError && reloadCount < MAX_RELOADS) {
         logger.warn('Chunk load failed, reloading page to get new version:', errorMessage);
-        
-        // Mark that we've tried reloading
-        sessionStorage.setItem(hasReloadedKey, Date.now().toString());
+
+        // Increment the reload counter BEFORE reloading
+        try {
+          sessionStorage.setItem(reloadCountKey, String(reloadCount + 1));
+        } catch {
+          /* storage unavailable — best effort */
+        }
         
         // Clear service worker caches before reload
         if ('caches' in window) {

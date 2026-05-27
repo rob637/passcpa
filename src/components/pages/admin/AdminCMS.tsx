@@ -6008,11 +6008,10 @@ VoraPrep Team`;
                   <div className="text-2xl font-bold text-green-700 dark:text-green-300">✓</div>
                   <div className="text-sm text-green-600 dark:text-green-400">Firebase</div>
                 </div>
-                <div className={`p-4 rounded-lg text-center ${import.meta.env.VITE_GEMINI_API_KEY ? 'bg-green-50 dark:bg-green-900/30' : 'bg-red-50 dark:bg-red-900/30'}`}>
-                  <div className={`text-2xl font-bold ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-700 dark:text-green-300' : 'text-red-700 dark:text-red-300'}`}>
-                    {import.meta.env.VITE_GEMINI_API_KEY ? '✓' : '✗'}
-                  </div>
-                  <div className={`text-sm ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>Gemini AI</div>
+                <div className="p-4 bg-green-50 dark:bg-green-900/30 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-green-700 dark:text-green-300">✓</div>
+                  <div className="text-sm text-green-600 dark:text-green-400">Gemini AI</div>
+                  <div className="text-[10px] text-green-600/70 dark:text-green-400/70 mt-1">server-side</div>
                 </div>
                 <div className="p-4 bg-green-50 dark:bg-green-900/30 rounded-lg text-center">
                   <div className="text-2xl font-bold text-green-700 dark:text-green-300">✓</div>

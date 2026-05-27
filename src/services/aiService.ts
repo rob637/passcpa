@@ -481,8 +481,10 @@ export const generateAIResponse = async (
 
   // SECURITY: Never use direct API key in production — it's visible in DevTools Network tab.
   // Only allow direct API calls in development mode with an explicit key set.
-  const isProduction = import.meta.env.PROD;
-  const useProxy = isProduction || !apiKey;
+  // The `import.meta.env.DEV` guard lets Vite tree-shake the direct-call branch (and
+  // therefore the inlined `VITE_GEMINI_API_KEY` literal) out of production bundles.
+  const isDev = import.meta.env.DEV;
+  const useProxy = !isDev || !apiKey;
 
   try {
     const SYSTEM_PROMPTS = getSystemPrompts(courseId);

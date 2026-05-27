@@ -1,0 +1,98 @@
+# gitleaks config for VoraPrep
+# Extends the default ruleset and adds custom rules for the patterns that
+# burned us before (Firebase Auth user exports).
+#
+# Run locally:  gitleaks detect --config .gitleaks.toml --no-git -v
+#               gitleaks detect --config .gitleaks.toml -v   (scans git history)
+# Install:      brew install gitleaks  |  https://github.com/gitleaks/gitleaks/releases
+
+[extend]
+useDefault = true
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Custom rules
+# ─────────────────────────────────────────────────────────────────────────────
+
+[[rules]]
+id = "firebase-auth-export-passwordhash"
+description = "Firebase Auth user export containing scrypt passwordHash (PII + credential leak)"
+regex = '''"passwordHash"\s*:\s*"[A-Za-z0-9+/=]{8,}"'''
+tags = ["pii", "credentials", "firebase"]
+
+[[rules]]
+id = "firebase-auth-export-shape"
+description = "Firebase Auth user export shape (localId + providerUserInfo) — looks like a Firebase Auth export"
+regex = '''"localId"\s*:\s*"[A-Za-z0-9]{20,}"[\s\S]{0,200}"providerUserInfo"'''
+tags = ["pii", "firebase"]
+
+[[rules]]
+id = "firebase-auth-export-salt"
+description = "Firebase Auth scrypt salt (paired with passwordHash in exports)"
+regex = '''"salt"\s*:\s*"[A-Za-z0-9+/=]{8,}"\s*,\s*"passwordHash"'''
+tags = ["pii", "credentials", "firebase"]
+
+[[rules]]
+id = "google-service-account-json"
+description = "Google service account JSON key file"
+regex = '''"type"\s*:\s*"service_account"[\s\S]{0,500}"private_key"\s*:\s*"-----BEGIN PRIVATE KEY-----'''
+tags = ["credentials", "gcp"]
+
+[[rules]]
+id = "stripe-secret-key-live"
+description = "Stripe live secret key"
+regex = '''sk_live_[0-9a-zA-Z]{20,}'''
+tags = ["credentials", "stripe"]
+
+[[rules]]
+id = "stripe-webhook-secret"
+description = "Stripe webhook signing secret"
+regex = '''whsec_[A-Za-z0-9]{20,}'''
+tags = ["credentials", "stripe"]
+
+[[rules]]
+id = "resend-api-key"
+description = "Resend API key"
+regex = '''re_[A-Za-z0-9_]{20,}'''
+tags = ["credentials", "resend"]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Allowlist: things that look like secrets but aren't.
+# ─────────────────────────────────────────────────────────────────────────────
+[allowlist]
+description = "Global allowlist for VoraPrep"
+
+paths = [
+  # node_modules and build output
+  '''(^|/)node_modules/''',
+  '''(^|/)dist(-blog|-manifest)?/''',
+  '''(^|/)coverage/''',
+  '''(^|/)playwright-report/''',
+  '''(^|/)test-results/''',
+  '''(^|/)android/(app/)?build/''',
+  '''(^|/)ios/.*/Pods/''',
+
+  # .env.example and template docs use placeholder values like sk_test_xxx
+  '''(^|/)\.env\.example$''',
+  '''(^|/)\.env\.template$''',
+  '''(^|/)docs/.*\.md$''',
+]
+
+regexes = [
+  # Placeholder values used in script docstrings: sk_test_xxx, sk_live_xxx
+  '''sk_(test|live)_xxx''',
+  # Firebase WEB API keys are public (locked down by referrer in GCP Console)
+  # and live in tracked .env.production / .env.staging. They match the
+  # AIzaSy[A-Za-z0-9_-]{33} pattern that gitleaks flags as generic-api-key.
+  '''AIzaSyDV7wZ7HC8SlZ2AaFOORcBNO_DAl-IRkq0''',  # voraprep-prod web key
+  '''AIzaSyCfAwl_XNblsPK4mtMzdZwfOOcOTJhuJwc''',  # voraprep-staging web key
+  '''AIzaSy-your-web-api-key''',                    # template placeholder
+]
+
+# Specific file allowlists
+[[allowlist.regexTarget]]
+description = "Tracked public Firebase web API keys (referrer-restricted)"
+target = "match"
+regexes = ['''AIzaSy[A-Za-z0-9_-]{33}''']
+paths = [
+  '''(^|/)\.env\.(production|staging|development|example)$''',
+]

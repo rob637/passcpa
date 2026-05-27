@@ -52,6 +52,12 @@ serviceAccountKey.*.json
 **/*-service-account.json
 **/gcp-credentials*.json
 
+# Firebase Auth user exports / PII dumps — NEVER COMMIT
+users.json
+orphaned-users.json
+**/users-export*.json
+**/auth-export*.json
+
 # Android signing
 *.keystore
 *.keystore.base64
